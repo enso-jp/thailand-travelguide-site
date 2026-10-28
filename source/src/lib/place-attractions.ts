@@ -43,7 +43,14 @@ export function isPlacePage(path: string): path is PlacePath {
 
 export const PLACE_META: Record<
   PlacePath,
-  { nameLocal: string; region: string; stayCity: string; foodHref: string; nightlifeHref?: string }
+  {
+    nameLocal: string;
+    region: string;
+    stayCity: string;
+    foodHref: string;
+    nightlifeHref?: string;
+    explore?: { href: string; label: string }[];
+  }
 > = {
   '/bangkok': {
     nameLocal: 'กรุงเทพฯ',
@@ -51,6 +58,16 @@ export const PLACE_META: Record<
     stayCity: 'bangkok',
     foodHref: '/thai-food/bangkok',
     nightlifeHref: '/interests/nightlife',
+    explore: [
+      { href: '/get-there/bangkok-to-chiang-mai', label: 'Bangkok to Chiang Mai: flight vs sleeper' },
+      { href: '/get-there/bangkok-to-phuket', label: 'Bangkok to Phuket flights' },
+      { href: '/get-there/bangkok-to-koh-samui', label: 'Bangkok to Koh Samui' },
+      { href: '/plan/grab-and-bts', label: 'Grab vs Bolt and BTS/MRT' },
+      { href: '/itineraries/first-week-7-days', label: '7-day Thailand itinerary' },
+      { href: '/itineraries/best-14-days', label: '14-day Thailand itinerary' },
+      { href: '/thai-food/bangkok', label: 'Bangkok food guide' },
+      { href: '/interests/resort-living', label: 'Bangkok river flagship hotels' },
+    ],
   },
   '/chiang-mai': {
     nameLocal: 'เชียงใหม่',
@@ -58,6 +75,14 @@ export const PLACE_META: Record<
     stayCity: 'chiang-mai',
     foodHref: '/thai-food/chiang-mai',
     nightlifeHref: '/chiang-mai/nimmanhaemin',
+    explore: [
+      { href: '/get-there/bangkok-to-chiang-mai', label: 'Bangkok to Chiang Mai: 70 min or sleeper' },
+      { href: '/get-there/chiang-mai-to-pai', label: 'Chiang Mai to Pai van on Route 1095' },
+      { href: '/itineraries/7-days-northern-thailand-loop', label: '7-day northern Thailand loop' },
+      { href: '/itineraries/5-days-chiang-mai-and-chiang-rai', label: '5 days Chiang Mai and Chiang Rai' },
+      { href: '/thai-food/chiang-mai', label: 'Chiang Mai food and khao soi' },
+      { href: '/interests/resort-living', label: 'Mae Rim flagship resorts' },
+    ],
   },
   '/phuket': {
     nameLocal: 'ภูเก็ต',
@@ -65,6 +90,14 @@ export const PLACE_META: Record<
     stayCity: 'phuket',
     foodHref: '/thai-food/phuket',
     nightlifeHref: '/interests/nightlife/phuket-beach-clubs',
+    explore: [
+      { href: '/get-there/bangkok-to-phuket', label: 'Bangkok to Phuket: 80-minute flight' },
+      { href: '/get-there/phuket-to-krabi-phi-phi', label: 'Phuket to Krabi and Koh Phi Phi' },
+      { href: '/itineraries/7-days-phuket-krabi-phi-phi', label: '7 days Phuket, Krabi, Phi Phi' },
+      { href: '/thai-food/phuket', label: 'Phuket Old Town food guide' },
+      { href: '/interests/nightlife/phuket-beach-clubs', label: 'Phuket beach clubs' },
+      { href: '/interests/resort-living', label: 'Phuket west-coast flagship resorts' },
+    ],
   },
   '/koh-samui': {
     nameLocal: 'เกาะสมุย',
@@ -72,12 +105,28 @@ export const PLACE_META: Record<
     stayCity: 'koh-samui',
     foodHref: '/thai-food/koh-samui',
     nightlifeHref: '/interests/nightlife/koh-samui-beach-clubs',
+    explore: [
+      { href: '/get-there/bangkok-to-koh-samui', label: 'Bangkok to Koh Samui: USM vs Donsak' },
+      { href: '/itineraries/10-days-gulf-islands-samui-phangan-tao', label: '10-day Gulf islands itinerary' },
+      { href: '/itineraries/7-days-koh-samui-and-koh-phangan', label: '7 days Samui and Phangan' },
+      { href: '/thai-food/koh-samui', label: 'Koh Samui food guide' },
+      { href: '/interests/nightlife/koh-samui-beach-clubs', label: 'Samui beach clubs' },
+      { href: '/interests/resort-living', label: 'Samui headland flagship resorts' },
+    ],
   },
   '/krabi': {
     nameLocal: 'กระบี่',
     region: 'andaman',
     stayCity: 'krabi',
     foodHref: '/thai-food/krabi',
+    explore: [
+      { href: '/get-there/bangkok-to-krabi', label: 'Bangkok to Krabi: 75-minute KBV flight' },
+      { href: '/get-there/phuket-to-krabi-phi-phi', label: 'Phuket to Krabi and Phi Phi boats' },
+      { href: '/get-there/krabi-to-koh-lanta', label: 'Krabi to Koh Lanta' },
+      { href: '/attractions/railay-beach-and-phra-nang-cave', label: 'Railay Beach and Phra Nang' },
+      { href: '/thai-food/krabi', label: 'Krabi food guide' },
+      { href: '/resort-living/rayavadee', label: 'Rayavadee on Railay' },
+    ],
   },
   '/ayutthaya': {
     nameLocal: 'พระนครศรีอยุธยา',

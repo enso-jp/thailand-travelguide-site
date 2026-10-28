@@ -1,5 +1,6 @@
 ---
 import { MAP_PINS, THAILAND_PROVINCES, type RegionSlug } from '../lib/regions';
+import { pageHref } from '../lib/site';
 
 interface Props {
   variant?: 'home' | 'rail';
@@ -29,7 +30,7 @@ const isCompact = variant === 'rail';
         return (
           <a
             class:list={['map-hit', 'map-province', { 'is-active': isActive }]}
-            href={prov.href}
+            href={pageHref(prov.href)}
             data-region={prov.region}
             data-province={prov.name}
             data-corridor-name={prov.corridor}
@@ -61,7 +62,7 @@ const isCompact = variant === 'rail';
             return (
               <a
                 class:list={['map-pin', { 'is-active': isActive }]}
-                href={pin.href}
+                href={pageHref(pin.href)}
                 data-region={pin.region}
                 data-province={pin.province}
                 aria-label={`${pin.name} travel guide`}

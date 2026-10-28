@@ -230,9 +230,9 @@ export const wave3Pages: Page[] = [
   },
   {
     path: '/get-there/bangkok-to-krabi',
-    title: 'Bangkok to Krabi',
+    title: 'Bangkok to Krabi: 75-min KBV flight plus Ao Nang transfer',
     description:
-      'Krabi is the Andaman coast for Ao Nang and Railay. Fly Bangkok to Krabi Airport in about 75 minutes. Then a car to Ao Nang, or a longtail to Railay.',
+      'Bangkok to Krabi: fly BKK or DMK to KBV in about 75 minutes (often 1,200-4,500 THB / $35-130 in 2026), then 30-50 minutes to Ao Nang or a longtail to Railay.',
     lede: 'Krabi is known for Ao Nang beaches and the Railay cliffs. Fly to Krabi Airport (KBV). The night train is not the first-trip move.',
     schema: 'Article',
     crumbs: [
@@ -240,7 +240,7 @@ export const wave3Pages: Page[] = [
       { name: 'Bangkok to Krabi', href: '/get-there/bangkok-to-krabi' },
     ],
     facts: [
-      { label: 'Flight', value: 'About 75 minutes, BKK or DMK to KBV' },
+      { label: 'Flight', value: 'About 75 minutes, BKK or DMK to KBV. Often 1,200-4,500 THB ($35-130) in 2026' },
       { label: 'Then', value: '30 to 50 minutes to Ao Nang; longtail to Railay' },
       { label: 'Season', value: 'Easier November to April' },
       { label: 'Cabin', value: 'Low-cost Economy, or Bangkok Airways Economy / Blue Ribbon business' },
@@ -248,7 +248,7 @@ export const wave3Pages: Page[] = [
     chips: ['KBV', 'Ao Nang', 'Andaman'],
     photo: '/photos/krabi.jpg',
     paragraphs: [
-      'Krabi Airport sits north of Krabi Town, not on the beach. Ao Nang is a 30 to 50 minute car depending on the causeway. Railay is a longtail from Ao Nang or from the Klong Jilad side, not a taxi to the sand. Tell the driver the beach or the pier, not "Krabi".',
+      'Krabi Airport sits north of Krabi Town, not on the beach. Ao Nang is a 30 to 50 minute car depending on the causeway. Railay is a longtail from Ao Nang or from the Klong Jilad side, not a taxi to the sand. Tell the driver the beach or the pier, not "Krabi". 2026 published BKK-KBV or DMK-KBV seats often sit at 1,200 to 4,500 THB ($35 to $130) one way.',
       'Thai AirAsia and Nok use Don Mueang. Thai Vietjet and Bangkok Airways use Suvarnabhumi. Match the Bangkok airport you already hold. A cross-town airport change can erase the flight.',
     ],
     sections: [
@@ -698,9 +698,9 @@ export const wave3Pages: Page[] = [
   },
   {
     path: '/get-there/chiang-mai-to-pai',
-    title: 'Chiang Mai to Pai',
+    title: 'Chiang Mai to Pai: 3.5-4.5 hr van on Route 1095',
     description:
-      'Pai is the mountain town over Route 1095, famous for 762 bends. Take a Prempracha minivan from Chiang Mai Arcade. There are no scheduled Pai flights.',
+      'Chiang Mai to Pai: Prempracha minivan from Arcade, about 3.5 to 4.5 hours on Route 1095. Walk-up fares about 210-250 THB ($6-7) in 2026. No scheduled Pai flights.',
     lede: 'Pai is the mountain town over Route 1095, known for 762 bends and a walking-street night. Take a Prempracha minivan from Chiang Mai Arcade. Sleep there. A same-day out-and-back is a wasted Saturday.',
     schema: 'Article',
     crumbs: [
@@ -1068,9 +1068,9 @@ export const wave3Pages: Page[] = [
   },
   {
     path: '/plan/esim-and-sim-cards',
-    title: 'eSIM and SIM cards in Thailand',
+    title: 'Thailand eSIM and SIM Cards: AIS vs True-dtac 2026',
     description:
-      'Thailand has two tourist networks: AIS for islands and hills, True-dtac for city 5G. Put an eSIM on the phone before you fly, or buy a SIM after immigration with your passport.',
+      'Thailand eSIM and SIM 2026: AIS for islands and hills, True-dtac for city 5G. Tourist packs 8 days 499 THB, 15 days 699, 30 days 1,199. Buy before you fly or after immigration.',
     lede: 'Thailand is easy to get online. AIS covers islands and hills better. True-dtac is fine in cities. Install a tourist eSIM before you fly if the phone allows it. Otherwise buy a SIM after immigration and register it to your passport.',
     schema: 'Article',
     crumbs: [
@@ -1160,9 +1160,9 @@ export const wave3Pages: Page[] = [
   },
   {
     path: '/plan/money-atms-and-promptpay',
-    title: 'Money, ATMs, and PromptPay',
+    title: 'Thailand Money Guide: ATM fees, cash, PromptPay 2026',
     description:
-      'Thailand runs on cash and cards. Bank ATMs charge a flat fee on foreign cards. PromptPay QR needs a Thai bank account. Parks still want notes.',
+      'Thailand ATM fees 2026: often 250 THB Visa or 350 THB Mastercard at big banks. Decline DCC. PromptPay needs a Thai bank account. Parks still want notes.',
     lede: 'Thailand is a cash-and-card country, not a foreign-phone QR country. Withdraw baht in large, rare hits at a bank ATM. Decline the machine converting to your home currency. PromptPay is for Thai bank accounts.',
     schema: 'Article',
     crumbs: [

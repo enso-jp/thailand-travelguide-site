@@ -8,6 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "check:content": "node scripts/check-content.mjs",
+    "check:seo": "node scripts/check-built-seo.mjs",
     "audit:content": "node scripts/audit-content.mjs"
   },
   "dependencies": {

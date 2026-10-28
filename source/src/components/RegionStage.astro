@@ -3,6 +3,7 @@ import Photo from './Photo.astro';
 import ThailandMap from './ThailandMap.astro';
 import type { HomeMedia } from '../lib/page-media';
 import type { RegionSlug } from '../lib/regions';
+import { pageHref } from '../lib/site';
 
 interface Props {
   regions: HomeMedia['regions'];
@@ -41,7 +42,7 @@ const { regions, active = 'central' } = Astro.props;
           <div class="region-panel" data-region-card={region.slug} hidden={region.slug !== active}>
             <div class="region-photos">
               {region.photos.map((place) => (
-                <a href={place.href}>
+                <a href={pageHref(place.href)}>
                   <Photo src={place.photo} alt="" />
                   <span>{place.name}</span>
                 </a>
@@ -68,10 +69,10 @@ const { regions, active = 'central' } = Astro.props;
       {
         regions.map((region) => (
           <article class:list={['region-slide', { 'is-active': region.slug === active }]} data-region-slide={region.slug}>
-            <a class="region-slide-photo" href={region.href}>
+            <a class="region-slide-photo" href={pageHref(region.href)}>
               <Photo src={region.swipePhoto} alt="" />
             </a>
-            <a class="region-slide-copy" href={region.href}>
+            <a class="region-slide-copy" href={pageHref(region.href)}>
               <small>Explore</small>
               <strong>{region.name}</strong>
               <em>{region.summary}</em>
@@ -83,5 +84,5 @@ const { regions, active = 'central' } = Astro.props;
     </div>
     <button class="region-swipe-arrow next" type="button" data-region-next aria-label="Next region">›</button>
   </div>
-  <p class="region-more"><a class="pill" href="/destinations">See regions</a></p>
+  <p class="region-more"><a class="pill" href={pageHref('/destinations')}>See regions</a></p>
 </section>

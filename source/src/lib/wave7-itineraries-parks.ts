@@ -22,9 +22,9 @@ function klook(title: string, kicker: string, body: string, href: string, photo:
 export const wave7Pages: Page[] = [
   {
     path: '/itineraries/10-days-classic-thailand',
-    title: '10 days in classic Thailand',
+    title: '10-Day Thailand Itinerary: Bangkok, Chiang Mai, one coast',
     description:
-      'Ten nights: Bangkok 3, Chiang Mai 3, then one south coast. Phuket or Krabi November to April. Samui and Tao May to September. Fly the long legs.',
+      'What to see in Thailand in 10 days: 3 nights Bangkok, 3 Chiang Mai, then 4 on one south coast. Phuket or Krabi Nov-Apr. Samui May-Sep. Fly the long legs.',
     lede:
       'This is the classic first trip: city, north, one beach. Use the monsoon to pick Phuket and Krabi or Samui and Tao. Do not stack both seas.',
     schema: 'Article',

@@ -7,6 +7,7 @@ import SisterNetwork from './SisterNetwork.astro';
 import SisterRoutes from './SisterRoutes.astro';
 import type { Page } from '../lib/content';
 import { chipHref, formatInline } from '../lib/inline';
+import { pageHref, routePath } from '../lib/site';
 import { UniquePhotos } from '../lib/photos';
 
 interface Props {
@@ -57,7 +58,7 @@ function guideGridHeading(path: string): string {
         <ol>
           {page.crumbs.map((crumb) => (
             <li>
-              <a href={crumb.href}>{crumb.name}</a>
+              <a href={pageHref(crumb.href)}>{crumb.name}</a>
             </li>
           ))}
         </ol>
@@ -69,8 +70,8 @@ function guideGridHeading(path: string): string {
     <h1>{page.title}</h1>
     <p class="lede" set:html={formatInline(page.lede)} />
     {
-      page.parentPill && page.parentPill.href !== page.path && (
-        <a class="chip parent-pill" href={page.parentPill.href}>
+      page.parentPill && routePath(page.parentPill.href) !== page.path && (
+        <a class="chip parent-pill" href={pageHref(page.parentPill.href)}>
           <span>Back to</span> {page.parentPill.name}
         </a>
       )
@@ -80,8 +81,8 @@ function guideGridHeading(path: string): string {
         <div class="chips">
           {page.chips.map((chip) => {
             const href = chipHref(chip, page.parentPill, page.path);
-            return href && href !== page.path ? (
-              <a class="chip parent-pill" href={href}>
+            return href && routePath(href) !== page.path ? (
+              <a class="chip parent-pill" href={pageHref(href)}>
                 {chip}
               </a>
             ) : (
@@ -122,7 +123,7 @@ function guideGridHeading(path: string): string {
     tabs && tabs.length > 0 && (
       <nav class="tabs" aria-label="Sections">
         {tabs.map((tab) => (
-          <a href={tab.href} aria-current={tab.current ? 'page' : undefined}>
+          <a href={pageHref(tab.href)} aria-current={tab.current ? 'page' : undefined}>
             {tab.label}
           </a>
         ))}
@@ -140,7 +141,7 @@ function guideGridHeading(path: string): string {
         <h2>{guideGridHeading(page.path)}</h2>
         <div class="guide-grid">
           {portraits.map((item) => (
-            <a class="guide-card" href={item.href}>
+            <a class="guide-card" href={pageHref(item.href)}>
               <img src={item.photo} alt={item.title} width="640" height="400" loading="lazy" decoding="async" />
               <span>
                 <strong>{item.title}</strong>
@@ -186,7 +187,7 @@ function guideGridHeading(path: string): string {
                 {card.photo && (
                   <div class="editorial-media">
                     {card.href ? (
-                      <a href={card.href} tabindex="-1" aria-hidden="true">
+                      <a href={pageHref(card.href)} tabindex="-1" aria-hidden="true">
                         <img src={card.photo} alt={card.title} width="640" height="400" loading="lazy" decoding="async" />
                       </a>
                     ) : (
@@ -197,7 +198,7 @@ function guideGridHeading(path: string): string {
                 <div class="editorial-body">
                   <span class="editorial-kicker">{card.kicker}</span>
                   <h3>
-                    {card.href ? <a href={card.href}>{card.title}</a> : card.title}
+                    {card.href ? <a href={pageHref(card.href)}>{card.title}</a> : card.title}
                   </h3>
                   {card.lead && <p class="editorial-lead" set:html={formatInline(card.lead)} />}
                   <ul class="editorial-bullets">
