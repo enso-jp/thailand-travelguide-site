@@ -409,7 +409,7 @@ export const wave13Copy: Record<string, Partial<Page>> = {
         ['Resort transfer', 'Book with the room', 'The usual Soneva path'],
         ['Public Laem Sok boat', '450 to 600 THB, 30 to 45 minutes', 'Self-transfer only'],
         ['Entry villa', '40,000 to 70,000 THB', 'Confirm if the boat is included'],
-        ['Trip.com city', '62195 Koh Kood', 'Not Bangkok 191'],
+        ['Trip.com search', 'Koh Kood island', 'Not a Bangkok city search'],
       ]),
     ],
     faqs: [

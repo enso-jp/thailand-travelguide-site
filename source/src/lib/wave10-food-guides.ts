@@ -45,8 +45,8 @@ export const wave10Pages: Page[] = [
         id: 'bowls-and-dough',
         title: 'Rolled noodles, fried dough, Plaeng Nam stews',
         paragraphs: [
-          'Nai Ek Rolled Noodles (Nai Ek Guay Jub) is the peppery pork-offal bowl. Order `guay jub` with extra pepper. A 2026 bowl is 60 to 100 THB. Go early in the evening if you refuse a queue. This is a sit-down shophouse, not a folding table on Yaowarat itself.',
-          'Pa Tong Go Savoey is the Michelin-listed fried-dough shop. A plate of `pa tong go` with condensed milk, pandan custard, or savory dips is 50 to 60 THB. It is a late snack, not dinner. Plaeng Nam Road, a quieter lane off the gold strip, is the stew and duck-noodle pocket when the main road is a photo crush.',
+          'Nai Ek Rolled Noodles (Nai Ek Guay Jub) is the peppery pork-offal bowl. Order guay jub with extra pepper. A 2026 bowl is 60 to 100 THB. Go early in the evening if you refuse a queue. This is a sit-down shophouse, not a folding table on Yaowarat itself.',
+          'Pa Tong Go Savoey is the Michelin-listed fried-dough shop. A plate of pa tong go with condensed milk, pandan custard, or savory dips is 50 to 60 THB. It is a late snack, not dinner. Plaeng Nam Road, a quieter lane off the gold strip, is the stew and duck-noodle pocket when the main road is a photo crush.',
         ],
       },
       {
@@ -58,7 +58,7 @@ export const wave10Pages: Page[] = [
         table: {
           headers: ['Stop', 'Order', '2026 note'],
           rows: [
-            ['Nai Ek Rolled Noodles', '`guay jub` pepper broth', '60 to 100 THB; sit-down'],
+            ['Nai Ek Rolled Noodles', 'guay jub pepper broth', '60 to 100 THB; sit-down'],
             ['T&K Seafood', 'Claypot and grilled seafood', 'Texas Lane / Soi Phadung Dao'],
             ['Lek & Rut', 'Same soi, rival queue', 'Pick one; price the fish first'],
             ['Pa Tong Go Savoey', 'Fried dough and dips', '50 to 60 THB; Michelin-listed'],
@@ -183,7 +183,7 @@ export const wave10Pages: Page[] = [
     photo: '/photos/riverside.jpg',
     geo: { lat: 13.758, lon: 100.488, containedIn: 'Bangkok' },
     paragraphs: [
-      'Wang Lang Market sits on the Siriraj, Thonburi bank, opposite Tha Maharaj and the Grand Palace. The cross-river ferry from Tha Chang or Tha Maharaj is 4.50 to 5.50 THB (the posted Siriraj rate and the 2026 tariff) and 2 to 3 minutes. Wang Lang to Tha Chang runs 06:00 to 19:00. Wang Lang to Tha Maharaj runs 09:00 to 21:00. Useful market hours are 09:00 to 17:00. Southern curries, grilled pork `moo ping`, coconut pancakes `kanom krok`, boat noodles, and fruit fill the stalls. Stalls empty when the hospital and office crowd leaves.',
+      'Wang Lang Market sits on the Siriraj, Thonburi bank, opposite Tha Maharaj and the Grand Palace. The cross-river ferry from Tha Chang or Tha Maharaj is 4.50 to 5.50 THB (the posted Siriraj rate and the 2026 tariff) and 2 to 3 minutes. Wang Lang to Tha Chang runs 06:00 to 19:00. Wang Lang to Tha Maharaj runs 09:00 to 21:00. Useful market hours are 09:00 to 17:00. Southern curries, grilled pork moo ping, coconut pancakes kanom krok, boat noodles, and fruit fill the stalls. Stalls empty when the hospital and office crowd leaves.',
       'Talat Noi is the other half of the day. Walk Charoenkrung Soi 22 for Hokkien-Teochew shophouse duck noodles, then sit a river cafe if the heat wins. Do not confuse Talat Noi with the night cocktail pocket on Soi Nana. For that map, use [Charoenkrung nights](/interests/nightlife/charoenkrung-soi-nana). Pair a palace morning with Wang Lang lunch. Leave Yaowarat for a different evening.',
     ],
     sections: [
@@ -251,7 +251,7 @@ export const wave10Pages: Page[] = [
     photo: '/photos/bangkok.jpg',
     geo: { lat: 13.7994, lon: 100.548, containedIn: 'Bangkok' },
     paragraphs: [
-      'Or Tor Kor Market (the Agricultural Wholesale Market Organization hall) sits at MRT Kamphaeng Phet Exit 3, across Kamphaeng Phet Road from Chatuchak. Hours run about 06:00 to 18:00. This is graded fruit, Royal Project highland produce, and air-conditioned curry-over-rice stalls `khao gaeng` at 60 to 120 THB. Monthong and kan yao durian are the season buy. Mango sticky rice is 100 to 150 THB when mangoes are in.',
+      'Or Tor Kor Market (the Agricultural Wholesale Market Organization hall) sits at MRT Kamphaeng Phet Exit 3, across Kamphaeng Phet Road from Chatuchak. Hours run about 06:00 to 18:00. This is graded fruit, Royal Project highland produce, and air-conditioned curry-over-rice stalls khao gaeng at 60 to 120 THB. Monthong and kan yao durian are the season buy. Mango sticky rice is 100 to 150 THB when mangoes are in.',
       'Khlong Toei wet market is the contrast: earlier, hotter, more wholesale pork, fish, and herbs. Go at dawn if you want the working market, not a snack hall. Do not stack Khlong Toei, Or Tor Kor, and a full Chatuchak loop on the same Saturday. For the weekend grid, use [Chatuchak](/attractions/chatuchak-weekend-market).',
     ],
     sections: [
@@ -259,7 +259,7 @@ export const wave10Pages: Page[] = [
         id: 'how-to-shop',
         title: 'Fruit hall versus wet market',
         paragraphs: [
-          'At Or Tor Kor, walk the fruit first, then sit for `khao gaeng`. Ask the durian seller to open monthong or kan yao and price by kilogram. Royal Project stalls sell temperate veg and tea from the north. At Khlong Toei, stay out of the wholesale aisles if you only want breakfast noodles. Wear shoes that can get wet.',
+          'At Or Tor Kor, walk the fruit first, then sit for khao gaeng. Ask the durian seller to open monthong or kan yao and price by kilogram. Royal Project stalls sell temperate veg and tea from the north. At Khlong Toei, stay out of the wholesale aisles if you only want breakfast noodles. Wear shoes that can get wet.',
         ],
         table: {
           headers: ['Market', 'Hours and rail', 'Who it fits'],
@@ -390,7 +390,7 @@ export const wave10Pages: Page[] = [
     geo: { lat: 18.796, lon: 98.981, containedIn: 'Chiang Mai' },
     paragraphs: [
       'Chiang Mai food runs on a lunch clock. Khao Soi Mae Sai on Ratchaphuek Road in Chang Phueak, north of the moat, is the coconut curry noodle at 55 to 90 THB on the 2026 menu. Hours are 08:00 to 16:00 Monday to Saturday. It is closed Sunday. Khao Soi Khun Yai sits between Sri Poom and Chang Moi, inside the north moat, and serves only 10:00 to 14:00. Pots empty. Be there before 13:00. For the wider Lanna table, use [Northern Lanna](/thai-food/northern-lanna).',
-      'Warorot Market (Kad Luang) is the daytime wholesale hall for `sai ua` herbal sausage, `nam prik noom` green chili dip, and snacks you can carry. Chang Phuak (North Gate) is the evening stewed-pork-leg strip: `khao kha moo` at 60 to 70 THB. Sunday Walking Street closes Ratchadamnoen from Tha Phae Gate toward Wat Phra Singh from late afternoon. Do not hunt Mae Sai or Khun Yai on that Sunday.',
+      'Warorot Market (Kad Luang) is the daytime wholesale hall for sai ua herbal sausage, nam prik noom green chili dip, and snacks you can carry. Chang Phuak (North Gate) is the evening stewed-pork-leg strip: khao kha moo at 60 to 70 THB. Sunday Walking Street closes Ratchadamnoen from Tha Phae Gate toward Wat Phra Singh from late afternoon. Do not hunt Mae Sai or Khun Yai on that Sunday.',
     ],
     sections: [
       {
@@ -458,15 +458,15 @@ export const wave10Pages: Page[] = [
     photo: '/photos/thai-food-southern.jpg',
     geo: { lat: 7.885, lon: 98.388, containedIn: 'Phuket Town' },
     paragraphs: [
-      'Phuket Town is a UNESCO Creative City of Gastronomy. The useful circuit is Thalang, Dibuk, and Krabi Roads, not a Patong barbecue. Rotee Thaew Nam is the morning charcoal roti with massaman or fish curry at 30 to 60 THB. Lock Tien food court is the Hokkien mee and `oh aew` shaved-ice jelly hall. Go Benz is dry rice porridge with crispy pork at 70 to 100 THB, open evenings except Mondays.',
-      'Tu Kab Khao and Raya serve the mansion plates: crab yellow curry `gaeng poo bai chaplu` (ใบชะพลู, wild betel) and the sour-and-sweet Peranakan set. Town is 45 to 70 minutes from the west-coast hotels. Make it a half day or sleep a night among the shophouses. For the wider southern map, use [South and Baba-Nyonya](/thai-food/southern-and-baba-nyonya).',
+      'Phuket Town is a UNESCO Creative City of Gastronomy. The useful circuit is Thalang, Dibuk, and Krabi Roads, not a Patong barbecue. Rotee Thaew Nam is the morning charcoal roti with massaman or fish curry at 30 to 60 THB. Lock Tien food court is the Hokkien mee and oh aew shaved-ice jelly hall. Go Benz is dry rice porridge with crispy pork at 70 to 100 THB, open evenings except Mondays.',
+      'Tu Kab Khao and Raya serve the mansion plates: crab yellow curry gaeng poo bai chaplu (ใบชะพลู, wild betel) and the sour-and-sweet Peranakan set. Town is 45 to 70 minutes from the west-coast hotels. Make it a half day or sleep a night among the shophouses. For the wider southern map, use [South and Baba-Nyonya](/thai-food/southern-and-baba-nyonya).',
     ],
     sections: [
       {
         id: 'circuit',
         title: 'Morning roti to mansion curry',
         paragraphs: [
-          'Start at Rotee Thaew Nam while the charcoal is hot. Walk Thalang to Lock Tien for Hokkien mee or a later `oh aew`. Keep Go Benz for an evening that is not Monday. Book or walk into Tu Kab Khao or Raya for crab curry when you want a table in a Sino-Portuguese room. Sunday Lard Yai on Thalang is the walking-street add-on if the date matches.',
+          'Start at Rotee Thaew Nam while the charcoal is hot. Walk Thalang to Lock Tien for Hokkien mee or a later oh aew. Keep Go Benz for an evening that is not Monday. Book or walk into Tu Kab Khao or Raya for crab curry when you want a table in a Sino-Portuguese room. Sunday Lard Yai on Thalang is the walking-street add-on if the date matches.',
         ],
         table: {
           headers: ['Stop', 'Order', 'Clock'],
@@ -578,7 +578,7 @@ export const wave10Pages: Page[] = [
     description:
       'A first-trip decoder for 12 dishes beyond Pad Thai: crispy-pork holy basil, two som tams, khao soi, massaman versus gaeng som, two tom yums, and moo ping. Street plates 50 to 120 THB.',
     lede:
-      'Order these twelve if you want the Thai table past Pad Thai. Street stalls run 50 to 120 THB. Sit-down rooms run 180 to 350 THB. Say `pet nit noi` for a little heat or `mai pet` for none.',
+      'Order these twelve if you want the Thai table past Pad Thai. Street stalls run 50 to 120 THB. Sit-down rooms run 180 to 350 THB. Say pet nit noi for a little heat or mai pet for none.',
     schema: 'Article',
     crumbs: [
       { name: 'Thai food', href: '/thai-food' },
@@ -593,15 +593,15 @@ export const wave10Pages: Page[] = [
     chips: ['12 dishes', 'Spice words', 'Street vs sit-down'],
     photo: '/photos/thai-food.jpg',
     paragraphs: [
-      'Pad Thai is the gateway plate. The useful first-trip set is twelve others. Start with `pad kra pao moo krob` (crispy pork holy basil) and a fried egg `khai dao` on rice. Add `som tam thai` if you want peanut and palm sugar, or `som tam poo pla ra` if you want fermented crab and fish sauce and can handle the smell. `Khao soi` is the northern coconut noodle. Eat it at lunch in Chiang Mai.',
-      '`Gaeng massaman` is the mild peanut-and-potato curry. Southern `gaeng som` is sour turmeric, not coconut-sweet. `Tom yum goong nam khon` is the creamy prawn soup; `nam sai` is the clear, sharper version. `Moo ping` grilled pork with sticky rice `khao niao` (ข้าวเหนียว) is the market snack. Street plates are 50 to 120 THB. Restaurant plates are 180 to 350 THB. Say `pet nit noi` for a little heat, `mai pet` for none. For neighbourhoods, start at the [Thai food hub](/thai-food).',
+      'Pad Thai is the gateway plate. The useful first-trip set is twelve others. Start with pad kra pao moo krob (crispy pork holy basil) and a fried egg khai dao on rice. Add som tam thai if you want peanut and palm sugar, or som tam poo pla ra if you want fermented crab and fish sauce and can handle the smell. Khao soi is the northern coconut noodle. Eat it at lunch in Chiang Mai.',
+      'Gaeng massaman is the mild peanut-and-potato curry. Southern gaeng som is sour turmeric, not coconut-sweet. Tom yum goong nam khon is the creamy prawn soup; nam sai is the clear, sharper version. Moo ping grilled pork with sticky rice khao niao (ข้าวเหนียว) is the market snack. Street plates are 50 to 120 THB. Restaurant plates are 180 to 350 THB. Say pet nit noi for a little heat, mai pet for none. For neighbourhoods, start at the [Thai food hub](/thai-food).',
     ],
     sections: [
       {
         id: 'twelve',
         title: 'Twelve orders past Pad Thai',
         paragraphs: [
-          'Also learn `khao man gai` (chicken rice), `gaeng keow wan` (sweet green curry; ask how sweet), `khao niao mamuang` (mango sticky rice when mangoes are in), and boat noodles if you want a dark broth. Do not order every chili condiment on the first night. One new heat word is enough.',
+          'Also learn khao man gai (chicken rice), gaeng keow wan (sweet green curry; ask how sweet), khao niao mamuang (mango sticky rice when mangoes are in), and boat noodles if you want a dark broth. Do not order every chili condiment on the first night. One new heat word is enough.',
         ],
         table: {
           headers: ['Dish', 'What you get', 'Where it belongs'],
@@ -635,7 +635,7 @@ export const wave10Pages: Page[] = [
     faqs: [
       {
         q: 'How do you ask for less spice?',
-        a: '`Pet nit noi` is a little spicy. `Mai pet` is no heat. `Pet mak` is very spicy. Say it when you order, not after the first bite.',
+        a: 'Pet nit noi is a little spicy. Mai pet is no heat. Pet mak is very spicy. Say it when you order, not after the first bite.',
       },
       {
         q: 'Street stall or restaurant?',
