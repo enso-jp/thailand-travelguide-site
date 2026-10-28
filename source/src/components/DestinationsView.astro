@@ -7,6 +7,7 @@ import { formatInline } from '../lib/inline';
 import { buildHomeMedia } from '../lib/page-media';
 import { assignExactPhotos } from '../lib/dish-photos';
 import { UniquePhotos } from '../lib/photos';
+import { pageHref } from '../lib/site';
 
 interface Props {
   page: Page;
@@ -25,7 +26,7 @@ const portraits = assignExactPhotos(page.portraits || [], bag);
   <nav class="crumbs" aria-label="Breadcrumb">
     <ol>
       {page.crumbs.map((crumb) => (
-        <li><a href={crumb.href}>{crumb.name}</a></li>
+        <li><a href={pageHref(crumb.href)}>{crumb.name}</a></li>
       ))}
     </ol>
   </nav>
@@ -51,7 +52,7 @@ const portraits = assignExactPhotos(page.portraits || [], bag);
         portraits
           .filter((item) => item.photo)
           .map((item) => (
-          <a class="guide-card" href={item.href}>
+          <a class="guide-card" href={pageHref(item.href)}>
             <Photo src={item.photo} alt={item.title} />
             <span>
               <strong>{item.title}</strong>

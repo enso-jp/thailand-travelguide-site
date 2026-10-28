@@ -1,6 +1,7 @@
 import { site, absUrl } from './site';
 import type { Page } from './content';
 import { formatInline } from './inline';
+import { seoDescription, seoTitle } from './seo';
 
 function visibleText(text: string): string {
   return formatInline(text)
@@ -69,11 +70,13 @@ export function faqLd(page: Page) {
 }
 
 export function pageLd(page: Page) {
+  const title = seoTitle(page);
+  const description = seoDescription(page);
   const common = {
     '@context': 'https://schema.org',
-    name: page.title,
+    name: title,
     alternateName: page.alternateName,
-    description: visibleText(page.description),
+    description,
     url: absUrl(page.path),
     image: page.photo ? absUrl(page.photo) : undefined,
   };
@@ -103,8 +106,8 @@ export function pageLd(page: Page) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: page.title,
-    description: visibleText(page.description),
+    headline: title,
+    description,
     url: absUrl(page.path),
     mainEntityOfPage: absUrl(page.path),
     image: page.photo ? absUrl(page.photo) : undefined,

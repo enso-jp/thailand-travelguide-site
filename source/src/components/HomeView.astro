@@ -5,6 +5,7 @@ import Photo from './Photo.astro';
 import RegionStage from './RegionStage.astro';
 import SisterRoutes from './SisterRoutes.astro';
 import { buildHomeMedia } from '../lib/page-media';
+import { pageHref } from '../lib/site';
 
 const home = buildHomeMedia();
 
@@ -15,7 +16,7 @@ function dots(n: number): string {
 
 <div class="home wrap">
   <div class="home-top">
-    <a class="home-hero home-hero-lead" href={home.lead.href}>
+    <a class="home-hero home-hero-lead" href={pageHref(home.lead.href)}>
       <Photo src={home.lead.photo} alt="" priority />
       <span class="home-hero-copy">
         <small><i class="hero-mark" aria-hidden="true"></i>{home.lead.kicker}</small>
@@ -30,7 +31,7 @@ function dots(n: number): string {
         <div class="sheet-row" data-carousel-row tabindex="0">
           {
             home.sheet.map((story) => (
-              <a class="mini-card" href={story.href}>
+              <a class="mini-card" href={pageHref(story.href)}>
                 <span class="media">
                   <Photo src={story.photo} alt="" width="208" height="176" />
                 </span>
@@ -50,7 +51,7 @@ function dots(n: number): string {
       <div class="home-collage">
         {
           home.collage.map((story) => (
-            <a class={`collage-tile ${story.spot}`} href={story.href}>
+            <a class={`collage-tile ${story.spot}`} href={pageHref(story.href)}>
               <Photo src={story.photo} alt="" />
               <span class="collage-copy">
                 <small><i class="hero-mark" aria-hidden="true"></i>{story.kicker}</small>
@@ -73,7 +74,7 @@ function dots(n: number): string {
     <div class="top-grid">
       {
         home.topPlaces.map((place, index) => (
-          <a class="top-card" href={place.href}>
+          <a class="top-card" href={pageHref(place.href)}>
             <span class="top-photo">
               <Photo src={place.photo} alt="" />
               <span class="rank-badge">{index + 1}</span>
@@ -96,7 +97,7 @@ function dots(n: number): string {
     <div class="plan-row">
       {
         home.plan.map((tool) => (
-          <a href={tool.href}>
+          <a href={pageHref(tool.href)}>
             <span class="plan-icon"><Icon name={tool.icon} /></span>
             <strong>{tool.title}</strong>
             <span>{tool.text}</span>
@@ -104,7 +105,7 @@ function dots(n: number): string {
         ))
       }
     </div>
-    <p class="home-actions"><a class="pill" href="/plan">See all planning tools</a></p>
+    <p class="home-actions"><a class="pill" href={pageHref('/plan')}>See all planning tools</a></p>
   </section>
 
   <section class="home-section">
@@ -112,7 +113,7 @@ function dots(n: number): string {
     <div class="plan-row">
       {
         home.trips.map((tool) => (
-          <a href={tool.href}>
+          <a href={pageHref(tool.href)}>
             <span class="plan-icon"><Icon name={tool.icon} /></span>
             <strong>{tool.title}</strong>
             <span>{tool.text}</span>
@@ -120,7 +121,7 @@ function dots(n: number): string {
         ))
       }
     </div>
-    <p class="home-actions"><a class="pill" href="/itineraries">See itineraries</a></p>
+    <p class="home-actions"><a class="pill" href={pageHref('/itineraries')}>See itineraries</a></p>
   </section>
 
   <SisterRoutes />
@@ -130,14 +131,14 @@ function dots(n: number): string {
     <div class="interest-grid">
       {
         home.interests.map((item) => (
-          <a class="home-tile" href={item.href}>
+          <a class="home-tile" href={pageHref(item.href)}>
             <Photo src={item.photo} alt="" />
             <span>{item.label}</span>
           </a>
         ))
       }
     </div>
-    <p class="home-actions"><a class="pill" href="/interests">See all interests</a></p>
+    <p class="home-actions"><a class="pill" href={pageHref('/interests')}>See all interests</a></p>
   </section>
 
   <section class="home-section home-stories" id="stories">
@@ -145,7 +146,7 @@ function dots(n: number): string {
     <div class="story-list">
       {
         home.stories.map((story) => (
-          <a class="story-row" href={story.href}>
+          <a class="story-row" href={pageHref(story.href)}>
             <span>
               <small>{story.kicker}</small>
               <strong>{story.title}</strong>
@@ -159,6 +160,6 @@ function dots(n: number): string {
         ))
       }
     </div>
-    <p class="home-actions"><a class="pill" href="/itineraries">More stories</a></p>
+    <p class="home-actions"><a class="pill" href={pageHref('/itineraries')}>More stories</a></p>
   </section>
 </div>

@@ -1,4 +1,5 @@
 import { allPages, type Page } from './content';
+import { pageHref } from './site';
 import { SIGNATURE_DISHES } from './food-catalog';
 import { ATTRACTIONS, isPlacePage } from './place-attractions';
 
@@ -58,7 +59,7 @@ export function searchIndex(): SearchItem[] {
       th: local,
       sub: page.lede,
       group: groupFor(page),
-      href: page.path,
+      href: pageHref(page.path),
       body,
       text: `${page.title} ${local || ''} ${page.description} ${body}`,
     };
@@ -71,7 +72,7 @@ export function searchIndex(): SearchItem[] {
       th: dish.nameLocal,
       sub: dish.line,
       group: 'Food',
-      href: dish.href,
+      href: pageHref(dish.href),
       body: dish.line,
       text: `${dish.title} ${dish.nameLocal} ${dish.line} ${dish.find}`,
     });
@@ -79,14 +80,14 @@ export function searchIndex(): SearchItem[] {
 
   for (const [place, list] of Object.entries(ATTRACTIONS)) {
     for (const row of list) {
-      if (items.some((item) => item.href === row.href && item.title === row.name)) continue;
+      if (items.some((item) => item.href === pageHref(row.href) && item.title === row.name)) continue;
       items.push({
         title: row.name,
         localScript: row.nameLocal,
         th: row.nameLocal,
         sub: row.summary,
         group: 'Attractions',
-        href: row.href,
+        href: pageHref(row.href),
         body: `${row.summary} ${row.timeNeeded} ${row.fee}`,
         text: `${row.name} ${row.nameLocal} ${row.summary} ${place}`,
       });

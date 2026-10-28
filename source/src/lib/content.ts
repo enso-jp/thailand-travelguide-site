@@ -21,6 +21,7 @@ import { WAVE11_INTEREST_PAGES } from './wave11-interests';
 import { WAVE12_ITINERARY_PAGES } from './wave12-itineraries';
 import { applyWave13 } from './wave13';
 import { wave21Pages } from './wave21-pages';
+import { routePath } from './site';
 
 export type SchemaType = 'City' | 'TouristDestination' | 'Article';
 
@@ -870,7 +871,7 @@ const rawPages: Page[] = [
   {
     path: "/bangkok",
     title: "Bangkok",
-    description: "Thailand's landing city: river temples, BTS hotel strips, street food, and two airports. Nightlife lives on its own pages.",
+    description: "Bangkok first-trip guide: BTS and MRT, two airports, Sukhumvit vs riverside stays, and the next hop to Chiang Mai, Phuket, or Samui.",
     lede: "Bangkok is the usual first stop. Sleep on Sukhumvit or in Siam for the BTS. Sleep riverside for the Chao Phraya. The Old City is for temples, not late nights.",
     schema: "City",
     alternateName: "Krung Thep Maha Nakhon",
@@ -909,7 +910,7 @@ const rawPages: Page[] = [
     geo: { lat: 13.756, lon: 100.502, containedIn: "Central Thailand" },
     paragraphs: [
       "Bangkok is the capital you land in: Grand Palace and river wats by day, BTS hotel strips at night. Give it two or three nights. Eat in Thonglor or Chinatown. Nightlife lives on its own pages.",
-      "From BKK, the Airport Rail Link to Phaya Thai is the cheap, predictable move. Grab and Bolt cover the last kilometer. Book a Trip.com airport car if you land late with luggage."
+      "From BKK, the [Airport Rail Link, Grab, and BTS tap](/plan/grab-and-bts) is the cheap, predictable move. Book a Trip.com airport car if you land late with luggage. The usual next hops are [Bangkok to Chiang Mai](/get-there/bangkok-to-chiang-mai), [Bangkok to Phuket](/get-there/bangkok-to-phuket), or [Bangkok to Koh Samui](/get-there/bangkok-to-koh-samui). Use the [7-day](/itineraries/first-week-7-days) or [14-day itinerary](/itineraries/best-14-days) once you pick a fork."
     ],
     sections: [
       {
@@ -1214,7 +1215,7 @@ const rawPages: Page[] = [
   {
     path: "/chiang-mai",
     title: "Chiang Mai",
-    description: "Northern Thailand's hub: Lanna temples inside the moat, Nimman cafes, and the sleeper train from Bangkok.",
+    description: "Chiang Mai first-trip guide: Old City wats, Nimman, the 70-minute flight or 12-hour sleeper from Bangkok, and the Pai van.",
     lede: "Chiang Mai is the north base. Give it three nights. Sleep inside the moat for temples on foot. Sleep in Nimman for coffee and a later evening.",
     schema: "City",
     crumbs: [
@@ -1250,7 +1251,7 @@ const rawPages: Page[] = [
     geo: { lat: 18.788, lon: 98.985, containedIn: "Northern Thailand" },
     paragraphs: [
       "Chiang Mai is known for wats inside a square moat and a cafe strip west of it. The Old City still closes temple doors for lunch. Nimmanhaemin, past Suan Dok, is where you eat late.",
-      "Sunday Walking Street fills Ratchadamnoen. Saturday is Wua Lai, south of the moat. Both are easier if you already have a room inside or just south."
+      "Sunday Walking Street fills Ratchadamnoen. Saturday is Wua Lai, south of the moat. Arrive on the [Bangkok to Chiang Mai flight or sleeper](/get-there/bangkok-to-chiang-mai). Add [Pai over Route 1095](/get-there/chiang-mai-to-pai) only if you have two extra nights. City plates sit on the [Chiang Mai food guide](/thai-food/chiang-mai)."
     ],
     portraits: [
       {
@@ -1401,7 +1402,7 @@ const rawPages: Page[] = [
   {
     path: "/phuket",
     title: "Phuket",
-    description: "Andaman island with an international airport, west-coast beaches, Patong nightlife, and boats to Phi Phi. Stay west. Do not sleep four nights in Patong.",
+    description: "Phuket first-trip guide: west-coast beaches, the 80-minute Bangkok flight, morning boats to Phi Phi and Krabi, and where not to base.",
     lede: "Phuket is the easy Andaman airport with beaches attached. Stay on the west coast. Use Patong for a night if you want it, not as a four-night base.",
     schema: "TouristDestination",
     alternateName: "Phuket Island",
@@ -1438,7 +1439,7 @@ const rawPages: Page[] = [
     geo: { lat: 7.88, lon: 98.392, containedIn: "Andaman Coast" },
     paragraphs: [
       "Phuket is known for west-coast beaches and a huge airport, not for one pretty town. Kamala, Surin, and Bang Tao are calmer than Patong. Kata and Karon sit in the middle. Old Phuket Town is a morning of sino-portuguese streets if you need a non-beach day.",
-      "Beach clubs (Catch, Cafe del Mar) live on the Phuket nightlife page. Amanpuri and Trisara sit under resort living."
+      "Fly [Bangkok to Phuket](/get-there/bangkok-to-phuket) in about 80 minutes, then a 45 to 90 minute beach transfer. Morning boats to [Krabi and Koh Phi Phi](/get-there/phuket-to-krabi-phi-phi) are the Andaman hop. Beach clubs live on the [Phuket nightlife page](/interests/nightlife/phuket-beach-clubs). Amanpuri and Trisara sit under [resort living](/interests/resort-living)."
     ],
     portraits: [
       {
@@ -1486,7 +1487,7 @@ const rawPages: Page[] = [
   {
     path: "/krabi",
     title: "Krabi",
-    description: "Limestone cliffs, Railay's boat-only beach, and Ao Nang logistics. Fly into KBV. Boats to Phi Phi run in season.",
+    description: "Krabi first-trip guide: Ao Nang vs Railay, the 75-minute KBV flight, and morning boats to Phi Phi and Koh Lanta.",
     lede: "Krabi is known for cliffs and Railay, not a long resort strip. Stay in Ao Nang if you want cars and dinner. Stay on Railay if you accept a longtail.",
     schema: "TouristDestination",
     crumbs: [
@@ -1522,7 +1523,7 @@ const rawPages: Page[] = [
     geo: { lat: 8.086, lon: 98.906, containedIn: "Andaman Coast" },
     paragraphs: [
       "The cliffs and the Railay pocket are why people come. Ao Nang is the logistics town. Railay has no road: a shared longtail is about 10 to 15 minutes and 100 to 200 THB a person in 2026. Phi Phi is a day trip, or a night if you want the village after the boats leave.",
-      "Rayavadee sits in the Railay-Phra Nang pocket and is filed under resort living."
+      "Fly [Bangkok to Krabi](/get-there/bangkok-to-krabi) to KBV, or van from [Phuket in 2.5 to 3 hours](/get-there/phuket-to-krabi-phi-phi). [Koh Lanta](/get-there/krabi-to-koh-lanta) is a separate morning. Rayavadee sits under [resort living](/resort-living/rayavadee)."
     ],
     portraits: [
       {
@@ -1551,7 +1552,7 @@ const rawPages: Page[] = [
   {
     path: "/koh-samui",
     title: "Koh Samui",
-    description: "Gulf island with its own airport, Chaweng nightlife, quieter north and south coasts, and boats to Phangan and Tao.",
+    description: "Koh Samui first-trip guide: USM vs the Donsak ferry, Chaweng vs the quieter coasts, and boats to Phangan and Tao.",
     lede: "Samui is the Gulf hub with an airport on the island. Stay on Chaweng for nightlife. Stay north or south if you want a quieter coast. January to September is the easier sea.",
     schema: "TouristDestination",
     crumbs: [
@@ -1586,8 +1587,8 @@ const rawPages: Page[] = [
     photo: "/photos/koh-samui.jpg",
     geo: { lat: 9.512, lon: 100.013, containedIn: "Gulf of Thailand" },
     paragraphs: [
-      "Samui is the Lower Gulf base: an airport, a loud east-coast strip, and boats to Phangan and Tao. Fly BKK-USM in about 70 minutes when the day matters. The Donsak ferry plus a van from the mainland is the slower, cheaper path.",
-      "Nikki Beach and the beach-club row sit on the Samui nightlife page. Six Senses and Four Seasons sit under resort living."
+      "Samui is the Lower Gulf base: an airport, a loud east-coast strip, and boats to Phangan and Tao. Fly [Bangkok to Koh Samui](/get-there/bangkok-to-koh-samui) in about 70 minutes when the day matters. The Donsak ferry plus a van is the slower, cheaper path.",
+      "Use the [10-day Gulf itinerary](/itineraries/10-days-gulf-islands-samui-phangan-tao) if Phangan and Tao are on the ticket. Nikki Beach sits on the [Samui nightlife page](/interests/nightlife/koh-samui-beach-clubs). Six Senses and Four Seasons sit under [resort living](/interests/resort-living)."
     ],
     portraits: [
       {
@@ -1756,8 +1757,8 @@ const rawPages: Page[] = [
   },
   {
     path: "/itineraries/best-14-days",
-    title: "Best 14 days in Thailand",
-    description: "Bangkok, Chiang Mai, then one south coast. Fly the long legs. Flip Andaman vs Gulf with the monsoon.",
+    title: "14-Day Thailand Itinerary: Bangkok, Chiang Mai, one coast",
+    description: "What to see in Thailand in 14 days: 3 nights Bangkok, 3 Chiang Mai, then one south coast. Fly the long legs. Flip Andaman vs Gulf with the monsoon.",
     lede: "This is the 14-day spine: three nights Bangkok, three Chiang Mai, then one south coast. Do not add a second sea.",
     schema: "Article",
     crumbs: [
@@ -1892,8 +1893,8 @@ const rawPages: Page[] = [
   },
   {
     path: "/itineraries/first-week-7-days",
-    title: "First week in Thailand (7 days)",
-    description: "Seven days: Bangkok plus Chiang Mai, or Bangkok plus one south coast. Not both.",
+    title: "7-Day Thailand Itinerary: Bangkok plus one fork",
+    description: "Thailand itinerary for 7 days: 3 nights Bangkok, then Chiang Mai or one south coast. Not both seas. Fly the 70-minute hop.",
     lede: "A first week has one fork after Bangkok. North for temples and food. South for a beach. Pick with the monsoon, not with a map that shows both.",
     schema: "Article",
     crumbs: [
@@ -1981,8 +1982,8 @@ const rawPages: Page[] = [
   },
   {
     path: "/itineraries/south-islands-10-days",
-    title: "South islands in 10 days",
-    description: "Ten days on one sea. Andaman (Phuket, Krabi, Khao Sok) November to April. Gulf (Samui, Phangan, Tao) January to September.",
+    title: "10-Day South Thailand Itinerary: one sea only",
+    description: "What to see in south Thailand in 10 days: Andaman (Phuket, Krabi, Khao Sok) Nov-Apr, or Gulf (Samui, Phangan, Tao) Jan-Sep. Do not cross seas.",
     lede: "A 10-day southern route works best if you commit to one sea: the Andaman coast from November to April, or the Lower Gulf from January to September. Crossing Phuket to Samui on a first south trip burns a day you will not get back.",
     schema: "Article",
     crumbs: [
@@ -2094,8 +2095,8 @@ const rawPages: Page[] = [
   },
   {
     path: "/plan/when-to-go",
-    title: "When to go to Thailand",
-    description: "Andaman coast is easier November to April. The Gulf is easier January to September. Bangkok and Chiang Mai work most months.",
+    title: "When to go to Thailand: Andaman vs Gulf 2026",
+    description: "Best time to visit Thailand: Andaman (Phuket, Krabi) November to April. Gulf (Samui, Phangan) January to September. Bangkok and Chiang Mai work most months.",
     lede: "Thailand is not one season. The Andaman (Phuket, Krabi, Khao Lak, Phi Phi) is the winter sea. The Gulf (Samui, Phangan, Tao) is the summer sea. They overlap in winter. They do not overlap in autumn.",
     schema: "Article",
     crumbs: [
@@ -2187,8 +2188,8 @@ const rawPages: Page[] = [
   },
   {
     path: "/plan/visas-and-tdac",
-    title: "Visas and TDAC",
-    description: "A 60-day visa-free stay for US, UK, and most EU passports, plus the Thailand Digital Arrival Card (TDAC) before you fly.",
+    title: "Thailand Visa and TDAC 2026: 60-day visa-free",
+    description: "Thailand visa 2026: 60 days visa-free for US, UK, and most EU tourist entries, plus the official TDAC arrival card before you fly. Recheck Immigration 72 hours out.",
     lede: "Most Western passports now get 60 days visa-free on arrival for tourism. You still submit TDAC before the flight. This is not legal advice; recheck the Immigration Bureau and your airline 72 hours out.",
     schema: "Article",
     crumbs: [
@@ -2234,8 +2235,8 @@ const rawPages: Page[] = [
   },
   {
     path: "/plan/trains-and-ferries",
-    title: "Trains and ferries in Thailand",
-    description: "The useful SRT sleeper from Krung Thep Aphiwat, plus Gulf ferries and morning Andaman boats.",
+    title: "Thailand Trains and Ferries 2026: sleeper and boats",
+    description: "Thailand train and ferry guide: SRT 9/10 Bangkok-Chiang Mai sleeper (about 12 hours, 800-1,400 THB), Lomprayah Gulf boats, morning Andaman ferries.",
     lede: "The useful train is the Bangkok to Chiang Mai sleeper on SRT 9 and 10. The useful boats are Lomprayah on the Gulf and morning Andaman ferries to Phi Phi.",
     schema: "Article",
     crumbs: [
@@ -2330,8 +2331,8 @@ const rawPages: Page[] = [
   },
   {
     path: "/plan/grab-and-bts",
-    title: "Grab, Bolt, BTS, MRT, and ARL",
-    description: "How to move in Bangkok: tap the BTS and MRT, ride the Airport Rail Link, and use Grab or Bolt for the last stretch.",
+    title: "Grab vs Bolt Thailand, plus Bangkok BTS and MRT",
+    description: "Grab vs Bolt in Thailand, plus a Bangkok BTS MRT guide: contactless taps 17-62 THB, Airport Rail Link about 30 minutes, and when a car beats the skytrain.",
     lede: "Contactless tap-in is the practical move on the BTS Skytrain and MRT Blue Line. The Airport Rail Link from Suvarnabhumi beats a lobby taxi, and Grab and Bolt show a price before you sit down. Do not cash-negotiate at the airport.",
     schema: "Article",
     crumbs: [
@@ -2379,13 +2380,17 @@ const rawPages: Page[] = [
       {
         "q": "BTS or Grab across town?",
         "a": "BTS when both ends are near a station at rush hour. Grab when it rains or you have luggage."
+      },
+      {
+        "q": "Grab vs Bolt in Thailand?",
+        "a": "Both work in Bangkok, Chiang Mai, Phuket, and most tourist towns. Open both apps and take the lower quote. Bolt is often a little cheaper. Grab has more airport pins and motorcycle options. Neither replaces the BTS at 8:30."
       }
     ],
   },
   {
     path: "/get-there/bangkok-to-chiang-mai",
-    title: "Bangkok to Chiang Mai",
-    description: "The north hop: fly about 70 minutes, or take the overnight sleeper from Krung Thep Aphiwat.",
+    title: "Bangkok to Chiang Mai: 70-min flight or 12-hr sleeper",
+    description: "Bangkok to Chiang Mai: fly about 70 minutes (often 1,200-4,500 THB / $35-130 in 2026) or take the 12-hour SRT 9/10 sleeper (800-1,400 THB / $23-40).",
     lede: "Fly if the day matters. Take SRT trains 9 and 10 if you want the overnight ride from Krung Thep Aphiwat.",
     schema: "Article",
     crumbs: [
@@ -2401,11 +2406,11 @@ const rawPages: Page[] = [
     facts: [
       {
         "label": "Flight",
-        "value": "About 70 minutes, BKK or DMK to CNX"
+        "value": "About 70 minutes, BKK or DMK to CNX. Often 1,200-4,500 THB ($35-130) in 2026"
       },
       {
         "label": "Train",
-        "value": "SRT 9/10 sleeper, about 12 hours"
+        "value": "SRT 9/10 sleeper, about 12 hours. Lower berth often 800-1,400 THB ($23-40)"
       },
       {
         "label": "Who should train",
@@ -2414,7 +2419,7 @@ const rawPages: Page[] = [
     ],
     photo: "/photos/chiang-mai.jpg",
     paragraphs: [
-      "This is the usual Bangkok-to-north choice: a short flight or the useful Thai sleeper. The return is the same mix. Train 10 is the southbound sleeper. Confirm today's numbers on SRT the week you ride."
+      "This is the usual Bangkok-to-north choice: a short flight or the useful Thai sleeper. The return is the same mix. Train 10 is the southbound sleeper. Confirm today's numbers on SRT the week you ride. 2026 published seats often sit at 1,200 to 4,500 THB ($35 to $130) on the air hop and 800 to 1,400 THB ($23 to $40) for a lower berth."
     ],
     sections: [
       {
@@ -2430,12 +2435,12 @@ const rawPages: Page[] = [
             [
               "Flight",
               "About 70 minutes",
-              "Plus airport time at both ends. Book BKK-CNX or DMK-CNX."
+              "Plus airport time at both ends. Book BKK-CNX or DMK-CNX. Often 1,200-4,500 THB ($35-130) in 2026."
             ],
             [
               "SRT 9 / 10",
               "About 12 hours",
-              "Departs Krung Thep Aphiwat. Book a sleeper berth."
+              "Departs Krung Thep Aphiwat. Lower berth often 800-1,400 THB ($23-40)."
             ],
             [
               "Day train",
@@ -2465,13 +2470,17 @@ const rawPages: Page[] = [
       {
         "q": "BKK or DMK to CNX?",
         "a": "Both fly it. Match the airport you already use. A cross-town airport change can erase the flight's advantage."
+      },
+      {
+        "q": "What does Bangkok to Chiang Mai cost in 2026?",
+        "a": "Published flight seats often sit at 1,200 to 4,500 THB ($35 to $130) one way if you book a week or more out. A lower sleeper berth is often 800 to 1,400 THB ($23 to $40). Festival weeks and same-week seats run higher."
       }
     ],
   },
   {
     path: "/get-there/bangkok-to-phuket",
-    title: "Bangkok to Phuket",
-    description: "The Andaman hop: fly BKK or DMK to HKT in about 80 minutes. Skip the overnight bus.",
+    title: "Bangkok to Phuket: 80-min flight, skip the night bus",
+    description: "Bangkok to Phuket: fly BKK or DMK to HKT in about 80 minutes (often 1,500-5,000 THB / $43-145 in 2026), then 45-90 minutes to a west-coast beach.",
     lede: "Fly to HKT. Then drive 45 to 90 minutes to a west-coast beach. The bus is a night you will not get back.",
     schema: "Article",
     crumbs: [
@@ -2487,7 +2496,7 @@ const rawPages: Page[] = [
     facts: [
       {
         "label": "Flight",
-        "value": "About 80 minutes to HKT"
+        "value": "About 80 minutes to HKT. Often 1,500-5,000 THB ($43-145) in 2026"
       },
       {
         "label": "Then",
@@ -2500,7 +2509,7 @@ const rawPages: Page[] = [
     ],
     photo: "/photos/phuket.jpg",
     paragraphs: [
-      "Phuket is a flight, then a beach transfer. HKT has Trip.com airport cars. Tell the driver the beach, not just Phuket."
+      "Phuket is a flight, then a beach transfer. HKT has Trip.com airport cars. Tell the driver the beach, not just Phuket. 2026 published BKK-HKT or DMK-HKT seats often sit at 1,500 to 5,000 THB ($43 to $145) one way. The night bus is 12 to 14 hours and is not the first-trip move."
     ],
     sections: [
       {
@@ -2516,7 +2525,7 @@ const rawPages: Page[] = [
             [
               "Flight",
               "About 80 minutes",
-              "BKK-HKT or DMK-HKT. This is the first-trip move."
+              "BKK-HKT or DMK-HKT. Often 1,500-5,000 THB ($43-145) in 2026. This is the first-trip move."
             ],
             [
               "Bus",
@@ -2542,13 +2551,17 @@ const rawPages: Page[] = [
       {
         "q": "Can you land and boat to Phi Phi the same day?",
         "a": "Only if you land early and the sea is flat. A first trip should sleep on Phuket first."
+      },
+      {
+        "q": "What does the Phuket flight cost in 2026?",
+        "a": "Published one-way seats often sit at 1,500 to 5,000 THB ($43 to $145) if you book ahead. Songkran, Christmas, and same-week seats run higher. Price BKK and DMK separately."
       }
     ],
   },
   {
     path: "/get-there/bangkok-to-koh-samui",
-    title: "Bangkok to Koh Samui",
-    description: "The Gulf hop: fly BKK to USM in about 70 minutes, or take the cheaper van-plus-ferry via Donsak.",
+    title: "Bangkok to Koh Samui: 70-min USM flight vs Donsak ferry",
+    description: "Bangkok to Koh Samui: fly BKK to USM in about 70 minutes (often 3,500-9,000 THB / $100-260 in 2026) or take the cheaper van-plus-ferry via Donsak (about 8-10 hours).",
     lede: "Fly to USM if the day matters. The van-plus-ferry via Donsak is the cheaper half-day.",
     schema: "Article",
     crumbs: [
@@ -2564,11 +2577,11 @@ const rawPages: Page[] = [
     facts: [
       {
         "label": "Flight",
-        "value": "About 70 minutes to USM"
+        "value": "About 70 minutes to USM. Often 3,500-9,000 THB ($100-260) in 2026"
       },
       {
         "label": "Ferry path",
-        "value": "Van to Donsak plus boat, a half day"
+        "value": "Van to Donsak plus boat, 8-10 hours. Often 700-1,500 THB ($20-43)"
       },
       {
         "label": "Season",
@@ -2577,7 +2590,7 @@ const rawPages: Page[] = [
     ],
     photo: "/photos/koh-samui.jpg",
     paragraphs: [
-      "Samui is the Gulf island with its own airport. USM transfers are short. Chaweng is close. The opposite coast still deserves a booked car at night."
+      "Samui is the Gulf island with its own airport. USM transfers are short. Chaweng is close. The opposite coast still deserves a booked car at night. USM is a private-concession airport, so 2026 air fares often sit at 3,500 to 9,000 THB ($100 to $260) one way. The Donsak van-plus-ferry is often 700 to 1,500 THB ($20 to $43) and takes 8 to 10 hours."
     ],
     sections: [
       {
@@ -2593,12 +2606,12 @@ const rawPages: Page[] = [
             [
               "Flight",
               "About 70 minutes",
-              "USM is the point of Samui. Bangkok Airways and others."
+              "USM is the point of Samui. Often 3,500-9,000 THB ($100-260) in 2026."
             ],
             [
               "Van and ferry",
               "8-10 hours",
-              "Cheaper. Use it when the flight is silly money."
+              "Often 700-1,500 THB ($20-43). Use it when the flight is silly money."
             ],
             [
               "Via Surat Thani train",
@@ -2624,8 +2637,8 @@ const rawPages: Page[] = [
   },
   {
     path: "/get-there/phuket-to-krabi-phi-phi",
-    title: "Phuket to Krabi and Phi Phi",
-    description: "A morning van links Phuket and Krabi. Boats to Phi Phi run from both in season. Skip boat days when the Andaman is up.",
+    title: "Phuket to Koh Phi Phi and Krabi: van or morning ferry",
+    description: "Phuket to Koh Phi Phi: morning ferry 1.5-2 hours, often 400-1,500 THB ($12-43) in 2026. Phuket to Krabi is a 2.5-3 hour van, often 250-600 THB ($7-17).",
     lede: "This is the Andaman hop: a van between Phuket and Krabi in any month, and a morning boat to Phi Phi from November to April. Treat boat days as optional in the southwest monsoon.",
     schema: "Article",
     crumbs: [
@@ -2641,11 +2654,11 @@ const rawPages: Page[] = [
     facts: [
       {
         "label": "Phuket-Krabi van",
-        "value": "About 2.5 to 3 hours via the bridge"
+        "value": "About 2.5 to 3 hours. Often 250-600 THB ($7-17) in 2026"
       },
       {
         "label": "Boat to Phi Phi",
-        "value": "1.5 to 2 hours from either side"
+        "value": "1.5 to 2 hours. Ferry often 400-1,500 THB ($12-43)"
       },
       {
         "label": "Season",
@@ -2670,12 +2683,12 @@ const rawPages: Page[] = [
             [
               "Van or car, Phuket to Krabi",
               "2.5-3 hours",
-              "The reliable move in any month."
+              "Often 250-600 THB ($7-17) in 2026. The reliable move in any month."
             ],
             [
               "Ferry to Phi Phi",
               "1.5-2 hours",
-              "Morning departures. Cancel when the Andaman is up."
+              "Often 400-1,500 THB ($12-43). Morning only. Cancel when the Andaman is up."
             ],
             [
               "Speedboat loops",
@@ -2700,6 +2713,10 @@ const rawPages: Page[] = [
       {
         "q": "What about KBV flights?",
         "a": "Use them when Krabi or Railay is the base. Search BKK-KBV on Trip.com the same way you search HKT."
+      },
+      {
+        "q": "What does Phuket to Phi Phi cost in 2026?",
+        "a": "A shared ferry is often 400 to 1,500 THB ($12 to $43) one way depending on operator and season. Speedboat day tours cost more and dump you back on Phuket or Ao Nang at dusk."
       }
     ],
   },
@@ -3829,7 +3846,8 @@ const rawPages: Page[] = [
 export const pages: Page[] = applyWave13(rawPages);
 
 export function getPage(path: string): Page | undefined {
-  return pages.find((page) => page.path === path);
+  const key = routePath(path);
+  return pages.find((page) => page.path === key);
 }
 
 export function allPages(): Page[] {

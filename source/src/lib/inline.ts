@@ -1,8 +1,12 @@
+import { pageHref } from './site';
+
 /** Turn planner markdown into safe HTML. No raw backticks or `](/` should remain. */
 export function formatInline(text: string): string {
   const escaped = escapeHtml(String(text ?? ''));
   return escaped
-    .replace(/\[([^\]]+)\]\((\/[a-z0-9][a-z0-9\-\/]*)\)/gi, '<a href="$2">$1</a>')
+    .replace(/\[([^\]]+)\]\((\/[a-z0-9][a-z0-9\-\/]*)\)/gi, (_match, label, href) => {
+      return `<a href="${pageHref(href)}">${label}</a>`;
+    })
     .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
     .replace(/`([^`]+)`/g, '<em>$1</em>');
 }
@@ -56,11 +60,11 @@ export const CHIP_HREF: Record<string, string> = {
 
 export function chipHref(label: string, parent?: { name: string; href: string }, pagePath = ''): string | undefined {
   if (label === 'Old City') {
-    if (pagePath.startsWith('/chiang-mai')) return '/chiang-mai/old-city';
-    if (pagePath.startsWith('/bangkok')) return '/bangkok/old-city-rattanakosin';
+    if (pagePath.startsWith('/chiang-mai')) return pageHref('/chiang-mai/old-city');
+    if (pagePath.startsWith('/bangkok')) return pageHref('/bangkok/old-city-rattanakosin');
     return undefined;
   }
-  if (CHIP_HREF[label]) return CHIP_HREF[label];
-  if (parent && label === parent.name) return parent.href;
+  if (CHIP_HREF[label]) return pageHref(CHIP_HREF[label]);
+  if (parent && label === parent.name) return pageHref(parent.href);
   return undefined;
 }

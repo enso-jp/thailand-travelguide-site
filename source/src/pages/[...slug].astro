@@ -11,8 +11,8 @@ export function getStaticPaths() {
     }));
 }
 
-const slug = Astro.params.slug;
-const path = `/${slug ?? ''}`;
+const slug = (Astro.params.slug ?? '').replace(/\/+$/, '');
+const path = `/${slug}`;
 const page = getPage(path);
 if (!page) throw new Error(`Missing page ${path}`);
 ---

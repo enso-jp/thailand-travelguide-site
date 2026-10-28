@@ -10,6 +10,7 @@ import { assignExactPhotos, foodRowsFor } from '../lib/dish-photos';
 import { chipHref, formatInline } from '../lib/inline';
 import { UniquePhotos } from '../lib/photos';
 import { klookTours, type StayCity } from '../lib/partners';
+import { pageHref, routePath } from '../lib/site';
 
 interface Props {
   page: Page;
@@ -37,7 +38,7 @@ const city: StayCity = page.path.includes('chiang')
     <nav class="crumbs" aria-label="Breadcrumb">
       <ol>
         {page.crumbs.map((crumb) => (
-          <li><a href={crumb.href}>{crumb.name}</a></li>
+          <li><a href={pageHref(crumb.href)}>{crumb.name}</a></li>
         ))}
       </ol>
     </nav>
@@ -48,9 +49,9 @@ const city: StayCity = page.path.includes('chiang')
         <div class="chips">
           {page.chips.map((chip) => {
             const href = chipHref(chip, page.parentPill, page.path);
-            return href && href !== page.path ? <a class="pill" href={href}>{chip}</a> : <span class="chip peak">{chip}</span>;
+            return href && routePath(href) !== page.path ? <a class="pill" href={pageHref(href)}>{chip}</a> : <span class="chip peak">{chip}</span>;
           })}
-          <a class="pill" href="/thai-food">Thai food hub</a>
+          <a class="pill" href={pageHref('/thai-food')}>Thai food hub</a>
         </div>
       )
     }
@@ -87,14 +88,14 @@ const city: StayCity = page.path.includes('chiang')
               <article class:list={['food-row', { 'is-text': !row.photo }]} id={row.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}>
                 {
                   row.photo && (
-                    <a class="food-row-photo" href={row.href}>
+                    <a class="food-row-photo" href={pageHref(row.href)}>
                       <Photo src={row.photo} alt={`${row.title}, ${row.nameLocal}`} />
                     </a>
                   )
                 }
                 <div>
                   <h3>
-                    <a href={row.href}>
+                    <a href={pageHref(row.href)}>
                       {row.title} <span class="vi" lang="th">{row.nameLocal}</span>
                     </a>
                   </h3>
@@ -148,7 +149,7 @@ const city: StayCity = page.path.includes('chiang')
             <h2>More food guides</h2>
             <div class="food-grid">
               {portraits.map((item) => (
-                <a class="food-card" href={item.href}>
+                <a class="food-card" href={pageHref(item.href)}>
                   <span class="media"><Photo src={item.photo} alt={item.title} /></span>
                   <strong>{item.title}</strong>
                 </a>

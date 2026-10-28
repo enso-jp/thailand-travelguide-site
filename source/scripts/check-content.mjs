@@ -251,6 +251,32 @@ for (const token of ['11105102', '334225872', '588978', '793638']) {
   }
 }
 
+const astroConfig = readFileSync(join(ROOT, 'astro.config.mjs'), 'utf8');
+if (!astroConfig.includes("trailingSlash: 'always'")) {
+  errors.push('astro.config.mjs must set trailingSlash: always');
+}
+if (!astroConfig.includes('sitemap.xml')) {
+  errors.push('astro.config.mjs must copy sitemap-0.xml to sitemap.xml');
+}
+
+const siteSrc = readFileSync(join(ROOT, 'src/lib/site.ts'), 'utf8');
+if (!siteSrc.includes('export function pageHref') || !siteSrc.includes("endsWith('/')")) {
+  errors.push('src/lib/site.ts must export pageHref that adds trailing slashes');
+}
+
+const robots = readFileSync(join(ROOT, 'public/robots.txt'), 'utf8');
+if (!/Disallow:\s*\/search/.test(robots)) {
+  errors.push('public/robots.txt must Disallow /search');
+}
+if (!robots.includes('thailand-travelguide.com/sitemap.xml')) {
+  errors.push('public/robots.txt must point to sitemap.xml');
+}
+
+const baseSrc = readFileSync(join(ROOT, 'src/layouts/Base.astro'), 'utf8');
+if (!baseSrc.includes('seoTitle') || !baseSrc.includes('seoDescription')) {
+  errors.push('src/layouts/Base.astro must render seoTitle and seoDescription');
+}
+
 if (errors.length) {
   console.error(`check:content failed (${errors.length} error${errors.length === 1 ? '' : 's'})`);
   for (const err of errors) console.error(`  ${err}`);
