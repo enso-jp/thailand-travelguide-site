@@ -114,6 +114,12 @@ function bodyText(page) {
       ...(section.paragraphs || []),
       ...(section.table?.headers || []),
       ...(section.table?.rows || []).flat(),
+      ...(section.cards || []).flatMap((card) => [
+        card.kicker,
+        card.title,
+        card.lead || '',
+        ...(card.bullets || []),
+      ]),
     ]),
     ...(page.sections || []).flatMap((section) => section.bullets || []),
     ...(page.days || []).map((day) => `${day.title} ${day.body}`),
@@ -143,6 +149,9 @@ function internalHrefs(page) {
         hrefs.push({ kind: 'section', href: match[1] });
       }
     });
+    for (const card of section.cards || []) {
+      if (card.href) hrefs.push({ kind: 'section', href: card.href });
+    }
   }
   return hrefs;
 }
@@ -317,6 +326,12 @@ for (const page of pages) {
       ...(section.bullets || []),
       ...(section.table?.headers || []),
       ...(section.table?.rows || []).flat(),
+      ...(section.cards || []).flatMap((card) => [
+        card.kicker,
+        card.title,
+        card.lead,
+        ...(card.bullets || []),
+      ]),
     ]),
     ...(page.portraits || []).map((item) => item.title),
     ...(page.crumbs || []).map((crumb) => crumb.name),
