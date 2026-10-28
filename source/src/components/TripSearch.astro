@@ -1,5 +1,5 @@
 ---
-import { stayLink, klookTours, transferLink, trainLink, type StayCity } from '../lib/partners';
+import { tripSearchWidgetUrl, klookTours, transferLink, trainLink, type StayCity } from '../lib/partners';
 
 interface Props {
   variant?: 'home' | 'destination' | 'food';
@@ -8,22 +8,94 @@ interface Props {
 }
 
 const { variant = 'destination', city = 'bangkok', placeName = 'Thailand' } = Astro.props;
-const stay = stayLink(city);
+const widgetHref = tripSearchWidgetUrl(variant === 'home' ? 'Homepage' : 'Destination Page');
 const tours = klookTours(`${placeName} tours`);
-const transfer = transferLink(city === 'phuket' ? 'HKT' : city === 'chiang-mai' ? 'CNX' : city === 'koh-samui' ? 'USM' : city === 'krabi' ? 'KBV' : 'BKK');
+const transfer = transferLink(
+  city === 'phuket'
+    ? 'HKT'
+    : city === 'chiang-mai'
+      ? 'CNX'
+      : city === 'koh-samui'
+        ? 'USM'
+        : city === 'krabi'
+          ? 'KBV'
+          : 'BKK',
+);
 const trains = trainLink('Bangkok', placeName);
 ---
 
-<div class:list={['trip-cta', { 'trip-cta-home': variant === 'home' }]}>
-  <p class="trip-kicker">Trip.com</p>
+<a
+  class="trip-cta"
+  href={widgetHref}
+  rel="sponsored noopener noreferrer"
+  target="_blank"
+  data-partner="stay"
+>
+  <span class="trip-cta-kicker">Trip.com</span>
   <strong>Search hotels</strong>
-  <p>Compare rooms and rates for your dates. We may earn a commission.</p>
-  <a class="aff-btn" href={stay} rel="sponsored noopener" target="_blank">Search on Trip.com</a>
-  <p class="trip-more">
-    <a href={tours} rel="sponsored noopener" target="_blank">Klook tours</a>
-    ·
-    <a href={transfer} rel="sponsored noopener" target="_blank">Airport car</a>
-    ·
-    <a href={trains} rel="sponsored noopener" target="_blank">Trains</a>
-  </p>
-</div>
+  <span class="trip-cta-line">Compare rooms and rates for your dates. We may earn a commission.</span>
+  <span class="trip-cta-btn">Search on Trip.com</span>
+</a>
+<p class="trip-more">
+  <a href={tours} rel="sponsored noopener" target="_blank">Klook tours</a>
+  ·
+  <a href={transfer} rel="sponsored noopener" target="_blank">Airport car</a>
+  ·
+  <a href={trains} rel="sponsored noopener" target="_blank">Trains</a>
+</p>
+
+<style>
+  .trip-cta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
+    width: 100%;
+    max-width: 26rem;
+    margin: 0.55rem auto 0;
+    padding: 1rem 1rem 1.05rem;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #fff;
+    color: inherit;
+    text-decoration: none;
+    box-shadow: 0 8px 22px rgba(28, 25, 21, 0.05);
+  }
+  .trip-cta:hover {
+    border-color: var(--lacquer);
+  }
+  .trip-cta-kicker {
+    color: var(--lacquer);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .trip-cta strong {
+    color: var(--ink);
+    font-size: 1.15rem;
+    line-height: 1.25;
+  }
+  .trip-cta-line {
+    color: var(--muted);
+    font-size: 0.92rem;
+    line-height: 1.4;
+  }
+  .trip-cta-btn {
+    display: inline-block;
+    margin-top: 0.45rem;
+    background: var(--lacquer);
+    color: #fff;
+    border-radius: 999px;
+    padding: 0.55rem 0.95rem;
+    font-size: 0.92rem;
+    font-weight: 700;
+  }
+  .trip-cta:hover .trip-cta-btn {
+    color: #fff;
+  }
+  .trip-more {
+    margin: 0.55rem 0 0;
+    font-size: 0.88rem;
+  }
+</style>
