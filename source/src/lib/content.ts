@@ -101,7 +101,7 @@ const rawPages: Page[] = [
     path: "/",
     title: "Thailand Travel Guide: destinations, monsoon notes, and how to get there",
     description: "Plan a first trip to Thailand: a Bangkok landing, then a north or south fork. This guide covers seasons, trains, ferries, and districts. Facts first, not a pitch.",
-    lede: "Start with Bangkok, then pick a north or south fork. The monsoon flips: Andaman is easier November to April, the Gulf is easier January to September.",
+    lede: "River temples and late-night street food sit one Grab apart in Bangkok. Land there first, then fork north or south with the monsoon: Andaman November to April, Gulf January to September.",
     schema: "Article",
     crumbs: [
       {
@@ -213,7 +213,7 @@ const rawPages: Page[] = [
     path: "/destinations",
     title: "Destinations in Thailand",
     description: "Pick one landing city, then a north hub or one south coast. Bangkok, Chiang Mai, Andaman, Gulf, Trat, and the north corridor.",
-    lede: "Pick a city first. Bangkok is the usual landing. Chiang Mai is the north hub. Phuket, Krabi, Lanta, Lipe, and Khao Lak share the Andaman. Samui, Phangan, and Tao sit on the Lower Gulf.",
+    lede: "Bangkok is the usual landing city. Chiang Mai holds the north. Phuket, Krabi, Lanta, Lipe, and Khao Lak share the Andaman. Samui, Phangan, and Tao sit on the Lower Gulf.",
     schema: "Article",
     crumbs: [
       {
@@ -547,7 +547,7 @@ const rawPages: Page[] = [
     path: "/plan",
     title: "Plan a trip to Thailand",
     description: "The decisions that lock a first trip: season, visas and TDAC, trains, eSIM, money, and how you move in Bangkok.",
-    lede: "Start with season and visas. Then lock transport, a SIM, and cash. The pages below are the decisions that lock a first trip.",
+    lede: "Thailand runs two separate island monsoon calendars. Lock the coast before the visa and the SIM. Andaman is the winter sea. The Gulf is the summer sea. Then book transport and cash.",
     schema: "Article",
     crumbs: [
       {
@@ -625,7 +625,7 @@ const rawPages: Page[] = [
     path: "/get-there",
     title: "Get there: Thailand routes",
     description: "How to move between Bangkok, the islands, Khao Sok, the north, Ayutthaya, and Kanchanaburi. Fly when the day matters. Sleep on the Chiang Mai train. Use a ferry only on a morning sea.",
-    lede: "These pages are the useful hops. Fly when the day matters. Take a sleeper when you want the ride. Use a ferry only on a morning sea.",
+    lede: "The useful hops are the ones that save a day. Fly when the clock matters. Take the Chiang Mai sleeper when you want the ride. Use a ferry only on a morning sea.",
     schema: "Article",
     crumbs: [
       {
@@ -1982,7 +1982,7 @@ const rawPages: Page[] = [
     path: "/itineraries/south-islands-10-days",
     title: "South islands in 10 days",
     description: "Ten days on one sea. Andaman (Phuket, Krabi, Khao Sok) November to April. Gulf (Samui, Phangan, Tao) January to September.",
-    lede: "Pick a sea. The monsoon flip is the whole plan. Do not fly Phuket to Samui to see both on a first south trip.",
+    lede: "Ten south days stay on one sea. The monsoon flip is the plan: Andaman from November to April, Gulf from January to September. Do not fly Phuket to Samui on a first south trip.",
     schema: "Article",
     crumbs: [
       {
@@ -2331,7 +2331,7 @@ const rawPages: Page[] = [
     path: "/plan/grab-and-bts",
     title: "Grab, Bolt, BTS, MRT, and ARL",
     description: "How to move in Bangkok: tap the BTS and MRT, ride the Airport Rail Link, and use Grab or Bolt for the last stretch.",
-    lede: "Use a tap-in card or contactless on the BTS. Do not cash-negotiate a taxi from the airport. Grab and Bolt show a price. The BTS is faster than either from Asok to Siam at 18:00.",
+    lede: "Bangkok is the tap-in rail city: BTS and MRT take contactless cards, and Grab and Bolt show the fare. The BTS is faster than either from Asok to Siam at 18:00.",
     schema: "Article",
     crumbs: [
       {
