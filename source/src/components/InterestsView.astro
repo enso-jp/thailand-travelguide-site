@@ -1,5 +1,6 @@
 ---
 import Photo from './Photo.astro';
+import SisterNetwork from './SisterNetwork.astro';
 import type { Page } from '../lib/content';
 import { formatInline } from '../lib/inline';
 import { INTEREST_GROUPS } from '../lib/nav';
@@ -51,4 +52,5 @@ const groups = INTEREST_GROUPS.map((group) => ({
       </section>
     ))
   }
+  <SisterNetwork path={page.path} />
 </div>

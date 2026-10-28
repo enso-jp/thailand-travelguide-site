@@ -1,6 +1,7 @@
 ---
 import FoodTabs from './FoodTabs.astro';
 import Photo from './Photo.astro';
+import SisterNetwork from './SisterNetwork.astro';
 import type { Page } from '../lib/content';
 import { directoryGroups, FOOD_CITY_CARDS } from '../lib/food-catalog';
 import { assignExactPhotos, signatureDishesFor } from '../lib/dish-photos';
@@ -94,4 +95,5 @@ const groups = directoryGroups();
       ))
     }
   </section>
+  <SisterNetwork path={page.path} />
 </article>

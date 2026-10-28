@@ -16,37 +16,31 @@ function tripParams(extra: Record<string, string> = {}): string {
 type TripCityEntry = {
   id: number;
   name: string;
-  slug?: string;
+  slug: string;
   sub3: string;
-  url?: string;
 };
 
-/** Official Trip.com Thailand city IDs and deep-link tracking parameters. */
+/** Official Trip.com Thailand city IDs. IDs and slugs must match trip-cities.verified.json. */
 export const tripCities = {
   bangkok: { id: 359, name: 'Bangkok', slug: 'bangkok', sub3: 'D20710097' },
   phuket: { id: 725, name: 'Phuket', slug: 'phuket', sub3: 'D20710321' },
   'chiang-mai': { id: 623, name: 'Chiang Mai', slug: 'chiang-mai', sub3: 'D20710356' },
-  'koh-samui': { id: 1229, name: 'Koh Samui', slug: 'koh-samui', sub3: 'D20710356' },
-  krabi: {
-    id: 10129,
-    name: 'Krabi',
-    sub3: 'D20710356',
-    url: 'https://www.trip.com/hotels/list?provinceId=10129&countryId=4&destName=Krabi%20Province%2C%20Thailand&searchWord=Krabi%20Province&searchType=P&optionId=10129&searchValue=39%7C10129*39*10129&Allianceid=11105102&SID=334225872&trip_sub1=Krabi&trip_sub3=D20710356',
-  },
-  pattaya: { id: 622, name: 'Pattaya', slug: 'pattaya', sub3: 'D20710356' },
-  'hua-hin': { id: 3759, name: 'Hua Hin', slug: 'hua-hin', sub3: 'D20710356' },
-  'khao-lak': { id: 1075, name: 'Khao Lak', sub3: 'D20710356' },
-  'koh-phangan': { id: 1074, name: 'Koh Phangan', sub3: 'D20710356' },
-  'koh-tao': { id: 1215, name: 'Koh Tao', sub3: 'D20710356' },
-  ayutthaya: { id: 724, name: 'Ayutthaya', sub3: 'D20710356' },
-  'koh-lanta': { id: 90741, name: 'Koh Lanta', sub3: 'D20710356' },
-  'koh-lipe': { id: 36062, name: 'Koh Lipe', sub3: 'D20710356' },
-  'koh-chang': { id: 3764, name: 'Koh Chang', sub3: 'D20710356' },
-  'koh-kood': { id: 62195, name: 'Koh Kood', sub3: 'D20710356' },
-  'chiang-rai': { id: 647, name: 'Chiang Rai', sub3: 'D20710356' },
-  sukhothai: { id: 6045, name: 'Sukhothai', sub3: 'D20710356' },
-  kanchanaburi: { id: 36027, name: 'Kanchanaburi', sub3: 'D20710356' },
-  pai: { id: 35981, name: 'Pai', sub3: 'D20710356' },
+  'koh-samui': { id: 1229, name: 'Koh Samui', slug: 'koh-samui', sub3: 'D20710097' },
+  krabi: { id: 1405, name: 'Krabi', slug: 'krabi', sub3: 'D20710321' },
+  pattaya: { id: 622, name: 'Pattaya', slug: 'pattaya', sub3: 'D20710097' },
+  'hua-hin': { id: 3759, name: 'Hua Hin', slug: 'hua-hin', sub3: 'D20710097' },
+  'khao-lak': { id: 4106, name: 'Khao Lak', slug: 'khao-lak', sub3: 'D20710321' },
+  'koh-phangan': { id: 36057, name: 'Koh Phangan', slug: 'koh-phangan', sub3: 'D20710097' },
+  'koh-tao': { id: 19957, name: 'Koh Tao', slug: 'koh-tao', sub3: 'D20710097' },
+  ayutthaya: { id: 36030, name: 'Ayutthaya', slug: 'phra-nakhon-si-ayutthaya', sub3: 'D20710097' },
+  'koh-lanta': { id: 90741, name: 'Koh Lanta', slug: 'ko-lanta', sub3: 'D20710321' },
+  'koh-lipe': { id: 36062, name: 'Koh Lipe', slug: 'ko-lipe', sub3: 'D20710321' },
+  'koh-chang': { id: 3764, name: 'Koh Chang', slug: 'koh-chang', sub3: 'D20710097' },
+  'koh-kood': { id: 62195, name: 'Koh Kood', slug: 'koh-kood', sub3: 'D20710097' },
+  'chiang-rai': { id: 647, name: 'Chiang Rai', slug: 'chiang-rai', sub3: 'D20710356' },
+  sukhothai: { id: 6045, name: 'Sukhothai', slug: 'sukhothai', sub3: 'D20710356' },
+  kanchanaburi: { id: 36027, name: 'Kanchanaburi', slug: 'kanchanaburi', sub3: 'D20710097' },
+  pai: { id: 35981, name: 'Pai', slug: 'pai', sub3: 'D20710356' },
 } as const satisfies Record<string, TripCityEntry>;
 
 export type StayCity = keyof typeof tripCities;
@@ -101,22 +95,23 @@ export function tripSearchWidgetUrl(sub1 = 'Destination Page'): string {
   return `https://www.trip.com/partners/ad/${TRIP_WIDGET_ID}?Allianceid=${TRIP_ALLIANCE}&SID=${TRIP_SID}&trip_sub1=${encodeURIComponent(sub1)}`;
 }
 
+function hotelListPath(row: TripCityEntry): string {
+  return `https://www.trip.com/hotels/${row.slug}-hotels-list-${row.id}/`;
+}
+
 export function stayLink(city: StayCity, extra: Record<string, string> = {}): string {
   const row: TripCityEntry = tripCities[city];
-  if (row.url && Object.keys(extra).length === 0) {
-    return row.url;
-  }
-  const merged = { trip_sub1: row.name, trip_sub3: row.sub3, ...extra };
-  if (row.slug) {
-    return `https://www.trip.com/hotels/${row.slug}-hotels-list-${row.id}/?${tripParams(merged)}`;
-  }
-  return `https://www.trip.com/hotels/list?city=${row.id}&${tripParams(merged)}`;
+  return `${hotelListPath(row)}?${tripParams({ trip_sub1: row.name, trip_sub3: row.sub3, ...extra })}`;
+}
+
+export function tripHotelsUrl(city: StayCity, sub1?: string): string {
+  return stayLink(city, sub1 ? { trip_sub1: sub1 } : {});
 }
 
 export function stayAreaLink(area: StayArea, extra: Record<string, string> = {}): string {
   const row = tripAreas[area];
   const city: TripCityEntry = tripCities[row.city as StayCity];
-  return `https://www.trip.com/hotels/list?city=${city.id}&keyword=${encodeURIComponent(row.keyword)}&${tripParams({
+  return `${hotelListPath(city)}?keyword=${encodeURIComponent(row.keyword)}&${tripParams({
     trip_sub1: row.keyword,
     trip_sub3: city.sub3,
     ...extra,
@@ -125,10 +120,10 @@ export function stayAreaLink(area: StayArea, extra: Record<string, string> = {})
 
 export function hotelSearchLink(query: string, city?: StayCity): string {
   const entry: TripCityEntry | undefined = city ? tripCities[city] : undefined;
-  const cityPart = entry ? `city=${entry.id}&` : '';
-  return `https://www.trip.com/hotels/list?${cityPart}keyword=${encodeURIComponent(query)}&${tripParams({
+  const base = entry ? hotelListPath(entry) : 'https://www.trip.com/hotels/list';
+  return `${base}?keyword=${encodeURIComponent(query)}&${tripParams({
     trip_sub1: query,
-    trip_sub3: entry ? entry.sub3 : 'D20710356',
+    trip_sub3: entry ? entry.sub3 : 'D20710097',
   })}`;
 }
 

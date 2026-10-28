@@ -4,6 +4,7 @@ import { site, absUrl } from '../lib/site';
 import { jsonLdFor } from '../lib/jsonld';
 import type { Page } from '../lib/content';
 import { NAV_LINKS, NAV_SLOTS } from '../lib/nav';
+import { sisterHeaderUrlForPath } from '../lib/sister-network';
 
 interface Props {
   page: Page;
@@ -13,6 +14,7 @@ const { page } = Astro.props;
 const url = absUrl(page.path);
 const image = page.photo ? absUrl(page.photo) : absUrl('/photos/bangkok.jpg');
 const blocks = jsonLdFor(page);
+const sisterHref = sisterHeaderUrlForPath(page.path);
 ---
 
 <!doctype html>
@@ -79,7 +81,19 @@ const blocks = jsonLdFor(page);
     <a class="skip" href="#main">Skip to content</a>
     <header class="topbar">
       <div class="wrap bar">
-        <a class="wordmark" href="/">Thailand <span>Guide</span></a>
+        <div class="brand-cluster">
+          <a class="wordmark" href="/">Thailand <span>Guide</span></a>
+          <div class="network-switch" aria-label="Southeast Asia TravelGuide Network">
+            <span class="net-pill is-active" aria-current="true">
+              <i class="net-mark net-mark-th" aria-hidden="true">T</i>
+              <span>Thailand</span>
+            </span>
+            <a class="net-pill" href={sisterHref} target="_blank" rel="noopener" title="Switch to Vietnam TravelGuide">
+              <i class="net-mark net-mark-vn" aria-hidden="true">V</i>
+              <span>Vietnam</span>
+            </a>
+          </div>
+        </div>
         <nav class="desk-nav" aria-label="Sections">
           {
             NAV_SLOTS.map((slot) => (
@@ -131,6 +145,9 @@ const blocks = jsonLdFor(page);
         {NAV_SLOTS.map((slot) => <a href={slot.href}>{slot.label}</a>)}
         {NAV_LINKS.map((link) => <a href={link.href}>{link.label}</a>)}
         <a href="/get-there">Get there</a>
+        <a class="phone-net-link" href={sisterHref} target="_blank" rel="noopener">
+          <i class="net-mark net-mark-vn" aria-hidden="true">V</i> Vietnam TravelGuide →
+        </a>
       </div>
       <div id="site-search" class="search-pop" hidden>
         <form class="search-form wrap" action="/search" role="search">
@@ -164,6 +181,20 @@ const blocks = jsonLdFor(page);
           <a href="/thai-food">Food</a>
           <a href="/itineraries">Itineraries</a>
           <a href="/interests">Interests</a>
+        </div>
+        <div class="footer-col footer-sister">
+          <span class="footer-sister-head">
+            <i class="net-mark net-mark-vn" aria-hidden="true">V</i> Vietnam TravelGuide
+          </span>
+          <a href="https://vietnam-travelguide.com/" target="_blank" rel="noopener">Vietnam TravelGuide Home</a>
+          <a href="https://vietnam-travelguide.com/ho-chi-minh-city" target="_blank" rel="noopener">Ho Chi Minh City</a>
+          <a href="https://vietnam-travelguide.com/hanoi" target="_blank" rel="noopener">Hanoi & Old Quarter</a>
+          <a href="https://vietnam-travelguide.com/da-nang" target="_blank" rel="noopener">Da Nang & My Khe</a>
+          <a href="https://vietnam-travelguide.com/phu-quoc" target="_blank" rel="noopener">Phu Quoc Island</a>
+          <a href="https://vietnam-travelguide.com/hoi-an" target="_blank" rel="noopener">Hoi An Ancient Town</a>
+          <a href="https://vietnam-travelguide.com/interests/resort-living" target="_blank" rel="noopener">Vietnam Luxury Resorts</a>
+          <a href="https://vietnam-travelguide.com/interests/nightlife" target="_blank" rel="noopener">Vietnam Nightlife</a>
+          <a href="https://vietnam-travelguide.com/food" target="_blank" rel="noopener">Vietnamese Food Guide</a>
         </div>
         <div class="footer-col">
           <span>Site</span>

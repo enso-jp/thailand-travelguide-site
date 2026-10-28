@@ -1,0 +1,37 @@
+---
+import { SISTER_CROSS_BORDER_ROUTES } from '../lib/sister-network';
+---
+
+<section class="place-section home-section sister-routes" id="vietnam-routes" aria-label="Combine Thailand and Vietnam routes">
+  <div class="sister-head">
+    <span class="sister-badge">
+      <i class="net-mark net-mark-vn" aria-hidden="true">V</i>
+      Two-Country Trip Planning
+    </span>
+    <h2>Combine Thailand & Vietnam: Nonstop Flights & 2-Country Routes</h2>
+    <p class="sister-lead">
+      Bangkok and Chiang Mai sit under two hours nonstop from Hanoi, Ho Chi Minh City, and Da Nang. Pair your Thailand itinerary with our sister guide <a href="https://vietnam-travelguide.com/" target="_blank" rel="noopener">Vietnam TravelGuide</a>.
+    </p>
+  </div>
+  <div class="sister-route-grid">
+    {
+      SISTER_CROSS_BORDER_ROUTES.map((route) => (
+        <article class="sister-route-card">
+          <span class="sister-kicker">{route.kicker}</span>
+          <h3>{route.title}</h3>
+          <p>{route.summary}</p>
+          <div class="sister-route-links">
+            {route.links.map((link) => (
+              <a class="sister-chip" href={link.href} target="_blank" rel="noopener">
+                {link.label}
+              </a>
+            ))}
+          </div>
+          <a class="sister-flight-btn" href={route.flightHref} target="_blank" rel="sponsored noopener noreferrer">
+            {route.flightLabel}
+          </a>
+        </article>
+      ))
+    }
+  </div>
+</section>

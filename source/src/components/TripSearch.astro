@@ -1,5 +1,5 @@
 ---
-import { tripSearchWidgetUrl, klookTours, transferLink, trainLink, type StayCity } from '../lib/partners';
+import { tripCities, stayLink, klookTours, transferLink, trainLink, type StayCity } from '../lib/partners';
 
 interface Props {
   variant?: 'home' | 'destination' | 'food';
@@ -8,7 +8,15 @@ interface Props {
 }
 
 const { variant = 'destination', city = 'bangkok', placeName = 'Thailand' } = Astro.props;
-const widgetHref = tripSearchWidgetUrl(variant === 'home' ? 'Homepage' : 'Destination Page');
+
+const cityOptions = (Object.keys(tripCities) as StayCity[]).map((id) => ({
+  id,
+  label: tripCities[id].name,
+  stay: stayLink(id, { trip_sub1: `${tripCities[id].name} Search Box` }),
+}));
+
+const linksMap = Object.fromEntries(cityOptions.map((c) => [c.id, c.stay]));
+
 const tours = klookTours(`${placeName} tours`);
 const transfer = transferLink(
   city === 'phuket'
@@ -24,18 +32,45 @@ const transfer = transferLink(
 const trains = trainLink('Bangkok', placeName);
 ---
 
-<a
-  class="trip-cta"
-  href={widgetHref}
-  rel="sponsored noopener noreferrer"
-  target="_blank"
-  data-partner="stay"
->
+<div class:list={['trip-cta', `trip-cta-${variant}`]} data-partner="stay" data-trip-box>
   <span class="trip-cta-kicker">Trip.com</span>
-  <strong>Search hotels</strong>
-  <span class="trip-cta-line">Compare rooms and rates for your dates. We may earn a commission.</span>
-  <span class="trip-cta-btn">Search on Trip.com</span>
-</a>
+  <form class="trip-search-form" data-trip-search-form>
+    <label>
+      Destination
+      <select name="city" data-trip-city>
+        {
+          cityOptions.map((opt) => (
+            <option value={opt.id} selected={opt.id === city}>
+              {opt.label}
+            </option>
+          ))
+        }
+      </select>
+    </label>
+    <div class="trip-search-dates">
+      <label>
+        Check-in
+        <input type="date" name="checkin" data-trip-in required />
+      </label>
+      <label>
+        Check-out
+        <input type="date" name="checkout" data-trip-out required />
+      </label>
+    </div>
+    <label>
+      Guests
+      <select name="guests" data-trip-guests>
+        <option value="2-1" selected>2 adults, 1 room</option>
+        <option value="1-1">1 adult, 1 room</option>
+        <option value="3-1">3 adults, 1 room</option>
+        <option value="4-2">4 adults, 2 rooms</option>
+      </select>
+    </label>
+    <button type="submit" class="trip-cta-btn">Search hotels</button>
+    <span class="trip-cta-sub">Compare free-cancellation rooms and nightly rates for your dates.</span>
+  </form>
+  <script type="application/json" data-trip-links set:html={JSON.stringify(linksMap)} />
+</div>
 <p class="trip-more">
   <a href={tours} rel="sponsored noopener" target="_blank">Klook tours</a>
   ·
@@ -43,59 +78,3 @@ const trains = trainLink('Bangkok', placeName);
   ·
   <a href={trains} rel="sponsored noopener" target="_blank">Trains</a>
 </p>
-
-<style>
-  .trip-cta {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.3rem;
-    width: 100%;
-    max-width: 26rem;
-    margin: 0.55rem auto 0;
-    padding: 1rem 1rem 1.05rem;
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    background: #fff;
-    color: inherit;
-    text-decoration: none;
-    box-shadow: 0 8px 22px rgba(28, 25, 21, 0.05);
-  }
-  .trip-cta:hover {
-    border-color: var(--lacquer);
-  }
-  .trip-cta-kicker {
-    color: var(--lacquer);
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-  .trip-cta strong {
-    color: var(--ink);
-    font-size: 1.15rem;
-    line-height: 1.25;
-  }
-  .trip-cta-line {
-    color: var(--muted);
-    font-size: 0.92rem;
-    line-height: 1.4;
-  }
-  .trip-cta-btn {
-    display: inline-block;
-    margin-top: 0.45rem;
-    background: var(--lacquer);
-    color: #fff;
-    border-radius: 999px;
-    padding: 0.55rem 0.95rem;
-    font-size: 0.92rem;
-    font-weight: 700;
-  }
-  .trip-cta:hover .trip-cta-btn {
-    color: #fff;
-  }
-  .trip-more {
-    margin: 0.55rem 0 0;
-    font-size: 0.88rem;
-  }
-</style>

@@ -9,6 +9,54 @@ type SearchItem = {
   text?: string;
 };
 
+function fmtDate(d: Date): string {
+  const y = d.getFullYear();
+  const m = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${y}-${m}-${day}`;
+}
+
+function addDays(base: Date, days: number): Date {
+  const d = new Date(base);
+  d.setDate(d.getDate() + days);
+  return d;
+}
+
+function wireDatePair(inInput: HTMLInputElement | null, outInput: HTMLInputElement | null) {
+  if (!inInput || !outInput) return;
+  const today = new Date();
+  const tomorrow = addDays(today, 1);
+  const checkout = addDays(today, 4);
+  inInput.min = fmtDate(today);
+  outInput.min = fmtDate(tomorrow);
+  if (!inInput.value) inInput.value = fmtDate(tomorrow);
+  if (!outInput.value) outInput.value = fmtDate(checkout);
+  inInput.addEventListener('change', () => {
+    if (!inInput.value) return;
+    const picked = new Date(`${inInput.value}T00:00:00`);
+    const minOut = addDays(picked, 1);
+    const minOutStr = fmtDate(minOut);
+    outInput.min = minOutStr;
+    if (!outInput.value || outInput.value <= inInput.value) {
+      outInput.value = fmtDate(addDays(picked, 3));
+    }
+  });
+}
+
+function appendStayQuery(baseHref: string, checkin?: string, checkout?: string, guests = '2-1'): string {
+  try {
+    const url = new URL(baseHref);
+    if (checkin) url.searchParams.set('checkin', checkin);
+    if (checkout) url.searchParams.set('checkout', checkout);
+    const [adults, rooms] = guests.split('-');
+    if (adults) url.searchParams.set('adult', adults);
+    if (rooms) url.searchParams.set('crn', rooms);
+    return url.toString();
+  } catch {
+    return baseHref;
+  }
+}
+
 function ready(fn: () => void) {
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
   else fn();
@@ -201,10 +249,14 @@ ready(() => {
     });
   });
 
-  const book = document.querySelector<HTMLElement>('[data-book]');
-  if (book) {
+  document.querySelectorAll<HTMLElement>('[data-book]').forEach((book) => {
     const json = book.querySelector<HTMLScriptElement>('[data-book-links]');
     const links = json ? (JSON.parse(json.textContent || '{}') as Record<string, Record<string, string>>) : {};
+    const inInput = book.querySelector<HTMLInputElement>('[data-book-in]');
+    const outInput = book.querySelector<HTMLInputElement>('[data-book-out]');
+    const goBtn = book.querySelector<HTMLButtonElement>('[data-book-go]');
+    wireDatePair(inInput, outInput);
+
     let tab = 'stay';
     book.querySelectorAll<HTMLButtonElement>('[data-book-tab]').forEach((btn) => {
       btn.addEventListener('click', () => {
@@ -212,17 +264,45 @@ ready(() => {
         book.querySelectorAll('[data-book-tab]').forEach((other) => {
           other.setAttribute('aria-selected', String(other === btn));
         });
+        if (goBtn && btn.dataset.bookSubmit) {
+          goBtn.textContent = btn.dataset.bookSubmit;
+        }
       });
     });
     book.querySelector<HTMLFormElement>('[data-book-form]')?.addEventListener('submit', (event) => {
       event.preventDefault();
       const city = book.querySelector<HTMLSelectElement>('[data-book-city]')?.value || 'bangkok';
       const pack = links[city] || links.bangkok;
+      if (!pack) return;
       const href =
-        tab === 'activities' ? pack.tours : tab === 'transfers' ? pack.transfer : tab === 'trains' ? pack.trains : pack.stay;
-      window.open(href, '_blank', 'noopener');
+        tab === 'activities'
+          ? pack.tours
+          : tab === 'transfers'
+            ? pack.transfer
+            : tab === 'trains'
+              ? pack.trains
+              : appendStayQuery(pack.stay, inInput?.value, outInput?.value, '2-1');
+      window.open(href, '_blank', 'noopener,noreferrer');
     });
-  }
+  });
+
+  document.querySelectorAll<HTMLElement>('[data-trip-box]').forEach((box) => {
+    const json = box.querySelector<HTMLScriptElement>('[data-trip-links]');
+    const links = json ? (JSON.parse(json.textContent || '{}') as Record<string, string>) : {};
+    const inInput = box.querySelector<HTMLInputElement>('[data-trip-in]');
+    const outInput = box.querySelector<HTMLInputElement>('[data-trip-out]');
+    wireDatePair(inInput, outInput);
+
+    box.querySelector<HTMLFormElement>('[data-trip-search-form]')?.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const city = box.querySelector<HTMLSelectElement>('[data-trip-city]')?.value || 'bangkok';
+      const guests = box.querySelector<HTMLSelectElement>('[data-trip-guests]')?.value || '2-1';
+      const base = links[city] || links.bangkok;
+      if (!base) return;
+      const href = appendStayQuery(base, inInput?.value, outInput?.value, guests);
+      window.open(href, '_blank', 'noopener,noreferrer');
+    });
+  });
 
   document.querySelectorAll<HTMLElement>('[data-carousel]').forEach((rail) => {
     const row = rail.querySelector<HTMLElement>('[data-carousel-row]');
