@@ -376,6 +376,12 @@ export const wave3Pages: Page[] = [
               'Charter',
               'The ferry has no useful fixed timetable. It leaves when the deck is full, roughly 06:00 to 22:00. Check on arrival.',
             ],
+            [
+              'Phi Phi Tonsai to Saladan',
+              'About 1.5 hours',
+              'Speedboat bench. Wet bags in the nose',
+              'Bundhaya and Andaman Wave Master run Phi Phi to Lanta in season, about November to April. Not a Krabi-origin boat. Check on arrival.',
+            ],
           ],
         },
       },
@@ -389,7 +395,7 @@ export const wave3Pages: Page[] = [
       },
     ],
     portraits: [
-      { title: 'Koh Lanta', href: '/koh-lanta', photo: '/photos/krabi.jpg' },
+      { title: 'Koh Lanta', href: '/koh-lanta', photo: '/photos/koh-lanta.jpg' },
       { title: 'Bangkok to Krabi', href: '/get-there/bangkok-to-krabi', photo: '/photos/krabi.jpg' },
       { title: 'Phuket to Krabi', href: '/get-there/phuket-to-krabi-phi-phi', photo: '/photos/phuket.jpg' },
       { title: 'Monsoon notes', href: '/plan/monsoon-and-burn-season', photo: '/photos/phuket.jpg' },

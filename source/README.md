@@ -6,7 +6,7 @@ Static Astro site for [thailand-travelguide.com](https://thailand-travelguide.co
 
 - `npm run check:content` validates required routes, affiliate IDs, and a hard ban on em dashes.
 - `npm run audit:content` loads all pages and checks leads, FactBars, filler, timings, hrefs, photos, and partner tokens.
-- `npm run build` writes the static site to `dist/`.
+- `npm run build` writes the static site to `dist/` (116 pages).
 
 ## Partners
 

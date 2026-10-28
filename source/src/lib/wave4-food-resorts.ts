@@ -33,17 +33,17 @@ export const wave4Pages: Page[] = [
       { label: 'Hours', value: 'Check on arrival; pots empty and lists change yearly' },
     ],
     chips: ['Street food', 'Bib Gourmand', 'Lanna', 'Baba-Nyonya', 'Night markets'],
-    photo: '/photos/bangkok.jpg',
+    photo: '/photos/thai-food.jpg',
     paragraphs: [
       'The Michelin Guide Thailand 2026 lists 137 Bib Gourmand rooms nationwide, including 44 in Bangkok and the surrounding provinces, 18 in Chiang Mai, and 19 in Phuket. Bib is the value badge, not a star. Jay Fai on Maha Chai is the one-star exception that still cooks like a street wok.',
       'Use the cluster pages. Do not stack a Jay Fai queue, a Chatuchak Saturday, and a Ratchada night market on the same calendar day. One serious meal and one market is enough.',
     ],
     portraits: [
-      { title: 'Bangkok street food', href: '/thai-food/bangkok-street-food', photo: '/photos/old-city.jpg' },
-      { title: 'Bangkok Bib Gourmand', href: '/thai-food/bangkok-bib-gourmand', photo: '/photos/sukhumvit.jpg' },
-      { title: 'Northern Lanna', href: '/thai-food/northern-lanna', photo: '/photos/northern.jpg' },
-      { title: 'South and Baba-Nyonya', href: '/thai-food/southern-and-baba-nyonya', photo: '/photos/phuket.jpg' },
-      { title: 'Night markets', href: '/thai-food/night-markets', photo: '/photos/nightlife.jpg' },
+      { title: 'Bangkok street food', href: '/thai-food/bangkok-street-food', photo: '/photos/thai-food-bangkok-street.jpg' },
+      { title: 'Bangkok Bib Gourmand', href: '/thai-food/bangkok-bib-gourmand', photo: '/photos/thai-food-bib.jpg' },
+      { title: 'Northern Lanna', href: '/thai-food/northern-lanna', photo: '/photos/thai-food-lanna.jpg' },
+      { title: 'South and Baba-Nyonya', href: '/thai-food/southern-and-baba-nyonya', photo: '/photos/thai-food-southern.jpg' },
+      { title: 'Night markets', href: '/thai-food/night-markets', photo: '/photos/thai-food-night-markets.jpg' },
     ],
     affiliates: [
       stay('Stay near the stalls', 'Old City and riverside', 'Sleep in Rattanakosin or Charoenkrung if the first meals are Jay Fai, K. Panich, and Wang Lang.', stayAreaLink('rattanakosin'), '/photos/old-city.jpg'),
@@ -79,7 +79,7 @@ export const wave4Pages: Page[] = [
       { label: 'Yaowarat', value: 'MRT Wat Mangkon; start after 18:00' },
     ],
     chips: ['Maha Chai', 'Wang Lang', 'Yaowarat'],
-    photo: '/photos/old-city.jpg',
+    photo: '/photos/thai-food-bangkok-street.jpg',
     geo: { lat: 13.7526, lon: 100.5048, containedIn: 'Bangkok' },
     paragraphs: [
       'Street food in Bangkok is still a soi, a wok, and a queue. The Michelin street-food filter for 2026 is short on purpose: Jay Fai, K. Panich, Bunloet in Pom Prap, Tang Sui Heng on Banthat Thong, Somsak Pu Ob on Charoen Rat, Charoen Saeng Silom, Mae Prapha Crispy Pancake in Phra Nakhon, and Fried Banana Rama 5 across the Nonthaburi line. Treat that list as a filter, not a dare to hit all eight.',
@@ -151,7 +151,7 @@ export const wave4Pages: Page[] = [
       { label: 'Pay', value: 'Many shops are cash only' },
     ],
     chips: ['Bib 2026', 'Branch matters', 'Lunch queues'],
-    photo: '/photos/sukhumvit.jpg',
+    photo: '/photos/thai-food-bib.jpg',
     paragraphs: [
       'Michelin published the 2026 Bib Gourmand list on 20 November 2025: 137 rooms in Thailand, 44 of them in Bangkok and the surrounding provinces. Four Bangkok-area names are new. The award moves. Recheck the current guide before you treat a 2024 blog as law.',
       'Branch names collide. Rung Rueang (Tang) is not the shop next door. Somsak Pu Ob Charoen Rat is not the Lat Ya branch. Pad Thai Fai Ta Lu is awarded at Dinso Road, not the Siam or Thong Lo copies.',
@@ -236,7 +236,7 @@ export const wave4Pages: Page[] = [
       { label: '2026 Bib', value: '18 Chiang Mai rooms, including three newcomers' },
     ],
     chips: ['Khao soi', 'Northern larb', 'Lunch clock'],
-    photo: '/photos/northern.jpg',
+    photo: '/photos/thai-food-lanna.jpg',
     geo: { lat: 18.796, lon: 98.981, containedIn: 'Chiang Mai' },
     paragraphs: [
       'Lanna cooking uses pork, herbs, and a slower heat than the northeast. Northern larb (larb Muan, larb Kua) is minced meat cooked with blood and spices, not the lime-and-toasted-rice Isan salad. Sai oua, nam prik noom, and gaeng hang lay belong on the same table. If a menu only offers som tam and sticky rice, you are in a tourist Isan room.',
@@ -317,7 +317,7 @@ export const wave4Pages: Page[] = [
       { label: 'Season', value: 'Town works all year; west-coast boats follow Nov-Apr' },
     ],
     chips: ['Gaeng som', 'Moo hong', 'Old Town'],
-    photo: '/photos/phuket.jpg',
+    photo: '/photos/thai-food-southern.jpg',
     geo: { lat: 7.885, lon: 98.388, containedIn: 'Phuket Town' },
     paragraphs: [
       'Baba-Nyonya (Peranakan) cooking in Phuket is Hokkien-Chinese technique in a Southern Thai pantry: dark soy, palm sugar, salted fish, and a long simmer. Moo hong, the braised pork belly, is the house dish. Gaeng som is the sour turmeric curry, here often with fish or pumpkin, sharper than a Bangkok gaeng som. Crab curry with wild betel and rice noodles is the shared plate.',
@@ -392,7 +392,7 @@ export const wave4Pages: Page[] = [
       { label: 'Last trains', value: 'BTS and MRT around midnight; Grab after that' },
     ],
     chips: ['Exit numbers', 'Ratchada', 'Walking streets'],
-    photo: '/photos/nightlife.jpg',
+    photo: '/photos/thai-food-night-markets.jpg',
     paragraphs: [
       'Hours below are the posted windows used in 2026. Operators shift them for rain, exams, and royal dates. "Check on arrival" means the Facebook page or the station sign that night, not a screenshot from 2022.',
       'Jodd Fairs on Ratchadaphisek is not Train Night Market Ratchada. They sit near the same MRT station and people still mix the names. Chatuchak is a weekend day market with a Friday wholesale night. Or Tor Kor is produce, not neon.',
@@ -911,7 +911,7 @@ export const wave4Pages: Page[] = [
         id: 'neighbourhood',
         title: 'How the pocket sits',
         paragraphs: [
-          'BTS Ari Exit 1 and Exit 3 feed the west sois. Exit numbers get relabelled; follow the signs for Soi Ari / Phaya Thai, then walk. Food here is neighbourhood Thai and cafes, not a Bib crawl. Pair a night with a separate lunch in the Old City. Do not eat three courses of western bistro and call it Bangkok.',
+          'BTS Ari Exit 1 and Exit 3 feed the west sois. Exit numbers get relabelled; follow the signs for Soi Ari / Phaya Thai, then walk. Food here is neighbourhood Thai and cafes, not an Isan district and not a Bib crawl. The well-known Isan rooms sit on Thonglor. Pair a night with a separate lunch in the Old City.',
           'Saphan Khwai is one stop north and a different, more local energy. South is Sanam Pao and the Phaya Thai shrine. Stop when the sois repeat. Thonglor is a BTS ride if someone wants a second neighbourhood; that is a new night, not a 01:00 idea.',
         ],
       },
