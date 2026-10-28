@@ -1,3 +1,4 @@
+
 /** Extra body paragraphs to push Wave 13 targets past 2,500 characters. */
 export const depthExtras: Record<string, string[]> = {
   '/phuket': [
@@ -223,3 +224,4 @@ export const depthExtras: Record<string, string[]> = {
     'This is not a crawl list. Pick one room. Two if the first closes. Capella and The Siam sit on [resort living](/interests/resort-living) if you want the river sleep. A 2026 late water is 20 to 40 THB at a 7-Eleven and 120 THB at the bar.',
   ],
 };
+

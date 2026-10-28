@@ -511,3 +511,4 @@ th, td {
   .footer-grid { grid-template-columns: 1fr; }
   .aff-row { grid-template-columns: 6.2rem minmax(0, 1fr); }
 }
+
