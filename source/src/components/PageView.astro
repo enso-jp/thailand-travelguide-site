@@ -1,0 +1,148 @@
+---
+import FactBar from './FactBar.astro';
+import PortraitRail from './PortraitRail.astro';
+import AffRow from './AffRow.astro';
+import FaqList from './FaqList.astro';
+import type { Page } from '../lib/content';
+
+interface Props {
+  page: Page;
+}
+
+const { page } = Astro.props;
+const tabs = page.tabs;
+---
+
+<article class="section wrap">
+  {
+    page.crumbs.length > 1 && (
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          {page.crumbs.map((crumb) => (
+            <li>
+              <a href={crumb.href}>{crumb.name}</a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+    )
+  }
+
+  <header>
+    <h1>{page.title}</h1>
+    <p class="lede">{page.lede}</p>
+    {
+      page.chips && page.chips.length > 0 && (
+        <div class="chips">
+          {page.chips.map((chip) => (
+            <span class="chip peak">{chip}</span>
+          ))}
+        </div>
+      )
+    }
+    {
+      page.photo && (
+        <div class="place-photo">
+          <img src={page.photo} alt={page.title} width="960" height="540" loading="eager" decoding="async" />
+        </div>
+      )
+    }
+    {page.photoCredit && <p class="note photo-credit">{page.photoCredit}</p>}
+  </header>
+
+  <FactBar facts={page.facts} />
+
+  {
+    tabs && tabs.length > 0 && (
+      <nav class="tabs" aria-label="Sections">
+        {tabs.map((tab) => (
+          <a href={tab.href} aria-current={tab.current ? 'page' : undefined}>
+            {tab.label}
+          </a>
+        ))}
+      </nav>
+    )
+  }
+
+  <div class="reading">
+    {page.paragraphs.map((p) => <p>{p}</p>)}
+  </div>
+
+  {
+    page.days && page.days.length > 0 && (
+      <section class="place-section" id="days">
+        <h2>Day by day</h2>
+        <div class="day-cards">
+          {page.days.map((day) => (
+            <article class="day-plan-card" id={`day-${day.n}`}>
+              <div class="media">
+                <img src={day.photo} alt="" width="960" height="400" loading="lazy" decoding="async" />
+                <span class="rank-badge">{day.n}</span>
+              </div>
+              <div class="jg-body">
+                <h2>{day.title}</h2>
+                <p>{day.body}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  {
+    page.sections?.map((section) => (
+      <section class="place-section" id={section.id}>
+        <h2>{section.title}</h2>
+        {section.paragraphs?.map((p) => <p>{p}</p>)}
+        {section.table && (
+          <table>
+            <thead>
+              <tr>
+                {section.table.headers.map((h) => (
+                  <th>{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {section.table.rows.map((row) => (
+                <tr>
+                  {row.map((cell) => (
+                    <td>{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </section>
+    ))
+  }
+
+  {
+    page.portraits && page.portraits.length > 0 && (
+      <section class="place-section" id="related">
+        <h2>Keep going</h2>
+        <PortraitRail label={page.title} items={page.portraits} />
+      </section>
+    )
+  }
+
+  {
+    page.affiliates && page.affiliates.length > 0 && (
+      <section class="place-section" id="book">
+        <h2>Book</h2>
+        <AffRow items={page.affiliates} />
+      </section>
+    )
+  }
+
+  {
+    page.faqs.length > 0 && (
+      <section class="place-section" id="questions">
+        <h2>Common questions</h2>
+        <FaqList items={page.faqs} />
+      </section>
+    )
+  }
+</article>
