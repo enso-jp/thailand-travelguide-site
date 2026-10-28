@@ -73,7 +73,7 @@ async function lookup(title) {
   const info = page.imageinfo[0];
   const meta = info.extmetadata || {};
   const license = (meta.LicenseShortName?.value || meta.UsageTerms?.value || '').replace(/<[^>]+>/g, '');
-  const artist = (meta.Artist?.value || 'Unknown').replace(/<[^>]+>/g, '').trim();
+  const artist = cleanAuthor(meta.Artist?.value || 'Unknown');
   const pageUrl = info.descriptionurl;
   return {
     thumb: info.thumburl || info.url,
@@ -95,6 +95,21 @@ async function search(query) {
   const res = await fetch(url, { headers: { 'User-Agent': UA } });
   const data = await res.json();
   return (data.query?.search || []).map((row) => row.title.replace(/^File:/, ''));
+}
+
+function cleanAuthor(raw) {
+  const text = String(raw || 'Unknown')
+    .replace(/<[^>]+>/g, ' ')
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  const takenBy = text.match(/taken by\s+([^.(]+)/i);
+  if (takenBy) return takenBy[1].trim();
+  const firstSentence = text.split(/[.!\n]/)[0].trim();
+  if (firstSentence && firstSentence.length <= 80 && !/feel free|สามารถ/i.test(firstSentence)) {
+    return firstSentence;
+  }
+  return (firstSentence || text).slice(0, 80).trim() || 'Unknown';
 }
 
 function licenseOk(license) {
@@ -159,7 +174,7 @@ for (const job of JOBS) {
   try {
     const bytes = await download(picked.thumb, dest);
     credits[job.key] = {
-      author: picked.artist.slice(0, 180),
+      author: cleanAuthor(picked.artist),
       license: picked.license,
       source: picked.pageUrl,
     };
