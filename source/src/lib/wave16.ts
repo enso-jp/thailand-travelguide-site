@@ -2228,6 +2228,39 @@ export function assignEditorialCardPhotos(page: Page): Page {
   return { ...page, sections };
 }
 
+function uniquifyMainPhotos(page: Page): Page {
+  const used = new Set<string>();
+  const take = (photo?: string) => {
+    if (!photo) return photo;
+    if (!used.has(photo)) {
+      used.add(photo);
+      return photo;
+    }
+    const nextPhoto = PHOTO_POOL.find((p) => !used.has(p));
+    if (nextPhoto) {
+      used.add(nextPhoto);
+      return nextPhoto;
+    }
+    return photo;
+  };
+  const photo = take(page.photo) || page.photo;
+  const days = page.days?.map((day) => ({ ...day, photo: take(day.photo) || day.photo }));
+  const portraits = page.portraits?.map((item) => ({ ...item, photo: take(item.photo) || item.photo }));
+  const sections = page.sections?.map((section) => ({
+    ...section,
+    cards: section.cards?.map((card) => ({ ...card, photo: take(card.photo) })),
+  }));
+  const affiliates = page.affiliates?.map((row) => ({ ...row, photo: take(row.photo) || row.photo }));
+  return {
+    ...page,
+    photo,
+    days,
+    portraits,
+    affiliates,
+    sections,
+  };
+}
+
 export function applyWave16Finish(page: Page): Page {
   let   next = stripBannedCopy(page);
   next = applyResortLivingHub(next);
@@ -2241,6 +2274,7 @@ export function applyWave16Finish(page: Page): Page {
     next = { ...next, portraits: uniquifyPortraits(next.portraits, next.photo) };
   }
   next = uniquifyAffiliates(next);
+  next = uniquifyMainPhotos(next);
   next = { ...next, photoCredit: photoCreditFor(next.photo) };
   return next;
 }

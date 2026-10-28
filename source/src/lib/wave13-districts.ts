@@ -14,7 +14,7 @@ export const wave13DistrictPages: Page[] = [
     path: '/bangkok/sukhumvit',
     title: 'Sukhumvit sois: Nana to Ekkamai',
     description: 'Soi-by-soi map of Bangkok\'s Sukhumvit BTS line: which exit to sleep on, what to skip at Nana, and which nightlife URL to open after dark.',
-    lede: 'Sukhumvit sois are known as the walk-from-the-gate puzzle. Use this page if you already know you will sleep on the BTS line and need the soi, not the hotel brand.',
+    lede: 'The Sukhumvit BTS line is the default first-stay strip from Nana to Ekkamai. This soi map is for planners who already picked the rail and need the exit, not the hotel brand.',
     schema: 'TouristDestination',
     crumbs: [
       { name: 'Destinations', href: '/destinations' },
@@ -74,7 +74,7 @@ export const wave13DistrictPages: Page[] = [
     path: '/bangkok/silom-sathon',
     title: 'Silom and Sathon park and rail',
     description: 'How to use Lumphini Park, Sala Daeng, and Saphan Taksin from Silom and Sathon: dawn walks, BTS and MRT exits, and the orange-flag river boat.',
-    lede: 'This page is known for the park-and-rail map, not hotel shopping. Come if you want Lumphini at dawn, the Sala Daeng interchange, and a boat from Saphan Taksin.',
+    lede: 'Silom and Sathon are the park-and-rail side of Bangkok. Come for Lumphini at dawn, the Sala Daeng interchange, and a boat from Saphan Taksin, not for hotel shopping.',
     schema: 'TouristDestination',
     crumbs: [
       { name: 'Destinations', href: '/destinations' },
@@ -124,7 +124,7 @@ export const wave13DistrictPages: Page[] = [
     path: '/bangkok/rattanakosin',
     title: 'Rattanakosin tickets: Grand Palace, Wat Pho, Wat Arun',
     description: '2026 Grand Palace, Wat Pho, and Wat Arun tickets, dress code, and the Tha Tien ferry. A morning circuit board, not a hotel guide.',
-    lede: 'Rattanakosin is known for the royal ticket circuit. Pay 500 THB at the Grand Palace and 300 THB at Wat Pho. Sleep notes live on the Old City stay page.',
+    lede: 'Rattanakosin is the royal ticket circuit: 500 THB at the Grand Palace and 300 THB at Wat Pho. Sleep notes live on the Old City stay page if the wats are the whole stay.',
     schema: 'TouristDestination',
     crumbs: [
       { name: 'Destinations', href: '/destinations' },
@@ -174,7 +174,7 @@ export const wave13DistrictPages: Page[] = [
     path: '/bangkok/chinatown-yaowarat',
     title: 'Yaowarat access and where to sleep',
     description: 'How to reach Bangkok Chinatown on MRT Wat Mangkon, where to sleep, and how to use one dinner walk without booking a hotel on Yaowarat Road.',
-    lede: 'Yaowarat is known for one night food walk under gold-shop signs. This page is the access and stay trade. Named stalls live on the Yaowarat food walk.',
+    lede: 'Yaowarat is one night food walk under gold-shop signs. This access note covers the MRT door and the stay trade. Named stalls live on the Yaowarat food walk.',
     schema: 'TouristDestination',
     crumbs: [
       { name: 'Destinations', href: '/destinations' },
