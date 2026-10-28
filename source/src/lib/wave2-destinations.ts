@@ -126,7 +126,7 @@ export const wave2Pages: Page[] = [
     photo: '/photos/koh-lanta.jpg',
     geo: { lat: 7.624, lon: 99.042, containedIn: 'Andaman Coast' },
     paragraphs: [
-      'Koh Lanta is a long west-facing island, known for space and a slower Andaman week. It is not a village around one bay. Boats from Krabi Town (Klong Jilad) and Ao Nang (Nopparat Thara) land at Saladan from about November to April. From May to October those boats thin out or stop. The road still works: van to the mainland Hua Hin pier (this is not the gulf resort), a short car ferry to Lanta Noi, then the bridge onto Lanta Yai.',
+      'Koh Lanta is a long west-facing island, known for space and a slower Andaman week. It is not a village around one bay. Boats from Krabi Town (Klong Jilad) and Ao Nang (Nopparat Thara) land at Saladan from about November to April and take about 2 to 2.5 hours. From May to October those boats thin out or stop. The road still works: van to the mainland Hua Hin pier (this is not the gulf resort), a short car ferry to Lanta Noi of about 15 minutes, then the bridge onto Lanta Yai.',
       'Pair Lanta with Krabi or Phuket, not with Samui. The Andaman monsoon is the rule here. Koh Rok and Koh Haa snorkel boats follow the same winter window. Many south-end resorts close in the wet months. Check that your hotel is actually open.',
     ],
     sections: [
@@ -236,9 +236,9 @@ export const wave2Pages: Page[] = [
       { title: 'When to go', href: '/plan/when-to-go', photo: '/photos/phuket.jpg' },
     ],
     affiliates: [
-      stay('Koh Lipe stays', 'Name the beach', 'Pattaya for logistics. Sunrise for the swim.', stayLink('koh-lipe'), '/photos/phuket.jpg'),
-      klook('Pak Bara boats', 'Rail and ferry', 'Van-plus-boat combos from Hat Yai beat a freelance pier scramble.', klookRailFerry('Koh Lipe ferry Pak Bara'), '/photos/phuket.jpg'),
-      klook('Snorkel days', 'Island hopping', 'Adang and the nearby islets. Morning only, and only in season.', klookIslandHopping('Koh Lipe'), '/photos/krabi.jpg'),
+      stay('Koh Lipe stays', 'Name the beach', 'Pattaya for logistics. Sunrise for the swim.', stayLink('koh-lipe'), '/photos/koh-lipe.jpg'),
+      klook('Pak Bara boats', 'Rail and ferry', 'Van-plus-boat combos from Hat Yai beat a freelance pier scramble.', klookRailFerry('Koh Lipe ferry Pak Bara'), '/photos/koh-lipe.jpg'),
+      klook('Snorkel days', 'Island hopping', 'Adang and the nearby islets. Morning only, and only in season.', klookIslandHopping('Koh Lipe'), '/photos/koh-lipe.jpg'),
     ],
     faqs: [
       {
@@ -390,11 +390,10 @@ export const wave2Pages: Page[] = [
       },
     ],
     portraits: [
+      { title: 'Similan and Surin', href: '/khao-lak/similan-and-surin-islands', photo: '/photos/khao-lak.jpg' },
       { title: 'Phuket', href: '/phuket', photo: '/photos/phuket.jpg' },
       { title: 'Khao Sok', href: '/khao-sok', photo: '/photos/khao-sok.jpg' },
       { title: 'Krabi', href: '/krabi', photo: '/photos/krabi.jpg' },
-      { title: 'When to go', href: '/plan/when-to-go', photo: '/photos/phuket.jpg' },
-      { title: 'Similan and Surin', href: '/khao-lak/similan-and-surin-islands', photo: '/photos/khao-lak.jpg' },
     ],
     affiliates: [
       stay('Khao Lak stays', 'Name the beach', 'Bang Niang or Nang Thong unless you want a quiet north cape.', stayLink('khao-lak'), '/photos/khao-lak.jpg'),
@@ -480,9 +479,9 @@ export const wave2Pages: Page[] = [
       { title: 'Northern corridor', href: '/destinations/northern-thailand', photo: '/photos/northern.jpg' },
     ],
     affiliates: [
-      stay('Pai stays', 'Town or river', 'Two nights if you rode 1095. One night if a van dropped you and you leave at dawn.', stayLink('pai'), '/photos/northern.jpg'),
+      stay('Pai stays', 'Town or river', 'Two nights if you rode 1095. One night if a van dropped you and you leave at dawn.', stayLink('pai'), '/photos/pai.jpg'),
       stay('Chiang Mai start', 'Old City or Nimman', 'Sleep here the night before the bends.', stayLink('chiang-mai'), '/photos/chiang-mai.jpg'),
-      klook('Pai day vans', 'Tours', 'A day trip is a long sit. Overnight is the better product.', klookTours('Pai Chiang Mai'), '/photos/northern.jpg'),
+      klook('Pai day vans', 'Tours', 'A day trip is a long sit. Overnight is the better product.', klookTours('Pai Chiang Mai'), '/photos/pai.jpg'),
     ],
     faqs: [
       {
@@ -561,8 +560,8 @@ export const wave2Pages: Page[] = [
       { title: 'Northern corridor', href: '/destinations/northern-thailand', photo: '/photos/northern.jpg' },
     ],
     affiliates: [
-      stay('Chiang Rai stays', 'Town first', 'Sleep in the city. Temple hotels are a coach dump.', stayLink('chiang-rai'), '/photos/northern.jpg'),
-      klook('White Temple vans', 'Tours', 'Useful from Chiang Mai only if you refuse to sleep here. Better as a local car.', klookTours('Chiang Rai White Temple'), '/photos/northern.jpg'),
+      stay('Chiang Rai stays', 'Town first', 'Sleep in the city. Temple hotels are a coach dump.', stayLink('chiang-rai'), '/photos/chiang-rai.jpg'),
+      klook('White Temple vans', 'Tours', 'Useful from Chiang Mai only if you refuse to sleep here. Better as a local car.', klookTours('Chiang Rai White Temple'), '/photos/chiang-rai.jpg'),
     ],
     faqs: [
       {
@@ -632,8 +631,8 @@ export const wave2Pages: Page[] = [
       { title: 'Northern corridor', href: '/destinations/northern-thailand', photo: '/photos/northern.jpg' },
     ],
     affiliates: [
-      stay('Sukhothai stays', 'Old town first', 'Filter for Historical Park or Muang Kao.', stayLink('sukhothai'), '/photos/ayutthaya.jpg'),
-      klook('Park and bicycle tours', 'Tours', 'A guide helps if you skip the reading. A bicycle is still the right machine.', klookTours('Sukhothai Historical Park'), '/photos/ayutthaya.jpg'),
+      stay('Sukhothai stays', 'Old town first', 'Filter for Historical Park or Muang Kao.', stayLink('sukhothai'), '/photos/sukhothai.jpg'),
+      klook('Park and bicycle tours', 'Tours', 'A guide helps if you skip the reading. A bicycle is still the right machine.', klookTours('Sukhothai Historical Park'), '/photos/sukhothai.jpg'),
     ],
     faqs: [
       {
@@ -653,7 +652,7 @@ export const wave2Pages: Page[] = [
   {
     path: '/ayutthaya',
     title: 'Ayutthaya',
-    description: 'Former Siamese capital: UNESCO brick temples an hour by train from Bangkok.',
+    description: 'UNESCO brick temples an hour by train from Bangkok. A ruin day, or a dawn stay if you want empty prangs.',
     lede: 'Ayutthaya is the ruin day from Bangkok. Take the train from Krung Thep Aphiwat, move by bicycle or tuk-tuk, and leave on an afternoon train unless you want dawn.',
     schema: 'TouristDestination',
     alternateName: 'Phra Nakhon Si Ayutthaya',
@@ -701,7 +700,7 @@ export const wave2Pages: Page[] = [
     ],
     portraits: [
       { title: 'Bangkok', href: '/bangkok', photo: '/photos/bangkok.jpg' },
-      { title: 'Sukhothai', href: '/sukhothai', photo: '/photos/ayutthaya.jpg' },
+      { title: 'Sukhothai', href: '/sukhothai', photo: '/photos/sukhothai.jpg' },
       { title: 'Kanchanaburi', href: '/kanchanaburi', photo: '/photos/kanchanaburi.jpg' },
       { title: 'Central and east', href: '/destinations/central-and-east', photo: '/photos/ayutthaya.jpg' },
     ],
@@ -790,11 +789,10 @@ export const wave2Pages: Page[] = [
       },
     ],
     portraits: [
+      { title: 'Erawan and Sai Yok', href: '/kanchanaburi/erawan-and-sai-yok', photo: '/photos/kanchanaburi.jpg' },
       { title: 'Ayutthaya', href: '/ayutthaya', photo: '/photos/ayutthaya.jpg' },
       { title: 'Bangkok', href: '/bangkok', photo: '/photos/bangkok.jpg' },
       { title: 'Hua Hin', href: '/hua-hin', photo: '/photos/hua-hin.jpg' },
-      { title: 'Central and east', href: '/destinations/central-and-east', photo: '/photos/ayutthaya.jpg' },
-      { title: 'Erawan and Sai Yok', href: '/kanchanaburi/erawan-and-sai-yok', photo: '/photos/erawan.jpg' },
     ],
     affiliates: [
       stay('Kanchanaburi stays', 'Town or river', 'Two nights if Erawan is on the list. One night if you only want the bridge.', stayLink('kanchanaburi'), '/photos/kanchanaburi.jpg'),
@@ -807,7 +805,7 @@ export const wave2Pages: Page[] = [
         photo: '/photos/bts.jpg',
         partner: 'trains',
       },
-      klook('Erawan and Hellfire Pass', 'Tours', 'A car for both hinterland sites beats a missed 8170.', klookTours('Erawan National Park'), '/photos/erawan.jpg'),
+      klook('Erawan and Hellfire Pass', 'Tours', 'A car for both hinterland sites beats a missed 8170.', klookTours('Erawan National Park'), '/photos/khao-sok.jpg'),
     ],
     faqs: [
       {

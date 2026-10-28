@@ -19,7 +19,7 @@ export const wave4Pages: Page[] = [
     path: '/thai-food',
     title: 'Thai food: street stalls, Bib Gourmand, Lanna, and the south',
     description:
-      'Thai food is regional. Bangkok is street stalls and cheap Michelin picks. The north is khao soi and larb. The south is sour curry and Phuket Baba-Nyonya houses.',
+      'Thai food is regional, not one national dish. Bangkok is street stalls and cheap Michelin picks. The north is khao soi and larb. The south is sour curry and Phuket Baba-Nyonya houses.',
     lede:
       'Thai food is known for regional cooking, not one national plate. Eat Bangkok by rail. Eat Chiang Mai at lunch. Eat Phuket Town in a heritage house, not on a beach grill.',
     schema: 'Article',
@@ -35,7 +35,7 @@ export const wave4Pages: Page[] = [
     chips: ['Street food', 'Bib Gourmand', 'Lanna', 'Baba-Nyonya', 'Night markets'],
     photo: '/photos/thai-food.jpg',
     paragraphs: [
-      'The Michelin Guide Thailand 2026 lists 137 Bib Gourmand rooms nationwide, including 44 in Bangkok and the surrounding provinces, 18 in Chiang Mai, and 19 in Phuket. Bib is the value badge, not a star. Jay Fai on Maha Chai is the one-star exception that still cooks like a street wok.',
+      'Eat Thai food by city, not as one national plate. The Michelin Guide Thailand 2026 lists 137 Bib Gourmand rooms nationwide, including 44 in Bangkok and the surrounding provinces, 18 in Chiang Mai, and 19 in Phuket. Bib is the value badge, not a star. A 2026 street plate is often 60 to 150 THB. Jay Fai on Maha Chai is the one-star exception that still cooks like a street wok.',
       'Use the cluster pages. Do not stack a Jay Fai queue, a Chatuchak Saturday, and a Ratchada night market on the same calendar day. One serious meal and one market is enough.',
     ],
     portraits: [
@@ -83,7 +83,7 @@ export const wave4Pages: Page[] = [
     geo: { lat: 13.7526, lon: 100.5048, containedIn: 'Bangkok' },
     paragraphs: [
       'Street food in Bangkok is still a soi, a wok, and a queue. The Michelin street-food filter for 2026 is short on purpose: Jay Fai, K. Panich, Bunloet in Pom Prap, Tang Sui Heng on Banthat Thong, Somsak Pu Ob on Charoen Rat, Charoen Saeng Silom, Mae Prapha Crispy Pancake in Phra Nakhon, and Fried Banana Rama 5 across the Nonthaburi line. Treat that list as a filter, not a dare to hit all eight.',
-      'Stay in the Old City or on Charoenkrung if these are the first two days. Sukhumvit is a different dinner. Grab home after Yaowarat. Last BTS and MRT trains are around midnight; the river boats stop earlier.',
+      'Stay in the Old City or on Charoenkrung if these are the first two days. Sukhumvit is a different dinner. A 2026 wok plate is often 60 to 150 THB; Jay Fai is several times that. Grab home after Yaowarat. Last BTS and MRT trains are around midnight; the river boats stop earlier.',
     ],
     sections: [
       {
@@ -112,8 +112,8 @@ export const wave4Pages: Page[] = [
       },
     ],
     portraits: [
-      { title: 'Bangkok Bib Gourmand', href: '/thai-food/bangkok-bib-gourmand', photo: '/photos/sukhumvit.jpg' },
-      { title: 'Night markets', href: '/thai-food/night-markets', photo: '/photos/nightlife.jpg' },
+      { title: 'Bangkok Bib Gourmand', href: '/thai-food/bangkok-bib-gourmand', photo: '/photos/thai-food-bib.jpg' },
+      { title: 'Night markets', href: '/thai-food/night-markets', photo: '/photos/thai-food-night-markets.jpg' },
       { title: 'Old City', href: '/bangkok/old-city-rattanakosin', photo: '/photos/old-city.jpg' },
       { title: 'Charoenkrung nights', href: '/interests/nightlife/charoenkrung-soi-nana', photo: '/photos/riverside.jpg' },
     ],
@@ -153,7 +153,7 @@ export const wave4Pages: Page[] = [
     chips: ['Bib 2026', 'Branch matters', 'Lunch queues'],
     photo: '/photos/thai-food-bib.jpg',
     paragraphs: [
-      'Michelin published the 2026 Bib Gourmand list on 20 November 2025: 137 rooms in Thailand, 44 of them in Bangkok and the surrounding provinces. Four Bangkok-area names are new. The award moves. Recheck the current guide before you treat a 2024 blog as law.',
+      'Bib Gourmand is known as Michelin\'s value badge, not a star. Michelin published the 2026 list on 20 November 2025: 137 rooms in Thailand, 44 of them in Bangkok and nearby provinces. Four Bangkok-area names are new. Recheck the current guide before you treat a 2024 blog as law.',
       'Branch names collide. Rung Rueang (Tang) is not the shop next door. Somsak Pu Ob Charoen Rat is not the Lat Ya branch. Pad Thai Fai Ta Lu is awarded at Dinso Road, not the Siam or Thong Lo copies.',
     ],
     sections: [
@@ -197,10 +197,10 @@ export const wave4Pages: Page[] = [
       },
     ],
     portraits: [
-      { title: 'Bangkok street food', href: '/thai-food/bangkok-street-food', photo: '/photos/old-city.jpg' },
-      { title: 'Night markets', href: '/thai-food/night-markets', photo: '/photos/nightlife.jpg' },
+      { title: 'Bangkok street food', href: '/thai-food/bangkok-street-food', photo: '/photos/thai-food-bangkok-street.jpg' },
+      { title: 'Night markets', href: '/thai-food/night-markets', photo: '/photos/thai-food-night-markets.jpg' },
       { title: 'Sukhumvit and Thonglor', href: '/bangkok/sukhumvit-thonglor', photo: '/photos/sukhumvit.jpg' },
-      { title: 'Thai food hub', href: '/thai-food', photo: '/photos/bangkok.jpg' },
+      { title: 'Thai food hub', href: '/thai-food', photo: '/photos/thai-food.jpg' },
     ],
     affiliates: [
       stay('Phrom Phong stays', 'Sukhumvit 24-26', 'Rung Rueang for lunch, BTS for the rest of the day.', stayAreaLink('sukhumvit'), '/photos/sukhumvit.jpg'),
@@ -239,7 +239,7 @@ export const wave4Pages: Page[] = [
     photo: '/photos/thai-food-lanna.jpg',
     geo: { lat: 18.796, lon: 98.981, containedIn: 'Chiang Mai' },
     paragraphs: [
-      'Lanna cooking uses pork, herbs, and a slower heat than the northeast. Northern larb (larb Muan, larb Kua) is minced meat cooked with blood and spices, not the lime-and-toasted-rice Isan salad. Sai oua, nam prik noom, and gaeng hang lay belong on the same table. If a menu only offers som tam and sticky rice, you are in a tourist Isan room.',
+      'Northern Thai food is khao soi at lunch and a cooked Northern larb, not the lime Isan salad. Lanna cooking uses pork, herbs, and a slower heat than the northeast. Northern larb (larb Muan, larb Kua) is minced meat cooked with blood and spices. Sai oua, nam prik noom, and gaeng hang lay belong on the same table. If a menu only offers som tam and sticky rice, you are in a tourist Isan room.',
       'Chiang Mai has 18 Bib Gourmand entries in 2026. Use two lunches and one sit-down Northern dinner. Do not spend the week inside a Nimman brunch loop.',
     ],
     sections: [
@@ -280,7 +280,7 @@ export const wave4Pages: Page[] = [
     portraits: [
       { title: 'Chiang Mai Old City', href: '/chiang-mai/old-city', photo: '/photos/chiang-mai-old-city.jpg' },
       { title: 'Nimmanhaemin', href: '/chiang-mai/nimmanhaemin', photo: '/photos/nimman.jpg' },
-      { title: 'Night markets', href: '/thai-food/night-markets', photo: '/photos/nightlife.jpg' },
+      { title: 'Night markets', href: '/thai-food/night-markets', photo: '/photos/thai-food-night-markets.jpg' },
       { title: 'Four Seasons Chiang Mai', href: '/resort-living/four-seasons-chiang-mai', photo: '/photos/chiang-mai.jpg' },
     ],
     affiliates: [
@@ -353,7 +353,7 @@ export const wave4Pages: Page[] = [
     ],
     portraits: [
       { title: 'Phuket', href: '/phuket', photo: '/photos/phuket.jpg' },
-      { title: 'Night markets', href: '/thai-food/night-markets', photo: '/photos/nightlife.jpg' },
+      { title: 'Night markets', href: '/thai-food/night-markets', photo: '/photos/thai-food-night-markets.jpg' },
       { title: 'Trisara', href: '/resort-living/trisara-phuket', photo: '/photos/phuket.jpg' },
       { title: 'Kamala and Bang Tao clubs', href: '/interests/nightlife/phuket-kamala-bangtao', photo: '/photos/nightlife.jpg' },
     ],
@@ -394,7 +394,7 @@ export const wave4Pages: Page[] = [
     chips: ['Exit numbers', 'Ratchada', 'Walking streets'],
     photo: '/photos/thai-food-night-markets.jpg',
     paragraphs: [
-      'Hours below are the posted windows used in 2026. Operators shift them for rain, exams, and royal dates. "Check on arrival" means the Facebook page or the station sign that night, not a screenshot from 2022.',
+      'Bangkok night markets are food halls with a clock and an exit number. Hours below are the posted windows used in 2026. Operators shift them for rain, exams, and royal dates. "Check on arrival" means the Facebook page or the station sign that night, not a screenshot from 2022. A 2026 market plate is often 60 to 150 THB.',
       'Jodd Fairs on Ratchadaphisek is not Train Night Market Ratchada. They sit near the same MRT station and people still mix the names. Chatuchak is a weekend day market with a Friday wholesale night. Or Tor Kor is produce, not neon.',
     ],
     sections: [
@@ -429,8 +429,8 @@ export const wave4Pages: Page[] = [
       },
     ],
     portraits: [
-      { title: 'Bangkok street food', href: '/thai-food/bangkok-street-food', photo: '/photos/old-city.jpg' },
-      { title: 'Northern Lanna', href: '/thai-food/northern-lanna', photo: '/photos/northern.jpg' },
+      { title: 'Bangkok street food', href: '/thai-food/bangkok-street-food', photo: '/photos/thai-food-bangkok-street.jpg' },
+      { title: 'Northern Lanna', href: '/thai-food/northern-lanna', photo: '/photos/thai-food-lanna.jpg' },
       { title: 'Grab and BTS', href: '/plan/grab-and-bts', photo: '/photos/bts.jpg' },
       { title: 'Ari nights', href: '/interests/nightlife/ari-pradipat', photo: '/photos/sukhumvit.jpg' },
     ],
@@ -472,7 +472,7 @@ export const wave4Pages: Page[] = [
     photo: '/photos/riverside.jpg',
     geo: { lat: 13.7105, lon: 100.5085, containedIn: 'Bangkok' },
     paragraphs: [
-      'Four Seasons Bangkok at Chao Phraya River opened as a purpose-built river resort: two infinity pools, a 35-metre lap pool, and rooms that face the water instead of Wireless Road. The official door is 300/1 Charoen Krung Road, Sathorn 10120, +66 2 032 0888. You are between the old Bang Rak shipping offices and the Sathorn condos, on the Bangkok bank.',
+      'Four Seasons Bangkok is a Chao Phraya resort on Charoenkrung, not a Sukhumvit tower. Two infinity pools, a 35-metre lap pool, and rooms that face the water. The official door is 300/1 Charoen Krung Road, Sathorn 10120, +66 2 032 0888. You sit between old Bang Rak shipping offices and Sathorn condos.',
       'There is no Skytrain on the doorstep. BTS Saphan Taksin is a short Grab or a walk plus heat. The hotel boat and the public river boats are the correct palace move. Capella sits further along the same bank. Mandarin Oriental is the historic neighbour at 48 Oriental Avenue. Book this when the evenings are the river path and BKK Social Club, not Soi 11.',
     ],
     sections: [
@@ -525,7 +525,7 @@ export const wave4Pages: Page[] = [
     photo: '/photos/riverside.jpg',
     geo: { lat: 13.7238, lon: 100.514, containedIn: 'Bangkok' },
     paragraphs: [
-      'Mandarin Oriental, Bangkok lists 48 Oriental Avenue, Bangkok 10500, +66 2 659 9000. The hotel has sat on this Bang Rak bank for more than 150 years. The Authors Wing is the original house. The Tower and River Wings are the later rooms that still face the Chao Phraya. The hotel boat is part of the stay, not a gimmick.',
+      'The Mandarin Oriental is known as Bangkok\'s historic river hotel at 48 Oriental Avenue, Bangkok 10500, +66 2 659 9000. The Authors Wing is the original house. The Tower and River Wings face the Chao Phraya. The hotel boat is part of the stay: about 20 to 40 minutes to the Old City piers.',
       'Bamboo Bar is the jazz room on property; book it, do not walk in on a Saturday and hope. The neighbourhood is Charoenkrung: Assumption, the old customs houses, and a short Grab to Four Seasons or Capella. BTS Saphan Taksin is the rail if you must. This is a two- or three-night Bangkok that ignores Sukhumvit on purpose.',
     ],
     sections: [
@@ -542,7 +542,7 @@ export const wave4Pages: Page[] = [
       { title: 'Four Seasons Bangkok', href: '/resort-living/four-seasons-bangkok', photo: '/photos/riverside.jpg' },
       { title: 'The Siam', href: '/resort-living/the-siam', photo: '/photos/riverside.jpg' },
       { title: 'Charoenkrung nights', href: '/interests/nightlife/charoenkrung-soi-nana', photo: '/photos/riverside.jpg' },
-      { title: 'Bangkok street food', href: '/thai-food/bangkok-street-food', photo: '/photos/old-city.jpg' },
+      { title: 'Bangkok street food', href: '/thai-food/bangkok-street-food', photo: '/photos/thai-food-bangkok-street.jpg' },
     ],
     affiliates: [
       stay('Mandarin Oriental Bangkok rates', 'Trip.com', 'Live rates for the Oriental Avenue house.', hotelSearchLink('Mandarin Oriental Bangkok', 'bangkok'), '/photos/riverside.jpg'),
@@ -578,7 +578,7 @@ export const wave4Pages: Page[] = [
     photo: '/photos/siam.jpg',
     geo: { lat: 13.743, lon: 100.547, containedIn: 'Bangkok' },
     paragraphs: [
-      'Rosewood Bangkok opened 31 March 2019 at 1041/38 Ploenchit Road, Lumphini, Pathumwan 10330, +66 2 080 0088. The tower silhouette is the wai. One hundred and fifty-eight rooms. The useful fact is the physical link to BTS Ploenchit Exit 1. You can ride to Siam, Thonglor, or the river connection at Saphan Taksin without standing in Ploenchit rain.',
+      'Rosewood Bangkok is a Ploenchit tower with BTS Exit 1 in the basement. It opened 31 March 2019 at 1041/38 Ploenchit Road, Lumphini, Pathumwan 10330, +66 2 080 0088. One hundred and fifty-eight rooms. Ride to Siam, Thonglor, or Saphan Taksin without standing in Ploenchit rain.',
       'This is central Pathumwan: Central Embassy, Wireless Road embassies, and a short walk toward Lumphini Park. It is not a quiet river path. Book it when the itinerary is city. Book Four Seasons or the Oriental when the itinerary is water.',
     ],
     sections: [
@@ -631,7 +631,7 @@ export const wave4Pages: Page[] = [
     photo: '/photos/phuket.jpg',
     geo: { lat: 8.007, lon: 98.297, containedIn: 'Phuket' },
     paragraphs: [
-      'Trisara publishes 60/1 Moo 6, Srisoonthorn Road, Cherngtalay, Thalang, Phuket 83110, reservations@trisara.com, +66 76 310 100. The resort sits on the north-west coast above a private beach reserved for in-house guests. Villas, not a tower. Two Michelin Keys sit on the current brand page; treat keys as a hotel badge, not a restaurant star.',
+      'Trisara is private villas on a guest-only Cherngtalay beach. The published door is 60/1 Moo 6, Srisoonthorn Road, Cherngtalay, Thalang, Phuket 83110, +66 76 310 100. Villas, not a tower. Two Michelin Keys sit on the current brand page; treat keys as a hotel badge, not a restaurant star.',
       'Phuket Airport is the correct landing, closer than a town transfer. The Andaman calendar still rules: November to April for settled water. In the southwest monsoon, this coast takes wind and rain. A boat day is a desk decision, not a prepaid sure thing.',
     ],
     sections: [
@@ -647,7 +647,7 @@ export const wave4Pages: Page[] = [
     portraits: [
       { title: 'Amanpuri', href: '/resort-living/amanpuri', photo: '/photos/phuket.jpg' },
       { title: 'Avista Hideaway', href: '/resort-living/avista-hideaway-phuket', photo: '/photos/phuket.jpg' },
-      { title: 'South and Baba-Nyonya', href: '/thai-food/southern-and-baba-nyonya', photo: '/photos/phuket.jpg' },
+      { title: 'South and Baba-Nyonya', href: '/thai-food/southern-and-baba-nyonya', photo: '/photos/thai-food-southern.jpg' },
       { title: 'Kamala and Bang Tao clubs', href: '/interests/nightlife/phuket-kamala-bangtao', photo: '/photos/nightlife.jpg' },
     ],
     affiliates: [
@@ -683,7 +683,7 @@ export const wave4Pages: Page[] = [
     photo: '/photos/chiang-mai.jpg',
     geo: { lat: 18.782, lon: 99.001, containedIn: 'Chiang Mai' },
     paragraphs: [
-      'Anantara Chiang Mai lists 123-123/1 Charoen Prathet Road, Changklan, Mueang Chiang Mai 50100, +66 53 253 333, chiangmai@anantara.com. The property sits on the west bank of the Ping, south of Nawarat Bridge, in the Night Bazaar grid. Rooms face the river or the garden. This is an in-town resort, not the Mae Rim valley.',
+      'Anantara Chiang Mai is the Ping River resort beside the Night Bazaar, at 123-123/1 Charoen Prathet Road, Changklan, Mueang Chiang Mai 50100, +66 53 253 333. Rooms face the river or the garden. This is an in-town stay, not the Mae Rim valley.',
       'Four Seasons Chiang Mai is a different product 30 to 45 minutes north. 137 Pillars House is the Wat Gate teak compound across the water. Book Anantara when you want a pool and a river path without giving up dinner in the Old City.',
     ],
     sections: [
@@ -699,7 +699,7 @@ export const wave4Pages: Page[] = [
     portraits: [
       { title: '137 Pillars House', href: '/resort-living/137-pillars-house', photo: '/photos/chiang-mai.jpg' },
       { title: 'Four Seasons Chiang Mai', href: '/resort-living/four-seasons-chiang-mai', photo: '/photos/chiang-mai.jpg' },
-      { title: 'Northern Lanna', href: '/thai-food/northern-lanna', photo: '/photos/northern.jpg' },
+      { title: 'Northern Lanna', href: '/thai-food/northern-lanna', photo: '/photos/thai-food-lanna.jpg' },
       { title: 'Chiang Mai Old City', href: '/chiang-mai/old-city', photo: '/photos/chiang-mai-old-city.jpg' },
     ],
     affiliates: [
@@ -736,7 +736,7 @@ export const wave4Pages: Page[] = [
     photo: '/photos/chiang-mai.jpg',
     geo: { lat: 18.7935, lon: 99.0055, containedIn: 'Chiang Mai' },
     paragraphs: [
-      '137 Pillars House lists 2 Soi 1, Nawatgate Road, Tambon Watgate, Mueang Chiang Mai 50000, +66 53 247 788, reservations +66 53 249 339. The compound wraps the 1880s Borneo Company manager residence. Suites sit in garden buildings around the teak house. You are east of the Ping, in Wat Gate, where missionaries and teak firms once lived.',
+      '137 Pillars House is a restored teak compound in Wat Gate, at 2 Soi 1, Nawatgate Road, Tambon Watgate, Mueang Chiang Mai 50000, +66 53 247 788, reservations +66 53 249 339. The compound wraps the 1880s Borneo Company manager residence. Suites sit in garden buildings around the teak house. You are east of the Ping. The Old City is about 10 to 15 minutes across Nawarat Bridge.',
       'Nawarat Bridge is the walk to Tha Phae. The Old City is close enough for late afternoon, far enough that you will Grab in the heat. This is the stay if you like a quiet soi and a house museum feel. It is not Nimman.',
     ],
     sections: [
@@ -751,7 +751,7 @@ export const wave4Pages: Page[] = [
     ],
     portraits: [
       { title: 'Anantara Chiang Mai', href: '/resort-living/anantara-chiang-mai', photo: '/photos/chiang-mai.jpg' },
-      { title: 'Northern Lanna', href: '/thai-food/northern-lanna', photo: '/photos/northern.jpg' },
+      { title: 'Northern Lanna', href: '/thai-food/northern-lanna', photo: '/photos/thai-food-lanna.jpg' },
       { title: 'Chiang Mai Old City', href: '/chiang-mai/old-city', photo: '/photos/chiang-mai-old-city.jpg' },
       { title: 'Veranda High', href: '/resort-living/veranda-high-chiang-mai', photo: '/photos/nimman.jpg' },
     ],
@@ -788,7 +788,7 @@ export const wave4Pages: Page[] = [
     photo: '/photos/krabi.jpg',
     geo: { lat: 8.086, lon: 98.749, containedIn: 'Krabi' },
     paragraphs: [
-      'Phulay Bay, a Ritz-Carlton Reserve, publishes 111 Moo 3, Nongthalay, Mueang, Krabi 81180, +66 75 628 111, reservations.phulaybay@ritzcarlton.com. The official airport note is about 40 km from Krabi International (KBV). This is the Reserve line: fewer keys, a private beach, and a price that assumes you will not hunt Ao Nang nightlife.',
+      'Phulay Bay, a Ritz-Carlton Reserve, is a sealed Krabi beach west of Ao Nang. The published door is 111 Moo 3, Nongthalay, Mueang, Krabi 81180, +66 75 628 111. The official airport note is about 40 km from KBV. Fewer keys, a private beach, and a price that assumes you will not hunt Ao Nang nightlife.',
       'Rayavadee is the Railay grove with no road. Phulay Bay has a road and still feels sealed. Do not book both. Pair with a Phi Phi or Hong day only in the Andaman window, and only if the marine desk agrees that morning.',
     ],
     sections: [
@@ -841,7 +841,7 @@ export const wave4Pages: Page[] = [
     photo: '/photos/koh-samui.jpg',
     geo: { lat: 9.572, lon: 100.061, containedIn: 'Koh Samui' },
     paragraphs: [
-      'The Ritz-Carlton, Koh Samui lists 9/123 Moo 5, Tambon Bophut, Koh Samui 84320, +66 77 915 777. Marriott puts the airport at about 6 km. The site is 58 acres of old plantation around a north-coast bay: suites and pool villas, Spa Village, a Muay Thai ring if you want it. This is Gulf water. January to September is the easier sea. October to December is the messy end.',
+      'The Ritz-Carlton Koh Samui sits on a private north-coast bay in Bophut, at 9/123 Moo 5, Koh Samui 84320, +66 77 915 777. Marriott puts the airport at about 6 km. The site is 58 acres of old plantation: suites and pool villas, Spa Village, a Muay Thai ring if you want it. This is Gulf water. January to September is the easier sea. October to December is the messy end.',
       'Four Seasons Samui is the north-west headland, farther from town. Six Senses Samui sits above Bophut on the hill. The Ritz is the flatter, more family-readable north-coast option. You still need a car to leave.',
     ],
     sections: [
@@ -893,8 +893,8 @@ export const wave4Pages: Page[] = [
     chips: ['BTS Ari', 'Low-rise sois'],
     photo: '/photos/sukhumvit.jpg',
     paragraphs: [
-      'Phahonyothin splits the neighbourhood. West of the BTS, Soi Ari 1 to 4 (Ari Samphan) is the walkable bar village: wine rooms, jazz, and beer bars in converted houses. East of the tracks is a thinner, more main-road strip. Pradipat runs parallel toward Saphan Khwai and holds the home-bar holdouts. Stay in Phaya Thai or Ari if this is the night. Do not commute from Sukhumvit Soi 11 just to say you did.',
-      'This is not a club district. Last trains are around midnight. After that, Grab. Do not rent a scooter because the sois look quiet.',
+      'Ari nightlife is low-rise bars in converted houses, not a Sukhumvit queue. West of BTS Ari, Soi Ari 1 to 4 (Ari Samphan) is the walkable village. East of Phahonyothin is a thinner main-road strip. Pradipat holds the home-bar holdouts. Stay in Phaya Thai or Ari if this is the night. Do not commute from Sukhumvit Soi 11 just to say you did.',
+      'This is not a club district. Last trains are around midnight. After that, a 2026 Grab is often 80 to 160 THB. Do not rent a scooter because the sois look quiet.',
     ],
     sections: [
       {
@@ -911,7 +911,7 @@ export const wave4Pages: Page[] = [
         id: 'neighbourhood',
         title: 'How the pocket sits',
         paragraphs: [
-          'BTS Ari Exit 1 and Exit 3 feed the west sois. Exit numbers get relabelled; follow the signs for Soi Ari / Phaya Thai, then walk. Food here is neighbourhood Thai and cafes, not an Isan district and not a Bib crawl. The well-known Isan rooms sit on Thonglor. Pair a night with a separate lunch in the Old City.',
+          'BTS Ari Exit 1 and Exit 3 feed the west sois. Exit numbers get relabelled; follow the signs for Soi Ari / Phaya Thai, then walk. Food here is neighbourhood Thai and cafes, not a Bib crawl. Pair a night with a separate lunch in the Old City. Do not eat three courses of western bistro and call it Bangkok.',
           'Saphan Khwai is one stop north and a different, more local energy. South is Sanam Pao and the Phaya Thai shrine. Stop when the sois repeat. Thonglor is a BTS ride if someone wants a second neighbourhood; that is a new night, not a 01:00 idea.',
         ],
       },
@@ -919,7 +919,7 @@ export const wave4Pages: Page[] = [
     portraits: [
       { title: 'Thonglor and Ekkamai', href: '/interests/nightlife/thonglor-ekkamai', photo: '/photos/sukhumvit.jpg' },
       { title: 'Silom and Sathorn', href: '/interests/nightlife/silom-sathorn', photo: '/photos/siam.jpg' },
-      { title: 'Night markets', href: '/thai-food/night-markets', photo: '/photos/nightlife.jpg' },
+      { title: 'Night markets', href: '/thai-food/night-markets', photo: '/photos/thai-food-night-markets.jpg' },
       { title: 'Nightlife hub', href: '/interests/nightlife', photo: '/photos/nightlife.jpg' },
     ],
     affiliates: [
@@ -958,8 +958,8 @@ export const wave4Pages: Page[] = [
     chips: ['Silom', 'Sathorn rooftops'],
     photo: '/photos/siam.jpg',
     paragraphs: [
-      'Silom is banks by day and a mixed night: rooftop tourists, a basement cabaret, and the Sala Daeng / Patpong edge you can skip. Sathorn is the embassy-and-condo ridge. Dress for the room you booked. Grab between them; the walk is possible and sweaty.',
-      'BTS Sala Daeng and Chong Nonsi cover Silom. BTS Surasak and the Saphan Taksin river node sit west. MRT Silom shares Sala Daeng. After midnight, Grab.',
+      'Silom nightlife is rooftops and one famous basement. Banks by day. A mixed night of Sky Bar tourists, Maggie Choo\'s, and the Sala Daeng / Patpong edge you can skip. Sathorn is the embassy-and-condo ridge. Dress for the room you booked. Grab between them; the walk is possible and sweaty.',
+      'BTS Sala Daeng and Chong Nonsi cover Silom. BTS Surasak and the Saphan Taksin river node sit west. MRT Silom shares Sala Daeng. After midnight, a 2026 Grab is often 80 to 180 THB.'
     ],
     sections: [
       {
@@ -1023,7 +1023,7 @@ export const wave4Pages: Page[] = [
     chips: ['Kamala', 'Bang Tao', 'Laguna'],
     photo: '/photos/phuket.jpg',
     paragraphs: [
-      'Kamala is the village beach with Cafe del Mar. Bang Tao is the long open beach with Catch. Laguna is the hotel complex behind Bang Tao, with XANA at Angsana. They share one west-facing coast and three driveways.',
+      'This coast is day-to-dusk beach clubs, not Patong Walking Street. Kamala has Cafe del Mar. Bang Tao has Catch. Laguna, behind Bang Tao, has XANA at Angsana. They share one west-facing coast and three driveways.',
       'November to April is the settled Andaman window. In the wet months, a prepaid brunch is a gamble. Check on arrival. Book a car home. Do not rent a scooter after the second drink.',
     ],
     sections: [
@@ -1049,7 +1049,7 @@ export const wave4Pages: Page[] = [
     portraits: [
       { title: 'Phuket beach clubs', href: '/interests/nightlife/phuket-beach-clubs', photo: '/photos/phuket.jpg' },
       { title: 'Trisara', href: '/resort-living/trisara-phuket', photo: '/photos/phuket.jpg' },
-      { title: 'South and Baba-Nyonya', href: '/thai-food/southern-and-baba-nyonya', photo: '/photos/phuket.jpg' },
+      { title: 'South and Baba-Nyonya', href: '/thai-food/southern-and-baba-nyonya', photo: '/photos/thai-food-southern.jpg' },
       { title: 'Nightlife hub', href: '/interests/nightlife', photo: '/photos/nightlife.jpg' },
     ],
     affiliates: [
@@ -1088,7 +1088,7 @@ export const wave4Pages: Page[] = [
     chips: ['Bophut', 'Lamai'],
     photo: '/photos/koh-samui.jpg',
     paragraphs: [
-      'Pick one bay for the evening. Bophut is dinner and drinks on a village street. Lamai is a broader beach with Beach Republic in Maret. Chaweng is the loud strip. Nikki Beach is on Lipa Noi, a dedicated crossing, already named on the island beach-club page.',
+      'These Samui nights are Bophut\'s Fisherman\'s Village and Lamai\'s wider beach, not the Chaweng club strip. Pick one bay. Beach Republic sits in Maret. Nikki Beach is on Lipa Noi, a dedicated crossing already named on the island beach-club page.',
       'January to September is the easier Gulf sea. Book a car on the ring road. Sleep near the village you will walk.',
     ],
     sections: [
