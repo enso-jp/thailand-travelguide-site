@@ -84,19 +84,7 @@ const sisterHref = sisterHeaderUrlForPath(page.path);
     <a class="skip" href="#main">Skip to content</a>
     <header class="topbar">
       <div class="wrap bar">
-        <div class="brand-cluster">
-          <a class="wordmark" href="/">Thailand <span>Guide</span></a>
-          <div class="network-switch" aria-label="Southeast Asia TravelGuide Network">
-            <span class="net-pill is-active" aria-current="true">
-              <i class="net-mark net-mark-th" aria-hidden="true">T</i>
-              <span>Thailand</span>
-            </span>
-            <a class="net-pill" href={sisterHref} target="_blank" rel="noopener" title="Switch to Vietnam TravelGuide">
-              <i class="net-mark net-mark-vn" aria-hidden="true">V</i>
-              <span>Vietnam</span>
-            </a>
-          </div>
-        </div>
+        <a class="wordmark" href="/">Thailand <span>Guide</span></a>
         <nav class="desk-nav" aria-label="Sections">
           {
             NAV_SLOTS.map((slot) => (

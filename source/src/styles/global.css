@@ -1294,43 +1294,6 @@ th, td {
 }
 
 
-.brand-cluster {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  min-width: 0;
-}
-.network-switch {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.2rem;
-  padding: 0.16rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: #faf8f3;
-  font-size: 0.76rem;
-  line-height: 1;
-}
-.net-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.28rem;
-  padding: 0.22rem 0.48rem 0.22rem 0.26rem;
-  border-radius: 999px;
-  text-decoration: none;
-  color: var(--muted);
-  font-weight: 650;
-  white-space: nowrap;
-}
-.net-pill.is-active {
-  background: #fff;
-  color: var(--ink);
-  box-shadow: 0 1px 3px rgba(22, 22, 22, 0.1);
-}
-.net-pill:hover {
-  color: var(--ink);
-  text-decoration: none;
-}
 .net-mark {
   display: inline-grid;
   place-items: center;
@@ -1344,7 +1307,6 @@ th, td {
   color: #fff;
   flex: 0 0 auto;
 }
-.net-mark-th { background: #b8860b; }
 .net-mark-vn { background: #c8102e; }
 .phone-net-link {
   display: inline-flex;
@@ -1569,10 +1531,6 @@ th, td {
   align-items: center;
   gap: 0.35rem;
 }
-@media (max-width: 1080px) {
-  .network-switch .net-pill span { display: none; }
-  .network-switch .net-pill { padding: 0.2rem; }
-}
 @media (max-width: 720px) {
   .footer-grid { grid-template-columns: 1fr; }
   .trip-search-dates { grid-template-columns: 1fr; }
@@ -1647,6 +1605,5 @@ th, td {
 }
 
 @media (max-width: 640px) {
-  .brand-cluster { gap: 0.4rem; }
   .book-dates { grid-template-columns: minmax(0, 1fr); }
 }
