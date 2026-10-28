@@ -1,36 +1,39 @@
 ---
-import { tripCities, stayLink, klookTours, transferLink, trainLink, type StayCity } from '../lib/partners';
+import { tripCities, stayLink, klookTours, transferLink, trainLink, type StayCity, type AirportCode } from '../lib/partners';
 
-const cities: { id: StayCity; label: string }[] = [
-  { id: 'bangkok', label: 'Bangkok' },
-  { id: 'phuket', label: 'Phuket' },
-  { id: 'chiang-mai', label: 'Chiang Mai' },
-  { id: 'koh-samui', label: 'Koh Samui' },
-  { id: 'krabi', label: 'Krabi' },
-  { id: 'koh-phangan', label: 'Koh Phangan' },
-  { id: 'pattaya', label: 'Pattaya' },
-  { id: 'hua-hin', label: 'Hua Hin' },
-];
+const cityIds = Object.keys(tripCities) as StayCity[];
+const cities = cityIds.map((id) => ({ id, label: tripCities[id].name }));
 
-const airports: Record<string, 'BKK' | 'HKT' | 'CNX' | 'USM' | 'KBV'> = {
+const cityAirports: Record<StayCity, AirportCode> = {
   bangkok: 'BKK',
   phuket: 'HKT',
   'chiang-mai': 'CNX',
   'koh-samui': 'USM',
   krabi: 'KBV',
-  'koh-phangan': 'USM',
   pattaya: 'BKK',
   'hua-hin': 'BKK',
+  'khao-lak': 'HKT',
+  'koh-phangan': 'USM',
+  'koh-tao': 'USM',
+  ayutthaya: 'BKK',
+  'koh-lanta': 'KBV',
+  'koh-lipe': 'HKT',
+  'koh-chang': 'BKK',
+  'koh-kood': 'BKK',
+  'chiang-rai': 'CEI',
+  sukhothai: 'CNX',
+  kanchanaburi: 'BKK',
+  pai: 'CNX',
 };
 
 const links = Object.fromEntries(
   cities.map((city) => [
     city.id,
     {
-      stay: stayLink(city.id),
+      stay: stayLink(city.id, { trip_sub1: 'Homepage' }),
       tours: klookTours(`${city.label} tours`),
-      transfer: transferLink(airports[city.id]),
-      trains: trainLink('Bangkok', tripCities[city.id].name),
+      transfer: transferLink(cityAirports[city.id] || 'BKK'),
+      trains: trainLink('Bangkok', city.label),
     },
   ]),
 );
@@ -39,10 +42,10 @@ const links = Object.fromEntries(
 <aside class="book-stay" data-book>
   <h2>Book your <em>stay</em></h2>
   <div class="book-tabs" role="tablist">
-    <button type="button" role="tab" data-book-tab="stay" aria-selected="true">Hotels</button>
-    <button type="button" role="tab" data-book-tab="activities" aria-selected="false">Tours & Activities</button>
-    <button type="button" role="tab" data-book-tab="transfers" aria-selected="false">Airport Transfers</button>
-    <button type="button" role="tab" data-book-tab="trains" aria-selected="false">Ferries & Trains</button>
+    <button type="button" role="tab" data-book-tab="stay" data-book-submit="Search hotels" aria-selected="true">Hotels</button>
+    <button type="button" role="tab" data-book-tab="activities" data-book-submit="Search tours" aria-selected="false">Tours & Activities</button>
+    <button type="button" role="tab" data-book-tab="transfers" data-book-submit="Search transfers" aria-selected="false">Airport Transfers</button>
+    <button type="button" role="tab" data-book-tab="trains" data-book-submit="Search trains" aria-selected="false">Ferries & Trains</button>
   </div>
   <form class="book-form" data-book-form>
     <label>
@@ -54,19 +57,19 @@ const links = Object.fromEntries(
     <div class="book-dates">
       <label>
         Check-in
-        <input type="date" name="checkin" data-book-in />
+        <input type="date" name="checkin" data-book-in required />
       </label>
       <label>
         Check-out
-        <input type="date" name="checkout" data-book-out />
+        <input type="date" name="checkout" data-book-out required />
       </label>
     </div>
-    <button class="aff-btn book-go" type="submit">Search on Trip.com</button>
+    <button class="aff-btn book-go" type="submit" data-book-go>Search hotels</button>
     <p class="note">Trip.com and Klook partner links. We may earn a commission.</p>
   </form>
   <script type="application/json" data-book-links set:html={JSON.stringify(links)} />
 </aside>
-<a class="home-ad" href={stayLink('bangkok')} rel="sponsored noopener" target="_blank">
+<a class="home-ad" href={stayLink('bangkok', { trip_sub1: 'Homepage_Ad' })} rel="sponsored noopener" target="_blank">
   <strong>Bangkok first nights</strong>
   <span>Lock two nights near a BTS station before you pick a coast.</span>
 </a>

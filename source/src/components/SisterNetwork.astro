@@ -1,0 +1,45 @@
+---
+import { sisterSectionForPath } from '../lib/sister-network';
+
+interface Props {
+  path: string;
+}
+
+const { path } = Astro.props;
+const section = sisterSectionForPath(path);
+---
+
+{
+  section && (
+    <section class="place-section sister-network" id="compare-vietnam" aria-label="Compare with Vietnam TravelGuide">
+      <div class="sister-head">
+        <span class="sister-badge">
+          <i class="net-mark net-mark-vn" aria-hidden="true">V</i>
+          Southeast Asia TravelGuide Network
+        </span>
+        <h2>{section.heading}</h2>
+        <p class="sister-lead">{section.lead}</p>
+      </div>
+      <div class="sister-grid">
+        {section.cards.map((card) => (
+          <a class="sister-card" href={card.href} target="_blank" rel="noopener">
+            <span class="sister-kicker">{card.kicker}</span>
+            <h3>{card.title}</h3>
+            <p>{card.summary}</p>
+            <span class="sister-cta">{card.cta} →</span>
+          </a>
+        ))}
+      </div>
+      {section.flights && section.flights.length > 0 && (
+        <div class="sister-flights" aria-label="Cross-border flights on Trip.com">
+          {section.flights.map((fl) => (
+            <a class="sister-flight-pill" href={fl.href} target="_blank" rel="sponsored noopener noreferrer">
+              <strong>{fl.label}</strong>
+              <span>{fl.note}</span>
+            </a>
+          ))}
+        </div>
+      )}
+    </section>
+  )
+}

@@ -5,6 +5,7 @@ import FactBar from './FactBar.astro';
 import FaqList from './FaqList.astro';
 import Photo from './Photo.astro';
 import ThailandMap from './ThailandMap.astro';
+import SisterNetwork from './SisterNetwork.astro';
 import TripSearch from './TripSearch.astro';
 import type { Page } from '../lib/content';
 import { chipHref, formatInline } from '../lib/inline';
@@ -181,6 +182,8 @@ const tabs = [
           Ticketed markets sit on <a href="/attractions">Attractions</a>.
         </p>
       </section>
+
+      <SisterNetwork path={page.path} />
 
       {
         page.faqs.length > 0 && (
