@@ -1,4 +1,9 @@
 {
+  "ari": {
+    "author": "Suikotei",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ari_Station_20230903-2.jpg"
+  },
   "ayutthaya": {
     "author": "JJ Harrison",
     "license": "CC BY-SA 3.0",
@@ -14,6 +19,11 @@
     "license": "CC BY-SA 4.0",
     "source": "https://commons.wikimedia.org/wiki/File:Bangkok_Skytrain_BTS_3.jpg"
   },
+  "chaweng": {
+    "author": "Damian Moore",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Chaweng_Beach,_Koh_Samui_(27953535942).jpg"
+  },
   "chiang-mai": {
     "author": "Stefan Fussan",
     "license": "CC BY-SA 3.0",
@@ -24,10 +34,30 @@
     "license": "CC BY-SA 3.0",
     "source": "https://commons.wikimedia.org/wiki/File:Wat_Chedi_Luang_Assembly_Hall,_Chiang_Mai,_Thailand_-_Diliff.jpg"
   },
+  "chiang-rai": {
+    "author": "Chainwit.",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Chiang_Rai_-_Wat_Rong_Khun_%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%A3%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B8%82%E0%B8%B8%E0%B9%88%E0%B8%99_(2026)_-_img_11.jpg"
+  },
   "hua-hin": {
     "author": "Elmschrat",
     "license": "CC0",
     "source": "https://commons.wikimedia.org/wiki/File:01_Hua_Hin_Beach.jpg"
+  },
+  "kamala-and-surin": {
+    "author": "Jpatokal",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Surin_Beach.JPG"
+  },
+  "kanchanaburi": {
+    "author": "Krzysztof Golik",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:River_Kwai_Bridge.jpg"
+  },
+  "kata-and-karon": {
+    "author": "ADwarf",
+    "license": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Phuket_-_Kata_Beach_001.jpg"
   },
   "khao-lak": {
     "author": "Vyacheslav Argenberg",
@@ -38,6 +68,21 @@
     "author": "Vyacheslav Argenberg",
     "license": "CC BY 4.0",
     "source": "https://commons.wikimedia.org/wiki/File:Cheow_Lan_Lake,_Rainforest,_Khao_Sok,_Thailand.jpg"
+  },
+  "koh-chang": {
+    "author": "Vyacheslav Argenberg",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Klong_Prao_Beach,_west_coast_of_Ko_Chang_Island,_Thailand.jpg"
+  },
+  "koh-lanta": {
+    "author": "Fabio Achilli",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Klong_Nin_Beach,_Koh_Lanta.jpg"
+  },
+  "koh-lipe": {
+    "author": "Vyacheslav Argenberg",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Koh_Lipe_(island),_Beach_shack,_Thailand.jpg"
   },
   "koh-phangan": {
     "author": "kaaist",
@@ -59,6 +104,11 @@
     "license": "CC BY-SA 4.0",
     "source": "https://commons.wikimedia.org/wiki/File:West_Rai_Leh_(11).jpg"
   },
+  "lamai": {
+    "author": "Fabio Achilli",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lamai_Beach,_Koh_Samui_(48107328576).jpg"
+  },
   "nightlife": {
     "author": "Kevin Poh",
     "license": "CC BY 2.0",
@@ -79,15 +129,30 @@
     "license": "CC BY-SA 4.0",
     "source": "https://commons.wikimedia.org/wiki/File:%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%A3%E0%B8%B1%E0%B8%95%E0%B8%99%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%94%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B8%A1_%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B9%81%E0%B8%81%E0%B9%89%E0%B8%A7_%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3_-_Wat_Phra_Kaew,_Temple_of_Emerald_Buddha,_Bangkok,_Thailand.jpg"
   },
+  "pai": {
+    "author": "Sgroey",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pai_canyon_4.jpg"
+  },
   "pattaya": {
     "author": "iMahesh",
     "license": "CC BY-SA 4.0",
     "source": "https://commons.wikimedia.org/wiki/File:Skyline_of_Pattaya_from_the_Pier_on_a_morning.jpg"
   },
+  "phrom-phong-and-thong-lo": {
+    "author": "Sry85",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Soi_Thong_Lor_26_Sep_2012.JPG"
+  },
   "phuket": {
     "author": "Subhrajyoti07",
     "license": "CC BY-SA 4.0",
     "source": "https://commons.wikimedia.org/wiki/File:The_Big_Buddha,_Phuket.jpg"
+  },
+  "rawai-and-nai-harn": {
+    "author": "Wolfgang Holzem",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Nai_harn_beach_phuket_(45).jpg"
   },
   "resort": {
     "author": "Stefan Fussan",
@@ -104,119 +169,289 @@
     "license": "CC BY 4.0",
     "source": "https://commons.wikimedia.org/wiki/File:Siam_Paragon_06.23.jpg"
   },
+  "silom-and-sathorn": {
+    "author": "Khaosaming",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Silom_Road_Bangkok_Thailand.jpg"
+  },
+  "sukhothai": {
+    "author": "Supanut Arunoprayote",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Wat_Mahathat,_Sukhothai_(I).jpg"
+  },
   "sukhumvit": {
     "author": "OPK-Photography",
     "license": "CC BY-SA 4.0",
     "source": "https://commons.wikimedia.org/wiki/File:Bangkok,_Thailand,_Sukhumvit_Road,_2024.jpg"
   },
-  "koh-lanta": {
-    "author": "Dronepicr",
-    "license": "CC BY 3.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Ko%20Lanta%20Thailand-7.jpg"
+  "thai-food": {
+    "author": "Marcin Konsek",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2016_Bangkok,_Dystrykt_Samphanthawong,_Ulica_Yaowarat,_Uliczne_jedzenie_(01).jpg"
   },
-  "koh-lipe": {
-    "author": "Koh Lipe Thailand: Koh Lipe Beach Resort",
+  "thai-food-bangkok-street": {
+    "author": "Marcin Konsek",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2016_Bangkok,_Dystrykt_Samphanthawong,_Ulica_Yaowarat,_Uliczne_jedzenie_(02).jpg"
+  },
+  "thai-food-bib": {
+    "author": "Vyacheslav Argenberg",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Som_Tam_green_papaya_salad,_Bangkok,_Thailand.jpg"
+  },
+  "thai-food-lanna": {
+    "author": "Iudexvivorum",
     "license": "CC0",
-    "source": "https://commons.wikimedia.org/wiki/File:Koh%20Lipe%20Thailand.%20Koh%20Lipe%20Beach%20Resort%2C%20Koh%20Lipe%20Island%2002.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Beef_khao_soi_-_Chiang_Mai_-_2017-07-09_(002).jpg"
   },
-  "koh-chang": {
-    "author": "Cloudyb1",
+  "thai-food-night-markets": {
+    "author": "Marcin Konsek",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2016_Bangkok,_Dystrykt_Samphanthawong,_Ulica_Yaowarat,_Owoce_morza_(01).jpg"
+  },
+  "thai-food-southern": {
+    "author": "T.Tseng",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Phuket_Style_Crab_Curry_Kanomjean_Vermicelli_rice_noodle_with_blue_crab,_crab_meat_curry,_served_with_hard_boiled_egg,_pickle_carrot_and_papaya_(25069887921).jpg"
+  },
+  "destinations": {
+    "author": "Christophe95",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ko_Phi_Phi_Le.jpg"
+  },
+  "plan": {
+    "author": "Jim Newberry",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Suvarnabhumi_Airport.jpg"
+  },
+  "get-there": {
+    "author": "Slyronit",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ferry_to_Koh_Chang,_Thailand_01.jpg"
+  },
+  "interests": {
+    "author": "Christophe95",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Chatuchak_Weekend_Market.jpg"
+  },
+  "about": {
+    "author": "TomaszSwatowski",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Wat_Pho_Reclining_Buddha.jpg"
+  },
+  "privacy": {
+    "author": "kallerna",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Bangkok_Skytrain_BTS_3.jpg"
+  },
+  "koh-kood": {
+    "author": "Vyacheslav Argenberg",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Koh_Kut,_Thailand,_Bang_Bao_Beach.jpg"
+  },
+  "resort-amanpuri": {
+    "author": "Jpatokal",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Surin_Beach.JPG"
+  },
+  "resort-six-senses-yao-noi": {
+    "author": "Nicolas Esposito",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ko_Yao_Noi.jpg"
+  },
+  "resort-capella-bangkok": {
+    "author": "Justraveling.com",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Chao_Phraya_River_Bangkok.jpg"
+  },
+  "resort-the-siam": {
+    "author": "Satidklinrod",
     "license": "CC BY-SA 3.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Koh_Chang.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Rama_VIII_Bridge.jpg"
   },
-  "pai": {
-    "author": "Sgroey",
+  "resort-soneva-kiri": {
+    "author": "Vyacheslav Argenberg",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Koh_Kut,_Thailand,_Palms_on_the_beach.jpg"
+  },
+  "resort-rayavadee": {
+    "author": "Maksym Kozlenko",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Pai%20canyon%204.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Phra_Nang_Cave_Beach.jpg"
   },
-  "chiang-rai": {
-    "author": "LannaPhoto",
+  "resort-veranda-high-chiang-mai": {
+    "author": "garycycles2",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Chiang_Mai_from_Doi_Suthep.jpg"
+  },
+  "resort-avista-hideaway-phuket": {
+    "author": "Jules Antonio",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kamala_Beach.jpg"
+  },
+  "resort-four-seasons-bangkok": {
+    "author": "This Photo was taken by Supanut Arunoprayote.\n\nFeel free to use any of my images, but please mention me as the author and may send me a message.  (สามารถใช้ภาพได้อิสระ แต่กรุณาใส่เ",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Bangkok_Pano_(IV).jpg"
+  },
+  "resort-rosewood-bangkok": {
+    "author": "Bigcitydata",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Central_Embassy_Bangkok.jpg"
+  },
+  "resort-ritz-carlton-koh-samui": {
+    "author": "Damian Moore",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Choeng_Mon_Beach,_Koh_Samui_(27451662213).jpg"
+  },
+  "wat-pho": {
+    "author": "Grayswoodsurrey",
     "license": "CC BY-SA 3.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Wat_Rong_Khun.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Wat_Pho,_Bangkok.jpg"
   },
-  "sukhothai": {
-    "author": "Wiriya Somboonphol",
-    "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Wat_Mahathat_Sukhothai.jpg"
+  "wat-arun-night": {
+    "author": "Radek Kucharski",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Wat_Arun_at_night.jpg"
   },
-  "kanchanaburi": {
-    "author": "PumpkinSky",
+  "chatuchak": {
+    "author": "BeautifulMedia",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Chatuchak_Bangkok_cityscape.jpg"
+  },
+  "yaowarat": {
+    "author": "Christophe95",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Bridge%20on%20the%20River%20Kwai%20-%20tourist%20plaza.JPG"
+    "source": "https://commons.wikimedia.org/wiki/File:Yaowarat_Road_at_night.jpg"
+  },
+  "grand-palace": {
+    "author": "D.Alyoshin",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Grand_Palace_Bangkok.jpg"
+  },
+  "phi-phi": {
+    "author": "Vincent",
+    "license": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Ko_Phi_Phi_Don.jpg"
+  },
+  "railay": {
+    "author": "Diggnet",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Railay_Beach.jpg"
+  },
+  "cheow-lan": {
+    "author": "Original:  Vyacheslav Argenberg\nDerivative work:  The Cosmonaut",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Trees_rising_out_of_Cheow_Lan_Lake,_blue_sky,_eternal_summer_in_Surat_Thani_edited.jpg"
+  },
+  "doi-suthep": {
+    "author": "Liewphat",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Phra_That_Doi_Suthep.jpg"
+  },
+  "ferry-gulf": {
+    "author": "Slyronit",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ferry_to_Koh_Chang,_Thailand_01.jpg"
   },
   "erawan": {
     "author": "Kanchanaphum Jantrathip",
     "license": "CC BY-SA 4.0",
     "source": "https://commons.wikimedia.org/wiki/File:Erawan_Waterfall.jpg"
   },
-  "thai-food": {
-    "author": "Shorkye",
-    "license": "Public domain",
-    "source": "https://commons.wikimedia.org/wiki/File:Thai_food.jpg"
-  },
-  "thai-food-bangkok-street": {
-    "author": "Gozitano",
+  "ang-thong": {
+    "author": "Christophe95",
     "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Yaowarat_Road.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:Ang_Thong_National_Park.jpg"
   },
-  "thai-food-bib": {
-    "author": "Vyacheslav Argenberg",
-    "license": "CC BY 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Japanese%20Ramen%20Noodle%20Soup%2C%20Bangkok%2C%20Thailand.jpg"
+  "lumphini": {
+    "author": "Diego Delso",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Parque_Lumphini,_Bangkok,_Tailandia,_2013-08-22,_DD_01.jpg"
   },
-  "thai-food-lanna": {
+  "jim-thompson": {
+    "author": "BrokenSphere",
+    "license": "CC BY 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Jim_Thompson_House_spirit_house.JPG"
+  },
+  "patong-night": {
+    "author": "ADwarf",
+    "license": "CC BY 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Patong_traffic_at_night_02.jpg"
+  },
+  "chaweng-night": {
+    "author": "Roma Neus",
+    "license": "CC BY 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Night_Samui_Chaweng_2013_may_-_panoramio.jpg"
+  },
+  "chinatown-day": {
+    "author": "Marcin Konsek",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2016_Bangkok,_Dystrykt_Samphanthawong,_Wat_Traimit_Witthayaram_(17).jpg"
+  },
+  "itineraries": {
+    "author": "Diego Delso",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Estaci%C3%B3n_de_FF.CC.,_Bangkok,_Tailandia,_2013-08-23,_DD_01.jpg"
+  },
+  "resort-six-senses-samui": {
+    "author": "Георгий Долгопский",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Wat_Phra_Yai.jpg"
+  },
+  "resort-four-seasons-chiang-mai": {
+    "author": "echiner1",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Rice_fields_Chiang_Mai.jpg"
+  },
+  "resort-four-seasons-koh-samui": {
+    "author": "Manfred Werner",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Koh_Samui_Lipa_Noi2.jpg"
+  },
+  "resort-vie-hotel-bangkok": {
     "author": "Chainwit.",
     "license": "CC BY 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Chiang%20Mai%20-%20Khao%20Soi%20Khun%20Yai%20-%20%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%8B%E0%B8%AD%E0%B8%A2%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B8%A2%E0%B8%B2%E0%B8%A2%20%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88%20%282026%29%20-%20IMG%2005.jpg"
+    "source": "https://commons.wikimedia.org/wiki/File:BTS_Ratchathewi_Station_-_seeing_Phaya_Thai_Road_%26_Ratchathewi_Intersection_(2026)_-_IMG_03.jpg"
   },
-  "thai-food-southern": {
-    "author": "Supanut Arunoprayote",
-    "license": "CC BY 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Sino-Portugese%20Buildings%20in%20Phuket%20Town%20%28I%29.jpg"
+  "resort-mandarin-oriental-bangkok": {
+    "author": "Chainwit.",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mandarin_Oriental_Bangkok_Bang_Rak.jpg"
   },
-  "thai-food-night-markets": {
-    "author": "Neuroticoblivion",
+  "resort-trisara-phuket": {
+    "author": "WalkOnWater93",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Nai_Yang_Beach.jpg"
+  },
+  "resort-anantara-chiang-mai": {
+    "author": "Moritz Schmaltz",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Chiang_Mai,_Nawarat_Bridge_0071.jpg"
+  },
+  "resort-137-pillars": {
+    "author": "KayEss",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Chedi_at_Wat_Kuu_Kham,_Chiang_Mai,_Thailand-KayEss-1.jpeg"
+  },
+  "resort-phulay-bay": {
+    "author": "Christophe95",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Khao_Khanab_Nam.jpg"
+  },
+  "longtail-andaman": {
+    "author": "Diego Delso",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Playa_Maya,_Ko_Phi_Phi,_Tailandia,_2013-08-19,_DD_13.JPG"
+  },
+  "night-market-cm": {
+    "author": "Neuroticoblivion (talk)",
     "license": "CC BY-SA 3.0",
     "source": "https://commons.wikimedia.org/wiki/File:Chiang_Mai_Night_Bazaar.jpg"
   },
-  "kata-and-karon": {
-    "author": "Ken Eckert",
-    "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Kata_Beach%2C_Phuket.jpg"
-  },
-  "kamala-and-surin": {
-    "author": "govertvissers",
-    "license": "CC BY-SA 3.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Kamala_beach.jpg"
-  },
-  "rawai-and-nai-harn": {
-    "author": "ADwarf",
-    "license": "Public domain",
-    "source": "https://commons.wikimedia.org/wiki/File:Phuket_-_Nai_Harn_Beach_008.jpg"
-  },
-  "chaweng": {
-    "author": "Maksim Sundukov",
-    "license": "CC BY-SA 3.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Chaweng_Beach.jpg"
-  },
-  "lamai": {
-    "author": "Koudkeu",
-    "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Lamai_Beach.jpg"
-  },
-  "phrom-phong-and-thong-lo": {
-    "author": "Andy &amp; Anna Kelk",
-    "license": "CC BY 2.0",
-    "source": "https://commons.wikimedia.org/wiki/File:BTS_Thong_Lo_Station.jpg"
-  },
-  "silom-and-sathorn": {
+  "silom-night": {
     "author": "Khaosaming",
     "license": "CC BY-SA 3.0",
     "source": "https://commons.wikimedia.org/wiki/File:Silom_Road_Bangkok_Thailand.jpg"
-  },
-  "ari": {
-    "author": "Crcolas",
-    "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Ari_BTS_Station.jpg"
   }
 }

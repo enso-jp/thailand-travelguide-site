@@ -11,6 +11,17 @@ interface Props {
 
 const { page } = Astro.props;
 const tabs = page.tabs;
+const HUB_GRIDS = new Set([
+  '/destinations',
+  '/itineraries',
+  '/plan',
+  '/get-there',
+  '/interests',
+  '/thai-food',
+  '/attractions',
+  '/interests/resort-living',
+]);
+const useGuideGrid = HUB_GRIDS.has(page.path) && (page.portraits?.length || 0) > 0;
 ---
 
 <article class="section wrap">
@@ -32,6 +43,13 @@ const tabs = page.tabs;
     <h1>{page.title}</h1>
     <p class="lede">{page.lede}</p>
     {
+      page.parentPill && page.parentPill.href !== page.path && (
+        <a class="parent-pill" href={page.parentPill.href}>
+          <span>Back to</span> {page.parentPill.name}
+        </a>
+      )
+    }
+    {
       page.chips && page.chips.length > 0 && (
         <div class="chips">
           {page.chips.map((chip) => (
@@ -51,6 +69,21 @@ const tabs = page.tabs;
   </header>
 
   <FactBar facts={page.facts} />
+
+  {
+    page.bookingCta && (
+      <div class="booking-cta" aria-label="Book stays and tickets">
+        <a href={page.bookingCta.stayHref} rel="sponsored noopener" target="_blank">
+          <strong>{page.bookingCta.stayLabel}</strong>
+          <em>{page.bookingCta.stayNote}</em>
+        </a>
+        <a href={page.bookingCta.tourHref} rel="sponsored noopener" target="_blank">
+          <strong>{page.bookingCta.tourLabel}</strong>
+          <em>{page.bookingCta.tourNote}</em>
+        </a>
+      </div>
+    )
+  }
 
   {
     tabs && tabs.length > 0 && (
@@ -120,7 +153,25 @@ const tabs = page.tabs;
   }
 
   {
-    page.portraits && page.portraits.length > 0 && (
+    useGuideGrid && (
+      <section class="place-section" id="related">
+        <h2>Every guide on this hub</h2>
+        <div class="guide-grid">
+          {page.portraits!.map((item) => (
+            <a class="guide-card" href={item.href}>
+              <img src={item.photo} alt={item.title} width="640" height="400" loading="lazy" decoding="async" />
+              <span>
+                <strong>{item.title}</strong>
+              </span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  {
+    !useGuideGrid && page.portraits && page.portraits.length > 0 && (
       <section class="place-section" id="related">
         <h2>Keep going</h2>
         <PortraitRail label={page.title} items={page.portraits} />
