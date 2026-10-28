@@ -19,6 +19,7 @@ import { wave9Pages } from './wave9-attractions';
 import { wave10Pages } from './wave10-food-guides';
 import { WAVE11_INTEREST_PAGES } from './wave11-interests';
 import { WAVE12_ITINERARY_PAGES } from './wave12-itineraries';
+import { applyWave13 } from './wave13';
 
 export type SchemaType = 'City' | 'TouristDestination' | 'Article';
 
@@ -65,6 +66,15 @@ export type Page = {
   tabs?: { href: string; label: string; current?: boolean }[];
   geo?: { lat: number; lon: number; containedIn?: string };
   alternateName?: string;
+  parentPill?: { name: string; href: string };
+  bookingCta?: {
+    stayHref: string;
+    stayLabel: string;
+    stayNote: string;
+    tourHref: string;
+    tourLabel: string;
+    tourNote: string;
+  };
 };
 
 function stay(title: string, kicker: string, body: string, href: string, photo: string, cta = 'Search stays'): Affiliate {
@@ -75,7 +85,7 @@ function klook(title: string, kicker: string, body: string, href: string, photo:
   return { title, kicker, body, href, cta, photo, partner: 'klook' };
 }
 
-export const pages: Page[] = [
+const rawPages: Page[] = [
   {
     path: "/",
     title: "Thailand Travel Guide: destinations, monsoon notes, and how to get there",
@@ -3797,6 +3807,8 @@ export const pages: Page[] = [
   ...WAVE11_INTEREST_PAGES,
   ...WAVE12_ITINERARY_PAGES,
 ];
+
+export const pages: Page[] = applyWave13(rawPages);
 
 export function getPage(path: string): Page | undefined {
   return pages.find((page) => page.path === path);
