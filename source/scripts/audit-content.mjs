@@ -118,8 +118,8 @@ const errors = [];
 const pages = await loadPages();
 const paths = new Set(pages.map((p) => p.path));
 
-if (pages.length !== 99) {
-  errors.push(`expected 99 routes, found ${pages.length}`);
+if (pages.length !== 116) {
+  errors.push(`expected 116 routes, found ${pages.length}`);
 }
 
 const credits = JSON.parse(readFileSync(join(ROOT, 'public/photos/credits.json'), 'utf8'));
