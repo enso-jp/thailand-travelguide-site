@@ -1,0 +1,27 @@
+---
+export interface Faq {
+  q: string;
+  a: string;
+}
+
+interface Props {
+  items: Faq[];
+}
+
+const { items } = Astro.props;
+---
+
+{
+  items.length > 0 && (
+    <dl class="faq">
+      {
+        items.map((item) => (
+          <>
+            <dt>{item.q}</dt>
+            <dd>{item.a}</dd>
+          </>
+        ))
+      }
+    </dl>
+  )
+}

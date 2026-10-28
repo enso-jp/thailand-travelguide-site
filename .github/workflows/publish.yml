@@ -20,8 +20,14 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      HAS_TOKEN: ${{ secrets.THAILAND_GUIDE_TOKEN != '' }}
     steps:
+      - uses: actions/checkout@v4
       - name: Checkout Thailand Travel Guide
+        if: env.HAS_TOKEN == 'true'
+        env:
+          HAS_TOKEN: ${{ secrets.THAILAND_GUIDE_TOKEN != '' }}
         uses: actions/checkout@v4
         with:
           repository: enso-jp/thailand-travelguide
