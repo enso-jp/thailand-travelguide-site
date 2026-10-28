@@ -22,6 +22,20 @@ const useGuideGrid =
     page.path === '/thai-food' ||
     page.path === '/attractions' ||
     (page.path.startsWith('/interests') && !/^\/interests\/nightlife\//.test(page.path)));
+
+function guideGridHeading(path: string): string {
+  if (path === '/interests/resort-living') return 'Flagship resorts by destination';
+  if (path === '/interests/nightlife') return 'Nightlife districts and beach clubs';
+  if (path === '/interests') return 'Explore by travel style';
+  if (path === '/thai-food') return 'Regional kitchens, street markets, and dishes';
+  if (path === '/attractions') return 'Landmarks, marine parks, and cultural sights';
+  if (path === '/destinations' || path.startsWith('/destinations/')) return 'Destinations to compare';
+  if (path === '/itineraries') return 'Routes by trip length';
+  if (path === '/plan') return 'Essential trip planning guides';
+  if (path === '/get-there') return 'Key transport routes';
+  if (path.startsWith('/interests/')) return 'Top destinations for this interest';
+  return 'Guides on this hub';
+}
 ---
 
 <article class="section wrap">
@@ -109,6 +123,24 @@ const useGuideGrid =
   </div>
 
   {
+    useGuideGrid && (
+      <section class="place-section" id="related">
+        <h2>{guideGridHeading(page.path)}</h2>
+        <div class="guide-grid">
+          {page.portraits!.map((item) => (
+            <a class="guide-card" href={item.href}>
+              <img src={item.photo} alt={item.title} width="640" height="400" loading="lazy" decoding="async" />
+              <span>
+                <strong>{item.title}</strong>
+              </span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  {
     page.days && page.days.length > 0 && (
       <section class="place-section" id="days">
         <h2>Day by day</h2>
@@ -135,6 +167,24 @@ const useGuideGrid =
       <section class="place-section" id={section.id}>
         <h2>{section.title}</h2>
         {section.paragraphs?.map((p) => <p set:html={formatInline(p)} />)}
+        {section.cards && section.cards.length > 0 && (
+          <div class="editorial-grid">
+            {section.cards.map((card) => (
+              <article class="editorial-card">
+                <span class="editorial-kicker">{card.kicker}</span>
+                <h3>
+                  {card.href ? <a href={card.href}>{card.title}</a> : card.title}
+                </h3>
+                {card.lead && <p class="editorial-lead" set:html={formatInline(card.lead)} />}
+                <ul class="editorial-bullets">
+                  {card.bullets.map((item) => (
+                    <li set:html={formatInline(item)} />
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        )}
         {section.bullets && section.bullets.length > 0 && (
           <ul class="scan-list">
             {section.bullets.map((item) => (
@@ -166,24 +216,6 @@ const useGuideGrid =
         )}
       </section>
     ))
-  }
-
-  {
-    useGuideGrid && (
-      <section class="place-section" id="related">
-        <h2>Every guide on this hub</h2>
-        <div class="guide-grid">
-          {page.portraits!.map((item) => (
-            <a class="guide-card" href={item.href}>
-              <img src={item.photo} alt={item.title} width="640" height="400" loading="lazy" decoding="async" />
-              <span>
-                <strong>{item.title}</strong>
-              </span>
-            </a>
-          ))}
-        </div>
-      </section>
-    )
   }
 
   {

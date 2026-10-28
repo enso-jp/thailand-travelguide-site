@@ -1,5 +1,5 @@
 import credits from '../../public/photos/credits.json';
-import type { Affiliate, Page, Portrait, Section } from './content';
+import type { Affiliate, EditorialCard, Page, Portrait } from './content';
 import { klookTours, stayLink, type StayCity } from './partners';
 
 const BANNED = [
@@ -349,169 +349,705 @@ const RESORT_RANKED: { title: string; href: string; photo: string }[] = [
   { title: '1. Soneva Kiri', href: '/resort-living/soneva-kiri', photo: '/photos/resort-soneva-kiri.jpg' },
 ];
 
-const RESORT_ZONE: Record<string, { title: string; bullets: string[] }> = {
+const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
   '/resort-living/amanpuri': {
     title: 'Beach and zone versus other Phuket coasts',
-    bullets: [
-      '**Pansea and Surin coves:** Private-access headland water and Phuket highest villa rates. This is why Amanpuri sits here.',
-      '**Naithon and Layan:** Quieter northwest hills 20 to 25 minutes from HKT. Trisara is the all-pool-villa rival.',
-      '**Kamala hills:** Dinner and beach-club access without a Patong base.',
-      '**Mai Khao:** Long north sand next to the airport. Quiet, far from southern piers.',
-      '**Patong and Kata ridge:** Energy and family beaches. Avista trades cove privacy for a shorter Patong hop.',
+    cards: [
+      {
+        kicker: 'This Coast',
+        title: 'Pansea and Surin headlands',
+        lead: 'A gated west-coast peninsula with calm turquoise water from November to April and almost no road noise at the sand.',
+        bullets: [
+          '**[Amanpuri](/resort-living/amanpuri)** locks a private white-sand cove at 45,000 to 120,000+ THB a night, with a 45 to 75 minute HKT car at 1,500 to 2,500 THB.',
+          'This coast beats busy central beaches because the villa gate is the itinerary, not a Patong dinner hop.',
+          'Kamala restaurants and west-coast daybeds stay a short car away when you want a plate off property.',
+        ],
+      },
+      {
+        kicker: 'Closest Rival',
+        title: 'Naithon and Layan hills',
+        lead: 'Forested northwest cliffs 20 to 25 minutes south of Phuket Airport, where every key is a private pool villa.',
+        bullets: [
+          '**[Trisara Phuket](/resort-living/trisara-phuket)** is the all-pool-villa rival at 35,000 to 95,000+ THB, with a private Andaman cove and PRU dining.',
+          'The HKT hop is shorter than Pansea, which matters if you land late and want dinner on property.',
+          'Bang Tao beach clubs sit a short west-coast car away without touching Patong.',
+        ],
+      },
+      {
+        kicker: 'Alternative Vibe',
+        title: 'Kamala ridge, Mai Khao, and Patong hills',
+        lead: 'Hillside value stays and long airport beaches trade cove isolation for easier dining or a shorter flight-day transfer.',
+        bullets: [
+          '**[Avista Hideaway Phuket](/resort-living/avista-hideaway-phuket)** is the 6,000 to 20,000+ THB MGallery between Patong and Freedom Beach if the cove budget is closed.',
+          'Mai Khao keeps 11 km of quiet north sand beside the airport, far from southern piers.',
+          'Patong and Kata ridge nights are a different week from a gated Pansea villa.',
+        ],
+      },
     ],
   },
   '/resort-living/trisara-phuket': {
     title: 'Beach and zone versus other Phuket coasts',
-    bullets: [
-      '**Naithon and Layan headland:** Forested northwest privacy and sunset Andaman views. This is the Trisara lock.',
-      '**Pansea and Surin:** Higher villa rates and a tighter cove. Amanpuri is the step up.',
-      '**Kamala hills:** Easier dinner walks and cafe del Mar style days.',
-      '**Patong ridge:** Faster nightlife. Wrong default if you booked this cove.',
+    cards: [
+      {
+        kicker: 'This Coast',
+        title: 'Naithon and Layan headland',
+        lead: 'Forested northwest privacy and sunset Andaman views, 20 to 25 minutes south of HKT.',
+        bullets: [
+          '**[Trisara Phuket](/resort-living/trisara-phuket)** locks every key as a private-pool villa at 35,000 to 95,000+ THB, with PRU as the on-property dining room.',
+          'The airport hop is the shortest of the ultra-prime west-coast coves, useful on a late BKK connection.',
+          'Bang Tao and Laguna beach clubs sit a short car south when you want a booked daybed.',
+        ],
+      },
+      {
+        kicker: 'Closest Rival',
+        title: 'Pansea and Surin coves',
+        lead: 'Tighter white-sand headlands and Phuket highest villa rates, farther from the airport.',
+        bullets: [
+          '**[Amanpuri](/resort-living/amanpuri)** is the step up if you want a gated private cove and will pay 45,000 to 120,000+ THB.',
+          'The HKT car stretches to 45 to 75 minutes and 1,500 to 2,500 THB, so land with a booked driver.',
+          'Surin and Kamala dinner rooms stay closer to this rival than to Naithon.',
+        ],
+      },
+      {
+        kicker: 'Alternative Vibe',
+        title: 'Kamala hills and Patong ridge',
+        lead: 'Walkable dinner bays and faster nightlife when you do not need a private-cove villa.',
+        bullets: [
+          'Kamala hills give easier Cafe del Mar style days and west-coast plates without a Patong base.',
+          '**[Avista Hideaway Phuket](/resort-living/avista-hideaway-phuket)** trades cove silence for a hillside MGallery between Patong and Freedom Beach.',
+          'Patong ridge after 22:00 is the wrong default if you booked this quiet northwest cove.',
+        ],
+      },
     ],
   },
   '/resort-living/avista-hideaway-phuket': {
     title: 'Beach and zone versus other Phuket coasts',
-    bullets: [
-      '**Patong and Kata ridge:** Hill sanctuary between Patong and Freedom Beach. Faster dining, less cove privacy.',
-      '**Pansea and Surin:** Amanpuri privacy if the budget jumps.',
-      '**Naithon and Layan:** Trisara if you want a private-pool villa far from Patong bass.',
-      '**Kamala and Surin hills:** The useful dinner and daybed belt from this hotel.',
+    cards: [
+      {
+        kicker: 'This Coast',
+        title: 'Patong and Kata ridge',
+        lead: 'A hillside MGallery between Patong and Freedom Beach, with faster dining and less cove privacy.',
+        bullets: [
+          '**[Avista Hideaway Phuket](/resort-living/avista-hideaway-phuket)** sits at 6,000 to 20,000+ THB, a value west-coast lock when flagship coves are closed.',
+          'Patong plates and Kata family beaches are 20 to 30 minutes, so you still need a car after dark.',
+          'Kamala and Surin remain the useful dinner and daybed belt from this hill.',
+        ],
+      },
+      {
+        kicker: 'Closest Rival',
+        title: 'Pansea and Surin privacy',
+        lead: 'Gated headlands if the budget jumps and you want the sand to belong to the hotel.',
+        bullets: [
+          '**[Amanpuri](/resort-living/amanpuri)** is the privacy jump at 45,000 to 120,000+ THB on a private white-sand cove.',
+          'The HKT car is longer than the Avista hop, so book the driver with the villa.',
+          'This rival beats the ridge when road noise is the reason you left Patong.',
+        ],
+      },
+      {
+        kicker: 'Alternative Vibe',
+        title: 'Naithon villa hills',
+        lead: 'All-pool-villa northwest cliffs far from Patong bass, closer to the airport.',
+        bullets: [
+          '**[Trisara Phuket](/resort-living/trisara-phuket)** is the private-pool-villa alternative at 35,000 to 95,000+ THB.',
+          'Naithon sits 20 to 25 minutes from HKT, which helps a late arrival more than a Patong-ridge hotel.',
+          'Mai Khao north sand is the quiet airport beach if you want length, not a hillside view.',
+        ],
+      },
     ],
   },
   '/resort-living/four-seasons-koh-samui': {
     title: 'Beach and zone versus other Samui coasts',
-    bullets: [
-      '**Laem Yai and Lipa Noi:** Northwest sunset amphitheater, 35 to 45 minutes from USM. Maximum privacy, butler-buggy living.',
-      '**Choeng Mon and Bophut headland:** 15 minutes from USM and 10 minutes from Fisherman Village. Six Senses and Ritz-Carlton.',
-      '**Chaweng and Chaweng Noi:** Finest powder sand and the dinner strip. Wrong default if you booked this hill.',
+    cards: [
+      {
+        kicker: 'This Coast',
+        title: 'Laem Yai sunset amphitheater',
+        lead: 'Steep coconut-palmed hillsides facing the Gulf sunset, 35 to 45 minutes from Samui Airport.',
+        bullets: [
+          '**[Four Seasons Koh Samui](/resort-living/four-seasons-koh-samui)** locks butler-buggy hillside villas and a private cove at 36,000 to 90,000+ THB.',
+          'Maximum privacy is the point. A late scooter down this hill is a bad story.',
+          'Lipa Noi daybeds sit on the same west-facing coast when you want a booked afternoon off property.',
+        ],
+      },
+      {
+        kicker: 'Closest Rival',
+        title: 'Choeng Mon and Bophut headland',
+        lead: 'Granite promontories 15 minutes from USM and 10 minutes from Fisherman Village.',
+        bullets: [
+          '**[Six Senses Samui](/resort-living/six-senses-samui)** is the 20-acre timber villa point at 22,000 to 55,000+ THB.',
+          '**[The Ritz-Carlton, Koh Samui](/resort-living/ritz-carlton-koh-samui)** holds a 58-acre former coconut plantation bay at 16,000 to 42,000+ THB.',
+          'This rival wins if a village dinner walk matters more than the sunset amphitheater.',
+        ],
+      },
+      {
+        kicker: 'Alternative Vibe',
+        title: 'Chaweng walkable east coast',
+        lead: 'Powder-sand swimming and the dinner strip, a different week from a northwest villa hill.',
+        bullets: [
+          'Sleep on Chaweng when you want walkable dining and a short USM hop, not butler-buggy silence.',
+          'January to September is the easier Gulf sea on both coasts; October swell hits the east first.',
+          'A late Grab from Chaweng to Laem Yai often runs 300 to 700 THB, so do not treat the strip as a nightly outing from this hill.',
+        ],
+      },
     ],
   },
   '/resort-living/six-senses-samui': {
     title: 'Beach and zone versus other Samui coasts',
-    bullets: [
-      '**Choeng Mon and Bophut headland:** Rocky 20-acre peninsula near Fisherman Village. This is the Six Senses lock.',
-      '**Laem Yai northwest:** Four Seasons if sunset privacy beats a village dinner walk.',
-      '**Chaweng strip:** Swim and nightlife. A different week from this hill.',
+    cards: [
+      {
+        kicker: 'This Coast',
+        title: 'Choeng Mon northern headland',
+        lead: 'A rocky 20-acre peninsula near Fisherman Village, 15 minutes from USM.',
+        bullets: [
+          '**[Six Senses Samui](/resort-living/six-senses-samui)** locks timber villas on the point at 22,000 to 55,000+ THB.',
+          'Bophut village is the dinner walk if you leave the hill. A 2026 Grab down often runs 200 to 400 THB.',
+          'Choeng Mon swimming coves sit below the villas, so you do not need Chaweng for a beach hour.',
+        ],
+      },
+      {
+        kicker: 'Closest Rival',
+        title: 'Laem Yai northwest cape',
+        lead: 'The sunset amphitheater if privacy beats a village dinner walk.',
+        bullets: [
+          '**[Four Seasons Koh Samui](/resort-living/four-seasons-koh-samui)** is the butler-buggy rival at 36,000 to 90,000+ THB, 35 to 45 minutes from USM.',
+          'Lipa Noi daybeds pair with that cape more cleanly than with Choeng Mon.',
+          'Book this rival when the Gulf sunset, not Fisherman Village, is the week.',
+        ],
+      },
+      {
+        kicker: 'Alternative Vibe',
+        title: 'Chaweng strip versus Plai Laem bay',
+        lead: 'Walkable nightlife sand, or a wider plantation bay 15 minutes from the airport.',
+        bullets: [
+          'Chaweng is swim-and-nightlife, a different week from this timber headland.',
+          '**[The Ritz-Carlton, Koh Samui](/resort-living/ritz-carlton-koh-samui)** is the closer bay estate at 16,000 to 42,000+ THB if you want lawn and a gentler arrival.',
+          'January to September is the swimming window on all three coasts.',
+        ],
+      },
     ],
   },
   '/resort-living/ritz-carlton-koh-samui': {
     title: 'Beach and zone versus other Samui coasts',
-    bullets: [
-      '**Plai Laem and Choeng Mon:** Private bay estate 15 minutes from USM.',
-      '**Bophut village:** Dinner without a long hill road. Six Senses is the closer headland rival.',
-      '**Laem Yai:** Four Seasons if you want the sunset amphitheater and will Grab for plates.',
+    cards: [
+      {
+        kicker: 'This Coast',
+        title: 'Plai Laem and Choeng Mon bay',
+        lead: 'A private 58-acre former coconut plantation, 15 minutes from USM.',
+        bullets: [
+          '**[The Ritz-Carlton, Koh Samui](/resort-living/ritz-carlton-koh-samui)** holds the bay estate at 16,000 to 42,000+ THB.',
+          'Bophut dinner is a short car, not a long hill road, which is why this lock works for mixed weeks.',
+          'The swimming cove is on property, so Chaweng is optional rather than daily.',
+        ],
+      },
+      {
+        kicker: 'Closest Rival',
+        title: 'Six Senses timber point',
+        lead: 'The closer headland rival if you want a steeper villa map and a shorter village walk.',
+        bullets: [
+          '**[Six Senses Samui](/resort-living/six-senses-samui)** sits on the same northern cape at 22,000 to 55,000+ THB.',
+          'Fisherman Village is about 10 minutes from either door if you want wooden-shophouse plates.',
+          'Pick the timber point when the rocky peninsula, not the plantation lawn, is the look.',
+        ],
+      },
+      {
+        kicker: 'Alternative Vibe',
+        title: 'Laem Yai sunset hill',
+        lead: 'Northwest privacy if you will Grab for plates and want the amphitheater view.',
+        bullets: [
+          '**[Four Seasons Koh Samui](/resort-living/four-seasons-koh-samui)** is the sunset lock at 36,000 to 90,000+ THB, 35 to 45 minutes from USM.',
+          'Chaweng remains the walkable powder-sand strip if you want nightlife more than a bay estate.',
+          'A late hill car home from Chaweng to the northwest often runs 300 to 700 THB.',
+        ],
+      },
     ],
   },
   '/resort-living/phulay-bay': {
     title: 'Beach and zone versus other Krabi and Phang Nga coasts',
-    bullets: [
-      '**Tubkaek mainland beach:** Road-access sunset sand facing the Hong Islands. Direct KBV car. No boat dependency.',
-      '**Koh Yao Noi:** 45-minute speedboat into Phang Nga pinnacles. Six Senses if the bay is the trip.',
-      '**Railay and Phra Nang:** Boat-only karst pocket. Rayavadee if you accept a stuck storm day.',
+    cards: [
+      {
+        kicker: 'This Coast',
+        title: 'Tubkaek mainland sunset',
+        lead: 'Quiet mainland sand facing the thirteen limestone islands of Koh Hong, with a direct road from Krabi Airport.',
+        bullets: [
+          '**[Phulay Bay, a Ritz-Carlton Reserve](/resort-living/phulay-bay)** locks oversized pavilions at 28,000 to 75,000+ THB with zero boat dependency in changeable weather.',
+          'A KBV car is the arrival story, which matters when Andaman swell cancels longtails.',
+          'Hong Island boats remain a booked morning, not a required transfer to reach the bed.',
+        ],
+      },
+      {
+        kicker: 'Closest Rival',
+        title: 'Koh Yao Noi in Phang Nga Bay',
+        lead: 'A sleepy island halfway between Phuket and Krabi, with sunrise views over karst pinnacles.',
+        bullets: [
+          '**[Six Senses Yao Noi](/resort-living/six-senses-yao-noi)** is the bay-villa rival at 26,000 to 70,000+ THB, reached by a 45-minute speedboat from Phuket or Krabi.',
+          'Book this rival when the pinnacles, not a mainland road, are the week.',
+          'Ao Nang dinners become a project from the island, so plan most plates on property.',
+        ],
+      },
+      {
+        kicker: 'Alternative Vibe',
+        title: 'Railay and Phra Nang peninsula',
+        lead: 'Boat-only limestone beaches cut off from mainland roads, 15 minutes from Ao Nang by longtail.',
+        bullets: [
+          '**[Rayavadee](/resort-living/rayavadee)** sits in a coconut grove at 22,000 to 60,000+ THB, steps from Phra Nang cave beach.',
+          'Accept a stuck storm day if you pick this pocket. There is no road exit.',
+          'Ao Nang is the mainland fallback if you want the same cliffs with a car.',
+        ],
+      },
     ],
   },
   '/resort-living/six-senses-yao-noi': {
     title: 'Beach and zone versus other Krabi and Phang Nga coasts',
-    bullets: [
-      '**Koh Yao Noi island:** Halfway between Phuket and Krabi. Quiet lanes and bay villas.',
-      '**Tubkaek mainland:** Phulay Bay if you refuse a pier-and-boat arrival.',
-      '**Railay grove:** Rayavadee if you want cliffs with no island transfer.',
+    cards: [
+      {
+        kicker: 'This Coast',
+        title: 'Koh Yao Noi island lanes',
+        lead: 'Quiet island roads and elevated pool villas halfway between Phuket and Krabi.',
+        bullets: [
+          '**[Six Senses Yao Noi](/resort-living/six-senses-yao-noi)** locks Phang Nga hill villas at 26,000 to 70,000+ THB after a 45-minute speedboat.',
+          'Hotel boats into the bay are the on-property day. Phuket nightlife is the wrong pairing.',
+          'There is no road from HKT or KBV, so land with the boat already booked.',
+        ],
+      },
+      {
+        kicker: 'Closest Rival',
+        title: 'Tubkaek mainland road',
+        lead: 'Sunset sand facing the Hong Islands if you refuse a pier-and-boat arrival.',
+        bullets: [
+          '**[Phulay Bay, a Ritz-Carlton Reserve](/resort-living/phulay-bay)** is the mainland rival at 28,000 to 75,000+ THB with a direct KBV car.',
+          'This rival wins when weather is changeable and you want a storm-proof exit.',
+          'Hong Island remains a booked morning rather than the view from the villa deck.',
+        ],
+      },
+      {
+        kicker: 'Alternative Vibe',
+        title: 'Railay grove, no island hop',
+        lead: 'Cliffs and three beaches with no island transfer, reached by a 15-minute boat from Ao Nang.',
+        bullets: [
+          '**[Rayavadee](/resort-living/rayavadee)** is the grove alternative at 22,000 to 60,000+ THB if you want limestone walls without a Yao Noi crossing.',
+          'Phra Nang cave beach sits a short walk from the pavilions.',
+          'A stuck storm day is still possible, but the hop from Ao Nang is shorter than the Phang Nga speedboat.',
+        ],
+      },
     ],
   },
   '/resort-living/rayavadee': {
     title: 'Beach and zone versus other Krabi and Phang Nga coasts',
-    bullets: [
-      '**Phra Nang and Railay:** Boat-only limestone pocket. Zero road traffic. This is the Rayavadee lock.',
-      '**Tubkaek:** Phulay Bay if you want a KBV car and a storm-proof exit.',
-      '**Koh Yao Noi:** Six Senses if the Phang Nga view is the week.',
+    cards: [
+      {
+        kicker: 'This Coast',
+        title: 'Phra Nang and Railay pocket',
+        lead: 'Boat-only limestone beaches with zero road traffic and a 15-minute longtail from Ao Nang.',
+        bullets: [
+          '**[Rayavadee](/resort-living/rayavadee)** locks two-storey coconut-grove pavilions at 22,000 to 60,000+ THB, steps from Phra Nang cave beach.',
+          'There is no car at the door. Bags move by golf cart and boat.',
+          'Climbing walls and three beaches are the week, not an Ao Nang night market loop.',
+        ],
+      },
+      {
+        kicker: 'Closest Rival',
+        title: 'Tubkaek storm-proof road',
+        lead: 'Mainland sunset sand if you want a KBV car and an exit that does not depend on a longtail.',
+        bullets: [
+          '**[Phulay Bay, a Ritz-Carlton Reserve](/resort-living/phulay-bay)** is the road-access rival at 28,000 to 75,000+ THB.',
+          'Hong Island views sit across the water, and the car stays booked for a weather day.',
+          'Pick this rival when you refuse a stuck-storm story on Railay.',
+        ],
+      },
+      {
+        kicker: 'Alternative Vibe',
+        title: 'Koh Yao Noi bay villas',
+        lead: 'Phang Nga pinnacles as the daily view, with a 45-minute speedboat from Phuket or Krabi.',
+        bullets: [
+          '**[Six Senses Yao Noi](/resort-living/six-senses-yao-noi)** is the island alternative at 26,000 to 70,000+ THB.',
+          'The bay is the week. Ao Nang dinners become a project.',
+          'Book this alternative when sunrise karst, not a cave beach, is the reason you came.',
+        ],
+      },
     ],
   },
   '/resort-living/capella-bangkok': {
     title: 'River and district versus other Bangkok stays',
-    bullets: [
-      '**Chao Phraya Charoenkrung:** Low-rise river suites, hotel boat, sunset terrace. Capella, Four Seasons, Mandarin Oriental.',
-      '**Dusit upriver:** The Siam private compound and teak barge. Quieter, farther from BTS.',
-      '**Phloen Chit and Siam spine:** Rosewood and VIE if you want skytrain, not a river road.',
+    cards: [
+      {
+        kicker: 'This Coast',
+        title: 'Charoenkrung river promenade',
+        lead: 'Low-rise waterfront courtyards, private shuttle boats to the Grand Palace piers, and Asia top cocktail rooms next door.',
+        bullets: [
+          '**[Capella Bangkok](/resort-living/capella-bangkok)** locks river suites at 32,000 to 85,000+ THB with a hotel boat and a sunset terrace.',
+          '**[Four Seasons Bangkok](/resort-living/four-seasons-bangkok)** and **[Mandarin Oriental, Bangkok](/resort-living/mandarin-oriental-bangkok)** sit on the same bank at 25,000 to 65,000+ THB.',
+          'Charoenkrung cocktail rooms are a short Grab. The palace is a morning boat, not a 10:00 taxi loop.',
+        ],
+      },
+      {
+        kicker: 'Closest Rival',
+        title: 'Dusit upriver compound',
+        lead: 'A leafy bend of the Chao Phraya north of the Old City, far from Sukhumvit traffic.',
+        bullets: [
+          '**[The Siam](/resort-living/the-siam)** is the teak-barge rival at 28,000 to 75,000+ THB, with 38 suites and a private river compound.',
+          'The hotel boat is the point. BTS is farther than on Charoenkrung.',
+          'Pick this rival when you want antique teak houses more than ICONSIAM at the door.',
+        ],
+      },
+      {
+        kicker: 'Alternative Vibe',
+        title: 'Phloen Chit skytrain spine',
+        lead: 'Direct BTS bridges for travellers who want central dining, embassies, and a short Airport Rail Link hop.',
+        bullets: [
+          '**[Rosewood Bangkok](/resort-living/rosewood-bangkok)** is the vertical manor at 14,000 to 32,000+ THB beside BTS Ploenchit.',
+          '**[VIE Hotel Bangkok](/resort-living/vie-hotel-bangkok)** is the 4,000 to 14,000+ THB design tower at BTS Ratchathewi.',
+          'These rooms skip the river road when skytrain, not a barge, is the Bangkok plan.',
+        ],
+      },
     ],
   },
   '/resort-living/the-siam': {
     title: 'River and district versus other Bangkok stays',
-    bullets: [
-      '**Dusit upriver heritage reach:** Leafy bend north of Rattanakosin. Hotel boat is the point.',
-      '**Charoenkrung river:** Capella and Four Seasons if you want ICONSIAM and cocktail rooms closer.',
-      '**Siam and Ratchathewi:** VIE if you want ARL and BTS without a compound.',
+    cards: [
+      {
+        kicker: 'This Coast',
+        title: 'Dusit royal reach',
+        lead: 'A tranquil leafy bend north of Rattanakosin, where the hotel boat replaces a Sukhumvit taxi.',
+        bullets: [
+          '**[The Siam](/resort-living/the-siam)** locks 38 suites and pool villas at 28,000 to 75,000+ THB around antique teak houses.',
+          'The private river barge is the arrival story and the palace transfer.',
+          'Night markets and Thonglor rooms are a planned Grab, not a walk.',
+        ],
+      },
+      {
+        kicker: 'Closest Rival',
+        title: 'Charoenkrung cocktail bank',
+        lead: 'Newer river courtyards closer to ICONSIAM and the Charoenkrung bar rooms.',
+        bullets: [
+          '**[Capella Bangkok](/resort-living/capella-bangkok)** and **[Four Seasons Bangkok](/resort-living/four-seasons-bangkok)** sit downriver at 26,000 to 85,000+ THB.',
+          'Mandarin Oriental keeps the historic Bang Rak pier if you want Authors Lounge and city noise at the door.',
+          'Pick this rival when cocktail rooms and a promenade matter more than a private garden.',
+        ],
+      },
+      {
+        kicker: 'Alternative Vibe',
+        title: 'Siam and Ratchathewi rails',
+        lead: 'Airport Rail Link and BTS without a compound, if two river nights are not the plan.',
+        bullets: [
+          '**[VIE Hotel Bangkok](/resort-living/vie-hotel-bangkok)** is the 4,000 to 14,000+ THB design tower one hop from Siam.',
+          '**[Rosewood Bangkok](/resort-living/rosewood-bangkok)** steps up to a Phloen Chit vertical manor at 14,000 to 32,000+ THB.',
+          'These rooms win when ARL plus BTS beats a barge timetable.',
+        ],
+      },
     ],
   },
   '/resort-living/four-seasons-bangkok': {
     title: 'River and district versus other Bangkok stays',
-    bullets: [
-      '**Charoenkrung courtyard:** Urban river resort with shuttle boats.',
-      '**Capella next door:** Higher villa rates on the same bank.',
-      '**Dusit:** The Siam if you want a private garden and no promenade traffic.',
+    cards: [
+      {
+        kicker: 'This Coast',
+        title: 'Charoenkrung courtyard',
+        lead: 'An urban river resort with shuttle boats, a spa wing, and ICONSIAM a short hop away.',
+        bullets: [
+          '**[Four Seasons Bangkok](/resort-living/four-seasons-bangkok)** locks the courtyard at 26,000 to 65,000+ THB.',
+          'Hotel boats cover palace piers and the shopping dock, so you can skip a 10:00 taxi loop.',
+          'Charoenkrung cocktail rooms sit a short Grab from the gate.',
+        ],
+      },
+      {
+        kicker: 'Closest Rival',
+        title: 'Capella next door',
+        lead: 'Higher villa rates on the same bank if you want more suite space and a quieter terrace.',
+        bullets: [
+          '**[Capella Bangkok](/resort-living/capella-bangkok)** is the step up at 32,000 to 85,000+ THB.',
+          'The promenade is shared geography. The room product is the difference.',
+          'Mandarin Oriental remains the historic pier alternative on Bang Rak.',
+        ],
+      },
+      {
+        kicker: 'Alternative Vibe',
+        title: 'Dusit private garden',
+        lead: 'Upriver teak and a hotel barge if you want no promenade traffic.',
+        bullets: [
+          '**[The Siam](/resort-living/the-siam)** is the garden compound at 28,000 to 75,000+ THB.',
+          'Rosewood and VIE skip the river entirely if BTS is the Bangkok week.',
+          'Pick Dusit when antique houses beat a new courtyard.',
+        ],
+      },
     ],
   },
   '/resort-living/mandarin-oriental-bangkok': {
     title: 'River and district versus other Bangkok stays',
-    bullets: [
-      '**Bang Rak historic pier:** The original river icon. Private pier, Authors Lounge, city noise at the door.',
-      '**Charoenkrung new-build:** Capella and Four Seasons for newer suites.',
-      '**Phloen Chit vertical:** Rosewood if BTS beats a boat.',
+    cards: [
+      {
+        kicker: 'This Coast',
+        title: 'Bang Rak historic pier',
+        lead: 'The original river icon, with a private pier, Authors Lounge, and city noise at the door.',
+        bullets: [
+          '**[Mandarin Oriental, Bangkok](/resort-living/mandarin-oriental-bangkok)** locks the historic rooms at 25,000 to 65,000+ THB.',
+          'The pier is the arrival. Saphan Taksin BTS sits a short walk or boat hop away.',
+          'This is a city-and-river hybrid, not a silent compound.',
+        ],
+      },
+      {
+        kicker: 'Closest Rival',
+        title: 'Charoenkrung new-build suites',
+        lead: 'Newer river courtyards if you want larger rooms and a quieter terrace than Bang Rak.',
+        bullets: [
+          '**[Capella Bangkok](/resort-living/capella-bangkok)** and **[Four Seasons Bangkok](/resort-living/four-seasons-bangkok)** sit up the same bank at 26,000 to 85,000+ THB.',
+          'ICONSIAM and the cocktail rooms are closer to those courtyards than to the old pier.',
+          'Pick the new-builds when suite size beats Authors Lounge history.',
+        ],
+      },
+      {
+        kicker: 'Alternative Vibe',
+        title: 'Phloen Chit vertical manor',
+        lead: 'Skytrain living if BTS beats a boat on a short Bangkok stay.',
+        bullets: [
+          '**[Rosewood Bangkok](/resort-living/rosewood-bangkok)** is the 14,000 to 32,000+ THB tower beside BTS Ploenchit.',
+          'VIE Hotel keeps the value design room at Ratchathewi if the manor rate is closed.',
+          'The Siam remains the upriver teak alternative if you want a barge and a garden.',
+        ],
+      },
     ],
   },
   '/resort-living/rosewood-bangkok': {
     title: 'River and district versus other Bangkok stays',
-    bullets: [
-      '**Phloen Chit skytrain manor:** Direct BTS, malls, rooftop cocktails. No river road.',
-      '**Chao Phraya compounds:** Capella and Mandarin if the boat is the stay.',
-      '**Ratchathewi value:** VIE if you want design rooms one stop from Siam.',
+    cards: [
+      {
+        kicker: 'This Coast',
+        title: 'Phloen Chit skytrain manor',
+        lead: 'Direct BTS, malls, and rooftop cocktails with no river road in the way.',
+        bullets: [
+          '**[Rosewood Bangkok](/resort-living/rosewood-bangkok)** locks the vertical manor at 14,000 to 32,000+ THB beside BTS Ploenchit.',
+          'Embassy row and Central Embassy sit a short walk, which is why this lock works for mixed business weeks.',
+          'Airport Rail Link plus BTS beats a Chao Phraya taxi on a short stay.',
+        ],
+      },
+      {
+        kicker: 'Closest Rival',
+        title: 'Chao Phraya compounds',
+        lead: 'River boats and low-rise courtyards if the barge, not the skytrain, is the stay.',
+        bullets: [
+          '**[Capella Bangkok](/resort-living/capella-bangkok)** and **[Mandarin Oriental, Bangkok](/resort-living/mandarin-oriental-bangkok)** sit on the water at 25,000 to 85,000+ THB.',
+          'Four Seasons Bangkok shares that bank if you want a courtyard spa wing.',
+          'Pick the river when palace boats matter more than a mall bridge.',
+        ],
+      },
+      {
+        kicker: 'Alternative Vibe',
+        title: 'Ratchathewi value tower',
+        lead: 'Design rooms one stop from Siam, with ARL at the same interchange story.',
+        bullets: [
+          '**[VIE Hotel Bangkok](/resort-living/vie-hotel-bangkok)** is the 4,000 to 14,000+ THB alternative at BTS Ratchathewi.',
+          'The Siam remains the upriver teak compound if you want a garden instead of a tower.',
+          'This alternative wins when the manor rate is closed and you still want rails, not a river road.',
+        ],
+      },
     ],
   },
   '/resort-living/vie-hotel-bangkok': {
     title: 'River and district versus other Bangkok stays',
-    bullets: [
-      '**Ratchathewi BTS:** ARL plus one hop. City value pick, not a river compound.',
-      '**Phloen Chit:** Rosewood if you want the vertical manor step up.',
-      '**Charoenkrung:** Capella if two river nights are the Bangkok plan.',
+    cards: [
+      {
+        kicker: 'This Coast',
+        title: 'Ratchathewi BTS tower',
+        lead: 'Airport Rail Link plus one hop, a city value pick rather than a river compound.',
+        bullets: [
+          '**[VIE Hotel Bangkok](/resort-living/vie-hotel-bangkok)** locks design rooms at 4,000 to 14,000+ THB beside BTS Ratchathewi.',
+          'Siam shopping and the ARL are the point. A hotel boat is not.',
+          'This is the short-stay rail lock when two river nights are not in the budget.',
+        ],
+      },
+      {
+        kicker: 'Closest Rival',
+        title: 'Phloen Chit vertical manor',
+        lead: 'The step up if you want a quieter tower, rooftop cocktails, and embassy-row walks.',
+        bullets: [
+          '**[Rosewood Bangkok](/resort-living/rosewood-bangkok)** is the manor rival at 14,000 to 32,000+ THB beside BTS Ploenchit.',
+          'The skytrain story is the same. The room product is the difference.',
+          'Pick Rosewood when you still want rails but need a longer stay feel.',
+        ],
+      },
+      {
+        kicker: 'Alternative Vibe',
+        title: 'Charoenkrung river nights',
+        lead: 'Low-rise waterfront courtyards if two river nights are the Bangkok plan.',
+        bullets: [
+          '**[Capella Bangkok](/resort-living/capella-bangkok)** is the river alternative at 32,000 to 85,000+ THB.',
+          'Four Seasons and Mandarin Oriental share that bank if you want a courtyard or the historic pier.',
+          'The Siam remains the upriver teak compound if you want a barge and no promenade traffic.',
+        ],
+      },
     ],
   },
   '/resort-living/four-seasons-chiang-mai': {
     title: 'Valley and district versus other Chiang Mai stays',
-    bullets: [
-      '**Mae Rim rice valley:** 30 to 40 minutes north. Terraces and mist. This is the Four Seasons lock.',
-      '**Ping River and Wat Ket:** 10 minutes from the moat. 137 Pillars and Anantara.',
-      '**Hang Dong western hills:** Veranda High if you want a view pool at an accessible rate.',
+    cards: [
+      {
+        kicker: 'This Coast',
+        title: 'Mae Rim rice-terrace valley',
+        lead: 'Working terraced paddies, water buffalo, and misty foothills 30 to 40 minutes north of the moat.',
+        bullets: [
+          '**[Four Seasons Chiang Mai](/resort-living/four-seasons-chiang-mai)** locks Lanna pavilions and private residences at 30,000 to 80,000+ THB.',
+          'November to early February is the clearest valley air. Late February to April haze can sit in every view.',
+          'Wat mornings need a booked car. This is not a walk to Wat Phra Singh.',
+        ],
+      },
+      {
+        kicker: 'Closest Rival',
+        title: 'Wat Ket and the Ping River',
+        lead: 'Walkable riverside lawns and 19th-century teak 10 minutes east of the Old City wats.',
+        bullets: [
+          '**[137 Pillars House](/resort-living/137-pillars-house)** is the 1889 homestead at 18,000 to 40,000+ THB, with 30 suites around the original house.',
+          '**[Anantara Chiang Mai](/resort-living/anantara-chiang-mai)** holds the contemporary Ping bank at 12,000 to 28,000+ THB.',
+          'These rivals win when you want a 07:00 wat without a 40-minute valley car.',
+        ],
+      },
+      {
+        kicker: 'Alternative Vibe',
+        title: 'Hang Dong forest slopes',
+        lead: 'Elevated valley infinity pools near Doi Suthep-Pui at a fraction of Mae Rim pavilion rates.',
+        bullets: [
+          '**[Veranda High Chiang Mai](/resort-living/veranda-high-chiang-mai)** is the 5,000 to 18,000+ THB MGallery hillside retreat, 25 to 35 minutes from town.',
+          'Nimman taxis are shorter than a Mae Rim run, so dinner in the west city is easier.',
+          'Old City on foot still wins if you want Wat Phra Singh at 07:00 without any hill road.',
+        ],
+      },
     ],
   },
   '/resort-living/137-pillars-house': {
     title: 'Valley and district versus other Chiang Mai stays',
-    bullets: [
-      '**Wat Ket teak homestead:** 1889 house suites, walkable river lawns.',
-      '**Mae Rim:** Four Seasons if the rice terrace is the trip.',
-      '**Hang Dong:** Veranda High for a hill pool and a shorter Nimman taxi.',
+    cards: [
+      {
+        kicker: 'This Coast',
+        title: 'Wat Ket teak homestead',
+        lead: 'Walkable river lawns and an 1889 house, 10 minutes east of the Old City wats.',
+        bullets: [
+          '**[137 Pillars House](/resort-living/137-pillars-house)** locks 30 suites at 18,000 to 40,000+ THB around the original teak homestead.',
+          'Dawn walks to the moat are realistic. A scooter through Sunday Ratchadamnoen is not.',
+          'Night Bazaar sits a short Grab away on the same river side.',
+        ],
+      },
+      {
+        kicker: 'Closest Rival',
+        title: 'Mae Rim rice terrace',
+        lead: 'Valley pavilions if the working paddy, not a walkable teak lawn, is the trip.',
+        bullets: [
+          '**[Four Seasons Chiang Mai](/resort-living/four-seasons-chiang-mai)** is the 30,000 to 80,000+ THB rival, 30 to 40 minutes north.',
+          'November to early February is the kindest air for that view.',
+          'Book the valley when you accept a car for every wat morning.',
+        ],
+      },
+      {
+        kicker: 'Alternative Vibe',
+        title: 'Hang Dong hill pool',
+        lead: 'A western foothill view pool and a shorter Nimman taxi than Mae Rim.',
+        bullets: [
+          '**[Veranda High Chiang Mai](/resort-living/veranda-high-chiang-mai)** is the 5,000 to 18,000+ THB hillside alternative.',
+          '**[Anantara Chiang Mai](/resort-living/anantara-chiang-mai)** stays on the Ping if you want a contemporary river bank instead of teak or a hill.',
+          'Old City guesthouses still win if you want the 07:00 gate without a taxi.',
+        ],
+      },
     ],
   },
   '/resort-living/anantara-chiang-mai': {
     title: 'Valley and district versus other Chiang Mai stays',
-    bullets: [
-      '**Ping River contemporary:** Night Bazaar side, 10 minutes to the moat.',
-      '**Wat Ket teak:** 137 Pillars if the homestead is the look.',
-      '**Mae Rim:** Four Seasons if you accept a 30 to 45 minute car each way.',
+    cards: [
+      {
+        kicker: 'This Coast',
+        title: 'Ping River contemporary bank',
+        lead: 'Night Bazaar side lawns, 10 minutes to the moat, with a modern river sanctuary rather than an 1889 house.',
+        bullets: [
+          '**[Anantara Chiang Mai](/resort-living/anantara-chiang-mai)** locks the Ping bank at 12,000 to 28,000+ THB.',
+          'Wat mornings are a short Grab. Sunday Walking Street is a planned evening, not a surprise.',
+          'This is the easier river lock if teak homestead rates are closed.',
+        ],
+      },
+      {
+        kicker: 'Closest Rival',
+        title: 'Wat Ket teak homestead',
+        lead: 'The 1889 house look if antique timber, not a contemporary river wing, is the stay.',
+        bullets: [
+          '**[137 Pillars House](/resort-living/137-pillars-house)** is the homestead rival at 18,000 to 40,000+ THB.',
+          'Both sit about 10 minutes from the moat. The architecture is the difference.',
+          'Pick teak when the lawn and the original house are the photograph.',
+        ],
+      },
+      {
+        kicker: 'Alternative Vibe',
+        title: 'Mae Rim versus Hang Dong',
+        lead: 'A rice-terrace pavilion week, or a western hill pool at an accessible rate.',
+        bullets: [
+          '**[Four Seasons Chiang Mai](/resort-living/four-seasons-chiang-mai)** is the 30,000 to 80,000+ THB valley lock if you accept a 30 to 45 minute car each way.',
+          '**[Veranda High Chiang Mai](/resort-living/veranda-high-chiang-mai)** is the 5,000 to 18,000+ THB hill pool if you want the view without pavilion rates.',
+          'Haze from late February to April can sit in both valley and hill views.',
+        ],
+      },
     ],
   },
   '/resort-living/veranda-high-chiang-mai': {
     title: 'Valley and district versus other Chiang Mai stays',
-    bullets: [
-      '**Hang Dong western foothills:** Forested slopes near Doi Suthep-Pui at an accessible luxury rate.',
-      '**Mae Rim:** Four Seasons if the rice terrace budget is open.',
-      '**Old City on foot:** Wins if you want Wat Phra Singh at 07:00 without a taxi.',
+    cards: [
+      {
+        kicker: 'This Coast',
+        title: 'Hang Dong western foothills',
+        lead: 'Forested slopes near Doi Suthep-Pui, with an elevated infinity pool at an accessible luxury rate.',
+        bullets: [
+          '**[Veranda High Chiang Mai](/resort-living/veranda-high-chiang-mai)** locks the MGallery hillside retreat at 5,000 to 18,000+ THB, 25 to 35 minutes from town.',
+          'Nimman dinner is a shorter taxi than a Mae Rim run.',
+          'This is a view-pool week, not a walk to Wat Phra Singh at 07:00.',
+        ],
+      },
+      {
+        kicker: 'Closest Rival',
+        title: 'Mae Rim pavilion valley',
+        lead: 'Working rice terraces if the paddy budget is open and you want Lanna residences.',
+        bullets: [
+          '**[Four Seasons Chiang Mai](/resort-living/four-seasons-chiang-mai)** is the 30,000 to 80,000+ THB rival, 30 to 40 minutes north of the moat.',
+          'November to early February is the kindest air for that terrace view.',
+          'Book Mae Rim when the buffalo field, not a hillside pool, is the photograph.',
+        ],
+      },
+      {
+        kicker: 'Alternative Vibe',
+        title: 'Ping River and Old City on foot',
+        lead: 'Walkable teak or a contemporary river bank if you want wats without a hill road.',
+        bullets: [
+          '**[137 Pillars House](/resort-living/137-pillars-house)** and **[Anantara Chiang Mai](/resort-living/anantara-chiang-mai)** sit 10 minutes from the moat at 12,000 to 40,000+ THB.',
+          'Old City rooms still win if you want Wat Phra Singh at 07:00 without a taxi.',
+          'A 2026 moat Grab to Nimman often runs 80 to 120 THB, cheaper than a Hang Dong dinner run.',
+        ],
+      },
     ],
   },
   '/resort-living/soneva-kiri': {
     title: 'Coast versus other eastern Gulf islands',
-    bullets: [
-      '**Koh Kood north eco-cove:** Rainforest bays, gin-clear November to April water, no mass nightlife.',
-      '**Koh Chang:** Busier east-coast strip. A different product.',
-      '**Hua Hin:** Mainland rail town. Do not treat it as a Soneva substitute.',
+    cards: [
+      {
+        kicker: 'This Coast',
+        title: 'Koh Kood northern eco-coves',
+        lead: 'Untouched rainforest bays and clear eastern Gulf water near the Cambodian maritime border.',
+        bullets: [
+          '**[Soneva Kiri](/resort-living/soneva-kiri)** locks vast barefoot pool villas at 55,000 to 180,000+ THB, reached by private Cessna to Koh Mai Si or a one-hour flight to Trat plus a boat.',
+          'November to April is the dry swimming window. Do not treat the wet months as a bargain version of the same week.',
+          'There is no mass nightlife. The villa and the bay are the itinerary.',
+        ],
+      },
+      {
+        kicker: 'Closest Rival',
+        title: 'Koh Chang east-coast strip',
+        lead: 'A busier island with road towns and a different transfer story, not a Soneva substitute.',
+        bullets: [
+          'Koh Chang is the hopping island with more rooms and more traffic. It is a different product from a Koh Kood eco-cove.',
+          'A Trat plus boat day can reach either island, but the stay on arrival is not interchangeable.',
+          'Book Chang when you want villages and a scooter map, not a private-plane sanctuary.',
+        ],
+      },
+      {
+        kicker: 'Alternative Vibe',
+        title: 'Why this is not a Phuket add-on',
+        lead: 'A self-contained 3- to 5-night sanctuary rather than a quick island-hopping stop.',
+        bullets: [
+          'Never bolt Koh Kood onto a short Phuket week. The transfer day eats the first afternoon.',
+          'Hua Hin is a mainland rail town. Do not treat it as a Soneva substitute.',
+          'Lock the Cessna or the Trat flight with the villa. Walk-up boats in a swell are how that week goes wrong.',
+        ],
+      },
     ],
   },
 };
@@ -649,6 +1185,7 @@ export function structureCopy(page: Page): Page {
   }
 
   sections = sections.map((section) => {
+    if (section.cards?.length) return section;
     const paras = section.paragraphs || [];
     if (paras.length < 4 && (section.bullets?.length || 0) > 0) return section;
     if (paras.length < 4) return section;
@@ -661,7 +1198,7 @@ export function structureCopy(page: Page): Page {
 
   const zone = RESORT_ZONE[page.path];
   if (zone && !sections.some((section) => section.id === 'zone-compare')) {
-    sections = [{ id: 'zone-compare', title: zone.title, paragraphs: [], bullets: zone.bullets }, ...sections];
+    sections = [{ id: 'zone-compare', title: zone.title, paragraphs: [], cards: zone.cards }, ...sections];
   }
 
   return { ...page, paragraphs, sections };
@@ -671,28 +1208,51 @@ export function applyResortLivingHub(page: Page): Page {
   if (page.path !== '/interests/resort-living') return page;
   return {
     ...page,
-    lede: 'Use resort living when the hotel is the point. Resorts are grouped by destination and ranked from the most expensive flagship down. Pick the coast and the month first.',
+    lede:
+      "Thailand's flagship resorts are known for private Andaman headlands, lantern-lit Mae Rim rice terraces, and Chao Phraya river sanctuaries where the stay itself shapes the journey. Compare the six regions below by coast, season, and nightly tier.",
     paragraphs: [
-      'Seventeen named stays sit under six destinations. Rank is a 2026 nightly THB band, not a review score. Match the monsoon before you lock a villa.',
-      'A HKT car to the west coast is 45 to 90 minutes. A USM car is often 15 to 40 minutes. Koh Kood is its own transfer day. Do not bolt Soneva onto a Phuket week.',
+      'Wake to limestone karsts rising out of Phang Nga Bay, step off a mahogany river barge onto a private Bangkok pier, or trade Phuket main beaches for a gated coconut grove on Pansea Cove. The stay is the itinerary, so the coast and the month come before the brand name.',
+      'West-coast Phuket villas sit 25 to 75 minutes by private car from HKT. Koh Samui headlands sit 15 to 45 minutes from USM. Koh Kood eco-villas need a dedicated one-hour flight to Trat or a private island plane. Rank below is a 2026 nightly THB band, not a review score.',
     ],
     sections: [
       {
         id: 'phuket',
         title: 'Phuket flagships',
         paragraphs: ['West-coast coves first. Patong is the nightlife strip, not the default villa week.'],
-        bullets: [
-          '**Pansea and Surin coves:** Private-access headlands, calm November to April water, highest villa rates. Amanpuri.',
-          '**Naithon and Layan headland:** Forested northwest hills 20 to 25 minutes from HKT. Trisara.',
-          '**Kamala and Surin hills:** Walkable dinner bays and beach clubs between Patong and Bang Tao.',
-          '**Mai Khao north beach:** 11 km of quiet sand beside HKT. Far from southern piers.',
-          '**Patong and Kata ridge:** Energy and family beaches. A different week from a private cove villa.',
+        cards: [
+          {
+            kicker: 'Flagship Cove',
+            title: 'Pansea and Surin Headlands',
+            lead: 'Gated west-coast peninsulas with calm turquoise water from November to April and complete isolation from road noise.',
+            bullets: [
+              '**[Amanpuri](/resort-living/amanpuri)** runs 45,000 to 120,000+ THB on a private white-sand cove, with a 45 to 75 minute HKT car at 1,500 to 2,500 THB.',
+              'This lock beats busy central beaches because the villa gate is the week, not a Patong dinner hop.',
+            ],
+          },
+          {
+            kicker: 'Northwest Sanctuary',
+            title: 'Naithon and Layan Hills',
+            lead: 'Forested oceanfront cliffs 20 to 25 minutes south of Phuket Airport where every key is a private pool villa.',
+            bullets: [
+              '**[Trisara Phuket](/resort-living/trisara-phuket)** runs 35,000 to 95,000+ THB, with a private Andaman cove and PRU dining.',
+              'Bang Tao beach clubs sit a short west-coast car away without touching Patong.',
+            ],
+          },
+          {
+            kicker: 'Southern Ridge vs North Sand',
+            title: 'Kamala, Patong Ridge, and Mai Khao',
+            lead: 'Where hillside value stays and long airport beaches differ from the ultra-prime west-coast coves.',
+            bullets: [
+              '**[Avista Hideaway Phuket](/resort-living/avista-hideaway-phuket)** is the 6,000 to 20,000+ THB hillside MGallery between Patong and Freedom Beach.',
+              'Mai Khao keeps 11 km of quiet north sand beside HKT, far from southern piers.',
+            ],
+          },
         ],
         table: {
           headers: ['Rank', 'Resort', 'Zone', '2026 night band'],
           rows: [
-            ['1', 'Amanpuri', 'Pansea private headland', '45,000 to 120,000+ THB'],
-            ['2', 'Trisara Phuket', 'Naithon pool-villa cove', '35,000 to 95,000+ THB'],
+            ['1', '[Amanpuri](/resort-living/amanpuri)', 'Pansea private headland', '45,000 to 120,000+ THB'],
+            ['2', '[Trisara Phuket](/resort-living/trisara-phuket)', 'Naithon pool-villa cove', '35,000 to 95,000+ THB'],
           ],
         },
       },
@@ -700,17 +1260,41 @@ export function applyResortLivingHub(page: Page): Page {
         id: 'koh-samui',
         title: 'Koh Samui flagships',
         paragraphs: ['Pick a Gulf coast. Chaweng is the swim-and-nightlife strip. The northwest hill is the butler week.'],
-        bullets: [
-          '**Laem Yai and Lipa Noi:** Northwest sunset amphitheater, 35 to 45 minutes from USM. Four Seasons.',
-          '**Choeng Mon and Bophut headland:** 15 minutes from USM, 10 minutes from Fisherman Village. Six Senses and Ritz-Carlton.',
-          '**Chaweng and Chaweng Noi:** Powder sand and the dinner strip. Best for walkable nights, not villa silence.',
+        cards: [
+          {
+            kicker: 'Sunset Amphitheater',
+            title: 'Laem Yai and the Northwest Cape',
+            lead: 'Steep coconut-palmed hillsides facing the Gulf sunset, 35 to 45 minutes from Samui Airport.',
+            bullets: [
+              '**[Four Seasons Koh Samui](/resort-living/four-seasons-koh-samui)** runs 36,000 to 90,000+ THB, with butler-buggy hillside villas and a private cove beach.',
+              'A late scooter down this hill is a bad story. Book the car before the first pour off property.',
+            ],
+          },
+          {
+            kicker: 'Northern Headland',
+            title: 'Choeng Mon and Plai Laem',
+            lead: 'Dramatic granite promontories 15 minutes from USM and 10 minutes from Bophut Fisherman Village.',
+            bullets: [
+              '**[Six Senses Samui](/resort-living/six-senses-samui)** runs 22,000 to 55,000+ THB on a 20-acre timber villa point.',
+              '**[The Ritz-Carlton, Koh Samui](/resort-living/ritz-carlton-koh-samui)** runs 16,000 to 42,000+ THB on a 58-acre former coconut plantation bay.',
+            ],
+          },
+          {
+            kicker: 'Walkable East Coast',
+            title: 'Chaweng vs the Villa Hills',
+            lead: 'How Samui main powder-sand swimming strip compares with the private northern capes.',
+            bullets: [
+              'Sleep on Chaweng when you want walkable dining and a short USM hop.',
+              'Lock a northern headland villa from January to September if silence and a private cove beat the strip.',
+            ],
+          },
         ],
         table: {
           headers: ['Rank', 'Resort', 'Zone', '2026 night band'],
           rows: [
-            ['1', 'Four Seasons Koh Samui', 'Laem Yai northwest hillside', '36,000 to 90,000+ THB'],
-            ['2', 'Six Senses Samui', 'Choeng Mon northern headland', '22,000 to 55,000+ THB'],
-            ['3', 'The Ritz-Carlton, Koh Samui', 'Plai Laem and Choeng Mon bay', '16,000 to 42,000+ THB'],
+            ['1', '[Four Seasons Koh Samui](/resort-living/four-seasons-koh-samui)', 'Laem Yai northwest hillside', '36,000 to 90,000+ THB'],
+            ['2', '[Six Senses Samui](/resort-living/six-senses-samui)', 'Choeng Mon northern headland', '22,000 to 55,000+ THB'],
+            ['3', '[The Ritz-Carlton, Koh Samui](/resort-living/ritz-carlton-koh-samui)', 'Plai Laem and Choeng Mon bay', '16,000 to 42,000+ THB'],
           ],
         },
       },
@@ -718,17 +1302,41 @@ export function applyResortLivingHub(page: Page): Page {
         id: 'krabi-phang-nga',
         title: 'Krabi and Phang Nga Bay flagships',
         paragraphs: ['Boat-only cliffs, an island bay, or a mainland sunset road. Pick one transfer story.'],
-        bullets: [
-          '**Tubkaek mainland beach:** Road-access sunset sand facing the Hong Islands. Phulay Bay.',
-          '**Koh Yao Noi island:** 45-minute speedboat between Phuket and Krabi. Six Senses Yao Noi.',
-          '**Railay and Phra Nang peninsula:** Three beaches, zero roads. Rayavadee.',
+        cards: [
+          {
+            kicker: 'Mainland Sunset Beach',
+            title: 'Tubkaek Beach',
+            lead: 'Quiet mainland sand facing the thirteen limestone islands of Koh Hong, with direct road access from Krabi Airport.',
+            bullets: [
+              '**[Phulay Bay, a Ritz-Carlton Reserve](/resort-living/phulay-bay)** runs 28,000 to 75,000+ THB, with oversized pavilions and zero boat dependency in changeable weather.',
+              'A KBV car is the arrival. Hong Island boats stay a booked morning, not the only way home.',
+            ],
+          },
+          {
+            kicker: 'Island Hideaway',
+            title: 'Koh Yao Noi in Phang Nga Bay',
+            lead: 'A sleepy island halfway between Phuket and Krabi, with front-row sunrise views over Phang Nga karst pinnacles.',
+            bullets: [
+              '**[Six Senses Yao Noi](/resort-living/six-senses-yao-noi)** runs 26,000 to 70,000+ THB, with elevated pool villas reached by a 45-minute speedboat from Phuket or Krabi.',
+              'Phuket nightlife is the wrong pairing. Plan most plates on property.',
+            ],
+          },
+          {
+            kicker: 'Boat-Only Karst Pocket',
+            title: 'Railay and Phra Nang Peninsula',
+            lead: 'Soaring limestone cliffs and three beaches cut off from mainland roads, reached by a 15-minute boat from Ao Nang.',
+            bullets: [
+              '**[Rayavadee](/resort-living/rayavadee)** runs 22,000 to 60,000+ THB, with two-storey coconut-grove pavilions steps from Phra Nang cave beach.',
+              'Accept a stuck storm day. There is no road exit from this pocket.',
+            ],
+          },
         ],
         table: {
           headers: ['Rank', 'Resort', 'Zone', '2026 night band'],
           rows: [
-            ['1', 'Phulay Bay, a Ritz-Carlton Reserve', 'Tubkaek mainland sunset', '28,000 to 75,000+ THB'],
-            ['2', 'Six Senses Yao Noi', 'Phang Nga Bay hill villas', '26,000 to 70,000+ THB'],
-            ['3', 'Rayavadee', 'Phra Nang boat-only grove', '22,000 to 60,000+ THB'],
+            ['1', '[Phulay Bay, a Ritz-Carlton Reserve](/resort-living/phulay-bay)', 'Tubkaek mainland sunset', '28,000 to 75,000+ THB'],
+            ['2', '[Six Senses Yao Noi](/resort-living/six-senses-yao-noi)', 'Phang Nga Bay hill villas', '26,000 to 70,000+ THB'],
+            ['3', '[Rayavadee](/resort-living/rayavadee)', 'Phra Nang boat-only grove', '22,000 to 60,000+ THB'],
           ],
         },
       },
@@ -736,19 +1344,43 @@ export function applyResortLivingHub(page: Page): Page {
         id: 'bangkok',
         title: 'Bangkok river and skytrain flagships',
         paragraphs: ['River compounds versus the BTS spine. Rank the river first, then the vertical manor.'],
-        bullets: [
-          '**Chao Phraya river compound:** Capella, Four Seasons, Mandarin Oriental. Boats to BTS Saphan Taksin and ICONSIAM.',
-          '**Dusit quiet upriver:** The Siam teak barge and garden. Near royal palaces, far from Sukhumvit bass.',
-          '**Phloen Chit BTS spine:** Rosewood. Malls and rooftops without a river taxi.',
+        cards: [
+          {
+            kicker: 'Charoenkrung Riverfront',
+            title: 'The Chao Phraya Promenade',
+            lead: 'Low-rise waterfront courtyards, private shuttle boats to the Grand Palace piers, and Asia top cocktail rooms next door.',
+            bullets: [
+              '**[Capella Bangkok](/resort-living/capella-bangkok)** runs 32,000 to 85,000+ THB on the Bangkok-side promenade.',
+              '**[Four Seasons Bangkok](/resort-living/four-seasons-bangkok)** runs 26,000 to 65,000+ THB in a courtyard spa wing. **[Mandarin Oriental, Bangkok](/resort-living/mandarin-oriental-bangkok)** runs 25,000 to 65,000+ THB at the historic Bang Rak pier.',
+            ],
+          },
+          {
+            kicker: 'Upriver Heritage',
+            title: 'Dusit Royal Reach',
+            lead: 'A leafy bend of the Chao Phraya north of the Old City, far removed from Sukhumvit traffic.',
+            bullets: [
+              '**[The Siam](/resort-living/the-siam)** runs 28,000 to 75,000+ THB, with 38 suites and pool villas, antique teak houses, and a private river barge.',
+              'The hotel boat is the palace transfer. Thonglor is a planned Grab, not a walk.',
+            ],
+          },
+          {
+            kicker: 'Skytrain Spine',
+            title: 'Phloen Chit and Ratchathewi',
+            lead: 'Direct BTS Skytrain bridges for travellers prioritizing central dining, embassies, and quick Airport Rail Link hops.',
+            bullets: [
+              '**[Rosewood Bangkok](/resort-living/rosewood-bangkok)** runs 14,000 to 32,000+ THB at BTS Ploenchit.',
+              '**[VIE Hotel Bangkok](/resort-living/vie-hotel-bangkok)** is the 4,000 to 14,000+ THB design tower at BTS Ratchathewi.',
+            ],
+          },
         ],
         table: {
           headers: ['Rank', 'Resort', 'Zone', '2026 night band'],
           rows: [
-            ['1', 'Capella Bangkok', 'Charoenkrung river suites', '32,000 to 85,000+ THB'],
-            ['2', 'The Siam', 'Dusit upriver compound', '28,000 to 75,000+ THB'],
-            ['3', 'Four Seasons Bangkok', 'Charoenkrung courtyard', '26,000 to 65,000+ THB'],
-            ['4', 'Mandarin Oriental, Bangkok', 'Bang Rak historic pier', '25,000 to 65,000+ THB'],
-            ['5', 'Rosewood Bangkok', 'Phloen Chit vertical manor', '14,000 to 32,000+ THB'],
+            ['1', '[Capella Bangkok](/resort-living/capella-bangkok)', 'Charoenkrung river suites', '32,000 to 85,000+ THB'],
+            ['2', '[The Siam](/resort-living/the-siam)', 'Dusit upriver compound', '28,000 to 75,000+ THB'],
+            ['3', '[Four Seasons Bangkok](/resort-living/four-seasons-bangkok)', 'Charoenkrung courtyard', '26,000 to 65,000+ THB'],
+            ['4', '[Mandarin Oriental, Bangkok](/resort-living/mandarin-oriental-bangkok)', 'Bang Rak historic pier', '25,000 to 65,000+ THB'],
+            ['5', '[Rosewood Bangkok](/resort-living/rosewood-bangkok)', 'Phloen Chit vertical manor', '14,000 to 32,000+ THB'],
           ],
         },
       },
@@ -756,17 +1388,41 @@ export function applyResortLivingHub(page: Page): Page {
         id: 'chiang-mai',
         title: 'Chiang Mai valley flagships',
         paragraphs: ['Rice terrace, river teak, or a western hill pool. Haze from late February to April can sit in every view.'],
-        bullets: [
-          '**Mae Rim rice valley:** 30 to 40 minutes north. Four Seasons.',
-          '**Ping River and Wat Ket:** 10 minutes from the moat. 137 Pillars and Anantara.',
-          '**Hang Dong western hills:** View pools near Doi Suthep-Pui. A longer taxi than a river stay.',
+        cards: [
+          {
+            kicker: 'Rice-Terrace Valley',
+            title: 'Mae Rim Countryside',
+            lead: 'Working terraced paddies, water buffalo, and misty foothills 30 to 40 minutes north of Chiang Mai moat.',
+            bullets: [
+              '**[Four Seasons Chiang Mai](/resort-living/four-seasons-chiang-mai)** runs 30,000 to 80,000+ THB, with Lanna pavilions and private residences. Best November to early February.',
+              'Wat mornings need a booked car. This is not a walk to Wat Phra Singh.',
+            ],
+          },
+          {
+            kicker: 'River & Teak Quarter',
+            title: 'Wat Ket and the Ping River',
+            lead: 'Walkable riverside lawns and 19th-century teak architecture 10 minutes east of the Old City wats.',
+            bullets: [
+              '**[137 Pillars House](/resort-living/137-pillars-house)** runs 18,000 to 40,000+ THB, with 30 suites around an 1889 homestead.',
+              '**[Anantara Chiang Mai](/resort-living/anantara-chiang-mai)** runs 12,000 to 28,000+ THB on the Ping River bank.',
+            ],
+          },
+          {
+            kicker: 'Western Foothills',
+            title: 'Hang Dong Forest Slopes',
+            lead: 'Elevated valley infinity pools near Doi Suthep-Pui at a fraction of Mae Rim pavilion rates.',
+            bullets: [
+              '**[Veranda High Chiang Mai](/resort-living/veranda-high-chiang-mai)** is the 5,000 to 18,000+ THB MGallery hillside retreat, 25 to 35 minutes by car from town.',
+              'Nimman dinner is a shorter taxi than a Mae Rim run.',
+            ],
+          },
         ],
         table: {
           headers: ['Rank', 'Resort', 'Zone', '2026 night band'],
           rows: [
-            ['1', 'Four Seasons Chiang Mai', 'Mae Rim rice-terrace pavilions', '30,000 to 80,000+ THB'],
-            ['2', '137 Pillars House', 'Wat Ket 1889 teak homestead', '18,000 to 40,000+ THB'],
-            ['3', 'Anantara Chiang Mai', 'Ping River sanctuary', '12,000 to 28,000+ THB'],
+            ['1', '[Four Seasons Chiang Mai](/resort-living/four-seasons-chiang-mai)', 'Mae Rim rice-terrace pavilions', '30,000 to 80,000+ THB'],
+            ['2', '[137 Pillars House](/resort-living/137-pillars-house)', 'Wat Ket 1889 teak homestead', '18,000 to 40,000+ THB'],
+            ['3', '[Anantara Chiang Mai](/resort-living/anantara-chiang-mai)', 'Ping River sanctuary', '12,000 to 28,000+ THB'],
           ],
         },
       },
@@ -774,19 +1430,161 @@ export function applyResortLivingHub(page: Page): Page {
         id: 'koh-kood',
         title: 'Koh Kood and the eastern Gulf',
         paragraphs: ['One ultra-luxury island stay. Treat it as its own trip, not a Phuket add-on.'],
-        bullets: [
-          '**Koh Kood north eco-cove:** Clear November to April water and no mass nightlife. Soneva private Cessna to Koh Mai Si, or Trat plus a boat.',
-          '**Koh Chang and Hua Hin:** Busier coasts. Different products. Do not substitute them for this hideaway.',
+        cards: [
+          {
+            kicker: 'Private-Plane Eco-Island',
+            title: 'Koh Kood Northern Coves',
+            lead: 'Rainforest bays and clear eastern Gulf water near the Cambodian maritime border.',
+            bullets: [
+              '**[Soneva Kiri](/resort-living/soneva-kiri)** runs 55,000 to 180,000+ THB, with vast barefoot pool villas reached by private Cessna to Koh Mai Si or a one-hour flight to Trat plus a boat.',
+              'November to April is the dry swimming window. The villa and the bay are the itinerary.',
+            ],
+          },
+          {
+            kicker: 'Eastern Coast Context',
+            title: 'Why Koh Kood Stands Apart from Koh Chang',
+            lead: 'A self-contained 3- to 5-night sanctuary rather than a quick island-hopping stop.',
+            bullets: [
+              'Never bolt Koh Kood onto a short Phuket week. The transfer day eats the first afternoon.',
+              'Koh Chang is a busier hopping island. Hua Hin is a mainland rail town. Neither substitutes for this hideaway.',
+            ],
+          },
         ],
         table: {
           headers: ['Rank', 'Resort', 'Zone', '2026 night band'],
           rows: [
-            ['1', 'Soneva Kiri', 'Koh Kood private-plane eco-villas', '55,000 to 180,000+ THB'],
+            ['1', '[Soneva Kiri](/resort-living/soneva-kiri)', 'Koh Kood private-plane eco-villas', '55,000 to 180,000+ THB'],
           ],
         },
       },
     ],
     portraits: RESORT_RANKED.map((row) => card(row.title, row.href, row.photo)),
+  };
+}
+
+export function applyNightlifeHub(page: Page): Page {
+  if (page.path !== '/interests/nightlife') return page;
+  return {
+    ...page,
+    lede:
+      "Thailand after dark is known for candlelit shophouse cocktail bars along Bangkok's riverfront, velvet speakeasies in Thonglor, and sunset beach clubs on Phuket and Koh Samui. Pick your neighbourhood or coast before the first pour.",
+    paragraphs: [
+      'The first pour in Bangkok can be a smoked Negroni in a 19th-century Chinatown shophouse on Soi Nana, a late slide behind an unmarked timber door in Thonglor after dinner, or an open-air rum room on Sukhumvit Soi 11. The same week on Phuket or Koh Samui stretches out on a Bang Tao or Lipa Noi daybed as the Andaman or Gulf sky turns copper.',
+      'Crafted cocktails run 400 to 650 THB in Bangkok top rooms. Late-night Grab rides across central Bangkok cost 80 to 200 THB after the midnight BTS close. Island beach clubs run on daytime-to-sunset daybed minimums of 2,000 to 5,000 THB. Pick one district or one coast. Do not rent a scooter at 1:00.',
+    ],
+    sections: [
+      {
+        id: 'bangkok-districts',
+        title: 'Bangkok after dark: five neighbourhoods, five moods',
+        cards: [
+          {
+            kicker: 'River & Old Quarter',
+            title: 'Charoenkrung and Chinatown Soi Nana',
+            href: '/interests/nightlife/charoenkrung-soi-nana',
+            lead: "Heritage shophouses, river breeze, and Bangkok's highest concentration of Asia 50 Best cocktail rooms.",
+            bullets: [
+              '**BKK Social Club and Bamboo Bar** are the river-hotel rooms. Dress the code and arrive before the late crush.',
+              '**Soi Nana shophouses (Teens of Thailand, Asia Today, Tropic City)** pour 400 to 650 THB a glass in timber rooms a short walk from Yaowarat.',
+              '**Getting home:** 80 to 160 THB Grab to riverside hotels. There is no BTS at the door.',
+            ],
+          },
+          {
+            kicker: 'Dinner & Speakeasies',
+            title: 'Thonglor and Ekkamai',
+            href: '/interests/nightlife/thonglor-ekkamai',
+            lead: 'High-design cocktail dens and late-night dining rooms along Sukhumvit Soi 55 and Soi 63.',
+            bullets: [
+              '**Rabbit Hole and Find The Locker Room** are the unmarked doors after dinner. Book or arrive early.',
+              '**Bar Us and Mahaniyom** pour 400 to 650 THB cocktails. Keep a 19:30 dinner seating before 21:00 bar doors.',
+              '**BTS Thong Lo access** until midnight, then 80 to 180 THB Grab after the last train.',
+            ],
+          },
+          {
+            kicker: 'High-Energy Strip',
+            title: 'Sukhumvit Soi 11',
+            href: '/interests/nightlife/sukhumvit-soi-11',
+            lead: 'One neon-lit Sukhumvit block combining a flagship 1940s Cuban rum room with late open-air bars.',
+            bullets: [
+              '**Havana Social** pours 350 to 500 THB cocktails behind the telephone-booth code door. Arrive by 20:00.',
+              '**Open-air rooftops and late clubs** often ask 200 to 500 THB cover tokens after 22:00.',
+              '**BTS Nana access** until midnight. Grab home on the frontage road. No rented scooter.',
+            ],
+          },
+          {
+            kicker: 'Skyline & Jazz',
+            title: 'Silom and Sathorn',
+            href: '/interests/nightlife/silom-sathorn',
+            lead: 'Open-air 64th-floor river panoramas paired with tucked-away Suan Phlu jazz townhouses.',
+            bullets: [
+              '**Sky Bar at Lebua** is the walk-in sunset view on the 64th floor. Smart dress code applies.',
+              '**Smalls and Maggie Choo\'s** keep late jazz and cocktails in Suan Phlu and Silom vaults.',
+              '**Moon Bar note:** closed for renovation until 2 December 2026. Do not plan the Banyan Tree terrace before that date.',
+            ],
+          },
+          {
+            kicker: 'Indie & Local',
+            title: 'Ari and Pradipat',
+            href: '/interests/nightlife/ari-pradipat',
+            lead: 'Leafy mid-century residential lanes filled with craft-beer gardens, vinyl listening bars, and living-room homebars.',
+            bullets: [
+              '**Mikkeller Bar Ari and O\'glee** are the garden pours. Sit early if you want a table, not a wait.',
+              '**Vinyl rooms on Ari Soi 4 (Tempo, Long Play)** keep the volume conversational and the last train in mind.',
+              '**Pradipat homebars (Eight Days A Week, BRUT)** pair with BTS Ari access until midnight.',
+            ],
+          },
+        ],
+      },
+      {
+        id: 'island-beach-clubs',
+        title: 'Southern islands: Andaman sunset decks vs Gulf bays',
+        cards: [
+          {
+            kicker: 'Andaman West Coast',
+            title: 'Phuket: Bang Tao and Kamala Beach Clubs',
+            href: '/interests/nightlife/phuket-beach-clubs',
+            lead: 'Poolside daybeds, Mediterranean long lunches, and international sunset DJs from November to April.',
+            bullets: [
+              '**Catch Beach Club and Cafe del Mar** are the named west-coast rooms. Recheck the daybed page the week you travel.',
+              '**2026 daybed minimums** run 2,000 to 5,000 THB before drinks. Walk-ins wait on Saturday.',
+              '**Car home:** 200 to 500 THB Grab along the west coast. Sleep on the same sand, not in Patong.',
+            ],
+          },
+          {
+            kicker: 'Laguna & Surin',
+            title: 'Kamala, Bang Tao, and Laguna Pockets',
+            href: '/interests/nightlife/phuket-kamala-bangtao',
+            lead: 'Where to pair a Cherngtalay villa stay with beachfront sundowners without touching Patong.',
+            bullets: [
+              '**XANA at Angsana Laguna and Pine at InterContinental Kamala** are the hotel-deck sundowners.',
+              '**Best season** is calmer Andaman water from November to April. May to October is swell and refund fights.',
+              '**Airport buffer:** 30 to 50 minutes to HKT. Book the car with the daybed, not a Patong scooter.',
+            ],
+          },
+          {
+            kicker: 'Lower Gulf',
+            title: 'Koh Samui Beach Clubs',
+            href: '/interests/nightlife/koh-samui-beach-clubs',
+            lead: 'Sun-drenched Gulf afternoons from January to September, split between Lipa Noi sunset beds and Chaweng late nights.',
+            bullets: [
+              '**Nikki Beach Koh Samui** holds 2,000 to 4,000 THB daybeds on Lipa Noi. Walk-ins wait on Saturday.',
+              '**Chaweng after dark** often asks 200 to 500 THB drink-token doors after 22:00.',
+              '**Hill car home** runs 300 to 700 THB. Save the number before you sit down.',
+            ],
+          },
+          {
+            kicker: 'Promenade & Bay',
+            title: 'Koh Samui: Bophut and Lamai',
+            href: '/interests/nightlife/samui-bophut-lamai',
+            lead: "Wooden shophouse bars along Bophut's sand and relaxed Sunday sessions on the Lamai coast.",
+            bullets: [
+              "**Fisherman's Village and Coco Tam's** keep Bophut evenings on the sand, not in a hill villa.",
+              '**Beach Republic** in Maret and Lamai is the Sunday session if you already sleep on that coast.',
+              '**Easy USM transfers** run 15 to 25 minutes from the airport. Sleep on the same bay as the bar.',
+            ],
+          },
+        ],
+      },
+    ],
   };
 }
 
@@ -1016,8 +1814,9 @@ function applyDepthPad(page: Page): Page {
 }
 
 export function applyWave16Finish(page: Page): Page {
-  let next = stripBannedCopy(page);
+  let   next = stripBannedCopy(page);
   next = applyResortLivingHub(next);
+  next = applyNightlifeHub(next);
   next = applyInterestPortraits(next);
   next = structureCopy(next);
   next = applyDepthPad(next);
