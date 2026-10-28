@@ -13,6 +13,8 @@ import {
 import { wave2Pages } from './wave2-destinations';
 import { wave3Pages } from './wave3-routes';
 import { wave4Pages } from './wave4-food-resorts';
+import { wave6Pages } from './wave6-subguides';
+import { wave7Pages } from './wave7-itineraries-parks';
 
 export type SchemaType = 'City' | 'TouristDestination' | 'Article';
 
@@ -347,8 +349,8 @@ export const pages: Page[] = [
   {
     path: "/itineraries",
     title: "Thailand itineraries",
-    description: "A first week, a 14-day spine, and a 10-day south-islands plan that flips with the monsoon.",
-    lede: "Three ready routes. Use 7 days for Bangkok plus one more place. Use 14 days for north and south. Use 10 days if the islands are the point.",
+    description: "Ready routes from a first week to two Andaman weeks, plus Gulf islands, a northern loop, and a Bangkok-to-Kanchanaburi block.",
+    lede: "Start with 7 days for Bangkok plus one more place. Use 10 days for the classic north-and-south spine or one island chain. Use 14 days if you want rest days.",
     schema: "Article",
     crumbs: [
       {
@@ -388,6 +390,31 @@ export const pages: Page[] = [
         "title": "South islands 10 days",
         "href": "/itineraries/south-islands-10-days",
         "photo": "/photos/phuket.jpg"
+      },
+      {
+        "title": "10 days classic",
+        "href": "/itineraries/10-days-classic-thailand",
+        "photo": "/photos/chiang-mai.jpg"
+      },
+      {
+        "title": "Gulf islands 10 days",
+        "href": "/itineraries/10-days-gulf-islands-samui-phangan-tao",
+        "photo": "/photos/koh-samui.jpg"
+      },
+      {
+        "title": "Andaman 2 weeks",
+        "href": "/itineraries/2-weeks-andaman-island-hopping",
+        "photo": "/photos/koh-lanta.jpg"
+      },
+      {
+        "title": "Northern week",
+        "href": "/itineraries/7-days-northern-thailand-loop",
+        "photo": "/photos/northern.jpg"
+      },
+      {
+        "title": "Bangkok to Kanchanaburi",
+        "href": "/itineraries/5-days-bangkok-ayutthaya-kanchanaburi",
+        "photo": "/photos/erawan.jpg"
       }
     ],
     faqs: [
@@ -750,6 +777,21 @@ export const pages: Page[] = [
         "title": "Nightlife",
         "href": "/interests/nightlife",
         "photo": "/photos/nightlife.jpg"
+      },
+      {
+        "title": "Ari",
+        "href": "/bangkok/ari",
+        "photo": "/photos/sukhumvit.jpg"
+      },
+      {
+        "title": "Phrom Phong and Thong Lo",
+        "href": "/bangkok/phrom-phong-and-thong-lo",
+        "photo": "/photos/sukhumvit.jpg"
+      },
+      {
+        "title": "Silom and Sathorn",
+        "href": "/bangkok/silom-and-sathorn",
+        "photo": "/photos/siam.jpg"
       }
     ],
     affiliates: [
@@ -1034,6 +1076,11 @@ export const pages: Page[] = [
         "photo": "/photos/northern.jpg"
       },
       {
+        "title": "Doi Inthanon",
+        "href": "/chiang-mai/doi-inthanon",
+        "photo": "/photos/northern.jpg"
+      },
+      {
         "title": "Four Seasons Chiang Mai",
         "href": "/resort-living/four-seasons-chiang-mai",
         "photo": "/photos/resort.jpg"
@@ -1210,6 +1257,21 @@ export const pages: Page[] = [
         "title": "Phuket nightlife",
         "href": "/interests/nightlife/phuket-beach-clubs",
         "photo": "/photos/nightlife.jpg"
+      },
+      {
+        "title": "Kata and Karon",
+        "href": "/phuket/kata-and-karon",
+        "photo": "/photos/phuket.jpg"
+      },
+      {
+        "title": "Kamala and Surin",
+        "href": "/phuket/kamala-and-surin",
+        "photo": "/photos/phuket.jpg"
+      },
+      {
+        "title": "Rawai and Nai Harn",
+        "href": "/phuket/rawai-and-nai-harn",
+        "photo": "/photos/phuket.jpg"
       }
     ],
     affiliates: [
@@ -1349,6 +1411,21 @@ export const pages: Page[] = [
         "title": "Samui nightlife",
         "href": "/interests/nightlife/koh-samui-beach-clubs",
         "photo": "/photos/nightlife.jpg"
+      },
+      {
+        "title": "Chaweng",
+        "href": "/koh-samui/chaweng",
+        "photo": "/photos/koh-samui.jpg"
+      },
+      {
+        "title": "Lamai",
+        "href": "/koh-samui/lamai",
+        "photo": "/photos/koh-samui.jpg"
+      },
+      {
+        "title": "Ang Thong",
+        "href": "/koh-samui/ang-thong-marine-park",
+        "photo": "/photos/koh-samui.jpg"
       }
     ],
     affiliates: [
@@ -1991,7 +2068,7 @@ export const pages: Page[] = [
     facts: [
       {
         "label": "North train",
-        "value": "SRT 9 and 10, Krung Thep Aphiwat to Chiang Mai"
+        "value": "SRT 9 northbound about 18:40 to 07:15"
       },
       {
         "label": "Gulf boats",
@@ -2004,7 +2081,7 @@ export const pages: Page[] = [
     ],
     photo: "/photos/chiang-mai.jpg",
     paragraphs: [
-      "Long-distance trains now use Krung Thep Aphiwat Central Terminal, not Hua Lamphong, for the Chiang Mai sleepers. Budget a Grab from your hotel; the station is north of the old core.",
+      "Long-distance trains now use Krung Thep Aphiwat Central Terminal, not Hua Lamphong, for the Chiang Mai sleepers. SRT 9 northbound (Krung Thep Aphiwat to Chiang Mai, about 18:40 to 07:15) is the useful overnight. SRT 10 is the southbound return, Chiang Mai about 18:00 to Krung Thep Aphiwat about 06:50. Confirm today's board. Budget a Grab; the station is north of the old core.",
       "Book trains on SRT or via Trip.com when inventory is mirrored. Book Gulf ferries the afternoon before. Book Andaman boats when the weather desk is awake, not a week out in September."
     ],
     sections: [
@@ -2021,7 +2098,7 @@ export const pages: Page[] = [
             [
               "Bangkok to Chiang Mai",
               "SRT 9/10 sleeper or flight",
-              "Train is the experience. Flight is the day-saver."
+              "SRT 9 northbound about 18:40 to 07:15. Flight is the day-saver."
             ],
             [
               "Bangkok to Phuket or Krabi",
@@ -2145,7 +2222,7 @@ export const pages: Page[] = [
       },
       {
         "label": "Train",
-        "value": "SRT 9/10 sleeper, about 12 hours"
+        "value": "SRT 9 about 18:40 to 07:15"
       },
       {
         "label": "Who should train",
@@ -2154,7 +2231,7 @@ export const pages: Page[] = [
     ],
     photo: "/photos/chiang-mai.jpg",
     paragraphs: [
-      "This is the usual Bangkok-to-north choice: a short flight or the useful Thai sleeper. The return is the same mix. Train 10 is the southbound sleeper. Confirm today's numbers on SRT the week you ride."
+      "This is the usual Bangkok-to-north choice: a short flight or the useful Thai sleeper. SRT 9 northbound (Krung Thep Aphiwat to Chiang Mai, about 18:40 to 07:15) is the one most first-timers mean. SRT 10 is the southbound sleeper, Chiang Mai about 18:00 to Krung Thep Aphiwat about 06:50. Confirm today's numbers on SRT the week you ride."
     ],
     sections: [
       {
@@ -2175,7 +2252,7 @@ export const pages: Page[] = [
             [
               "SRT 9 / 10",
               "About 12 hours",
-              "Departs Krung Thep Aphiwat. Book a sleeper berth."
+              "SRT 9 northbound about 18:40 to 07:15 from Krung Thep Aphiwat. Book a sleeper berth."
             ],
             [
               "Day train",
@@ -3565,6 +3642,8 @@ export const pages: Page[] = [
   ...wave2Pages,
   ...wave3Pages,
   ...wave4Pages,
+  ...wave6Pages,
+  ...wave7Pages,
 ];
 
 export function getPage(path: string): Page | undefined {
