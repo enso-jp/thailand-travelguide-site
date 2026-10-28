@@ -14,6 +14,7 @@ import { UniquePhotos } from '../lib/photos';
 import { attractionsFor, PLACE_META } from '../lib/place-attractions';
 import { klookTours, stayLink, type StayCity } from '../lib/partners';
 import { regionForPath } from '../lib/regions';
+import { pageHref, routePath } from '../lib/site';
 
 interface Props {
   page: Page;
@@ -49,7 +50,7 @@ const tabs = [
           <ol>
             {page.crumbs.map((crumb) => (
               <li>
-                <a href={crumb.href}>{crumb.name}</a>
+                <a href={pageHref(crumb.href)}>{crumb.name}</a>
               </li>
             ))}
           </ol>
@@ -67,8 +68,8 @@ const tabs = [
         <div class="chips">
           {page.chips.map((chip) => {
             const href = chipHref(chip, page.parentPill, page.path);
-            return href && href !== page.path ? (
-              <a class="chip parent-pill" href={href}>{chip}</a>
+            return href && routePath(href) !== page.path ? (
+              <a class="chip parent-pill" href={pageHref(href)}>{chip}</a>
             ) : (
               <span class="chip peak">{chip}</span>
             );
@@ -109,7 +110,7 @@ const tabs = [
         <div class="card-list hood-list">
           {
             portraits.map((item) => (
-              <a class="jg-card" href={item.href}>
+              <a class="jg-card" href={pageHref(item.href)}>
                 <div class="media">
                   {item.photo ? <Photo src={item.photo} alt={item.title} /> : null}
                 </div>
@@ -169,7 +170,7 @@ const tabs = [
         !page.sections?.some((section) => section.id === 'get-there') && (
           <section class="place-section" id="get-there">
             <h2>Getting around</h2>
-            <p>Use the fact bar for the local hop. City-to-city pages live on <a href="/get-there">Get there</a>.</p>
+            <p>Use the fact bar for the local hop. City-to-city pages live on <a href={pageHref('/get-there')}>Get there</a>.</p>
           </section>
         )
       }
@@ -178,8 +179,8 @@ const tabs = [
         <h2>Food & Markets</h2>
         <p>
           City plates live on the
-          <a href={meta?.foodHref || '/thai-food'}>{page.title} food guide</a>.
-          Ticketed markets sit on <a href="/attractions">Attractions</a>.
+          <a href={pageHref(meta?.foodHref || '/thai-food')}>{page.title} food guide</a>.
+          Ticketed markets sit on <a href={pageHref('/attractions')}>Attractions</a>.
         </p>
       </section>
 
@@ -213,15 +214,20 @@ const tabs = [
         <h2>{page.title}</h2>
         <ul class="explore-list">
           <li><a href="#neighbourhoods">Districts</a></li>
-          <li><a href={meta?.foodHref || '/thai-food'}>Food guide</a></li>
-          <li><a href="/interests/resort-living">Resort Living</a></li>
-          <li><a href={meta?.nightlifeHref || '/interests/nightlife'}>Nightlife</a></li>
-          <li><a href="/itineraries">Itineraries</a></li>
+          {(meta?.explore || [
+            { href: meta?.foodHref || '/thai-food', label: `${page.title} food guide` },
+            { href: '/interests/resort-living', label: 'Resort Living flagship stays' },
+            { href: meta?.nightlifeHref || '/interests/nightlife', label: `${page.title} nightlife` },
+            { href: '/itineraries', label: 'Thailand itineraries' },
+            { href: '/get-there', label: 'How to get there' },
+          ]).map((item) => (
+            <li><a href={pageHref(item.href)}>{item.label}</a></li>
+          ))}
         </ul>
       </div>
       <div class="panel rail-map">
         <h2>Map</h2>
-        <a href={`/destinations`} data-map-open>
+        <a href={pageHref('/destinations')} data-map-open>
           <ThailandMap active={region} linked={false} variant="rail" />
         </a>
         {

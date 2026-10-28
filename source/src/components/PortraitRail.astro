@@ -1,4 +1,6 @@
 ---
+import { pageHref } from '../lib/site';
+
 export interface Portrait {
   title: string;
   href: string;
@@ -19,7 +21,7 @@ const { label = 'Related', items } = Astro.props;
       <div class="portrait-row" data-carousel-row tabindex="0" aria-label={label}>
         {
           items.map((item) => (
-            <a class="portrait" href={item.href}>
+            <a class="portrait" href={pageHref(item.href)}>
               <img src={item.photo} alt={item.title} width="640" height="800" loading="lazy" decoding="async" />
               <span class="portrait-label">
                 <strong>{item.title}</strong>

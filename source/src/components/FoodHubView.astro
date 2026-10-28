@@ -7,6 +7,7 @@ import { directoryGroups, FOOD_CITY_CARDS } from '../lib/food-catalog';
 import { assignExactPhotos, signatureDishesFor } from '../lib/dish-photos';
 import { formatInline } from '../lib/inline';
 import { UniquePhotos } from '../lib/photos';
+import { pageHref } from '../lib/site';
 
 interface Props {
   page: Page;
@@ -24,7 +25,7 @@ const groups = directoryGroups();
   <nav class="crumbs" aria-label="Breadcrumb">
     <ol>
       {page.crumbs.map((crumb) => (
-        <li><a href={crumb.href}>{crumb.name}</a></li>
+        <li><a href={pageHref(crumb.href)}>{crumb.name}</a></li>
       ))}
     </ol>
   </nav>
@@ -43,7 +44,7 @@ const groups = directoryGroups();
     <div class="food-grid">
       {
         cities.map((card) => (
-          <a class="food-card" href={card.href} data-find={card.find}>
+          <a class="food-card" href={pageHref(card.href)} data-find={card.find}>
             <span class="media"><Photo src={card.photo} alt={card.title} /></span>
             <strong>{card.title}</strong>
             <em>{card.line}</em>
@@ -58,7 +59,7 @@ const groups = directoryGroups();
     <div class="food-grid">
       {
         dishes.map((dish) => (
-          <a class="food-card" href={dish.href} data-find={dish.find}>
+          <a class="food-card" href={pageHref(dish.href)} data-find={dish.find}>
             {dish.photo && (
               <span class="media"><Photo src={dish.photo} alt={`${dish.title}, ${dish.nameLocal}`} /></span>
             )}
@@ -81,7 +82,7 @@ const groups = directoryGroups();
           <ul class="guide-list">
             {group.items.map((dish) => (
               <li data-find={dish.find}>
-                <a class="guide-row" href={dish.href}>
+                <a class="guide-row" href={pageHref(dish.href)}>
                   <strong>
                     {dish.title}
                     {dish.nameLocal && <span class="vi" lang="th"> {dish.nameLocal}</span>}

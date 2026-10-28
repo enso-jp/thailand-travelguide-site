@@ -2,6 +2,7 @@
 import Photo from './Photo.astro';
 import { VISIBLE_ATTRACTIONS } from '../lib/page-media';
 import type { PlaceAttraction } from '../lib/place-attractions';
+import { pageHref } from '../lib/site';
 
 interface Props {
   placeName: string;
@@ -23,7 +24,7 @@ function stars(dots: number): string {
         const rank = index + 1;
         const extraCard = rank > VISIBLE_ATTRACTIONS;
         return (
-          <a class:list={['jg-card', { 'is-extra': extraCard }]} id={row.slug} href={row.href}>
+          <a class:list={['jg-card', { 'is-extra': extraCard }]} id={row.slug} href={pageHref(row.href)}>
             <div class="media">
               {row.photo ? <Photo src={row.photo} alt={row.name} /> : null}
               <span class="rank-badge">{rank}</span>
