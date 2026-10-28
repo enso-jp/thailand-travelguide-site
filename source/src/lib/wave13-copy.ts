@@ -8,7 +8,7 @@ export const wave13Copy: Record<string, Partial<Page>> = {
   '/phuket': {
     paragraphs: [
       'Phuket is known for west-coast beaches and a huge airport, not for one pretty town. HKT is the Andaman hub. A car to Kamala, Surin, or Bang Tao is 45 to 75 minutes. Patong is 30 to 50. Kata and Karon sit in the middle. Old Phuket Town is a morning of sino-portuguese streets if you need a non-beach day.',
-      'The useful season is November to April. May to October is the southwest monsoon: boats cancel, west-facing beaches take swell, and a daybed prepaid in July is a gamble. If your dates sit in the wet window, read [when to go](/plan/when-to-go) and consider [Koh Samui](/koh-samui) instead.',
+      'The useful season is November to April. May to October is the southwest monsoon: boats cancel, west-facing beaches take swell, and a daybed prepaid in July is a gamble. If your dates sit in the wet window, read [when to go](/plan/when-to-go) and consider [Koh Samui](/koh-samui) instead. In October, skip leftover raw fish on a west-coast grill and eat in Old Phuket Town or inland.',
       'Stay west. Do not sleep four nights in Patong unless that strip is the trip. Kamala and Surin are calmer. Kata works for a first beach with restaurants on the sand. Rawai and Nai Harn face south and stay usable on some west-coast wind days. Open the sub-guides: [Kata and Karon](/phuket/kata-and-karon), [Kamala and Surin](/phuket/kamala-and-surin), [Rawai and Nai Harn](/phuket/rawai-and-nai-harn).',
       'Boats leave in the morning from Rassada. Phi Phi and Phang Nga are day trips. A 2026 speedboat seat is often 1,500 to 2,500 THB plus park fees. Maya Bay is 400 THB on top of the tour. Book the hotel car from HKT on Trip.com. Book the boat on Klook the afternoon before, not at the pier in a swell.',
     ],
@@ -37,7 +37,7 @@ export const wave13Copy: Record<string, Partial<Page>> = {
     paragraphs: [
       'Chiang Mai is known for Lanna wats inside a square moat and a cafe strip west of it. Give it three nights. Sleep inside the moat for temples on foot. Sleep in Nimman for coffee and a later evening. The Old City still closes temple doors for lunch. Nimmanhaemin, past Suan Dok, is where you eat late.',
       'Fly CNX in about 70 minutes from Bangkok, or take SRT trains 9 and 10 from Krung Thep Aphiwat. The sleeper is about 12 hours. A 2026 upper berth is often 800 to 1,200 THB. Fly if you land at noon and want dinner in the Old City. Take the train if you want the ride.',
-      'Sunday Walking Street fills Ratchadamnoen. Saturday is Wua Lai, south of the moat. Temple booths often ask 20 to 50 THB in cash. Doi Suthep is 30 THB at the wat plus the songthaew. Doi Inthanon is 300 THB for foreigners and a full day. Smoke season from late February to April can sit in the valley. Check the air before you lock March.',
+      'Sunday Walking Street fills Ratchadamnoen. Saturday is Wua Lai, south of the moat. Temple booths at Wat Phra Singh and Chedi Luang often ask 20 to 50 THB in cash. Wat Chiang Man is generally free. Doi Suthep is 30 THB at the wat plus a songthaew, often 40 THB from the zoo or 60 THB from Chang Phuak Gate. Doi Inthanon is 300 THB for foreigners and a full day. Smoke season from late February to April can sit in the valley. Check the air before you lock March.',
       'Open [Old City](/chiang-mai/old-city) and [Nimmanhaemin](/chiang-mai/nimmanhaemin) before you book the room. Open [Doi Inthanon](/chiang-mai/doi-inthanon) only if you want the mountain day. Chiang Rai is a side trip, not a must on a first week.',
     ],
     sections: [
@@ -160,6 +160,11 @@ export const wave13Copy: Record<string, Partial<Page>> = {
     ],
   },
   '/bangkok/sukhumvit-thonglor': {
+    title: 'Sukhumvit and Thonglor stays',
+    description:
+      'First-timer hotel playbook for Bangkok\'s BTS strip from Nana to Ekkamai: which tower to book, dinner on Thonglor, and when to leave the soi.',
+    lede:
+      'Sukhumvit and Thonglor are known as the first-timer hotel strip. Book Asok or Phrom Phong if you want a calm walk to the BTS. Use this page to pick a stay. Open the Sukhumvit sois page for the exit map.',
     paragraphs: [
       'This is hotels, skytrain, and dinner on one line. Asok and Phrom Phong are the easiest pairing. Thonglor is one stop further. Nana is louder and cheaper. A 2026 BTS tap along this line is 17 to 47 THB. After midnight, Grab replaces the train.',
       'Stay one block off Sukhumvit Road if you want sleep. Towers that face the soi take the bass. Terminal 21 at Asok is the interchange mall, not a reason to stay four nights. EmDistrict at Phrom Phong is the air-con reset. Thong Lo is where dinner reservations actually matter.',
@@ -177,10 +182,15 @@ export const wave13Copy: Record<string, Partial<Page>> = {
     ],
   },
   '/bangkok/old-city-rattanakosin': {
+    title: 'Old City and Rattanakosin stays',
+    description:
+      'Where to sleep after the Grand Palace circuit: riverside versus Sukhumvit, Tha Tien lunch, and why Khao San is a different product from the wats.',
+    lede:
+      'The Old City is known as a temple morning, then a hotel decision. Stay here only if the wats are the whole trip. First-timers who want dinner should sleep elsewhere and Grab in.',
     paragraphs: [
       'Come for the palace and the river wats, then leave. In 2026 the Grand Palace is 500 THB for foreign visitors and Wat Pho is 300 THB. Afternoon heat empties the lanes and fills the taxis. Eat on Tha Tien or go back to Sukhumvit for dinner.',
-      'Enter at Mani Noppharat Gate at opening. Dress code is real: shoulders and knees. Wat Pho is next door. The Reclining Buddha is the room. A massage school table is about 500 to 600 THB an hour after the circuit, not instead of it. Wat Arun is a 5 THB ferry from Tha Tien plus 200 THB at the gate.',
-      'Sleep here only if temples are the whole stay. Evening food is thin. Khao San is a different product. Most first-timers should sleep on Sukhumvit or the river and Grab in. See [Rattanakosin](/bangkok/rattanakosin) for the ticket board and [Grand Palace](/attractions/grand-palace-and-wat-phra-kaew) for the gate notes.',
+      'Enter at Mani Noppharat Gate at opening. Dress code is real: shoulders and knees. Wat Pho is next door. The Reclining Buddha is the room. A school table after the circuit is 520 THB for 60 minutes, 340 THB for 30, or 1,040 THB for 120 (watpho.com). Wat Arun is a 5 THB ferry from Tha Tien plus 200 THB at the gate.',
+      'Sleep here only if temples are the whole stay. Evening food is thin. Khao San is a different product. Most first-timers should sleep on Sukhumvit or the river and Grab in. See [Rattanakosin tickets](/bangkok/rattanakosin) for the 2026 gate board and [Grand Palace](/attractions/grand-palace-and-wat-phra-kaew) for the gate notes.',
       'Combo tickets and licensed guides are easier on Klook than at the gate when queues spike. Do not add Chatuchak the same morning. Three to four hours covers palace, Wat Pho, and the ferry if you start at 08:30.',
     ],
     sections: [
@@ -193,9 +203,14 @@ export const wave13Copy: Record<string, Partial<Page>> = {
     ],
   },
   '/bangkok/silom-and-sathorn': {
+    title: 'Silom and Sathorn stays',
+    description:
+      'Bangkok embassy-ridge stays between Lumphini and the river: Sala Daeng food, Convent Road, Suan Phlu dinners, and Mahanakhon SkyWalk tickets.',
+    lede:
+      'Silom and Sathorn are known as the office and embassy ridge. Eat at Sala Daeng. Book SkyWalk if the view is the point. Use the park and rail map for Lumphini exits and the Saphan Taksin boat.',
     paragraphs: [
-      'Silom and Sathorn are the office-and-park pair south of Siam. You come for Lumphini at dawn, the Sala Daeng interchange, and a hotel that is not on Soi 11. You do not come for sois or late food. The [Silom and Sathon](/bangkok/silom-sathon) page is the shorter rail map. This page is the stay trade-off.',
-      'A 2026 BTS tap from Sala Daeng to Siam is 17 to 32 THB. MRT Si Lom to Sukhumvit is one stop. Lumphini opens about 04:30. Monitors on the lawn are the local photo, not a zoo. Food carts sit on the edge until mid-morning. Evening food thins after 21:00 except around Sala Daeng.',
+      'Silom and Sathorn are the office-and-park pair south of Siam. You come for Lumphini at dawn, the Sala Daeng interchange, and a hotel that is not on Soi 11. You do not come for sois or late food. This page is the stay, food, and SkyWalk trade-off. The [park and rail map](/bangkok/silom-sathon) covers exits, dawn walks, and the orange-flag boat.',
+      'A 2026 BTS tap from Sala Daeng to Siam is a 2-stop hop, often 17 THB on the adult board. MRT Si Lom to Sukhumvit is one stop. Lumphini opens about 04:30. Monitors on the lawn are the local photo, not a zoo. Food carts sit on the edge until mid-morning. Evening food thins after 21:00 except around Sala Daeng.',
       'Sathon (Sathorn) is the wider boulevard of towers and embassies. Walks are longer. Surasak BTS is the river-leaning stop. Saphan Taksin is the boat gate. A walk from Sala Daeng to the river is 20 to 30 minutes in heat. Take the BTS one stop instead.',
       'Nightlife is thinner than Thonglor. Open [Silom and Sathorn nightlife](/interests/nightlife/silom-sathorn) for the rooms that exist. Patpong is a tourist market. For seated cocktails, Grab to Charoenkrung. A Grab to Thonglor after dinner is often 80 to 150 THB and 20 minutes.',
     ],
@@ -210,9 +225,9 @@ export const wave13Copy: Record<string, Partial<Page>> = {
   },
   '/chiang-mai/old-city': {
     paragraphs: [
-      'The Old City is a moated square of Lanna wats, not a nightlife grid. The moat loop is about 6.5 km, closer to 75 to 90 minutes on foot. Temple booths often ask 20 to 50 THB in cash. Walk at dawn: Wat Phra Singh, Chedi Luang, and the gates. Midday is a cafe or a nap. Sunday Walking Street fills Ratchadamnoen.',
+      'The Old City is a moated square of Lanna wats, not a nightlife grid. The moat loop is about 6.5 km, closer to 75 to 90 minutes on foot. Wat Phra Singh and Chedi Luang often ask 20 to 50 THB in cash. Wat Chiang Man is generally free. Walk at dawn: Wat Phra Singh, Chedi Luang, and the gates. Midday is a cafe or a nap. Sunday Walking Street fills Ratchadamnoen.',
       'Sleep inside the moat if you want temple mornings on foot. Guesthouses and a few quiet hotels fill early on Sunday-market weekends. The east gates pick up bars at night. The inner lanes stay quiet. Nimman is louder and later, a 80 to 120 THB Grab and four to seven minutes.',
-      'Saturday is Wua Lai, south of the Tha Phae side. Doi Suthep is the mountain wat: 30 THB plus the songthaew, often 40 to 60 THB a person up. Do not stack Suthep, Inthanon, and the Sunday market on the same weekend without a rest hour.',
+      'Saturday is Wua Lai, south of the Tha Phae side. Doi Suthep is the mountain wat: 30 THB plus a songthaew, often 40 THB from the zoo or 60 THB from Chang Phuak Gate. Do not stack Suthep, Inthanon, and the Sunday market on the same weekend without a rest hour.',
       'Scooters cut the corners. Sidewalks vanish. A 2026 scooter day is often 200 to 250 THB. The insurance story is weak. Walk the square. Grab the hill. See [Chiang Mai](/chiang-mai) for the city split and [Nimmanhaemin](/chiang-mai/nimmanhaemin) if you want dinner more than wats.',
     ],
     sections: [
@@ -383,8 +398,8 @@ export const wave13Copy: Record<string, Partial<Page>> = {
   },
   '/resort-living/soneva-kiri': {
     paragraphs: [
-      'Soneva Kiri is known for a Koh Kood hideaway with its own transfer plan. Use it as its own trip, not a bolt-on to Phuket. Koh Kood is in Trat, on the eastern Gulf, not on the Samui chain. The photo on this page is Koh Kood, not Koh Phangan.',
-      'Bangkok to Trat is about 1 hour by air, then a boat of about 1 to 1.5 hours, or the resort transfer. Some stays use a charter. Transfer logistics are the first thing to book. Rates without a transfer plan are incomplete. Search Trip.com with Koh Kood city 62195, not Bangkok city 191.',
+      'Soneva Kiri is known for a Koh Kood hideaway with its own transfer plan. Use it as its own trip, not a bolt-on to Phuket. Koh Kood is in Trat, on the eastern Gulf, not on the Samui chain.',
+      'Bangkok to Trat is about 1 hour by air, then a boat of about 1 to 1.5 hours, or the resort transfer. Some stays use a charter. Transfer logistics are the first thing to book. Rates without a transfer plan are incomplete. Search Trip.com for Koh Kood stays, not Bangkok, and confirm live 2026 rates plus whether the boat is bundled.',
       'Villas sit in the trees above a small Gulf bay. Entry villas in a busy 2026 week often sit from about 40,000 to 70,000 THB. Larger family villas run 80,000 to 150,000 THB and up, often with the transfer bundled or billed apart. Planning bands. Recheck the voucher for what the boat includes.',
       'The public path is Trat plus a Koh Kood ferry from Laem Sok, often 30 to 45 minutes on the faster boats and 450 to 600 THB a seat. That is not the Soneva arrival. If you self-transfer, leave a full day. Do not land BKK at 15:00 and expect to sleep on Kood the same night without a booked chain.',
     ],
@@ -513,7 +528,7 @@ export const wave13Copy: Record<string, Partial<Page>> = {
       tableSection('rooms', 'What to open', ['Room', 'Use', '2026 note'], [
         ['Havana Social', 'Rum, packed room', '350 to 500 THB a drink; go early'],
         ['The rest of Soi 11', 'Beer and clubs', 'Walk it once'],
-        ['Nana BTS', 'Access', '17 to 32 THB from Siam'],
+        ['Nana BTS', 'Access', 'Siam to Nana is about 28 to 32 THB'],
         ['Grab home', 'After midnight', '80 to 160 THB to Thonglor typical'],
       ]),
     ],
