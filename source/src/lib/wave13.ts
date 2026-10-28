@@ -537,10 +537,10 @@ function bookingCta(page: Page) {
   return {
     stayHref: stayLink(city),
     stayLabel: 'Search stays on Trip.com',
-    stayNote: 'Allianceid 11105102, SID 334225872. Live 2026 rates.',
+    stayNote: 'Check live 2026 rates and free-cancellation options.',
     tourHref: klookTours(tourQ),
     tourLabel: 'Book tickets on Klook',
-    tourNote: 'Travelpayouts marker 793638 and source 588978.',
+    tourNote: 'Book tickets, tours, or transfers ahead for peak dates.',
   };
 }
 
@@ -566,8 +566,8 @@ function applySoneva(page: Page): Page {
     affiliates: [
       stay(
         'Soneva Kiri rates',
-        'Koh Kood, city 62195',
-        'Search this hideaway on Koh Kood, not Bangkok city 191. Book the transfer with the room.',
+        'Koh Kood island resort',
+        'Search this Koh Kood hideaway and book the transfer with the room.',
         hotelSearchLink('Soneva Kiri', 'koh-kood'),
         '/photos/resort-soneva-kiri.jpg',
       ),

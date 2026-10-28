@@ -37,7 +37,7 @@ export const wave10Pages: Page[] = [
     photo: '/photos/thai-food-bangkok-street.jpg',
     geo: { lat: 13.743, lon: 100.5096, containedIn: 'Bangkok' },
     paragraphs: [
-      'Yaowarat Road is the Chinatown dinner walk, not a lunch market. MRT Wat Mangkon Exit 1 puts you on the gold-shop strip. Stalls thicken after 18:00 and run hard until about 23:30. Last Blue Line trains are around midnight; plan a Grab if you stay later. Cash and PromptPay still beat most foreign cards.',
+      'Yaowarat Road is the Chinatown dinner walk, not a lunch market. MRT Wat Mangkon Exit 1 puts you on the gold-shop strip. Stalls thicken after 18:00 and run hard until about 23:30. Last Blue Line trains are around midnight; plan a Grab if you stay later. Cash and PromptPay still beat most foreign cards. For where to sleep and the 32 THB MRT hop from Sukhumvit, use [Yaowarat access](/bangkok/chinatown-yaowarat).',
       'Monday is the street-stall slowdown. Shophouses and a few seafood rooms stay open. If you only have one Chinatown night and it falls on Monday, sit indoors and skip the full soi crawl. For the daytime river markets, use the [Wang Lang and Talat Noi](/thai-food/wang-lang-and-talat-noi) page instead of stacking both on the same calendar.',
     ],
     sections: [
