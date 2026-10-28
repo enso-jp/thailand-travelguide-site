@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import PageView from '../components/PageView.astro';
+import PageSwitch from '../components/PageSwitch.astro';
 import { allPages, getPage } from '../lib/content';
 
 export function getStaticPaths() {
@@ -18,5 +18,5 @@ if (!page) throw new Error(`Missing page ${path}`);
 ---
 
 <Base page={page}>
-  <PageView page={page} />
+  <PageSwitch page={page} />
 </Base>

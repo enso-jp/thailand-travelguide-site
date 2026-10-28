@@ -1,0 +1,87 @@
+---
+import Photo from './Photo.astro';
+import ThailandMap from './ThailandMap.astro';
+import type { HomeMedia } from '../lib/page-media';
+import type { RegionSlug } from '../lib/regions';
+
+interface Props {
+  regions: HomeMedia['regions'];
+  active?: RegionSlug;
+}
+
+const { regions, active = 'central' } = Astro.props;
+---
+
+<section class="home-section region-stage" data-region-stage>
+  <h2>Regions of Thailand</h2>
+  <div class="region-board">
+    <div class="region-map">
+      <div class="region-map-frame">
+        <ThailandMap variant="home" active={active} />
+      </div>
+      <div class="region-picks" role="tablist" aria-label="Regions">
+        {
+          regions.map((region) => (
+            <button
+              type="button"
+              role="tab"
+              data-region={region.slug}
+              aria-selected={region.slug === active ? 'true' : 'false'}
+              class:list={[{ 'is-active': region.slug === active }]}
+            >
+              {region.name}
+            </button>
+          ))
+        }
+      </div>
+    </div>
+    <div class="region-stack">
+      {
+        regions.map((region) => (
+          <div class="region-panel" data-region-card={region.slug} hidden={region.slug !== active}>
+            <div class="region-photos">
+              {region.photos.map((place) => (
+                <a href={place.href}>
+                  <Photo src={place.photo} alt="" />
+                  <span>{place.name}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+      <div class="region-caption">
+        {
+          regions.map((region) => (
+            <div class="region-caption-panel" data-region-card={region.slug} hidden={region.slug !== active}>
+              <h3>{region.name}</h3>
+              <p>{region.summary}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+  <div class="region-swipe">
+    <button class="region-swipe-arrow prev" type="button" data-region-prev aria-label="Previous region">‹</button>
+    <div class="region-swipe-row" data-region-swipe-row tabindex="0">
+      {
+        regions.map((region) => (
+          <article class:list={['region-slide', { 'is-active': region.slug === active }]} data-region-slide={region.slug}>
+            <a class="region-slide-photo" href={region.href}>
+              <Photo src={region.swipePhoto} alt="" />
+            </a>
+            <a class="region-slide-copy" href={region.href}>
+              <small>Explore</small>
+              <strong>{region.name}</strong>
+              <em>{region.summary}</em>
+              <span class="go" aria-hidden="true">›</span>
+            </a>
+          </article>
+        ))
+      }
+    </div>
+    <button class="region-swipe-arrow next" type="button" data-region-next aria-label="Next region">›</button>
+  </div>
+  <p class="region-more"><a class="pill" href="/destinations">See regions</a></p>
+</section>

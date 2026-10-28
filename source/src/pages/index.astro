@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import PageView from '../components/PageView.astro';
+import PageSwitch from '../components/PageSwitch.astro';
 import { getPage } from '../lib/content';
 
 const page = getPage('/');
@@ -8,5 +8,5 @@ if (!page) throw new Error('Missing home page');
 ---
 
 <Base page={page}>
-  <PageView page={page} />
+  <PageSwitch page={page} />
 </Base>

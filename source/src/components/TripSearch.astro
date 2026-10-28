@@ -1,0 +1,29 @@
+---
+import { stayLink, klookTours, transferLink, trainLink, type StayCity } from '../lib/partners';
+
+interface Props {
+  variant?: 'home' | 'destination' | 'food';
+  city?: StayCity;
+  placeName?: string;
+}
+
+const { variant = 'destination', city = 'bangkok', placeName = 'Thailand' } = Astro.props;
+const stay = stayLink(city);
+const tours = klookTours(`${placeName} tours`);
+const transfer = transferLink(city === 'phuket' ? 'HKT' : city === 'chiang-mai' ? 'CNX' : city === 'koh-samui' ? 'USM' : city === 'krabi' ? 'KBV' : 'BKK');
+const trains = trainLink('Bangkok', placeName);
+---
+
+<div class:list={['trip-cta', { 'trip-cta-home': variant === 'home' }]}>
+  <p class="trip-kicker">Trip.com</p>
+  <strong>Search hotels</strong>
+  <p>Compare rooms and rates for your dates. We may earn a commission.</p>
+  <a class="aff-btn" href={stay} rel="sponsored noopener" target="_blank">Search on Trip.com</a>
+  <p class="trip-more">
+    <a href={tours} rel="sponsored noopener" target="_blank">Klook tours</a>
+    ·
+    <a href={transfer} rel="sponsored noopener" target="_blank">Airport car</a>
+    ·
+    <a href={trains} rel="sponsored noopener" target="_blank">Trains</a>
+  </p>
+</div>

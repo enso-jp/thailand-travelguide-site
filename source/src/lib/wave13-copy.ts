@@ -164,7 +164,7 @@ export const wave13Copy: Record<string, Partial<Page>> = {
     description:
       'First-timer hotel playbook for Bangkok\'s BTS strip from Nana to Ekkamai: which tower to book, dinner on Thonglor, and when to leave the soi.',
     lede:
-      'Sukhumvit and Thonglor are known as the first-timer hotel strip. Book Asok or Phrom Phong if you want a calm walk to the BTS. Use this page to pick a stay. Open the Sukhumvit sois page for the exit map.',
+      'First-timers usually sleep on Sukhumvit\'s Skytrain spine, from Nana and Asok through Phrom Phong to Thonglor. Book Asok or Phrom Phong if you want a calm walk to the BTS. The sois page maps the exits.',
     paragraphs: [
       'This is hotels, skytrain, and dinner on one line. Asok and Phrom Phong are the easiest pairing. Thonglor is one stop further. Nana is louder and cheaper. A 2026 BTS tap along this line is 17 to 47 THB. After midnight, Grab replaces the train.',
       'Stay one block off Sukhumvit Road if you want sleep. Towers that face the soi take the bass. Terminal 21 at Asok is the interchange mall, not a reason to stay four nights. EmDistrict at Phrom Phong is the air-con reset. Thong Lo is where dinner reservations actually matter.',
@@ -207,9 +207,9 @@ export const wave13Copy: Record<string, Partial<Page>> = {
     description:
       'Bangkok embassy-ridge stays between Lumphini and the river: Sala Daeng food, Convent Road, Suan Phlu dinners, and Mahanakhon SkyWalk tickets.',
     lede:
-      'Silom and Sathorn are known as the office and embassy ridge. Eat at Sala Daeng. Book SkyWalk if the view is the point. Use the park and rail map for Lumphini exits and the Saphan Taksin boat.',
+      'Silom and Sathorn are the office and embassy ridge south of Siam. Eat at Sala Daeng. Book SkyWalk if the view is the point. Lumphini exits and the Saphan Taksin boat sit on the Silom park page.',
     paragraphs: [
-      'Silom and Sathorn are the office-and-park pair south of Siam. You come for Lumphini at dawn, the Sala Daeng interchange, and a hotel that is not on Soi 11. You do not come for sois or late food. This page is the stay, food, and SkyWalk trade-off. The [park and rail map](/bangkok/silom-sathon) covers exits, dawn walks, and the orange-flag boat.',
+      'Silom and Sathorn are the office-and-park pair south of Siam. You come for Lumphini at dawn, the Sala Daeng interchange, and a hotel that is not on Soi 11. You do not come for sois or late food. The stay, food, and SkyWalk trade-off sits here. [Lumphini exits and the Saphan Taksin boat](/bangkok/silom-sathon) sit on the Silom park page.',
       'A 2026 BTS tap from Sala Daeng to Siam is a 2-stop hop, often 17 THB on the adult board. MRT Si Lom to Sukhumvit is one stop. Lumphini opens about 04:30. Monitors on the lawn are the local photo, not a zoo. Food carts sit on the edge until mid-morning. Evening food thins after 21:00 except around Sala Daeng.',
       'Sathon (Sathorn) is the wider boulevard of towers and embassies. Walks are longer. Surasak BTS is the river-leaning stop. Saphan Taksin is the boat gate. A walk from Sala Daeng to the river is 20 to 30 minutes in heat. Take the BTS one stop instead.',
       'Nightlife is thinner than Thonglor. Open [Silom and Sathorn nightlife](/interests/nightlife/silom-sathorn) for the rooms that exist. Patpong is a tourist market. For seated cocktails, Grab to Charoenkrung. A Grab to Thonglor after dinner is often 80 to 150 THB and 20 minutes.',
@@ -248,7 +248,7 @@ export const wave13Copy: Record<string, Partial<Page>> = {
       'Veranda High is the hill MGallery above the valley, not a Nimman walk. Four Seasons is Mae Rim, 30 to 45 minutes. Those pages sit under [resort living](/interests/resort-living). Use Nimman when you want to walk to dinner and Grab to the wats.',
     ],
     sections: [
-      tableSection('use', 'How to use Nimman', ['Move', '2026 note', 'Who it fits'], [
+      tableSection('use', 'Nimman moves', ['Move', '2026 note', 'Who it fits'], [
         ['Soi 9 and west lanes', 'Dinner and cafes', 'Later nights'],
         ['Maya / One Nimman', 'Mall reset, AC', 'Hot season afternoons'],
         ['Grab to the moat', '80 to 120 THB, 4 to 7 minutes', 'Temple mornings'],

@@ -3,6 +3,7 @@ import '../styles/global.css';
 import { site, absUrl } from '../lib/site';
 import { jsonLdFor } from '../lib/jsonld';
 import type { Page } from '../lib/content';
+import { NAV_LINKS, NAV_SLOTS } from '../lib/nav';
 
 interface Props {
   page: Page;
@@ -74,30 +75,67 @@ const blocks = jsonLdFor(page);
   <body>
     <a class="skip" href="#main">Skip to content</a>
     <header class="topbar">
-      <div class="bar wrap">
-        <a class="wordmark" href="/">{site.shortName}</a>
-        <nav class="desk-nav" aria-label="Primary">
-          <a href="/destinations">Destinations</a>
-          <a href="/attractions">Attractions</a>
-          <a href="/thai-food">Food</a>
-          <a href="/itineraries">Itineraries</a>
-          <a href="/interests">Interests</a>
-          <a href="/get-there">Get there</a>
-          <a href="/plan">Plan</a>
+      <div class="wrap bar">
+        <a class="wordmark" href="/">Thailand <span>Guide</span></a>
+        <nav class="desk-nav" aria-label="Sections">
+          {
+            NAV_SLOTS.map((slot) => (
+              <div class="nav-slot">
+                <a href={slot.href}>{slot.label}</a>
+                <div class="nav-panel" aria-label={slot.label}>
+                  <div class="nav-panel-inner">
+                    <div class="nav-panel-head">
+                      <a class="nav-see" href={slot.href}>{slot.see}</a>
+                    </div>
+                    <div class="nav-cards cards-3">
+                      {slot.cards.map((card) => (
+                        <a class="nav-card" href={card.href}>
+                          <img src={card.photo} alt="" width="480" height="320" loading="lazy" decoding="async" />
+                          <span>{card.name}</span>
+                        </a>
+                      ))}
+                    </div>
+                    <div class:list={['nav-cols', slot.colsClass]}>
+                      {slot.cols.map((col) => (
+                        <div>
+                          <p class="nav-col-title"><a href={col.href}>{col.title}</a></p>
+                          <ul>
+                            {col.links.map((link) => (
+                              <li><a href={link.href}>{link.name}</a></li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+          {NAV_LINKS.map((link) => (
+            <a href={link.href}>{link.label}</a>
+          ))}
         </nav>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="phone-menu">
+        <button class="bar-icon search-toggle" type="button" data-search-toggle aria-label="Search" aria-expanded="false" aria-controls="site-search">
+          Search
+        </button>
+        <button class="bar-icon menu-toggle" type="button" data-menu aria-label="Open menu" aria-expanded="false" aria-controls="site-menu">
           Menu
         </button>
       </div>
-      <nav id="phone-menu" class="phone-menu" hidden>
-        <a href="/destinations">Destinations</a>
-        <a href="/attractions">Attractions</a>
-        <a href="/thai-food">Food</a>
-        <a href="/itineraries">Itineraries</a>
-        <a href="/interests">Interests</a>
+      <button class="phone-backdrop" type="button" data-menu tabindex="-1" aria-label="Close menu"></button>
+      <div id="site-menu" class="phone-menu" hidden>
+        {NAV_SLOTS.map((slot) => <a href={slot.href}>{slot.label}</a>)}
+        {NAV_LINKS.map((link) => <a href={link.href}>{link.label}</a>)}
         <a href="/get-there">Get there</a>
-        <a href="/plan">Plan</a>
-      </nav>
+      </div>
+      <div id="site-search" class="search-pop" hidden>
+        <form class="search-form wrap" action="/search" role="search">
+          <label class="skip" for="q">Search</label>
+          <input id="q" name="q" type="search" placeholder="Search places and routes" autocomplete="off" />
+          <div id="search-panel" class="search-panel" hidden></div>
+        </form>
+      </div>
     </header>
     <main id="main">
       <slot />
@@ -131,14 +169,6 @@ const blocks = jsonLdFor(page);
         </div>
       </div>
     </footer>
-    <script>
-      const btn = document.querySelector<HTMLButtonElement>('.menu-toggle');
-      const menu = document.querySelector<HTMLElement>('#phone-menu');
-      btn?.addEventListener('click', () => {
-        const open = btn.getAttribute('aria-expanded') === 'true';
-        btn.setAttribute('aria-expanded', String(!open));
-        menu?.toggleAttribute('hidden', open);
-      });
-    </script>
+    <script src="../scripts/site.ts"></script>
   </body>
 </html>
