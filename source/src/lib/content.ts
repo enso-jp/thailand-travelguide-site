@@ -730,7 +730,7 @@ const rawPages: Page[] = [
       }
     ],
     paragraphs: [
-      "Each guide follows one travel style, not a city map. See [diving and snorkeling](/interests/diving-and-snorkeling) for Koh Tao PADI weeks and Similan boats, [Thai massage and spas](/interests/thai-massage-and-spas) for Wat Pho tables and day spas, [beaches and island hopping](/interests/beaches-and-island-hopping) for the three-coast calendar, [temples and history](/interests/temples-and-history) for royal wats and historical parks, [Muay Thai and fitness camps](/interests/muay-thai-and-fitness-camps) for stadium cards and Soi Ta-iad camps, [markets and shopping](/interests/markets-and-shopping) for Chatuchak and VAT refunds, [family travel with kids](/interests/family-travel-with-kids) for car seats and shallow beaches, [honeymoon and couples](/interests/honeymoon-and-couples) for a 3-4-5 river-jungle-villa split, [solo and first-time travel](/interests/solo-and-first-time-travel) for Grab and BTS tap-in, and [Songkran, Loy Krathong, and Yi Peng](/interests/festivals-songkran-and-loy-krathong) for festival weeks. City pages stay districts and trains. A late Grab across the river is often 80 to 150 THB in 2026."
+      "These guides are for Western planners who pick a travel style first, then the city: a Koh Tao dive week, a dawn wat circuit, a Chatuchak Saturday, a family beach, or a late soi. Couples, families, first-timers, and festival weeks each get one focused page. A late Grab across the river is often 80 to 150 THB in 2026."
     ],
     sections: [
       {
