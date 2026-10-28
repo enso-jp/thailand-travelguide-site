@@ -95,22 +95,13 @@ export function tripSearchWidgetUrl(sub1 = 'Destination Page'): string {
   return `https://www.trip.com/partners/ad/${TRIP_WIDGET_ID}?Allianceid=${TRIP_ALLIANCE}&SID=${TRIP_SID}&trip_sub1=${encodeURIComponent(sub1)}`;
 }
 
-function hotelListSearchUrl(row: TripCityEntry | undefined, extra: Record<string, string> = {}): string {
-  const params = new URLSearchParams({
-    Allianceid: TRIP_ALLIANCE,
-    SID: TRIP_SID,
-    ...extra,
-  });
-  if (row) {
-    params.set('city', String(row.id));
-    params.set('cityName', row.name);
-  }
-  return `https://www.trip.com/hotels/list?${params.toString()}`;
+function hotelListPath(row: TripCityEntry): string {
+  return `https://www.trip.com/hotels/${row.slug}-hotels-list-${row.id}/`;
 }
 
 export function stayLink(city: StayCity, extra: Record<string, string> = {}): string {
   const row: TripCityEntry = tripCities[city];
-  return hotelListSearchUrl(row, { trip_sub1: row.name, trip_sub3: row.sub3, ...extra });
+  return `${hotelListPath(row)}?${tripParams({ trip_sub1: row.name, trip_sub3: row.sub3, ...extra })}`;
 }
 
 export function tripHotelsUrl(city: StayCity, sub1?: string): string {
@@ -120,21 +111,20 @@ export function tripHotelsUrl(city: StayCity, sub1?: string): string {
 export function stayAreaLink(area: StayArea, extra: Record<string, string> = {}): string {
   const row = tripAreas[area];
   const city: TripCityEntry = tripCities[row.city as StayCity];
-  return hotelListSearchUrl(city, {
-    keyword: row.keyword,
+  return `${hotelListPath(city)}?keyword=${encodeURIComponent(row.keyword)}&${tripParams({
     trip_sub1: row.keyword,
     trip_sub3: city.sub3,
     ...extra,
-  });
+  })}`;
 }
 
 export function hotelSearchLink(query: string, city?: StayCity): string {
   const entry: TripCityEntry | undefined = city ? tripCities[city] : undefined;
-  return hotelListSearchUrl(entry, {
-    keyword: query,
+  const base = entry ? hotelListPath(entry) : 'https://www.trip.com/hotels/list';
+  return `${base}?keyword=${encodeURIComponent(query)}&${tripParams({
     trip_sub1: query,
     trip_sub3: entry ? entry.sub3 : 'D20710097',
-  });
+  })}`;
 }
 
 export function flightLink(from: AirportCode, to: AirportCode): string {

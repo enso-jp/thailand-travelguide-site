@@ -165,9 +165,13 @@ const sisterHref = sisterHeaderUrlForPath(page.path);
     </main>
     <footer class="site-footer">
       <div class="wrap footer-grid">
-        <div class="footer-col">
-          <strong>{site.shortName}</strong>
-          <p>First-trip planning for Thailand. Districts, monsoon flips, trains, and what to book.</p>
+        <div class="footer-col footer-brand">
+          <span class="footer-pub-badge">A Beyond Guide Network Publication</span>
+          <strong>{site.name}</strong>
+          <p>Independent, on-the-ground travel reference for Thailand. Rankings and recommendations are never for sale.</p>
+          <p class="footer-trust-links">
+            <a href={pageHref('/about')}>About Us</a> · <a href={pageHref('/about/ratings')}>Editorial Standards &amp; Ratings</a> · <a href={pageHref('/privacy#booking')}>Affiliate Disclosure</a> · <a href={pageHref('/privacy')}>Privacy &amp; Terms</a>
+          </p>
         </div>
         <div class="footer-col">
           <span>Plan</span>
@@ -190,20 +194,25 @@ const sisterHref = sisterHeaderUrlForPath(page.path);
             <i class="net-mark net-mark-vn" aria-hidden="true">V</i> Vietnam TravelGuide
           </span>
           <a href="https://vietnam-travelguide.com/" target="_blank" rel="noopener">Vietnam TravelGuide Home</a>
-          <a href="https://vietnam-travelguide.com/ho-chi-minh-city" target="_blank" rel="noopener">Ho Chi Minh City</a>
-          <a href="https://vietnam-travelguide.com/hanoi" target="_blank" rel="noopener">Hanoi & Old Quarter</a>
-          <a href="https://vietnam-travelguide.com/da-nang" target="_blank" rel="noopener">Da Nang & My Khe</a>
-          <a href="https://vietnam-travelguide.com/phu-quoc" target="_blank" rel="noopener">Phu Quoc Island</a>
-          <a href="https://vietnam-travelguide.com/hoi-an" target="_blank" rel="noopener">Hoi An Ancient Town</a>
-          <a href="https://vietnam-travelguide.com/interests/resort-living" target="_blank" rel="noopener">Vietnam Luxury Resorts</a>
-          <a href="https://vietnam-travelguide.com/interests/nightlife" target="_blank" rel="noopener">Vietnam Nightlife</a>
-          <a href="https://vietnam-travelguide.com/food" target="_blank" rel="noopener">Vietnamese Food Guide</a>
+          <a href="https://vietnam-travelguide.com/ho-chi-minh-city/" target="_blank" rel="noopener">Ho Chi Minh City</a>
+          <a href="https://vietnam-travelguide.com/hanoi/" target="_blank" rel="noopener">Hanoi &amp; Old Quarter</a>
+          <a href="https://vietnam-travelguide.com/da-nang/" target="_blank" rel="noopener">Da Nang &amp; My Khe</a>
+          <a href="https://vietnam-travelguide.com/phu-quoc/" target="_blank" rel="noopener">Phu Quoc Island</a>
+          <a href="https://vietnam-travelguide.com/hoi-an/" target="_blank" rel="noopener">Hoi An Ancient Town</a>
+          <a href="https://vietnam-travelguide.com/interests/resort-living/" target="_blank" rel="noopener">Vietnam Luxury Resorts</a>
+          <a href="https://vietnam-travelguide.com/interests/nightlife/" target="_blank" rel="noopener">Vietnam Nightlife</a>
+          <a href="https://vietnam-travelguide.com/food/" target="_blank" rel="noopener">Vietnamese Food Guide</a>
         </div>
         <div class="footer-col">
           <span>Site</span>
           <a href={pageHref('/about')}>About</a>
+          <a href={pageHref('/about/ratings')}>Ratings</a>
           <a href={pageHref('/privacy')}>Privacy</a>
         </div>
+      </div>
+      <div class="wrap footer-legal">
+        <p class="footer-copyright">© 2026 Beyond Guide Network. All rights reserved. Thailand TravelGuide (thailand-travelguide.com) and Vietnam TravelGuide (vietnam-travelguide.com) are publications of Beyond Guide Network.</p>
+        <p class="footer-disclosure">Editorial Independence: Bookings made through Trip.com and Klook partner links help fund our field research at no extra cost to you. Original text and photography are copyright Beyond Guide Network; third-party photographs remain under their stated Creative Commons licenses.</p>
       </div>
     </footer>
     <script src="../scripts/site.ts"></script>

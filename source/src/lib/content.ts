@@ -806,9 +806,9 @@ const rawPages: Page[] = [
   },
   {
     path: "/about",
-    title: "About Thailand Travel Guide",
-    description: "A facts-first planning site for first-time trips to Thailand.",
-    lede: "We publish destination pages, routes, and season notes. Affiliate links to Trip.com and Klook help pay for the work. They do not change the facts.",
+    title: "About Thailand TravelGuide & Beyond Guide Network",
+    description: "Thailand TravelGuide is an independent Southeast Asia travel publication by Beyond Guide Network, alongside sister publication Vietnam TravelGuide.",
+    lede: "Thailand TravelGuide is an independent Southeast Asia travel reference published by Beyond Guide Network, built for travelers who want verified neighborhood splits, monsoon timing, and honest hotel curation.",
     schema: "Article",
     crumbs: [
       {
@@ -818,53 +818,229 @@ const rawPages: Page[] = [
     ],
     facts: [
       {
-        "label": "Audience",
-        "value": "Western first-time planners"
+        "label": "Publisher",
+        "value": "Beyond Guide Network"
       },
       {
-        "label": "Bias",
-        "value": "Utility over pitch"
+        "label": "Sister Guide",
+        "value": "Vietnam TravelGuide (vietnam-travelguide.com)"
+      },
+      {
+        "label": "Editorial Rule",
+        "value": "Rankings and ratings are never for sale"
       }
     ],
     paragraphs: [
-      "Ratings and hotel names come from public pages and on-the-ground notes. Always recheck opening hours and ferry desks the day you travel."
+      "Thailand TravelGuide (thailand-travelguide.com) is published by **Beyond Guide Network**, an independent travel publishing group operating across Southeast Asia alongside our sister publication **Vietnam TravelGuide** (vietnam-travelguide.com). Our editors live and travel along the corridors we cover, from Bangkok BTS neighborhoods and Lanna mountain towns to the Andaman and Lower Gulf archipelagos.",
+      "Every guide is structured around the real decisions that shape a trip: which coast fits your exact month, whether a 70-minute domestic flight beats the overnight SRT sleeper, and which neighborhood or beach zone matches your pace. Read our [Editorial Standards and Ratings](/about/ratings) for how our 1-to-5 dot scale works."
+    ],
+    sections: [
+      {
+        id: "who-we-are",
+        title: "Who We Are: Beyond Guide Network",
+        paragraphs: [
+          "Beyond Guide Network builds structured, field-verified country guides for independent travelers across Southeast Asia. Rather than generic aggregator lists of hundreds of unvetted listings, each publication focuses on clear regional geography, honest transit math, and curated neighborhood and resort breakdowns."
+        ],
+        bullets: [
+          "**Thailand TravelGuide (thailand-travelguide.com):** Covers all five Thai regions across 175+ guides, including Bangkok districts, Northern Highlands, Andaman Coast, Gulf of Thailand Islands, and Eastern Seaboard and Isan.",
+          "**Vietnam TravelGuide (vietnam-travelguide.com):** Our sister publication covering Hanoi, Ho Chi Minh City, Da Nang, Hoi An, Phu Quoc, Ha Long Bay, Ninh Binh, regional Vietnamese cuisine, and luxury coastal resorts.",
+          "**Cross-Border Planning:** Because many travelers combine Bangkok, Chiang Mai, or Phuket with Hanoi, Saigon, or Da Nang on a single two-to-three-week itinerary, both publications cross-reference sister cities, seasonal monsoon flips, and sub-two-hour nonstop regional flights."
+        ]
+      },
+      {
+        id: "editorial-independence",
+        title: "Editorial Independence & How We Are Funded",
+        paragraphs: [
+          "Editorial integrity is our core asset. Every destination ranking, 1-to-5 dot rating, neighborhood comparison, luxury resort shortlist, and street-food stall recommendation is chosen strictly by our editorial team."
+        ],
+        bullets: [
+          "**Never for sale:** Hotels, resorts, tour operators, and restaurants cannot pay to be included, upgraded, or positively reviewed on Thailand TravelGuide.",
+          "**Reader-supported partner links:** When you book a hotel, flight, train, airport transfer, or tour through our outbound links to Trip.com or Klook, Beyond Guide Network may earn an affiliate commission at no extra cost to you.",
+          "**Strict separation:** Commercial links are clearly labeled in booking panels and partner rows, and they never alter the order or verdict of our editorial recommendations. See our [Privacy and Affiliate Disclosure](/privacy) for full details."
+        ]
+      },
+      {
+        id: "field-verification",
+        title: "Field Verification, Pricing & Photography",
+        paragraphs: [
+          "Southeast Asia changes fast. New MRT lines open, national park marine closures shift, and pier schedules change between the dry season and monsoon months."
+        ],
+        bullets: [
+          "**On-the-ground logistics:** We verify airport-to-beach transfer times, BTS and MRT interchanges, SRT sleeper berths, and Lomprayah or Andaman ferry windows in 2026 Thai baht (THB).",
+          "**Curated Flagship Resorts:** On our [Resort Living](/interests/resort-living) pages, we intentionally curate only the top 2 to 5 flagship five-star resorts per destination and contrast their exact beach zones and transfer realities.",
+          "**Licensed Photography:** Original editorial text and design are copyright Beyond Guide Network. Third-party photographs from Wikimedia Commons and contributors are individually verified and credited under their respective Creative Commons licenses."
+        ]
+      }
     ],
     faqs: [
       {
-        "q": "Do you take press trips?",
-        "a": "Disclosed if they happen. This first release is a short planner, not a hotel review magazine."
+        "q": "Can a hotel, restaurant, or tour company pay to be featured?",
+        "a": "No. Beyond Guide Network does not accept paid placements, sponsored rankings, or undisclosed press trips. Every venue and resort is selected by editors on merit."
+      },
+      {
+        "q": "How are Thailand TravelGuide and Vietnam TravelGuide connected?",
+        "a": "Both sites are owned and edited by Beyond Guide Network, sharing the same cartographic standards, 1-to-5 dot rating system, and strict editorial independence."
+      }
+    ],
+  },
+  {
+    path: "/about/ratings",
+    title: "Editorial Standards & 1-to-5 Dot Ratings",
+    description: "How Beyond Guide Network rates Thailand destinations, attractions, luxury resorts, and street-food stalls on our 1-to-5 editorial dot scale.",
+    lede: "Every destination, attraction, and flagship resort on Thailand TravelGuide is evaluated on the Beyond Guide Network 1-to-5 dot scale, measuring how much a stop changes a real trip.",
+    schema: "Article",
+    crumbs: [
+      {
+        "name": "About",
+        "href": "/about"
+      },
+      {
+        "name": "Editorial Standards & Ratings",
+        "href": "/about/ratings"
+      }
+    ],
+    facts: [
+      {
+        "label": "Rating Scale",
+        "value": "1 to 5 editorial dots (●●●●●)"
+      },
+      {
+        "label": "Resort Cap",
+        "value": "Top 2 to 5 flagship resorts per destination"
+      },
+      {
+        "label": "Audit Cycle",
+        "value": "Continuous 2026 seasonal and fare verification"
+      }
+    ],
+    paragraphs: [
+      "Travelers do not need a directory of 500 unranked things to do. They need to know whether a temple, island, or night market is worth re-routing a flight for, or only worth a 45-minute walk if they are already sleeping nearby.",
+      "Across **Thailand TravelGuide** and our sister publication **Vietnam TravelGuide**, **Beyond Guide Network** applies a unified 1-to-5 editorial dot scale (●●●●●) and star equivalence to every ranked destination and attraction."
+    ],
+    sections: [
+      {
+        id: "dot-scale",
+        title: "The 1-to-5 Editorial Dot Scale",
+        paragraphs: [
+          "Our ratings measure trip impact, geographic uniqueness, and time-to-reward ratio rather than generic popularity."
+        ],
+        bullets: [
+          "**5 Dots (●●●●● / Flagship Essential):** A landmark destination or sight worth building a Thailand itinerary around, such as Bangkok river wats, Chiang Mai Old City, Phang Nga Bay, or Khao Sok Cheow Lan Lake.",
+          "**4 Dots (●●●●○ / Regional Highlight):** An outstanding stop worth a dedicated full day or two-night detour when you are in that region, such as Ayutthaya island ruins, Koh Tao coral bays, or Doi Suthep at dawn.",
+          "**3 Dots (●●●○○ / Strong Corridor Stop):** A rewarding neighborhood, market, or beach when you are already based nearby or passing along that rail or ferry corridor.",
+          "**2 Dots (●●○○○ / Specialist or Quick Stop):** Worth 45 to 90 minutes if you have a specific interest or a rainy afternoon, but not worth crossing town in rush-hour traffic.",
+          "**1 Dot (●○○○○ / Regional Completeness):** Included so travelers understand what a transit hub, pier town, or overhyped strip actually is before booking a room there."
+        ]
+      },
+      {
+        id: "resort-and-nightlife-curation",
+        title: "Luxury Resort Living & Nightlife Curation",
+        paragraphs: [
+          "On our [Resort Living](/interests/resort-living) and [Nightlife](/interests/nightlife) hubs, we reject pay-to-play directories in favor of tight, opinionated comparisons."
+        ],
+        bullets: [
+          "**Top 2 to 5 Flagships per Destination:** Each destination section in Resort Living ranks strictly the two to five most accomplished ultra-luxury and design resorts in that area, such as Capella and Mandarin Oriental on the Chao Phraya, or Amanpuri and Trisara on Phuket west coast.",
+          "**Beach and Zone Contrast:** Every resort entry explains the physical setting (private headland cove vs. walkable beach strip, longtail-only access vs. airport car transfer) and current 2026 nightly THB ranges.",
+          "**Verified Nightlife Districts:** Nightlife guides group venues by walkable corridor (such as Charoenkrung Soi Nana, Thonglor Soi 55, or Bang Tao beach clubs) with realistic dress codes, cover charges, and last-train or Grab logistics."
+        ]
+      },
+      {
+        id: "continuous-audits",
+        title: "Continuous Accuracy & Seasonal Audits",
+        paragraphs: [
+          "Every route, attraction card, and food guide is audited against current Thai baht (THB) admission fees, Fine Arts Department and Department of National Parks rules, and seasonal monsoon calendars."
+        ],
+        bullets: [
+          "**Monsoon Honesty:** We explicitly flag when the Andaman Sea (May to October) or the Lower Gulf (October to mid-December) faces rough swells or marine park closures.",
+          "**Street Food & Market Verification:** Our [Thai Food](/thai-food) guides pair each regional dish with Thai script names and verified street stalls, market alleys, and operating hours."
+        ]
+      }
+    ],
+    faqs: [
+      {
+        "q": "Why do editor ratings differ from crowd review averages?",
+        "a": "Crowd review sites often rate a routine suburban mall higher than a UNESCO ruin because of air-conditioning. Our editor ratings weigh cultural depth, sense of place, and whether a stop justifies your limited vacation days."
+      },
+      {
+        "q": "How do I report an updated ticket fee or timetable change?",
+        "a": "We review timetable and ticket-fee updates continuously across the Beyond Guide Network. Check the official SRT, BTS, or National Park desk 48 hours before departure on holiday weeks."
       }
     ],
   },
   {
     path: "/privacy",
-    title: "Privacy",
-    description: "How Thailand Travel Guide handles analytics and affiliate clicks.",
-    lede: "The site is static. Affiliate clicks go to Trip.com and Travelpayouts or Klook. We do not sell email lists.",
+    title: "Privacy Policy, Analytics & Affiliate Disclosure",
+    description: "How Beyond Guide Network handles Google Analytics 4 (G-XWN3TGDF1V), Trip.com and Klook affiliate links, cookies, and copyright on Thailand TravelGuide.",
+    lede: "Thailand TravelGuide is a static publication operated by Beyond Guide Network. This page explains our anonymous analytics, affiliate partner links, Creative Commons photo credits, and terms of use.",
     schema: "Article",
     crumbs: [
       {
-        "name": "Privacy",
+        "name": "Privacy & Terms",
         "href": "/privacy"
       }
     ],
     facts: [
       {
-        "label": "Hosting",
-        "value": "Static files"
+        "label": "Operator",
+        "value": "Beyond Guide Network"
       },
       {
-        "label": "Partners",
-        "value": "Trip.com and Klook via Travelpayouts"
+        "label": "Analytics",
+        "value": "Google Analytics 4 (aggregate traffic)"
+      },
+      {
+        "label": "Booking Partners",
+        "value": "Trip.com and Klook (Travelpayouts)"
       }
     ],
     paragraphs: [
-      "Browser requests log at the host. If analytics is added later, this page will say so."
+      "Thailand TravelGuide (thailand-travelguide.com) is owned and operated by **Beyond Guide Network** alongside our sister publication **Vietnam TravelGuide** (vietnam-travelguide.com). We do not require user accounts, we do not collect or sell personal email lists, and we do not run intrusive pop-up ad networks.",
+      "Below is our complete disclosure covering analytics, outbound affiliate partner links, third-party photography licenses, and copyright terms."
+    ],
+    sections: [
+      {
+        id: "analytics",
+        title: "Analytics & Technical Logs",
+        paragraphs: [
+          "We use Google Analytics 4 (`G-XWN3TGDF1V`) to understand aggregate reader traffic, such as which destination guides, regional maps, and seasonal planning pages are most useful."
+        ],
+        bullets: [
+          "**Aggregate Measurement:** Google Analytics records standard browser metadata, referring pages, and approximate region. We do not combine analytics with personal identity or sell visitor data to third parties.",
+          "**Static Hosting Logs:** Our static hosting provider (GitHub Pages / CDN) logs standard HTTP request headers and IP addresses for security and DDoS mitigation."
+        ]
+      },
+      {
+        id: "booking",
+        title: "Affiliate Disclosure (Trip.com & Klook)",
+        paragraphs: [
+          "Thailand TravelGuide is reader-supported. Several booking search boxes, hotel links, flight links, and activity buttons on this site are affiliate links to **Trip.com** and **Klook** (including via Travelpayouts)."
+        ],
+        bullets: [
+          "**No Extra Cost to You:** Clicking a partner link or using our hotel search form never increases the room rate, airfare, or ticket price you pay on Trip.com or Klook.",
+          "**Partner Cookies:** When you click out to Trip.com or Klook, those external platforms may set their own affiliate attribution cookies under their respective privacy policies to credit Beyond Guide Network for the referral.",
+          "**Editorial Independence:** Affiliate partnerships never influence which neighborhoods, hotels, resorts, or attractions we recommend. Read our [Editorial Standards and Ratings](/about/ratings) for our full policy."
+        ]
+      },
+      {
+        id: "photos",
+        title: "Photography Credits & Terms of Use",
+        paragraphs: [
+          "Original editorial copy, cartography, and page layouts on thailand-travelguide.com are © 2026 Beyond Guide Network. All rights reserved."
+        ],
+        bullets: [
+          "**Creative Commons Photography:** Third-party photographs sourced from Wikimedia Commons and individual photographers remain under their stated Creative Commons licenses (such as CC BY 2.0, CC BY-SA 3.0, or CC BY-SA 4.0) with full creator and license attribution in our site metadata.",
+          "**Travel Planning Disclaimer:** Timetables, visa rules, Thailand Digital Arrival Card (TDAC) procedures, national park fees, and THB fare ranges are verified for 2026 planning but can change without notice. Always confirm visa and safety rules with official Thai authorities before departure."
+        ]
+      }
     ],
     faqs: [
       {
-        "q": "Do you set marketing cookies?",
-        "a": "Partner sites may set their own cookies after you click out. This site does not run a cookie banner for first-party ads."
+        "q": "Do you sell personal data or run programmatic display ads?",
+        "a": "No. Beyond Guide Network never sells personal information and does not run third-party programmatic display ad auctions on Thailand TravelGuide."
+      },
+      {
+        "q": "What happens when I use the Book Your Stay hotel search box?",
+        "a": "Selecting a destination and dates in our search box opens Trip.com in a new tab with your chosen city, dates, and guest count pre-filled so you can compare live rates directly on Trip.com."
       }
     ],
   },
