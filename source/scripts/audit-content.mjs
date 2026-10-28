@@ -35,6 +35,41 @@ const HUBS = new Set([
 
 const SKIP_MONEY = new Set(['/about', '/privacy']);
 
+const DEPTH_2500 = new Set([
+  '/phuket',
+  '/chiang-mai',
+  '/koh-samui',
+  '/krabi',
+  '/khao-sok',
+  '/koh-phangan',
+  '/bangkok/sukhumvit',
+  '/bangkok/sukhumvit-thonglor',
+  '/bangkok/silom-sathon',
+  '/bangkok/silom-and-sathorn',
+  '/bangkok/rattanakosin',
+  '/bangkok/old-city-rattanakosin',
+  '/bangkok/chinatown-yaowarat',
+  '/chiang-mai/old-city',
+  '/chiang-mai/nimmanhaemin',
+  '/resort-living/amanpuri',
+  '/resort-living/six-senses-yao-noi',
+  '/resort-living/six-senses-samui',
+  '/resort-living/capella-bangkok',
+  '/resort-living/the-siam',
+  '/resort-living/four-seasons-chiang-mai',
+  '/resort-living/four-seasons-koh-samui',
+  '/resort-living/soneva-kiri',
+  '/resort-living/rayavadee',
+  '/resort-living/vie-hotel-bangkok',
+  '/resort-living/veranda-high-chiang-mai',
+  '/resort-living/avista-hideaway-phuket',
+  '/interests/nightlife/koh-samui-beach-clubs',
+  '/interests/nightlife/sukhumvit-soi-11',
+  '/interests/nightlife/phuket-beach-clubs',
+  '/interests/nightlife/thonglor-ekkamai',
+  '/interests/nightlife/charoenkrung-soi-nana',
+]);
+
 const SKIP_AFFILIATES = new Set([
   ...HUBS,
   '/plan/visas-and-tdac',
@@ -166,8 +201,8 @@ async function loadPages() {
 }
 
 const pages = await loadPages();
-if (pages.length !== 159) {
-  fail('site', `expected 159 routes, found ${pages.length}`);
+if (pages.length < 159) {
+  fail('site', `expected 159+ routes, found ${pages.length}`);
 }
 
 const paths = new Set(pages.map((page) => page.path));
@@ -211,6 +246,16 @@ for (const page of pages) {
 
   if (!SKIP_MONEY.has(page.path) && !THB_FIGURE.test(body) && !TRANSIT_TIME.test(body)) {
     fail(page.path, 'body needs a 2026 THB figure or a transit timing');
+  }
+  if (DEPTH_2500.has(page.path) && body.length < 2500) {
+    fail(page.path, `Wave 13 depth page must be 2500+ chars (now ${body.length})`);
+  }
+  if (!page.portraits?.length) fail(page.path, 'portraits are empty');
+  const days = page.days || [];
+  for (let i = 1; i < days.length; i++) {
+    if (days[i].photo && days[i].photo === days[i - 1].photo) {
+      fail(page.path, `adjacent day cards share ${days[i].photo}`);
+    }
   }
 
   for (const { kind, href } of internalHrefs(page)) {
