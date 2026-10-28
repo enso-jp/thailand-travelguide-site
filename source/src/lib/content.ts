@@ -736,22 +736,35 @@ const rawPages: Page[] = [
       {
         id: "activity-guides",
         title: "Activity and travel-style guides",
-        paragraphs: [
-          "For Koh Tao PADI weeks and Similan boats, see the [diving](/interests/diving-and-snorkeling) guide. For Wat Pho tables and day spas, see [massage](/interests/thai-massage-and-spas). For the three-coast calendar, see [beaches](/interests/beaches-and-island-hopping). For royal wats and historical parks, see [temples](/interests/temples-and-history). For stadium cards and Soi Ta-iad camps, see [Muay Thai](/interests/muay-thai-and-fitness-camps). For Chatuchak, walking streets, and VAT refunds, see [markets](/interests/markets-and-shopping)."
+        bullets: [
+          "**[Diving](/interests/diving-and-snorkeling):** Koh Tao PADI weeks and Similan boats",
+          "**[Massage](/interests/thai-massage-and-spas):** Wat Pho tables and day spas",
+          "**[Beaches](/interests/beaches-and-island-hopping):** the three-coast calendar",
+          "**[Temples](/interests/temples-and-history):** royal wats and historical parks",
+          "**[Muay Thai](/interests/muay-thai-and-fitness-camps):** stadium cards and Soi Ta-iad camps",
+          "**[Markets](/interests/markets-and-shopping):** Chatuchak, walking streets, and VAT refunds",
         ],
       },
       {
         id: "who-you-travel-with",
         title: "Family, couples, solo weeks, and festival dates",
-        paragraphs: [
-          "For car seats and shallow beaches, see [family travel](/interests/family-travel-with-kids). For a 3-4-5 river-jungle-villa split, see [honeymoon](/interests/honeymoon-and-couples). For Grab, BTS tap-in, and scams to skip, see [solo and first-time](/interests/solo-and-first-time-travel). For Songkran, Loy Krathong, Yi Peng, and the Phuket Vegetarian Festival, see [festivals](/interests/festivals-songkran-and-loy-krathong)."
+        bullets: [
+          "**[Family travel](/interests/family-travel-with-kids):** car seats and shallow beaches",
+          "**[Honeymoon](/interests/honeymoon-and-couples):** a 3-4-5 river-jungle-villa split",
+          "**[Solo and first-time](/interests/solo-and-first-time-travel):** Grab, BTS tap-in, and scams to skip",
+          "**[Festivals](/interests/festivals-songkran-and-loy-krathong):** Songkran, Loy Krathong, Yi Peng, and the Phuket Vegetarian Festival",
         ],
       },
       {
         id: "nightlife-and-resorts",
         title: "Nightlife districts and named resorts",
-        paragraphs: [
-          "Nightlife stays on district pages: the [nightlife hub](/interests/nightlife), [Charoenkrung and Soi Nana](/interests/nightlife/charoenkrung-soi-nana), [Thonglor and Ekkamai](/interests/nightlife/thonglor-ekkamai), [Sukhumvit Soi 11](/interests/nightlife/sukhumvit-soi-11), [Ari and Pradipat](/interests/nightlife/ari-pradipat), [Silom and Sathorn](/interests/nightlife/silom-sathorn), [Phuket beach clubs](/interests/nightlife/phuket-beach-clubs), [Kamala and Bang Tao](/interests/nightlife/phuket-kamala-bangtao), [Samui beach clubs](/interests/nightlife/koh-samui-beach-clubs), and [Bophut and Lamai](/interests/nightlife/samui-bophut-lamai). Named hotels sit under [resort living](/interests/resort-living). Stalls stay on [Thai food](/thai-food). Ticketed sights stay on [Attractions](/attractions)."
+        bullets: [
+          "**Bangkok:** [Charoenkrung and Soi Nana](/interests/nightlife/charoenkrung-soi-nana), [Thonglor and Ekkamai](/interests/nightlife/thonglor-ekkamai), [Sukhumvit Soi 11](/interests/nightlife/sukhumvit-soi-11), [Ari and Pradipat](/interests/nightlife/ari-pradipat), and [Silom and Sathorn](/interests/nightlife/silom-sathorn). The [nightlife hub](/interests/nightlife) is the map.",
+          "**Phuket:** [Phuket beach clubs](/interests/nightlife/phuket-beach-clubs) and [Kamala and Bang Tao](/interests/nightlife/phuket-kamala-bangtao).",
+          "**Koh Samui:** [Samui beach clubs](/interests/nightlife/koh-samui-beach-clubs) and [Bophut and Lamai](/interests/nightlife/samui-bophut-lamai).",
+          "**Resort living:** named hotels sit under [resort living](/interests/resort-living).",
+          "**Thai food:** stalls stay on [Thai food](/thai-food).",
+          "**Attractions:** ticketed sights stay on [Attractions](/attractions).",
         ],
       },
     ],
