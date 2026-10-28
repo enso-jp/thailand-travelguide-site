@@ -20,32 +20,51 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      HAS_TOKEN: ${{ secrets.THAILAND_GUIDE_TOKEN != '' }}
     steps:
       - uses: actions/checkout@v4
-      - name: Checkout Thailand Travel Guide
-        if: env.HAS_TOKEN == 'true'
-        env:
-          HAS_TOKEN: ${{ secrets.THAILAND_GUIDE_TOKEN != '' }}
-        uses: actions/checkout@v4
-        with:
-          repository: enso-jp/thailand-travelguide
-          ref: main
-          path: source
-          token: ${{ secrets.THAILAND_GUIDE_TOKEN }}
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-          cache-dependency-path: source/package-lock.json
-      - name: Install and build
-        working-directory: source
-        run: npm ci && npm run check:content && npm run audit:content && npm run build
+      - name: Stage publication
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir -p _site
+          python3 - <<'PY'
+          from pathlib import Path
+          import shutil
+          root = Path('.')
+          dest = Path('_site')
+          skip = {'.git', '.github', 'source', '_site', 'README.md', '.gitignore'}
+          for item in root.iterdir():
+              if item.name in skip:
+                  continue
+              target = dest / item.name
+              if item.is_dir():
+                  shutil.copytree(item, target, symlinks=True)
+              else:
+                  shutil.copy2(item, target)
+          required = [
+              dest / 'index.html',
+              dest / '.nojekyll',
+              dest / 'CNAME',
+              dest / 'favicon.ico',
+              dest / 'favicon.svg',
+              dest / 'favicon-48x48.png',
+              dest / 'about' / 'ratings' / 'index.html',
+              dest / 'sitemap.xml',
+          ]
+          missing = [str(p) for p in required if not p.exists()]
+          if missing:
+              raise SystemExit('missing publication files: ' + ', '.join(missing))
+          if (dest / 'README.md').exists():
+              raise SystemExit('publication stage must not include README.md')
+          cname = (dest / 'CNAME').read_text(encoding='utf-8').strip()
+          if cname != 'thailand-travelguide.com':
+              raise SystemExit(f'unexpected CNAME: {cname!r}')
+          print('staged publication ok')
+          PY
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: source/dist
+          path: _site
   deploy:
     needs: build
     runs-on: ubuntu-latest
