@@ -64,6 +64,15 @@ const links = Object.fromEntries(
         <input type="date" name="checkout" data-book-out required />
       </label>
     </div>
+    <label>
+      Guests
+      <select name="guests" data-book-guests>
+        <option value="2-1" selected>2 adults, 1 room</option>
+        <option value="1-1">1 adult, 1 room</option>
+        <option value="3-1">3 adults, 1 room</option>
+        <option value="4-2">4 adults, 2 rooms</option>
+      </select>
+    </label>
     <button class="aff-btn book-go" type="submit" data-book-go>Search hotels</button>
     <p class="note">Trip.com and Klook partner links. We may earn a commission.</p>
   </form>

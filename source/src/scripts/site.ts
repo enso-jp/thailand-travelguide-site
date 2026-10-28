@@ -274,6 +274,7 @@ ready(() => {
       const city = book.querySelector<HTMLSelectElement>('[data-book-city]')?.value || 'bangkok';
       const pack = links[city] || links.bangkok;
       if (!pack) return;
+      const guests = book.querySelector<HTMLSelectElement>('[data-book-guests]')?.value || '2-1';
       const href =
         tab === 'activities'
           ? pack.tours
@@ -281,7 +282,7 @@ ready(() => {
             ? pack.transfer
             : tab === 'trains'
               ? pack.trains
-              : appendStayQuery(pack.stay, inInput?.value, outInput?.value, '2-1');
+              : appendStayQuery(pack.stay, inInput?.value, outInput?.value, guests);
       window.open(href, '_blank', 'noopener,noreferrer');
     });
   });
