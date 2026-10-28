@@ -266,6 +266,10 @@ for (const page of pages) {
   if (new Set(dayPhotos).size !== dayPhotos.length) {
     fail(page.path, 'duplicate day-card photo on this page');
   }
+  const mainPhotos = photosOf(page).filter(Boolean);
+  if (new Set(mainPhotos).size !== mainPhotos.length) {
+    fail(page.path, 'duplicate photo inside page main');
+  }
   for (const photo of dayPhotos) {
     if (page.photo && photo === page.photo) {
       fail(page.path, `day card photo matches hero (${photo})`);

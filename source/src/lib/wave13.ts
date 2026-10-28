@@ -344,6 +344,41 @@ function uniquifyList(items: Portrait[]): Portrait[] {
   });
 }
 
+function uniquifyMainPhotos(page: Page): Page {
+  const pool = DAY_POOL;
+  const used = new Set<string>();
+  if (page.photo) used.add(page.photo);
+  const nextPhoto = () => pool.find((p) => !used.has(p) && p !== page.photo);
+  const portraits = (page.portraits || []).map((item) => {
+    let photo = item.photo;
+    if (!photo || used.has(photo)) {
+      const next = nextPhoto();
+      if (next) photo = next;
+    }
+    used.add(photo);
+    return { ...item, photo };
+  });
+  const days = (page.days || []).map((day) => {
+    let photo = day.photo;
+    if (!photo || used.has(photo)) {
+      const next = nextPhoto();
+      if (next) photo = next;
+    }
+    used.add(photo);
+    return { ...day, photo };
+  });
+  const affiliates = (page.affiliates || []).map((row) => {
+    let photo = row.photo;
+    if (!photo || used.has(photo)) {
+      const next = nextPhoto();
+      if (next) photo = next;
+    }
+    used.add(photo);
+    return { ...row, photo };
+  });
+  return { ...page, portraits, days, affiliates };
+}
+
 function uniquifyDays(page: Page): Page {
   if (!page.days?.length) return page;
   const temple = new Set([
@@ -603,6 +638,7 @@ export function applyWave13(pages: Page[]): Page[] {
     if (cta) page = { ...page, bookingCta: cta };
     page = applyWave16Finish(page);
     page = uniquifyDays(page);
+    page = uniquifyMainPhotos(page);
     return page;
   });
 }

@@ -101,7 +101,7 @@ const rawPages: Page[] = [
     path: "/",
     title: "Thailand Travel Guide: destinations, monsoon notes, and how to get there",
     description: "Plan a first trip to Thailand: a Bangkok landing, then a north or south fork. This guide covers seasons, trains, ferries, and districts. Facts first, not a pitch.",
-    lede: "Start with Bangkok, then pick a north or south fork. The monsoon flips: Andaman is easier November to April, the Gulf is easier January to September.",
+    lede: "River temples and late-night street food set the first nights in Bangkok. Pick a north hub or one south coast next. Andaman is easier November to April; the Gulf is easier January to September.",
     schema: "Article",
     crumbs: [
       {
@@ -547,7 +547,7 @@ const rawPages: Page[] = [
     path: "/plan",
     title: "Plan a trip to Thailand",
     description: "The decisions that lock a first trip: season, visas and TDAC, trains, eSIM, money, and how you move in Bangkok.",
-    lede: "Start with season and visas. Then lock transport, a SIM, and cash. The pages below are the decisions that lock a first trip.",
+    lede: "Thailand runs two separate island monsoon calendars. Lock season and visas first, then transport, a SIM, and cash. The pages below are the decisions that lock a first trip.",
     schema: "Article",
     crumbs: [
       {
@@ -625,7 +625,7 @@ const rawPages: Page[] = [
     path: "/get-there",
     title: "Get there: Thailand routes",
     description: "How to move between Bangkok, the islands, Khao Sok, the north, Ayutthaya, and Kanchanaburi. Fly when the day matters. Sleep on the Chiang Mai train. Use a ferry only on a morning sea.",
-    lede: "These pages are the useful hops. Fly when the day matters. Take a sleeper when you want the ride. Use a ferry only on a morning sea.",
+    lede: "Bangkok to Chiang Mai is a 70-minute flight or a 12-hour sleeper. Fly when the day matters. Sleep on the north train. Use a ferry only on a morning sea.",
     schema: "Article",
     crumbs: [
       {
