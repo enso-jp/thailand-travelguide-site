@@ -1,4 +1,6 @@
 ---
+import { formatInline } from '../lib/inline';
+
 export interface Faq {
   q: string;
   a: string;
@@ -17,8 +19,8 @@ const { items } = Astro.props;
       {
         items.map((item) => (
           <>
-            <dt>{item.q}</dt>
-            <dd>{item.a}</dd>
+            <dt set:html={formatInline(item.q)} />
+            <dd set:html={formatInline(item.a)} />
           </>
         ))
       }

@@ -1,5 +1,15 @@
 import { site, absUrl } from './site';
 import type { Page } from './content';
+import { formatInline } from './inline';
+
+function visibleText(text: string): string {
+  return formatInline(text)
+    .replace(/<[^>]+>/g, '')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"');
+}
 
 export function organizationLd() {
   return {
@@ -52,8 +62,8 @@ export function faqLd(page: Page) {
     '@type': 'FAQPage',
     mainEntity: page.faqs.map((faq) => ({
       '@type': 'Question',
-      name: faq.q,
-      acceptedAnswer: { '@type': 'Answer', text: faq.a },
+      name: visibleText(faq.q),
+      acceptedAnswer: { '@type': 'Answer', text: visibleText(faq.a) },
     })),
   };
 }
@@ -63,7 +73,7 @@ export function pageLd(page: Page) {
     '@context': 'https://schema.org',
     name: page.title,
     alternateName: page.alternateName,
-    description: page.description,
+    description: visibleText(page.description),
     url: absUrl(page.path),
     image: page.photo ? absUrl(page.photo) : undefined,
   };
@@ -94,7 +104,7 @@ export function pageLd(page: Page) {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: page.title,
-    description: page.description,
+    description: visibleText(page.description),
     url: absUrl(page.path),
     mainEntityOfPage: absUrl(page.path),
     image: page.photo ? absUrl(page.photo) : undefined,

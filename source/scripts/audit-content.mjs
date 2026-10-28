@@ -115,6 +115,7 @@ function bodyText(page) {
       ...(section.table?.headers || []),
       ...(section.table?.rows || []).flat(),
     ]),
+    ...(page.sections || []).flatMap((section) => section.bullets || []),
     ...(page.days || []).map((day) => `${day.title} ${day.body}`),
     ...(page.faqs || []).map((faq) => `${faq.q} ${faq.a}`),
     ...(page.facts || []).map((fact) => `${fact.label} ${fact.value}`),
@@ -252,9 +253,13 @@ for (const page of pages) {
   }
   if (!page.portraits?.length) fail(page.path, 'portraits are empty');
   const days = page.days || [];
-  for (let i = 1; i < days.length; i++) {
-    if (days[i].photo && days[i].photo === days[i - 1].photo) {
-      fail(page.path, `adjacent day cards share ${days[i].photo}`);
+  const dayPhotos = days.map((day) => day.photo).filter(Boolean);
+  if (new Set(dayPhotos).size !== dayPhotos.length) {
+    fail(page.path, 'duplicate day-card photo on this page');
+  }
+  for (const photo of dayPhotos) {
+    if (page.photo && photo === page.photo) {
+      fail(page.path, `day card photo matches hero (${photo})`);
     }
   }
 
@@ -275,6 +280,51 @@ for (const page of pages) {
     if (!existsSync(file)) fail(page.path, `missing photo file ${photo}`);
     const key = creditKey(photo);
     if (!credits[key]) fail(page.path, `missing credits.json entry for ${photo} (key ${key})`);
+  }
+
+  const rendered = body.replace(/\[[^\]]+\]\((\/[a-z0-9\-\/]+)\)/gi, '$1').replace(/`[^`]+`/g, 'TERM').replace(/\*\*[^*]+\*\*/g, 'BOLD');
+  if (/\]\(\//.test(rendered)) fail(page.path, 'raw markdown link leaked into rendered fields');
+  if (/`/.test(rendered)) fail(page.path, 'raw backtick leaked into rendered fields');
+  if (/planner spine|click-outs that matter|ATM fee is often 220 THB|They are not ranked/i.test(text)) {
+    fail(page.path, 'leaked meta-copy or unranked disclaimer');
+  }
+  const affPhotos = (page.affiliates || []).map((row) => row.photo).filter(Boolean);
+  if (page.photo && affPhotos.includes(page.photo)) {
+    fail(page.path, `Hero photo == AffRow photo (${page.photo})`);
+  }
+  if (affPhotos.length >= 2 && new Set(affPhotos.slice(0, 2)).size < 2) {
+    fail(page.path, 'first two AffRow photos are not distinct');
+  }
+
+  const visibleBits = [
+    page.title,
+    page.description,
+    page.lede,
+    page.photoCredit,
+    page.bookingCta?.stayLabel,
+    page.bookingCta?.stayNote,
+    page.bookingCta?.tourLabel,
+    page.bookingCta?.tourNote,
+    ...(page.paragraphs || []),
+    ...(page.chips || []),
+    ...(page.facts || []).flatMap((fact) => [fact.label, fact.value]),
+    ...(page.faqs || []).flatMap((faq) => [faq.q, faq.a]),
+    ...(page.days || []).flatMap((day) => [day.title, day.body]),
+    ...(page.affiliates || []).flatMap((row) => [row.title, row.kicker, row.body, row.cta]),
+    ...(page.sections || []).flatMap((section) => [
+      section.title,
+      ...(section.paragraphs || []),
+      ...(section.bullets || []),
+      ...(section.table?.headers || []),
+      ...(section.table?.rows || []).flat(),
+    ]),
+    ...(page.portraits || []).map((item) => item.title),
+    ...(page.crumbs || []).map((crumb) => crumb.name),
+  ]
+    .filter(Boolean)
+    .join('\n');
+  if (/11105102|334225872|793638|588978|city 62195|click-out|stays scannable/i.test(visibleBits)) {
+    fail(page.path, 'affiliate IDs or meta-copy leaked into visible text');
   }
 
   if (isCommercial(page) && !page.affiliates?.length) {
