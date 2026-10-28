@@ -1,0 +1,16 @@
+{
+  "name": "thailand-travelguide",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check:content": "node scripts/check-content.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.4.1",
+    "astro": "^5.13.2"
+  }
+}
