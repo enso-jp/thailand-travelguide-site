@@ -1,0 +1,72 @@
+---
+import { tripCities, stayLink, klookTours, transferLink, trainLink, type StayCity } from '../lib/partners';
+
+const cities: { id: StayCity; label: string }[] = [
+  { id: 'bangkok', label: 'Bangkok' },
+  { id: 'phuket', label: 'Phuket' },
+  { id: 'chiang-mai', label: 'Chiang Mai' },
+  { id: 'koh-samui', label: 'Koh Samui' },
+  { id: 'krabi', label: 'Krabi' },
+  { id: 'koh-phangan', label: 'Koh Phangan' },
+  { id: 'pattaya', label: 'Pattaya' },
+  { id: 'hua-hin', label: 'Hua Hin' },
+];
+
+const airports: Record<string, 'BKK' | 'HKT' | 'CNX' | 'USM' | 'KBV'> = {
+  bangkok: 'BKK',
+  phuket: 'HKT',
+  'chiang-mai': 'CNX',
+  'koh-samui': 'USM',
+  krabi: 'KBV',
+  'koh-phangan': 'USM',
+  pattaya: 'BKK',
+  'hua-hin': 'BKK',
+};
+
+const links = Object.fromEntries(
+  cities.map((city) => [
+    city.id,
+    {
+      stay: stayLink(city.id),
+      tours: klookTours(`${city.label} tours`),
+      transfer: transferLink(airports[city.id]),
+      trains: trainLink('Bangkok', tripCities[city.id].name),
+    },
+  ]),
+);
+---
+
+<aside class="book-stay" data-book>
+  <h2>Book your <em>stay</em></h2>
+  <div class="book-tabs" role="tablist">
+    <button type="button" role="tab" data-book-tab="stay" aria-selected="true">Hotels</button>
+    <button type="button" role="tab" data-book-tab="activities" aria-selected="false">Tours & Activities</button>
+    <button type="button" role="tab" data-book-tab="transfers" aria-selected="false">Airport Transfers</button>
+    <button type="button" role="tab" data-book-tab="trains" aria-selected="false">Ferries & Trains</button>
+  </div>
+  <form class="book-form" data-book-form>
+    <label>
+      Destination
+      <select name="city" data-book-city>
+        {cities.map((city) => <option value={city.id}>{city.label}</option>)}
+      </select>
+    </label>
+    <div class="book-dates">
+      <label>
+        Check-in
+        <input type="date" name="checkin" data-book-in />
+      </label>
+      <label>
+        Check-out
+        <input type="date" name="checkout" data-book-out />
+      </label>
+    </div>
+    <button class="aff-btn book-go" type="submit">Search on Trip.com</button>
+    <p class="note">Trip.com and Klook partner links. We may earn a commission.</p>
+  </form>
+  <script type="application/json" data-book-links set:html={JSON.stringify(links)} />
+</aside>
+<a class="home-ad" href={stayLink('bangkok')} rel="sponsored noopener" target="_blank">
+  <strong>Bangkok first nights</strong>
+  <span>Lock two nights near a BTS station before you pick a coast.</span>
+</a>

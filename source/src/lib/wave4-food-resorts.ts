@@ -43,8 +43,24 @@ export const wave4Pages: Page[] = [
         id: 'guides',
         title: 'Fifteen food guides',
         paragraphs: [
-          'For city maps, see [Bangkok street food](/thai-food/bangkok-street-food), [Bib Gourmand](/thai-food/bangkok-bib-gourmand), [Northern Lanna](/thai-food/northern-lanna), [South and Baba-Nyonya](/thai-food/southern-and-baba-nyonya), and [night markets](/thai-food/night-markets). For a neighbourhood walk, see [Yaowarat](/thai-food/yaowarat-chinatown-food-walk), [Banthat Thong](/thai-food/banthat-thong-road-food-strip), [Wang Lang and Talat Noi](/thai-food/wang-lang-and-talat-noi), [Or Tor Kor](/thai-food/or-tor-kor-and-bangkok-fresh-markets), or [Chiang Mai khao soi](/thai-food/chiang-mai-khao-soi-and-markets).',
-          'Add [Phuket Old Town](/thai-food/phuket-old-town-hokkien-and-peranakan-food) if the Andaman base is inland for a day. [Rooftops and river dining](/thai-food/bangkok-rooftop-bars-and-river-dining) is the dress-code night. [Cooking classes](/thai-food/thai-cooking-classes-bangkok-and-chiang-mai), [dishes to order](/thai-food/thai-dishes-to-order-first-trip), and the [coffee guide](/thai-food/bangkok-and-chiang-mai-coffee-guide) cover a wok station, a menu decoder, or a pour-over.'
+          'City maps and neighbourhood walks sit in two clusters. An Andaman inland day, a dress-code roof, a wok class, a menu decoder, or a pour-over sit in the rest.',
+        ],
+        bullets: [
+          '**Bangkok street food:** [Bangkok street food](/thai-food/bangkok-street-food) for rail-side stalls.',
+          '**Bib Gourmand:** [Bib Gourmand](/thai-food/bangkok-bib-gourmand) for the 2026 value rooms.',
+          '**Northern Lanna:** [Northern Lanna](/thai-food/northern-lanna) for khao soi and larb at lunch.',
+          '**South and Baba-Nyonya:** [South and Baba-Nyonya](/thai-food/southern-and-baba-nyonya) for sour curry and heritage houses.',
+          '**Night markets:** [Night markets](/thai-food/night-markets) for Ratchada and walking-street hours.',
+          '**Yaowarat:** [Yaowarat](/thai-food/yaowarat-chinatown-food-walk) for one gold-shop night walk.',
+          '**Banthat Thong:** [Banthat Thong](/thai-food/banthat-thong-road-food-strip) for late university food.',
+          '**Wang Lang and Talat Noi:** [Wang Lang and Talat Noi](/thai-food/wang-lang-and-talat-noi) for a ferry lunch.',
+          '**Or Tor Kor:** [Or Tor Kor](/thai-food/or-tor-kor-and-bangkok-fresh-markets) for graded fruit.',
+          '**Chiang Mai khao soi:** [Chiang Mai khao soi](/thai-food/chiang-mai-khao-soi-and-markets) for the lunch clock.',
+          '**Phuket Old Town:** [Phuket Old Town](/thai-food/phuket-old-town-hokkien-and-peranakan-food) if the Andaman base is inland for a day.',
+          '**Rooftops:** [Rooftops and river dining](/thai-food/bangkok-rooftop-bars-and-river-dining) for a dress-code night.',
+          '**Cooking classes:** [Cooking classes](/thai-food/thai-cooking-classes-bangkok-and-chiang-mai) for a wok station.',
+          '**Dishes to order:** [Dishes to order](/thai-food/thai-dishes-to-order-first-trip) for a menu decoder.',
+          '**Coffee:** [Coffee guide](/thai-food/bangkok-and-chiang-mai-coffee-guide) for a pour-over.',
         ],
         table: {
           headers: ['Cluster', 'Pages', 'Who it fits'],
@@ -207,7 +223,7 @@ export const wave4Pages: Page[] = [
       },
       {
         id: 'how-to-use',
-        title: 'How to use the rest of the 44',
+        title: 'The rest of the 44',
         paragraphs: [
           'Beer Hima (Chatuchak) is Southern Thai seafood on Thetsaban Songkhro, useful after Or Tor Kor, not a substitute for Phuket Town. Janhom in Wang Thonglang is the long-running Southern auntie room if you already have a Ramkhamhaeng day. Phed Phed Bistro at The Circle Ratchaphruek is the awarded Isan table, not the Ari shop with the same name. Keawloon near Ekkamai runs two seatings; book or miss it.',
           'Hours move. Daily hours shift with stock. If a pot is empty, order the second dish or leave. Do not write the shop a one-star review because you arrived at 16:50 for a lunch-only room.',
@@ -622,7 +638,7 @@ export const wave4Pages: Page[] = [
     ],
     portraits: [
       { title: 'Siam and Silom', href: '/bangkok/siam-silom', photo: '/photos/siam.jpg' },
-      { title: 'VIE Hotel Bangkok', href: '/resort-living/vie-hotel-bangkok', photo: '/photos/siam.jpg' },
+      { title: 'The Siam', href: '/resort-living/the-siam', photo: '/photos/riverside.jpg' },
       { title: 'Four Seasons Bangkok', href: '/resort-living/four-seasons-bangkok', photo: '/photos/riverside.jpg' },
       { title: 'Thonglor nights', href: '/interests/nightlife/thonglor-ekkamai', photo: '/photos/sukhumvit.jpg' },
     ],
@@ -782,7 +798,7 @@ export const wave4Pages: Page[] = [
       { title: 'Anantara Chiang Mai', href: '/resort-living/anantara-chiang-mai', photo: '/photos/chiang-mai.jpg' },
       { title: 'Northern Lanna', href: '/thai-food/northern-lanna', photo: '/photos/thai-food-lanna.jpg' },
       { title: 'Chiang Mai Old City', href: '/chiang-mai/old-city', photo: '/photos/chiang-mai-old-city.jpg' },
-      { title: 'Veranda High', href: '/resort-living/veranda-high-chiang-mai', photo: '/photos/nimman.jpg' },
+      { title: 'Four Seasons Chiang Mai', href: '/resort-living/four-seasons-chiang-mai', photo: '/photos/northern.jpg' },
     ],
     affiliates: [
       stay('137 Pillars House rates', 'Trip.com', 'Live rates for the Wat Gate compound.', hotelSearchLink('137 Pillars House Chiang Mai', 'chiang-mai'), '/photos/chiang-mai.jpg'),

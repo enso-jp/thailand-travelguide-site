@@ -23,7 +23,7 @@ export const wave9Pages: Page[] = [
     description:
       'Ticketed Thailand sights for first-trip planners: Grand Palace, river wats, Chatuchak, Maya Bay, Railay, and four national park pages with 2026 fees.',
     lede:
-      'The hub names ticketed sights with 2026 fees and piers. Use it for one palace morning, one Andaman bay, or one mountain wat.',
+      'Thailand attractions are known for ticketed wats, marine parks, and market days with 2026 fees and piers. They fit one palace morning, one Andaman bay, or one mountain wat.',
     schema: 'Article',
     crumbs: [{ name: 'Attractions', href: '/attractions' }],
     facts: [
@@ -35,15 +35,15 @@ export const wave9Pages: Page[] = [
     chips: ['Temples', 'Marine parks', 'Markets', 'Day boats'],
     photo: '/photos/old-city.jpg',
     paragraphs: [
-      'These pages cover the sights that change a first trip: the Rattanakosin palace cluster, two floating-market days, Chiang Mai and Chiang Rai wats, Andaman bays, Cheow Lan Lake, Pattaya teak carving, and Bangkok fight nights. City pages stay districts and trains. Park pages stay under the city that owns the pier.',
+      'Ticketed sights that change a first trip include the Rattanakosin palace cluster, two floating-market days, Chiang Mai and Chiang Rai wats, Andaman bays, Cheow Lan Lake, Pattaya teak carving, and Bangkok fight nights. City pages stay districts and trains. Park pages stay under the city that owns the pier.',
       'A 2026 foreign ticket is often 200 to 500 THB at the gate. Boat days cost more: Phi Phi park fee 400 THB on top of the tour, Railay longtails 100 THB a person, Cheow Lan private longtails 1,800 to 2,500 THB. Book the hotel base on Trip.com. Book boats and timed tickets on Klook.',
     ],
     sections: [
       {
         id: 'how-to-use',
-        title: 'How to use this hub',
+        title: 'Ticketed clusters',
         paragraphs: [
-          'Pick one Bangkok temple morning, one market, and one boat or mountain day. Do not stack the Grand Palace, Chatuchak, and a Phi Phi speedboat on the same calendar. The four park pages already live under Khao Lak, Kanchanaburi, Chiang Mai, and Samui. This hub links them so you can see the fee board in one place.',
+          'One Bangkok temple morning, one market, and one boat or mountain day is enough. Do not stack the Grand Palace, Chatuchak, and a Phi Phi speedboat on the same calendar. The four park pages already live under Khao Lak, Kanchanaburi, Chiang Mai, and Samui, with the fee board collected here.',
         ],
         table: {
           headers: ['Cluster', 'Pages', 'Who it fits'],
@@ -512,7 +512,7 @@ export const wave9Pages: Page[] = [
     description:
       'Observation-only and feeding sanctuaries in Mae Taeng and Mae Wang. No riding, hooks, or shows. Half-day 1,800 to 2,500 THB; full-day 2,500 to 3,500 THB with hotel van pickup.',
     lede:
-      'Use this if you want to watch and feed elephants, not ride them. Book a no-hook, no-show camp in Mae Taeng or Mae Wang. The van is part of the 2026 price.',
+      'Half-day and full-day observation-and-feeding sanctuaries sit in the Mae Wang and Mae Taeng valleys outside Chiang Mai. Book a no-hook, no-show camp if you want to watch and feed, not ride; the van is part of the 2026 price.',
     schema: 'TouristDestination',
     crumbs: [
       { name: 'Attractions', href: '/attractions' },

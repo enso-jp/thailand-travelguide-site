@@ -5,12 +5,21 @@ import AffRow from './AffRow.astro';
 import FaqList from './FaqList.astro';
 import type { Page } from '../lib/content';
 import { chipHref, formatInline } from '../lib/inline';
+import { UniquePhotos } from '../lib/photos';
 
 interface Props {
   page: Page;
 }
 
 const { page } = Astro.props;
+const bag = new UniquePhotos(page.photo ? [page.photo] : []);
+const portraits = (page.portraits || []).map((item) => ({ ...item, photo: bag.take(item.photo) }));
+const affiliates = (page.affiliates || []).map((item) => ({ ...item, photo: bag.take(item.photo) }));
+const days = (page.days || []).map((day) => ({ ...day, photo: bag.take(day.photo) }));
+const sections = (page.sections || []).map((section) => ({
+  ...section,
+  cards: section.cards?.map((card) => ({ ...card, photo: bag.take(card.photo) })),
+}));
 const tabs = page.tabs;
 const useGuideGrid =
   (page.portraits?.length || 0) > 0 &&
@@ -127,7 +136,7 @@ function guideGridHeading(path: string): string {
       <section class="place-section" id="related">
         <h2>{guideGridHeading(page.path)}</h2>
         <div class="guide-grid">
-          {page.portraits!.map((item) => (
+          {portraits.map((item) => (
             <a class="guide-card" href={item.href}>
               <img src={item.photo} alt={item.title} width="640" height="400" loading="lazy" decoding="async" />
               <span>
@@ -145,7 +154,7 @@ function guideGridHeading(path: string): string {
       <section class="place-section" id="days">
         <h2>Day by day</h2>
         <div class="day-cards">
-          {page.days.map((day) => (
+          {days.map((day) => (
             <article class="day-plan-card" id={`day-${day.n}`}>
               <div class="media">
                 <img src={day.photo} alt="" width="960" height="400" loading="lazy" decoding="async" />
@@ -163,7 +172,7 @@ function guideGridHeading(path: string): string {
   }
 
   {
-    page.sections?.map((section) => (
+    sections.map((section) => (
       <section class="place-section" id={section.id}>
         <h2>{section.title}</h2>
         {section.paragraphs?.map((p) => <p set:html={formatInline(p)} />)}
@@ -232,19 +241,19 @@ function guideGridHeading(path: string): string {
   }
 
   {
-    !useGuideGrid && page.portraits && page.portraits.length > 0 && (
+    !useGuideGrid && portraits.length > 0 && (
       <section class="place-section" id="related">
         <h2>Keep going</h2>
-        <PortraitRail label={page.title} items={page.portraits} />
+        <PortraitRail label={page.title} items={portraits} />
       </section>
     )
   }
 
   {
-    page.affiliates && page.affiliates.length > 0 && (
+    affiliates.length > 0 && (
       <section class="place-section" id="book">
         <h2>Book</h2>
-        <AffRow items={page.affiliates} />
+        <AffRow items={affiliates} />
       </section>
     )
   }

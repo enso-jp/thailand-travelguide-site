@@ -122,6 +122,11 @@ const PARENT_RULES: { test: RegExp; name: string; href: string }[] = [
   { test: /^\/ayutthaya(\/|$)/, name: 'Ayutthaya', href: '/ayutthaya' },
   { test: /^\/hua-hin(\/|$)/, name: 'Hua Hin', href: '/hua-hin' },
   { test: /^\/sukhothai(\/|$)/, name: 'Sukhothai', href: '/sukhothai' },
+  { test: /^\/pattaya(\/|$)/, name: 'Pattaya', href: '/pattaya' },
+  { test: /^\/koh-phi-phi(\/|$)/, name: 'Koh Phi Phi', href: '/koh-phi-phi' },
+  { test: /^\/koh-chang(\/|$)/, name: 'Koh Chang', href: '/koh-chang' },
+  { test: /^\/koh-kood(\/|$)/, name: 'Koh Kood', href: '/koh-kood' },
+  { test: /^\/khao-yai(\/|$)/, name: 'Khao Yai', href: '/khao-yai' },
 ];
 
 const ATTRACTION_PARENT: Record<string, { name: string; href: string }> = {
@@ -138,7 +143,7 @@ const ATTRACTION_PARENT: Record<string, { name: string; href: string }> = {
   '/attractions/phi-phi-islands-and-maya-bay': { name: 'Krabi', href: '/krabi' },
   '/attractions/railay-beach-and-phra-nang-cave': { name: 'Krabi', href: '/krabi' },
   '/attractions/cheow-lan-lake-khao-sok': { name: 'Khao Sok', href: '/khao-sok' },
-  '/attractions/sanctuary-of-truth-pattaya': { name: 'Hua Hin', href: '/hua-hin' },
+  '/attractions/sanctuary-of-truth-pattaya': { name: 'Pattaya', href: '/pattaya' },
 };
 
 const NIGHTLIFE_PARENT: Record<string, { name: string; href: string }> = {
@@ -323,24 +328,22 @@ function thaiFoodHubCards(): Portrait[] {
 }
 
 function resortHubCards(): Portrait[] {
-  return Object.entries(RESORT_PHOTO).map(([href, photo]) => {
-    const title = href.replace('/resort-living/', '').replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
-    return card(title, href, photo);
-  });
+  return Object.entries(RESORT_PHOTO)
+    .filter(([href]) => href !== '/resort-living/vie-hotel-bangkok' && href !== '/resort-living/veranda-high-chiang-mai')
+    .map(([href, photo]) => {
+      const title = href.replace('/resort-living/', '').replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+      return card(title, href, photo);
+    });
 }
 
 function uniquifyList(items: Portrait[]): Portrait[] {
   const used = new Set<string>();
-  const extras = DAY_POOL.filter((p) => !items.some((i) => i.photo === p));
   return items.map((item) => {
-    if (!used.has(item.photo)) {
+    if (item.photo && !used.has(item.photo)) {
       used.add(item.photo);
       return item;
     }
-    const next = extras.find((p) => !used.has(p));
-    if (!next) return item;
-    used.add(next);
-    return { ...item, photo: next };
+    return { ...item, photo: '' };
   });
 }
 
@@ -355,14 +358,20 @@ function uniquifyDays(page: Page): Page {
     '/photos/doi-suthep.jpg',
     '/photos/bts.jpg',
   ]);
-  const used = new Set<string>(page.photo ? [page.photo] : []);
+  const used = new Set<string>();
+  if (page.photo) used.add(page.photo);
+  for (const item of page.portraits || []) if (item.photo) used.add(item.photo);
+  for (const item of page.affiliates || []) if (item.photo) used.add(item.photo);
+  for (const section of page.sections || []) {
+    for (const card of section.cards || []) if (card.photo) used.add(card.photo);
+  }
   const days = page.days.map((day) => {
     let photo = day.photo;
     const south = /railay|phi phi|samui|phuket|krabi|andaman|tao|phangan|lanta|lipe|khao sok|cheow/i.test(
       `${day.title} ${day.body}`,
     );
     if (!photo || used.has(photo)) {
-      const next = DAY_POOL.find((p) => !used.has(p) && p !== page.photo && (!south || !temple.has(p)));
+      const next = DAY_POOL.find((p) => !used.has(p) && (!south || !temple.has(p)));
       if (next) photo = next;
     }
     used.add(photo);

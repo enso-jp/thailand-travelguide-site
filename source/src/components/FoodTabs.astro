@@ -1,0 +1,13 @@
+---
+interface Props {
+  current?: 'food' | 'dishes' | 'cities' | 'directory';
+}
+
+const { current = 'food' } = Astro.props;
+---
+
+<nav class="tabs" aria-label="Food">
+  <a href="/thai-food#cities" aria-current={current === 'cities' ? 'page' : undefined}>City guides</a>
+  <a href="/thai-food#dishes" aria-current={current === 'dishes' ? 'page' : undefined}>Signature dishes</a>
+  <a href="/thai-food#directory" aria-current={current === 'directory' ? 'page' : undefined}>A-Z directory</a>
+</nav>

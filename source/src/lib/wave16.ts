@@ -57,34 +57,7 @@ const NORTH_POOL = [
   '/photos/night-market-cm.jpg',
 ];
 
-const PHOTO_POOL = [
-  '/photos/riverside.jpg',
-  '/photos/old-city.jpg',
-  '/photos/sukhumvit.jpg',
-  '/photos/siam.jpg',
-  '/photos/nightlife.jpg',
-  '/photos/lumphini.jpg',
-  '/photos/jim-thompson.jpg',
-  '/photos/chinatown-day.jpg',
-  '/photos/silom-night.jpg',
-  '/photos/patong-night.jpg',
-  '/photos/chaweng-night.jpg',
-  '/photos/ari.jpg',
-  '/photos/hua-hin.jpg',
-  '/photos/ayutthaya.jpg',
-  '/photos/kanchanaburi.jpg',
-  '/photos/sukhothai.jpg',
-  '/photos/erawan.jpg',
-  '/photos/get-there.jpg',
-  '/photos/plan.jpg',
-  '/photos/destinations.jpg',
-  '/photos/itineraries.jpg',
-  '/photos/resort.jpg',
-  '/photos/koh-kood.jpg',
-  '/photos/koh-chang.jpg',
-  ...SOUTH_POOL,
-  ...NORTH_POOL,
-];
+const PHOTO_POOL = Object.keys(credits).map((key) => `/photos/${key}.jpg`);
 
 const DAY_PHOTO_FIX: Record<string, Record<number, string>> = {
   '/itineraries/10-days-bangkok-khao-sok-krabi': {
@@ -1144,7 +1117,7 @@ function sectionTitleFor(page: Page, index: number): string {
   ) {
     return ['What it is known for and best areas', 'Getting around and 2026 fares', 'Where to stay and nightlife'][index] || 'Planner notes';
   }
-  return ['How to use this page', 'Timing and 2026 costs', 'Next useful page'][index] || 'Planner notes';
+  return ['What it is known for', 'Timing and 2026 costs', 'Where it leads'][index] || 'Planner notes';
 }
 
 export function stripBannedCopy(page: Page): Page {
@@ -1555,7 +1528,7 @@ export function applyResortLivingHub(page: Page): Page {
   return {
     ...page,
     lede:
-      "Thailand's flagship resorts are known for private Andaman headlands, lantern-lit Mae Rim rice terraces, and Chao Phraya river sanctuaries where the stay itself shapes the journey. Compare the six regions below by coast, season, and nightly tier.",
+      "Thailand's flagship resorts are known for private Andaman headlands, lantern-lit Mae Rim rice terraces, and Chao Phraya river sanctuaries where the stay itself shapes the journey. Compare the six regions by coast, season, and nightly tier.",
     paragraphs: [
       "Wake to limestone karsts rising out of Phang Nga Bay, step off a mahogany river barge onto a private Bangkok pier, or trade Phuket's main beaches for a gated coconut grove on Pansea Cove. The stay is the itinerary, so the coast and the month come before the brand name.",
     ],
@@ -1946,7 +1919,7 @@ export function applyNightlifeHub(page: Page): Page {
 export function applyInterestPortraits(page: Page): Page {
   const list = INTEREST_PORTRAITS[page.path] || NIGHTLIFE_SIBLINGS[page.path];
   if (!list) return page;
-  return { ...page, portraits: uniquifyPortraits(list.map((row) => card(row.title, row.href, row.photo)), page.photo) };
+  return { ...page, portraits: list.map((row) => card(row.title, row.href, row.photo)) };
 }
 
 export function thaiFoodHubCards(): Portrait[] {
@@ -2000,23 +1973,29 @@ function photoFromKeywords(title: string, body: string): string | undefined {
   return undefined;
 }
 
-export function fixDayPhotos(page: Page): Page {
+function nextUnusedPhoto(used: Set<string>, preferred?: string[]): string | undefined {
+  if (preferred) {
+    const fromPreferred = preferred.find((p) => !used.has(p));
+    if (fromPreferred) return fromPreferred;
+  }
+  return PHOTO_POOL.find((p) => !used.has(p) && !p.includes('/dish-'));
+}
+
+export function fixDayPhotos(page: Page, used: Set<string>): Page {
   if (!page.days?.length) return page;
   const mapped = DAY_PHOTO_FIX[page.path] || {};
-  const used = new Set<string>(page.photo ? [page.photo] : []);
   const days = page.days.map((day) => {
     let photo = mapped[day.n] || photoFromKeywords(day.title, day.body) || day.photo;
     const region = dayRegion(day.title, day.body);
     if (region === 'south' && BANGKOK_TEMPLE_PHOTOS.has(photo)) {
-      photo = SOUTH_POOL.find((p) => !used.has(p)) || '/photos/railay.jpg';
+      photo = nextUnusedPhoto(used, SOUTH_POOL) || '/photos/railay.jpg';
     }
     if (region === 'north' && BANGKOK_TEMPLE_PHOTOS.has(photo) && !photo.includes('doi-suthep')) {
-      photo = NORTH_POOL.find((p) => !used.has(p)) || '/photos/doi-suthep.jpg';
+      photo = nextUnusedPhoto(used, NORTH_POOL) || '/photos/doi-suthep.jpg';
     }
     if (used.has(photo)) {
       const pool = region === 'south' ? SOUTH_POOL : region === 'north' ? NORTH_POOL : PHOTO_POOL;
-      const next = pool.find((p) => !used.has(p) && p !== page.photo);
-      if (next) photo = next;
+      photo = nextUnusedPhoto(used, pool) || nextUnusedPhoto(used) || photo;
     }
     used.add(photo);
     return { ...day, photo };
@@ -2024,15 +2003,10 @@ export function fixDayPhotos(page: Page): Page {
   return { ...page, days };
 }
 
-export function uniquifyPortraits(items: Portrait[], hero?: string): Portrait[] {
-  const used = new Set<string>(hero ? [hero] : []);
+export function uniquifyPortraits(items: Portrait[], used: Set<string>): Portrait[] {
   return items.map((item) => {
-    let photo = item.photo;
-    if (used.has(photo)) {
-      const next = PHOTO_POOL.find((p) => !used.has(p));
-      if (next) photo = next;
-    }
-    used.add(photo);
+    const photo = item.photo && !used.has(item.photo) ? item.photo : '';
+    if (photo) used.add(photo);
     return { ...item, photo };
   });
 }
@@ -2053,7 +2027,7 @@ function stayCityFor(page: Page): StayCity {
   return 'bangkok';
 }
 
-export function uniquifyAffiliates(page: Page): Page {
+export function uniquifyAffiliates(page: Page, used: Set<string>): Page {
   const rows = [...(page.affiliates || [])];
   if (!rows.length) return page;
   if (rows.length === 1 && page.path !== '/about' && page.path !== '/privacy') {
@@ -2080,14 +2054,9 @@ export function uniquifyAffiliates(page: Page): Page {
       });
     }
   }
-  const used = new Set<string>(page.photo ? [page.photo] : []);
   const affiliates: Affiliate[] = rows.map((row) => {
-    let photo = row.photo;
-    if (!photo || used.has(photo) || photo === page.photo) {
-      const next = PHOTO_POOL.find((p) => !used.has(p) && p !== page.photo);
-      if (next) photo = next;
-    }
-    used.add(photo);
+    const photo = row.photo && !used.has(row.photo) ? row.photo : '';
+    if (photo) used.add(photo);
     return { ...row, photo };
   });
   return { ...page, affiliates };
@@ -2209,14 +2178,13 @@ function pickCardPhoto(card: EditorialCard, page: Page, used: Set<string>): stri
       return c;
     }
   }
-  const fallback = PHOTO_POOL.find((p) => p !== page.photo && !used.has(p)) || "/photos/resort.jpg";
+  const fallback = nextUnusedPhoto(used) || '/photos/resort.jpg';
   used.add(fallback);
   return fallback;
 }
 
-export function assignEditorialCardPhotos(page: Page): Page {
+export function assignEditorialCardPhotos(page: Page, used: Set<string>): Page {
   if (!page.sections?.length) return page;
-  const used = new Set<string>(page.photo ? [page.photo] : []);
   const sections = page.sections.map((section) => {
     if (!section.cards?.length) return section;
     const cards = section.cards.map((c) => ({
@@ -2228,53 +2196,20 @@ export function assignEditorialCardPhotos(page: Page): Page {
   return { ...page, sections };
 }
 
-function uniquifyMainPhotos(page: Page): Page {
-  const used = new Set<string>();
-  const take = (photo?: string) => {
-    if (!photo) return photo;
-    if (!used.has(photo)) {
-      used.add(photo);
-      return photo;
-    }
-    const nextPhoto = PHOTO_POOL.find((p) => !used.has(p));
-    if (nextPhoto) {
-      used.add(nextPhoto);
-      return nextPhoto;
-    }
-    return photo;
-  };
-  const photo = take(page.photo) || page.photo;
-  const days = page.days?.map((day) => ({ ...day, photo: take(day.photo) || day.photo }));
-  const portraits = page.portraits?.map((item) => ({ ...item, photo: take(item.photo) || item.photo }));
-  const sections = page.sections?.map((section) => ({
-    ...section,
-    cards: section.cards?.map((card) => ({ ...card, photo: take(card.photo) })),
-  }));
-  const affiliates = page.affiliates?.map((row) => ({ ...row, photo: take(row.photo) || row.photo }));
-  return {
-    ...page,
-    photo,
-    days,
-    portraits,
-    affiliates,
-    sections,
-  };
-}
-
 export function applyWave16Finish(page: Page): Page {
-  let   next = stripBannedCopy(page);
+  let next = stripBannedCopy(page);
   next = applyResortLivingHub(next);
   next = applyNightlifeHub(next);
   next = applyInterestPortraits(next);
   next = structureCopy(next);
-  next = assignEditorialCardPhotos(next);
+  const usedPhotos = new Set<string>(next.photo ? [next.photo] : []);
+  next = assignEditorialCardPhotos(next, usedPhotos);
   next = applyDepthPad(next);
-  next = fixDayPhotos(next);
+  next = fixDayPhotos(next, usedPhotos);
   if (next.portraits?.length) {
-    next = { ...next, portraits: uniquifyPortraits(next.portraits, next.photo) };
+    next = { ...next, portraits: uniquifyPortraits(next.portraits, usedPhotos) };
   }
-  next = uniquifyAffiliates(next);
-  next = uniquifyMainPhotos(next);
+  next = uniquifyAffiliates(next, usedPhotos);
   next = { ...next, photoCredit: photoCreditFor(next.photo) };
   return next;
 }
