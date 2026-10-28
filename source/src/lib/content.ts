@@ -15,6 +15,10 @@ import { wave3Pages } from './wave3-routes';
 import { wave4Pages } from './wave4-food-resorts';
 import { wave6Pages } from './wave6-subguides';
 import { wave7Pages } from './wave7-itineraries-parks';
+import { wave9Pages } from './wave9-attractions';
+import { wave10Pages } from './wave10-food-guides';
+import { WAVE11_INTEREST_PAGES } from './wave11-interests';
+import { WAVE12_ITINERARY_PAGES } from './wave12-itineraries';
 
 export type SchemaType = 'City' | 'TouristDestination' | 'Article';
 
@@ -109,7 +113,7 @@ export const pages: Page[] = [
     photo: "/photos/bangkok.jpg",
     paragraphs: [
       "This site is for Western first-time planners who still want hyper-local utility: which BTS gate, which pier, which soi after dark. Start in Bangkok, then fork north or south with the monsoon.",
-      "Use the 7-day and 14-day itineraries as a spine. Swap the south coast when the monsoon says so. A 2026 BTS tap is 17 to 62 THB. The Airport Rail Link is about 30 minutes to Phaya Thai. Book stays and airport cars on Trip.com. Book island boats and attraction tickets on Klook."
+      "Use the 7-day and 14-day itineraries as a spine. Swap the south coast when the monsoon says so. A 2026 BTS tap is 17 to 62 THB. The Airport Rail Link is about 30 minutes to Phaya Thai. Ticketed sights live on the Attractions hub: Grand Palace 500 THB, Wat Pho 300 THB, Maya Bay park fee 400 THB. Book stays and airport cars on Trip.com. Book island boats and attraction tickets on Klook."
     ],
     portraits: [
       {
@@ -156,6 +160,21 @@ export const pages: Page[] = [
         "title": "Thai food",
         "href": "/thai-food",
         "photo": "/photos/thai-food.jpg"
+      },
+      {
+        "title": "Attractions",
+        "href": "/attractions",
+        "photo": "/photos/old-city.jpg"
+      },
+      {
+        "title": "Grand Palace",
+        "href": "/attractions/grand-palace-and-wat-phra-kaew",
+        "photo": "/photos/old-city.jpg"
+      },
+      {
+        "title": "Phi Phi and Maya Bay",
+        "href": "/attractions/phi-phi-islands-and-maya-bay",
+        "photo": "/photos/krabi.jpg"
       }
     ],
     faqs: [
@@ -196,7 +215,7 @@ export const pages: Page[] = [
       }
     ],
     paragraphs: [
-      "These destination pages cover stay trade-offs, not a country dump. District pages sit under Bangkok and Chiang Mai. The usual first hop after Bangkok is about 70 minutes by air to Chiang Mai, Phuket, or Samui."
+      "These destination pages cover stay trade-offs, not a country dump. District pages sit under Bangkok and Chiang Mai. The usual first hop after Bangkok is about 70 minutes by air to Chiang Mai, Phuket, or Samui. Ticketed temples, bays, and markets sit on the Attractions hub, not as a dump on each city page."
     ],
     portraits: [
       {
@@ -263,6 +282,21 @@ export const pages: Page[] = [
         "title": "Central and east",
         "href": "/destinations/central-and-east",
         "photo": "/photos/ayutthaya.jpg"
+      },
+      {
+        "title": "Attractions",
+        "href": "/attractions",
+        "photo": "/photos/old-city.jpg"
+      },
+      {
+        "title": "Grand Palace",
+        "href": "/attractions/grand-palace-and-wat-phra-kaew",
+        "photo": "/photos/old-city.jpg"
+      },
+      {
+        "title": "Railay and Phra Nang",
+        "href": "/attractions/railay-beach-and-phra-nang-cave",
+        "photo": "/photos/krabi.jpg"
       }
     ],
     faqs: [
@@ -354,8 +388,8 @@ export const pages: Page[] = [
   {
     path: "/itineraries",
     title: "Thailand itineraries",
-    description: "Classic 10 days, a 14-day spine, Andaman and Gulf hops, a 7-day north loop, and a 5-day inland run to Ayutthaya and Kanchanaburi.",
-    lede: "Start with 7 or 10 days if this is a first trip. Use 14 days for north and one south coast. Keep Andaman and Gulf hops on one sea.",
+    description: "Duration plans from a 3-day Bangkok stopover to a 21-day north-south loop, plus family and honeymoon spines. Each page names nights, fees, and the monsoon coast.",
+    lede: "Known for duration and style plans: 3, 5, 7, 10, 14, and 21 days, plus kids and honeymoon routes. Use 7 or 10 days for a first trip. Keep Andaman and Gulf hops on one sea.",
     schema: "Article",
     crumbs: [
       {
@@ -365,12 +399,16 @@ export const pages: Page[] = [
     ],
     facts: [
       {
-        "label": "7 or 10 days",
-        "value": "Bangkok plus north, or Bangkok plus one coast"
+        "label": "3 to 7 days",
+        "value": "Bangkok stopover, north loop, or one coast"
       },
       {
-        "label": "14 days",
-        "value": "Bangkok, north, and one south coast"
+        "label": "10 to 14 days",
+        "value": "City, north, and one south coast or lake"
+      },
+      {
+        "label": "2 to 3 weeks",
+        "value": "Family, honeymoon, or the 21-day grand loop"
       },
       {
         "label": "Island hops",
@@ -380,21 +418,42 @@ export const pages: Page[] = [
     paragraphs: [
       "Each itinerary names the transport and the booking links. Drop a night before you add a second island group. Fly the long legs: Bangkok to Chiang Mai is about 70 minutes."
     ],
+    sections: [
+      {
+        id: 'all-plans',
+        title: 'Every itinerary on this hub',
+        paragraphs: [
+          'Short city and inland plans: [3 days in Bangkok](/itineraries/3-days-bangkok-stopover), [first week](/itineraries/first-week-7-days), and [5 days Bangkok, Ayutthaya, Kanchanaburi](/itineraries/5-days-bangkok-ayutthaya-kanchanaburi). North plans: [5 days Chiang Mai and Chiang Rai](/itineraries/5-days-chiang-mai-and-chiang-rai) and the [7-day northern loop](/itineraries/7-days-northern-thailand-loop).',
+          'Classic and south spines: [classic 10 days](/itineraries/10-days-classic-thailand), [best 14 days](/itineraries/best-14-days), [Bangkok, Khao Sok, and Krabi](/itineraries/10-days-bangkok-khao-sok-krabi), [south islands 10 days](/itineraries/south-islands-10-days), [Phuket, Krabi, and Phi Phi](/itineraries/7-days-phuket-krabi-phi-phi), [Samui and Phangan](/itineraries/7-days-koh-samui-and-koh-phangan), [Andaman 2 weeks](/itineraries/2-weeks-andaman-island-hopping), and [Gulf islands 10 days](/itineraries/10-days-gulf-islands-samui-phangan-tao).',
+          'Style and long loops: [2 weeks with kids](/itineraries/2-weeks-thailand-with-kids), [2 weeks honeymoon](/itineraries/2-weeks-thailand-honeymoon), and the [3-week grand route](/itineraries/3-weeks-grand-thailand).',
+        ],
+      },
+    ],
     portraits: [
+      {
+        "title": "3 days Bangkok",
+        "href": "/itineraries/3-days-bangkok-stopover",
+        "photo": "/photos/old-city.jpg"
+      },
+      {
+        "title": "First week",
+        "href": "/itineraries/first-week-7-days",
+        "photo": "/photos/sukhumvit.jpg"
+      },
       {
         "title": "Classic 10 days",
         "href": "/itineraries/10-days-classic-thailand",
         "photo": "/photos/bangkok.jpg"
       },
       {
-        "title": "Andaman 2 weeks",
-        "href": "/itineraries/2-weeks-andaman-island-hopping",
-        "photo": "/photos/phuket.jpg"
+        "title": "Best 14 days",
+        "href": "/itineraries/best-14-days",
+        "photo": "/photos/chiang-mai.jpg"
       },
       {
-        "title": "Gulf islands 10 days",
-        "href": "/itineraries/10-days-gulf-islands-samui-phangan-tao",
-        "photo": "/photos/koh-samui.jpg"
+        "title": "5 days Chiang Mai and Chiang Rai",
+        "href": "/itineraries/5-days-chiang-mai-and-chiang-rai",
+        "photo": "/photos/chiang-rai.jpg"
       },
       {
         "title": "Northern loop",
@@ -407,15 +466,59 @@ export const pages: Page[] = [
         "photo": "/photos/ayutthaya.jpg"
       },
       {
-        "title": "First week",
-        "href": "/itineraries/first-week-7-days",
-        "photo": "/photos/sukhumvit.jpg"
+        "title": "Bangkok, Khao Sok, Krabi",
+        "href": "/itineraries/10-days-bangkok-khao-sok-krabi",
+        "photo": "/photos/khao-sok.jpg"
+      },
+      {
+        "title": "Phuket, Krabi, Phi Phi",
+        "href": "/itineraries/7-days-phuket-krabi-phi-phi",
+        "photo": "/photos/phuket.jpg"
+      },
+      {
+        "title": "Samui and Phangan",
+        "href": "/itineraries/7-days-koh-samui-and-koh-phangan",
+        "photo": "/photos/koh-samui.jpg"
+      },
+      {
+        "title": "South islands 10 days",
+        "href": "/itineraries/south-islands-10-days",
+        "photo": "/photos/krabi.jpg"
+      },
+      {
+        "title": "Andaman 2 weeks",
+        "href": "/itineraries/2-weeks-andaman-island-hopping",
+        "photo": "/photos/phuket.jpg"
+      },
+      {
+        "title": "Gulf islands 10 days",
+        "href": "/itineraries/10-days-gulf-islands-samui-phangan-tao",
+        "photo": "/photos/koh-phangan.jpg"
+      },
+      {
+        "title": "2 weeks with kids",
+        "href": "/itineraries/2-weeks-thailand-with-kids",
+        "photo": "/photos/kata-and-karon.jpg"
+      },
+      {
+        "title": "2 weeks honeymoon",
+        "href": "/itineraries/2-weeks-thailand-honeymoon",
+        "photo": "/photos/resort.jpg"
+      },
+      {
+        "title": "3 weeks grand route",
+        "href": "/itineraries/3-weeks-grand-thailand",
+        "photo": "/photos/bangkok.jpg"
       }
     ],
     faqs: [
       {
         "q": "Can you see Phuket and Samui in one trip?",
         "a": "Not in a first week. In 14 days you still pick one coast unless you enjoy airport days. The 10-day south plan stays on one sea."
+      },
+      {
+        "q": "Which plan fits 3 days versus 3 weeks?",
+        "a": "Use the Bangkok stopover for 72 hours. Use 7 or 10 days for a first trip. Use the 21-day grand route only if you can fly south once and keep Andaman and Gulf islands on one sea."
       }
     ],
   },
@@ -578,8 +681,8 @@ export const pages: Page[] = [
   {
     path: "/interests",
     title: "Travel interests in Thailand",
-    description: "Thai food, resort living, and nightlife: stall queues, named hotels, and late sois, kept off the main city pages so those stay scannable.",
-    lede: "Use these pages when the trip is a stall queue, a named hotel, or a late soi. The main Bangkok page stays districts and trains.",
+    description: "Activity and travel-style pages kept off city guides: diving, massage, beaches, temples, Muay Thai, markets, family and honeymoon trips, solo first weeks, festivals, nightlife, and resorts.",
+    lede: "Interests pages are known for one travel style per URL: a dive week, a temple morning, a market day, or a late soi. Use them when the city page is too broad and you already know the activity.",
     schema: "Article",
     crumbs: [
       {
@@ -589,42 +692,79 @@ export const pages: Page[] = [
     ],
     facts: [
       {
+        "label": "Activity guides",
+        "value": "Diving, massage, beaches, temples, Muay Thai, markets"
+      },
+      {
+        "label": "Who you travel with",
+        "value": "Family, couples, solo first-timers, festival weeks"
+      },
+      {
         "label": "Nightlife",
         "value": "District pages, not a dump on Bangkok"
       },
       {
-        "label": "Resorts",
-        "value": "Named properties with Trip.com rate links"
-      },
-      {
-        "label": "Food",
-        "value": "Thai food cluster, not a dump on city pages"
+        "label": "Resorts and food",
+        "value": "Named hotels; Thai food cluster; 80 to 150 THB late Grab"
       }
     ],
     paragraphs: [
-      "Use Thai food for stalls, markets, and regional dishes. Use nightlife for sois and beach clubs. Use resort living when the hotel is the reason to go. A late Grab across the river is often 80 to 150 THB in 2026."
+      "Use these guides when the trip is an activity, not a city: [diving and snorkeling](/interests/diving-and-snorkeling), [Thai massage and spas](/interests/thai-massage-and-spas), [beaches and island hopping](/interests/beaches-and-island-hopping), [temples and history](/interests/temples-and-history), [Muay Thai and fitness camps](/interests/muay-thai-and-fitness-camps), [markets and shopping](/interests/markets-and-shopping), [family travel with kids](/interests/family-travel-with-kids), [honeymoon and couples](/interests/honeymoon-and-couples), [solo and first-time travel](/interests/solo-and-first-time-travel), and [Songkran, Loy Krathong, and Yi Peng](/interests/festivals-songkran-and-loy-krathong). City pages stay districts and trains. A late Grab across the river is often 80 to 150 THB in 2026."
+    ],
+    sections: [
+      {
+        id: "activity-guides",
+        title: "Activity and travel-style guides",
+        paragraphs: [
+          "Start with [diving](/interests/diving-and-snorkeling) for Koh Tao PADI weeks and Similan boats, [massage](/interests/thai-massage-and-spas) for Wat Pho tables and day spas, [beaches](/interests/beaches-and-island-hopping) for the three-coast calendar, [temples](/interests/temples-and-history) for royal wats and historical parks, [Muay Thai](/interests/muay-thai-and-fitness-camps) for stadium cards and Soi Ta-iad camps, and [markets](/interests/markets-and-shopping) for Chatuchak, walking streets, and VAT refunds."
+        ],
+      },
+      {
+        id: "who-you-travel-with",
+        title: "Family, couples, solo weeks, and festival dates",
+        paragraphs: [
+          "Use [family travel](/interests/family-travel-with-kids) for car seats and shallow beaches, [honeymoon](/interests/honeymoon-and-couples) for a 3-4-5 river-jungle-villa split, [solo and first-time](/interests/solo-and-first-time-travel) for Grab, BTS tap-in, and scams to skip, and [festivals](/interests/festivals-songkran-and-loy-krathong) for Songkran, Loy Krathong, Yi Peng, and the Phuket Vegetarian Festival."
+        ],
+      },
+      {
+        id: "nightlife-and-resorts",
+        title: "Nightlife districts and named resorts",
+        paragraphs: [
+          "Nightlife stays on district pages: the [nightlife hub](/interests/nightlife), [Charoenkrung and Soi Nana](/interests/nightlife/charoenkrung-soi-nana), [Thonglor and Ekkamai](/interests/nightlife/thonglor-ekkamai), [Sukhumvit Soi 11](/interests/nightlife/sukhumvit-soi-11), [Ari and Pradipat](/interests/nightlife/ari-pradipat), [Silom and Sathorn](/interests/nightlife/silom-sathorn), [Phuket beach clubs](/interests/nightlife/phuket-beach-clubs), [Kamala and Bang Tao](/interests/nightlife/phuket-kamala-bangtao), [Samui beach clubs](/interests/nightlife/koh-samui-beach-clubs), and [Bophut and Lamai](/interests/nightlife/samui-bophut-lamai). Named hotels sit under [resort living](/interests/resort-living). Stalls stay on [Thai food](/thai-food). Ticketed sights stay on [Attractions](/attractions)."
+        ],
+      },
     ],
     portraits: [
-      {
-        "title": "Thai food",
-        "href": "/thai-food",
-        "photo": "/photos/thai-food.jpg"
-      },
-      {
-        "title": "Nightlife",
-        "href": "/interests/nightlife",
-        "photo": "/photos/nightlife.jpg"
-      },
-      {
-        "title": "Resort living",
-        "href": "/interests/resort-living",
-        "photo": "/photos/resort.jpg"
-      }
+      { title: "Diving and snorkeling", href: "/interests/diving-and-snorkeling", photo: "/photos/koh-tao.jpg" },
+      { title: "Thai massage and spas", href: "/interests/thai-massage-and-spas", photo: "/photos/old-city.jpg" },
+      { title: "Beaches and island hopping", href: "/interests/beaches-and-island-hopping", photo: "/photos/phuket.jpg" },
+      { title: "Temples and history", href: "/interests/temples-and-history", photo: "/photos/old-city.jpg" },
+      { title: "Muay Thai and camps", href: "/interests/muay-thai-and-fitness-camps", photo: "/photos/nightlife.jpg" },
+      { title: "Markets and shopping", href: "/interests/markets-and-shopping", photo: "/photos/bangkok.jpg" },
+      { title: "Family travel", href: "/interests/family-travel-with-kids", photo: "/photos/kata-and-karon.jpg" },
+      { title: "Honeymoon and couples", href: "/interests/honeymoon-and-couples", photo: "/photos/resort.jpg" },
+      { title: "Solo and first-time", href: "/interests/solo-and-first-time-travel", photo: "/photos/bts.jpg" },
+      { title: "Songkran and Loy Krathong", href: "/interests/festivals-songkran-and-loy-krathong", photo: "/photos/chiang-mai.jpg" },
+      { title: "Nightlife", href: "/interests/nightlife", photo: "/photos/nightlife.jpg" },
+      { title: "Charoenkrung nights", href: "/interests/nightlife/charoenkrung-soi-nana", photo: "/photos/riverside.jpg" },
+      { title: "Thonglor nights", href: "/interests/nightlife/thonglor-ekkamai", photo: "/photos/sukhumvit.jpg" },
+      { title: "Sukhumvit Soi 11", href: "/interests/nightlife/sukhumvit-soi-11", photo: "/photos/sukhumvit.jpg" },
+      { title: "Ari nights", href: "/interests/nightlife/ari-pradipat", photo: "/photos/ari.jpg" },
+      { title: "Silom and Sathorn", href: "/interests/nightlife/silom-sathorn", photo: "/photos/siam.jpg" },
+      { title: "Phuket beach clubs", href: "/interests/nightlife/phuket-beach-clubs", photo: "/photos/phuket.jpg" },
+      { title: "Kamala and Bang Tao", href: "/interests/nightlife/phuket-kamala-bangtao", photo: "/photos/nightlife.jpg" },
+      { title: "Samui beach clubs", href: "/interests/nightlife/koh-samui-beach-clubs", photo: "/photos/koh-samui.jpg" },
+      { title: "Bophut and Lamai", href: "/interests/nightlife/samui-bophut-lamai", photo: "/photos/koh-samui.jpg" },
+      { title: "Resort living", href: "/interests/resort-living", photo: "/photos/resort.jpg" },
     ],
     faqs: [
       {
         "q": "Where is Bangkok nightlife documented?",
-        "a": "Under /interests/nightlife, split by district. Thai food is under /thai-food. The main Bangkok page stays districts and transport."
+        "a": "Under /interests/nightlife, split by district. Thai food is under /thai-food. Ticketed temples, bays, and markets sit on /attractions. New activity guides sit under /interests. The main Bangkok page stays districts and transport."
+      },
+      {
+        "q": "Which interest page should a first trip open?",
+        "a": "Solo and first-time travel for apps and scams, then one activity: temples, beaches, or food. Do not open every interest URL before you pick a coast."
       }
     ],
   },
@@ -3652,6 +3792,10 @@ export const pages: Page[] = [
   ...wave4Pages,
   ...wave6Pages,
   ...wave7Pages,
+  ...wave9Pages,
+  ...wave10Pages,
+  ...WAVE11_INTEREST_PAGES,
+  ...WAVE12_ITINERARY_PAGES,
 ];
 
 export function getPage(path: string): Page | undefined {
