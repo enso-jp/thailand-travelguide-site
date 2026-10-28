@@ -12,6 +12,7 @@ import type { Affiliate, Page, Portrait } from './content';
 import { wave13Copy } from './wave13-copy';
 import { wave13DistrictPages } from './wave13-districts';
 import { depthExtras } from './wave13-pad';
+import { applyWave16Finish, thaiFoodHubCards as wave16FoodCards } from './wave16';
 
 function stay(title: string, kicker: string, body: string, href: string, photo: string, cta = 'Search stays'): Affiliate {
   return { title, kicker, body, href, cta, photo, partner: 'stay' };
@@ -30,6 +31,7 @@ const HUB_PATHS = new Set([
   '/thai-food',
   '/attractions',
   '/interests/resort-living',
+  '/interests/nightlife',
 ]);
 
 const DEST_HUBS = new Set([
@@ -316,23 +318,7 @@ function attractionsHubCards(): Portrait[] {
 }
 
 function thaiFoodHubCards(): Portrait[] {
-  return [
-    card('Bangkok street food', '/thai-food/bangkok-street-food', '/photos/thai-food-bangkok-street.jpg'),
-    card('Bangkok Bib Gourmand', '/thai-food/bangkok-bib-gourmand', '/photos/thai-food-bib.jpg'),
-    card('Northern Lanna', '/thai-food/northern-lanna', '/photos/thai-food-lanna.jpg'),
-    card('South and Baba-Nyonya', '/thai-food/southern-and-baba-nyonya', '/photos/thai-food-southern.jpg'),
-    card('Night markets', '/thai-food/night-markets', '/photos/thai-food-night-markets.jpg'),
-    card('Yaowarat walk', '/thai-food/yaowarat-chinatown-food-walk', '/photos/yaowarat.jpg'),
-    card('Banthat Thong', '/thai-food/banthat-thong-road-food-strip', '/photos/siam.jpg'),
-    card('Wang Lang and Talat Noi', '/thai-food/wang-lang-and-talat-noi', '/photos/riverside.jpg'),
-    card('Or Tor Kor', '/thai-food/or-tor-kor-and-bangkok-fresh-markets', '/photos/chatuchak.jpg'),
-    card('Rooftops and river', '/thai-food/bangkok-rooftop-bars-and-river-dining', '/photos/wat-arun-night.jpg'),
-    card('Chiang Mai khao soi', '/thai-food/chiang-mai-khao-soi-and-markets', '/photos/night-market-cm.jpg'),
-    card('Phuket Old Town food', '/thai-food/phuket-old-town-hokkien-and-peranakan-food', '/photos/phuket.jpg'),
-    card('Cooking classes', '/thai-food/thai-cooking-classes-bangkok-and-chiang-mai', '/photos/thai-food.jpg'),
-    card('Dishes to order', '/thai-food/thai-dishes-to-order-first-trip', '/photos/chinatown-day.jpg'),
-    card('Coffee guide', '/thai-food/bangkok-and-chiang-mai-coffee-guide', '/photos/ari.jpg'),
-  ];
+  return wave16FoodCards();
 }
 
 function resortHubCards(): Portrait[] {
@@ -359,12 +345,23 @@ function uniquifyList(items: Portrait[]): Portrait[] {
 
 function uniquifyDays(page: Page): Page {
   if (!page.days?.length) return page;
-  const used = new Set<string>();
-  const extras = DAY_POOL.filter((p) => p !== page.photo);
+  const temple = new Set([
+    '/photos/wat-pho.jpg',
+    '/photos/wat-arun-night.jpg',
+    '/photos/chatuchak.jpg',
+    '/photos/yaowarat.jpg',
+    '/photos/grand-palace.jpg',
+    '/photos/doi-suthep.jpg',
+    '/photos/bts.jpg',
+  ]);
+  const used = new Set<string>(page.photo ? [page.photo] : []);
   const days = page.days.map((day) => {
     let photo = day.photo;
-    if (used.has(photo)) {
-      const next = extras.find((p) => !used.has(p) && p !== photo);
+    const south = /railay|phi phi|samui|phuket|krabi|andaman|tao|phangan|lanta|lipe|khao sok|cheow/i.test(
+      `${day.title} ${day.body}`,
+    );
+    if (!photo || used.has(photo)) {
+      const next = DAY_POOL.find((p) => !used.has(p) && p !== page.photo && (!south || !temple.has(p)));
       if (next) photo = next;
     }
     used.add(photo);
@@ -509,7 +506,7 @@ function defaultAffiliates(page: Page): Affiliate[] {
   if (page.path === '/interests/resort-living') {
     return [
       stay('Phuket villas', 'Andaman', 'West-coast searches for Amanpuri, Avista, and Trisara peers.', stayLink('phuket'), '/photos/resort-amanpuri.jpg'),
-      stay('Koh Kood hideaways', 'Soneva Kiri', 'Search Koh Kood, city 62195, not Bangkok.', stayLink('koh-kood'), '/photos/koh-kood.jpg'),
+      stay('Koh Kood hideaways', 'Soneva Kiri', 'Search Koh Kood stays, not Bangkok, and confirm the boat on the voucher.', stayLink('koh-kood'), '/photos/koh-kood.jpg'),
     ];
   }
   if (page.path === '/interests/nightlife') {
@@ -519,19 +516,17 @@ function defaultAffiliates(page: Page): Affiliate[] {
     ];
   }
   return [
-    stay(`${city} stays`, 'Trip.com', 'Live 2026 rates for this place.', stayLink(city), page.photo || '/photos/bangkok.jpg'),
+    stay(`${city} stays`, 'Trip.com', 'Live 2026 rates for this place.', stayLink(city), '/photos/get-there.jpg'),
+    klook('Tours and tickets', 'Klook', 'Boats, vans, and temple tickets for this area.', klookTours(page.title), '/photos/longtail-andaman.jpg'),
   ];
 }
 
 function bookingCta(page: Page) {
-  const destHub = DEST_HUBS.has(page.path);
-  const resort = page.path.startsWith('/resort-living/');
-  const itinerary = page.path.startsWith('/itineraries/');
-  if (!destHub && !resort && !itinerary) return undefined;
+  if (page.path === '/about' || page.path === '/privacy') return undefined;
   const city = cityFor(page);
-  const tourQ = resort
+  const tourQ = page.path.startsWith('/resort-living/')
     ? page.title
-    : itinerary
+    : page.path.startsWith('/itineraries/')
       ? 'Thailand itinerary tours'
       : `${page.title} tours`;
   return {
@@ -585,24 +580,9 @@ export function applyWave13(pages: Page[]): Page[] {
     if (depthExtras[page.path]?.length) {
       page = { ...page, paragraphs: [...page.paragraphs, ...depthExtras[page.path]] };
     }
-    if (wave13Copy[page.path] || depthExtras[page.path] || page.path.startsWith('/bangkok/sukhumvit') || page.path.startsWith('/bangkok/silom') || page.path.startsWith('/bangkok/rattanakosin') || page.path.startsWith('/bangkok/chinatown') || page.path.startsWith('/bangkok/old-city')) {
-      page = {
-        ...page,
-        paragraphs: [
-          ...page.paragraphs,
-          'Recheck opening hours, ferry desks, and 2026 rates the week you travel. This page is a planner spine. A Trip.com stay search and a Klook ticket search are the two click-outs that matter.',
-          'Cash still covers wat booths, longtails, and late bowls. Cards cover hotels and many Klook tickets. Keep both. A 2026 ATM fee is often 220 THB. Take fewer, larger withdrawals.',
-        ],
-      };
-    }
     if (HUB_HERO[page.path]) page = { ...page, photo: HUB_HERO[page.path] };
     if (RESORT_PHOTO[page.path]) {
-      const photo = RESORT_PHOTO[page.path];
-      page = {
-        ...page,
-        photo,
-        affiliates: (page.affiliates || []).map((row) => ({ ...row, photo })),
-      };
+      page = { ...page, photo: RESORT_PHOTO[page.path] };
     }
     page = applyHubCards(page);
     page = applySoneva(page);
@@ -620,6 +600,7 @@ export function applyWave13(pages: Page[]): Page[] {
     }
     const cta = bookingCta(page);
     if (cta) page = { ...page, bookingCta: cta };
+    page = applyWave16Finish(page);
     page = uniquifyDays(page);
     return page;
   });

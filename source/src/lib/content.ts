@@ -43,6 +43,7 @@ export type Section = {
   id: string;
   title: string;
   paragraphs?: string[];
+  bullets?: string[];
   table?: Table;
 };
 
@@ -806,7 +807,7 @@ const rawPages: Page[] = [
     faqs: [
       {
         "q": "Do you take press trips?",
-        "a": "Disclosed if they happen. This first release is a planner spine, not a hotel review magazine."
+        "a": "Disclosed if they happen. This first release is a short planner, not a hotel review magazine."
       }
     ],
   },
@@ -2682,7 +2683,7 @@ const rawPages: Page[] = [
     path: "/interests/resort-living",
     title: "Resort living in Thailand",
     description: "Named luxury and MGallery stays, with Trip.com rate links in context. The hotel is the reason to go.",
-    lede: "Use resort living when the hotel is the point: river houses, Andaman villas, and named Gulf bays. They are not ranked. Compare transfer time and monsoon side.",
+    lede: "Use resort living when the hotel is the point: river houses, Andaman villas, and named Gulf bays. Compare transfer time and monsoon side, then pick a ranked flagship.",
     schema: "Article",
     crumbs: [
       {
