@@ -20,6 +20,7 @@ import { wave10Pages } from './wave10-food-guides';
 import { WAVE11_INTEREST_PAGES } from './wave11-interests';
 import { WAVE12_ITINERARY_PAGES } from './wave12-itineraries';
 import { applyWave13 } from './wave13';
+import { applyWave16 } from './wave16';
 
 export type SchemaType = 'City' | 'TouristDestination' | 'Article';
 
@@ -3808,7 +3809,7 @@ const rawPages: Page[] = [
   ...WAVE12_ITINERARY_PAGES,
 ];
 
-export const pages: Page[] = applyWave13(rawPages);
+export const pages: Page[] = applyWave16(applyWave13(rawPages));
 
 export function getPage(path: string): Page | undefined {
   return pages.find((page) => page.path === path);

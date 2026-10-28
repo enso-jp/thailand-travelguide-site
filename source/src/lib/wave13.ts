@@ -360,11 +360,15 @@ function uniquifyList(items: Portrait[]): Portrait[] {
 function uniquifyDays(page: Page): Page {
   if (!page.days?.length) return page;
   const used = new Set<string>();
-  const extras = DAY_POOL.filter((p) => p !== page.photo);
+  if (page.photo) used.add(page.photo);
+  for (const item of page.portraits || []) used.add(item.photo);
+  const extras = DAY_POOL.filter((p) => !used.has(p));
+  let extraIndex = 0;
   const days = page.days.map((day) => {
     let photo = day.photo;
     if (used.has(photo)) {
-      const next = extras.find((p) => !used.has(p) && p !== photo);
+      const next = extras[extraIndex];
+      extraIndex += 1;
       if (next) photo = next;
     }
     used.add(photo);
@@ -509,7 +513,7 @@ function defaultAffiliates(page: Page): Affiliate[] {
   if (page.path === '/interests/resort-living') {
     return [
       stay('Phuket villas', 'Andaman', 'West-coast searches for Amanpuri, Avista, and Trisara peers.', stayLink('phuket'), '/photos/resort-amanpuri.jpg'),
-      stay('Koh Kood hideaways', 'Soneva Kiri', 'Search Koh Kood, city 62195, not Bangkok.', stayLink('koh-kood'), '/photos/koh-kood.jpg'),
+      stay('Koh Kood hideaways', 'Soneva Kiri', 'Search Koh Kood stays, not Bangkok.', stayLink('koh-kood'), '/photos/koh-kood.jpg'),
     ];
   }
   if (page.path === '/interests/nightlife') {
@@ -590,7 +594,7 @@ export function applyWave13(pages: Page[]): Page[] {
         ...page,
         paragraphs: [
           ...page.paragraphs,
-          'Recheck opening hours, ferry desks, and 2026 rates the week you travel. This page is a planner spine. A Trip.com stay search and a Klook ticket search are the two click-outs that matter.',
+          'Recheck opening hours, ferry desks, and 2026 rates the week you travel. This page is a planner spine. A Trip.com stay search and a Klook ticket search are the two booking links that matter.',
           'Cash still covers wat booths, longtails, and late bowls. Cards cover hotels and many Klook tickets. Keep both. A 2026 ATM fee is often 220 THB. Take fewer, larger withdrawals.',
         ],
       };

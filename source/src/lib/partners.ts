@@ -121,7 +121,7 @@ function klookUrl(path: string): string {
   return url.toString();
 }
 
-/** Travelpayouts click-out to a Klook URL (source 588978, marker 793638). */
+/** Travelpayouts booking link to a Klook URL. */
 export function klookLink(path: string): string {
   const dest = klookUrl(path);
   return `https://tp.media/r?marker=${TP_MARKER}&u=${encodeURIComponent(dest)}`;

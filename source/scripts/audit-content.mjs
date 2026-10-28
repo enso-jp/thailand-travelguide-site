@@ -107,6 +107,23 @@ function pageText(page) {
   return parts.join('\n');
 }
 
+function visibleText(page) {
+  const parts = [];
+  const skip = new Set(['href', 'stayHref', 'tourHref']);
+  function walk(value, key) {
+    if (typeof value === 'string') {
+      if (!skip.has(key)) parts.push(value);
+      return;
+    }
+    if (Array.isArray(value)) value.forEach((item) => walk(item, key));
+    else if (value && typeof value === 'object') {
+      for (const [nextKey, item] of Object.entries(value)) walk(item, nextKey);
+    }
+  }
+  walk(page, '');
+  return parts.join('\n');
+}
+
 function bodyText(page) {
   const parts = [
     ...(page.paragraphs || []),
@@ -211,8 +228,14 @@ const credits = JSON.parse(readFileSync(join(ROOT, 'public/photos/credits.json')
 for (const page of pages) {
   const text = pageText(page);
   const body = bodyText(page);
+  const visible = visibleText(page);
 
   if (EM_DASH.test(text)) fail(page.path, 'em dash (U+2014) is not allowed');
+  for (const token of ['11105102', '334225872', '793638', '588978', 'city 62195', 'click-out', 'stays scannable']) {
+    if (visible.toLowerCase().includes(token.toLowerCase())) {
+      fail(page.path, `visible text must not contain "${token}"`);
+    }
+  }
   if (EN_CLAUSE.test(text)) fail(page.path, 'en dash used as a clause separator');
   const filler = text.match(FILLER);
   if (filler) fail(page.path, `banned filler "${filler[0]}"`);
@@ -293,6 +316,31 @@ for (const page of pages) {
     }
     if (!trip && !klook) fail(page.path, `affiliate href is not Trip.com or Klook (${row.title})`);
   }
+}
+
+const resortHub = pages.find((page) => page.path === '/interests/resort-living');
+if (!resortHub) {
+  fail('/interests/resort-living', 'missing hub page');
+} else {
+  const bangkok = (resortHub.sections || []).find((section) => /bangkok/i.test(section.id || section.title || ''));
+  const rows = bangkok?.table?.rows || [];
+  if (rows.length !== 5) {
+    fail('/interests/resort-living', `Bangkok table must have 5 rows (now ${rows.length})`);
+  }
+  const last = String(rows[rows.length - 1]?.[0] || '');
+  if (!/rosewood/i.test(last)) {
+    fail('/interests/resort-living', `Bangkok table must end with Rosewood (now ${last || 'empty'})`);
+  }
+  const ranked = (resortHub.sections || []).flatMap((section) => (section.table?.rows || []).map((row) => String(row[0] || '')));
+  for (const banned of ['Avista Hideaway', 'VIE Hotel', 'VIE MGallery', 'Veranda High']) {
+    if (ranked.some((name) => name.includes(banned))) {
+      fail('/interests/resort-living', `ranking tables still list ${banned}`);
+    }
+  }
+}
+
+if (pages.length !== 163) {
+  fail('site', `expected 163 routes, found ${pages.length}`);
 }
 
 if (errors.length) {
