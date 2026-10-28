@@ -135,6 +135,9 @@ function photosOf(page) {
   for (const item of page.portraits || []) if (item.photo) out.push(item.photo);
   for (const item of page.affiliates || []) if (item.photo) out.push(item.photo);
   for (const item of page.days || []) if (item.photo) out.push(item.photo);
+  for (const section of page.sections || []) {
+    for (const card of section.cards || []) if (card.photo) out.push(card.photo);
+  }
   return out;
 }
 
@@ -270,6 +273,10 @@ for (const page of pages) {
     if (page.photo && photo === page.photo) {
       fail(page.path, `day card photo matches hero (${photo})`);
     }
+  }
+  const mainPhotos = photosOf(page);
+  if (new Set(mainPhotos).size !== mainPhotos.length) {
+    fail(page.path, 'duplicate photo inside main');
   }
 
   for (const { kind, href } of internalHrefs(page)) {
