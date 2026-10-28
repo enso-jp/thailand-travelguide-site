@@ -3,6 +3,7 @@ import AffRow from './AffRow.astro';
 import FactBar from './FactBar.astro';
 import FaqList from './FaqList.astro';
 import Photo from './Photo.astro';
+import SisterNetwork from './SisterNetwork.astro';
 import TripSearch from './TripSearch.astro';
 import type { Page } from '../lib/content';
 import { assignExactPhotos, foodRowsFor } from '../lib/dish-photos';
@@ -163,6 +164,8 @@ const city: StayCity = page.path.includes('chiang')
           <AffRow items={affiliates} />
         </section>
       )}
+
+      <SisterNetwork path={page.path} />
 
       {page.faqs.length > 0 && (
         <section class="place-section" id="questions">

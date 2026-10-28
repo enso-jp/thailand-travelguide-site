@@ -3,6 +3,7 @@ import BookStay from './BookStay.astro';
 import Icon from './Icon.astro';
 import Photo from './Photo.astro';
 import RegionStage from './RegionStage.astro';
+import SisterRoutes from './SisterRoutes.astro';
 import { buildHomeMedia } from '../lib/page-media';
 
 const home = buildHomeMedia();
@@ -121,6 +122,8 @@ function dots(n: number): string {
     </div>
     <p class="home-actions"><a class="pill" href="/itineraries">See itineraries</a></p>
   </section>
+
+  <SisterRoutes />
 
   <section class="home-section">
     <h2>Find your interest</h2>

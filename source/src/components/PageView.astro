@@ -3,6 +3,8 @@ import FactBar from './FactBar.astro';
 import PortraitRail from './PortraitRail.astro';
 import AffRow from './AffRow.astro';
 import FaqList from './FaqList.astro';
+import SisterNetwork from './SisterNetwork.astro';
+import SisterRoutes from './SisterRoutes.astro';
 import type { Page } from '../lib/content';
 import { chipHref, formatInline } from '../lib/inline';
 import { UniquePhotos } from '../lib/photos';
@@ -21,6 +23,7 @@ const sections = (page.sections || []).map((section) => ({
   cards: section.cards?.map((card) => ({ ...card, photo: bag.take(card.photo) })),
 }));
 const tabs = page.tabs;
+const showSisterRoutes = page.path === '/get-there' || page.path.startsWith('/get-there/') || page.path === '/itineraries' || page.path.startsWith('/itineraries/') || page.path === '/plan';
 const useGuideGrid =
   (page.portraits?.length || 0) > 0 &&
   (page.path === '/destinations' ||
@@ -257,6 +260,9 @@ function guideGridHeading(path: string): string {
       </section>
     )
   }
+
+  <SisterNetwork path={page.path} />
+  {showSisterRoutes && <SisterRoutes />}
 
   {
     page.faqs.length > 0 && (

@@ -54,19 +54,38 @@ const isCompact = variant === 'rail';
   }
   {
     !isCompact && (
-      <g class="map-pins" aria-hidden="true">
-        {MAP_PINS.map((pin) => (
-          <g
-            class:list={['map-pin', { 'is-active': Boolean(pin.region && pin.region === active) }]}
-            data-region={pin.region}
-            data-province={pin.province}
-          >
-            <circle cx={pin.x} cy={pin.y} r="4.4" />
-            <text x={pin.lx} y={pin.ly} text-anchor={pin.anchor}>
-              {pin.name}
-            </text>
-          </g>
-        ))}
+      <g class="map-pins">
+        {MAP_PINS.map((pin) => {
+          const isActive = Boolean(pin.region && pin.region === active);
+          if (linked && pin.href) {
+            return (
+              <a
+                class:list={['map-pin', { 'is-active': isActive }]}
+                href={pin.href}
+                data-region={pin.region}
+                data-province={pin.province}
+                aria-label={`${pin.name} travel guide`}
+              >
+                <circle cx={pin.x} cy={pin.y} r="4.4" />
+                <text x={pin.lx} y={pin.ly} text-anchor={pin.anchor}>
+                  {pin.name}
+                </text>
+              </a>
+            );
+          }
+          return (
+            <g
+              class:list={['map-pin', { 'is-active': isActive }]}
+              data-region={pin.region}
+              data-province={pin.province}
+            >
+              <circle cx={pin.x} cy={pin.y} r="4.4" />
+              <text x={pin.lx} y={pin.ly} text-anchor={pin.anchor}>
+                {pin.name}
+              </text>
+            </g>
+          );
+        })}
       </g>
     )
   }

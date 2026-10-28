@@ -253,19 +253,60 @@ async function loadPages() {
       signatureDishesFor: mod.signatureDishesFor,
       isDishPhoto: mod.isDishPhoto,
       CITY_FOOD_PATHS: mod.CITY_FOOD_PATHS,
+      tripCities: mod.tripCities,
     };
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }
 }
 
-    const { pages, mainPhotosFor, foodRowsFor, signatureDishesFor, isDishPhoto, CITY_FOOD_PATHS } = await loadPages();
+const { pages, mainPhotosFor, foodRowsFor, signatureDishesFor, isDishPhoto, CITY_FOOD_PATHS, tripCities } =
+  await loadPages();
 if (pages.length < 159) {
   fail('site', `expected 159+ routes, found ${pages.length}`);
 }
 
 const paths = new Set(pages.map((page) => page.path));
 const credits = JSON.parse(readFileSync(join(ROOT, 'public/photos/credits.json'), 'utf8'));
+
+const verifiedPath = join(ROOT, 'src/lib/trip-cities.verified.json');
+if (!existsSync(verifiedPath)) {
+  fail('src/lib/trip-cities.verified.json', 'verified Trip.com city list is missing');
+} else {
+  const verified = JSON.parse(readFileSync(verifiedPath, 'utf8'));
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(String(verified.verifiedOn || ''))) {
+    fail('src/lib/trip-cities.verified.json', 'verifiedOn must be an ISO date (YYYY-MM-DD)');
+  }
+  const listed = verified.cities || {};
+  const liveKeys = Object.keys(tripCities || {});
+  if (!liveKeys.length) fail('src/lib/partners.ts', 'tripCities export is empty');
+  for (const key of liveKeys) {
+    const live = tripCities[key];
+    const row = listed[key];
+    if (!row) {
+      fail('src/lib/partners.ts', `tripCities.${key} has no verified-ID entry`);
+      continue;
+    }
+    if (!Number.isInteger(live.id) || live.id <= 0) {
+      fail('src/lib/partners.ts', `tripCities.${key} lacks a verified numeric id`);
+    }
+    if (row.id !== live.id) {
+      fail('src/lib/partners.ts', `tripCities.${key} id ${live.id} does not match verified id ${row.id}`);
+    }
+    if (!row.slug || row.slug !== live.slug) {
+      fail('src/lib/partners.ts', `tripCities.${key} slug must match verified list (${row.slug})`);
+    }
+    if (!/^https:\/\/www\.trip\.com\/hotels\/[a-z0-9-]+-hotels-list-\d+\/$/.test(String(row.source || ''))) {
+      fail('src/lib/trip-cities.verified.json', `${key} source must be a Trip.com hotels-list URL`);
+    }
+    if (!String(row.title || '').trim()) {
+      fail('src/lib/trip-cities.verified.json', `${key} is missing a verification title`);
+    }
+  }
+  for (const key of Object.keys(listed)) {
+    if (!tripCities[key]) fail('src/lib/trip-cities.verified.json', `${key} is not a tripCities key`);
+  }
+}
 
 for (const page of pages) {
   const text = pageText(page);
