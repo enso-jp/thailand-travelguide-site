@@ -120,7 +120,7 @@ export const depthExtras: Record<string, string[]> = {
   '/resort-living/six-senses-samui': [
     'Land at Samui (USM), then a private car to the Bophut / Plai Laem headland. The ride is 15 to 25 minutes. A 2026 booked car is often 600 to 1,200 THB. The last road is steep. Book the car with the room. Touts at USM quote more.',
     'This is a Lower Gulf hill. The wettest window is roughly October to December on the east and north coasts. January to September is the easier sea. A prepaid sunset daybed in November can still work on a calm day. Recheck the sky.',
-    'Six Senses Samui spa hours in 2026 often sit from about 4,500 to 9,000 THB. Book it after a rest morning, not after Ang Thong. A 2026 Grab down to Bophut is often 200 to 400 THB. A night scooter on that hill is a bad story.',
+    'Six Senses Samui spa hours in 2026 often sit from about 4,500 to 9,000 THB. Book it after a rest morning, not after Ang Thong. A 2026 Grab down to Bophut is often 200 to 400 THB. Do not ride a scooter on that hill at night. The grade is steep and there is no shoulder.',
     'Ask for the 2026 transfer in THB on the voucher. Extra beds change villa math by a few thousand baht. Fisherman Village is the dinner walk if you leave the hill. Nikki Beach is a booked afternoon, not a walk from the lobby.',
     'Phangan is about 30 minutes from the island pier, not from the villa door. Leave a buffer. Do not land USM at 16:00 and book a 17:00 crossing. Ang Thong is 300 THB at the park plus the boat.',
   ],

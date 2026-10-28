@@ -24,7 +24,7 @@ export const wave13Copy: Record<string, Partial<Page>> = {
           ['Patong', 'Nightlife strip only', '30 to 50 minutes; skip as a four-night base'],
           ['Old Town', 'One night if you want streets, not sand', '45 minutes inland'],
         ],
-        ['Beach clubs live on [Phuket beach clubs](/interests/nightlife/phuket-beach-clubs). Amanpuri and Avista sit under [resort living](/interests/resort-living).'],
+        ['Beach clubs live on [Phuket beach clubs](/interests/nightlife/phuket-beach-clubs). Amanpuri and Trisara sit under [resort living](/interests/resort-living).'],
       ),
     ],
     faqs: [
@@ -261,7 +261,7 @@ export const wave13Copy: Record<string, Partial<Page>> = {
       'Amanpuri is known for coconut-grove pavilions above a private west-coast cove on Phuket. You come for the grove, the cove, and a week that does not need Patong. It is a pavilion resort, not a tower. Pair it with the Andaman window, November to April.',
       'The address is on the Cherngtalay / Surin-Pansea side, Thalang District. A HKT car is about 45 to 75 minutes and often 1,500 to 2,500 THB in 2026 if you book a private transfer. Do not boat on arrival day. Do not treat this as a Patong base with a long commute.',
       'Pavilions start as one-bedroom units in the grove. Villas add private pools and more bedrooms. Published starting rates in a busy 2026 dry-season week often sit from about 45,000 THB for a pavilion to 80,000 to 200,000 THB and up for larger villas. Those are planning bands, not a quote. Trip.com shows the live number.',
-      'Dinner off-property means a car. Kamala and Surin restaurants are the short hops. Old Phuket Town is a morning, not a nightly plan. Beach clubs on the nightlife page are a different product. If Aman is not the budget, [Avista Hideaway](/resort-living/avista-hideaway-phuket) is the MGallery west-coast hill stay.',
+      'Dinner off-property means a car. Kamala and Surin restaurants are the short hops. Old Phuket Town is a morning, not a nightly plan. Beach clubs on the nightlife page are a different product. If the cove budget is closed, Kamala hills and Mai Khao are the west-coast alternatives, not a Patong base.',
     ],
     sections: [
       tableSection('rooms', 'Room and transfer board', ['Type', '2026 planning band', 'Note'], [
@@ -299,7 +299,7 @@ export const wave13Copy: Record<string, Partial<Page>> = {
   '/resort-living/six-senses-samui': {
     paragraphs: [
       'Six Senses Samui is known for hill villas above Bophut. Stay here if you want a Gulf headland, not the Chaweng strip. January to September is the easier sea. USM is about 15 to 25 minutes by car. Still book the car. The last road is steep.',
-      'Bophut village is the dinner walk if you leave the hill. Fisherman Village is the evening grid. Nikki Beach is on the nightlife page, not here. A 2026 Grab down the hill is often 200 to 400 THB. A scooter at night on that hill is a bad story.',
+      'Bophut village is the dinner walk if you leave the hill. Fisherman Village is the evening grid. Nikki Beach is on the nightlife page, not here. A 2026 Grab down the hill is often 200 to 400 THB. Do not ride a scooter on that hill at night. The grade is steep and there is no shoulder.',
       'Villas are the inventory. Entry pool villas in a busy 2026 week often sit from about 22,000 to 35,000 THB. Larger residences run 40,000 to 80,000 THB and up. Planning bands only. Trip.com shows the live number. Four Seasons sits on the northwest coast if you want a different Gulf view.',
       'Ang Thong is a day boat from Samui, 300 THB park fee, no public ferry. Phangan is 30 minutes from the island pier, not from the villa door. Leave a buffer before any boat. Do not land USM at 16:00 and book a 17:00 crossing.',
     ],
@@ -599,6 +599,3 @@ export const wave13Copy: Record<string, Partial<Page>> = {
     ],
   },
 };
-
-
-

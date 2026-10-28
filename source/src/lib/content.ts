@@ -729,21 +729,21 @@ const rawPages: Page[] = [
       }
     ],
     paragraphs: [
-      "These pages follow a travel style, not a city map: [diving and snorkeling](/interests/diving-and-snorkeling), [Thai massage and spas](/interests/thai-massage-and-spas), [beaches and island hopping](/interests/beaches-and-island-hopping), [temples and history](/interests/temples-and-history), [Muay Thai and fitness camps](/interests/muay-thai-and-fitness-camps), [markets and shopping](/interests/markets-and-shopping), [family travel with kids](/interests/family-travel-with-kids), [honeymoon and couples](/interests/honeymoon-and-couples), [solo and first-time travel](/interests/solo-and-first-time-travel), and [Songkran, Loy Krathong, and Yi Peng](/interests/festivals-songkran-and-loy-krathong). City pages stay districts and trains. A late Grab across the river is often 80 to 150 THB in 2026."
+      "Each guide follows one travel style, not a city map. See [diving and snorkeling](/interests/diving-and-snorkeling) for Koh Tao PADI weeks and Similan boats, [Thai massage and spas](/interests/thai-massage-and-spas) for Wat Pho tables and day spas, [beaches and island hopping](/interests/beaches-and-island-hopping) for the three-coast calendar, [temples and history](/interests/temples-and-history) for royal wats and historical parks, [Muay Thai and fitness camps](/interests/muay-thai-and-fitness-camps) for stadium cards and Soi Ta-iad camps, [markets and shopping](/interests/markets-and-shopping) for Chatuchak and VAT refunds, [family travel with kids](/interests/family-travel-with-kids) for car seats and shallow beaches, [honeymoon and couples](/interests/honeymoon-and-couples) for a 3-4-5 river-jungle-villa split, [solo and first-time travel](/interests/solo-and-first-time-travel) for Grab and BTS tap-in, and [Songkran, Loy Krathong, and Yi Peng](/interests/festivals-songkran-and-loy-krathong) for festival weeks. City pages stay districts and trains. A late Grab across the river is often 80 to 150 THB in 2026."
     ],
     sections: [
       {
         id: "activity-guides",
         title: "Activity and travel-style guides",
         paragraphs: [
-          "Open [diving](/interests/diving-and-snorkeling) for Koh Tao PADI weeks and Similan boats, [massage](/interests/thai-massage-and-spas) for Wat Pho tables and day spas, [beaches](/interests/beaches-and-island-hopping) for the three-coast calendar, [temples](/interests/temples-and-history) for royal wats and historical parks, [Muay Thai](/interests/muay-thai-and-fitness-camps) for stadium cards and Soi Ta-iad camps, and [markets](/interests/markets-and-shopping) for Chatuchak, walking streets, and VAT refunds."
+          "For Koh Tao PADI weeks and Similan boats, see the [diving](/interests/diving-and-snorkeling) guide. For Wat Pho tables and day spas, see [massage](/interests/thai-massage-and-spas). For the three-coast calendar, see [beaches](/interests/beaches-and-island-hopping). For royal wats and historical parks, see [temples](/interests/temples-and-history). For stadium cards and Soi Ta-iad camps, see [Muay Thai](/interests/muay-thai-and-fitness-camps). For Chatuchak, walking streets, and VAT refunds, see [markets](/interests/markets-and-shopping)."
         ],
       },
       {
         id: "who-you-travel-with",
         title: "Family, couples, solo weeks, and festival dates",
         paragraphs: [
-          "Use [family travel](/interests/family-travel-with-kids) for car seats and shallow beaches, [honeymoon](/interests/honeymoon-and-couples) for a 3-4-5 river-jungle-villa split, [solo and first-time](/interests/solo-and-first-time-travel) for Grab, BTS tap-in, and scams to skip, and [festivals](/interests/festivals-songkran-and-loy-krathong) for Songkran, Loy Krathong, Yi Peng, and the Phuket Vegetarian Festival."
+          "For car seats and shallow beaches, see [family travel](/interests/family-travel-with-kids). For a 3-4-5 river-jungle-villa split, see [honeymoon](/interests/honeymoon-and-couples). For Grab, BTS tap-in, and scams to skip, see [solo and first-time](/interests/solo-and-first-time-travel). For Songkran, Loy Krathong, Yi Peng, and the Phuket Vegetarian Festival, see [festivals](/interests/festivals-songkran-and-loy-krathong)."
         ],
       },
       {
@@ -1423,7 +1423,7 @@ const rawPages: Page[] = [
     geo: { lat: 7.88, lon: 98.392, containedIn: "Andaman Coast" },
     paragraphs: [
       "Phuket is known for west-coast beaches and a huge airport, not for one pretty town. Kamala, Surin, and Bang Tao are calmer than Patong. Kata and Karon sit in the middle. Old Phuket Town is a morning of sino-portuguese streets if you need a non-beach day.",
-      "Beach clubs (Catch, Cafe del Mar) live on the Phuket nightlife page. Amanpuri and Avista Hideaway sit under resort living."
+      "Beach clubs (Catch, Cafe del Mar) live on the Phuket nightlife page. Amanpuri and Trisara sit under resort living."
     ],
     portraits: [
       {
@@ -2716,8 +2716,8 @@ const rawPages: Page[] = [
     ],
     photo: "/photos/resort.jpg",
     paragraphs: [
-      "Wake to limestone karsts rising out of Phang Nga Bay, step off a mahogany river barge onto a private Bangkok pier, or trade Phuket main beaches for a gated coconut grove on Pansea Cove. The stay is the itinerary, so the coast and the month come before the brand name.",
-      "West-coast Phuket villas sit 25 to 75 minutes by private car from HKT. Koh Samui headlands sit 15 to 45 minutes from USM. Koh Kood eco-villas need a dedicated one-hour flight to Trat or a private island plane."
+      "Wake to limestone karsts rising out of Phang Nga Bay, step off a mahogany river barge onto a private Bangkok pier, or trade Phuket's main beaches for a gated coconut grove on Pansea Cove. The stay is the itinerary, so the coast and the month come before the brand name.",
+      "**Phuket:** West-coast villas are 25 to 75 minutes by private car from HKT. **Koh Samui:** Headlands are 15 to 45 minutes from USM. **Koh Kood:** Eco-villas need a dedicated one-hour flight to Trat or a private island plane."
     ],
     portraits: [
       {
@@ -3398,7 +3398,7 @@ const rawPages: Page[] = [
     photo: "/photos/nightlife.jpg",
     paragraphs: [
       "The first pour in Bangkok can be a smoked Negroni in a 19th-century Chinatown shophouse on Soi Nana, a late slide behind an unmarked timber door in Thonglor after dinner, or an open-air rum room on Sukhumvit Soi 11. The same week on Phuket or Koh Samui stretches out on a Bang Tao or Lipa Noi daybed as the Andaman or Gulf sky turns copper.",
-      "Crafted cocktails run 400 to 650 THB in Bangkok top rooms. Late-night Grab rides across central Bangkok cost 80 to 200 THB after the midnight BTS close. Island beach clubs run on daytime-to-sunset daybed minimums of 2,000 to 5,000 THB."
+      "Crafted cocktails run 400 to 650 THB in Bangkok's top rooms, while a late Grab across central Bangkok is 80 to 200 THB after the midnight BTS close. Island beach clubs work on daytime-to-sunset daybed minimums of 2,000 to 5,000 THB."
     ],
     portraits: [
       {

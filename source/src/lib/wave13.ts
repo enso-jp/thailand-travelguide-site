@@ -505,7 +505,7 @@ function defaultAffiliates(page: Page): Affiliate[] {
   }
   if (page.path === '/interests/resort-living') {
     return [
-      stay('Phuket villas', 'Andaman', 'West-coast searches for Amanpuri, Avista, and Trisara peers.', stayLink('phuket'), '/photos/resort-amanpuri.jpg'),
+      stay('Phuket villas', 'Andaman', 'West-coast searches for Amanpuri, Trisara, and nearby cove peers.', stayLink('phuket'), '/photos/resort-amanpuri.jpg'),
       stay('Koh Kood hideaways', 'Soneva Kiri', 'Search Koh Kood stays, not Bangkok, and confirm the boat on the voucher.', stayLink('koh-kood'), '/photos/koh-kood.jpg'),
     ];
   }
@@ -605,4 +605,3 @@ export function applyWave13(pages: Page[]): Page[] {
     return page;
   });
 }
-

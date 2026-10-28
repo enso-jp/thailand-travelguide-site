@@ -36,14 +36,14 @@ export const wave4Pages: Page[] = [
     photo: '/photos/thai-food.jpg',
     paragraphs: [
       'Eat Thai food by city, not as one national plate. The Michelin Guide Thailand 2026 lists 137 Bib Gourmand rooms nationwide, including 44 in Bangkok and the surrounding provinces, 18 in Chiang Mai, and 19 in Phuket. Bib is the value badge, not a star. A 2026 street plate is often 60 to 150 THB. Jay Fai on Maha Chai is the one-star exception that still cooks like a street wok.',
-      'The cluster pages keep the calendar honest. Do not stack a Jay Fai queue, a Chatuchak Saturday, and a Ratchada night market on the same day. One serious meal and one market is enough. The fifteen guides below split neighbourhoods, markets, rooftops, classes, and a first-trip dish list.',
+      'Do not stack a Jay Fai queue, a Chatuchak Saturday, and a Ratchada night market on the same day. One serious meal and one market is enough. The fifteen guides cover neighbourhoods, markets, rooftops, cooking classes, and a first-trip dish list.',
     ],
     sections: [
       {
         id: 'guides',
         title: 'Fifteen food guides',
         paragraphs: [
-          'City overviews come first: [Bangkok street food](/thai-food/bangkok-street-food), [Bib Gourmand](/thai-food/bangkok-bib-gourmand), [Northern Lanna](/thai-food/northern-lanna), [South and Baba-Nyonya](/thai-food/southern-and-baba-nyonya), and [night markets](/thai-food/night-markets). Then pick a neighbourhood walk: [Yaowarat](/thai-food/yaowarat-chinatown-food-walk), [Banthat Thong](/thai-food/banthat-thong-road-food-strip), [Wang Lang and Talat Noi](/thai-food/wang-lang-and-talat-noi), [Or Tor Kor](/thai-food/or-tor-kor-and-bangkok-fresh-markets), or [Chiang Mai khao soi](/thai-food/chiang-mai-khao-soi-and-markets).',
+          'For city maps, see [Bangkok street food](/thai-food/bangkok-street-food), [Bib Gourmand](/thai-food/bangkok-bib-gourmand), [Northern Lanna](/thai-food/northern-lanna), [South and Baba-Nyonya](/thai-food/southern-and-baba-nyonya), and [night markets](/thai-food/night-markets). For a neighbourhood walk, see [Yaowarat](/thai-food/yaowarat-chinatown-food-walk), [Banthat Thong](/thai-food/banthat-thong-road-food-strip), [Wang Lang and Talat Noi](/thai-food/wang-lang-and-talat-noi), [Or Tor Kor](/thai-food/or-tor-kor-and-bangkok-fresh-markets), or [Chiang Mai khao soi](/thai-food/chiang-mai-khao-soi-and-markets).',
           'Add [Phuket Old Town](/thai-food/phuket-old-town-hokkien-and-peranakan-food) if the Andaman base is inland for a day. [Rooftops and river dining](/thai-food/bangkok-rooftop-bars-and-river-dining) is the dress-code night. [Cooking classes](/thai-food/thai-cooking-classes-bangkok-and-chiang-mai), [dishes to order](/thai-food/thai-dishes-to-order-first-trip), and the [coffee guide](/thai-food/bangkok-and-chiang-mai-coffee-guide) cover a wok station, a menu decoder, or a pour-over.'
         ],
         table: {
@@ -675,7 +675,7 @@ export const wave4Pages: Page[] = [
     ],
     portraits: [
       { title: 'Amanpuri', href: '/resort-living/amanpuri', photo: '/photos/phuket.jpg' },
-      { title: 'Avista Hideaway', href: '/resort-living/avista-hideaway-phuket', photo: '/photos/phuket.jpg' },
+      { title: 'Kamala and Surin', href: '/phuket/kamala-and-surin', photo: '/photos/kamala-and-surin.jpg' },
       { title: 'South and Baba-Nyonya', href: '/thai-food/southern-and-baba-nyonya', photo: '/photos/thai-food-southern.jpg' },
       { title: 'Kamala and Bang Tao clubs', href: '/interests/nightlife/phuket-kamala-bangtao', photo: '/photos/nightlife.jpg' },
     ],

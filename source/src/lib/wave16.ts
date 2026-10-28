@@ -354,7 +354,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
     title: 'Beach and zone versus other Phuket coasts',
     cards: [
       {
-        kicker: 'This Coast',
+        kicker: 'Your Cove',
         title: 'Pansea and Surin headlands',
         lead: 'A gated west-coast peninsula with calm turquoise water from November to April and almost no road noise at the sand.',
         bullets: [
@@ -364,7 +364,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Closest Rival',
+        kicker: 'Northwest Rival',
         title: 'Naithon and Layan hills',
         lead: 'Forested northwest cliffs 20 to 25 minutes south of Phuket Airport, where every key is a private pool villa.',
         bullets: [
@@ -374,11 +374,11 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Alternative Vibe',
+        kicker: 'Livelier Base',
         title: 'Kamala ridge, Mai Khao, and Patong hills',
         lead: 'Hillside value stays and long airport beaches trade cove isolation for easier dining or a shorter flight-day transfer.',
         bullets: [
-          '**[Avista Hideaway Phuket](/resort-living/avista-hideaway-phuket)** is the 6,000 to 20,000+ THB MGallery between Patong and Freedom Beach if the cove budget is closed.',
+          'Kamala hills give easier west-coast plates and Cafe del Mar style days without sleeping in Patong.',
           'Mai Khao keeps 11 km of quiet north sand beside the airport, far from southern piers.',
           'Patong and Kata ridge nights are a different week from a gated Pansea villa.',
         ],
@@ -389,7 +389,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
     title: 'Beach and zone versus other Phuket coasts',
     cards: [
       {
-        kicker: 'This Coast',
+        kicker: 'Your Headland',
         title: 'Naithon and Layan headland',
         lead: 'Forested northwest privacy and sunset Andaman views, 20 to 25 minutes south of HKT.',
         bullets: [
@@ -399,9 +399,9 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Closest Rival',
+        kicker: 'Pansea Step-Up',
         title: 'Pansea and Surin coves',
-        lead: 'Tighter white-sand headlands and Phuket highest villa rates, farther from the airport.',
+        lead: "Tighter white-sand headlands and Phuket's highest villa rates, farther from the airport.",
         bullets: [
           '**[Amanpuri](/resort-living/amanpuri)** is the step up if you want a gated private cove and will pay 45,000 to 120,000+ THB.',
           'The HKT car stretches to 45 to 75 minutes and 1,500 to 2,500 THB, so land with a booked driver.',
@@ -409,12 +409,12 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Alternative Vibe',
+        kicker: 'Dinner Bays',
         title: 'Kamala hills and Patong ridge',
         lead: 'Walkable dinner bays and faster nightlife when you do not need a private-cove villa.',
         bullets: [
           'Kamala hills give easier Cafe del Mar style days and west-coast plates without a Patong base.',
-          '**[Avista Hideaway Phuket](/resort-living/avista-hideaway-phuket)** trades cove silence for a hillside MGallery between Patong and Freedom Beach.',
+          'Mai Khao is the long airport beach if you want length, not a private-cove villa.',
           'Patong ridge after 22:00 is the wrong default if you booked this quiet northwest cove.',
         ],
       },
@@ -424,7 +424,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
     title: 'Beach and zone versus other Phuket coasts',
     cards: [
       {
-        kicker: 'This Coast',
+        kicker: 'This Hill',
         title: 'Patong and Kata ridge',
         lead: 'A hillside MGallery between Patong and Freedom Beach, with faster dining and less cove privacy.',
         bullets: [
@@ -434,7 +434,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Closest Rival',
+        kicker: 'Cove Step-Up',
         title: 'Pansea and Surin privacy',
         lead: 'Gated headlands if the budget jumps and you want the sand to belong to the hotel.',
         bullets: [
@@ -444,7 +444,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Alternative Vibe',
+        kicker: 'Villa Alternative',
         title: 'Naithon villa hills',
         lead: 'All-pool-villa northwest cliffs far from Patong bass, closer to the airport.',
         bullets: [
@@ -459,17 +459,17 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
     title: 'Beach and zone versus other Samui coasts',
     cards: [
       {
-        kicker: 'This Coast',
+        kicker: 'Your Cape',
         title: 'Laem Yai sunset amphitheater',
         lead: 'Steep coconut-palmed hillsides facing the Gulf sunset, 35 to 45 minutes from Samui Airport.',
         bullets: [
           '**[Four Seasons Koh Samui](/resort-living/four-seasons-koh-samui)** locks butler-buggy hillside villas and a private cove at 36,000 to 90,000+ THB.',
-          'Maximum privacy is the point. A late scooter down this hill is a bad story.',
+          'Do not ride a scooter down this hill after dark. The grade is steep and there is no shoulder. Book a car before the first pour off property.',
           'Lipa Noi daybeds sit on the same west-facing coast when you want a booked afternoon off property.',
         ],
       },
       {
-        kicker: 'Closest Rival',
+        kicker: 'Village-Walk Rivals',
         title: 'Choeng Mon and Bophut headland',
         lead: 'Granite promontories 15 minutes from USM and 10 minutes from Fisherman Village.',
         bullets: [
@@ -479,7 +479,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Alternative Vibe',
+        kicker: 'East-Coast Strip',
         title: 'Chaweng walkable east coast',
         lead: 'Powder-sand swimming and the dinner strip, a different week from a northwest villa hill.',
         bullets: [
@@ -494,7 +494,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
     title: 'Beach and zone versus other Samui coasts',
     cards: [
       {
-        kicker: 'This Coast',
+        kicker: 'Your Point',
         title: 'Choeng Mon northern headland',
         lead: 'A rocky 20-acre peninsula near Fisherman Village, 15 minutes from USM.',
         bullets: [
@@ -504,7 +504,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Closest Rival',
+        kicker: 'Sunset Step-Up',
         title: 'Laem Yai northwest cape',
         lead: 'The sunset amphitheater if privacy beats a village dinner walk.',
         bullets: [
@@ -514,7 +514,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Alternative Vibe',
+        kicker: 'Bay or Strip',
         title: 'Chaweng strip versus Plai Laem bay',
         lead: 'Walkable nightlife sand, or a wider plantation bay 15 minutes from the airport.',
         bullets: [
@@ -529,7 +529,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
     title: 'Beach and zone versus other Samui coasts',
     cards: [
       {
-        kicker: 'This Coast',
+        kicker: 'Your Bay',
         title: 'Plai Laem and Choeng Mon bay',
         lead: 'A private 58-acre former coconut plantation, 15 minutes from USM.',
         bullets: [
@@ -539,7 +539,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Closest Rival',
+        kicker: 'Timber-Point Rival',
         title: 'Six Senses timber point',
         lead: 'The closer headland rival if you want a steeper villa map and a shorter village walk.',
         bullets: [
@@ -549,7 +549,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Alternative Vibe',
+        kicker: 'Sunset Alternative',
         title: 'Laem Yai sunset hill',
         lead: 'Northwest privacy if you will Grab for plates and want the amphitheater view.',
         bullets: [
@@ -564,7 +564,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
     title: 'Beach and zone versus other Krabi and Phang Nga coasts',
     cards: [
       {
-        kicker: 'This Coast',
+        kicker: 'Your Mainland',
         title: 'Tubkaek mainland sunset',
         lead: 'Quiet mainland sand facing the thirteen limestone islands of Koh Hong, with a direct road from Krabi Airport.',
         bullets: [
@@ -574,7 +574,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Closest Rival',
+        kicker: 'Island Rival',
         title: 'Koh Yao Noi in Phang Nga Bay',
         lead: 'A sleepy island halfway between Phuket and Krabi, with sunrise views over karst pinnacles.',
         bullets: [
@@ -584,7 +584,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Alternative Vibe',
+        kicker: 'Boat-Only Pocket',
         title: 'Railay and Phra Nang peninsula',
         lead: 'Boat-only limestone beaches cut off from mainland roads, 15 minutes from Ao Nang by longtail.',
         bullets: [
@@ -599,7 +599,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
     title: 'Beach and zone versus other Krabi and Phang Nga coasts',
     cards: [
       {
-        kicker: 'This Coast',
+        kicker: 'Your Island',
         title: 'Koh Yao Noi island lanes',
         lead: 'Quiet island roads and elevated pool villas halfway between Phuket and Krabi.',
         bullets: [
@@ -609,7 +609,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Closest Rival',
+        kicker: 'Road-Access Rival',
         title: 'Tubkaek mainland road',
         lead: 'Sunset sand facing the Hong Islands if you refuse a pier-and-boat arrival.',
         bullets: [
@@ -619,7 +619,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Alternative Vibe',
+        kicker: 'Railay Grove',
         title: 'Railay grove, no island hop',
         lead: 'Cliffs and three beaches with no island transfer, reached by a 15-minute boat from Ao Nang.',
         bullets: [
@@ -634,7 +634,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
     title: 'Beach and zone versus other Krabi and Phang Nga coasts',
     cards: [
       {
-        kicker: 'This Coast',
+        kicker: 'Your Pocket',
         title: 'Phra Nang and Railay pocket',
         lead: 'Boat-only limestone beaches with zero road traffic and a 15-minute longtail from Ao Nang.',
         bullets: [
@@ -644,7 +644,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Closest Rival',
+        kicker: 'Storm-Proof Rival',
         title: 'Tubkaek storm-proof road',
         lead: 'Mainland sunset sand if you want a KBV car and an exit that does not depend on a longtail.',
         bullets: [
@@ -654,7 +654,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Alternative Vibe',
+        kicker: 'Bay-Villa Alternative',
         title: 'Koh Yao Noi bay villas',
         lead: 'Phang Nga pinnacles as the daily view, with a 45-minute speedboat from Phuket or Krabi.',
         bullets: [
@@ -669,9 +669,9 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
     title: 'River and district versus other Bangkok stays',
     cards: [
       {
-        kicker: 'This Coast',
+        kicker: 'Your Promenade',
         title: 'Charoenkrung river promenade',
-        lead: 'Low-rise waterfront courtyards, private shuttle boats to the Grand Palace piers, and Asia top cocktail rooms next door.',
+        lead: "Low-rise waterfront courtyards, private shuttle boats to the Grand Palace piers, and Asia's top cocktail rooms next door.",
         bullets: [
           '**[Capella Bangkok](/resort-living/capella-bangkok)** locks river suites at 32,000 to 85,000+ THB with a hotel boat and a sunset terrace.',
           '**[Four Seasons Bangkok](/resort-living/four-seasons-bangkok)** and **[Mandarin Oriental, Bangkok](/resort-living/mandarin-oriental-bangkok)** sit on the same bank at 25,000 to 65,000+ THB.',
@@ -679,7 +679,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Closest Rival',
+        kicker: 'Upriver Rival',
         title: 'Dusit upriver compound',
         lead: 'A leafy bend of the Chao Phraya north of the Old City, far from Sukhumvit traffic.',
         bullets: [
@@ -689,12 +689,12 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Alternative Vibe',
+        kicker: 'Skytrain Alternative',
         title: 'Phloen Chit skytrain spine',
         lead: 'Direct BTS bridges for travellers who want central dining, embassies, and a short Airport Rail Link hop.',
         bullets: [
           '**[Rosewood Bangkok](/resort-living/rosewood-bangkok)** is the vertical manor at 14,000 to 32,000+ THB beside BTS Ploenchit.',
-          '**[VIE Hotel Bangkok](/resort-living/vie-hotel-bangkok)** is the 4,000 to 14,000+ THB design tower at BTS Ratchathewi.',
+          'Ratchathewi is the cheaper ARL-and-BTS pocket one hop from Siam if the manor rate is closed.',
           'These rooms skip the river road when skytrain, not a barge, is the Bangkok plan.',
         ],
       },
@@ -704,7 +704,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
     title: 'River and district versus other Bangkok stays',
     cards: [
       {
-        kicker: 'This Coast',
+        kicker: 'Your Compound',
         title: 'Dusit royal reach',
         lead: 'A tranquil leafy bend north of Rattanakosin, where the hotel boat replaces a Sukhumvit taxi.',
         bullets: [
@@ -714,7 +714,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Closest Rival',
+        kicker: 'Downriver Rivals',
         title: 'Charoenkrung cocktail bank',
         lead: 'Newer river courtyards closer to ICONSIAM and the Charoenkrung bar rooms.',
         bullets: [
@@ -724,12 +724,12 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Alternative Vibe',
+        kicker: 'Rail Alternative',
         title: 'Siam and Ratchathewi rails',
         lead: 'Airport Rail Link and BTS without a compound, if two river nights are not the plan.',
         bullets: [
-          '**[VIE Hotel Bangkok](/resort-living/vie-hotel-bangkok)** is the 4,000 to 14,000+ THB design tower one hop from Siam.',
-          '**[Rosewood Bangkok](/resort-living/rosewood-bangkok)** steps up to a Phloen Chit vertical manor at 14,000 to 32,000+ THB.',
+          '**[Rosewood Bangkok](/resort-living/rosewood-bangkok)** is the Phloen Chit vertical manor at 14,000 to 32,000+ THB.',
+          'Ratchathewi stays the cheaper BTS-and-ARL pocket if two river nights are not the plan.',
           'These rooms win when ARL plus BTS beats a barge timetable.',
         ],
       },
@@ -739,7 +739,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
     title: 'River and district versus other Bangkok stays',
     cards: [
       {
-        kicker: 'This Coast',
+        kicker: 'Your Courtyard',
         title: 'Charoenkrung courtyard',
         lead: 'An urban river resort with shuttle boats, a spa wing, and ICONSIAM a short hop away.',
         bullets: [
@@ -749,7 +749,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Closest Rival',
+        kicker: 'Next-Door Step-Up',
         title: 'Capella next door',
         lead: 'Higher villa rates on the same bank if you want more suite space and a quieter terrace.',
         bullets: [
@@ -759,12 +759,12 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Alternative Vibe',
+        kicker: 'Garden Alternative',
         title: 'Dusit private garden',
         lead: 'Upriver teak and a hotel barge if you want no promenade traffic.',
         bullets: [
           '**[The Siam](/resort-living/the-siam)** is the garden compound at 28,000 to 75,000+ THB.',
-          'Rosewood and VIE skip the river entirely if BTS is the Bangkok week.',
+          'Phloen Chit and Ratchathewi skip the river entirely if BTS is the Bangkok week.',
           'Pick Dusit when antique houses beat a new courtyard.',
         ],
       },
@@ -774,7 +774,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
     title: 'River and district versus other Bangkok stays',
     cards: [
       {
-        kicker: 'This Coast',
+        kicker: 'Your Pier',
         title: 'Bang Rak historic pier',
         lead: 'The original river icon, with a private pier, Authors Lounge, and city noise at the door.',
         bullets: [
@@ -784,7 +784,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Closest Rival',
+        kicker: 'New-Build Rivals',
         title: 'Charoenkrung new-build suites',
         lead: 'Newer river courtyards if you want larger rooms and a quieter terrace than Bang Rak.',
         bullets: [
@@ -794,12 +794,12 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Alternative Vibe',
+        kicker: 'Skytrain Manor',
         title: 'Phloen Chit vertical manor',
         lead: 'Skytrain living if BTS beats a boat on a short Bangkok stay.',
         bullets: [
           '**[Rosewood Bangkok](/resort-living/rosewood-bangkok)** is the 14,000 to 32,000+ THB tower beside BTS Ploenchit.',
-          'VIE Hotel keeps the value design room at Ratchathewi if the manor rate is closed.',
+          'Ratchathewi is the cheaper design-room pocket if the manor rate is closed.',
           'The Siam remains the upriver teak alternative if you want a barge and a garden.',
         ],
       },
@@ -809,7 +809,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
     title: 'River and district versus other Bangkok stays',
     cards: [
       {
-        kicker: 'This Coast',
+        kicker: 'Your Manor',
         title: 'Phloen Chit skytrain manor',
         lead: 'Direct BTS, malls, and rooftop cocktails with no river road in the way.',
         bullets: [
@@ -819,7 +819,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Closest Rival',
+        kicker: 'River Compounds',
         title: 'Chao Phraya compounds',
         lead: 'River boats and low-rise courtyards if the barge, not the skytrain, is the stay.',
         bullets: [
@@ -829,12 +829,12 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Alternative Vibe',
-        title: 'Ratchathewi value tower',
-        lead: 'Design rooms one stop from Siam, with ARL at the same interchange story.',
+        kicker: 'Garden or Rails',
+        title: 'Ratchathewi and Dusit contrast',
+        lead: 'A cheaper ARL pocket one stop from Siam, or an upriver garden if you want teak instead of a tower.',
         bullets: [
-          '**[VIE Hotel Bangkok](/resort-living/vie-hotel-bangkok)** is the 4,000 to 14,000+ THB alternative at BTS Ratchathewi.',
-          'The Siam remains the upriver teak compound if you want a garden instead of a tower.',
+          'Ratchathewi is the cheaper design-room pocket one stop from Siam, with ARL at the same interchange.',
+          '**[The Siam](/resort-living/the-siam)** remains the upriver teak compound if you want a garden instead of a tower.',
           'This alternative wins when the manor rate is closed and you still want rails, not a river road.',
         ],
       },
@@ -844,7 +844,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
     title: 'River and district versus other Bangkok stays',
     cards: [
       {
-        kicker: 'This Coast',
+        kicker: 'Your Tower',
         title: 'Ratchathewi BTS tower',
         lead: 'Airport Rail Link plus one hop, a city value pick rather than a river compound.',
         bullets: [
@@ -854,7 +854,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Closest Rival',
+        kicker: 'Manor Step-Up',
         title: 'Phloen Chit vertical manor',
         lead: 'The step up if you want a quieter tower, rooftop cocktails, and embassy-row walks.',
         bullets: [
@@ -864,7 +864,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Alternative Vibe',
+        kicker: 'River Nights',
         title: 'Charoenkrung river nights',
         lead: 'Low-rise waterfront courtyards if two river nights are the Bangkok plan.',
         bullets: [
@@ -879,7 +879,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
     title: 'Valley and district versus other Chiang Mai stays',
     cards: [
       {
-        kicker: 'This Coast',
+        kicker: 'Your Valley',
         title: 'Mae Rim rice-terrace valley',
         lead: 'Working terraced paddies, water buffalo, and misty foothills 30 to 40 minutes north of the moat.',
         bullets: [
@@ -889,7 +889,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Closest Rival',
+        kicker: 'River Rivals',
         title: 'Wat Ket and the Ping River',
         lead: 'Walkable riverside lawns and 19th-century teak 10 minutes east of the Old City wats.',
         bullets: [
@@ -899,11 +899,11 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Alternative Vibe',
+        kicker: 'Hill Contrast',
         title: 'Hang Dong forest slopes',
         lead: 'Elevated valley infinity pools near Doi Suthep-Pui at a fraction of Mae Rim pavilion rates.',
         bullets: [
-          '**[Veranda High Chiang Mai](/resort-living/veranda-high-chiang-mai)** is the 5,000 to 18,000+ THB MGallery hillside retreat, 25 to 35 minutes from town.',
+          'Hang Dong forest slopes hold hill pools and shorter Nimman taxis than a Mae Rim run, at a fraction of pavilion rates.',
           'Nimman taxis are shorter than a Mae Rim run, so dinner in the west city is easier.',
           'Old City on foot still wins if you want Wat Phra Singh at 07:00 without any hill road.',
         ],
@@ -914,7 +914,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
     title: 'Valley and district versus other Chiang Mai stays',
     cards: [
       {
-        kicker: 'This Coast',
+        kicker: 'Your Homestead',
         title: 'Wat Ket teak homestead',
         lead: 'Walkable river lawns and an 1889 house, 10 minutes east of the Old City wats.',
         bullets: [
@@ -924,7 +924,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Closest Rival',
+        kicker: 'Valley Step-Up',
         title: 'Mae Rim rice terrace',
         lead: 'Valley pavilions if the working paddy, not a walkable teak lawn, is the trip.',
         bullets: [
@@ -934,11 +934,11 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Alternative Vibe',
+        kicker: 'Hill or Town',
         title: 'Hang Dong hill pool',
         lead: 'A western foothill view pool and a shorter Nimman taxi than Mae Rim.',
         bullets: [
-          '**[Veranda High Chiang Mai](/resort-living/veranda-high-chiang-mai)** is the 5,000 to 18,000+ THB hillside alternative.',
+          'Hang Dong is the western foothill view-pool option if you want a shorter Nimman taxi than Mae Rim, without pavilion rates.',
           '**[Anantara Chiang Mai](/resort-living/anantara-chiang-mai)** stays on the Ping if you want a contemporary river bank instead of teak or a hill.',
           'Old City guesthouses still win if you want the 07:00 gate without a taxi.',
         ],
@@ -949,7 +949,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
     title: 'Valley and district versus other Chiang Mai stays',
     cards: [
       {
-        kicker: 'This Coast',
+        kicker: 'Your River Bank',
         title: 'Ping River contemporary bank',
         lead: 'Night Bazaar side lawns, 10 minutes to the moat, with a modern river sanctuary rather than an 1889 house.',
         bullets: [
@@ -959,7 +959,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Closest Rival',
+        kicker: 'Teak Rival',
         title: 'Wat Ket teak homestead',
         lead: 'The 1889 house look if antique timber, not a contemporary river wing, is the stay.',
         bullets: [
@@ -969,12 +969,12 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Alternative Vibe',
+        kicker: 'Valley or Hill',
         title: 'Mae Rim versus Hang Dong',
         lead: 'A rice-terrace pavilion week, or a western hill pool at an accessible rate.',
         bullets: [
           '**[Four Seasons Chiang Mai](/resort-living/four-seasons-chiang-mai)** is the 30,000 to 80,000+ THB valley lock if you accept a 30 to 45 minute car each way.',
-          '**[Veranda High Chiang Mai](/resort-living/veranda-high-chiang-mai)** is the 5,000 to 18,000+ THB hill pool if you want the view without pavilion rates.',
+          'Hang Dong hill pools give a western valley view without pavilion rates, 25 to 35 minutes from town.',
           'Haze from late February to April can sit in both valley and hill views.',
         ],
       },
@@ -984,7 +984,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
     title: 'Valley and district versus other Chiang Mai stays',
     cards: [
       {
-        kicker: 'This Coast',
+        kicker: 'Your Hill',
         title: 'Hang Dong western foothills',
         lead: 'Forested slopes near Doi Suthep-Pui, with an elevated infinity pool at an accessible luxury rate.',
         bullets: [
@@ -994,7 +994,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Closest Rival',
+        kicker: 'Pavilion Step-Up',
         title: 'Mae Rim pavilion valley',
         lead: 'Working rice terraces if the paddy budget is open and you want Lanna residences.',
         bullets: [
@@ -1004,7 +1004,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Alternative Vibe',
+        kicker: 'River Walks',
         title: 'Ping River and Old City on foot',
         lead: 'Walkable teak or a contemporary river bank if you want wats without a hill road.',
         bullets: [
@@ -1019,7 +1019,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
     title: 'Coast versus other eastern Gulf islands',
     cards: [
       {
-        kicker: 'This Coast',
+        kicker: 'Your Eco-Cove',
         title: 'Koh Kood northern eco-coves',
         lead: 'Untouched rainforest bays and clear eastern Gulf water near the Cambodian maritime border.',
         bullets: [
@@ -1029,7 +1029,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Closest Rival',
+        kicker: 'Chang Context',
         title: 'Koh Chang east-coast strip',
         lead: 'A busier island with road towns and a different transfer story, not a Soneva substitute.',
         bullets: [
@@ -1039,7 +1039,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         ],
       },
       {
-        kicker: 'Alternative Vibe',
+        kicker: 'Why Not a Hop',
         title: 'Why this is not a Phuket add-on',
         lead: 'A self-contained 3- to 5-night sanctuary rather than a quick island-hopping stop.',
         bullets: [
@@ -1211,10 +1211,19 @@ export function applyResortLivingHub(page: Page): Page {
     lede:
       "Thailand's flagship resorts are known for private Andaman headlands, lantern-lit Mae Rim rice terraces, and Chao Phraya river sanctuaries where the stay itself shapes the journey. Compare the six regions below by coast, season, and nightly tier.",
     paragraphs: [
-      'Wake to limestone karsts rising out of Phang Nga Bay, step off a mahogany river barge onto a private Bangkok pier, or trade Phuket main beaches for a gated coconut grove on Pansea Cove. The stay is the itinerary, so the coast and the month come before the brand name.',
-      'West-coast Phuket villas sit 25 to 75 minutes by private car from HKT. Koh Samui headlands sit 15 to 45 minutes from USM. Koh Kood eco-villas need a dedicated one-hour flight to Trat or a private island plane. Rank below is a 2026 nightly THB band, not a review score.',
+      "Wake to limestone karsts rising out of Phang Nga Bay, step off a mahogany river barge onto a private Bangkok pier, or trade Phuket's main beaches for a gated coconut grove on Pansea Cove. The stay is the itinerary, so the coast and the month come before the brand name.",
     ],
     sections: [
+      {
+        id: 'transfers',
+        title: 'Airport hops by coast',
+        paragraphs: ['Rank below is a 2026 nightly THB band, not a review score.'],
+        bullets: [
+          '**Phuket:** West-coast villas are 25 to 75 minutes by private car from HKT.',
+          '**Koh Samui:** Headlands are 15 to 45 minutes from USM.',
+          '**Koh Kood:** Eco-villas need a dedicated one-hour flight to Trat or a private island plane.',
+        ],
+      },
       {
         id: 'phuket',
         title: 'Phuket flagships',
@@ -1243,7 +1252,7 @@ export function applyResortLivingHub(page: Page): Page {
             title: 'Kamala, Patong Ridge, and Mai Khao',
             lead: 'Where hillside value stays and long airport beaches differ from the ultra-prime west-coast coves.',
             bullets: [
-              '**[Avista Hideaway Phuket](/resort-living/avista-hideaway-phuket)** is the 6,000 to 20,000+ THB hillside MGallery between Patong and Freedom Beach.',
+              'Kamala and the Patong-Kata ridge trade cove isolation for easier dining. They are a different week from a gated west-coast villa.',
               'Mai Khao keeps 11 km of quiet north sand beside HKT, far from southern piers.',
             ],
           },
@@ -1267,7 +1276,7 @@ export function applyResortLivingHub(page: Page): Page {
             lead: 'Steep coconut-palmed hillsides facing the Gulf sunset, 35 to 45 minutes from Samui Airport.',
             bullets: [
               '**[Four Seasons Koh Samui](/resort-living/four-seasons-koh-samui)** runs 36,000 to 90,000+ THB, with butler-buggy hillside villas and a private cove beach.',
-              'A late scooter down this hill is a bad story. Book the car before the first pour off property.',
+              'Do not ride a scooter down this hill after dark. The grade is steep and there is no shoulder. Book a car before the first pour off property.',
             ],
           },
           {
@@ -1282,7 +1291,7 @@ export function applyResortLivingHub(page: Page): Page {
           {
             kicker: 'Walkable East Coast',
             title: 'Chaweng vs the Villa Hills',
-            lead: 'How Samui main powder-sand swimming strip compares with the private northern capes.',
+            lead: "How Samui's main powder-sand swimming strip compares with the private northern capes.",
             bullets: [
               'Sleep on Chaweng when you want walkable dining and a short USM hop.',
               'Lock a northern headland villa from January to September if silence and a private cove beat the strip.',
@@ -1348,7 +1357,7 @@ export function applyResortLivingHub(page: Page): Page {
           {
             kicker: 'Charoenkrung Riverfront',
             title: 'The Chao Phraya Promenade',
-            lead: 'Low-rise waterfront courtyards, private shuttle boats to the Grand Palace piers, and Asia top cocktail rooms next door.',
+            lead: "Low-rise waterfront courtyards, private shuttle boats to the Grand Palace piers, and Asia's top cocktail rooms next door.",
             bullets: [
               '**[Capella Bangkok](/resort-living/capella-bangkok)** runs 32,000 to 85,000+ THB on the Bangkok-side promenade.',
               '**[Four Seasons Bangkok](/resort-living/four-seasons-bangkok)** runs 26,000 to 65,000+ THB in a courtyard spa wing. **[Mandarin Oriental, Bangkok](/resort-living/mandarin-oriental-bangkok)** runs 25,000 to 65,000+ THB at the historic Bang Rak pier.',
@@ -1369,7 +1378,7 @@ export function applyResortLivingHub(page: Page): Page {
             lead: 'Direct BTS Skytrain bridges for travellers prioritizing central dining, embassies, and quick Airport Rail Link hops.',
             bullets: [
               '**[Rosewood Bangkok](/resort-living/rosewood-bangkok)** runs 14,000 to 32,000+ THB at BTS Ploenchit.',
-              '**[VIE Hotel Bangkok](/resort-living/vie-hotel-bangkok)** is the 4,000 to 14,000+ THB design tower at BTS Ratchathewi.',
+              'Ratchathewi is the cheaper ARL-and-BTS pocket one hop from Siam if the manor rate is closed.',
             ],
           },
         ],
@@ -1392,7 +1401,7 @@ export function applyResortLivingHub(page: Page): Page {
           {
             kicker: 'Rice-Terrace Valley',
             title: 'Mae Rim Countryside',
-            lead: 'Working terraced paddies, water buffalo, and misty foothills 30 to 40 minutes north of Chiang Mai moat.',
+            lead: "Working terraced paddies, water buffalo, and misty foothills 30 to 40 minutes north of Chiang Mai's moat.",
             bullets: [
               '**[Four Seasons Chiang Mai](/resort-living/four-seasons-chiang-mai)** runs 30,000 to 80,000+ THB, with Lanna pavilions and private residences. Best November to early February.',
               'Wat mornings need a booked car. This is not a walk to Wat Phra Singh.',
@@ -1412,8 +1421,8 @@ export function applyResortLivingHub(page: Page): Page {
             title: 'Hang Dong Forest Slopes',
             lead: 'Elevated valley infinity pools near Doi Suthep-Pui at a fraction of Mae Rim pavilion rates.',
             bullets: [
-              '**[Veranda High Chiang Mai](/resort-living/veranda-high-chiang-mai)** is the 5,000 to 18,000+ THB MGallery hillside retreat, 25 to 35 minutes by car from town.',
-              'Nimman dinner is a shorter taxi than a Mae Rim run.',
+              'Hang Dong forest slopes hold elevated valley pools and a shorter Nimman taxi than Mae Rim, at a fraction of pavilion rates.',
+              'Nimman dinner is a shorter taxi than a Mae Rim run. Old City on foot still wins for a 07:00 wat.',
             ],
           },
         ],
@@ -1470,7 +1479,7 @@ export function applyNightlifeHub(page: Page): Page {
       "Thailand after dark is known for candlelit shophouse cocktail bars along Bangkok's riverfront, velvet speakeasies in Thonglor, and sunset beach clubs on Phuket and Koh Samui. Pick your neighbourhood or coast before the first pour.",
     paragraphs: [
       'The first pour in Bangkok can be a smoked Negroni in a 19th-century Chinatown shophouse on Soi Nana, a late slide behind an unmarked timber door in Thonglor after dinner, or an open-air rum room on Sukhumvit Soi 11. The same week on Phuket or Koh Samui stretches out on a Bang Tao or Lipa Noi daybed as the Andaman or Gulf sky turns copper.',
-      'Crafted cocktails run 400 to 650 THB in Bangkok top rooms. Late-night Grab rides across central Bangkok cost 80 to 200 THB after the midnight BTS close. Island beach clubs run on daytime-to-sunset daybed minimums of 2,000 to 5,000 THB. Pick one district or one coast. Do not rent a scooter at 1:00.',
+      "Crafted cocktails run 400 to 650 THB in Bangkok's top rooms, while a late Grab across central Bangkok is 80 to 200 THB after the midnight BTS close. Island beach clubs work on daytime-to-sunset daybed minimums of 2,000 to 5,000 THB. Pick one district or one coast. Do not rent a scooter at 1:00.",
     ],
     sections: [
       {
