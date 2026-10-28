@@ -26,6 +26,20 @@ export function organizationLd() {
       width: 512,
       height: 512,
     },
+    parentOrganization: {
+      '@type': 'Organization',
+      name: 'Beyond Guide Network',
+      url: 'https://thailand-travelguide.com/about/',
+      sameAs: [
+        'https://thailand-travelguide.com/',
+        'https://vietnam-travelguide.com/',
+      ],
+    },
+    publishingPrinciples: 'https://thailand-travelguide.com/about/ratings/',
+    unnamedSourcesPolicy: 'https://thailand-travelguide.com/about/',
+    sameAs: [
+      'https://vietnam-travelguide.com/',
+    ],
   };
 }
 

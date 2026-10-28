@@ -2030,7 +2030,7 @@ function stayCityFor(page: Page): StayCity {
 export function uniquifyAffiliates(page: Page, used: Set<string>): Page {
   const rows = [...(page.affiliates || [])];
   if (!rows.length) return page;
-  if (rows.length === 1 && page.path !== '/about' && page.path !== '/privacy') {
+  if (rows.length === 1 && page.path !== '/about' && page.path !== '/about/ratings' && page.path !== '/privacy') {
     const firstIsKlook = rows[0].partner === 'klook';
     if (firstIsKlook) {
       rows.push({

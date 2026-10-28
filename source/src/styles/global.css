@@ -6,7 +6,7 @@
   --line: #e6e6e6;
   --lacquer: #8a6100;
   --lacquer-btn: #875f07;
-  --gold: #8a6100;
+  --gold: #b8860b;
   --vn-red: #c8102e;
   --gold-soft: #fbf3dc;
   --gold-border: #ead294;
@@ -866,7 +866,7 @@ th, td {
 .map-thailand .map-hit.is-active path,
 .map-thailand g.is-active path,
 .map-thailand .is-active path {
-  fill: #8a6100;
+  fill: #b8860b;
   stroke: #7c5802;
   stroke-width: 0.85;
 }
@@ -1064,6 +1064,7 @@ th, td {
 .story-thumb img { width: 100%; height: 7.2rem; object-fit: cover; border-radius: 12px; display: block; }
 
 .place-grid { display: grid; grid-template-columns: minmax(0, 1fr) 20rem; gap: 2rem; padding-bottom: 3rem; }
+.place-grid > * { min-width: 0; }
 .place-section > h2 { display: flex; align-items: center; gap: 0.7rem; }
 .place-section > h2::after { content: ""; flex: 1; height: 3px; background: var(--lacquer); border-radius: 2px; }
 .vi { font-weight: 400; color: var(--muted); }
@@ -1138,7 +1139,7 @@ th, td {
 .jg-card h3 { margin: 0; font-size: 1.05rem; font-weight: 700; }
 .jg-card .jg-body p { margin: 0.3rem 0 0; font-size: 0.95rem; color: #3f3a34; }
 .rating { display: flex; gap: 0.35rem; align-items: center; font-size: 0.88rem; }
-.stars { color: #8a6100; letter-spacing: 0.04em; }
+.stars { color: #b8860b; letter-spacing: 0.04em; }
 .list-more {
   margin-top: 1rem;
   border: 1px solid var(--line);
@@ -1277,7 +1278,7 @@ th, td {
   .home-hero, .home-hero img { min-height: 18rem; height: 18rem; }
   .sheet-row { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; }
   .mini-card { flex: 0 0 80%; scroll-snap-align: start; }
-  .home-split, .region-board, .place-grid, .story-row { grid-template-columns: 1fr; }
+  .home-split, .region-board, .place-grid, .story-row { grid-template-columns: minmax(0, 1fr); }
   .home-collage { min-height: 22rem; grid-template-rows: 7.5rem 7.5rem 7rem; }
   .home-rail { position: static; }
   .top-grid, .plan-row, .food-grid { grid-template-columns: 1fr 1fr; }
@@ -1289,7 +1290,7 @@ th, td {
 }
 
 @media (max-width: 560px) {
-  .top-grid, .plan-row, .food-grid, .hood-list { grid-template-columns: 1fr; }
+  .top-grid, .plan-row, .food-grid, .hood-list { grid-template-columns: minmax(0, 1fr); }
 }
 
 
@@ -1343,7 +1344,7 @@ th, td {
   color: #fff;
   flex: 0 0 auto;
 }
-.net-mark-th { background: #8a6100; }
+.net-mark-th { background: #b8860b; }
 .net-mark-vn { background: #c8102e; }
 .phone-net-link {
   display: inline-flex;
@@ -1575,4 +1576,77 @@ th, td {
 @media (max-width: 720px) {
   .footer-grid { grid-template-columns: 1fr; }
   .trip-search-dates { grid-template-columns: 1fr; }
+}
+
+
+.footer-pub-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--lacquer);
+  background: var(--gold-soft);
+  border: 1px solid var(--gold-border);
+  border-radius: 999px;
+  padding: 0.16rem 0.55rem;
+  margin-bottom: 0.25rem;
+}
+.footer-trust-links {
+  margin: 0.35rem 0 0;
+  font-size: 0.85rem;
+  line-height: 1.45;
+}
+.footer-legal {
+  margin-top: 1.35rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.footer-legal p {
+  margin: 0.25rem 0;
+}
+.book-field span {
+  display: block;
+}
+
+@media (max-width: 860px) {
+  .bar-icon, .menu-toggle, .search-toggle {
+    min-height: 2.75rem;
+    padding: 0.45rem 0.85rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .phone-menu a {
+    min-height: 2.75rem;
+    display: flex;
+    align-items: center;
+  }
+  .book-form input,
+  .book-form select,
+  .trip-search-form input,
+  .trip-search-form select,
+  .search-form input,
+  #dish-search {
+    font-size: 16px;
+    min-height: 2.75rem;
+  }
+  .book-go,
+  .trip-cta-btn,
+  .list-more {
+    min-height: 2.75rem;
+    padding: 0.65rem 1rem;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .brand-cluster { gap: 0.4rem; }
+  .book-dates { grid-template-columns: minmax(0, 1fr); }
 }

@@ -272,9 +272,9 @@ ready(() => {
     book.querySelector<HTMLFormElement>('[data-book-form]')?.addEventListener('submit', (event) => {
       event.preventDefault();
       const city = book.querySelector<HTMLSelectElement>('[data-book-city]')?.value || 'bangkok';
+      const guests = book.querySelector<HTMLSelectElement>('[data-book-guests]')?.value || '2-1';
       const pack = links[city] || links.bangkok;
       if (!pack) return;
-      const guests = book.querySelector<HTMLSelectElement>('[data-book-guests]')?.value || '2-1';
       const href =
         tab === 'activities'
           ? pack.tours
