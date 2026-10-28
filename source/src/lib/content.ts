@@ -898,11 +898,11 @@ export const pages: Page[] = [
     facts: [
       {
         "label": "Start",
-        "value": "Grand Palace at opening"
+        "value": "Grand Palace at opening, 500 THB"
       },
       {
         "label": "Pair",
-        "value": "Wat Pho next, Wat Arun by ferry"
+        "value": "Wat Pho next at 300 THB, Wat Arun by ferry"
       },
       {
         "label": "Stay",
@@ -912,7 +912,7 @@ export const pages: Page[] = [
     photo: "/photos/old-city.jpg",
     geo: { lat: 13.75, lon: 100.492, containedIn: "Bangkok" },
     paragraphs: [
-      "Come for the palace and the river wats, then leave. Afternoon heat empties the lanes and fills the taxis. Eat on Tha Tien or go back to Sukhumvit for dinner.",
+      "Grand Palace is 500 THB for foreign visitors. Wat Pho is 300 THB. Come for the palace and the river wats, then leave. Afternoon heat empties the lanes and fills the taxis. Eat on Tha Tien or go back to Sukhumvit for dinner.",
       "Combo tickets and licensed guides are easier on Klook than at the gate when queues spike."
     ],
     affiliates: [
@@ -949,11 +949,11 @@ export const pages: Page[] = [
     facts: [
       {
         "label": "Rail",
-        "value": "Siam interchange; Sala Daeng to MRT Si Lom"
+        "value": "Siam BTS interchange; ARL ends at Phaya Thai"
       },
       {
         "label": "Use",
-        "value": "Malls, ARL link at Phaya Thai, park walks"
+        "value": "Malls, two BTS stops from Phaya Thai, park walks"
       },
       {
         "label": "Stay",
@@ -963,7 +963,7 @@ export const pages: Page[] = [
     photo: "/photos/siam.jpg",
     geo: { lat: 13.746, lon: 100.534, containedIn: "Bangkok" },
     paragraphs: [
-      "Siam is air-con malls on the Airport Rail Link. Stay one night if you land late and have not picked a neighborhood yet. Stay at Silom if you have meetings or want Lumphini at dawn."
+      "The Airport Rail Link ends at Phaya Thai. Change to the BTS and ride two stops to Siam (Phaya Thai, Ratchathewi, Siam). Siam is the BTS Sukhumvit and Silom interchange: air-con malls, not a soi neighbourhood. Stay one night if you land late and have not picked a neighbourhood yet. Stay at Silom if you have meetings or want Lumphini at dawn."
     ],
     affiliates: [
       stay("Siam hotels", "Interchange", "Walk to BTS and the malls. Rooms run larger in the chain towers.", stayAreaLink('siam'), "/photos/siam.jpg"),
@@ -1078,21 +1078,21 @@ export const pages: Page[] = [
     facts: [
       {
         "label": "Shape",
-        "value": "A square moat you can walk in an hour"
+        "value": "About 6.5 km; 75 to 90 minutes on foot"
       },
       {
         "label": "Market",
         "value": "Sunday Walking Street on Ratchadamnoen"
       },
       {
-        "label": "Stay",
-        "value": "Guesthouses and a few quiet hotels"
+        "label": "Temple booths",
+        "value": "20 to 50 THB cash"
       }
     ],
     photo: "/photos/chiang-mai-old-city.jpg",
     geo: { lat: 18.788, lon: 98.993, containedIn: "Chiang Mai" },
     paragraphs: [
-      "The Old City is a moated square of Lanna wats, not a nightlife grid. Scooters cut the corners. Sidewalks vanish. The moat road is the easy loop if you are tired of sois."
+      "The Old City is a moated square of Lanna wats, not a nightlife grid. The moat loop is about 6.5 km and takes 75 to 90 minutes on foot. Temple booths take 20 to 50 THB cash. Scooters cut the corners. Sidewalks vanish. The moat road is the easy loop if you are tired of sois."
     ],
     affiliates: [
       stay("Old City stays", "Inside the moat", "Book early for Sunday-market weekends.", stayAreaLink('chiang-mai-old-city'), "/photos/chiang-mai-old-city.jpg"),
@@ -1107,7 +1107,7 @@ export const pages: Page[] = [
   {
     path: "/chiang-mai/nimmanhaemin",
     title: "Nimmanhaemin",
-    description: "Chiang Mai's cafe and dinner district west of the moat.",
+    description: "Chiang Mai's cafe and dinner district west of the moat, for later evenings than the Old City.",
     lede: "Nimman is the later, cafe side of Chiang Mai. Stay here if the Old City feels too early. Soi 9 and the lanes west of Nimmanhaemin are the evening grid.",
     schema: "TouristDestination",
     crumbs: [
@@ -2659,8 +2659,8 @@ export const pages: Page[] = [
     ],
     photo: "/photos/krabi.jpg",
     paragraphs: [
-      "Yao Noi is the point: limestone bay, not a nightlife strip. Transfers are a pier plus a longtail or speedboat from Phuket or Krabi.",
-      "Book boats in the Andaman season. In the southwest monsoon, treat this as a weather-dependent stay."
+      "Yao Noi is the point: limestone bay, not a nightlife strip. Transfers are a pier plus a longtail or speedboat from Phuket or Krabi, often 45 to 75 minutes after you leave the airport.",
+      "Book boats in the Andaman season (November to April). In the southwest monsoon, treat this as a weather-dependent stay."
     ],
     affiliates: [
       stay("Six Senses Yao Noi rates", "Trip.com", "Live rates for this property and nearby peers.", hotelSearchLink('Six Senses Yao Noi', 'phuket'), "/photos/krabi.jpg"),
@@ -2677,7 +2677,7 @@ export const pages: Page[] = [
     path: "/resort-living/six-senses-samui",
     title: "Six Senses Samui",
     description: "Villa resort on a headland above Bophut, on the Gulf side of Samui.",
-    lede: "Villa resort on a headland above Bophut, on the Gulf side of Samui.",
+    lede: "Villa resort on a headland above Bophut, on the Gulf side of Samui. Use it when the stay is the trip.",
     schema: "Article",
     crumbs: [
       {
@@ -2750,7 +2750,7 @@ export const pages: Page[] = [
     ],
     photo: "/photos/riverside.jpg",
     paragraphs: [
-      "Capella sits on the river, not on Sukhumvit. Use it when the room and the river path are the evenings.",
+      "Capella sits on the river, not on Sukhumvit. Use it when the room and the river path are the evenings. The palace is about 20 minutes by boat at opening.",
       "The palace is a morning boat. Charoenkrung bars are a short Grab. Do not expect a BTS at the door."
     ],
     affiliates: [
@@ -2812,7 +2812,7 @@ export const pages: Page[] = [
     path: "/resort-living/four-seasons-chiang-mai",
     title: "Four Seasons Chiang Mai",
     description: "Rice-terrace pavilions north of the city in the Mae Rim valley.",
-    lede: "Rice-terrace pavilions north of the city in the Mae Rim valley.",
+    lede: "Rice-terrace pavilions north of the city in the Mae Rim valley. Budget 30 to 45 minutes to the Old City.",
     schema: "Article",
     crumbs: [
       {
@@ -2885,8 +2885,8 @@ export const pages: Page[] = [
     ],
     photo: "/photos/koh-samui.jpg",
     paragraphs: [
-      "Northwest Samui is a different island from Chaweng. You will Grab or drive for most off-property dinners.",
-      "Use the Gulf window. USM is the arrival. Pair with a Phangan boat only if you want a day off-property."
+      "Northwest Samui is a different island from Chaweng. You will Grab or drive 30 to 40 minutes for most off-property dinners.",
+      "Use the Gulf window (January to September). USM is the arrival. Pair with a Phangan boat only if you want a day off-property."
     ],
     affiliates: [
       stay("Four Seasons Koh Samui rates", "Trip.com", "Live rates for this property and nearby peers.", hotelSearchLink('Four Seasons Koh Samui', 'koh-samui'), "/photos/koh-samui.jpg"),
@@ -2930,8 +2930,8 @@ export const pages: Page[] = [
     ],
     photo: "/photos/koh-phangan.jpg",
     paragraphs: [
-      "Koh Kood is not Samui and not the Andaman circuit. Treat Soneva Kiri as its own trip, not a bolt-on to Phuket.",
-      "Transfer logistics are the first thing to book. Rates without a transfer plan are incomplete."
+      "Koh Kood is not Samui and not the Andaman circuit. Treat Soneva Kiri as its own trip, not a bolt-on to Phuket. The usual window is November to February.",
+      "Transfer logistics are the first thing to book. Budget most of a travel day from Bangkok. Rates without a transfer plan are incomplete."
     ],
     affiliates: [
       stay("Soneva Kiri rates", "Trip.com", "Live rates for this property and nearby peers.", hotelSearchLink('Soneva Kiri', 'bangkok'), "/photos/koh-phangan.jpg"),
@@ -2975,8 +2975,8 @@ export const pages: Page[] = [
     ],
     photo: "/photos/krabi.jpg",
     paragraphs: [
-      "Rayavadee is Krabi's cliff-bay stay. You arrive by boat. That is not a bug.",
-      "Lock it in the Andaman window. A storm day here is still beautiful and fully stuck."
+      "Rayavadee is Krabi's cliff-bay stay. You arrive by boat, often 15 to 20 minutes from Ao Nang. That is not a bug.",
+      "Lock it in the Andaman window (November to April). A storm day here is still beautiful and fully stuck."
     ],
     affiliates: [
       stay("Rayavadee rates", "Trip.com", "Live rates for this property and nearby peers.", hotelSearchLink('Rayavadee Krabi', 'krabi'), "/photos/krabi.jpg"),
@@ -3020,7 +3020,7 @@ export const pages: Page[] = [
     ],
     photo: "/photos/siam.jpg",
     paragraphs: [
-      "VIE is an MGallery, not a beach villa. Ratchathewi puts you on the BTS between Siam and the Old City boats at Phaya Thai / ARL.",
+      "VIE is an MGallery, not a beach villa. Ratchathewi is one stop on the BTS from Siam and two stops from the Airport Rail Link at Phaya Thai.",
       "Use it as a Bangkok night that is nicer than a generic Sukhumvit tower, without going full river compound."
     ],
     affiliates: [
@@ -3065,8 +3065,8 @@ export const pages: Page[] = [
     ],
     photo: "/photos/nimman.jpg",
     paragraphs: [
-      "You will taxi to the Old City. That is the trade for the view and the pool.",
-      "Cool season is the point. In hot season, confirm the haze before you book a view room as the trip."
+      "You will taxi 20 to 30 minutes to the Old City. That is the trade for the view and the pool.",
+      "Cool season (November to February) is the point. In hot season, confirm the haze before you book a view room as the trip."
     ],
     affiliates: [
       stay("Veranda High Chiang Mai (MGallery) rates", "Trip.com", "Live rates for this property and nearby peers.", hotelSearchLink('Veranda High Chiang Mai', 'chiang-mai'), "/photos/nimman.jpg"),
@@ -3110,8 +3110,8 @@ export const pages: Page[] = [
     ],
     photo: "/photos/phuket.jpg",
     paragraphs: [
-      "This is the MGallery answer when Amanpuri is not the budget. Still treat it as a west-coast monsoon property.",
-      "HKT plus a car. Do not boat on arrival day."
+      "This is the MGallery answer when Amanpuri is not the budget. Still treat it as a west-coast monsoon property (November to April).",
+      "HKT plus a car, often 45 to 70 minutes. Do not boat on arrival day."
     ],
     affiliates: [
       stay("Avista Hideaway Phuket (MGallery) rates", "Trip.com", "Live rates for this property and nearby peers.", hotelSearchLink('Avista Hideaway Phuket', 'phuket'), "/photos/phuket.jpg"),
@@ -3436,7 +3436,7 @@ export const pages: Page[] = [
     path: "/interests/nightlife/koh-samui-beach-clubs",
     title: "Koh Samui beach clubs",
     description: "Gulf-side clubs, with Nikki Beach Koh Samui as the named draw.",
-    lede: "Gulf-side clubs, with Nikki Beach Koh Samui as the named draw.",
+    lede: "Gulf-side clubs, with Nikki Beach Koh Samui as the named draw. Use them for a daybed, not a Bangkok-style crawl.",
     schema: "Article",
     crumbs: [
       {
