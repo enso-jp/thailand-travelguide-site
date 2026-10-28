@@ -75,8 +75,8 @@ export const pages: Page[] = [
   {
     path: "/",
     title: "Thailand Travel Guide: destinations, monsoon notes, and how to get there",
-    description: "Plan a first trip to Thailand with destination pages, Andaman vs Gulf seasons, trains, ferries, and district nightlife. Facts first, not a pitch.",
-    lede: "Start with Bangkok, then pick a north or south fork. The monsoon flips: Andaman is easier November to April, the Gulf is easier January to September.",
+    description: "This guide is known for first-trip planning: destination pages, Andaman vs Gulf seasons, trains, ferries, and district nightlife. Facts first, not a pitch.",
+    lede: "Thailand is known for a city-then-fork first trip. Start in Bangkok, then go north or south. Andaman is easier November to April. The Gulf is easier January to September.",
     schema: "Article",
     crumbs: [
       {
@@ -349,8 +349,8 @@ export const pages: Page[] = [
   {
     path: "/itineraries",
     title: "Thailand itineraries",
-    description: "Ready routes from a first week to two Andaman weeks, plus Gulf islands, a northern loop, and a Bangkok-to-Kanchanaburi block.",
-    lede: "Start with 7 days for Bangkok plus one more place. Use 10 days for the classic north-and-south spine or one island chain. Use 14 days if you want rest days.",
+    description: "These routes are known for ready first-trip clocks: a first week, classic 10 days, two Andaman weeks, Gulf islands, a northern loop, and a west-of-Bangkok block.",
+    lede: "These itineraries are known for naming the clock and the fork. Use 7 days for Bangkok plus one place. Use 10 days for the spine or one island chain. Use 14 days if you want rest.",
     schema: "Article",
     crumbs: [
       {
@@ -700,8 +700,8 @@ export const pages: Page[] = [
   {
     path: "/bangkok",
     title: "Bangkok",
-    description: "Thailand's landing city: river temples, BTS hotel strips, street food, and two airports. Nightlife lives on its own pages.",
-    lede: "Bangkok is the usual first stop. Sleep on Sukhumvit or in Siam for the BTS. Sleep riverside for the Chao Phraya. The Old City is for temples, not late nights.",
+    description: "Bangkok is known for river temples, BTS hotel strips, street food, and two airports. Nightlife lives on its own pages.",
+    lede: "Bangkok is known as the usual first stop. Sleep on Sukhumvit or in Siam for the BTS. Sleep riverside for the Chao Phraya. The Old City is for temples, not late nights.",
     schema: "City",
     alternateName: "Krung Thep Maha Nakhon",
     crumbs: [
@@ -818,8 +818,8 @@ export const pages: Page[] = [
   {
     path: "/bangkok/sukhumvit-thonglor",
     title: "Sukhumvit and Thonglor",
-    description: "Bangkok's first-timer hotel strip: BTS Nana to Ekkamai, with Thonglor for dinner and bars.",
-    lede: "Sukhumvit is the BTS hotel strip most first stays use. Nana is louder and cheaper. Asok and Phrom Phong are the easy pairing. Thonglor is one stop on for dinner.",
+    description: "Sukhumvit is known for the first-timer BTS hotel strip from Nana to Ekkamai, with Thonglor for dinner and bars.",
+    lede: "Sukhumvit is known as the BTS hotel strip most first stays use. Nana is louder and cheaper. Asok and Phrom Phong are the easy pairing. Thonglor is one stop on for dinner.",
     schema: "TouristDestination",
     crumbs: [
       {
@@ -869,8 +869,8 @@ export const pages: Page[] = [
   {
     path: "/bangkok/riverside-charoenkrung",
     title: "Riverside and Charoenkrung",
-    description: "River hotels, warehouse bars, and the Chinatown edge along Charoenkrung.",
-    lede: "Stay here for the Chao Phraya and a night walk on Charoenkrung. The BTS is a short Grab, not at the door.",
+    description: "Riverside is known for river hotels, warehouse bars, and the Chinatown edge along Charoenkrung.",
+    lede: "Riverside is known for the Chao Phraya and a night walk on Charoenkrung. The BTS is a short Grab, not at the door.",
     schema: "TouristDestination",
     crumbs: [
       {
@@ -920,8 +920,8 @@ export const pages: Page[] = [
   {
     path: "/bangkok/old-city-rattanakosin",
     title: "Old City and Rattanakosin",
-    description: "Grand Palace, Wat Pho, and Wat Arun on Rattanakosin Island. A temple morning, not a hotel base.",
-    lede: "This is the temple morning. Go at opening. The Grand Palace dress code is real. Wat Arun is a ferry, not a taxi loop.",
+    description: "The Old City is known for Grand Palace, Wat Pho, and Wat Arun on Rattanakosin Island. A temple morning, not a hotel base.",
+    lede: "The Old City is known for the temple morning. Go at opening. The Grand Palace dress code is real. Wat Arun is a ferry, not a taxi loop.",
     schema: "TouristDestination",
     crumbs: [
       {
@@ -971,8 +971,8 @@ export const pages: Page[] = [
   {
     path: "/bangkok/siam-silom",
     title: "Siam and Silom",
-    description: "Siam is the mall and BTS interchange. Silom is offices, Lumphini Park, and the MRT.",
-    lede: "Stay here for malls and connections, not sois. Siam is the BTS knot. Silom walks to Lumphini and Sala Daeng.",
+    description: "Siam is known for malls and the BTS interchange. Silom is known for offices, Lumphini Park, and the MRT.",
+    lede: "Siam is known for malls and connections, not sois. It is the BTS knot. Silom walks to Lumphini and Sala Daeng.",
     schema: "TouristDestination",
     crumbs: [
       {
@@ -1021,8 +1021,8 @@ export const pages: Page[] = [
   {
     path: "/chiang-mai",
     title: "Chiang Mai",
-    description: "Northern Thailand's hub: Lanna temples inside the moat, Nimman cafes, and the sleeper train from Bangkok.",
-    lede: "Chiang Mai is the north base. Give it three nights. Sleep inside the moat for temples on foot. Sleep in Nimman for coffee and a later evening.",
+    description: "Chiang Mai is known for Lanna temples inside the moat, Nimman cafes, and the sleeper train from Bangkok.",
+    lede: "Chiang Mai is known as the north base. Give it three nights. Sleep inside the moat for temples on foot. Sleep in Nimman for coffee and a later evening.",
     schema: "City",
     crumbs: [
       {
@@ -1203,8 +1203,8 @@ export const pages: Page[] = [
   {
     path: "/phuket",
     title: "Phuket",
-    description: "Andaman island with an international airport, Patong nightlife, quieter west beaches, and boats to Phi Phi.",
-    lede: "Phuket is the easy Andaman airport with beaches attached. Stay on the west coast. Use Patong for a night if you want it, not as a four-night base.",
+    description: "Phuket is known for an international airport, west-coast beaches, Patong nightlife, and boats to Phi Phi.",
+    lede: "Phuket is known as the easy Andaman airport with beaches attached. Stay on the west coast. Use Patong for a night if you want it, not as a four-night base.",
     schema: "TouristDestination",
     alternateName: "Phuket Island",
     crumbs: [
@@ -1358,8 +1358,8 @@ export const pages: Page[] = [
   {
     path: "/koh-samui",
     title: "Koh Samui",
-    description: "Gulf island with its own airport, Chaweng nightlife, quieter north and south coasts, and boats to Phangan and Tao.",
-    lede: "Samui is the Gulf hub with an airport on the island. January to September is the easier sea. Chaweng is loud. The north and south coasts are quieter.",
+    description: "Samui is known for its own airport, Chaweng nightlife, quieter north and south coasts, and boats to Phangan and Tao.",
+    lede: "Samui is known as the Gulf hub with an airport on the island. January to September is the easier sea. Chaweng is loud. The north and south coasts are quieter.",
     schema: "TouristDestination",
     crumbs: [
       {
@@ -1506,8 +1506,8 @@ export const pages: Page[] = [
   {
     path: "/khao-sok",
     title: "Khao Sok",
-    description: "Rainforest and Cheow Lan Lake, a flooded karst reservoir between Surat Thani and Phang Nga.",
-    lede: "Come for limestone cliffs on a flooded lake, and a night in the forest. Sleep at the lake for dawn mist. Sleep in the village if you arrive late from Phuket or Krabi.",
+    description: "Khao Sok is known for rainforest and Cheow Lan Lake, a flooded karst reservoir between Surat Thani and Phang Nga.",
+    lede: "Khao Sok is known for limestone cliffs on a flooded lake and a night in the forest. Sleep at the lake for dawn mist. Sleep in the village if you arrive late.",
     schema: "TouristDestination",
     crumbs: [
       {
@@ -1574,8 +1574,8 @@ export const pages: Page[] = [
   {
     path: "/itineraries/best-14-days",
     title: "Best 14 days in Thailand",
-    description: "Bangkok, Chiang Mai, then one south coast. Fly the long legs. Flip Andaman vs Gulf with the monsoon.",
-    lede: "Two weeks: three nights Bangkok, three Chiang Mai, then a south coast. Do not add a second sea.",
+    description: "Fourteen days are known for Bangkok, Chiang Mai, then one south coast. Fly the long legs. Flip Andaman vs Gulf with the monsoon.",
+    lede: "Two weeks are known for three nights in Bangkok, three in Chiang Mai, then one south coast. Do not add a second sea.",
     schema: "Article",
     crumbs: [
       {
@@ -1710,8 +1710,8 @@ export const pages: Page[] = [
   {
     path: "/itineraries/first-week-7-days",
     title: "First week in Thailand (7 days)",
-    description: "Seven days: Bangkok plus Chiang Mai, or Bangkok plus one south coast. Not both.",
-    lede: "A first week has one fork after Bangkok. North for temples and food. South for a beach. Pick with the monsoon, not with a map that shows both.",
+    description: "A first week is known for Bangkok plus Chiang Mai, or Bangkok plus one south coast. Not both.",
+    lede: "A first week is known for one fork after Bangkok. North for temples and food. South for a beach. Pick with the monsoon, not with a map that shows both.",
     schema: "Article",
     crumbs: [
       {
@@ -1799,8 +1799,8 @@ export const pages: Page[] = [
   {
     path: "/itineraries/south-islands-10-days",
     title: "South islands in 10 days",
-    description: "Ten days on one sea. Andaman (Phuket, Krabi, Khao Sok) in November to April. Gulf (Samui, Phangan, Tao) in January to September.",
-    lede: "Pick a sea. The monsoon flip is the whole plan. Do not fly Phuket to Samui to see both on a first south trip.",
+    description: "Ten south days are known for staying on one sea. Andaman (Phuket, Krabi, Khao Sok) in November to April. Gulf (Samui, Phangan, Tao) in January to September.",
+    lede: "A south-islands plan is known for picking one sea. The monsoon flip is the whole point. Do not fly Phuket to Samui to see both on a first trip.",
     schema: "Article",
     crumbs: [
       {
@@ -2081,7 +2081,7 @@ export const pages: Page[] = [
     ],
     photo: "/photos/chiang-mai.jpg",
     paragraphs: [
-      "Long-distance trains now use Krung Thep Aphiwat Central Terminal, not Hua Lamphong, for the Chiang Mai sleepers. SRT 9 northbound (Krung Thep Aphiwat to Chiang Mai, about 18:40 to 07:15) is the useful overnight. SRT 10 is the southbound return, Chiang Mai about 18:00 to Krung Thep Aphiwat about 06:50. Confirm today's board. Budget a Grab; the station is north of the old core.",
+      "Long-distance trains now use Krung Thep Aphiwat Central Terminal, not Hua Lamphong, for the Chiang Mai sleepers. SRT 9 northbound (Krung Thep Aphiwat to Chiang Mai, about 18:40 to 07:15) is the useful overnight. SRT 10 is the southbound return, Chiang Mai about 18:20 to Krung Thep Aphiwat about 06:30. Don Mueang is about 06:13 if you fly DMK that morning. Confirm today's board. Budget a Grab; the station is north of the old core.",
       "Book trains on SRT or via Trip.com when inventory is mirrored. Book Gulf ferries the afternoon before. Book Andaman boats when the weather desk is awake, not a week out in September."
     ],
     sections: [
@@ -2231,7 +2231,7 @@ export const pages: Page[] = [
     ],
     photo: "/photos/chiang-mai.jpg",
     paragraphs: [
-      "This is the usual Bangkok-to-north choice: a short flight or the useful Thai sleeper. SRT 9 northbound (Krung Thep Aphiwat to Chiang Mai, about 18:40 to 07:15) is the one most first-timers mean. SRT 10 is the southbound sleeper, Chiang Mai about 18:00 to Krung Thep Aphiwat about 06:50. Confirm today's numbers on SRT the week you ride."
+      "This is the usual Bangkok-to-north choice: a short flight or the useful Thai sleeper. SRT 9 northbound (Krung Thep Aphiwat to Chiang Mai, about 18:40 to 07:15) is the one most first-timers mean. SRT 10 is the southbound sleeper, Chiang Mai about 18:20 to Krung Thep Aphiwat about 06:30. Don Mueang is about 06:13 if you fly DMK that morning. Confirm today's numbers on SRT the week you ride."
     ],
     sections: [
       {

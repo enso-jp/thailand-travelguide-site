@@ -19,9 +19,9 @@ export const wave6Pages: Page[] = [
     path: '/phuket/kata-and-karon',
     title: 'Kata and Karon, Phuket',
     description:
-      'Kata Yai, Kata Noi, and Karon are the mid-island west beaches. Families use Kata. Karon is the long open sand. November to April.',
+      'Kata and Karon are known for mid-island west-coast sand between Patong and the south cape. Families use Kata. Karon is the long open beach. November to April.',
     lede:
-      'Kata is the family west-coast beach with a short town. Karon is the longer open beach next door. They are not Patong. Stay here if you want sand and dinner without the Bangla strip.',
+      'Kata and Karon are known for walkable west-coast beaches that are not Patong. Stay Kata Yai if you want dinner on foot. Stay Karon if you want the longer open sand.',
     schema: 'TouristDestination',
     crumbs: [
       { name: 'Destinations', href: '/destinations' },
@@ -89,9 +89,9 @@ export const wave6Pages: Page[] = [
     path: '/phuket/kamala-and-surin',
     title: 'Kamala and Surin, Phuket',
     description:
-      'Kamala and Surin are the calmer west beaches north of Patong. Surin is the upscale sand. Kamala is the village. November to April.',
+      'Kamala and Surin are known for calmer west-coast water north of Patong. Surin is the short premium sand. Kamala is the village. November to April.',
     lede:
-      'Kamala is the village beach north of Patong. Surin is the prettier, more expensive sand next to it. Stay here if you want west-coast water without Kata town or Bangla Road.',
+      'Kamala and Surin are known for a quieter west-coast week than Patong. Sleep Kamala for a village and dinner. Sleep Surin if you will pay for the short pretty beach.',
     schema: 'TouristDestination',
     crumbs: [
       { name: 'Destinations', href: '/destinations' },
@@ -151,9 +151,9 @@ export const wave6Pages: Page[] = [
     path: '/phuket/rawai-and-nai-harn',
     title: 'Rawai and Nai Harn, Phuket',
     description:
-      'Rawai is the south pier and seafood village. Nai Harn is the swimming beach in the next bay. Do not book them as one sand.',
+      'Rawai is known for the south pier and seafood road, not a swim. Nai Harn is the swimming bay next door. Book them as two stays, not one sand.',
     lede:
-      'Rawai is the southern pier village, not a swimming beach. Nai Harn is the bay you actually swim. Promthep is the sunset lookout. Book the stay by that split.',
+      'Rawai is known for longtails and grills. Nai Harn is known for the south-cape swim. Promthep is the sunset lookout. Book the stay by that split.',
     schema: 'TouristDestination',
     crumbs: [
       { name: 'Destinations', href: '/destinations' },
@@ -213,9 +213,9 @@ export const wave6Pages: Page[] = [
     path: '/koh-samui/chaweng',
     title: 'Chaweng, Koh Samui',
     description:
-      'Chaweng is Samui\'s loud east-coast strip: the longest beach, the walking street, and the closest useful sand to USM.',
+      'Chaweng is known for Samui\'s longest east-coast beach, the walking street, and the short ride from USM. Loud, useful, and a poor four-night quiet base.',
     lede:
-      'Chaweng is the loud east-coast beach most first Samui nights use. Walk to dinner. Hear the road. Move to Lamai or the north coast if you want sleep more than a strip.',
+      'Chaweng is known for the loud east-coast strip most first Samui nights use. Walk to dinner. Hear the road. Move to Lamai or the north if you want sleep more than a strip.',
     schema: 'TouristDestination',
     crumbs: [
       { name: 'Destinations', href: '/destinations' },
@@ -261,9 +261,9 @@ export const wave6Pages: Page[] = [
     path: '/koh-samui/lamai',
     title: 'Lamai, Koh Samui',
     description:
-      'Lamai is the east-coast beach south of Chaweng: a slower town, a useful swim, and the Hin Ta Hin Yai rocks.',
+      'Lamai is known for a slower east-coast town south of Chaweng, a useful swim, and the Hin Ta Hin Yai rocks. Better for a week than the walking street.',
     lede:
-      'Lamai is the east-coast beach south of Chaweng. You still get a town and a swim. You lose most of the walking-street noise. Stay here for a longer Samui week.',
+      'Lamai is known for an east-coast bay with a town and less walking-street noise than Chaweng. Stay here for a longer Samui week. Stay Chaweng if USM and the strip are the point.',
     schema: 'TouristDestination',
     crumbs: [
       { name: 'Destinations', href: '/destinations' },
@@ -308,9 +308,9 @@ export const wave6Pages: Page[] = [
     path: '/bangkok/phrom-phong-and-thong-lo',
     title: 'Phrom Phong and Thong Lo',
     description:
-      'Phrom Phong and Thong Lo are the easy Sukhumvit hotel pair: EmQuartier, Benjakitti, and dinner one stop on at Thong Lo.',
+      'Phrom Phong and Thong Lo are known for the easy Sukhumvit hotel pair: EmQuartier, Benjakitti, and dinner one stop on at Thong Lo.',
     lede:
-      'Phrom Phong is the BTS hotel default with malls and Benjakitti. Thong Lo is one stop east for dinner. Stay on this pair if you want Sukhumvit without sleeping on Nana.',
+      'Phrom Phong is known for BTS hotels, malls, and Benjakitti. Thong Lo is known for dinner one stop east. Stay on this pair if you want Sukhumvit without sleeping on Nana.',
     schema: 'TouristDestination',
     crumbs: [
       { name: 'Destinations', href: '/destinations' },
@@ -355,9 +355,9 @@ export const wave6Pages: Page[] = [
     path: '/bangkok/silom-and-sathorn',
     title: 'Silom and Sathorn',
     description:
-      'Silom and Sathorn are the old business core: Sala Daeng, Lumphini dawn walks, and rooftop bars. Moon Bar is closed until 2 Dec 2026.',
+      'Silom and Sathorn are known for the old business core: Sala Daeng, Lumphini dawn walks, and rooftops. Moon Bar is closed until 2 Dec 2026.',
     lede:
-      'Silom is the BTS and MRT interchange for the old business core. Sathorn is the office ridge next to it. Stay here for Lumphini, meetings, and a rooftop drink, not for a first-timer soi crawl.',
+      'Silom is known for the Sala Daeng interchange and Lumphini. Sathorn is the office ridge next to it. Stay here for the park and a rooftop, not for a first-timer soi crawl.',
     schema: 'TouristDestination',
     crumbs: [
       { name: 'Destinations', href: '/destinations' },

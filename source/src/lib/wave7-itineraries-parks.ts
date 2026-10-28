@@ -23,9 +23,9 @@ export const wave7Pages: Page[] = [
     path: '/itineraries/10-days-classic-thailand',
     title: '10 days: Bangkok, Chiang Mai, and the south coast',
     description:
-      'Ten days for Bangkok, the Chiang Mai sleeper, and one south coast. Fly the long legs. Flip Andaman vs Gulf with the monsoon.',
+      'Ten days is known for the classic spine: Bangkok, the Chiang Mai sleeper, and one south coast. Fly the long legs. Flip Andaman vs Gulf with the monsoon.',
     lede:
-      'Ten days is Bangkok, Chiang Mai, and one south coast. Take SRT 9 northbound (Krung Thep Aphiwat to Chiang Mai, about 18:40 to 07:15). Do not add a second sea.',
+      'Ten days is known for Bangkok, Chiang Mai, and one south coast. Take SRT 9 northbound (Krung Thep Aphiwat to Chiang Mai, about 18:40 to 07:15). Do not add a second sea.',
     schema: 'Article',
     crumbs: [
       { name: 'Itineraries', href: '/itineraries' },
@@ -39,7 +39,7 @@ export const wave7Pages: Page[] = [
     photo: '/photos/bangkok.jpg',
     paragraphs: [
       'This is the compact classic: three Bangkok nights, the sleeper north, three Chiang Mai nights, then a south coast. The 14-day plan adds rest. This one does not. Drop Chiang Rai and a second island before you drop sleep.',
-      'SRT 9 northbound (Krung Thep Aphiwat to Chiang Mai, about 18:40 to 07:15) is the useful overnight. SRT 10 is the southbound return, Chiang Mai about 18:00 to Krung Thep Aphiwat about 06:50. Confirm today\'s board on SRT the week you ride. Do not go to Hua Lamphong for this sleeper.',
+      'SRT 9 northbound (Krung Thep Aphiwat to Chiang Mai, about 18:40 to 07:15) is the useful overnight. SRT 10 is the southbound return, Chiang Mai about 18:20 to Krung Thep Aphiwat about 06:30. Don Mueang is about 06:13 if you fly DMK that morning. Confirm today\'s board on SRT the week you ride. Do not go to Hua Lamphong for this sleeper.',
     ],
     days: [
       { n: 1, title: 'Bangkok arrival', body: 'Land BKK or DMK. Airport car or ARL to Sukhumvit. Sleep.', photo: '/photos/bangkok.jpg' },
@@ -73,9 +73,9 @@ export const wave7Pages: Page[] = [
     path: '/itineraries/2-weeks-andaman-island-hopping',
     title: '2 weeks: Andaman island hopping',
     description:
-      'Fourteen Andaman days: Phuket, Krabi or Railay, Phi Phi, Lanta, and an optional Lipe or Khao Sok finish. November to April.',
+      'Fourteen Andaman days are known for one-sea hopping: Phuket, Krabi or Railay, Phi Phi, Lanta, and an optional Lipe or Khao Sok finish. November to April.',
     lede:
-      'Two Andaman weeks hop one sea: Phuket, Krabi, Phi Phi, then Lanta. November to April is the window. Do not add Samui. The Gulf is a different monsoon.',
+      'Two Andaman weeks are known for hopping one sea: Phuket, Krabi, Phi Phi, then Lanta. November to April is the window. Do not add Samui. The Gulf is a different monsoon.',
     schema: 'Article',
     crumbs: [
       { name: 'Itineraries', href: '/itineraries' },
@@ -127,9 +127,9 @@ export const wave7Pages: Page[] = [
     path: '/itineraries/10-days-gulf-islands-samui-phangan-tao',
     title: '10 days: Samui, Phangan, and Tao',
     description:
-      'Ten Gulf days: Samui, Phangan, and optional Tao. January to September. May to August is the calmest, clearest sea.',
+      'Ten Gulf days are known for the Samui chain: Samui, Phangan, and optional Tao. January to September. May to August is the calmest, clearest sea.',
     lede:
-      'Ten days on the Lower Gulf: Samui, Phangan, then Tao if you dive. January to September is the window. May to August is the calmest, clearest sea.',
+      'Ten Gulf days are known for Samui, Phangan, then Tao if you dive. January to September is the window. May to August is the calmest, clearest sea.',
     schema: 'Article',
     crumbs: [
       { name: 'Itineraries', href: '/itineraries' },
@@ -177,9 +177,9 @@ export const wave7Pages: Page[] = [
     path: '/itineraries/7-days-northern-thailand-loop',
     title: '7 days: Northern Thailand loop',
     description:
-      'Seven northern days: Chiang Mai, optional Pai or Chiang Rai, and Doi Inthanon. Cooler November to February. Haze risk March to April.',
+      'Seven northern days are known for Chiang Mai plus one fork: Pai, Chiang Rai, or Doi Inthanon. Cooler November to February. Haze risk March to April.',
     lede:
-      'A northern week is Chiang Mai plus one fork: Pai, Chiang Rai, or Doi Inthanon. Do not stack all three. Fly CNX or take SRT 9 from Krung Thep Aphiwat.',
+      'A northern week is known for Chiang Mai plus one fork: Pai, Chiang Rai, or Doi Inthanon. Do not stack all three. Fly CNX or take SRT 9 from Krung Thep Aphiwat.',
     schema: 'Article',
     crumbs: [
       { name: 'Itineraries', href: '/itineraries' },
@@ -224,9 +224,9 @@ export const wave7Pages: Page[] = [
     path: '/itineraries/5-days-bangkok-ayutthaya-kanchanaburi',
     title: '5 days: Bangkok, Ayutthaya, and Kanchanaburi',
     description:
-      'Five days west and north of Bangkok: Old City temples, an Ayutthaya ruin day, and two nights for the River Kwai and Erawan.',
+      'Five central days are known for Old City temples, an Ayutthaya ruin day, and two Kanchanaburi nights for the River Kwai and Erawan.',
     lede:
-      'Five days is Bangkok plus two side trips: Ayutthaya by train from Krung Thep Aphiwat, then Kanchanaburi from Thonburi. Do not combine the ruins and the river on the same day.',
+      'Five days are known for Bangkok plus two side trips: Ayutthaya from Krung Thep Aphiwat, then Kanchanaburi from Thonburi. Do not combine the ruins and the river on the same day.',
     schema: 'Article',
     crumbs: [
       { name: 'Itineraries', href: '/itineraries' },
@@ -269,9 +269,9 @@ export const wave7Pages: Page[] = [
     path: '/khao-lak/similan-and-surin-islands',
     title: 'Similan and Surin Islands',
     description:
-      'The Andaman national parks off Khao Lak: Similan for granite and dive sites, Surin for snorkel villages. Mid-October to mid-May.',
+      'Similan and Surin are known for Andaman park islands off Khao Lak: granite dive sites and snorkel villages. Mid-October to mid-May only.',
     lede:
-      'Similan and Surin are the Andaman marine parks you boat from Khao Lak. The parks open about mid-October to mid-May. Do not plan them as a Phuket afterthought in August.',
+      'Similan and Surin are known as the Andaman marine parks you boat from Khao Lak, not from a Phuket lobby. They open about mid-October to mid-May. Skip them in August.',
     schema: 'TouristDestination',
     crumbs: [
       { name: 'Destinations', href: '/destinations' },
@@ -316,9 +316,9 @@ export const wave7Pages: Page[] = [
     path: '/kanchanaburi/erawan-and-sai-yok',
     title: 'Erawan and Sai Yok',
     description:
-      'Erawan is seven waterfall tiers west of Kanchanaburi. Sai Yok is the quieter river park toward Nam Tok. Give them separate mornings.',
+      'Erawan is known for seven waterfall tiers west of Kanchanaburi. Sai Yok is the quieter river park toward Nam Tok. Give them separate mornings.',
     lede:
-      'Erawan is the seven-tier park most people come west for. Sai Yok is the longer, quieter river park. Do not treat them as one waterfall stop after the bridge selfie.',
+      'Erawan is known for seven limestone tiers most people come west for. Sai Yok is the quieter river park. Do not treat them as one stop after the bridge selfie.',
     schema: 'TouristDestination',
     crumbs: [
       { name: 'Destinations', href: '/destinations' },
