@@ -25,6 +25,14 @@ export const tripCities = {
   'koh-phangan': { id: 1074, name: 'Koh Phangan' },
   'koh-tao': { id: 1215, name: 'Koh Tao' },
   ayutthaya: { id: 724, name: 'Ayutthaya' },
+  'koh-lanta': { id: 90741, name: 'Koh Lanta' },
+  'koh-lipe': { id: 36062, name: 'Koh Lipe' },
+  'koh-chang': { id: 3764, name: 'Koh Chang' },
+  'koh-kood': { id: 62195, name: 'Koh Kood' },
+  'chiang-rai': { id: 647, name: 'Chiang Rai' },
+  sukhothai: { id: 6045, name: 'Sukhothai' },
+  kanchanaburi: { id: 36027, name: 'Kanchanaburi' },
+  pai: { id: 35981, name: 'Pai' },
 } as const;
 
 export type StayCity = keyof typeof tripCities;
@@ -43,6 +51,10 @@ export const tripAreas = {
   patong: { city: 'phuket', keyword: 'Patong' },
   chaweng: { city: 'koh-samui', keyword: 'Chaweng' },
   'ao-nang': { city: 'krabi', keyword: 'Ao Nang' },
+  sairee: { city: 'koh-tao', keyword: 'Sairee' },
+  'klong-dao': { city: 'koh-lanta', keyword: 'Klong Dao' },
+  'white-sand-beach': { city: 'koh-chang', keyword: 'White Sand Beach' },
+  'bang-niang': { city: 'khao-lak', keyword: 'Bang Niang' },
 } as const;
 
 export type StayArea = keyof typeof tripAreas;
@@ -54,6 +66,9 @@ export const airports = {
   CNX: { city: 'Chiang Mai', name: 'Chiang Mai' },
   USM: { city: 'Koh Samui', name: 'Samui' },
   KBV: { city: 'Krabi', name: 'Krabi' },
+  CEI: { city: 'Chiang Rai', name: 'Mae Fah Luang Chiang Rai' },
+  URT: { city: 'Surat Thani', name: 'Surat Thani' },
+  CJM: { city: 'Chumphon', name: 'Chumphon' },
 } as const;
 
 export type AirportCode = keyof typeof airports;
@@ -124,3 +139,4 @@ export const partners = {
   klookSource: KLOOK_SOURCE,
   travelpayoutsMarker: TP_MARKER,
 };
+

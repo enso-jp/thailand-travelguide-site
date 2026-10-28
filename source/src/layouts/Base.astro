@@ -10,7 +10,7 @@ interface Props {
 
 const { page } = Astro.props;
 const url = absUrl(page.path);
-const image = page.photo ? absUrl(page.photo) : absUrl('/photos/bangkok.svg');
+const image = page.photo ? absUrl(page.photo) : absUrl('/photos/bangkok.jpg');
 const blocks = jsonLdFor(page);
 ---
 
@@ -108,6 +108,8 @@ const blocks = jsonLdFor(page);
           <span>Plan</span>
           <a href="/plan/when-to-go">When to go</a>
           <a href="/plan/visas-and-tdac">Visas and TDAC</a>
+          <a href="/plan/monsoon-and-burn-season">Monsoon and haze</a>
+          <a href="/plan/esim-and-sim-cards">eSIM and SIMs</a>
           <a href="/plan/trains-and-ferries">Trains and ferries</a>
           <a href="/plan/grab-and-bts">Grab and BTS</a>
         </div>
@@ -129,3 +131,4 @@ const blocks = jsonLdFor(page);
     </script>
   </body>
 </html>
+

@@ -1,0 +1,112 @@
+{
+  "ayutthaya": {
+    "author": "JJ Harrison",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Wat_Chai_Watthanaram_-_Ayutthaya.jpg"
+  },
+  "bangkok": {
+    "author": "Supanut Arunoprayote",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Phra_Prang_Wat_Arun_during_day.jpg"
+  },
+  "bts": {
+    "author": "kallerna",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Bangkok_Skytrain_BTS_3.jpg"
+  },
+  "chiang-mai": {
+    "author": "Stefan Fussan",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Chiang_Mai_-_Wat_Phra_Singh_-_0001.jpg"
+  },
+  "chiang-mai-old-city": {
+    "author": "Diliff",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Wat_Chedi_Luang_Assembly_Hall,_Chiang_Mai,_Thailand_-_Diliff.jpg"
+  },
+  "hua-hin": {
+    "author": "Elmschrat",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:01_Hua_Hin_Beach.jpg"
+  },
+  "khao-lak": {
+    "author": "Vyacheslav Argenberg",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Khao_Lak_Beach,_Thailand.jpg"
+  },
+  "khao-sok": {
+    "author": "Vyacheslav Argenberg",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cheow_Lan_Lake,_Rainforest,_Khao_Sok,_Thailand.jpg"
+  },
+  "koh-phangan": {
+    "author": "kaaist",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:View_to_Bottle_Beach,_Koh_Phangan.jpg"
+  },
+  "koh-samui": {
+    "author": "Vyacheslav Argenberg",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Koh_Samui,_Island,_Beach,_Thailand.jpg"
+  },
+  "koh-tao": {
+    "author": "Jakub Michankow",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Koh_tao_1.jpg"
+  },
+  "krabi": {
+    "author": "Krzysztof Golik",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:West_Rai_Leh_(11).jpg"
+  },
+  "nightlife": {
+    "author": "Kevin Poh",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Khao_San_Road_at_night_by_kevinpoh.jpg"
+  },
+  "nimman": {
+    "author": "กสิณธร ราชโอรส",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:%E0%B8%96%E0%B8%99%E0%B8%99%E0%B8%99%E0%B8%B4%E0%B8%A1%E0%B8%A1%E0%B8%B2%E0%B8%99%E0%B9%80%E0%B8%AB%E0%B8%A1%E0%B8%B4%E0%B8%99%E0%B8%97%E0%B9%8C_%E0%B8%AD.%E0%B9%80%E0%B8%A1%E0%B8%B7%E0%B8%AD%E0%B8%87_%E0%B8%88.%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88_(1).jpg"
+  },
+  "northern": {
+    "author": "Vyacheslav Argenberg",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Doi_Pui_mountains,_Chiang_Mai,_Thailand.jpg"
+  },
+  "old-city": {
+    "author": "Basile Morin",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B8%A8%E0%B8%A3%E0%B8%B5%E0%B8%A3%E0%B8%B1%E0%B8%95%E0%B8%99%E0%B8%A8%E0%B8%B2%E0%B8%AA%E0%B8%94%E0%B8%B2%E0%B8%A3%E0%B8%B2%E0%B8%A1_%E0%B8%A7%E0%B8%B1%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B0%E0%B9%81%E0%B8%81%E0%B9%89%E0%B8%A7_%E0%B8%81%E0%B8%A3%E0%B8%B8%E0%B8%87%E0%B9%80%E0%B8%97%E0%B8%9E%E0%B8%A1%E0%B8%AB%E0%B8%B2%E0%B8%99%E0%B8%84%E0%B8%A3_-_Wat_Phra_Kaew,_Temple_of_Emerald_Buddha,_Bangkok,_Thailand.jpg"
+  },
+  "pattaya": {
+    "author": "iMahesh",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Skyline_of_Pattaya_from_the_Pier_on_a_morning.jpg"
+  },
+  "phuket": {
+    "author": "Subhrajyoti07",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:The_Big_Buddha,_Phuket.jpg"
+  },
+  "resort": {
+    "author": "Stefan Fussan",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:View_from_Ao_Luek_Panoramic_Pool_Villa,_Krabi,_Thailand_SF0002.jpg"
+  },
+  "riverside": {
+    "author": "Supanut Arunoprayote",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Chao_Praya_River_view.jpg"
+  },
+  "siam": {
+    "author": "Supanut Arunoprayote",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Siam_Paragon_06.23.jpg"
+  },
+  "sukhumvit": {
+    "author": "OPK-Photography",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Bangkok,_Thailand,_Sukhumvit_Road,_2024.jpg"
+  }
+}

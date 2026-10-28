@@ -43,7 +43,19 @@ const REQUIRED_ROUTES = [
   '/koh-samui',
   '/koh-phangan',
   '/khao-sok',
+  '/koh-tao',
+  '/koh-lanta',
+  '/koh-lipe',
+  '/koh-chang-and-koh-kood',
+  '/khao-lak',
+  '/pai',
+  '/chiang-rai',
+  '/sukhothai',
+  '/ayutthaya',
+  '/kanchanaburi',
+  '/hua-hin',
   '/destinations/northern-thailand',
+  '/destinations/central-and-east',
   '/itineraries/best-14-days',
   '/itineraries/first-week-7-days',
   '/itineraries/south-islands-10-days',
@@ -51,10 +63,27 @@ const REQUIRED_ROUTES = [
   '/plan/visas-and-tdac',
   '/plan/trains-and-ferries',
   '/plan/grab-and-bts',
+  '/plan/esim-and-sim-cards',
+  '/plan/money-atms-and-promptpay',
+  '/plan/monsoon-and-burn-season',
+  '/plan/domestic-flights-and-baggage',
+  '/plan/scooters-and-road-rules',
+  '/plan/songkran-and-public-holidays',
   '/get-there/bangkok-to-chiang-mai',
   '/get-there/bangkok-to-phuket',
   '/get-there/bangkok-to-koh-samui',
   '/get-there/phuket-to-krabi-phi-phi',
+  '/get-there/bangkok-to-koh-phangan',
+  '/get-there/bangkok-to-koh-tao',
+  '/get-there/bangkok-to-krabi',
+  '/get-there/krabi-to-koh-lanta',
+  '/get-there/phuket-to-koh-samui',
+  '/get-there/surat-thani-to-khao-sok',
+  '/get-there/phuket-to-khao-sok',
+  '/get-there/chiang-mai-to-pai',
+  '/get-there/chiang-mai-to-chiang-rai',
+  '/get-there/bangkok-to-ayutthaya',
+  '/get-there/bangkok-to-kanchanaburi',
   '/interests/resort-living',
   '/resort-living/amanpuri',
   '/resort-living/six-senses-yao-noi',
@@ -74,6 +103,24 @@ const REQUIRED_ROUTES = [
   '/interests/nightlife/sukhumvit-soi-11',
   '/interests/nightlife/phuket-beach-clubs',
   '/interests/nightlife/koh-samui-beach-clubs',
+  '/thai-food',
+  '/thai-food/bangkok-street-food',
+  '/thai-food/bangkok-bib-gourmand',
+  '/thai-food/northern-lanna',
+  '/thai-food/southern-and-baba-nyonya',
+  '/thai-food/night-markets',
+  '/resort-living/four-seasons-bangkok',
+  '/resort-living/mandarin-oriental-bangkok',
+  '/resort-living/rosewood-bangkok',
+  '/resort-living/trisara-phuket',
+  '/resort-living/anantara-chiang-mai',
+  '/resort-living/137-pillars-house',
+  '/resort-living/phulay-bay',
+  '/resort-living/ritz-carlton-koh-samui',
+  '/interests/nightlife/ari-pradipat',
+  '/interests/nightlife/silom-sathorn',
+  '/interests/nightlife/phuket-kamala-bangtao',
+  '/interests/nightlife/samui-bophut-lamai',
 ];
 
 function walk(dir, files = []) {
@@ -110,12 +157,15 @@ for (const file of files) {
   });
 }
 
-const routesFile = join(ROOT, 'src/lib/content.ts');
-const routesSource = readFileSync(routesFile, 'utf8');
+const routesDir = join(ROOT, 'src/lib');
+const routesSource = readdirSync(routesDir)
+  .filter((name) => name.endsWith('.ts'))
+  .map((name) => readFileSync(join(routesDir, name), 'utf8'))
+  .join('\n');
 for (const route of REQUIRED_ROUTES) {
   const needles = [`path: '${route}'`, `path: "${route}"`];
   if (!needles.some((needle) => routesSource.includes(needle))) {
-    errors.push(`missing required route ${route} in src/lib/content.ts`);
+    errors.push(`missing required route ${route} in src/lib`);
   }
 }
 
@@ -133,3 +183,4 @@ if (errors.length) {
 }
 
 console.log(`check:content ok (${files.length} files, ${REQUIRED_ROUTES.length} required routes, 0 em dashes)`);
+
