@@ -453,5 +453,290 @@
     "author": "Khaosaming",
     "license": "CC BY-SA 3.0",
     "source": "https://commons.wikimedia.org/wiki/File:Silom_Road_Bangkok_Thailand.jpg"
+  },
+  "dish-khao-soi": {
+    "author": "Pequeño mar",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Khao_Soi.jpg"
+  },
+  "dish-pad-kra-pao": {
+    "author": "Takeaway",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2017_0426_Mu_krop_phat_kaphrao_khai_dao_rat_khao_in_Ayutthaya.jpg"
+  },
+  "dish-tom-yum": {
+    "author": "OpenCage",
+    "license": "CC BY-SA 2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:Tom_yum.jpg"
+  },
+  "dish-som-tum": {
+    "author": "Vyacheslav Argenberg",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Som_Tam_green_papaya_salad,_Bangkok,_Thailand.jpg"
+  },
+  "dish-som-tum-2": {
+    "author": "lazy fri13th",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Som_tam.jpg"
+  },
+  "dish-pad-thai": {
+    "author": "Kenamparo",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pad_Thai_garnished_with_orchid.jpg"
+  },
+  "dish-massaman": {
+    "author": "Vee Satayamas",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Beef_Massaman_curry_with_brown_rice.jpg"
+  },
+  "dish-khao-man-gai": {
+    "author": "stu_spivack",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Khao_man_gai.jpg"
+  },
+  "dish-khao-man-gai-2": {
+    "author": "Misaochan",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Hainanese_chicken_rice.jpg"
+  },
+  "dish-kanom-jeen": {
+    "author": "Takeaway",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2017_0426_Khanom_chin_nam_ya_Ayutthaya_market_02.jpg"
+  },
+  "dish-kanom-jeen-2": {
+    "author": "Takeaway",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Khanom_chin_nam_ngiao.jpg"
+  },
+  "dish-boat-noodle": {
+    "author": "Flickr user Alpha",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Boat_noodles.jpg"
+  },
+  "dish-hoi-tod": {
+    "author": "PattayaPatrol",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:DZ3_0635_Crispy_Thai-style_oyster_omelette_topped_with_fresh_scallions_-_a_savory_street-food_favorite_from_Sattahip.jpg"
+  },
+  "dish-mango-sticky": {
+    "author": "Muzirian",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mango_sticky_rice.jpg"
+  },
+  "dish-mango-sticky-2": {
+    "author": "Dennis Wong from Hong Kong, Hong Kong",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mango_sticy_rice_(3859549574).jpg"
+  },
+  "dish-sai-ua": {
+    "author": "Takeaway",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Thanin_market_chiang_mai_sausage.jpg"
+  },
+  "dish-nam-prik-ong": {
+    "author": "Takeaway",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Nam_phrik_ong.jpg"
+  },
+  "dish-khao-kha-moo": {
+    "author": "Takeaway",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Khao_kha_mu.jpg"
+  },
+  "dish-oh-aew": {
+    "author": "Government of Thailand",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Oh_Aew.jpg"
+  },
+  "dish-gaeng-som": {
+    "author": "Xufanc",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kaeng_som-marum63.JPG"
+  },
+  "dish-gaeng-som-2": {
+    "author": "Sumit Surai",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Gaeng_Som_Pla_Or_Thai_sour_fish_soup.jpg"
+  },
+  "dish-grilled-squid": {
+    "author": "PattayaPatrol",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:DFC_4127_Skewered_grilled_squid_perfectly_charred_and_ready_from_a_bustling_street_food_stall.jpg"
+  },
+  "dish-larb": {
+    "author": "Alpha from Melbourne, Australia",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Larb.jpg"
+  },
+  "dish-gai-yang": {
+    "author": "Unknown",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Thai_grilled_chicken.jpg"
+  },
+  "khao-yai": {
+    "author": "Kawpodmd",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Khao_Yai_National_Park.jpg"
+  },
+  "haew-suwat": {
+    "author": "sirinthorn phaopongthai",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Haew_Suwat_Waterfall.jpg"
+  },
+  "jomtien": {
+    "author": "Георгий Долгопский",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Jomtien_Beach.jpg"
+  },
+  "koh-larn": {
+    "author": "Don Ramey Logan",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Koh_Larn_Island_from_the_Bird_and_Bees_resort_by_Don_Ramey_Logan.jpg"
+  },
+  "wongamat": {
+    "author": "StarryVortex",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Wong_Amat_Beach.jpg"
+  },
+  "walking-street-pattaya": {
+    "author": "Brenden Brain",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Walking_Street_Pattaya.jpg"
+  },
+  "nong-nooch": {
+    "author": "Sstdapalm",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mammothgarden.jpg"
+  },
+  "sanctuary-truth": {
+    "author": "Seamus Onthebeach",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sanctuary_of_Truth.jpg"
+  },
+  "klong-prao": {
+    "author": "Vyacheslav Argenberg",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Klong_Prao_Beach,_west_coast_of_Ko_Chang_Island,_Thailand.jpg"
+  },
+  "lonely-beach": {
+    "author": "Tayon Siddique",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lonely_Beach.jpg"
+  },
+  "kai-bae": {
+    "author": "kallerna",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kai_Bae_viewpoint.jpg"
+  },
+  "klong-chao-fall": {
+    "author": "Stéphane Bidouze",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Khlong_Chao_Waterfall.jpg"
+  },
+  "bang-bao-kood": {
+    "author": "Vyacheslav Argenberg",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Koh_Kut,_Thailand,_Bang_Bao_Pier,_Twilight.jpg"
+  },
+  "tonsai": {
+    "author": "Jmex60",
+    "license": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:Tonsai_bay2.jpg"
+  },
+  "long-beach-pp": {
+    "author": "Anton Zelenov",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Long_Tail_boat_Phi_Phi_Don_02.jpg"
+  },
+  "viking-cave": {
+    "author": "Christophe95",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Viking_Cave.jpg"
+  },
+  "phi-phi-viewpoint": {
+    "author": "Christophe95",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:View_from_the_Ko_Phi_Phi_Don_viewpoint_(northwest).jpg"
+  },
+  "pak-chong": {
+    "author": "シャムネコ",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pak_Chong_Railway_Station.JPG"
+  },
+  "wat-mahathat-ayu": {
+    "author": "Gzzz",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Wat_Mahathat_Ayutthaya.jpg"
+  },
+  "wat-phra-si-sanphet": {
+    "author": "Unknown",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Wat_Phra_Si_Sanphet.jpg"
+  },
+  "bang-pa-in": {
+    "author": "Swaminathan",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Bang_Pa-In_Palace.jpg"
+  },
+  "baan-dam": {
+    "author": "Kate Branch",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Baan_Dam.jpg"
+  },
+  "big-buddha-phuket": {
+    "author": "Subhrajyoti07",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:The_Big_Buddha,_Phuket.jpg"
+  },
+  "tiger-cave": {
+    "author": "Christophe95",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Wat_Tham_Suea.jpg"
+  },
+  "sam-roi-yot": {
+    "author": "Niels Mickers",
+    "license": "CC BY 3.0 nl",
+    "source": "https://commons.wikimedia.org/wiki/File:Phraya_Nakhon_Cave.jpg"
+  },
+  "white-sand-chang": {
+    "author": "Slyronit",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Dusk_at_White_Sand_Beach,_Koh_Chang,_Thailand.jpg"
+  },
+  "dish-guay-jub": {
+    "author": "NuCastiel from Bangkok, Thailand",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:%E0%B8%81%E0%B9%8B%E0%B8%A7%E0%B8%A2%E0%B8%88%E0%B8%B1%E0%B9%8A%E0%B8%9A%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%82%E0%B9%89%E0%B8%99_Guay_Jab_Nam_Khon_(26590769259).jpg"
+  },
+  "dish-nam-tok": {
+    "author": "NuCastiel from Bangkok, Thailand",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%95%E0%B8%81%E0%B9%80%E0%B8%99%E0%B8%B7%E0%B9%89%E0%B8%AD_(34973623243).jpg"
+  },
+  "dish-kanom-jeen-crab": {
+    "author": "Fareedaaa",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:%E0%B8%82%E0%B8%99%E0%B8%A1%E0%B8%88%E0%B8%B5%E0%B8%99%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%A2%E0%B8%B2%E0%B8%9B%E0%B8%B9.jpg"
+  },
+  "blue-temple": {
+    "author": "Nina R from Africa",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Wat_Rong_Suea_Ten_(49725217737).jpg"
+  },
+  "than-mayom": {
+    "author": "::::=UT=::::",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ko_Chang,_Ko_Chang_District,_Trat,_Thailand_-_panoramio_(60).jpg"
+  },
+  "wat-phra-singh": {
+    "author": "Dennis G",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Wat_Phra_Singh.jpg"
+  },
+  "dish-khao-soi-2": {
+    "author": "Takeaway",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Khao_soi_Chiang_Mai.jpg"
   }
 }

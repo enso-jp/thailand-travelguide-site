@@ -14,7 +14,7 @@ export const wave13DistrictPages: Page[] = [
     path: '/bangkok/sukhumvit',
     title: 'Sukhumvit sois: Nana to Ekkamai',
     description: 'Soi-by-soi map of Bangkok\'s Sukhumvit BTS line: which exit to sleep on, what to skip at Nana, and which nightlife URL to open after dark.',
-    lede: 'The Sukhumvit BTS line is the default first-stay strip from Nana to Ekkamai. This soi map is for planners who already picked the rail and need the exit, not the hotel brand.',
+    lede: 'Sukhumvit is Bangkok\'s Skytrain hotel spine, from louder Nana and the Asok interchange through calmer Phrom Phong to dinner on Thonglor. Sleep near a BTS exit if you want the walk, not a soi hunt after dark.',
     schema: 'TouristDestination',
     crumbs: [
       { name: 'Destinations', href: '/destinations' },
@@ -32,7 +32,7 @@ export const wave13DistrictPages: Page[] = [
     paragraphs: [
       'Sukhumvit is the default Bangkok base: a hotel tower, a BTS gate, and dinner within ten minutes. The road runs east from the river. First-timers should treat it as a rail line, not one neighborhood. Nana is louder and cheaper. Asok is the interchange. Phrom Phong is Japanese dining and EmDistrict. Thong Lo and Ekkamai are one and two stops on for dinner bars.',
       'A 2026 BTS tap from Nana to Thong Lo is usually 17 to 37 THB and under 15 minutes. After midnight the train stops. Grab from Soi 11 to Thonglor is often 80 to 160 THB. Do not rent a scooter here. The frontage road is a highway with buses.',
-      'Stay one block off Sukhumvit Road if you want sleep. Rooms that face the soi get the bass. This page is the soi map: which BTS exit, what to skip, and which nightlife URL to open. [Sukhumvit and Thonglor stays](/bangkok/sukhumvit-thonglor) is the hotel playbook for the same line.',
+      'Stay one block off Sukhumvit Road if you want sleep. Rooms that face the soi get the bass. The soi map names which BTS exit, what to skip, and which nightlife URL to open. [Sukhumvit and Thonglor stays](/bangkok/sukhumvit-thonglor) is the hotel playbook for the same line.',
       'Food is the reason the strip works. Soi 38 still feeds late bowls. Thonglor is the reservation grid. Chinatown is a 20 to 35 minute Grab if you want Yaowarat instead. Do not stack Soi 11, a palace morning, and Chatuchak on the same calendar day.',
     ],
     sections: [
@@ -73,8 +73,8 @@ export const wave13DistrictPages: Page[] = [
   {
     path: '/bangkok/silom-sathon',
     title: 'Silom and Sathon park and rail',
-    description: 'How to use Lumphini Park, Sala Daeng, and Saphan Taksin from Silom and Sathon: dawn walks, BTS and MRT exits, and the orange-flag river boat.',
-    lede: 'Silom and Sathon are the park-and-rail side of Bangkok. Come for Lumphini at dawn, the Sala Daeng interchange, and a boat from Saphan Taksin, not for hotel shopping.',
+    description: 'Lumphini Park, Sala Daeng, and Saphan Taksin from Silom and Sathon: dawn walks, BTS and MRT exits, and the orange-flag river boat.',
+    lede: 'Lumphini Park is the dawn reason to sleep on Silom, with Sala Daeng and Chong Nonsi linking the Skytrain corridor down to Chao Phraya river piers. Come for the park and the boat, not a hotel hunt.',
     schema: 'TouristDestination',
     crumbs: [
       { name: 'Destinations', href: '/destinations' },
@@ -92,7 +92,7 @@ export const wave13DistrictPages: Page[] = [
     geo: { lat: 13.726, lon: 100.538, containedIn: 'Bangkok' },
     paragraphs: [
       'Silom is the older office spine. Sathon (also spelled Sathorn) is the wider boulevard of towers and embassies. Together they sit south of Siam and west of Sukhumvit. You come for the park, the interchange, and a hotel that is not on Soi 11.',
-      'A 2026 BTS tap from Sala Daeng to Siam is a 2-stop hop, often 17 THB on the adult board. MRT Si Lom to Sukhumvit (Asok) is one stop. Dawn in Lumphini is the local move: monitors on the lawn, food carts on the edge, and the city still quiet. Hotel, SkyWalk, and Suan Phlu notes live on [Silom and Sathorn stays](/bangkok/silom-and-sathorn). This page is exits, the park, and the river boat.',
+      'A 2026 BTS tap from Sala Daeng to Siam is a 2-stop hop, often 17 THB on the adult board. MRT Si Lom to Sukhumvit (Asok) is one stop. Dawn in Lumphini is the local move: monitors on the lawn, food carts on the edge, and the city still quiet. Hotel, SkyWalk, and Suan Phlu notes live on [Silom and Sathorn stays](/bangkok/silom-and-sathorn). Exits, the park, and the river boat sit here.',
       'Nightlife here is thinner than Thonglor. [Silom and Sathorn nightlife](/interests/nightlife/silom-sathorn) covers the rooms that exist. Patpong is a tourist market, not a first-trip plan. For seated cocktails, Grab to [Charoenkrung](/interests/nightlife/charoenkrung-soi-nana).',
       'Eat at lunch when the office crowd is out. Evening food thins after 21:00 except around Sala Daeng. A Grab to Thonglor after dinner is often 80 to 150 THB and 20 minutes if the expressway is kind.',
     ],
@@ -124,7 +124,7 @@ export const wave13DistrictPages: Page[] = [
     path: '/bangkok/rattanakosin',
     title: 'Rattanakosin tickets: Grand Palace, Wat Pho, Wat Arun',
     description: '2026 Grand Palace, Wat Pho, and Wat Arun tickets, dress code, and the Tha Tien ferry. A morning circuit board, not a hotel guide.',
-    lede: 'Rattanakosin is the royal ticket circuit: 500 THB at the Grand Palace and 300 THB at Wat Pho. Sleep notes live on the Old City stay page if the wats are the whole stay.',
+    lede: 'Rattanakosin is known for the royal ticket circuit. Pay 500 THB at the Grand Palace and 300 THB at Wat Pho. Sleep notes live on the Old City stay page.',
     schema: 'TouristDestination',
     crumbs: [
       { name: 'Destinations', href: '/destinations' },
@@ -141,7 +141,7 @@ export const wave13DistrictPages: Page[] = [
     photo: '/photos/old-city.jpg',
     geo: { lat: 13.75, lon: 100.492, containedIn: 'Bangkok' },
     paragraphs: [
-      'Rattanakosin is the island inside the old river bend. It is not a nightlife district. You come for the Grand Palace and Wat Phra Kaew, then Wat Pho, then the ferry to Wat Arun. This page is the 2026 ticket board. Where to sleep after the circuit lives on [Old City stays](/bangkok/old-city-rattanakosin).',
+      'Rattanakosin is the island inside the old river bend. It is not a nightlife district. You come for the Grand Palace and Wat Phra Kaew, then Wat Pho, then the ferry to Wat Arun. The 2026 ticket board sits here. Where to sleep after the circuit lives on [Old City stays](/bangkok/old-city-rattanakosin).',
       'Enter the palace at Mani Noppharat Gate when it opens. Shoulders and knees covered. The 2026 foreign ticket is 500 THB. Wat Pho next door is 300 THB and worth the hour if you want the Reclining Buddha and a massage school table. Wat Arun is 200 THB after a 5 THB ferry from Tha Tien. Three to four hours covers the set if you start at 08:30.',
       'Sleep here only if the wats are the whole stay. Evening food is thin after 21:00. Khao San is a different product one moat over. Most first-timers should sleep on Sukhumvit or the river and Grab in for the morning. A 2026 Grab from Thonglor at 07:15 is often 150 to 280 THB.',
       'Do not add Chatuchak the same morning. Do not drive the palace loop at 10:00. Licensed guides and timed tickets are easier on Klook when the queue spikes. Combo tickets change. Recheck the gate board.',
@@ -174,7 +174,7 @@ export const wave13DistrictPages: Page[] = [
     path: '/bangkok/chinatown-yaowarat',
     title: 'Yaowarat access and where to sleep',
     description: 'How to reach Bangkok Chinatown on MRT Wat Mangkon, where to sleep, and how to use one dinner walk without booking a hotel on Yaowarat Road.',
-    lede: 'Yaowarat is one night food walk under gold-shop signs. This access note covers the MRT door and the stay trade. Named stalls live on the Yaowarat food walk.',
+    lede: 'Most travellers ride MRT Wat Mangkon for an evening food walk under gold-shop signs, or sleep in nearby Charoenkrung shophouse lanes. Named stalls live on the Yaowarat food walk.',
     schema: 'TouristDestination',
     crumbs: [
       { name: 'Destinations', href: '/destinations' },
@@ -192,20 +192,20 @@ export const wave13DistrictPages: Page[] = [
     paragraphs: [
       'Chinatown here means Yaowarat Road and the sois off it, plus Talat Noi toward the river. It is a dinner district, not a four-night base. Gold shops and wholesale run the day. The street food walk starts when the tables come out, usually after 18:00.',
       'MRT Wat Mangkon Exit 1 drops you on the spine. A 2026 adult MRT single from Sukhumvit (Asok) is 32 THB for 7 stations, about 14 minutes. Odeon Circle and the dragon gate are the photo stop, not the meal. Walk west for seafood trays and noodle shops. A plate is often 60 to 200 THB. A seafood set for two can pass 1,000 THB if you point at the tank.',
-      'The [Yaowarat food walk](/thai-food/yaowarat-chinatown-food-walk) names stalls. This page is the stay-and-access trade, not the stall list. Sleep riverside or on Charoenkrung if you want a short walk home. Sleep on Sukhumvit if Chinatown is one night of three. A late Grab back to Thonglor is often 120 to 220 THB.',
+      'The [Yaowarat food walk](/thai-food/yaowarat-chinatown-food-walk) names stalls. Access and stay sit here, not the stall list. Sleep riverside or on Charoenkrung if you want a short walk home. Sleep on Sukhumvit if Chinatown is one night of three. A late Grab back to Thonglor is often 120 to 220 THB.',
       'Wat Traimit at the eastern edge holds the Golden Buddha. That is a morning add-on, 40 THB for the upper rooms in recent years. Recheck the booth. Do not mix a palace morning, a Wat Traimit stop, and a full Yaowarat dinner unless you like a 14-hour day.',
     ],
     sections: [
       {
         id: 'use',
-        title: 'How to use Chinatown',
+        title: 'Chinatown moves',
         table: {
           headers: ['Move', 'When', '2026 note'],
           rows: [
             ['MRT Wat Mangkon', 'Any night after 17:30', 'Exit 1 to the spine'],
             ['Yaowarat walk', '18:00 to 22:00', 'One serious meal, not eight snacks'],
             ['Talat Noi', 'Day or early evening', 'Street art and quieter sois'],
-            ['Charoenkrung bars', 'After dinner', 'See the Soi Nana nightlife page'],
+            ['Charoenkrung bars', 'After dinner', 'Soi Nana nightlife after dinner'],
           ],
         },
       },

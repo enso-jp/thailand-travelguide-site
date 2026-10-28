@@ -1,0 +1,80 @@
+---
+import { MAP_PINS, type RegionSlug } from '../lib/regions';
+
+interface Props {
+  variant?: 'home' | 'rail';
+  active?: RegionSlug | string;
+  linked?: boolean;
+}
+
+const { variant = 'home', active = 'central', linked = true } = Astro.props;
+
+const regions: { slug: RegionSlug; href: string; d: string; name: string }[] = [
+  {
+    slug: 'north',
+    name: 'Northern Highlands',
+    href: '/destinations/northern-thailand',
+    d: 'M118 28 L168 8 L214 18 L236 62 L248 118 L210 168 L168 188 L132 170 L108 120 L102 68 Z',
+  },
+  {
+    slug: 'east',
+    name: 'Eastern Seaboard and Isan',
+    href: '/destinations/central-and-east',
+    d: 'M210 168 L248 118 L292 150 L318 210 L310 280 L278 330 L248 360 L228 340 L216 292 L206 230 Z',
+  },
+  {
+    slug: 'central',
+    name: 'Bangkok and Central Plains',
+    href: '/destinations/central-and-east',
+    d: 'M132 170 L168 188 L210 168 L206 230 L216 292 L228 340 L200 368 L168 360 L148 320 L140 250 L128 210 Z',
+  },
+  {
+    slug: 'andaman',
+    name: 'Andaman Coast',
+    href: '/phuket',
+    d: 'M148 320 L168 360 L176 420 L160 470 L138 520 L108 560 L88 590 L78 560 L92 510 L118 460 L132 400 L140 350 Z',
+  },
+  {
+    slug: 'gulf',
+    name: 'Gulf of Thailand Islands',
+    href: '/koh-samui',
+    d: 'M168 360 L200 368 L206 420 L198 470 L186 510 L170 540 L156 520 L160 470 L176 420 Z',
+  },
+];
+---
+
+<svg
+  class:list={['map-svg', 'map-thailand', { 'map-home': variant === 'home', 'map-picked': true }]}
+  viewBox="0 0 360 640"
+  preserveAspectRatio="xMidYMin meet"
+  role="img"
+  aria-label="Map of Thailand by region"
+>
+  {
+    regions.map((region) => {
+      const Tag = linked ? 'a' : 'g';
+      return (
+        <Tag
+          class:list={['map-hit', 'map-province', { 'is-active': region.slug === active }]}
+          href={linked ? region.href : undefined}
+          data-region={region.slug}
+          data-province={region.name}
+          data-corridor-name={region.name}
+        >
+          <title>{region.name}</title>
+          <path d={region.d}></path>
+        </Tag>
+      );
+    })
+  }
+  <g class="map-pins" aria-hidden="true">
+    {
+      MAP_PINS.map((pin) => (
+        <a class:list={['map-pin', { 'is-active': pin.region === active }]} href={pin.href} data-region={pin.region} data-province={pin.name}>
+          <circle cx={pin.x} cy={pin.y} r="4.4"></circle>
+          <text x={pin.lx} y={pin.ly} text-anchor={pin.anchor}>{pin.name}</text>
+        </a>
+      ))
+    }
+  </g>
+</svg>

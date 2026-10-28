@@ -403,7 +403,7 @@ export const wave6Pages: Page[] = [
     geo: { lat: 13.73, lon: 100.57, containedIn: 'Bangkok' },
     paragraphs: [
       'Phrom Phong and Thong Lo are the mid-Sukhumvit stay if you want Japanese dining, coffee, and a BTS hotel without starting on Nana. BTS Phrom Phong (E5) opens onto EmDistrict: Emporium, EmQuartier, and EmSphere. Benchasiri Park is the small green next to Emporium, useful at dawn or after the malls. Thong Lo (E6) is one stop east. A 2026 BTS tap on this stretch is about 17 to 32 THB.',
-      'Soi 39, 33, and 24 hold the Japanese row. Specialty coffee sits in the same blocks and along Thong Lo. After dark, Soi 55 (Thong Lo) is the cocktail and late-food lane. Bar Us, Rabbit Hole, and Find The Locker Room live on the Thonglor nightlife page. This page is the stay and the daytime map, not a crawl list.',
+      'Soi 39, 33, and 24 hold the Japanese row. Specialty coffee sits in the same blocks and along Thong Lo. After dark, Soi 55 (Thong Lo) is the cocktail and late-food lane. Bar Us, Rabbit Hole, and Find The Locker Room live on the Thonglor nightlife page. The stay and the daytime map sit here, not a crawl list.',
     ],
     sections: [
       {
@@ -472,7 +472,7 @@ export const wave6Pages: Page[] = [
     sections: [
       {
         id: 'move',
-        title: 'How to use the ridge',
+        title: 'The ridge',
         paragraphs: [
           'Stay on Silom if you want Sala Daeng food and the BTS/MRT cross. Stay on Sathorn if the hotel tower and a quieter night matter more. The river is a Grab or a walk plus heat to Saphan Taksin. Lumphini is the morning. Patpong stalls by Sala Daeng are souvenirs on a go-go block, not a food plan. The Silom nightlife page covers the bars.',
         ],

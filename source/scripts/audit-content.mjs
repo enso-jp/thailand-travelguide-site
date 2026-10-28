@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { createRequire } from 'node:module';
-import { existsSync, mkdtempSync, readFileSync, rmSync } from 'node:fs';
-import { join } from 'node:path';
+import { existsSync, mkdtempSync, readdirSync, readFileSync, rmSync, statSync } from 'node:fs';
+import { extname, join, relative } from 'node:path';
 import { tmpdir } from 'node:os';
 import { pathToFileURL } from 'node:url';
 
@@ -82,6 +82,45 @@ const SKIP_AFFILIATES = new Set([
 ]);
 
 const errors = [];
+
+const SKIP_DIRS = new Set(['node_modules', 'dist', '.git', '.astro', '.cursor']);
+const TEXT_EXT = new Set([
+  '.astro',
+  '.ts',
+  '.tsx',
+  '.js',
+  '.mjs',
+  '.cjs',
+  '.md',
+  '.css',
+  '.json',
+  '.html',
+  '.yml',
+  '.yaml',
+  '.txt',
+  '.svg',
+]);
+
+function walkFiles(dir, files = []) {
+  for (const name of readdirSync(dir)) {
+    if (SKIP_DIRS.has(name)) continue;
+    const full = join(dir, name);
+    if (statSync(full).isDirectory()) walkFiles(full, files);
+    else files.push(full);
+  }
+  return files;
+}
+
+for (const file of walkFiles(ROOT)) {
+  const ext = extname(file).toLowerCase();
+  if (!TEXT_EXT.has(ext) && !(ext === '' && file.endsWith('_redirects'))) continue;
+  const rel = relative(ROOT, file);
+  readFileSync(file, 'utf8')
+    .split('\n')
+    .forEach((line, i) => {
+      if (EM_DASH.test(line)) fail(rel, `em dash (U+2014) is not allowed on line ${i + 1}`);
+    });
+}
 
 function fail(path, message) {
   errors.push(`${path}: ${message}`);
@@ -199,7 +238,7 @@ async function loadPages() {
   const outfile = join(dir, 'content.mjs');
   try {
     await esbuild.build({
-      entryPoints: [join(ROOT, 'src/lib/content.ts')],
+      entryPoints: [join(ROOT, 'src/lib/audit-api.ts')],
       bundle: true,
       format: 'esm',
       platform: 'node',
@@ -207,13 +246,20 @@ async function loadPages() {
       logLevel: 'silent',
     });
     const mod = await import(pathToFileURL(outfile).href);
-    return mod.allPages();
+    return {
+      pages: mod.allPages(),
+      mainPhotosFor: mod.mainPhotosFor,
+      foodRowsFor: mod.foodRowsFor,
+      signatureDishesFor: mod.signatureDishesFor,
+      isDishPhoto: mod.isDishPhoto,
+      CITY_FOOD_PATHS: mod.CITY_FOOD_PATHS,
+    };
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }
 }
 
-const pages = await loadPages();
+    const { pages, mainPhotosFor, foodRowsFor, signatureDishesFor, isDishPhoto, CITY_FOOD_PATHS } = await loadPages();
 if (pages.length < 159) {
   fail('site', `expected 159+ routes, found ${pages.length}`);
 }
@@ -274,10 +320,6 @@ for (const page of pages) {
       fail(page.path, `day card photo matches hero (${photo})`);
     }
   }
-  const mainPhotos = photosOf(page);
-  if (new Set(mainPhotos).size !== mainPhotos.length) {
-    fail(page.path, 'duplicate photo inside main');
-  }
 
   for (const { kind, href } of internalHrefs(page)) {
     if (!isInternalPath(href)) continue;
@@ -287,7 +329,8 @@ for (const page of pages) {
     }
   }
 
-  for (const photo of new Set(photosOf(page))) {
+  const pagePhotos = mainPhotosFor(page);
+  for (const photo of new Set([...photosOf(page), ...pagePhotos])) {
     if (!photo.startsWith('/photos/')) {
       fail(page.path, `photo path must be under /photos/: ${photo}`);
       continue;
@@ -296,6 +339,12 @@ for (const page of pages) {
     if (!existsSync(file)) fail(page.path, `missing photo file ${photo}`);
     const key = creditKey(photo);
     if (!credits[key]) fail(page.path, `missing credits.json entry for ${photo} (key ${key})`);
+  }
+
+  const seenPhotos = new Set();
+  for (const photo of pagePhotos) {
+    if (seenPhotos.has(photo)) fail(page.path, `duplicate <main> photo on page: ${photo}`);
+    seenPhotos.add(photo);
   }
 
   const rendered = body.replace(/\[[^\]]+\]\((\/[a-z0-9\-\/]+)\)/gi, '$1').replace(/`[^`]+`/g, 'TERM').replace(/\*\*[^*]+\*\*/g, 'BOLD');
@@ -347,6 +396,31 @@ for (const page of pages) {
     .join('\n');
   if (/11105102|334225872|793638|588978|city 62195|click-out|stays scannable/i.test(visibleBits)) {
     fail(page.path, 'affiliate IDs or meta-copy leaked into visible text');
+  }
+
+  if (page.path === '/thai-food') {
+    const dishes = signatureDishesFor(page.photo ? [page.photo] : []);
+    const dishPhotos = dishes.map((dish) => dish.photo).filter(Boolean);
+    if (new Set(dishPhotos).size !== dishPhotos.length) {
+      fail(page.path, 'duplicate signature-dish photo on this page');
+    }
+    for (const dish of dishes) {
+      if (dish.photo && !isDishPhoto(dish.photo)) {
+        fail(page.path, `signature dish "${dish.title}" uses a non-dish photo (${dish.photo})`);
+      }
+    }
+  }
+  if (CITY_FOOD_PATHS.has(page.path)) {
+    const rows = foodRowsFor(page.path, page.photo ? [page.photo] : []);
+    const rowPhotos = rows.map((row) => row.photo).filter(Boolean);
+    if (new Set(rowPhotos).size !== rowPhotos.length) {
+      fail(page.path, 'duplicate food-row photo on this page');
+    }
+    for (const row of rows) {
+      if (row.kind === 'dish' && row.photo && !isDishPhoto(row.photo)) {
+        fail(page.path, `dish row "${row.title}" uses a non-dish photo (${row.photo})`);
+      }
+    }
   }
 
   if (isCommercial(page) && !page.affiliates?.length) {

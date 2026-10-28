@@ -98,7 +98,7 @@ export const wave10Pages: Page[] = [
     description:
       'Banthat Thong is the Chulalongkorn night food strip from Rama I toward Rama IV: Jeh O Mama bowls, toasted milk bread, Somboon curry crab, Haeundae and CQK, and soy milk. MRT Sam Yan or BTS National Stadium.',
     lede:
-      'Use this strip if you want late university food, not Chinatown gold shops. It fits night eaters from 17:00 to midnight who will wait for Jeh O or buy a Klook queue pass.',
+      'Banthat Thong is known for late university food, not Chinatown gold shops. It fits night eaters from 17:00 to midnight who will wait for Jeh O or buy a Klook queue pass.',
     schema: 'Article',
     crumbs: [
       { name: 'Thai food', href: '/thai-food' },
@@ -593,7 +593,7 @@ export const wave10Pages: Page[] = [
     chips: ['12 dishes', 'Spice words', 'Street vs sit-down'],
     photo: '/photos/thai-food.jpg',
     paragraphs: [
-      'Pad Thai is the gateway plate. The useful first-trip set is twelve others. Start with pad kra pao moo krob (crispy pork holy basil) and a fried egg khai dao on rice. Add som tam thai if you want peanut and palm sugar, or som tam poo pla ra if you want fermented crab and fish sauce and can handle the smell. Khao soi is the northern coconut noodle. Eat it at lunch in Chiang Mai.',
+      'Pad Thai is the gateway plate. The useful first-trip set is twelve others. Pad kra pao moo krob (crispy pork holy basil) and a fried egg khai dao on rice is the usual first order. Add som tam thai if you want peanut and palm sugar, or som tam poo pla ra if you want fermented crab and fish sauce and can handle the smell. Khao soi is the northern coconut noodle. Eat it at lunch in Chiang Mai.',
       'Gaeng massaman is the mild peanut-and-potato curry. Southern gaeng som is sour turmeric, not coconut-sweet. Tom yum goong nam khon is the creamy prawn soup; nam sai is the clear, sharper version. Moo ping grilled pork with sticky rice khao niao (ข้าวเหนียว) is the market snack. Street plates are 50 to 120 THB. Restaurant plates are 180 to 350 THB. Say pet nit noi for a little heat, mai pet for none. For neighbourhoods, start at the [Thai food hub](/thai-food).',
     ],
     sections: [

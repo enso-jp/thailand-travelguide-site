@@ -20,6 +20,7 @@ import { wave10Pages } from './wave10-food-guides';
 import { WAVE11_INTEREST_PAGES } from './wave11-interests';
 import { WAVE12_ITINERARY_PAGES } from './wave12-itineraries';
 import { applyWave13 } from './wave13';
+import { wave21Pages } from './wave21-pages';
 
 export type SchemaType = 'City' | 'TouristDestination' | 'Article';
 
@@ -100,8 +101,8 @@ const rawPages: Page[] = [
   {
     path: "/",
     title: "Thailand Travel Guide: destinations, monsoon notes, and how to get there",
-    description: "Plan a first trip to Thailand: a Bangkok landing, then a north or south fork. This guide covers seasons, trains, ferries, and districts. Facts first, not a pitch.",
-    lede: "River temples and late-night street food sit one Grab apart in Bangkok. Land there first, then fork north or south with the monsoon: Andaman November to April, Gulf January to September.",
+    description: "Thailand is a Bangkok landing plus a north hub or one south coast. Seasons, trains, ferries, and districts sit here for first-time Western planners.",
+    lede: "River temples and late-night street food set the Bangkok landing, then Chiang Mai's mountain wats and Old City lanes. A first route splits north or south: Andaman limestone bays from November to April, or Gulf islands from January to September.",
     schema: "Article",
     crumbs: [
       {
@@ -133,8 +134,8 @@ const rawPages: Page[] = [
     ],
     photo: "/photos/bangkok.jpg",
     paragraphs: [
-      "This site is for Western first-time planners who still want hyper-local utility: which BTS gate, which pier, which soi after dark. Start in Bangkok, then fork north or south with the monsoon.",
-      "Use the 7-day and 14-day itineraries as a spine. Swap the south coast when the monsoon says so. A 2026 BTS tap is 17 to 62 THB. The Airport Rail Link is about 30 minutes to Phaya Thai. Ticketed sights live on the Attractions hub: Grand Palace 500 THB, Wat Pho 300 THB, Maya Bay park fee 400 THB. Book stays and airport cars on Trip.com. Book island boats and attraction tickets on Klook."
+      "Bangkok is the usual first city for Western planners who still want hyper-local utility: which BTS gate, which pier, which soi after dark. Fork north or south with the monsoon.",
+      "The 7-day and 14-day itineraries are the usual spine. Swap the south coast when the monsoon says so. A 2026 BTS tap is 17 to 62 THB. The Airport Rail Link is about 30 minutes to Phaya Thai. Ticketed sights live on the Attractions hub: Grand Palace 500 THB, Wat Pho 300 THB, Maya Bay park fee 400 THB. Book stays and airport cars on Trip.com. Book island boats and attraction tickets on Klook."
     ],
     portraits: [
       {
@@ -212,8 +213,8 @@ const rawPages: Page[] = [
   {
     path: "/destinations",
     title: "Destinations in Thailand",
-    description: "Pick one landing city, then a north hub or one south coast. Bangkok, Chiang Mai, Andaman, Gulf, Trat, and the north corridor.",
-    lede: "Bangkok is the usual landing city. Chiang Mai holds the north. Phuket, Krabi, Lanta, Lipe, and Khao Lak share the Andaman. Samui, Phangan, and Tao sit on the Lower Gulf.",
+    description: "Bangkok, Chiang Mai, the Andaman, the Lower Gulf, Trat, and the north corridor. One landing city, then a north hub or one south coast.",
+    lede: "Thailand breaks into four distinct regions: Bangkok, the northern valleys around Chiang Mai, the Andaman coast, and the Gulf islands. If you fly south, the travel month decides which coast, because the two seas do not share one dry season.",
     schema: "Article",
     crumbs: [
       {
@@ -236,7 +237,7 @@ const rawPages: Page[] = [
       }
     ],
     paragraphs: [
-      "These destination pages cover stay trade-offs, not a country dump. District pages sit under Bangkok and Chiang Mai. The usual first hop after Bangkok is about 70 minutes by air to Chiang Mai, Phuket, or Samui. Ticketed temples, bays, and markets sit on the Attractions hub, not as a dump on each city page."
+      "Stay trade-offs live on destination pages, not a country dump. District pages sit under Bangkok and Chiang Mai. The usual first hop after Bangkok is about 70 minutes by air to Chiang Mai, Phuket, or Samui. Ticketed temples, bays, and markets sit on the Attractions hub, not as a dump on each city page."
     ],
     portraits: [
       {
@@ -546,8 +547,8 @@ const rawPages: Page[] = [
   {
     path: "/plan",
     title: "Plan a trip to Thailand",
-    description: "The decisions that lock a first trip: season, visas and TDAC, trains, eSIM, money, and how you move in Bangkok.",
-    lede: "Thailand runs two separate island monsoon calendars. Lock the coast before the visa and the SIM. Andaman is the winter sea. The Gulf is the summer sea. Then book transport and cash.",
+    description: "Season, visas and TDAC, trains, eSIM, money, and how you move in Bangkok: the lock-ins that decide a first trip.",
+    lede: "Thailand runs two separate island monsoon calendars, not one winter. If you land on a US, UK, or most EU passport, the 60-day visa-free stamp still applies, and you submit TDAC before the flight.",
     schema: "Article",
     crumbs: [
       {
@@ -570,7 +571,7 @@ const rawPages: Page[] = [
       }
     ],
     paragraphs: [
-      "Read when-to-go before you book the south. Read visas-and-tdac before you fly. Use the money, SIM, and monsoon pages before you pack. A 2026 BTS tap is 17 to 62 THB; keep that as the city baseline."
+      "Season decides the south coast. Visa and TDAC decide the flight. Money, a SIM, and the monsoon decide the pack list. A 2026 BTS tap is 17 to 62 THB; keep that as the city baseline."
     ],
     portraits: [
       {
@@ -624,8 +625,8 @@ const rawPages: Page[] = [
   {
     path: "/get-there",
     title: "Get there: Thailand routes",
-    description: "How to move between Bangkok, the islands, Khao Sok, the north, Ayutthaya, and Kanchanaburi. Fly when the day matters. Sleep on the Chiang Mai train. Use a ferry only on a morning sea.",
-    lede: "The useful hops are the ones that save a day. Fly when the clock matters. Take the Chiang Mai sleeper when you want the ride. Use a ferry only on a morning sea.",
+    description: "Hops between Bangkok, the islands, Khao Sok, the north, Ayutthaya, and Kanchanaburi. Fly when the day matters. Sleep on the Chiang Mai train. Use a ferry only on a morning sea.",
+    lede: "Fly the regional hops from Suvarnabhumi (BKK) or Don Mueang (DMK) when the day matters. The overnight Chiang Mai sleeper from Krung Thep Aphiwat is the useful night if you want the ride. In the south, morning ferries beat late arrivals.",
     schema: "Article",
     crumbs: [
       {
@@ -648,7 +649,7 @@ const rawPages: Page[] = [
       }
     ],
     paragraphs: [
-      "Each route page lists time, mode, and the booking link. Return trips use the same page. Fly the long south and north legs."
+      "The long south and north legs are flights. Return trips use the same hop. Each route lists time, mode, and the booking link."
     ],
     portraits: [
       {
@@ -991,7 +992,7 @@ const rawPages: Page[] = [
     path: "/bangkok/sukhumvit-thonglor",
     title: "Sukhumvit and Thonglor",
     description: "Bangkok's first-timer hotel strip: BTS Nana to Ekkamai, with Thonglor for dinner and bars.",
-    lede: "Sukhumvit is the BTS hotel strip most first stays use. Nana is louder and cheaper. Asok and Phrom Phong are the easy pairing. Thonglor is one stop on for dinner.",
+    lede: "First-timers usually sleep on Sukhumvit's Skytrain spine, from Nana and Asok through Phrom Phong to Thonglor. Book Asok or Phrom Phong if you want a calm walk to the BTS. The sois page maps the exits.",
     schema: "TouristDestination",
     crumbs: [
       {
@@ -1274,7 +1275,7 @@ const rawPages: Page[] = [
       }
     ],
     affiliates: [
-      stay("Chiang Mai stays", "Citywide", "Start with Old City if you walk temples. Shift to Nimman for cafes.", stayLink('chiang-mai'), "/photos/chiang-mai.jpg"),
+      stay("Chiang Mai stays", "Citywide", "Choose the Old City if you want to walk to morning temples, or Nimman for specialty coffee and evening dining.", stayLink('chiang-mai'), "/photos/chiang-mai.jpg"),
       stay("Old City hotels", "Inside the moat", "Temple mornings, tuk-tuk nights.", stayAreaLink('chiang-mai-old-city'), "/photos/chiang-mai-old-city.jpg"),
       klook("Cooking and day trips", "Tours", "Doi Inthanon, elephant ethics vary; read the operator page.", klookTours('Chiang Mai tours'), "/photos/northern.jpg"),
     ],
@@ -1982,7 +1983,7 @@ const rawPages: Page[] = [
     path: "/itineraries/south-islands-10-days",
     title: "South islands in 10 days",
     description: "Ten days on one sea. Andaman (Phuket, Krabi, Khao Sok) November to April. Gulf (Samui, Phangan, Tao) January to September.",
-    lede: "Ten south days stay on one sea. The monsoon flip is the plan: Andaman from November to April, Gulf from January to September. Do not fly Phuket to Samui on a first south trip.",
+    lede: "A 10-day southern route works best if you commit to one sea: the Andaman coast from November to April, or the Lower Gulf from January to September. Crossing Phuket to Samui on a first south trip burns a day you will not get back.",
     schema: "Article",
     crumbs: [
       {
@@ -2331,7 +2332,7 @@ const rawPages: Page[] = [
     path: "/plan/grab-and-bts",
     title: "Grab, Bolt, BTS, MRT, and ARL",
     description: "How to move in Bangkok: tap the BTS and MRT, ride the Airport Rail Link, and use Grab or Bolt for the last stretch.",
-    lede: "Bangkok is the tap-in rail city: BTS and MRT take contactless cards, and Grab and Bolt show the fare. The BTS is faster than either from Asok to Siam at 18:00.",
+    lede: "Contactless tap-in is the practical move on the BTS Skytrain and MRT Blue Line. The Airport Rail Link from Suvarnabhumi beats a lobby taxi, and Grab and Bolt show a price before you sit down. Do not cash-negotiate at the airport.",
     schema: "Article",
     crumbs: [
       {
@@ -2778,16 +2779,6 @@ const rawPages: Page[] = [
         "title": "Rayavadee",
         "href": "/resort-living/rayavadee",
         "photo": "/photos/krabi.jpg"
-      },
-      {
-        "title": "VIE Hotel Bangkok",
-        "href": "/resort-living/vie-hotel-bangkok",
-        "photo": "/photos/siam.jpg"
-      },
-      {
-        "title": "Veranda High Chiang Mai",
-        "href": "/resort-living/veranda-high-chiang-mai",
-        "photo": "/photos/nimman.jpg"
       },
       {
         "title": "Avista Hideaway Phuket",
@@ -3783,7 +3774,7 @@ const rawPages: Page[] = [
     ],
     photo: "/photos/ayutthaya.jpg",
     paragraphs: [
-      "Use these pages for ruins, a river town, a mainland Gulf beach, or Trat islands. Pattaya is listed only because someone will search it. It is not a recommendation for a first trip."
+      "Ayutthaya is the ruin day from Bangkok. Kanchanaburi needs two nights for the River Kwai and Erawan. Hua Hin is the old royal train beach. Pattaya is the east-coast city south of the capital. Koh Chang and Koh Kood are Trat islands, easier November to February."
     ],
     portraits: [
       {
@@ -3832,6 +3823,7 @@ const rawPages: Page[] = [
   ...wave10Pages,
   ...WAVE11_INTEREST_PAGES,
   ...WAVE12_ITINERARY_PAGES,
+  ...wave21Pages,
 ];
 
 export const pages: Page[] = applyWave13(rawPages);
