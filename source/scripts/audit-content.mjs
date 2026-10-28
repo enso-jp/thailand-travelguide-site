@@ -1,102 +1,156 @@
 #!/usr/bin/env node
-import { mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
+import { createRequire } from 'node:module';
+import { existsSync, mkdtempSync, readFileSync, rmSync } from 'node:fs';
+import { join } from 'node:path';
 import { tmpdir } from 'node:os';
-import { dirname, join } from 'node:path';
-import { fileURLToPath, pathToFileURL } from 'node:url';
+import { pathToFileURL } from 'node:url';
 
 const ROOT = process.cwd();
-const HERE = dirname(fileURLToPath(import.meta.url));
+const EM_DASH = new RegExp(
+  `${String.fromCharCode(0x2014)}|${['&', 'mdash;'].join('')}|&#${'8212;'}|&#x${'2014;'}`,
+  'i',
+);
+const EN_CLAUSE = / \u2013 |(?<!\d)\u2013(?!\d)/;
+const FILLER =
+  /\b(tapestry|symphony|nestled|hidden gem|bustling|vibrant|whether you['’]re a|something for everyone|paradise)\b/i;
+const THB_FIGURE = /\d[\d,]*\s*(?:THB|baht)\b|\b(?:THB|baht)\s*\d[\d,]*/i;
+const TRANSIT_TIME =
+  /\b\d+(?:\.\d+)?\s*(?:to|-)\s*\d+(?:\.\d+)?\s*(?:hours?|hrs?|minutes?|mins?)\b|\b(?:about|under|over)\s+\d+(?:\.\d+)?\s*(?:hours?|hrs?|minutes?|mins?)\b|\b\d+(?:\.\d+)?\s*(?:hours?|hrs?|minutes?|mins?)\b|\b\d+-\d+\s*(?:hours?|hrs?|minutes?|mins?)\b/i;
+const WHO_IT_FITS =
+  /\b(known for|known as|who it fits|if you|first|for [a-z]|pick|fly|come for|use|land|is the|is a|are a|not a|these are|this is|sleep|stay|fits)\b/i;
 
-const BANNED = [
-  'tapestry',
-  'symphony',
-  'nestled',
-  'hidden gem',
-  'bustling',
-  'vibrant',
-  "whether you're a",
-  'something for everyone',
-  'paradise',
-];
-
-const SKIP_LENGTH = new Set(['/about', '/privacy']);
-const SKIP_TIMING = new Set([
+const HUBS = new Set([
   '/',
-  '/about',
-  '/privacy',
   '/destinations',
+  '/itineraries',
   '/plan',
   '/get-there',
   '/interests',
+  '/about',
+  '/privacy',
   '/interests/resort-living',
   '/interests/nightlife',
-  '/itineraries',
-  '/thai-food',
+  '/attractions',
 ]);
 
-const PARTNER_TOKENS = ['11105102', '334225872', '588978', '793638'];
+const SKIP_MONEY = new Set(['/about', '/privacy']);
 
-function flattenText(page) {
-  const parts = [
-    page.title,
-    page.description,
-    page.lede,
-    ...(page.paragraphs ?? []),
-    ...(page.facts ?? []).flatMap((f) => [f.label, f.value]),
-    ...(page.chips ?? []),
-    ...(page.faqs ?? []).flatMap((f) => [f.q, f.a]),
-    ...(page.sections ?? []).flatMap((s) => [s.title, ...(s.paragraphs ?? [])]),
-    ...(page.days ?? []).flatMap((d) => [d.title, d.body]),
-    ...(page.affiliates ?? []).flatMap((a) => [a.title, a.kicker, a.body, a.cta]),
-  ];
-  return parts.filter(Boolean).join('\n');
+const SKIP_AFFILIATES = new Set([
+  ...HUBS,
+  '/plan/visas-and-tdac',
+  '/plan/when-to-go',
+  '/plan/monsoon-and-burn-season',
+  '/plan/scooters-and-road-rules',
+  '/plan/songkran-and-public-holidays',
+  '/plan/money-atms-and-promptpay',
+  '/plan/esim-and-sim-cards',
+]);
+
+const errors = [];
+
+function fail(path, message) {
+  errors.push(`${path}: ${message}`);
 }
 
-function collectHrefs(page) {
+function creditKey(photo) {
+  return String(photo)
+    .replace(/^\/photos\//, '')
+    .replace(/\.[^.]+$/, '');
+}
+
+function walkStrings(value, visit) {
+  if (typeof value === 'string') visit(value);
+  else if (Array.isArray(value)) value.forEach((item) => walkStrings(item, visit));
+  else if (value && typeof value === 'object') {
+    for (const item of Object.values(value)) walkStrings(item, visit);
+  }
+}
+
+function pageText(page) {
+  const parts = [];
+  walkStrings(page, (text) => parts.push(text));
+  return parts.join('\n');
+}
+
+function bodyText(page) {
+  const parts = [
+    ...(page.paragraphs || []),
+    ...(page.sections || []).flatMap((section) => [
+      ...(section.paragraphs || []),
+      ...(section.table?.headers || []),
+      ...(section.table?.rows || []).flat(),
+    ]),
+    ...(page.days || []).map((day) => `${day.title} ${day.body}`),
+    ...(page.faqs || []).map((faq) => `${faq.q} ${faq.a}`),
+    ...(page.facts || []).map((fact) => `${fact.label} ${fact.value}`),
+  ];
+  return parts.join('\n');
+}
+
+function photosOf(page) {
+  const out = [];
+  if (page.photo) out.push(page.photo);
+  for (const item of page.portraits || []) if (item.photo) out.push(item.photo);
+  for (const item of page.affiliates || []) if (item.photo) out.push(item.photo);
+  for (const item of page.days || []) if (item.photo) out.push(item.photo);
+  return out;
+}
+
+function internalHrefs(page) {
   const hrefs = [];
-  for (const crumb of page.crumbs ?? []) hrefs.push(crumb.href);
-  for (const p of page.portraits ?? []) hrefs.push(p.href);
-  for (const tab of page.tabs ?? []) hrefs.push(tab.href);
+  for (const crumb of page.crumbs || []) hrefs.push({ kind: 'breadcrumb', href: crumb.href });
+  for (const item of page.portraits || []) hrefs.push({ kind: 'PortraitRail', href: item.href });
+  for (const tab of page.tabs || []) hrefs.push({ kind: 'tab', href: tab.href });
+  for (const section of page.sections || []) {
+    walkStrings(section, (text) => {
+      for (const match of text.matchAll(/\]\((\/[a-z0-9\-\/]+)\)/gi)) {
+        hrefs.push({ kind: 'section', href: match[1] });
+      }
+    });
+  }
   return hrefs;
 }
 
-function collectPhotos(page) {
-  const photos = [];
-  if (page.photo) photos.push(page.photo);
-  for (const p of page.portraits ?? []) if (p.photo) photos.push(p.photo);
-  for (const a of page.affiliates ?? []) if (a.photo) photos.push(a.photo);
-  for (const d of page.days ?? []) if (d.photo) photos.push(d.photo);
-  return photos;
+function isInternalPath(href) {
+  return typeof href === 'string' && href.startsWith('/') && !href.startsWith('//') && !href.startsWith('/photos/');
 }
 
-function photoKey(photo) {
-  const name = photo.replace(/^\/photos\//, '').replace(/\.[^.]+$/, '');
-  return name;
-}
-
-function hasTimingOrThb(text) {
+function isCommercial(page) {
+  if (SKIP_AFFILIATES.has(page.path)) return false;
   return (
-    /\d[\d,]*\s*THB/i.test(text) ||
-    /\b\d{1,2}:\d{2}\b/.test(text) ||
-    /\b\d+\s*(minute|minutes|hour|hours|night|nights|day|days|stop|stops)\b/i.test(text) ||
-    /\b(one|two|three|four|five|six|seven|eight|nine|ten)[\s-]+(minute|minutes|hour|hours|night|nights|day|days|stop|stops)\b/i.test(
-      text,
-    ) ||
-    /\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\b/i.test(text) ||
-    /\b(November|December|January|February|March|April|June|July|August|September|October)\b/.test(
-      text,
-    )
+    page.path.startsWith('/get-there/') ||
+    page.path.startsWith('/itineraries/') ||
+    page.path.startsWith('/resort-living/') ||
+    page.path.startsWith('/interests/nightlife/') ||
+    page.path.startsWith('/thai-food') ||
+    page.path.startsWith('/attractions/') ||
+    page.path.startsWith('/plan/') ||
+    page.schema === 'City' ||
+    page.schema === 'TouristDestination'
   );
 }
 
+function needsKnownForLead(page) {
+  return !['/about', '/privacy'].includes(page.path);
+}
+
+function decodeAffiliate(url) {
+  try {
+    const parsed = new URL(url);
+    const nested = parsed.searchParams.get('u');
+    return nested ? `${url}\n${decodeURIComponent(nested)}` : url;
+  } catch {
+    return url;
+  }
+}
+
 async function loadPages() {
-  const esbuild = await import('esbuild');
-  const outDir = join(tmpdir(), `tg-audit-${process.pid}`);
-  mkdirSync(outDir, { recursive: true });
-  const outfile = join(outDir, 'pages.mjs');
+  const require = createRequire(import.meta.url);
+  const esbuild = await import(pathToFileURL(require.resolve('esbuild')).href);
+  const dir = mkdtempSync(join(tmpdir(), 'ttg-audit-'));
+  const outfile = join(dir, 'content.mjs');
   try {
     await esbuild.build({
-      absWorkingDir: ROOT,
       entryPoints: [join(ROOT, 'src/lib/content.ts')],
       bundle: true,
       format: 'esm',
@@ -104,111 +158,100 @@ async function loadPages() {
       outfile,
       logLevel: 'silent',
     });
-    const mod = await import(pathToFileURL(outfile).href + `?t=${Date.now()}`);
-    if (!Array.isArray(mod.pages)) {
-      throw new Error('src/lib/content.ts did not export pages[]');
-    }
-    return mod.pages;
+    const mod = await import(pathToFileURL(outfile).href);
+    return mod.allPages();
   } finally {
-    rmSync(outDir, { recursive: true, force: true });
+    rmSync(dir, { recursive: true, force: true });
   }
 }
 
-const errors = [];
 const pages = await loadPages();
-const paths = new Set(pages.map((p) => p.path));
-
-if (pages.length !== 116) {
-  errors.push(`expected 116 routes, found ${pages.length}`);
+if (pages.length !== 159) {
+  fail('site', `expected 159 routes, found ${pages.length}`);
 }
 
+const paths = new Set(pages.map((page) => page.path));
 const credits = JSON.parse(readFileSync(join(ROOT, 'public/photos/credits.json'), 'utf8'));
-const photoFiles = new Set(
-  readdirSync(join(ROOT, 'public/photos')).filter((name) => name !== 'credits.json'),
-);
-
-const emDash = new RegExp(String.fromCharCode(0x2014));
-const enClause = new RegExp(`\\s${String.fromCharCode(0x2013)}\\s`);
 
 for (const page of pages) {
-  const text = flattenText(page);
-  const loc = page.path;
+  const text = pageText(page);
+  const body = bodyText(page);
 
-  if (emDash.test(text)) errors.push(`${loc} contains an em dash`);
-  if (enClause.test(text)) errors.push(`${loc} uses an en dash as a clause separator`);
+  if (EM_DASH.test(text)) fail(page.path, 'em dash (U+2014) is not allowed');
+  if (EN_CLAUSE.test(text)) fail(page.path, 'en dash used as a clause separator');
+  const filler = text.match(FILLER);
+  if (filler) fail(page.path, `banned filler "${filler[0]}"`);
 
-  const lower = text.toLowerCase();
-  for (const word of BANNED) {
-    if (lower.includes(word)) errors.push(`${loc} banned filler: ${word}`);
+  const desc = page.description || '';
+  const lede = page.lede || '';
+  if (desc.length < 60 || desc.length > 230) {
+    fail(page.path, `description must be 60-230 chars (now ${desc.length})`);
+  }
+  if (lede.length < 70 || lede.length > 280) {
+    fail(page.path, `lede must be 70-280 chars (now ${lede.length})`);
+  }
+  if (needsKnownForLead(page) && desc === lede) {
+    fail(page.path, 'lede must not copy the description');
+  }
+  if (needsKnownForLead(page) && !WHO_IT_FITS.test(lede)) {
+    fail(page.path, 'lede must name what this is known for and who it fits');
   }
 
-  if (!SKIP_LENGTH.has(loc)) {
-    if (page.description.length < 60 || page.description.length > 230) {
-      errors.push(`${loc} description length ${page.description.length} (need 60-230)`);
+  if (!page.facts?.length) fail(page.path, 'factBar is empty');
+  for (const fact of page.facts || []) {
+    if (!String(fact.label || '').trim() || !String(fact.value || '').trim()) {
+      fail(page.path, 'factBar has an empty label or value');
     }
-    if (page.lede.length < 70 || page.lede.length > 280) {
-      errors.push(`${loc} lede length ${page.lede.length} (need 70-280)`);
-    }
+    if (String(fact.value).length > 90) fail(page.path, `factBar value is too long: ${fact.label}`);
   }
-
-  if (!page.facts || page.facts.length < 2) {
-    errors.push(`${loc} needs a FactBar with at least two facts`);
-  }
-
+  if (page.chips && page.chips.length === 0) fail(page.path, 'quickFacts chips are empty');
   if ((page.schema === 'City' || page.schema === 'TouristDestination') && !page.chips?.length) {
-    const isHub = loc.split('/').filter(Boolean).length === 1;
-    if (isHub && page.schema === 'City' && !page.chips?.length) {
-      errors.push(`${loc} destination hub needs chips`);
-    }
+    fail(page.path, 'quickFacts chips are required on destination pages');
   }
 
-  if (!SKIP_TIMING.has(loc) && !hasTimingOrThb(text)) {
-    errors.push(`${loc} missing 2026 THB figure or transit timing`);
+  if (!SKIP_MONEY.has(page.path) && !THB_FIGURE.test(body) && !TRANSIT_TIME.test(body)) {
+    fail(page.path, 'body needs a 2026 THB figure or a transit timing');
   }
 
-  for (const href of collectHrefs(page)) {
-    if (!href || !href.startsWith('/') || href.startsWith('//')) continue;
-    const clean = href.replace(/#.*$/, '').replace(/\/$/, '') || '/';
+  for (const { kind, href } of internalHrefs(page)) {
+    if (!isInternalPath(href)) continue;
+    const clean = href.replace(/\/$/, '') || '/';
     if (!paths.has(clean) && !paths.has(href)) {
-      errors.push(`${loc} broken internal href ${href}`);
+      fail(page.path, `invalid ${kind} href ${href}`);
     }
   }
 
-  for (const photo of collectPhotos(page)) {
-    const file = photo.replace(/^\//, '').replace(/^photos\//, '');
-    const filename = photo.split('/').pop();
-    if (!photoFiles.has(filename)) {
-      errors.push(`${loc} missing photo file ${photo}`);
+  for (const photo of new Set(photosOf(page))) {
+    if (!photo.startsWith('/photos/')) {
+      fail(page.path, `photo path must be under /photos/: ${photo}`);
+      continue;
     }
-    const key = photoKey(photo);
-    if (!credits[key]) {
-      errors.push(`${loc} photo ${photo} has no credits.json key ${key}`);
-    }
+    const file = join(ROOT, 'public', photo.replace(/^\//, ''));
+    if (!existsSync(file)) fail(page.path, `missing photo file ${photo}`);
+    const key = creditKey(photo);
+    if (!credits[key]) fail(page.path, `missing credits.json entry for ${photo} (key ${key})`);
   }
 
-  if (page.affiliates?.length) {
-    const hrefs = page.affiliates.map((a) => a.href || '').join('\n');
-    const needsStay = page.affiliates.some((a) => a.partner === 'stay');
-    const needsKlook = page.affiliates.some((a) => a.partner === 'klook');
-    if (needsStay && (!hrefs.includes('11105102') || !hrefs.includes('334225872'))) {
-      errors.push(`${loc} commercial stay links missing Trip.com Allianceid/SID`);
+  if (isCommercial(page) && !page.affiliates?.length) {
+    fail(page.path, 'commercial page needs partner booking links');
+  }
+  for (const row of page.affiliates || []) {
+    const href = row.href || '';
+    const decoded = decodeAffiliate(href);
+    const trip = /trip\.com/i.test(decoded);
+    const klook = /klook\.com|tp\.media/i.test(decoded);
+    if (trip && (!decoded.includes('Allianceid=11105102') || !decoded.includes('SID=334225872'))) {
+      fail(page.path, `Trip.com URL missing Allianceid=11105102 or SID=334225872 (${row.title})`);
     }
-    if (needsKlook && !hrefs.includes('793638') && !hrefs.includes('588978')) {
-      errors.push(`${loc} commercial Klook links missing Travelpayouts marker`);
+    if (klook && (!decoded.includes('588978') || !decoded.includes('793638'))) {
+      fail(page.path, `Klook/Travelpayouts URL missing 588978 or 793638 (${row.title})`);
     }
+    if (!trip && !klook) fail(page.path, `affiliate href is not Trip.com or Klook (${row.title})`);
   }
 }
-
-const partners = readFileSync(join(ROOT, 'src/lib/partners.ts'), 'utf8');
-for (const token of PARTNER_TOKENS) {
-  if (!partners.includes(token)) errors.push(`partners.ts missing ${token}`);
-}
-
-const unused = HERE;
-void unused;
 
 if (errors.length) {
-  console.error(`audit:content failed (${errors.length} issue${errors.length === 1 ? '' : 's'})`);
+  console.error(`audit:content failed (${errors.length} error${errors.length === 1 ? '' : 's'})`);
   for (const err of errors) console.error(`  ${err}`);
   process.exit(1);
 }

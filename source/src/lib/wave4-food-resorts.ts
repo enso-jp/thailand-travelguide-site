@@ -32,11 +32,30 @@ export const wave4Pages: Page[] = [
       { label: 'Phuket', value: '19 Bib Gourmand; Baba-Nyonya lives in Old Town' },
       { label: 'Hours', value: 'Check on arrival; pots empty and lists change yearly' },
     ],
-    chips: ['Street food', 'Bib Gourmand', 'Lanna', 'Baba-Nyonya', 'Night markets'],
+    chips: ['Street food', 'Markets', 'Rooftops', 'Cooking class', 'Coffee'],
     photo: '/photos/thai-food.jpg',
     paragraphs: [
       'Eat Thai food by city, not as one national plate. The Michelin Guide Thailand 2026 lists 137 Bib Gourmand rooms nationwide, including 44 in Bangkok and the surrounding provinces, 18 in Chiang Mai, and 19 in Phuket. Bib is the value badge, not a star. A 2026 street plate is often 60 to 150 THB. Jay Fai on Maha Chai is the one-star exception that still cooks like a street wok.',
-      'Use the cluster pages. Do not stack a Jay Fai queue, a Chatuchak Saturday, and a Ratchada night market on the same calendar day. One serious meal and one market is enough.',
+      'Use the cluster pages. Do not stack a Jay Fai queue, a Chatuchak Saturday, and a Ratchada night market on the same calendar day. One serious meal and one market is enough. The fifteen guides below split neighbourhoods, markets, rooftops, classes, and a first-trip dish list.',
+    ],
+    sections: [
+      {
+        id: 'guides',
+        title: 'Fifteen food guides',
+        paragraphs: [
+          'Start with the city overviews: [Bangkok street food](/thai-food/bangkok-street-food), [Bib Gourmand](/thai-food/bangkok-bib-gourmand), [Northern Lanna](/thai-food/northern-lanna), [South and Baba-Nyonya](/thai-food/southern-and-baba-nyonya), and [night markets](/thai-food/night-markets). Then pick a neighbourhood walk: [Yaowarat](/thai-food/yaowarat-chinatown-food-walk), [Banthat Thong](/thai-food/banthat-thong-road-food-strip), [Wang Lang and Talat Noi](/thai-food/wang-lang-and-talat-noi), [Or Tor Kor](/thai-food/or-tor-kor-and-bangkok-fresh-markets), or [Chiang Mai khao soi](/thai-food/chiang-mai-khao-soi-and-markets).',
+          'Add [Phuket Old Town](/thai-food/phuket-old-town-hokkien-and-peranakan-food) if the Andaman base is inland for a day. Use [rooftops and river dining](/thai-food/bangkok-rooftop-bars-and-river-dining) for a dress-code night. Use [cooking classes](/thai-food/thai-cooking-classes-bangkok-and-chiang-mai), [dishes to order](/thai-food/thai-dishes-to-order-first-trip), and the [coffee guide](/thai-food/bangkok-and-chiang-mai-coffee-guide) when the plan is a wok station, a menu decoder, or a pour-over.',
+        ],
+        table: {
+          headers: ['Cluster', 'Pages', 'Who it fits'],
+          rows: [
+            ['Bangkok nights', 'Yaowarat; Banthat Thong; rooftops', 'One walk or one skyline drink'],
+            ['Bangkok days', 'Wang Lang and Talat Noi; Or Tor Kor', 'Ferry lunch or graded fruit'],
+            ['North and south', 'Khao soi circuit; Phuket Old Town', 'Lunch clock or a mansion curry'],
+            ['How to order', '12 dishes; cooking class; coffee', 'First trip, a mortar, or a cafe'],
+          ],
+        },
+      },
     ],
     portraits: [
       { title: 'Bangkok street food', href: '/thai-food/bangkok-street-food', photo: '/photos/thai-food-bangkok-street.jpg' },
@@ -44,6 +63,16 @@ export const wave4Pages: Page[] = [
       { title: 'Northern Lanna', href: '/thai-food/northern-lanna', photo: '/photos/thai-food-lanna.jpg' },
       { title: 'South and Baba-Nyonya', href: '/thai-food/southern-and-baba-nyonya', photo: '/photos/thai-food-southern.jpg' },
       { title: 'Night markets', href: '/thai-food/night-markets', photo: '/photos/thai-food-night-markets.jpg' },
+      { title: 'Yaowarat walk', href: '/thai-food/yaowarat-chinatown-food-walk', photo: '/photos/thai-food-bangkok-street.jpg' },
+      { title: 'Banthat Thong', href: '/thai-food/banthat-thong-road-food-strip', photo: '/photos/siam.jpg' },
+      { title: 'Wang Lang and Talat Noi', href: '/thai-food/wang-lang-and-talat-noi', photo: '/photos/riverside.jpg' },
+      { title: 'Or Tor Kor', href: '/thai-food/or-tor-kor-and-bangkok-fresh-markets', photo: '/photos/bangkok.jpg' },
+      { title: 'Rooftops and river', href: '/thai-food/bangkok-rooftop-bars-and-river-dining', photo: '/photos/nightlife.jpg' },
+      { title: 'Chiang Mai khao soi', href: '/thai-food/chiang-mai-khao-soi-and-markets', photo: '/photos/thai-food-lanna.jpg' },
+      { title: 'Phuket Old Town food', href: '/thai-food/phuket-old-town-hokkien-and-peranakan-food', photo: '/photos/thai-food-southern.jpg' },
+      { title: 'Cooking classes', href: '/thai-food/thai-cooking-classes-bangkok-and-chiang-mai', photo: '/photos/thai-food.jpg' },
+      { title: 'Dishes to order', href: '/thai-food/thai-dishes-to-order-first-trip', photo: '/photos/thai-food.jpg' },
+      { title: 'Coffee guide', href: '/thai-food/bangkok-and-chiang-mai-coffee-guide', photo: '/photos/ari.jpg' },
     ],
     affiliates: [
       stay('Stay near the stalls', 'Old City and riverside', 'Sleep in Rattanakosin or Charoenkrung if the first meals are Jay Fai, K. Panich, and Wang Lang.', stayAreaLink('rattanakosin'), '/photos/old-city.jpg'),
@@ -112,10 +141,10 @@ export const wave4Pages: Page[] = [
       },
     ],
     portraits: [
+      { title: 'Yaowarat walk', href: '/thai-food/yaowarat-chinatown-food-walk', photo: '/photos/thai-food-bangkok-street.jpg' },
+      { title: 'Wang Lang and Talat Noi', href: '/thai-food/wang-lang-and-talat-noi', photo: '/photos/riverside.jpg' },
       { title: 'Bangkok Bib Gourmand', href: '/thai-food/bangkok-bib-gourmand', photo: '/photos/thai-food-bib.jpg' },
-      { title: 'Night markets', href: '/thai-food/night-markets', photo: '/photos/thai-food-night-markets.jpg' },
-      { title: 'Old City', href: '/bangkok/old-city-rattanakosin', photo: '/photos/old-city.jpg' },
-      { title: 'Charoenkrung nights', href: '/interests/nightlife/charoenkrung-soi-nana', photo: '/photos/riverside.jpg' },
+      { title: 'Dishes to order', href: '/thai-food/thai-dishes-to-order-first-trip', photo: '/photos/thai-food.jpg' },
     ],
     affiliates: [
       stay('Rattanakosin stays', 'Walk to Maha Chai', 'The palace morning and the Jay Fai queue should share a neighbourhood.', stayAreaLink('rattanakosin'), '/photos/old-city.jpg'),
@@ -278,10 +307,10 @@ export const wave4Pages: Page[] = [
       },
     ],
     portraits: [
+      { title: 'Chiang Mai khao soi', href: '/thai-food/chiang-mai-khao-soi-and-markets', photo: '/photos/thai-food-lanna.jpg' },
       { title: 'Chiang Mai Old City', href: '/chiang-mai/old-city', photo: '/photos/chiang-mai-old-city.jpg' },
       { title: 'Nimmanhaemin', href: '/chiang-mai/nimmanhaemin', photo: '/photos/nimman.jpg' },
-      { title: 'Night markets', href: '/thai-food/night-markets', photo: '/photos/thai-food-night-markets.jpg' },
-      { title: 'Four Seasons Chiang Mai', href: '/resort-living/four-seasons-chiang-mai', photo: '/photos/chiang-mai.jpg' },
+      { title: 'Cooking classes', href: '/thai-food/thai-cooking-classes-bangkok-and-chiang-mai', photo: '/photos/thai-food.jpg' },
     ],
     affiliates: [
       stay('Old City stays', 'Moat first', 'Walk to Khun Yai and the Sunday street. Nimman can wait.', stayAreaLink('chiang-mai-old-city'), '/photos/chiang-mai-old-city.jpg'),
@@ -352,10 +381,10 @@ export const wave4Pages: Page[] = [
       },
     ],
     portraits: [
+      { title: 'Phuket Old Town food', href: '/thai-food/phuket-old-town-hokkien-and-peranakan-food', photo: '/photos/thai-food-southern.jpg' },
       { title: 'Phuket', href: '/phuket', photo: '/photos/phuket.jpg' },
       { title: 'Night markets', href: '/thai-food/night-markets', photo: '/photos/thai-food-night-markets.jpg' },
       { title: 'Trisara', href: '/resort-living/trisara-phuket', photo: '/photos/phuket.jpg' },
-      { title: 'Kamala and Bang Tao clubs', href: '/interests/nightlife/phuket-kamala-bangtao', photo: '/photos/nightlife.jpg' },
     ],
     affiliates: [
       stay('Phuket Town stays', 'Heritage grid', 'Sleep in Talat Yai if dinner is Dibuk and Thep Krasatti, not a west-coast transfer.', stayLink('phuket'), '/photos/phuket.jpg'),
@@ -429,10 +458,10 @@ export const wave4Pages: Page[] = [
       },
     ],
     portraits: [
+      { title: 'Banthat Thong', href: '/thai-food/banthat-thong-road-food-strip', photo: '/photos/siam.jpg' },
+      { title: 'Or Tor Kor', href: '/thai-food/or-tor-kor-and-bangkok-fresh-markets', photo: '/photos/bangkok.jpg' },
+      { title: 'Chiang Mai khao soi', href: '/thai-food/chiang-mai-khao-soi-and-markets', photo: '/photos/thai-food-lanna.jpg' },
       { title: 'Bangkok street food', href: '/thai-food/bangkok-street-food', photo: '/photos/thai-food-bangkok-street.jpg' },
-      { title: 'Northern Lanna', href: '/thai-food/northern-lanna', photo: '/photos/thai-food-lanna.jpg' },
-      { title: 'Grab and BTS', href: '/plan/grab-and-bts', photo: '/photos/bts.jpg' },
-      { title: 'Ari nights', href: '/interests/nightlife/ari-pradipat', photo: '/photos/sukhumvit.jpg' },
     ],
     affiliates: [
       stay('Ratchada stays', 'Same MRT as Jodd', 'Sleep on Ratchadaphisek if the night market is the plan, not a cross-city Grab at 00:30.', stayLink('bangkok'), '/photos/nightlife.jpg'),
