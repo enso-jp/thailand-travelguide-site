@@ -121,6 +121,23 @@ const REQUIRED_ROUTES = [
   '/interests/nightlife/silom-sathorn',
   '/interests/nightlife/phuket-kamala-bangtao',
   '/interests/nightlife/samui-bophut-lamai',
+  '/phuket/kata-and-karon',
+  '/phuket/kamala-and-surin',
+  '/phuket/rawai-and-nai-harn',
+  '/koh-samui/chaweng',
+  '/koh-samui/lamai',
+  '/bangkok/phrom-phong-and-thong-lo',
+  '/bangkok/silom-and-sathorn',
+  '/bangkok/ari',
+  '/itineraries/10-days-classic-thailand',
+  '/itineraries/2-weeks-andaman-island-hopping',
+  '/itineraries/10-days-gulf-islands-samui-phangan-tao',
+  '/itineraries/7-days-northern-thailand-loop',
+  '/itineraries/5-days-bangkok-ayutthaya-kanchanaburi',
+  '/khao-lak/similan-and-surin-islands',
+  '/kanchanaburi/erawan-and-sai-yok',
+  '/chiang-mai/doi-inthanon',
+  '/koh-samui/ang-thong-marine-park',
 ];
 
 function walk(dir, files = []) {

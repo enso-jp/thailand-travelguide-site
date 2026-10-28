@@ -123,7 +123,7 @@ export const wave2Pages: Page[] = [
       { label: 'Move', value: 'No useful public bus; scooter or hotel pickup' },
     ],
     chips: ['Andaman', 'Saladan', 'West-coast road'],
-    photo: '/photos/krabi.jpg',
+    photo: '/photos/koh-lanta.jpg',
     geo: { lat: 7.624, lon: 99.042, containedIn: 'Andaman Coast' },
     paragraphs: [
       'Koh Lanta is a long west-facing island, known for space and a slower Andaman week. It is not a village around one bay. Boats from Krabi Town (Klong Jilad) and Ao Nang (Nopparat Thara) land at Saladan from about November to April. From May to October those boats thin out or stop. The road still works: van to the mainland Hua Hin pier (this is not the gulf resort), a short car ferry to Lanta Noi, then the bridge onto Lanta Yai.',
@@ -158,13 +158,13 @@ export const wave2Pages: Page[] = [
     portraits: [
       { title: 'Krabi', href: '/krabi', photo: '/photos/krabi.jpg' },
       { title: 'Phuket to Krabi', href: '/get-there/phuket-to-krabi-phi-phi', photo: '/photos/phuket.jpg' },
-      { title: 'Koh Lipe', href: '/koh-lipe', photo: '/photos/phuket.jpg' },
+      { title: 'Koh Lipe', href: '/koh-lipe', photo: '/photos/koh-lipe.jpg' },
       { title: 'When to go', href: '/plan/when-to-go', photo: '/photos/phuket.jpg' },
     ],
     affiliates: [
-      stay('Koh Lanta stays', 'Name the beach', 'Klong Dao if you want dinner. Kantiang if you want the bay.', stayLink('koh-lanta'), '/photos/krabi.jpg'),
-      stay('Klong Dao hotels', 'North-west default', 'Closest useful beach to Saladan.', stayAreaLink('klong-dao'), '/photos/krabi.jpg'),
-      klook('Four islands and Rok', 'Island hopping', 'Morning boats in season only. The road is the monsoon backup.', klookIslandHopping('Koh Lanta'), '/photos/krabi.jpg'),
+      stay('Koh Lanta stays', 'Name the beach', 'Klong Dao if you want dinner. Kantiang if you want the bay.', stayLink('koh-lanta'), '/photos/koh-lanta.jpg'),
+      stay('Klong Dao hotels', 'North-west default', 'Closest useful beach to Saladan.', stayAreaLink('klong-dao'), '/photos/koh-lanta.jpg'),
+      klook('Four islands and Rok', 'Island hopping', 'Morning boats in season only. The road is the monsoon backup.', klookIslandHopping('Koh Lanta'), '/photos/koh-lanta.jpg'),
     ],
     faqs: [
       {
@@ -199,7 +199,7 @@ export const wave2Pages: Page[] = [
       { label: 'Landing', value: 'Floating pier off Pattaya Beach, then a longtail' },
     ],
     chips: ['Andaman', 'Pak Bara', 'Walking Street'],
-    photo: '/photos/phuket.jpg',
+    photo: '/photos/koh-lipe.jpg',
     geo: { lat: 6.489, lon: 99.305, containedIn: 'Andaman Coast' },
     paragraphs: [
       'Koh Lipe is a walking sandbar in Tarutao National Park, closer to Langkawi than to Phuket. That distance is the point and the cost. There is no concrete ferry pier. Boats stand off Pattaya Beach. You pay a small longtail and pier fee to reach the sand, and a national-park fee on landing. Keep the receipt. Check the posted foreign rate at the desk; older blogs disagree.',
@@ -231,7 +231,7 @@ export const wave2Pages: Page[] = [
       },
     ],
     portraits: [
-      { title: 'Koh Lanta', href: '/koh-lanta', photo: '/photos/krabi.jpg' },
+      { title: 'Koh Lanta', href: '/koh-lanta', photo: '/photos/koh-lanta.jpg' },
       { title: 'Krabi', href: '/krabi', photo: '/photos/krabi.jpg' },
       { title: 'When to go', href: '/plan/when-to-go', photo: '/photos/phuket.jpg' },
     ],
@@ -273,7 +273,7 @@ export const wave2Pages: Page[] = [
       { label: 'Airport', value: 'TDX (Trat), or the Bangkok road' },
     ],
     chips: ['Eastern Gulf', 'Trat', 'Not Samui'],
-    photo: '/photos/pattaya.jpg',
+    photo: '/photos/koh-chang.jpg',
     geo: { lat: 12.1, lon: 102.35, containedIn: 'Eastern Gulf of Thailand' },
     paragraphs: [
       'Chang and Kood are Trat islands: west-coast beaches, jungle hills, and an eastern Gulf calendar. Do not apply Samui dates here. Samui and Tao are easier January to September. The dry, busy window off Trat is November to February. May to October is rain, thinner boat lists, and closed beach bars. You can still cross to Chang most days. Kood boats drop to one or two sailings in June to September.',
@@ -320,10 +320,10 @@ export const wave2Pages: Page[] = [
       { title: 'When to go', href: '/plan/when-to-go', photo: '/photos/phuket.jpg' },
     ],
     affiliates: [
-      stay('Koh Chang stays', 'West coast only', 'White Sand for a first night. Klong Prao for space.', stayLink('koh-chang'), '/photos/pattaya.jpg'),
-      stay('White Sand Beach', 'Hat Sai Khao', 'Closest useful strip after the car ferry.', stayAreaLink('white-sand-beach'), '/photos/pattaya.jpg'),
+      stay('Koh Chang stays', 'West coast only', 'White Sand for a first night. Klong Prao for space.', stayLink('koh-chang'), '/photos/koh-chang.jpg'),
+      stay('White Sand Beach', 'Hat Sai Khao', 'Closest useful strip after the car ferry.', stayAreaLink('white-sand-beach'), '/photos/koh-chang.jpg'),
       stay('Koh Kood stays', 'Laem Sok boats', 'Book the boat before the villa. June to September lists shrink.', stayLink('koh-kood'), '/photos/resort.jpg'),
-      klook('Chang and Kood boats', 'Rail and ferry', 'Car ferry is cash at Ao Thammachat. Kood tickets are the ones to prebook.', klookRailFerry('Koh Chang ferry'), '/photos/pattaya.jpg'),
+      klook('Chang and Kood boats', 'Rail and ferry', 'Car ferry is cash at Ao Thammachat. Kood tickets are the ones to prebook.', klookRailFerry('Koh Chang ferry'), '/photos/koh-chang.jpg'),
     ],
     faqs: [
       {
@@ -394,6 +394,7 @@ export const wave2Pages: Page[] = [
       { title: 'Khao Sok', href: '/khao-sok', photo: '/photos/khao-sok.jpg' },
       { title: 'Krabi', href: '/krabi', photo: '/photos/krabi.jpg' },
       { title: 'When to go', href: '/plan/when-to-go', photo: '/photos/phuket.jpg' },
+      { title: 'Similan and Surin', href: '/khao-lak/similan-and-surin-islands', photo: '/photos/khao-lak.jpg' },
     ],
     affiliates: [
       stay('Khao Lak stays', 'Name the beach', 'Bang Niang or Nang Thong unless you want a quiet north cape.', stayLink('khao-lak'), '/photos/khao-lak.jpg'),
@@ -434,7 +435,7 @@ export const wave2Pages: Page[] = [
       { label: 'Airport', value: 'No scheduled Pai flights; start from CNX' },
     ],
     chips: ['Route 1095', 'Loop optional', 'Not a day trip'],
-    photo: '/photos/northern.jpg',
+    photo: '/photos/pai.jpg',
     geo: { lat: 19.358, lon: 98.44, containedIn: 'Northern Thailand' },
     paragraphs: [
       'Pai is the mountain town at the end of Route 1095. From Chiang Mai you take Route 107 to Mae Malai, then 762 bends over the ridge. Minivans do it in about 3.5 hours. A scooter does it in the same time if you do not stop, and in a full day if you do. Pai Airport has had no scheduled commercial flights since 2017. Do not plan around a hop.',
@@ -475,7 +476,7 @@ export const wave2Pages: Page[] = [
     ],
     portraits: [
       { title: 'Chiang Mai', href: '/chiang-mai', photo: '/photos/chiang-mai.jpg' },
-      { title: 'Chiang Rai', href: '/chiang-rai', photo: '/photos/northern.jpg' },
+      { title: 'Chiang Rai', href: '/chiang-rai', photo: '/photos/chiang-rai.jpg' },
       { title: 'Northern corridor', href: '/destinations/northern-thailand', photo: '/photos/northern.jpg' },
     ],
     affiliates: [
@@ -516,7 +517,7 @@ export const wave2Pages: Page[] = [
       { label: 'From Chiang Mai', value: 'Green Bus about 3.5 hours' },
     ],
     chips: ['CEI', 'Wat Rong Khun', 'One night'],
-    photo: '/photos/northern.jpg',
+    photo: '/photos/chiang-rai.jpg',
     geo: { lat: 19.907, lon: 99.831, containedIn: 'Northern Thailand' },
     paragraphs: [
       'Chiang Rai is known for Wat Rong Khun, the White Temple, and a low-rise grid that closes earlier than Nimman. Add a second day for the Golden Triangle at Chiang Saen or Sop Ruak on the Mekong. Sleep in town. Day-trip the temples. A same-day van from Chiang Mai turns the White Temple into a parking lot and a lunch stop.',
@@ -556,7 +557,7 @@ export const wave2Pages: Page[] = [
     ],
     portraits: [
       { title: 'Chiang Mai', href: '/chiang-mai', photo: '/photos/chiang-mai.jpg' },
-      { title: 'Pai and the loop', href: '/pai', photo: '/photos/northern.jpg' },
+      { title: 'Pai and the loop', href: '/pai', photo: '/photos/pai.jpg' },
       { title: 'Northern corridor', href: '/destinations/northern-thailand', photo: '/photos/northern.jpg' },
     ],
     affiliates: [
@@ -595,7 +596,7 @@ export const wave2Pages: Page[] = [
       { label: 'Move', value: 'Rent a bicycle at the central gate' },
     ],
     chips: ['UNESCO', 'Bicycle', 'Old town'],
-    photo: '/photos/ayutthaya.jpg',
+    photo: '/photos/sukhothai.jpg',
     geo: { lat: 17.017, lon: 99.703, containedIn: 'Lower North' },
     paragraphs: [
       'Sukhothai is the 13th-century capital, known for lotus-bud chedis you bicycle at opening. The Fine Arts Department splits the park. The inner historic zone is the one you came for: Wat Mahathat, Wat Sa Si, Wat Si Sawai. Their virtual park page lists 200 THB for foreign visitors in the inner zone, 120 THB each for the northern zone (Wat Si Chum, Wat Phra Phai Luang) and the western Aranyik zone, or 400 THB as a combined rate. Thai tickets are 20 THB a zone. Bicycles pay 10 THB a zone at the gate. An older QR page still shows 100 THB. Believe the staffed booth.',
@@ -701,7 +702,7 @@ export const wave2Pages: Page[] = [
     portraits: [
       { title: 'Bangkok', href: '/bangkok', photo: '/photos/bangkok.jpg' },
       { title: 'Sukhothai', href: '/sukhothai', photo: '/photos/ayutthaya.jpg' },
-      { title: 'Kanchanaburi', href: '/kanchanaburi', photo: '/photos/riverside.jpg' },
+      { title: 'Kanchanaburi', href: '/kanchanaburi', photo: '/photos/kanchanaburi.jpg' },
       { title: 'Central and east', href: '/destinations/central-and-east', photo: '/photos/ayutthaya.jpg' },
     ],
     affiliates: [
@@ -750,7 +751,7 @@ export const wave2Pages: Page[] = [
       { label: 'Nights', value: 'Two if you want falls plus the line' },
     ],
     chips: ['River Kwai', 'Erawan', 'Thonburi trains'],
-    photo: '/photos/riverside.jpg',
+    photo: '/photos/kanchanaburi.jpg',
     geo: { lat: 14.002, lon: 99.548, containedIn: 'Western Thailand' },
     paragraphs: [
       'Kanchanaburi is a river town west of Bangkok, not an island and not a ruin loop. The steel bridge and Khwae Yai Bridge station are the postcard. The Thailand-Burma Railway Centre and the allied war cemetery are the part that should take longer than the selfie. Hellfire Pass (Konyu Cutting) is about 80 km northwest, by road past Nam Tok, with an Australian-run interpretive centre. The cutting is a memorial walk, not a waterfall stop.',
@@ -793,9 +794,10 @@ export const wave2Pages: Page[] = [
       { title: 'Bangkok', href: '/bangkok', photo: '/photos/bangkok.jpg' },
       { title: 'Hua Hin', href: '/hua-hin', photo: '/photos/hua-hin.jpg' },
       { title: 'Central and east', href: '/destinations/central-and-east', photo: '/photos/ayutthaya.jpg' },
+      { title: 'Erawan and Sai Yok', href: '/kanchanaburi/erawan-and-sai-yok', photo: '/photos/erawan.jpg' },
     ],
     affiliates: [
-      stay('Kanchanaburi stays', 'Town or river', 'Two nights if Erawan is on the list. One night if you only want the bridge.', stayLink('kanchanaburi'), '/photos/riverside.jpg'),
+      stay('Kanchanaburi stays', 'Town or river', 'Two nights if Erawan is on the list. One night if you only want the bridge.', stayLink('kanchanaburi'), '/photos/kanchanaburi.jpg'),
       {
         title: 'Bangkok to Kanchanaburi trains',
         kicker: 'Trip.com',
@@ -805,7 +807,7 @@ export const wave2Pages: Page[] = [
         photo: '/photos/bts.jpg',
         partner: 'trains',
       },
-      klook('Erawan and Hellfire Pass', 'Tours', 'A car for both hinterland sites beats a missed 8170.', klookTours('Erawan National Park'), '/photos/khao-sok.jpg'),
+      klook('Erawan and Hellfire Pass', 'Tours', 'A car for both hinterland sites beats a missed 8170.', klookTours('Erawan National Park'), '/photos/erawan.jpg'),
     ],
     faqs: [
       {
@@ -874,8 +876,8 @@ export const wave2Pages: Page[] = [
     portraits: [
       { title: 'Bangkok', href: '/bangkok', photo: '/photos/bangkok.jpg' },
       { title: 'Ayutthaya', href: '/ayutthaya', photo: '/photos/ayutthaya.jpg' },
-      { title: 'Kanchanaburi', href: '/kanchanaburi', photo: '/photos/riverside.jpg' },
-      { title: 'Koh Chang and Koh Kood', href: '/koh-chang-and-koh-kood', photo: '/photos/pattaya.jpg' },
+      { title: 'Kanchanaburi', href: '/kanchanaburi', photo: '/photos/kanchanaburi.jpg' },
+      { title: 'Koh Chang and Koh Kood', href: '/koh-chang-and-koh-kood', photo: '/photos/koh-chang.jpg' },
     ],
     affiliates: [
       stay('Hua Hin stays', 'Town or Khao Takiab', 'Town if the train is late. Khao Takiab if Cicada is the evening.', stayLink('hua-hin'), '/photos/hua-hin.jpg'),
