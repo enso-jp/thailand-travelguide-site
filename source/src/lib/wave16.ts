@@ -1166,6 +1166,352 @@ export function stripBannedCopy(page: Page): Page {
   return { ...page, lede, paragraphs, sections, faqs };
 }
 
+const NIGHTLIFE_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
+  "/interests/nightlife/charoenkrung-soi-nana": {
+    title: "How this pocket splits by room and mood",
+    cards: [
+      {
+        kicker: "River Grand Hotels",
+        title: "Four Seasons and Mandarin Oriental bars",
+        photo: "/photos/resort-four-seasons-bangkok.jpg",
+        lead: "Dress-code river rooms for the opening 19:00 pour before heading into the shophouse lanes.",
+        bullets: [
+          "**BKK Social Club** at Four Seasons pours Argentine craft cocktails in a courtyard salon at 480 to 650 THB.",
+          "**The Bamboo Bar** at Mandarin Oriental pairs live jazz with heritage river cocktails.",
+          "Start here at 19:00 while dressed for dinner, then take a 10-minute Grab north to Soi Nana."
+        ]
+      },
+      {
+        kicker: "Shophouse Lane",
+        title: "Chinatown Soi Nana timber bars",
+        photo: "/photos/yaowarat.jpg",
+        lead: "A walkable two-block 19th-century lane where five cocktail rooms sit door to door.",
+        bullets: [
+          "**Teens of Thailand and Asia Today** pour gin and wild-honey cocktails in stripped-teak shophouses at 400 to 520 THB.",
+          "**Tep Bar and Baan Rim Naam** add traditional Thai instruments and riverside warehouse tables.",
+          "MRT Wat Mangkon Exit 1 is a 6-minute walk; after midnight, book an 80 to 160 THB Grab."
+        ]
+      },
+      {
+        kicker: "Rum & Late Vinyl",
+        title: "Charoenkrung Soi 28 to Talat Noi",
+        photo: "/photos/chinatown-day.jpg",
+        lead: "High-energy tropical rum bars and late-night listening rooms between the river and Chinatown.",
+        bullets: [
+          "**Tropic City** on Charoenkrung Soi 28 brings neon tropical rum cocktails and a louder weekend floor after 22:00.",
+          "**Talat Noi warehouse bars** offer open-air river breezes when Soi Nana standing rooms fill up.",
+          "Pair with a Charoenkrung river hotel so the ride home stays under 15 minutes."
+        ]
+      }
+    ]
+  },
+  "/interests/nightlife/thonglor-ekkamai": {
+    title: "How Thonglor and Ekkamai split by soi",
+    cards: [
+      {
+        kicker: "Velvet Speakeasies",
+        title: "Lower and Mid-Thonglor (Soi 5 to Soi 13)",
+        photo: "/photos/phrom-phong-and-thong-lo.jpg",
+        lead: "Unmarked doors, multi-level cocktail rooms, and Bangkok dinner-to-drink energy.",
+        bullets: [
+          "**Rabbit Hole** behind its unmarked timber door between Soi 5 and Soi 7 pours 420 to 580 THB cocktails across three levels.",
+          "**Find The Locker Room** on Thonglor Soi 14 hides a championship cocktail program behind a row of lockers.",
+          "Book a 19:30 dinner on the same soi so you reach the bar door by 21:00 without a second taxi."
+        ]
+      },
+      {
+        kicker: "Chef-Driven Cocktail Rooms",
+        title: "Phrom Phong to Thonglor Spine",
+        photo: "/photos/siam.jpg",
+        lead: "Savory-sweet Thai ingredient menus and intimate bartender-led counters.",
+        bullets: [
+          "**Bar Us and Mahaniyom** serve progressive savoury-and-fruit Thai cocktail flights at 450 to 650 THB.",
+          "Seats are limited; reserve 3 to 5 days ahead for Friday or Saturday nights.",
+          "BTS Thong Lo Exit 3 connects to the strip until midnight, followed by 80 to 180 THB Grab rides."
+        ]
+      },
+      {
+        kicker: "Late Live Rooms",
+        title: "Ekkamai (Sukhumvit Soi 63)",
+        photo: "/photos/nightlife.jpg",
+        lead: "Indie live-music halls, casual beer gardens, and late Thai crowd energy one BTS stop east.",
+        bullets: [
+          "**Ekkamai beer houses and live rooms** run louder and looser than Thonglor speakeasies after 22:30.",
+          "**Thonglor Commons** anchors early-evening craft pours and outdoor tables before the late doors open.",
+          "Keep both stops on the same night only by short taxi; walking between upper Thonglor and Ekkamai in humidity takes 25 minutes."
+        ]
+      }
+    ]
+  },
+  "/interests/nightlife/sukhumvit-soi-11": {
+    title: "How a night on Sukhumvit Soi 11 breaks down",
+    cards: [
+      {
+        kicker: "20:00 Speakeasy",
+        title: "Havana Social and craft cocktail doors",
+        photo: "/photos/nightlife.jpg",
+        lead: "Pre-revolutionary 1940s Havana rum room hidden behind a phone booth code door.",
+        bullets: [
+          "**Havana Social** pours aged rum cocktails at 380 to 520 THB with Latin percussion and cigar lounge seating upstairs.",
+          "Arrive between 19:30 and 20:30 before the weekend door line builds down the alley.",
+          "Smart-casual dress (closed shoes for men) is enforced at the booth."
+        ]
+      },
+      {
+        kicker: "Rooftop Sunset",
+        title: "Above Eleven and open-air decks",
+        photo: "/photos/siam.jpg",
+        lead: "Nikkei Peruvian-Japanese plates and park views 33 floors above the Sukhumvit neon.",
+        bullets: [
+          "**Above Eleven** pairs pisco sours and ceviche with open-air skyline views from 18:00 onward.",
+          "Book a sunset table if you want dinner on the same block before heading downstairs.",
+          "Drinks run 380 to 550 THB plus service charge and VAT."
+        ]
+      },
+      {
+        kicker: "Late Strip & Transit",
+        title: "Street-level bars and BTS Nana exit",
+        photo: "/photos/bts.jpg",
+        lead: "High-volume open-front bars, late DJs, and straightforward midnight logistics.",
+        bullets: [
+          "**Late clubs on Soi 11** switch to 200 to 500 THB entry-with-drink-token covers after 22:00.",
+          "**BTS Nana Exit 3** sits a 5-minute walk from the main cluster until 24:00.",
+          "After midnight, hail Grab from the top or bottom of the soi rather than waiting in mid-soi taxi gridlock."
+        ]
+      }
+    ]
+  },
+  "/interests/nightlife/silom-sathorn": {
+    title: "Skyline rooftops versus Suan Phlu jazz lanes",
+    cards: [
+      {
+        kicker: "64th-Floor Panorama",
+        title: "Sky Bar at Lebua (River end of Silom)",
+        photo: "/photos/riverside.jpg",
+        lead: "Open-air dome and sweeping Chao Phraya bend views at the western end of Silom Road.",
+        bullets: [
+          "**Sky Bar at Lebua** opens for walk-in sunset views; signature cocktails run 800 to 1,200+ THB.",
+          "**Strict dress code:** no athletic shorts, sleeveless shirts, or flip-flops at the elevator desk.",
+          "Note that **Moon Bar at Banyan Tree** on Sathon Road is closed for renovation until 2 December 2026."
+        ]
+      },
+      {
+        kicker: "Late Jazz Townhouse",
+        title: "Smalls on Suan Phlu Soi 1",
+        photo: "/photos/nightlife.jpg",
+        lead: "Three-storey corner townhouse pouring absinthe, martinis, and live jazz until late.",
+        bullets: [
+          "**Smalls** draws off-duty chefs, musicians, and Sathorn regulars for 380 to 520 THB cocktails.",
+          "Wednesday jazz nights fill the upstairs balcony early; weeknights stay relaxed.",
+          "Combine with a Suan Phlu bistro dinner 5 minutes away on foot."
+        ]
+      },
+      {
+        kicker: "Underground Vault",
+        title: "Maggie Choo and lower Silom",
+        photo: "/photos/siam.jpg",
+        lead: "Cabaret-era velvet vaults and late weekend music below Silom Road.",
+        bullets: [
+          "**Maggie Choo** stages live soul, blues, and DJ sets in a subterranean bank-vault setting.",
+          "BTS Sala Daeng and Chong Nonsi cover the strip until midnight.",
+          "Grab back to Riverside or Sukhumvit hotels costs 80 to 160 THB after hours."
+        ]
+      }
+    ]
+  },
+  "/interests/nightlife/ari-pradipat": {
+    title: "Craft beer gardens, vinyl rooms, and Pradipat homebars",
+    cards: [
+      {
+        kicker: "Craft Beer Gardens",
+        title: "Ari Soi 1 to Soi 4 pours",
+        photo: "/photos/nightlife.jpg",
+        lead: "Leafy mid-century yards pouring rotating Thai and Nordic craft taps.",
+        bullets: [
+          "**Mikkeller Bar Ari and O glee** pour 250 to 420 THB craft pints under string-lit trees.",
+          "Weeknights are walk-in friendly; Friday evenings fill by 19:30.",
+          "Pair with grilled Northern pork or Isaan plates along Ari Soi 1 before your first pint."
+        ]
+      },
+      {
+        kicker: "Vinyl Listening",
+        title: "Hi-fi bars on Ari Soi 4",
+        photo: "/photos/siam.jpg",
+        lead: "Intimate analog sound rooms built for conversation rather than club volume.",
+        bullets: [
+          "**Tempo and Long Play** spin funk, soul, and Japanese city pop on custom horn speakers.",
+          "Cocktails and highballs run 340 to 480 THB in 25-seat rooms.",
+          "Ideal for a two-drink evening when you want to catch the last BTS train before midnight."
+        ]
+      },
+      {
+        kicker: "Living-Room Bars",
+        title: "Pradipat Road homebars",
+        photo: "/photos/bts.jpg",
+        lead: "Converted shophouses and second-floor bars ten minutes south toward Saphan Khwai.",
+        bullets: [
+          "**Eight Days A Week and BRUT** pour natural wine, craft cans, and house highballs to a local creative crowd.",
+          "BTS Ari Exit 3 and BTS Saphan Khwai sit on either end of the neighbourhood walk.",
+          "A Grab back to Siam or Sukhumvit after midnight runs 100 to 180 THB."
+        ]
+      }
+    ]
+  },
+  "/interests/nightlife/phuket-beach-clubs": {
+    title: "Andaman sunset daybeds by beach and spend",
+    cards: [
+      {
+        kicker: "Bang Tao Flagship",
+        title: "Catch Beach Club on Bang Tao sand",
+        photo: "/photos/kamala-and-surin.jpg",
+        lead: "Phuket original white-lounger institution for long lunches, pool sessions, and Friday night DJs.",
+        bullets: [
+          "**2026 daybed minimums** run 3,000 to 5,000+ THB redeemable on food and bottles during peak dry season.",
+          "Direct west-facing sand on Bang Tao gives a full sunset horizon from November to April.",
+          "Book weekend beds 48 hours ahead and arrange your Cherngtalay or Laguna car home before dark."
+        ]
+      },
+      {
+        kicker: "Kamala Headland",
+        title: "Cafe del Mar at northern Kamala",
+        photo: "/photos/phuket.jpg",
+        lead: "Ibiza-born poolside club with wood-fired dining, sax-and-DJ sunsets, and cabanas.",
+        bullets: [
+          "**Single beds and pool cabanas** start around 2,000 to 6,000 THB minimum spend depending on row.",
+          "Sits on the quiet northern end of Kamala Beach, 15 minutes from Surin and Bang Tao.",
+          "Cocktails run 380 to 550 THB; sunset arrivals should check in by 16:30."
+        ]
+      },
+      {
+        kicker: "Laguna & Hotel Decks",
+        title: "XANA and Pine calmer sundowners",
+        photo: "/photos/kata-and-karon.jpg",
+        lead: "Family-friendly and resort-backed beachfront decks with lower daytime minimums.",
+        bullets: [
+          "**XANA at Angsana Laguna and Pine at InterContinental Kamala** offer relaxed sunset tables without a late nightclub floor.",
+          "May to October brings southwest monsoon surf and red-flag swim days; stick to pool decks in wet months.",
+          "Grab between Kamala, Surin, and Bang Tao runs 250 to 500 THB each way."
+        ]
+      }
+    ]
+  },
+  "/interests/nightlife/phuket-kamala-bangtao": {
+    title: "How Kamala, Surin, and Bang Tao compare after dark",
+    cards: [
+      {
+        kicker: "Cherngtalay & Boat Avenue",
+        title: "Bang Tao dining and cocktail village",
+        photo: "/photos/phuket.jpg",
+        lead: "Phuket most polished west-coast dining pocket, combining Boat Avenue bistros with beachfront loungers.",
+        bullets: [
+          "**Boat Avenue and Porto de Phuket** anchor pre-club wine bars, tapas rooms, and cocktail terraces.",
+          "**Catch Beach Club** sits 5 minutes west on the sand for sunset-to-midnight sessions.",
+          "Best base if you want four nights of different restaurants without driving into Patong."
+        ]
+      },
+      {
+        kicker: "North Kamala Cove",
+        title: "Kamala beachfront and Cafe del Mar",
+        photo: "/photos/kata-and-karon.jpg",
+        lead: "A curved, walkable bay with sunset decks at the northern rocks and calm family sand in the centre.",
+        bullets: [
+          "**Cafe del Mar and Pine** anchor the northern end with 16:30 sunset DJs and poolside beds.",
+          "Central Kamala boardwalk keeps casual seafood tables at 350 to 800 THB a person.",
+          "Sits 35 to 45 minutes south of Phuket Airport (HKT) by private car."
+        ]
+      },
+      {
+        kicker: "Surin Headland",
+        title: "Surin and Pansea quiet luxury",
+        photo: "/photos/resort-amanpuri.jpg",
+        lead: "High-end villa headlands where evenings revolve around resort terraces rather than loud clubs.",
+        bullets: [
+          "**Amanpuri and Surin hillside dining rooms** focus on sunset Thai tables and quiet Andaman views.",
+          "Ten minutes by car to either Bang Tao or Kamala when you want a beach-club afternoon.",
+          "Pre-book return transfers after 22:00, as roadside taxis charge 400 to 600 THB for short hops."
+        ]
+      }
+    ]
+  },
+  "/interests/nightlife/koh-samui-beach-clubs": {
+    title: "Gulf beach clubs: Lipa Noi sunsets versus Chaweng nights",
+    cards: [
+      {
+        kicker: "West Coast Sunset",
+        title: "Nikki Beach on Lipa Noi",
+        photo: "/photos/koh-samui.jpg",
+        lead: "Samui flagship white-daybed pool club facing the Ang Thong sunset across calm western water.",
+        bullets: [
+          "**2026 daybed minimums** run 2,000 to 4,000+ THB, with Sunday pool brunches as the signature weekly session.",
+          "Lipa Noi sits 35 to 45 minutes from Chaweng and Bophut; pre-book a 500 to 800 THB return car.",
+          "Peak dry Gulf sunshine runs from January through September."
+        ]
+      },
+      {
+        kicker: "East Coast Strip",
+        title: "Chaweng Beach clubs and late bars",
+        photo: "/photos/chaweng.jpg",
+        lead: "Walkable powder sand where afternoon loungers turn into fire-shows and late open-air DJ bars.",
+        bullets: [
+          "**Seen Beach Club and Ark Bar** anchor the central-to-south Chaweng beachfront from 14:00 until past midnight.",
+          "Late doors after 22:00 often use a 200 to 500 THB first-drink token.",
+          "Stay on Chaweng if you want to walk back to your room without a late hill taxi."
+        ]
+      },
+      {
+        kicker: "North Bay Fire & Sand",
+        title: "Bophut Fisherman Village beanbags",
+        photo: "/photos/resort-six-senses-samui.jpg",
+        lead: "Timber shophouse cocktail bars and beachfront beanbag lounges 15 minutes from Samui Airport.",
+        bullets: [
+          "**Coco Tam** draws the 18:00 sunset crowd for beanbag cocktails (320 to 480 THB) and 19:30 beachfront fire spinning.",
+          "Walk straight into Fisherman Village for seafood or French-Thai bistro dinners afterward.",
+          "Best all-around evening pocket for couples and groups staying on the northern headlands."
+        ]
+      }
+    ]
+  },
+  "/interests/nightlife/samui-bophut-lamai": {
+    title: "Bophut promenade versus Lamai bay evenings",
+    cards: [
+      {
+        kicker: "Timber Shophouse Bay",
+        title: "Bophut and Fisherman Village",
+        photo: "/photos/koh-samui.jpg",
+        lead: "Pedestrian-friendly wooden shophouses, beachfront beanbags, and sunset cocktails facing Koh Phangan.",
+        bullets: [
+          "**Coco Tam and Summer by Coco Tam** anchor the western sand with open-air cocktails at 320 to 480 THB.",
+          "**Friday Walking Street** closes the lane to traffic from 17:00 to 22:30 for street stalls and bar tables.",
+          "15 minutes by car from USM Airport and Choeng Mon headland resorts."
+        ]
+      },
+      {
+        kicker: "Southeast Cove",
+        title: "Lamai and Maret Sunday sessions",
+        photo: "/photos/chaweng.jpg",
+        lead: "A calmer, wider curve of southeastern sand with long-running oceanfront brunch clubs.",
+        bullets: [
+          "**Beach Republic** in northern Lamai hosts Sunday poolside sessions and Mediterranean tapas.",
+          "Central Lamai bars pour 150 to 320 THB drinks without Chaweng high-volume club noise.",
+          "Best paired with a southern Samui stay so you skip the Chaweng hill drive after dark."
+        ]
+      },
+      {
+        kicker: "Northern Cape Contrast",
+        title: "Choeng Mon and Plai Laem resort bars",
+        photo: "/photos/resort-ritz-carlton-koh-samui.jpg",
+        lead: "Cliffside sunset decks for a quiet aperitif before a 10-minute taxi into Bophut.",
+        bullets: [
+          "**Dining on the Rocks at Six Senses** offers panoramic Gulf views for an early reservation.",
+          "Taxis between Choeng Mon and Bophut run 300 to 500 THB each way.",
+          "Never ride a rented scooter over the northern headlands after dark."
+        ]
+      }
+    ]
+  }
+};
+
+
 export function structureCopy(page: Page): Page {
   let paragraphs = [...(page.paragraphs || [])];
   let sections = [...(page.sections || [])];
@@ -1196,7 +1542,7 @@ export function structureCopy(page: Page): Page {
     };
   });
 
-  const zone = RESORT_ZONE[page.path];
+  const zone = RESORT_ZONE[page.path] || NIGHTLIFE_ZONE[page.path];
   if (zone && !sections.some((section) => section.id === 'zone-compare')) {
     sections = [{ id: 'zone-compare', title: zone.title, paragraphs: [], cards: zone.cards }, ...sections];
   }
@@ -1553,7 +1899,7 @@ export function applyNightlifeHub(page: Page): Page {
             href: '/interests/nightlife/phuket-beach-clubs',
             lead: 'Poolside daybeds, Mediterranean long lunches, and international sunset DJs from November to April.',
             bullets: [
-              '**Catch Beach Club and Cafe del Mar** are the named west-coast rooms. Recheck the daybed page the week you travel.',
+              '**Catch Beach Club and Cafe del Mar** are the named west-coast rooms. Book weekend daybeds 48 hours ahead.',
               '**2026 daybed minimums** run 2,000 to 5,000 THB before drinks. Walk-ins wait on Saturday.',
               '**Car home:** 200 to 500 THB Grab along the west coast. Sleep on the same sand, not in Patong.',
             ],
@@ -1790,7 +2136,7 @@ const DEPTH_PAD: Record<string, string[]> = {
     '**Frontage road buses:** No rented scooter. Bolt or Grab home.',
   ],
   '/interests/nightlife/phuket-beach-clubs': [
-    '**Catch and Cafe del Mar:** Named west-coast rooms. Recheck the daybed page the week you travel.',
+    '**Catch and Cafe del Mar:** Named west-coast rooms. Book weekend daybeds 48 hours ahead.',
     '**May to October decks:** Swell and refund fights. Pay only if the sky is kind.',
     '**One club day:** The second day is a boat or a beach without a DJ.',
     '**HKT car window:** 45 to 75 minutes and 900 to 1,800 THB in 2026. Book it with the daybed, not a Patong scooter.',
@@ -1801,7 +2147,7 @@ const DEPTH_PAD: Record<string, string[]> = {
     '**Hill car home:** 300 to 700 THB late. Save the number before you sit down.',
   ],
   '/bangkok/rattanakosin': [
-    '**Royal event closures:** Recheck the morning of. Wat Pho often still opens.',
+    '**Royal event closures:** Check royal ceremony notices before 08:30. Wat Pho often still opens.',
     '**Sarong rental:** 100 to 200 THB if you forgot long pants. Bring your own.',
     '**Licensed palace guide:** 1,000 to 2,000 THB extra. Useful only if you want the rooms explained.',
   ],
@@ -1822,12 +2168,73 @@ function applyDepthPad(page: Page): Page {
   return { ...page, sections };
 }
 
+
+function pickCardPhoto(card: EditorialCard, page: Page, used: Set<string>): string {
+  const t = `${card.kicker} ${card.title} ${card.href || ""} ${card.lead || ""} ${card.bullets.join(" ")}`.toLowerCase();
+  const candidates: string[] = [];
+  if (card.photo) candidates.push(card.photo);
+  if (card.href === "/interests/nightlife/charoenkrung-soi-nana") candidates.push("/photos/riverside.jpg", "/photos/yaowarat.jpg", "/photos/wat-arun-night.jpg");
+  if (card.href === "/interests/nightlife/thonglor-ekkamai") candidates.push("/photos/phrom-phong-and-thong-lo.jpg", "/photos/sukhumvit.jpg", "/photos/siam.jpg");
+  if (card.href === "/interests/nightlife/sukhumvit-soi-11") candidates.push("/photos/sukhumvit.jpg", "/photos/silom-night.jpg", "/photos/bangkok.jpg");
+  if (card.href === "/interests/nightlife/silom-sathorn") candidates.push("/photos/silom-and-sathorn.jpg", "/photos/silom-night.jpg", "/photos/lumphini.jpg");
+  if (card.href === "/interests/nightlife/ari-pradipat") candidates.push("/photos/ari.jpg", "/photos/bts.jpg", "/photos/siam.jpg");
+  if (card.href === "/interests/nightlife/phuket-beach-clubs") candidates.push("/photos/patong-night.jpg", "/photos/phuket.jpg", "/photos/kata-and-karon.jpg");
+  if (card.href === "/interests/nightlife/phuket-kamala-bangtao") candidates.push("/photos/kamala-and-surin.jpg", "/photos/rawai-and-nai-harn.jpg", "/photos/phuket.jpg");
+  if (card.href === "/interests/nightlife/koh-samui-beach-clubs") candidates.push("/photos/chaweng-night.jpg", "/photos/chaweng.jpg", "/photos/koh-samui.jpg");
+  if (card.href === "/interests/nightlife/samui-bophut-lamai") candidates.push("/photos/lamai.jpg", "/photos/koh-samui.jpg", "/photos/ferry-gulf.jpg");
+
+  if (t.includes("amanpuri") || t.includes("pansea")) candidates.push("/photos/resort-amanpuri.jpg", "/photos/kamala-and-surin.jpg", "/photos/phuket.jpg");
+  if (t.includes("trisara") || t.includes("naithon") || t.includes("layan")) candidates.push("/photos/resort-trisara-phuket.jpg", "/photos/rawai-and-nai-harn.jpg", "/photos/kamala-and-surin.jpg");
+  if (t.includes("kamala") || t.includes("mai khao") || t.includes("patong")) candidates.push("/photos/kata-and-karon.jpg", "/photos/kamala-and-surin.jpg", "/photos/phuket.jpg", "/photos/rawai-and-nai-harn.jpg");
+  if (t.includes("four seasons koh samui") || t.includes("laem yai") || t.includes("sunset amphitheater")) candidates.push("/photos/resort-four-seasons-koh-samui.jpg", "/photos/koh-samui.jpg", "/photos/ang-thong.jpg");
+  if (t.includes("six senses samui") || t.includes("choeng mon")) candidates.push("/photos/resort-six-senses-samui.jpg", "/photos/resort-ritz-carlton-koh-samui.jpg", "/photos/koh-samui.jpg");
+  if (t.includes("ritz-carlton") || t.includes("plai laem")) candidates.push("/photos/resort-ritz-carlton-koh-samui.jpg", "/photos/resort-six-senses-samui.jpg", "/photos/lamai.jpg");
+  if (t.includes("chaweng")) candidates.push("/photos/chaweng.jpg", "/photos/lamai.jpg", "/photos/koh-samui.jpg");
+  if (t.includes("phulay bay") || t.includes("tubkaek")) candidates.push("/photos/resort-phulay-bay.jpg", "/photos/krabi.jpg", "/photos/longtail-andaman.jpg");
+  if (t.includes("yao noi")) candidates.push("/photos/resort-six-senses-yao-noi.jpg", "/photos/phi-phi.jpg", "/photos/longtail-andaman.jpg");
+  if (t.includes("rayavadee") || t.includes("railay") || t.includes("phra nang")) candidates.push("/photos/resort-rayavadee.jpg", "/photos/railay.jpg", "/photos/krabi.jpg");
+  if (t.includes("capella") || t.includes("charoenkrung")) candidates.push("/photos/resort-capella-bangkok.jpg", "/photos/resort-four-seasons-bangkok.jpg", "/photos/riverside.jpg", "/photos/wat-arun-night.jpg");
+  if (t.includes("the siam") || t.includes("dusit")) candidates.push("/photos/resort-the-siam.jpg", "/photos/riverside.jpg", "/photos/old-city.jpg");
+  if (t.includes("mandarin oriental") || t.includes("bang rak")) candidates.push("/photos/resort-mandarin-oriental-bangkok.jpg", "/photos/riverside.jpg", "/photos/wat-arun-night.jpg");
+  if (t.includes("four seasons bangkok")) candidates.push("/photos/resort-four-seasons-bangkok.jpg", "/photos/resort-capella-bangkok.jpg", "/photos/riverside.jpg");
+  if (t.includes("rosewood") || t.includes("phloen chit") || t.includes("ratchathewi") || t.includes("skytrain")) candidates.push("/photos/resort-rosewood-bangkok.jpg", "/photos/siam.jpg", "/photos/bts.jpg", "/photos/sukhumvit.jpg");
+  if (t.includes("mae rim") || t.includes("four seasons chiang mai")) candidates.push("/photos/resort-four-seasons-chiang-mai.jpg", "/photos/chiang-mai.jpg", "/photos/northern.jpg");
+  if (t.includes("137 pillars") || t.includes("wat ket") || t.includes("ping river") || t.includes("anantara chiang mai")) candidates.push("/photos/resort-137-pillars.jpg", "/photos/resort-anantara-chiang-mai.jpg", "/photos/chiang-mai-old-city.jpg", "/photos/night-market-cm.jpg");
+  if (t.includes("hang dong") || t.includes("western foothills")) candidates.push("/photos/doi-suthep.jpg", "/photos/nimman.jpg", "/photos/chiang-mai.jpg");
+  if (t.includes("soneva kiri") || t.includes("koh kood")) candidates.push("/photos/resort-soneva-kiri.jpg", "/photos/koh-kood.jpg", "/photos/koh-chang.jpg", "/photos/ferry-gulf.jpg");
+
+  for (const c of candidates) {
+    if (c !== page.photo && !used.has(c)) {
+      used.add(c);
+      return c;
+    }
+  }
+  const fallback = PHOTO_POOL.find((p) => p !== page.photo && !used.has(p)) || "/photos/resort.jpg";
+  used.add(fallback);
+  return fallback;
+}
+
+export function assignEditorialCardPhotos(page: Page): Page {
+  if (!page.sections?.length) return page;
+  const used = new Set<string>(page.photo ? [page.photo] : []);
+  const sections = page.sections.map((section) => {
+    if (!section.cards?.length) return section;
+    const cards = section.cards.map((c) => ({
+      ...c,
+      photo: pickCardPhoto(c, page, used),
+    }));
+    return { ...section, cards };
+  });
+  return { ...page, sections };
+}
+
 export function applyWave16Finish(page: Page): Page {
   let   next = stripBannedCopy(page);
   next = applyResortLivingHub(next);
   next = applyNightlifeHub(next);
   next = applyInterestPortraits(next);
   next = structureCopy(next);
+  next = assignEditorialCardPhotos(next);
   next = applyDepthPad(next);
   next = fixDayPhotos(next);
   if (next.portraits?.length) {

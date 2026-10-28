@@ -279,7 +279,7 @@ export const wave13Copy: Record<string, Partial<Page>> = {
   '/resort-living/six-senses-yao-noi': {
     paragraphs: [
       'Six Senses Yao Noi is known for hill villas over Phang Nga Bay. Use it when the bay is the trip and you accept a pier plus boat. Yao Noi sits between Phuket and Krabi. There is no road from the airports. Transfers are a pier plus a 20 to 45 minute longtail or speedboat.',
-      'Fly HKT or KBV. The hotel desk assigns the pier. A 2026 combined car-and-boat transfer is often 3,000 to 6,000 THB a person or a higher private rate. Recheck the voucher. Book boats in the Andaman season. In the southwest monsoon, treat this as a weather-dependent stay.',
+      'Fly HKT or KBV. The hotel desk assigns the pier. A 2026 combined car-and-boat transfer is often 3,000 to 6,000 THB a person or a higher private rate. Confirm pier assignment on your hotel voucher. Book boats in the Andaman season. In the southwest monsoon, treat this as a weather-dependent stay.',
       'Villas step down the hill. Pool villas are the point. Starting rates in a busy dry-season week often sit from about 25,000 to 40,000 THB for an entry villa and 50,000 to 90,000 THB for larger pool villas. Those are planning bands. Trip.com shows the live number.',
       'Phang Nga boats from the hotel are the on-property day. Ao Nang dinners are a project. Phuket nightlife is the wrong pairing. If you want cliffs with a roadless pocket and no island transfer, [Rayavadee](/resort-living/rayavadee) is the Railay alternative.',
     ],
@@ -400,7 +400,7 @@ export const wave13Copy: Record<string, Partial<Page>> = {
     paragraphs: [
       'Soneva Kiri is known for a Koh Kood hideaway with its own transfer plan. Use it as its own trip, not a bolt-on to Phuket. Koh Kood is in Trat, on the eastern Gulf, not on the Samui chain.',
       'Bangkok to Trat is about 1 hour by air, then a boat of about 1 to 1.5 hours, or the resort transfer. Some stays use a charter. Transfer logistics are the first thing to book. Rates without a transfer plan are incomplete. Search Trip.com for Koh Kood stays, not Bangkok, and confirm live 2026 rates plus whether the boat is bundled.',
-      'Villas sit in the trees above a small Gulf bay. Entry villas in a busy 2026 week often sit from about 40,000 to 70,000 THB. Larger family villas run 80,000 to 150,000 THB and up, often with the transfer bundled or billed apart. Planning bands. Recheck the voucher for what the boat includes.',
+      'Villas sit in the trees above a small Gulf bay. Entry villas in a busy 2026 week often sit from about 40,000 to 70,000 THB. Larger family villas run 80,000 to 150,000 THB and up, often with the transfer bundled or billed apart. Planning bands. Confirm speedboat inclusion on your booking voucher.',
       'The public path is Trat plus a Koh Kood ferry from Laem Sok, often 30 to 45 minutes on the faster boats and 450 to 600 THB a seat. That is not the Soneva arrival. If you self-transfer, leave a full day. Do not land BKK at 15:00 and expect to sleep on Kood the same night without a booked chain.',
     ],
     sections: [
@@ -441,7 +441,7 @@ export const wave13Copy: Record<string, Partial<Page>> = {
     paragraphs: [
       'VIE Hotel Bangkok is known as the MGallery on Ratchathewi BTS. Stay here if you want a designed city night without a river compound. Ratchathewi puts you on the BTS between Siam and the ARL at Phaya Thai. A 2026 BTS tap from here is 17 to 47 THB.',
       'This is a tower, not a villa. Rooms are city rooms. Entry rates in a busy 2026 week often sit from about 4,000 to 7,000 THB. Suites run 8,000 to 14,000 THB and up. Planning bands. It is the useful upgrade from a generic Sukhumvit tower when you still want the train.',
-      'Phaya Thai ARL is one BTS stop plus a walk or a short extra hop depending on your bags. Suvarnabhumi to Phaya Thai is about 30 minutes on the ARL, 45 THB in recent years for the full line. Recheck the ticket machine. DMK is a different airport and a different car.',
+      'Phaya Thai ARL is one BTS stop plus a walk or a short extra hop depending on your bags. Suvarnabhumi to Phaya Thai is about 30 minutes on the ARL, 45 THB in recent years for the full line. Pay with cash or token at the station machine. DMK is a different airport and a different car.',
       'Siam malls are two BTS stops. The palace is a Grab, 150 to 250 THB in the morning. Soi 11 is a few BTS stops east. Use VIE as a Bangkok night that is nicer than Nana and cheaper than Capella. Two nights is the usual lock before you pick a coast.',
     ],
     sections: [
@@ -501,7 +501,7 @@ export const wave13Copy: Record<string, Partial<Page>> = {
     paragraphs: [
       'Samui beach clubs are known for a Gulf afternoon that ends at sunset. Use Nikki Beach if the brand is why you came. Chaweng after dark is a different map. A 2026 daybed is often 2,000 to 4,000 THB before drinks. Book if you want shade. Walk-ins on a Saturday in high season wait.',
       'January to September is the easier sea. October to December can still work on a calm day. Check the sky before you prepay. A booked car back along the hills is safer than a scooter you rented at noon. USM to the usual club belt is 15 to 30 minutes.',
-      'Nikki Beach Koh Samui is the named draw: daybeds, a weekend crowd, and a dress code that is more beach than Bangkok. Other rooms open and close. Recheck the page the week you travel. Fisherman Village is the dinner walk after sunset if you sleep in Bophut. Chaweng is the louder night if that is the plan.',
+      'Nikki Beach Koh Samui is the named draw: daybeds, a weekend crowd, and a dress code that is more beach than Bangkok. Other rooms open and close. Book your daybed online 48 hours ahead. Fisherman Village is the dinner walk after sunset if you sleep in Bophut. Chaweng is the louder night if that is the plan.',
       'Sleep on the same coast as the club. A late scooter from Chaweng to a west-coast villa is how those weeks go wrong. See [Koh Samui](/koh-samui), [Chaweng](/koh-samui/chaweng), and [Bophut and Lamai nightlife](/interests/nightlife/samui-bophut-lamai).',
     ],
     sections: [
@@ -542,7 +542,7 @@ export const wave13Copy: Record<string, Partial<Page>> = {
       'Phuket beach clubs are known for afternoon daybeds that become sunset. Use them in the November to April window if the club is the day. A 2026 daybed minimum is often 2,000 to 5,000 THB before drinks. Bring sunscreen and a booked car home. Patong Walking Street is a different product and not listed here as a recommendation.',
       'Catch Beach Club and Cafe del Mar Phuket are the named rooms. They sit on the west coast. HKT plus a car is 45 to 75 minutes depending on the beach. In the wet months, check the sky before you prepay. A cancelled daybed is still a fight.',
       'Sleep on the same coast. Kamala, Surin, and Bang Tao are the usual pairings. A late scooter from Patong to a west-coast hill hotel is the wrong ending. See [Kamala and Surin](/phuket/kamala-and-surin) and [Kamala and Bang Tao nightlife](/interests/nightlife/phuket-kamala-bangtao).',
-      'Dress is beach-smart, not Bangkok cocktail. Tables want a minimum. Recheck the page the week you travel. One club day per week is enough. The second day is better as a boat or a beach without a DJ.',
+      'Dress is beach-smart, not Bangkok cocktail. Tables want a minimum. Book your daybed online 48 hours ahead. One club day per week is enough. The second day is better as a boat or a beach without a DJ.',
     ],
     sections: [
       tableSection('rooms', 'Named rooms', ['Room', 'Use', '2026 note'], [

@@ -43,6 +43,7 @@ export interface EditorialCard {
   kicker: string;
   title: string;
   href?: string;
+  photo?: string;
   lead?: string;
   bullets: string[];
 }

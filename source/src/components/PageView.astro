@@ -171,16 +171,29 @@ function guideGridHeading(path: string): string {
           <div class="editorial-grid">
             {section.cards.map((card) => (
               <article class="editorial-card">
-                <span class="editorial-kicker">{card.kicker}</span>
-                <h3>
-                  {card.href ? <a href={card.href}>{card.title}</a> : card.title}
-                </h3>
-                {card.lead && <p class="editorial-lead" set:html={formatInline(card.lead)} />}
-                <ul class="editorial-bullets">
-                  {card.bullets.map((item) => (
-                    <li set:html={formatInline(item)} />
-                  ))}
-                </ul>
+                {card.photo && (
+                  <div class="editorial-media">
+                    {card.href ? (
+                      <a href={card.href} tabindex="-1" aria-hidden="true">
+                        <img src={card.photo} alt={card.title} width="640" height="400" loading="lazy" decoding="async" />
+                      </a>
+                    ) : (
+                      <img src={card.photo} alt={card.title} width="640" height="400" loading="lazy" decoding="async" />
+                    )}
+                  </div>
+                )}
+                <div class="editorial-body">
+                  <span class="editorial-kicker">{card.kicker}</span>
+                  <h3>
+                    {card.href ? <a href={card.href}>{card.title}</a> : card.title}
+                  </h3>
+                  {card.lead && <p class="editorial-lead" set:html={formatInline(card.lead)} />}
+                  <ul class="editorial-bullets">
+                    {card.bullets.map((item) => (
+                      <li set:html={formatInline(item)} />
+                    ))}
+                  </ul>
+                </div>
               </article>
             ))}
           </div>
