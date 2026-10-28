@@ -75,8 +75,8 @@ export const pages: Page[] = [
   {
     path: "/",
     title: "Thailand Travel Guide: destinations, monsoon notes, and how to get there",
-    description: "This guide is known for first-trip planning: destination pages, Andaman vs Gulf seasons, trains, ferries, and district nightlife. Facts first, not a pitch.",
-    lede: "Thailand is known for a city-then-fork first trip. Start in Bangkok, then go north or south. Andaman is easier November to April. The Gulf is easier January to September.",
+    description: "Plan a first trip to Thailand: a Bangkok landing, then a north or south fork. This guide covers seasons, trains, ferries, and districts. Facts first, not a pitch.",
+    lede: "Start with Bangkok, then pick a north or south fork. The monsoon flips: Andaman is easier November to April, the Gulf is easier January to September.",
     schema: "Article",
     crumbs: [
       {
@@ -108,8 +108,8 @@ export const pages: Page[] = [
     ],
     photo: "/photos/bangkok.jpg",
     paragraphs: [
-      "This site is for Western first-time planners who still want hyper-local utility: which BTS gate, which pier, which soi after dark.",
-      "Use the 7-day and 14-day itineraries as a spine. Swap the south coast when the monsoon says so. Book stays and airport cars on Trip.com. Book island boats and attraction tickets on Klook."
+      "This site is for Western first-time planners who still want hyper-local utility: which BTS gate, which pier, which soi after dark. Start in Bangkok, then fork north or south with the monsoon.",
+      "Use the 7-day and 14-day itineraries as a spine. Swap the south coast when the monsoon says so. A 2026 BTS tap is 17 to 62 THB. The Airport Rail Link is about 30 minutes to Phaya Thai. Book stays and airport cars on Trip.com. Book island boats and attraction tickets on Klook."
     ],
     portraits: [
       {
@@ -155,7 +155,7 @@ export const pages: Page[] = [
       {
         "title": "Thai food",
         "href": "/thai-food",
-        "photo": "/photos/bangkok.jpg"
+        "photo": "/photos/thai-food.jpg"
       }
     ],
     faqs: [
@@ -172,7 +172,7 @@ export const pages: Page[] = [
   {
     path: "/destinations",
     title: "Destinations in Thailand",
-    description: "Bangkok districts, Chiang Mai, the Andaman coast, the Gulf islands, Trat, and the Northern Thailand corridor.",
+    description: "Pick one landing city, then a north hub or one south coast. Bangkok, Chiang Mai, Andaman, Gulf, Trat, and the north corridor.",
     lede: "Pick a city first. Bangkok is the usual landing. Chiang Mai is the north hub. Phuket, Krabi, Lanta, Lipe, and Khao Lak share the Andaman. Samui, Phangan, and Tao sit on the Lower Gulf.",
     schema: "Article",
     crumbs: [
@@ -196,7 +196,7 @@ export const pages: Page[] = [
       }
     ],
     paragraphs: [
-      "District pages sit under Bangkok and Chiang Mai so the city pages stay short."
+      "These destination pages cover stay trade-offs, not a country dump. District pages sit under Bangkok and Chiang Mai. The usual first hop after Bangkok is about 70 minutes by air to Chiang Mai, Phuket, or Samui."
     ],
     portraits: [
       {
@@ -247,7 +247,7 @@ export const pages: Page[] = [
       {
         "title": "Koh Lanta",
         "href": "/koh-lanta",
-        "photo": "/photos/krabi.jpg"
+        "photo": "/photos/koh-lanta.jpg"
       },
       {
         "title": "Khao Lak",
@@ -275,7 +275,7 @@ export const pages: Page[] = [
   {
     path: "/destinations/northern-thailand",
     title: "Northern Thailand corridor",
-    description: "Northern Thailand: Chiang Mai as the temple-and-food hub, then Chiang Rai for the White Temple or Pai for the mountain road.",
+    description: "Northern Thailand: Chiang Mai temples and food, then one fork. Chiang Rai for the White Temple, or Pai for the mountain road.",
     lede: "The north is Chiang Mai first. Add Chiang Rai for the White Temple and the Mekong. Add Pai only if you want a winding mountain night.",
     schema: "TouristDestination",
     crumbs: [
@@ -302,6 +302,11 @@ export const pages: Page[] = [
         "value": "Mae Hong Son is a 3-4 day motorbike or van circuit"
       }
     ],
+    chips: [
+      "Chiang Mai first",
+      "One side trip",
+      "SRT 9 and 10"
+    ],
     photo: "/photos/northern.jpg",
     geo: { lat: 18.788, lon: 98.985, containedIn: "Thailand" },
     paragraphs: [
@@ -327,12 +332,12 @@ export const pages: Page[] = [
       {
         "title": "Chiang Rai",
         "href": "/chiang-rai",
-        "photo": "/photos/northern.jpg"
+        "photo": "/photos/chiang-rai.jpg"
       },
       {
         "title": "Pai and the loop",
         "href": "/pai",
-        "photo": "/photos/northern.jpg"
+        "photo": "/photos/pai.jpg"
       }
     ],
     affiliates: [
@@ -349,8 +354,8 @@ export const pages: Page[] = [
   {
     path: "/itineraries",
     title: "Thailand itineraries",
-    description: "These routes are known for ready first-trip clocks: a first week, classic 10 days, two Andaman weeks, Gulf islands, a northern loop, and a west-of-Bangkok block.",
-    lede: "These itineraries are known for naming the clock and the fork. Use 7 days for Bangkok plus one place. Use 10 days for the spine or one island chain. Use 14 days if you want rest.",
+    description: "Classic 10 days, a 14-day spine, Andaman and Gulf hops, a 7-day north loop, and a 5-day inland run to Ayutthaya and Kanchanaburi.",
+    lede: "Start with 7 or 10 days if this is a first trip. Use 14 days for north and one south coast. Keep Andaman and Gulf hops on one sea.",
     schema: "Article",
     crumbs: [
       {
@@ -360,41 +365,31 @@ export const pages: Page[] = [
     ],
     facts: [
       {
-        "label": "7 days",
-        "value": "Bangkok plus Chiang Mai or one coast"
+        "label": "7 or 10 days",
+        "value": "Bangkok plus north, or Bangkok plus one coast"
       },
       {
         "label": "14 days",
         "value": "Bangkok, north, and one south coast"
       },
       {
-        "label": "10 days south",
-        "value": "Andaman in winter, Gulf in summer"
+        "label": "Island hops",
+        "value": "Andaman Nov-Apr; Gulf Jan-Sep"
       }
     ],
     paragraphs: [
-      "Each itinerary names the transport and the booking links. Drop a night before you add a second island group."
+      "Each itinerary names the transport and the booking links. Drop a night before you add a second island group. Fly the long legs: Bangkok to Chiang Mai is about 70 minutes."
     ],
     portraits: [
       {
-        "title": "First week",
-        "href": "/itineraries/first-week-7-days",
+        "title": "Classic 10 days",
+        "href": "/itineraries/10-days-classic-thailand",
         "photo": "/photos/bangkok.jpg"
       },
       {
-        "title": "Best 14 days",
-        "href": "/itineraries/best-14-days",
-        "photo": "/photos/chiang-mai.jpg"
-      },
-      {
-        "title": "South islands 10 days",
-        "href": "/itineraries/south-islands-10-days",
+        "title": "Andaman 2 weeks",
+        "href": "/itineraries/2-weeks-andaman-island-hopping",
         "photo": "/photos/phuket.jpg"
-      },
-      {
-        "title": "10 days classic",
-        "href": "/itineraries/10-days-classic-thailand",
-        "photo": "/photos/chiang-mai.jpg"
       },
       {
         "title": "Gulf islands 10 days",
@@ -402,19 +397,19 @@ export const pages: Page[] = [
         "photo": "/photos/koh-samui.jpg"
       },
       {
-        "title": "Andaman 2 weeks",
-        "href": "/itineraries/2-weeks-andaman-island-hopping",
-        "photo": "/photos/koh-lanta.jpg"
-      },
-      {
-        "title": "Northern week",
+        "title": "Northern loop",
         "href": "/itineraries/7-days-northern-thailand-loop",
-        "photo": "/photos/northern.jpg"
+        "photo": "/photos/chiang-mai.jpg"
       },
       {
         "title": "Bangkok to Kanchanaburi",
         "href": "/itineraries/5-days-bangkok-ayutthaya-kanchanaburi",
-        "photo": "/photos/erawan.jpg"
+        "photo": "/photos/ayutthaya.jpg"
+      },
+      {
+        "title": "First week",
+        "href": "/itineraries/first-week-7-days",
+        "photo": "/photos/sukhumvit.jpg"
       }
     ],
     faqs: [
@@ -427,7 +422,7 @@ export const pages: Page[] = [
   {
     path: "/plan",
     title: "Plan a trip to Thailand",
-    description: "When to go, visas and TDAC, trains, ferries, eSIM, money, monsoon, and how you move in Bangkok.",
+    description: "The decisions that lock a first trip: season, visas and TDAC, trains, eSIM, money, and how you move in Bangkok.",
     lede: "Start with season and visas. Then lock transport, a SIM, and cash. The pages below are the decisions that lock a first trip.",
     schema: "Article",
     crumbs: [
@@ -451,7 +446,7 @@ export const pages: Page[] = [
       }
     ],
     paragraphs: [
-      "Read when-to-go before you book the south. Read visas-and-tdac before you fly. Use the money, SIM, and monsoon pages before you pack."
+      "Read when-to-go before you book the south. Read visas-and-tdac before you fly. Use the money, SIM, and monsoon pages before you pack. A 2026 BTS tap is 17 to 62 THB; keep that as the city baseline."
     ],
     portraits: [
       {
@@ -505,7 +500,7 @@ export const pages: Page[] = [
   {
     path: "/get-there",
     title: "Get there: Thailand routes",
-    description: "How to move between Bangkok, the islands, Khao Sok, the north, Ayutthaya, and Kanchanaburi.",
+    description: "How to move between Bangkok, the islands, Khao Sok, the north, Ayutthaya, and Kanchanaburi. Fly when the day matters. Sleep on the Chiang Mai train. Use a ferry only on a morning sea.",
     lede: "These pages are the useful hops. Fly when the day matters. Take a sleeper when you want the ride. Use a ferry only on a morning sea.",
     schema: "Article",
     crumbs: [
@@ -529,7 +524,7 @@ export const pages: Page[] = [
       }
     ],
     paragraphs: [
-      "Each route page lists time, mode, and the booking link. Return trips use the same page."
+      "Each route page lists time, mode, and the booking link. Return trips use the same page. Fly the long south and north legs."
     ],
     portraits: [
       {
@@ -583,8 +578,8 @@ export const pages: Page[] = [
   {
     path: "/interests",
     title: "Travel interests in Thailand",
-    description: "Thai food, resort living, and nightlife, kept off the main city pages so those stay scannable.",
-    lede: "Thai food, nightlife, and resort living have their own trees. The main Bangkok page does not list bar crawls or stall queues.",
+    description: "Thai food, resort living, and nightlife: stall queues, named hotels, and late sois, kept off the main city pages so those stay scannable.",
+    lede: "Use these pages when the trip is a stall queue, a named hotel, or a late soi. The main Bangkok page stays districts and trains.",
     schema: "Article",
     crumbs: [
       {
@@ -607,13 +602,13 @@ export const pages: Page[] = [
       }
     ],
     paragraphs: [
-      "Use Thai food for stalls, markets, and regional dishes. Use nightlife for sois and beach clubs. Use resort living when the hotel is the reason to go."
+      "Use Thai food for stalls, markets, and regional dishes. Use nightlife for sois and beach clubs. Use resort living when the hotel is the reason to go. A late Grab across the river is often 80 to 150 THB in 2026."
     ],
     portraits: [
       {
         "title": "Thai food",
         "href": "/thai-food",
-        "photo": "/photos/bangkok.jpg"
+        "photo": "/photos/thai-food.jpg"
       },
       {
         "title": "Nightlife",
@@ -700,8 +695,8 @@ export const pages: Page[] = [
   {
     path: "/bangkok",
     title: "Bangkok",
-    description: "Bangkok is known for river temples, BTS hotel strips, street food, and two airports. Nightlife lives on its own pages.",
-    lede: "Bangkok is known as the usual first stop. Sleep on Sukhumvit or in Siam for the BTS. Sleep riverside for the Chao Phraya. The Old City is for temples, not late nights.",
+    description: "Thailand's landing city: river temples, BTS hotel strips, street food, and two airports. Nightlife lives on its own pages.",
+    lede: "Bangkok is the usual first stop. Sleep on Sukhumvit or in Siam for the BTS. Sleep riverside for the Chao Phraya. The Old City is for temples, not late nights.",
     schema: "City",
     alternateName: "Krung Thep Maha Nakhon",
     crumbs: [
@@ -732,7 +727,8 @@ export const pages: Page[] = [
       "Sukhumvit and Thonglor",
       "Riverside",
       "Old City",
-      "Siam and Silom"
+      "Siam and Silom",
+      "Ari"
     ],
     photo: "/photos/bangkok.jpg",
     geo: { lat: 13.756, lon: 100.502, containedIn: "Central Thailand" },
@@ -748,7 +744,9 @@ export const pages: Page[] = [
           "Sukhumvit and Thonglor: hotels, BTS Nana to Ekkamai, and most first-timer stays.",
           "Riverside and Charoenkrung: the river, warehouse bars, and the Chinatown edge.",
           "Old City and Rattanakosin: palace, wat circuit, and heat. Go early.",
-          "Siam and Silom: malls, BTS interchanges, and the Sala Daeng MRT link."
+          "Siam and Silom: malls, BTS interchanges, and the Sala Daeng MRT link.",
+          "Phrom Phong and Thong Lo: Japanese dining, EmDistrict, and Soi 55 nights.",
+          "Ari: cafes and neighbourhood kitchens 15 minutes north of Siam."
         ]
       }
     ],
@@ -774,24 +772,24 @@ export const pages: Page[] = [
         "photo": "/photos/siam.jpg"
       },
       {
-        "title": "Nightlife",
-        "href": "/interests/nightlife",
-        "photo": "/photos/nightlife.jpg"
-      },
-      {
-        "title": "Ari",
-        "href": "/bangkok/ari",
-        "photo": "/photos/sukhumvit.jpg"
-      },
-      {
         "title": "Phrom Phong and Thong Lo",
         "href": "/bangkok/phrom-phong-and-thong-lo",
-        "photo": "/photos/sukhumvit.jpg"
+        "photo": "/photos/phrom-phong-and-thong-lo.jpg"
       },
       {
         "title": "Silom and Sathorn",
         "href": "/bangkok/silom-and-sathorn",
-        "photo": "/photos/siam.jpg"
+        "photo": "/photos/silom-and-sathorn.jpg"
+      },
+      {
+        "title": "Ari",
+        "href": "/bangkok/ari",
+        "photo": "/photos/ari.jpg"
+      },
+      {
+        "title": "Nightlife",
+        "href": "/interests/nightlife",
+        "photo": "/photos/nightlife.jpg"
       }
     ],
     affiliates: [
@@ -818,8 +816,8 @@ export const pages: Page[] = [
   {
     path: "/bangkok/sukhumvit-thonglor",
     title: "Sukhumvit and Thonglor",
-    description: "Sukhumvit is known for the first-timer BTS hotel strip from Nana to Ekkamai, with Thonglor for dinner and bars.",
-    lede: "Sukhumvit is known as the BTS hotel strip most first stays use. Nana is louder and cheaper. Asok and Phrom Phong are the easy pairing. Thonglor is one stop on for dinner.",
+    description: "Bangkok's first-timer hotel strip: BTS Nana to Ekkamai, with Thonglor for dinner and bars.",
+    lede: "Sukhumvit is the BTS hotel strip most first stays use. Nana is louder and cheaper. Asok and Phrom Phong are the easy pairing. Thonglor is one stop on for dinner.",
     schema: "TouristDestination",
     crumbs: [
       {
@@ -849,10 +847,15 @@ export const pages: Page[] = [
         "value": "Soi 11 and Thonglor sit on nightlife pages"
       }
     ],
+    chips: [
+      "BTS hotel strip",
+      "Thonglor dinner",
+      "First-timer default"
+    ],
     photo: "/photos/sukhumvit.jpg",
     geo: { lat: 13.736, lon: 100.56, containedIn: "Bangkok" },
     paragraphs: [
-      "This is hotels, skytrain, and dinner on one line. Asok and Phrom Phong are the easiest pairing. Thonglor is one stop further. Nana is louder and cheaper.",
+      "This is hotels, skytrain, and dinner on one line. Asok and Phrom Phong are the easiest pairing. Thonglor is one stop further. Nana is louder and cheaper. A 2026 BTS tap along this line is 17 to 47 THB.",
       "Bar Us, Rabbit Hole, and Find The Locker Room are on the Thonglor nightlife page. Havana Social is on Sukhumvit Soi 11. They are not listed here as a crawl."
     ],
     affiliates: [
@@ -869,8 +872,8 @@ export const pages: Page[] = [
   {
     path: "/bangkok/riverside-charoenkrung",
     title: "Riverside and Charoenkrung",
-    description: "Riverside is known for river hotels, warehouse bars, and the Chinatown edge along Charoenkrung.",
-    lede: "Riverside is known for the Chao Phraya and a night walk on Charoenkrung. The BTS is a short Grab, not at the door.",
+    description: "River hotels, warehouse bars, and the Chinatown edge along Charoenkrung. The BTS is a short Grab, not at the door.",
+    lede: "Stay here for the Chao Phraya and a night walk on Charoenkrung. The BTS is a short Grab, not at the door.",
     schema: "TouristDestination",
     crumbs: [
       {
@@ -900,10 +903,15 @@ export const pages: Page[] = [
         "value": "Soi Nana cocktail strip is a short hop"
       }
     ],
+    chips: [
+      "Chao Phraya",
+      "Charoenkrung bars",
+      "Hotel docks"
+    ],
     photo: "/photos/riverside.jpg",
     geo: { lat: 13.73, lon: 100.513, containedIn: "Bangkok" },
     paragraphs: [
-      "This is the river side of Bangkok: hotel docks, warehouse bars, and Chinatown sois. Charoenkrung is the old international road. Capella Bangkok and The Siam are on the resort-living pages.",
+      "This is the river side of Bangkok: hotel docks, warehouse bars, and Chinatown sois. Charoenkrung is the old international road. Capella Bangkok and The Siam are on the resort-living pages. A Grab to Saphan Taksin is often 80 to 150 THB in 2026.",
       "BKK Social Club, Bamboo Bar, Teens of Thailand, Asia Today, and Tropic City sit on the Charoenkrung nightlife page."
     ],
     affiliates: [
@@ -920,8 +928,8 @@ export const pages: Page[] = [
   {
     path: "/bangkok/old-city-rattanakosin",
     title: "Old City and Rattanakosin",
-    description: "The Old City is known for Grand Palace, Wat Pho, and Wat Arun on Rattanakosin Island. A temple morning, not a hotel base.",
-    lede: "The Old City is known for the temple morning. Go at opening. The Grand Palace dress code is real. Wat Arun is a ferry, not a taxi loop.",
+    description: "Grand Palace, Wat Pho, and Wat Arun on Rattanakosin Island. It is a temple morning, not a hotel base.",
+    lede: "This is the temple morning. Go at opening. The Grand Palace dress code is real. Wat Arun is a ferry, not a taxi loop.",
     schema: "TouristDestination",
     crumbs: [
       {
@@ -940,21 +948,26 @@ export const pages: Page[] = [
     facts: [
       {
         "label": "Start",
-        "value": "Grand Palace at opening, 500 THB"
+        "value": "Grand Palace at opening"
       },
       {
         "label": "Pair",
-        "value": "Wat Pho next at 300 THB, Wat Arun by ferry"
+        "value": "Wat Pho next, Wat Arun by ferry"
       },
       {
         "label": "Stay",
         "value": "Only if temples are the whole stay"
       }
     ],
+    chips: [
+      "Grand Palace",
+      "Wat Pho",
+      "Temple morning"
+    ],
     photo: "/photos/old-city.jpg",
     geo: { lat: 13.75, lon: 100.492, containedIn: "Bangkok" },
     paragraphs: [
-      "Grand Palace is 500 THB for foreign visitors. Wat Pho is 300 THB. Come for the palace and the river wats, then leave. Afternoon heat empties the lanes and fills the taxis. Eat on Tha Tien or go back to Sukhumvit for dinner.",
+      "Come for the palace and the river wats, then leave. In 2026 the Grand Palace is 500 THB for foreign visitors and Wat Pho is 300 THB. Afternoon heat empties the lanes and fills the taxis. Eat on Tha Tien or go back to Sukhumvit for dinner.",
       "Combo tickets and licensed guides are easier on Klook than at the gate when queues spike."
     ],
     affiliates: [
@@ -971,8 +984,8 @@ export const pages: Page[] = [
   {
     path: "/bangkok/siam-silom",
     title: "Siam and Silom",
-    description: "Siam is known for malls and the BTS interchange. Silom is known for offices, Lumphini Park, and the MRT.",
-    lede: "Siam is known for malls and connections, not sois. It is the BTS knot. Silom walks to Lumphini and Sala Daeng.",
+    description: "Siam is the mall and BTS interchange. Silom is offices, Lumphini Park, and the MRT.",
+    lede: "Stay here for malls and connections, not sois. Siam is the BTS knot. Silom walks to Lumphini and Sala Daeng.",
     schema: "TouristDestination",
     crumbs: [
       {
@@ -991,21 +1004,26 @@ export const pages: Page[] = [
     facts: [
       {
         "label": "Rail",
-        "value": "Siam BTS interchange; ARL ends at Phaya Thai"
+        "value": "Siam interchange; Sala Daeng to MRT Si Lom"
       },
       {
         "label": "Use",
-        "value": "Malls, two BTS stops from Phaya Thai, park walks"
+        "value": "Malls, ARL link at Phaya Thai, park walks"
       },
       {
         "label": "Stay",
         "value": "Central, less character than Thonglor"
       }
     ],
+    chips: [
+      "BTS interchange",
+      "Malls",
+      "Lumphini"
+    ],
     photo: "/photos/siam.jpg",
     geo: { lat: 13.746, lon: 100.534, containedIn: "Bangkok" },
     paragraphs: [
-      "The Airport Rail Link ends at Phaya Thai. Change to the BTS and ride two stops to Siam (Phaya Thai, Ratchathewi, Siam). Siam is the BTS Sukhumvit and Silom interchange: air-con malls, not a soi neighbourhood. Stay one night if you land late and have not picked a neighbourhood yet. Stay at Silom if you have meetings or want Lumphini at dawn."
+      "Siam is the BTS interchange for the Sukhumvit and Silom lines, plus air-con malls. The Airport Rail Link ends at Phaya Thai. Change there to the BTS and ride two stops to Siam. The ARL from Suvarnabhumi is about 30 minutes. Stay one night if you land late and have not picked a neighborhood yet. Stay at Silom if you have meetings or want Lumphini at dawn."
     ],
     affiliates: [
       stay("Siam hotels", "Interchange", "Walk to BTS and the malls. Rooms run larger in the chain towers.", stayAreaLink('siam'), "/photos/siam.jpg"),
@@ -1021,8 +1039,8 @@ export const pages: Page[] = [
   {
     path: "/chiang-mai",
     title: "Chiang Mai",
-    description: "Chiang Mai is known for Lanna temples inside the moat, Nimman cafes, and the sleeper train from Bangkok.",
-    lede: "Chiang Mai is known as the north base. Give it three nights. Sleep inside the moat for temples on foot. Sleep in Nimman for coffee and a later evening.",
+    description: "Northern Thailand's hub: Lanna temples inside the moat, Nimman cafes, and the sleeper train from Bangkok.",
+    lede: "Chiang Mai is the north base. Give it three nights. Sleep inside the moat for temples on foot. Sleep in Nimman for coffee and a later evening.",
     schema: "City",
     crumbs: [
       {
@@ -1071,19 +1089,14 @@ export const pages: Page[] = [
         "photo": "/photos/nimman.jpg"
       },
       {
-        "title": "Northern corridor",
-        "href": "/destinations/northern-thailand",
-        "photo": "/photos/northern.jpg"
-      },
-      {
         "title": "Doi Inthanon",
         "href": "/chiang-mai/doi-inthanon",
         "photo": "/photos/northern.jpg"
       },
       {
-        "title": "Four Seasons Chiang Mai",
-        "href": "/resort-living/four-seasons-chiang-mai",
-        "photo": "/photos/resort.jpg"
+        "title": "Northern corridor",
+        "href": "/destinations/northern-thailand",
+        "photo": "/photos/northern.jpg"
       }
     ],
     affiliates: [
@@ -1094,7 +1107,7 @@ export const pages: Page[] = [
     faqs: [
       {
         "q": "Fly or train from Bangkok?",
-        "a": "Fly if you land at noon and want dinner in the Old City. Take train 9 or 10 if you want a sleeper and a morning arrival at Chiang Mai station."
+        "a": "Fly if you land at noon and want dinner in the Old City. Take train 9 if you want a sleeper and a morning arrival at Chiang Mai station. Train 10 is the southbound return."
       },
       {
         "q": "How many nights?",
@@ -1132,14 +1145,19 @@ export const pages: Page[] = [
         "value": "Sunday Walking Street on Ratchadamnoen"
       },
       {
-        "label": "Temple booths",
-        "value": "20 to 50 THB cash"
+        "label": "Stay",
+        "value": "Guesthouses and a few quiet hotels"
       }
+    ],
+    chips: [
+      "Moat square",
+      "Dawn wats",
+      "Sunday market"
     ],
     photo: "/photos/chiang-mai-old-city.jpg",
     geo: { lat: 18.788, lon: 98.993, containedIn: "Chiang Mai" },
     paragraphs: [
-      "The Old City is a moated square of Lanna wats, not a nightlife grid. The moat loop is about 6.5 km and takes 75 to 90 minutes on foot. Temple booths take 20 to 50 THB cash. Scooters cut the corners. Sidewalks vanish. The moat road is the easy loop if you are tired of sois."
+      "The Old City is a moated square of Lanna wats, not a nightlife grid. The moat loop is about 6.5 km, closer to 75 to 90 minutes on foot. Temple booths often ask 20 to 50 THB in cash. Scooters cut the corners. Sidewalks vanish."
     ],
     affiliates: [
       stay("Old City stays", "Inside the moat", "Book early for Sunday-market weekends.", stayAreaLink('chiang-mai-old-city'), "/photos/chiang-mai-old-city.jpg"),
@@ -1154,7 +1172,7 @@ export const pages: Page[] = [
   {
     path: "/chiang-mai/nimmanhaemin",
     title: "Nimmanhaemin",
-    description: "Chiang Mai's cafe and dinner district west of the moat, for later evenings than the Old City.",
+    description: "Chiang Mai's cafe and dinner district west of the moat, for later nights and a shorter walk to Maya.",
     lede: "Nimman is the later, cafe side of Chiang Mai. Stay here if the Old City feels too early. Soi 9 and the lanes west of Nimmanhaemin are the evening grid.",
     schema: "TouristDestination",
     crumbs: [
@@ -1185,10 +1203,15 @@ export const pages: Page[] = [
         "value": "Small hotels and apartment-style rooms"
       }
     ],
+    chips: [
+      "Cafes",
+      "Dinner sois",
+      "West of the moat"
+    ],
     photo: "/photos/nimman.jpg",
     geo: { lat: 18.8, lon: 98.968, containedIn: "Chiang Mai" },
     paragraphs: [
-      "Come for dinner, coffee, and a younger night, not temple mornings. Maya and One Nimman are the mall anchors. The better bowls are in the sois, not on the main road."
+      "Come for dinner, coffee, and a younger night, not temple mornings. Maya and One Nimman are the mall anchors. A 2026 Grab to the moat is often 80 to 120 THB and four to seven minutes."
     ],
     affiliates: [
       stay("Nimman hotels", "West of the moat", "Walk to dinner, Grab to the temples at 7:00.", stayAreaLink('nimmanhaemin'), "/photos/nimman.jpg"),
@@ -1203,8 +1226,8 @@ export const pages: Page[] = [
   {
     path: "/phuket",
     title: "Phuket",
-    description: "Phuket is known for an international airport, west-coast beaches, Patong nightlife, and boats to Phi Phi.",
-    lede: "Phuket is known as the easy Andaman airport with beaches attached. Stay on the west coast. Use Patong for a night if you want it, not as a four-night base.",
+    description: "Andaman island with an international airport, west-coast beaches, Patong nightlife, and boats to Phi Phi. Stay west. Do not sleep four nights in Patong.",
+    lede: "Phuket is the easy Andaman airport with beaches attached. Stay on the west coast. Use Patong for a night if you want it, not as a four-night base.",
     schema: "TouristDestination",
     alternateName: "Phuket Island",
     crumbs: [
@@ -1234,7 +1257,7 @@ export const pages: Page[] = [
     chips: [
       "Andaman",
       "HKT",
-      "Phi Phi boats"
+      "West-coast beaches"
     ],
     photo: "/photos/phuket.jpg",
     geo: { lat: 7.88, lon: 98.392, containedIn: "Andaman Coast" },
@@ -1244,34 +1267,29 @@ export const pages: Page[] = [
     ],
     portraits: [
       {
+        "title": "Kata and Karon",
+        "href": "/phuket/kata-and-karon",
+        "photo": "/photos/kata-and-karon.jpg"
+      },
+      {
+        "title": "Kamala and Surin",
+        "href": "/phuket/kamala-and-surin",
+        "photo": "/photos/kamala-and-surin.jpg"
+      },
+      {
+        "title": "Rawai and Nai Harn",
+        "href": "/phuket/rawai-and-nai-harn",
+        "photo": "/photos/rawai-and-nai-harn.jpg"
+      },
+      {
         "title": "Krabi",
         "href": "/krabi",
         "photo": "/photos/krabi.jpg"
       },
       {
-        "title": "Khao Sok",
-        "href": "/khao-sok",
-        "photo": "/photos/khao-sok.jpg"
-      },
-      {
         "title": "Phuket nightlife",
         "href": "/interests/nightlife/phuket-beach-clubs",
         "photo": "/photos/nightlife.jpg"
-      },
-      {
-        "title": "Kata and Karon",
-        "href": "/phuket/kata-and-karon",
-        "photo": "/photos/phuket.jpg"
-      },
-      {
-        "title": "Kamala and Surin",
-        "href": "/phuket/kamala-and-surin",
-        "photo": "/photos/phuket.jpg"
-      },
-      {
-        "title": "Rawai and Nai Harn",
-        "href": "/phuket/rawai-and-nai-harn",
-        "photo": "/photos/phuket.jpg"
       }
     ],
     affiliates: [
@@ -1293,7 +1311,7 @@ export const pages: Page[] = [
   {
     path: "/krabi",
     title: "Krabi",
-    description: "Limestone cliffs, Railay's boat-only beach, Ao Nang logistics, and boats to Phi Phi. Fly into KBV.",
+    description: "Limestone cliffs, Railay's boat-only beach, and Ao Nang logistics. Fly into KBV. Boats to Phi Phi run in season.",
     lede: "Krabi is known for cliffs and Railay, not a long resort strip. Stay in Ao Nang if you want cars and dinner. Stay on Railay if you accept a longtail.",
     schema: "TouristDestination",
     crumbs: [
@@ -1328,7 +1346,7 @@ export const pages: Page[] = [
     photo: "/photos/krabi.jpg",
     geo: { lat: 8.086, lon: 98.906, containedIn: "Andaman Coast" },
     paragraphs: [
-      "The cliffs and the Railay pocket are why people come. Ao Nang is the logistics town. Railay has no road. Phi Phi is a day trip, or a night if you want the village after the boats leave.",
+      "The cliffs and the Railay pocket are why people come. Ao Nang is the logistics town. Railay has no road: a shared longtail is about 10 to 15 minutes and 100 to 200 THB a person in 2026. Phi Phi is a day trip, or a night if you want the village after the boats leave.",
       "Rayavadee sits in the Railay-Phra Nang pocket and is filed under resort living."
     ],
     portraits: [
@@ -1340,7 +1358,7 @@ export const pages: Page[] = [
       {
         "title": "Koh Lanta",
         "href": "/koh-lanta",
-        "photo": "/photos/krabi.jpg"
+        "photo": "/photos/koh-lanta.jpg"
       }
     ],
     affiliates: [
@@ -1358,8 +1376,8 @@ export const pages: Page[] = [
   {
     path: "/koh-samui",
     title: "Koh Samui",
-    description: "Samui is known for its own airport, Chaweng nightlife, quieter north and south coasts, and boats to Phangan and Tao.",
-    lede: "Samui is known as the Gulf hub with an airport on the island. January to September is the easier sea. Chaweng is loud. The north and south coasts are quieter.",
+    description: "Gulf island with its own airport, Chaweng nightlife, quieter north and south coasts, and boats to Phangan and Tao.",
+    lede: "Samui is the Gulf hub with an airport on the island. Stay on Chaweng for nightlife. Stay north or south if you want a quieter coast. January to September is the easier sea.",
     schema: "TouristDestination",
     crumbs: [
       {
@@ -1393,39 +1411,29 @@ export const pages: Page[] = [
     photo: "/photos/koh-samui.jpg",
     geo: { lat: 9.512, lon: 100.013, containedIn: "Gulf of Thailand" },
     paragraphs: [
-      "Samui is the Lower Gulf base: an airport, a loud east-coast strip, and boats to Phangan and Tao. Fly BKK-USM when the day matters. The Donsak ferry plus a van from the mainland is the slower, cheaper path.",
+      "Samui is the Lower Gulf base: an airport, a loud east-coast strip, and boats to Phangan and Tao. Fly BKK-USM in about 70 minutes when the day matters. The Donsak ferry plus a van from the mainland is the slower, cheaper path.",
       "Nikki Beach and the beach-club row sit on the Samui nightlife page. Six Senses and Four Seasons sit under resort living."
     ],
     portraits: [
       {
-        "title": "Koh Phangan",
-        "href": "/koh-phangan",
-        "photo": "/photos/koh-phangan.jpg"
-      },
-      {
-        "title": "Koh Tao",
-        "href": "/koh-tao",
-        "photo": "/photos/koh-tao.jpg"
-      },
-      {
-        "title": "Samui nightlife",
-        "href": "/interests/nightlife/koh-samui-beach-clubs",
-        "photo": "/photos/nightlife.jpg"
-      },
-      {
         "title": "Chaweng",
         "href": "/koh-samui/chaweng",
-        "photo": "/photos/koh-samui.jpg"
+        "photo": "/photos/chaweng.jpg"
       },
       {
         "title": "Lamai",
         "href": "/koh-samui/lamai",
-        "photo": "/photos/koh-samui.jpg"
+        "photo": "/photos/lamai.jpg"
       },
       {
         "title": "Ang Thong",
         "href": "/koh-samui/ang-thong-marine-park",
         "photo": "/photos/koh-samui.jpg"
+      },
+      {
+        "title": "Koh Phangan",
+        "href": "/koh-phangan",
+        "photo": "/photos/koh-phangan.jpg"
       }
     ],
     affiliates: [
@@ -1443,7 +1451,7 @@ export const pages: Page[] = [
   {
     path: "/koh-phangan",
     title: "Koh Phangan",
-    description: "Gulf island north of Samui. Full Moon Party is one beach. The rest is bays and jungle roads.",
+    description: "Koh Phangan is known for the Full Moon Party at Haad Rin. The rest of the island is west and north bays plus jungle roads.",
     lede: "Phangan is known for the Full Moon Party at Haad Rin. Book that beach only if the party is the trip. Sleep on the west or north bays for a quieter stay.",
     schema: "TouristDestination",
     crumbs: [
@@ -1477,7 +1485,7 @@ export const pages: Page[] = [
     photo: "/photos/koh-phangan.jpg",
     geo: { lat: 9.731, lon: 100.013, containedIn: "Gulf of Thailand" },
     paragraphs: [
-      "The party is one beach. The island is the bays. Thong Nai Pan, Srithanu, and the west coast are the usual first stays. Scooter roads are steep and sandy. Grab exists in pockets; do not count on it after midnight.",
+      "The party is one beach. The island is the bays. Thong Nai Pan, Srithanu, and the west coast are the usual first stays. The Lomprayah Samui-Thong Sala catamaran is about 30 minutes. Seatran takes about 45. Scooter roads are steep and sandy.",
       "Koh Tao is a further ferry if diving is the point. It is not on this first spine as a must."
     ],
     portraits: [
@@ -1506,8 +1514,8 @@ export const pages: Page[] = [
   {
     path: "/khao-sok",
     title: "Khao Sok",
-    description: "Khao Sok is known for rainforest and Cheow Lan Lake, a flooded karst reservoir between Surat Thani and Phang Nga.",
-    lede: "Khao Sok is known for limestone cliffs on a flooded lake and a night in the forest. Sleep at the lake for dawn mist. Sleep in the village if you arrive late.",
+    description: "Rainforest and Cheow Lan Lake, a flooded karst reservoir between Surat Thani and Phang Nga.",
+    lede: "Come for limestone cliffs on a flooded lake, and a night in the forest. Sleep at the lake for dawn mist. Sleep in the village if you arrive late from Phuket or Krabi.",
     schema: "TouristDestination",
     crumbs: [
       {
@@ -1540,7 +1548,7 @@ export const pages: Page[] = [
     photo: "/photos/khao-sok.jpg",
     geo: { lat: 8.91, lon: 98.53, containedIn: "Andaman Coast" },
     paragraphs: [
-      "Khao Sok is the rainforest-and-lake stop on an Andaman week. The lake is inland; the calendar is still Andaman. Pair it with Phuket or Krabi, not with Samui, unless you like a long van.",
+      "Khao Sok is the rainforest-and-lake stop on an Andaman week. The lake is inland; the calendar is still Andaman. A van from Phuket or Krabi is about 2 to 3 hours. Pair it with those coasts, not with Samui, unless you like a longer road.",
       "Night safaris and lake canoes are the usual Klook-booked pieces. Raft houses vary in comfort; read the last season's notes."
     ],
     portraits: [
@@ -1574,8 +1582,8 @@ export const pages: Page[] = [
   {
     path: "/itineraries/best-14-days",
     title: "Best 14 days in Thailand",
-    description: "Fourteen days are known for Bangkok, Chiang Mai, then one south coast. Fly the long legs. Flip Andaman vs Gulf with the monsoon.",
-    lede: "Two weeks are known for three nights in Bangkok, three in Chiang Mai, then one south coast. Do not add a second sea.",
+    description: "Bangkok, Chiang Mai, then one south coast. Fly the long legs. Flip Andaman vs Gulf with the monsoon.",
+    lede: "This is the 14-day spine: three nights Bangkok, three Chiang Mai, then one south coast. Do not add a second sea.",
     schema: "Article",
     crumbs: [
       {
@@ -1603,7 +1611,7 @@ export const pages: Page[] = [
     ],
     photo: "/photos/bangkok.jpg",
     paragraphs: [
-      "The spine is city, north, islands. Drop Chiang Rai and a second island group before you drop rest days."
+      "The spine is city, north, then one island group. Fly the long legs: Bangkok to Chiang Mai is about 70 minutes. Drop Chiang Rai and a second sea before you drop rest days."
     ],
     days: [
       {
@@ -1645,7 +1653,7 @@ export const pages: Page[] = [
       {
         "n": 7,
         "title": "Fly south",
-        "body": "CNX to HKT or USM. If you must connect in Bangkok, keep the layover honest.",
+        "body": "CNX to HKT or USM. If you must connect in Bangkok, stay at one airport and allow at least 1 hour 15 minutes on one ticket.",
         "photo": "/photos/phuket.jpg"
       },
       {
@@ -1710,8 +1718,8 @@ export const pages: Page[] = [
   {
     path: "/itineraries/first-week-7-days",
     title: "First week in Thailand (7 days)",
-    description: "A first week is known for Bangkok plus Chiang Mai, or Bangkok plus one south coast. Not both.",
-    lede: "A first week is known for one fork after Bangkok. North for temples and food. South for a beach. Pick with the monsoon, not with a map that shows both.",
+    description: "Seven days: Bangkok plus Chiang Mai, or Bangkok plus one south coast. Not both.",
+    lede: "A first week has one fork after Bangkok. North for temples and food. South for a beach. Pick with the monsoon, not with a map that shows both.",
     schema: "Article",
     crumbs: [
       {
@@ -1739,7 +1747,7 @@ export const pages: Page[] = [
     ],
     photo: "/photos/bangkok.jpg",
     paragraphs: [
-      "Three nights in Bangkok is enough. The remaining four nights belong to one other place."
+      "A first week has one fork after Bangkok. Three nights in the city is enough. The remaining four nights belong to one other place. The fork flight is about 70 minutes to CNX, HKT, USM, or KBV."
     ],
     days: [
       {
@@ -1799,8 +1807,8 @@ export const pages: Page[] = [
   {
     path: "/itineraries/south-islands-10-days",
     title: "South islands in 10 days",
-    description: "Ten south days are known for staying on one sea. Andaman (Phuket, Krabi, Khao Sok) in November to April. Gulf (Samui, Phangan, Tao) in January to September.",
-    lede: "A south-islands plan is known for picking one sea. The monsoon flip is the whole point. Do not fly Phuket to Samui to see both on a first trip.",
+    description: "Ten days on one sea. Andaman (Phuket, Krabi, Khao Sok) November to April. Gulf (Samui, Phangan, Tao) January to September.",
+    lede: "Pick a sea. The monsoon flip is the whole plan. Do not fly Phuket to Samui to see both on a first south trip.",
     schema: "Article",
     crumbs: [
       {
@@ -1828,8 +1836,8 @@ export const pages: Page[] = [
     ],
     photo: "/photos/phuket.jpg",
     paragraphs: [
-      "Andaman version: Phuket two nights, Krabi or Railay three, Phi Phi one, Khao Sok one, buffer two.",
-      "Gulf version: Samui three, Phangan three, optional Tao two, buffer two. Ferries in the morning."
+      "Stay on one sea. Andaman version: Phuket two nights, Krabi or Railay three, Phi Phi one, Khao Sok one, buffer two. Phuket to Krabi is about 2 to 3 hours by van.",
+      "Gulf version: Samui three, Phangan three, optional Tao two, buffer two. Ferries in the morning. The Lomprayah Samui to Thong Sala catamaran is about 30 minutes. Seatran takes about 45."
     ],
     days: [
       {
@@ -1941,7 +1949,7 @@ export const pages: Page[] = [
     ],
     photo: "/photos/phuket.jpg",
     paragraphs: [
-      "Bangkok is hot most of the year and wettest in September and October. You still go. You walk in the morning and sit in air-con at 14:00.",
+      "Thailand has two beach calendars, not one winter. Bangkok is hot most of the year and wettest in September and October. You still go. Walk in the morning and sit in air-con at 14:00. A 2026 BTS tap is 17 to 62 THB either month.",
       "Chiang Mai has a cool season (November to February), a hot season (March to May, smoke risk), and a rainy season that is still usable.",
       "Songkran in mid-April is a water festival, not a sightseeing week in the Old City. Book it on purpose or avoid the Old City lanes that week."
     ],
@@ -2005,7 +2013,7 @@ export const pages: Page[] = [
   {
     path: "/plan/visas-and-tdac",
     title: "Visas and TDAC",
-    description: "60-day visa-free stay for US, UK, and most EU passports, plus the Thailand Digital Arrival Card (TDAC) before you fly.",
+    description: "A 60-day visa-free stay for US, UK, and most EU passports, plus the Thailand Digital Arrival Card (TDAC) before you fly.",
     lede: "Most Western passports now get 60 days visa-free on arrival for tourism. You still submit TDAC before the flight. This is not legal advice; recheck the Immigration Bureau and your airline 72 hours out.",
     schema: "Article",
     crumbs: [
@@ -2034,7 +2042,7 @@ export const pages: Page[] = [
     ],
     photo: "/photos/bangkok.jpg",
     paragraphs: [
-      "TDAC is the digital arrival card that replaced the old paper TM6 for most air arrivals. Complete it on the official Immigration site. Scam copies exist. Type the government address yourself.",
+      "Most Western passports get 60 visa-free days plus a free TDAC form. TDAC replaced the old paper TM6 for most air arrivals. Complete it on the official Immigration site about 72 hours before you fly. Scam copies exist. Type the government address yourself.",
       "Visa-free 60 days covers a 14-day trip with room left. If you hold a passport that is not on the exemption list, you need an e-visa or a visa from a consulate before you fly.",
       "Overland arrivals and air arrivals can differ. Cruise and private-air rules differ again. Use the same official page, not a blog comment from 2022."
     ],
@@ -2052,8 +2060,8 @@ export const pages: Page[] = [
   {
     path: "/plan/trains-and-ferries",
     title: "Trains and ferries in Thailand",
-    description: "SRT sleeper trains from Krung Thep Aphiwat, plus Gulf ferries and Andaman boats.",
-    lede: "The useful train is Bangkok to Chiang Mai on SRT 9 and 10. The useful boats are Lomprayah on the Gulf and morning Andaman ferries to Phi Phi.",
+    description: "The useful SRT sleeper from Krung Thep Aphiwat, plus Gulf ferries and morning Andaman boats.",
+    lede: "The useful train is the Bangkok to Chiang Mai sleeper on SRT 9 and 10. The useful boats are Lomprayah on the Gulf and morning Andaman ferries to Phi Phi.",
     schema: "Article",
     crumbs: [
       {
@@ -2068,7 +2076,7 @@ export const pages: Page[] = [
     facts: [
       {
         "label": "North train",
-        "value": "SRT 9 northbound about 18:40 to 07:15"
+        "value": "SRT 9 and 10, Krung Thep Aphiwat to Chiang Mai"
       },
       {
         "label": "Gulf boats",
@@ -2081,7 +2089,7 @@ export const pages: Page[] = [
     ],
     photo: "/photos/chiang-mai.jpg",
     paragraphs: [
-      "Long-distance trains now use Krung Thep Aphiwat Central Terminal, not Hua Lamphong, for the Chiang Mai sleepers. SRT 9 northbound (Krung Thep Aphiwat to Chiang Mai, about 18:40 to 07:15) is the useful overnight. SRT 10 is the southbound return, Chiang Mai about 18:20 to Krung Thep Aphiwat about 06:30. Don Mueang is about 06:13 if you fly DMK that morning. Confirm today's board. Budget a Grab; the station is north of the old core.",
+      "The useful Thai train is the Bangkok to Chiang Mai sleeper from Krung Thep Aphiwat Central Terminal, not Hua Lamphong. The ride is about 12 hours. A 2026 lower berth is often 800 to 1,400 THB. Budget a Grab from your hotel; the station is north of the old core.",
       "Book trains on SRT or via Trip.com when inventory is mirrored. Book Gulf ferries the afternoon before. Book Andaman boats when the weather desk is awake, not a week out in September."
     ],
     sections: [
@@ -2098,7 +2106,7 @@ export const pages: Page[] = [
             [
               "Bangkok to Chiang Mai",
               "SRT 9/10 sleeper or flight",
-              "SRT 9 northbound about 18:40 to 07:15. Flight is the day-saver."
+              "Train is the experience. Flight is the day-saver."
             ],
             [
               "Bangkok to Phuket or Krabi",
@@ -2123,7 +2131,7 @@ export const pages: Page[] = [
             [
               "Bangkok to Kanchanaburi",
               "Ordinary train from Thonburi",
-              "Not Bang Sue. Nam Tok is a separate check."
+              "Thonburi Station, not Krung Thep Aphiwat (Bang Sue Grand). Nam Tok is a separate check."
             ],
             [
               "Bangkok to Hua Hin",
@@ -2149,7 +2157,7 @@ export const pages: Page[] = [
     path: "/plan/grab-and-bts",
     title: "Grab, Bolt, BTS, MRT, and ARL",
     description: "How to move in Bangkok: tap the BTS and MRT, ride the Airport Rail Link, and use Grab or Bolt for the last stretch.",
-    lede: "Tap in. Do not cash-negotiate a taxi from the airport unless you like the sport. Grab and Bolt show a price. The BTS is faster than any of them from Asok to Siam at 18:00.",
+    lede: "Use a tap-in card or contactless on the BTS. Do not cash-negotiate a taxi from the airport. Grab and Bolt show a price. The BTS is faster than either from Asok to Siam at 18:00.",
     schema: "Article",
     crumbs: [
       {
@@ -2177,7 +2185,7 @@ export const pages: Page[] = [
     ],
     photo: "/photos/bts.jpg",
     paragraphs: [
-      "Buy a Rabbit card only if you will ride BTS for many days. A contactless Visa or Mastercard tap is enough for a first week on most gates. Keep a coin stash for the odd older gate.",
+      "Use a tap-in Skytrain, not a cash taxi from the airport. Buy a Rabbit card only if you will ride BTS for many days. A 2026 contactless tap is 17 to 62 THB. A Visa or Mastercard tap is enough for a first week on most gates. Keep a coin stash for the odd older gate.",
       "MRT Blue intersects BTS at Si Lom/Sala Daeng, Sukhumvit/Asok, and Chatuchak. That is the useful map. You do not need the whole system.",
       "Don Mueang has no ARL. Use the A1 bus links, a booked car, or Grab. Suvarnabhumi has ARL and taxis. Book a Trip.com transfer if you land after 22:00 with three bags."
     ],
@@ -2222,7 +2230,7 @@ export const pages: Page[] = [
       },
       {
         "label": "Train",
-        "value": "SRT 9 about 18:40 to 07:15"
+        "value": "SRT 9/10 sleeper, about 12 hours"
       },
       {
         "label": "Who should train",
@@ -2231,7 +2239,7 @@ export const pages: Page[] = [
     ],
     photo: "/photos/chiang-mai.jpg",
     paragraphs: [
-      "This is the usual Bangkok-to-north choice: a short flight or the useful Thai sleeper. SRT 9 northbound (Krung Thep Aphiwat to Chiang Mai, about 18:40 to 07:15) is the one most first-timers mean. SRT 10 is the southbound sleeper, Chiang Mai about 18:20 to Krung Thep Aphiwat about 06:30. Don Mueang is about 06:13 if you fly DMK that morning. Confirm today's numbers on SRT the week you ride."
+      "This is the usual Bangkok-to-north choice: a short flight or the useful Thai sleeper. The return is the same mix. Train 10 is the southbound sleeper. Confirm today's numbers on SRT the week you ride."
     ],
     sections: [
       {
@@ -2252,7 +2260,7 @@ export const pages: Page[] = [
             [
               "SRT 9 / 10",
               "About 12 hours",
-              "SRT 9 northbound about 18:40 to 07:15 from Krung Thep Aphiwat. Book a sleeper berth."
+              "Departs Krung Thep Aphiwat. Book a sleeper berth."
             ],
             [
               "Day train",
@@ -2365,7 +2373,7 @@ export const pages: Page[] = [
   {
     path: "/get-there/bangkok-to-koh-samui",
     title: "Bangkok to Koh Samui",
-    description: "The Gulf hop: fly BKK to USM in about 70 minutes, or take the van-plus-ferry via Donsak.",
+    description: "The Gulf hop: fly BKK to USM in about 70 minutes, or take the cheaper van-plus-ferry via Donsak.",
     lede: "Fly to USM if the day matters. The van-plus-ferry via Donsak is the cheaper half-day.",
     schema: "Article",
     crumbs: [
@@ -2443,7 +2451,7 @@ export const pages: Page[] = [
     path: "/get-there/phuket-to-krabi-phi-phi",
     title: "Phuket to Krabi and Phi Phi",
     description: "A morning van links Phuket and Krabi. Boats to Phi Phi run from both in season. Skip boat days when the Andaman is up.",
-    lede: "Van between Phuket and Krabi in any month. Boat to Phi Phi in the morning, November to April. Treat boat days as optional in the southwest monsoon.",
+    lede: "This is the Andaman hop: a van between Phuket and Krabi in any month, and a morning boat to Phi Phi from November to April. Treat boat days as optional in the southwest monsoon.",
     schema: "Article",
     crumbs: [
       {
@@ -2524,7 +2532,7 @@ export const pages: Page[] = [
     path: "/interests/resort-living",
     title: "Resort living in Thailand",
     description: "Named luxury and MGallery stays, with Trip.com rate links in context. The hotel is the reason to go.",
-    lede: "Resort living is for trips where the hotel is the point: river houses, Andaman villas, and named Gulf bays. They are not ranked. Compare transfer time and monsoon side.",
+    lede: "Use resort living when the hotel is the point: river houses, Andaman villas, and named Gulf bays. They are not ranked. Compare transfer time and monsoon side.",
     schema: "Article",
     crumbs: [
       {
@@ -2548,7 +2556,7 @@ export const pages: Page[] = [
     ],
     photo: "/photos/resort.jpg",
     paragraphs: [
-      "They are not ranked. Compare transfer time and monsoon side before you lock a week."
+      "These stays are the itinerary, not a ranked list. Compare transfer time and monsoon side before you lock a week. A HKT car to the west coast is 45 to 90 minutes. A USM car is often 15 to 40 minutes."
     ],
     portraits: [
       {
@@ -2662,8 +2670,8 @@ export const pages: Page[] = [
   {
     path: "/resort-living/amanpuri",
     title: "Amanpuri",
-    description: "Aman's pavilions on Phuket's west coast, above a private cove on the Andaman side.",
-    lede: "Aman's pavilions on Phuket's west coast, above a private cove on the Andaman side.",
+    description: "Aman's pavilion resort above a private west-coast cove on Phuket. Andaman season, not a Patong base.",
+    lede: "Amanpuri is known for coconut-grove pavilions above a private cove. Use it when the hotel is the week, not when you want Patong.",
     schema: "Article",
     crumbs: [
       {
@@ -2692,7 +2700,7 @@ export const pages: Page[] = [
     photo: "/photos/phuket.jpg",
     paragraphs: [
       "Amanpuri is a pavilion resort, not a tower. You come for the coconut grove, the cove, and a week that does not need Patong.",
-      "Pair it with the Andaman window (November to April). A HKT car is the correct landing, not a boat day."
+      "Pair it with the Andaman window (November to April). A HKT car is about 45 to 75 minutes. Do not boat on arrival day."
     ],
     affiliates: [
       stay("Amanpuri rates", "Trip.com", "Live rates for this property and nearby peers.", hotelSearchLink('Amanpuri Phuket', 'phuket'), "/photos/phuket.jpg"),
@@ -2707,8 +2715,8 @@ export const pages: Page[] = [
   {
     path: "/resort-living/six-senses-yao-noi",
     title: "Six Senses Yao Noi",
-    description: "A hill-villa resort on Koh Yao Noi, looking at Phang Nga Bay between Phuket and Krabi.",
-    lede: "A hill-villa resort on Koh Yao Noi, looking at Phang Nga Bay between Phuket and Krabi.",
+    description: "Hill villas on Koh Yao Noi looking at Phang Nga Bay, between Phuket and Krabi. Boat access only.",
+    lede: "Six Senses Yao Noi is known for hill villas over Phang Nga Bay. Use it when the bay is the trip and you accept a pier plus boat.",
     schema: "Article",
     crumbs: [
       {
@@ -2736,8 +2744,8 @@ export const pages: Page[] = [
     ],
     photo: "/photos/krabi.jpg",
     paragraphs: [
-      "Yao Noi is the point: limestone bay, not a nightlife strip. Transfers are a pier plus a longtail or speedboat from Phuket or Krabi, often 45 to 75 minutes after you leave the airport.",
-      "Book boats in the Andaman season (November to April). In the southwest monsoon, treat this as a weather-dependent stay."
+      "Yao Noi is the point: limestone bay, not a nightlife strip. Transfers are a pier plus a 20 to 45 minute longtail or speedboat from Phuket or Krabi.",
+      "Book boats in the Andaman season. In the southwest monsoon, treat this as a weather-dependent stay."
     ],
     affiliates: [
       stay("Six Senses Yao Noi rates", "Trip.com", "Live rates for this property and nearby peers.", hotelSearchLink('Six Senses Yao Noi', 'phuket'), "/photos/krabi.jpg"),
@@ -2753,8 +2761,8 @@ export const pages: Page[] = [
   {
     path: "/resort-living/six-senses-samui",
     title: "Six Senses Samui",
-    description: "Villa resort on a headland above Bophut, on the Gulf side of Samui.",
-    lede: "Villa resort on a headland above Bophut, on the Gulf side of Samui. Use it when the stay is the trip.",
+    description: "Villa resort on a headland above Bophut, on the Gulf side of Samui. Quieter than Chaweng.",
+    lede: "Six Senses Samui is known for hill villas above Bophut. Stay here if you want a Gulf headland, not the Chaweng strip.",
     schema: "Article",
     crumbs: [
       {
@@ -2782,7 +2790,7 @@ export const pages: Page[] = [
     ],
     photo: "/photos/koh-samui.jpg",
     paragraphs: [
-      "This is a Gulf-calendar property. January to September is the easier sea. USM is close; still book the car.",
+      "Six Senses Samui is hill villas above Bophut on a Gulf calendar. January to September is the easier sea. USM is about 15 to 25 minutes by car. Still book the car.",
       "Bophut village is the dinner walk if you leave the hill. Nikki Beach is on the nightlife page, not here."
     ],
     affiliates: [
@@ -2798,8 +2806,8 @@ export const pages: Page[] = [
   {
     path: "/resort-living/capella-bangkok",
     title: "Capella Bangkok",
-    description: "A river hotel on the Bangkok side of Chao Phraya, in the Capella register.",
-    lede: "A river hotel on the Bangkok side of Chao Phraya, in the Capella register.",
+    description: "Capella's river hotel on the Bangkok bank of the Chao Phraya, for a stay that is not Sukhumvit.",
+    lede: "Capella Bangkok is known for a river path and a quiet bank. Use it when the room and the Chao Phraya are the evenings.",
     schema: "Article",
     crumbs: [
       {
@@ -2827,7 +2835,7 @@ export const pages: Page[] = [
     ],
     photo: "/photos/riverside.jpg",
     paragraphs: [
-      "Capella sits on the river, not on Sukhumvit. Use it when the room and the river path are the evenings. The palace is about 20 minutes by boat at opening.",
+      "Capella sits on the river, not on Sukhumvit. A 2026 Grab to Saphan Taksin is often 80 to 150 THB. Use it when the room and the river path are the evenings.",
       "The palace is a morning boat. Charoenkrung bars are a short Grab. Do not expect a BTS at the door."
     ],
     affiliates: [
@@ -2843,8 +2851,8 @@ export const pages: Page[] = [
   {
     path: "/resort-living/the-siam",
     title: "The Siam",
-    description: "An art-deco river compound in Dusit, with its own boat and a city that feels far away.",
-    lede: "An art-deco river compound in Dusit, with its own boat and a city that feels far away.",
+    description: "Art-deco river compound in Dusit with its own boat. A Bangkok stay that sits north of the usual tourist docks.",
+    lede: "The Siam is known for a private Dusit compound and a hotel boat. Use it for two Bangkok nights that are not Sukhumvit.",
     schema: "Article",
     crumbs: [
       {
@@ -2872,7 +2880,7 @@ export const pages: Page[] = [
     ],
     photo: "/photos/riverside.jpg",
     paragraphs: [
-      "The Siam is north of the usual tourist river hotels. The hotel boat is part of the stay.",
+      "The Siam is north of the usual tourist river hotels. The hotel boat is part of the stay. Budget 20 to 40 minutes on the river to the Old City piers.",
       "Use it for a two-night Bangkok that is not Sukhumvit. Pair with Old City mornings, not Soi 11."
     ],
     affiliates: [
@@ -2888,8 +2896,8 @@ export const pages: Page[] = [
   {
     path: "/resort-living/four-seasons-chiang-mai",
     title: "Four Seasons Chiang Mai",
-    description: "Rice-terrace pavilions north of the city in the Mae Rim valley.",
-    lede: "Rice-terrace pavilions north of the city in the Mae Rim valley. Budget 30 to 45 minutes to the Old City.",
+    description: "Rice-terrace pavilions in the Mae Rim valley north of Chiang Mai. A valley stay, not a moat hotel.",
+    lede: "Four Seasons Chiang Mai is known for rice-terrace pavilions in Mae Rim. Use it when the valley is the trip and you accept a 30 to 45 minute ride to the Old City.",
     schema: "Article",
     crumbs: [
       {
@@ -2917,7 +2925,7 @@ export const pages: Page[] = [
     ],
     photo: "/photos/chiang-mai.jpg",
     paragraphs: [
-      "This is not a moat hotel. Budget 30 to 45 minutes to the Old City. You come for the valley, cooking school, and cool-season mornings.",
+      "Four Seasons Chiang Mai is the Mae Rim valley, not a moat hotel. Budget 30 to 45 minutes to the Old City. You come for rice terraces, cooking school, and cool-season mornings.",
       "Smoke season (late February to April) can sit in the valley. Check the air before you lock March."
     ],
     affiliates: [
@@ -2933,8 +2941,8 @@ export const pages: Page[] = [
   {
     path: "/resort-living/four-seasons-koh-samui",
     title: "Four Seasons Koh Samui",
-    description: "Gulf-facing villas on the northwest coast of Samui, away from Chaweng.",
-    lede: "Gulf-facing villas on the northwest coast of Samui, away from Chaweng.",
+    description: "Gulf-facing villas on the northwest coast of Samui, away from Chaweng and the east-coast strip.",
+    lede: "Four Seasons Koh Samui is known for northwest-coast villas. Stay here if you want a Gulf view and will Grab for most dinners.",
     schema: "Article",
     crumbs: [
       {
@@ -2962,8 +2970,8 @@ export const pages: Page[] = [
     ],
     photo: "/photos/koh-samui.jpg",
     paragraphs: [
-      "Northwest Samui is a different island from Chaweng. You will Grab or drive 30 to 40 minutes for most off-property dinners.",
-      "Use the Gulf window (January to September). USM is the arrival. Pair with a Phangan boat only if you want a day off-property."
+      "Northwest Samui is a different island from Chaweng. USM is about 20 to 35 minutes by car. You will Grab or drive for most off-property dinners.",
+      "Use the Gulf window. USM is the arrival. Pair with a Phangan boat only if you want a day off-property."
     ],
     affiliates: [
       stay("Four Seasons Koh Samui rates", "Trip.com", "Live rates for this property and nearby peers.", hotelSearchLink('Four Seasons Koh Samui', 'koh-samui'), "/photos/koh-samui.jpg"),
@@ -2978,8 +2986,8 @@ export const pages: Page[] = [
   {
     path: "/resort-living/soneva-kiri",
     title: "Soneva Kiri",
-    description: "A private-island style stay on Koh Kood in Trat, usually reached by Bangkok flight plus boat or the resort transfer.",
-    lede: "A private-island style stay on Koh Kood in Trat, usually reached by Bangkok flight plus boat or the resort transfer.",
+    description: "Private-island style stay on Koh Kood in Trat. Bangkok flight plus boat, or the resort transfer. Not a Phuket add-on.",
+    lede: "Soneva Kiri is known for a Koh Kood hideaway with its own transfer plan. Use it as its own trip, not a bolt-on to Phuket.",
     schema: "Article",
     crumbs: [
       {
@@ -3007,8 +3015,8 @@ export const pages: Page[] = [
     ],
     photo: "/photos/koh-phangan.jpg",
     paragraphs: [
-      "Koh Kood is not Samui and not the Andaman circuit. Treat Soneva Kiri as its own trip, not a bolt-on to Phuket. The usual window is November to February.",
-      "Transfer logistics are the first thing to book. Budget most of a travel day from Bangkok. Rates without a transfer plan are incomplete."
+      "Koh Kood is not Samui and not the Andaman circuit. Treat Soneva Kiri as its own trip. Bangkok to Trat is about 1 hour by air, then a boat of about 1 to 1.5 hours, or the resort transfer.",
+      "Transfer logistics are the first thing to book. Rates without a transfer plan are incomplete."
     ],
     affiliates: [
       stay("Soneva Kiri rates", "Trip.com", "Live rates for this property and nearby peers.", hotelSearchLink('Soneva Kiri', 'bangkok'), "/photos/koh-phangan.jpg"),
@@ -3023,8 +3031,8 @@ export const pages: Page[] = [
   {
     path: "/resort-living/rayavadee",
     title: "Rayavadee",
-    description: "A grove resort in the Railay-Phra Nang pocket, with no road in. Boats only.",
-    lede: "A grove resort in the Railay-Phra Nang pocket, with no road in. Boats only.",
+    description: "Grove resort in the Railay-Phra Nang pocket. No road in. Boats only. Andaman season.",
+    lede: "Rayavadee is known for a boat-only grove in the Railay cliffs. Use it when the pocket is the stay and you accept being stuck on a storm day.",
     schema: "Article",
     crumbs: [
       {
@@ -3052,8 +3060,8 @@ export const pages: Page[] = [
     ],
     photo: "/photos/krabi.jpg",
     paragraphs: [
-      "Rayavadee is Krabi's cliff-bay stay. You arrive by boat, often 15 to 20 minutes from Ao Nang. That is not a bug.",
-      "Lock it in the Andaman window (November to April). A storm day here is still beautiful and fully stuck."
+      "Rayavadee is Krabi's cliff-bay stay. You arrive by boat in about 15 minutes from Ao Nang. That is not a bug.",
+      "Lock it in the Andaman window. A storm day here is still beautiful and fully stuck."
     ],
     affiliates: [
       stay("Rayavadee rates", "Trip.com", "Live rates for this property and nearby peers.", hotelSearchLink('Rayavadee Krabi', 'krabi'), "/photos/krabi.jpg"),
@@ -3068,8 +3076,8 @@ export const pages: Page[] = [
   {
     path: "/resort-living/vie-hotel-bangkok",
     title: "VIE Hotel Bangkok (MGallery)",
-    description: "MGallery tower next to Ratchathewi, useful when you want a designed city hotel on the BTS.",
-    lede: "MGallery tower next to Ratchathewi, useful when you want a designed city hotel on the BTS.",
+    description: "MGallery tower next to Ratchathewi BTS. A designed city hotel between Siam and the ARL.",
+    lede: "VIE Hotel Bangkok is known as the MGallery on Ratchathewi BTS. Stay here if you want a designed city night without a river compound.",
     schema: "Article",
     crumbs: [
       {
@@ -3097,7 +3105,7 @@ export const pages: Page[] = [
     ],
     photo: "/photos/siam.jpg",
     paragraphs: [
-      "VIE is an MGallery, not a beach villa. Ratchathewi is one stop on the BTS from Siam and two stops from the Airport Rail Link at Phaya Thai.",
+      "VIE is an MGallery, not a beach villa. Ratchathewi puts you on the BTS between Siam and the ARL at Phaya Thai. A 2026 BTS tap from here is 17 to 47 THB.",
       "Use it as a Bangkok night that is nicer than a generic Sukhumvit tower, without going full river compound."
     ],
     affiliates: [
@@ -3113,8 +3121,8 @@ export const pages: Page[] = [
   {
     path: "/resort-living/veranda-high-chiang-mai",
     title: "Veranda High Chiang Mai (MGallery)",
-    description: "MGallery hill hotel above Chiang Mai, for valley views rather than a moat walk.",
-    lede: "MGallery hill hotel above Chiang Mai, for valley views rather than a moat walk.",
+    description: "MGallery hill hotel above Chiang Mai for valley views. A taxi ride from the moat, not a temple-walk base.",
+    lede: "Veranda High is known for a hill pool above the valley. Stay here if the view is the point and you will taxi to the Old City.",
     schema: "Article",
     crumbs: [
       {
@@ -3142,8 +3150,8 @@ export const pages: Page[] = [
     ],
     photo: "/photos/nimman.jpg",
     paragraphs: [
-      "You will taxi 20 to 30 minutes to the Old City. That is the trade for the view and the pool.",
-      "Cool season (November to February) is the point. In hot season, confirm the haze before you book a view room as the trip."
+      "Veranda High is a hill pool and a valley view. You will taxi to the Old City in about 20 to 35 minutes. That is the trade.",
+      "Cool season is the point. In hot season, confirm the haze before you book a view room as the trip."
     ],
     affiliates: [
       stay("Veranda High Chiang Mai (MGallery) rates", "Trip.com", "Live rates for this property and nearby peers.", hotelSearchLink('Veranda High Chiang Mai', 'chiang-mai'), "/photos/nimman.jpg"),
@@ -3158,8 +3166,8 @@ export const pages: Page[] = [
   {
     path: "/resort-living/avista-hideaway-phuket",
     title: "Avista Hideaway Phuket (MGallery)",
-    description: "MGallery hideaway on Phuket's west-coast hills, a quieter Andaman stay than Patong.",
-    lede: "MGallery hideaway on Phuket's west-coast hills, a quieter Andaman stay than Patong.",
+    description: "MGallery hideaway on Phuket's west-coast hills. A quieter Andaman stay than Patong, below Aman prices.",
+    lede: "Avista Hideaway is known as the MGallery west-coast hill stay. Use it when you want a quieter Andaman week than Patong.",
     schema: "Article",
     crumbs: [
       {
@@ -3187,8 +3195,8 @@ export const pages: Page[] = [
     ],
     photo: "/photos/phuket.jpg",
     paragraphs: [
-      "This is the MGallery answer when Amanpuri is not the budget. Still treat it as a west-coast monsoon property (November to April).",
-      "HKT plus a car, often 45 to 70 minutes. Do not boat on arrival day."
+      "Avista Hideaway is the MGallery west-coast hill stay when Amanpuri is not the budget. Still treat it as a west-coast monsoon property. HKT is about 45 to 75 minutes by car.",
+      "HKT plus a car. Do not boat on arrival day."
     ],
     affiliates: [
       stay("Avista Hideaway Phuket (MGallery) rates", "Trip.com", "Live rates for this property and nearby peers.", hotelSearchLink('Avista Hideaway Phuket', 'phuket'), "/photos/phuket.jpg"),
@@ -3204,7 +3212,7 @@ export const pages: Page[] = [
     path: "/interests/nightlife",
     title: "Nightlife in Thailand",
     description: "Bangkok nightlife is district pockets and rooftops. The south is Phuket and Samui beach clubs. Not dumped on the main city pages.",
-    lede: "Bangkok nightlife is a district choice: cocktails on Charoenkrung, dinner bars in Thonglor, one loud soi on Sukhumvit 11, plus Ari and Silom. The south is beach clubs, not those sois.",
+    lede: "Use nightlife pages for a district choice: cocktails on Charoenkrung, dinner bars in Thonglor, one loud soi on Sukhumvit 11, plus Ari and Silom. The south is beach clubs, not those sois.",
     schema: "Article",
     crumbs: [
       {
@@ -3228,7 +3236,7 @@ export const pages: Page[] = [
     ],
     photo: "/photos/nightlife.jpg",
     paragraphs: [
-      "Go late, dress the room, and Grab home. Do not rent a scooter at 1:00."
+      "Nightlife here is district pockets, not one crawl list. Go late, dress the room, and Grab home. A 2026 late Grab across Bangkok is often 80 to 200 THB. Do not rent a scooter at 1:00."
     ],
     portraits: [
       {
@@ -3287,8 +3295,8 @@ export const pages: Page[] = [
   {
     path: "/interests/nightlife/charoenkrung-soi-nana",
     title: "Charoenkrung and Chinatown Soi Nana",
-    description: "Cocktail rooms on and off Charoenkrung, including BKK Social Club, Bamboo Bar, Teens of Thailand, Asia Today, and Tropic City.",
-    lede: "Cocktail rooms on and off Charoenkrung, including BKK Social Club, Bamboo Bar, Teens of Thailand, Asia Today, and Tropic City.",
+    description: "Cocktail rooms on Charoenkrung and Chinatown Soi Nana: BKK Social Club, Bamboo Bar, Teens of Thailand, Asia Today, Tropic City.",
+    lede: "Charoenkrung is known for seated cocktail rooms, not a Walking Street crawl. Use it after a riverside dinner if you want a door and a bartender.",
     schema: "Article",
     crumbs: [
       {
@@ -3316,7 +3324,7 @@ export const pages: Page[] = [
     ],
     photo: "/photos/riverside.jpg",
     paragraphs: [
-      "This is not Sukhumvit. You come for rooms with a door and a bartender who still has time. Chinatown Soi Nana is a small soi of cocktail bars, not Nana on Sukhumvit.",
+      "This is not Sukhumvit. You come for rooms with a door and a bartender who still has time. Chinatown Soi Nana is a small soi of cocktail bars, not Nana on Sukhumvit. A 2026 crafted drink is often 400 to 650 THB.",
       "Stay riverside or on Charoenkrung. Grab to Thonglor after if you insist on a second neighborhood the same night."
     ],
     sections: [
@@ -3345,8 +3353,8 @@ export const pages: Page[] = [
   {
     path: "/interests/nightlife/thonglor-ekkamai",
     title: "Thonglor and Ekkamai",
-    description: "Bangkok's dinner-and-bar grid: Rabbit Hole, Find The Locker Room, Bar Us, and Mahaniyom.",
-    lede: "Bangkok's dinner-and-bar grid: Rabbit Hole, Find The Locker Room, Bar Us, and Mahaniyom.",
+    description: "Bangkok dinner-and-bar grid on Thonglor and Ekkamai: Rabbit Hole, Find The Locker Room, Bar Us, and Mahaniyom.",
+    lede: "Thonglor is known for dinner first, then bars. Stay on this BTS strip if you want a night that starts with a table, not a soi crawl.",
     schema: "Article",
     crumbs: [
       {
@@ -3374,7 +3382,7 @@ export const pages: Page[] = [
     ],
     photo: "/photos/sukhumvit.jpg",
     paragraphs: [
-      "Thonglor is where many first-timers should have stayed if they like eating. The bars sit after dinner, not instead of it.",
+      "Thonglor is where many first-timers should have stayed if they like eating. The bars sit after dinner, not instead of it. A 2026 Grab home after midnight is often 80 to 180 THB.",
       "BTS Thong Lo and Ekkamai are the rails. After midnight, Grab is faster than walking Sukhumvit Road."
     ],
     sections: [
@@ -3402,8 +3410,8 @@ export const pages: Page[] = [
   {
     path: "/interests/nightlife/sukhumvit-soi-11",
     title: "Sukhumvit Soi 11",
-    description: "One soi. Havana Social is the room worth naming. The rest is a loud strip you can sample or skip.",
-    lede: "One soi. Havana Social is the room worth naming. The rest is a loud strip you can sample or skip.",
+    description: "Sukhumvit Soi 11: Havana Social is the room worth naming. The rest is a loud strip you can sample or skip.",
+    lede: "Soi 11 is known for one crafted rum room and a loud tourist strip. Use it if you already sleep at Nana or Asok. Skip it as a citywide plan.",
     schema: "Article",
     crumbs: [
       {
@@ -3431,7 +3439,7 @@ export const pages: Page[] = [
     ],
     photo: "/photos/sukhumvit.jpg",
     paragraphs: [
-      "Soi 11 is convenient if you already sleep at Nana or Asok. It is not a citywide nightlife plan.",
+      "Soi 11 is convenient if you already sleep at Nana or Asok. It is not a citywide nightlife plan. A 2026 walk-in beer is cheap; Havana is often 350 to 500 THB a drink.",
       "Havana Social is the crafted room. The rest of the soi is beer, clubs, and tourists who landed today. That can be fine. Know which you booked."
     ],
     sections: [
@@ -3457,8 +3465,8 @@ export const pages: Page[] = [
   {
     path: "/interests/nightlife/phuket-beach-clubs",
     title: "Phuket beach clubs",
-    description: "Day-to-dusk clubs on the Andaman side: Catch Beach Club and Cafe del Mar Phuket.",
-    lede: "Day-to-dusk clubs on the Andaman side: Catch Beach Club and Cafe del Mar Phuket.",
+    description: "Day-to-dusk Andaman beach clubs: Catch Beach Club and Cafe del Mar Phuket. Book a daybed in season.",
+    lede: "Phuket beach clubs are known for afternoon daybeds that become sunset. Use them in the November to April window if the club is the day.",
     schema: "Article",
     crumbs: [
       {
@@ -3486,7 +3494,7 @@ export const pages: Page[] = [
     ],
     photo: "/photos/phuket.jpg",
     paragraphs: [
-      "These are afternoon rooms that become nights. Bring sunscreen and a ride home. Patong Walking Street is a different product and not listed here as a recommendation.",
+      "These are afternoon rooms that become nights. A 2026 daybed minimum is often 2,000 to 5,000 THB. Bring sunscreen and a booked car home. Patong Walking Street is a different product and not listed here as a recommendation.",
       "Andaman season (November to April) is when a daybed is the point. In the wet months, check the sky before you prepay."
     ],
     sections: [
@@ -3512,8 +3520,8 @@ export const pages: Page[] = [
   {
     path: "/interests/nightlife/koh-samui-beach-clubs",
     title: "Koh Samui beach clubs",
-    description: "Gulf-side clubs, with Nikki Beach Koh Samui as the named draw.",
-    lede: "Gulf-side clubs, with Nikki Beach Koh Samui as the named draw. Use them for a daybed, not a Bangkok-style crawl.",
+    description: "Gulf-side Samui beach clubs, with Nikki Beach Koh Samui as the named draw. Daytime to sunset, not Chaweng after dark.",
+    lede: "Samui beach clubs are known for a Gulf afternoon that ends at sunset. Use Nikki Beach if the brand is why you came. Chaweng after dark is a different map.",
     schema: "Article",
     crumbs: [
       {
@@ -3541,7 +3549,7 @@ export const pages: Page[] = [
     ],
     photo: "/photos/koh-samui.jpg",
     paragraphs: [
-      "Samui clubs are a daytime-to-sunset plan. Chaweng nightlife after that is a different, louder map.",
+      "Samui clubs are a daytime-to-sunset plan. A 2026 daybed is often 2,000 to 4,000 THB. Chaweng nightlife after that is a different, louder map.",
       "Use the Gulf window. A booked car back along the hills is safer than a scooter you rented at noon."
     ],
     sections: [
@@ -3610,7 +3618,7 @@ export const pages: Page[] = [
       {
         "title": "Kanchanaburi",
         "href": "/kanchanaburi",
-        "photo": "/photos/riverside.jpg"
+        "photo": "/photos/kanchanaburi.jpg"
       },
       {
         "title": "Hua Hin",
@@ -3620,7 +3628,7 @@ export const pages: Page[] = [
       {
         "title": "Koh Chang and Koh Kood",
         "href": "/koh-chang-and-koh-kood",
-        "photo": "/photos/pattaya.jpg"
+        "photo": "/photos/koh-chang.jpg"
       }
     ],
     affiliates: [
