@@ -23,7 +23,7 @@ export const WAVE11_INTEREST_PAGES: Page[] = [
     description:
       'Thailand diving is known for Koh Tao PADI open-water courses (9,500 to 12,000 THB, 3 to 4 days), Similan and Surin boats from Khao Lak, and Phi Phi or Koh Haa day dives.',
     lede:
-      'Thai diving is known for Koh Tao PADI weeks and Similan liveaboards from Khao Lak. Use it if you want a 3 to 4 day course or a dry-season Andaman boat, not a Bangkok pool lesson.',
+      'Thai diving is known for Koh Tao PADI Open Water weeks at 9,500 to 12,000 THB and Similan liveaboards from Khao Lak. Pick the Gulf or the Andaman by month, not by a Bangkok pool lesson.',
     schema: 'Article',
     crumbs: [
       { name: 'Interests', href: '/interests' },
@@ -91,7 +91,7 @@ export const WAVE11_INTEREST_PAGES: Page[] = [
     description:
       'Thai massage is known for Wat Pho school tables (340 to 520 THB), Health Land and Let\'s Relax day spas, Bangkok Japanese onsen houses, and Chiang Mai Lanna herbal compress rooms.',
     lede:
-      'Thai massage is known for Wat Pho school tables at 340 to 520 THB and clean mid-range chains. Use it for a 30 to 120 minute table, a Bangkok onsen soak, or a Chiang Mai herbal compress.',
+      'Thai massage is known for Wat Pho school tables at 340 to 520 THB and clean day-spa chains. Come for a 30 to 120 minute table, a Bangkok onsen soak, or a Chiang Mai herbal compress.',
     schema: 'Article',
     crumbs: [
       { name: 'Interests', href: '/interests' },
@@ -159,7 +159,7 @@ export const WAVE11_INTEREST_PAGES: Page[] = [
     description:
       'Thai beaches split three ways: Andaman (Phuket, Krabi, Phi Phi, Lanta, Lipe) November to April; Lower Gulf (Samui, Phangan, Tao) January to August; east (Samet, Chang, Kood) November to April.',
     lede:
-      'Thai beaches are known for three coasts with different dry months. Use this if you are picking one sea: Andaman November to April, Lower Gulf January to August, or the east November to April.',
+      'Thai beaches are known for three coasts with different dry months. Pick one sea first: Andaman November to April, Lower Gulf January to August, or the east coast November to April.',
     schema: 'Article',
     crumbs: [
       { name: 'Interests', href: '/interests' },
@@ -297,7 +297,7 @@ export const WAVE11_INTEREST_PAGES: Page[] = [
     description:
       'Muay Thai is known for Rajadamnern RWS Saturdays and Petchyindee Thursdays (1,500 to 3,500 THB), ONE Lumpinee Fridays, and Phuket Soi Ta-iad camps at 400 to 600 THB a class.',
     lede:
-      'Muay Thai in Thailand is known for Rajadamnern and ONE Lumpinee cards, plus Phuket Soi Ta-iad training camps. Use it for one stadium night or a week of 400 to 600 THB drop-in classes.',
+      'Muay Thai in Thailand is known for Rajadamnern and ONE Lumpinee cards, plus Phuket Soi Ta-iad training camps. Come for one stadium night or a week of 400 to 600 THB drop-in classes.',
     schema: 'Article',
     crumbs: [
       { name: 'Interests', href: '/interests' },
@@ -366,7 +366,7 @@ export const WAVE11_INTEREST_PAGES: Page[] = [
     description:
       'Thai shopping is known for Chatuchak weekends (MRT Kamphaeng Phet Exit 2, Sat to Sun 09:00 to 18:00), Siam malls, Chiang Mai walking streets, Phuket Lard Yai, and VAT refunds on 2,000 THB+.',
     lede:
-      'Thai shopping is known for Chatuchak weekends, air-conditioned Bangkok malls, and walking-street nights in Chiang Mai and Phuket. Use it for a Saturday stall grid or a VAT refund on 2,000 THB+ receipts.',
+      'Thai shopping is known for Chatuchak weekends, air-conditioned Bangkok malls, and walking-street nights in Chiang Mai and Phuket. Come for a Saturday stall grid or a VAT refund on 2,000 THB+ receipts.',
     schema: 'Article',
     crumbs: [
       { name: 'Interests', href: '/interests' },
@@ -519,7 +519,7 @@ export const WAVE11_INTEREST_PAGES: Page[] = [
     chips: ['3-4-5 split', 'Private pool', '06:30 longtail'],
     photo: '/photos/resort.jpg',
     paragraphs: [
-      'Start with 3 nights on the Chao Phraya in Bangkok (Capella, The Siam, or a Mandarin Oriental river room). Add 4 nights in Chiang Mai for wats and cooler air, or Khao Sok for karst lake mornings. Finish with 5 nights in a private-pool villa: Phulay Bay or Rayavadee in Krabi; Keemala, Trisara, or Kata Rocks in Phuket; Four Seasons, Six Senses, or Sala Samui on Samui; Six Senses Yao Noi on Koh Yao Noi. Named pages live under [resort living](/interests/resort-living).',
+      'A Chao Phraya river house is the first honeymoon lock: Capella, The Siam, or a Mandarin Oriental river room for three nights. Add four nights in Chiang Mai for wats and cooler air, or Khao Sok for karst lake mornings. Finish with five nights in a private-pool villa: Phulay Bay or Rayavadee in Krabi; Keemala, Trisara, or Kata Rocks in Phuket; Four Seasons, Six Senses, or Sala Samui on Samui; Six Senses Yao Noi on Koh Yao Noi. Named pages live under [resort living](/interests/resort-living).',
       'Book a private longtail at 06:30 if you want a bay before the tour boats. Sunset rooftops in Bangkok have dress codes: no flip-flops, sleeves for men. Pick one roof, not a cruise and a tower the same night. See [rooftop bars](/thai-food/bangkok-rooftop-bars-and-river-dining). Fly BKK to the villa airport on Trip.com. Do not stack Andaman and Gulf villas in one honeymoon.',
     ],
     sections: [
@@ -574,7 +574,7 @@ export const WAVE11_INTEREST_PAGES: Page[] = [
     description:
       'Solo first trips are known for Grab and Bolt rides, BTS/MRT contactless tap-in, eSIM or airport SIM, 12GO and SRT D-Ticket trains, and private-room hostels in Chiang Mai, Bangkok, Lanta, and Phangan.',
     lede:
-      'Solo first trips to Thailand are known for Grab and Bolt, BTS/MRT tap-in, and private-room hostels in Chiang Mai, Bangkok, Lanta, and Phangan. Use it for the apps, the train, and the scams to skip.',
+      'Solo first trips to Thailand are known for Grab and Bolt, BTS/MRT tap-in, and private-room hostels in Chiang Mai, Bangkok, Lanta, and Phangan. Land with the apps, the train, and a short list of scams to skip.',
     schema: 'Article',
     crumbs: [
       { name: 'Interests', href: '/interests' },

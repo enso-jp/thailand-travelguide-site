@@ -30,21 +30,21 @@ export const wave4Pages: Page[] = [
       { label: 'Bangkok 2026', value: '44 Bib Gourmand in the city and nearby provinces' },
       { label: 'Chiang Mai', value: '18 Bib Gourmand; khao soi is a lunch dish' },
       { label: 'Phuket', value: '19 Bib Gourmand; Baba-Nyonya lives in Old Town' },
-      { label: 'Hours', value: 'Check on arrival; pots empty and lists change yearly' },
+      { label: 'Hours', value: 'Verify daily hours before heading out; pots empty early' },
     ],
     chips: ['Street food', 'Markets', 'Rooftops', 'Cooking class', 'Coffee'],
     photo: '/photos/thai-food.jpg',
     paragraphs: [
       'Eat Thai food by city, not as one national plate. The Michelin Guide Thailand 2026 lists 137 Bib Gourmand rooms nationwide, including 44 in Bangkok and the surrounding provinces, 18 in Chiang Mai, and 19 in Phuket. Bib is the value badge, not a star. A 2026 street plate is often 60 to 150 THB. Jay Fai on Maha Chai is the one-star exception that still cooks like a street wok.',
-      'Use the cluster pages. Do not stack a Jay Fai queue, a Chatuchak Saturday, and a Ratchada night market on the same calendar day. One serious meal and one market is enough. The fifteen guides below split neighbourhoods, markets, rooftops, classes, and a first-trip dish list.',
+      'Do not stack a Jay Fai queue, a Chatuchak Saturday, and a Ratchada night market on the same day. One serious meal and one market is enough. The fifteen guides cover neighbourhoods, markets, rooftops, cooking classes, and a first-trip dish list.',
     ],
     sections: [
       {
         id: 'guides',
         title: 'Fifteen food guides',
         paragraphs: [
-          'Start with the city overviews: [Bangkok street food](/thai-food/bangkok-street-food), [Bib Gourmand](/thai-food/bangkok-bib-gourmand), [Northern Lanna](/thai-food/northern-lanna), [South and Baba-Nyonya](/thai-food/southern-and-baba-nyonya), and [night markets](/thai-food/night-markets). Then pick a neighbourhood walk: [Yaowarat](/thai-food/yaowarat-chinatown-food-walk), [Banthat Thong](/thai-food/banthat-thong-road-food-strip), [Wang Lang and Talat Noi](/thai-food/wang-lang-and-talat-noi), [Or Tor Kor](/thai-food/or-tor-kor-and-bangkok-fresh-markets), or [Chiang Mai khao soi](/thai-food/chiang-mai-khao-soi-and-markets).',
-          'Add [Phuket Old Town](/thai-food/phuket-old-town-hokkien-and-peranakan-food) if the Andaman base is inland for a day. Use [rooftops and river dining](/thai-food/bangkok-rooftop-bars-and-river-dining) for a dress-code night. Use [cooking classes](/thai-food/thai-cooking-classes-bangkok-and-chiang-mai), [dishes to order](/thai-food/thai-dishes-to-order-first-trip), and the [coffee guide](/thai-food/bangkok-and-chiang-mai-coffee-guide) when the plan is a wok station, a menu decoder, or a pour-over.',
+          'For city maps, see [Bangkok street food](/thai-food/bangkok-street-food), [Bib Gourmand](/thai-food/bangkok-bib-gourmand), [Northern Lanna](/thai-food/northern-lanna), [South and Baba-Nyonya](/thai-food/southern-and-baba-nyonya), and [night markets](/thai-food/night-markets). For a neighbourhood walk, see [Yaowarat](/thai-food/yaowarat-chinatown-food-walk), [Banthat Thong](/thai-food/banthat-thong-road-food-strip), [Wang Lang and Talat Noi](/thai-food/wang-lang-and-talat-noi), [Or Tor Kor](/thai-food/or-tor-kor-and-bangkok-fresh-markets), or [Chiang Mai khao soi](/thai-food/chiang-mai-khao-soi-and-markets).',
+          'Add [Phuket Old Town](/thai-food/phuket-old-town-hokkien-and-peranakan-food) if the Andaman base is inland for a day. [Rooftops and river dining](/thai-food/bangkok-rooftop-bars-and-river-dining) is the dress-code night. [Cooking classes](/thai-food/thai-cooking-classes-bangkok-and-chiang-mai), [dishes to order](/thai-food/thai-dishes-to-order-first-trip), and the [coffee guide](/thai-food/bangkok-and-chiang-mai-coffee-guide) cover a wok station, a menu decoder, or a pour-over.'
         ],
         table: {
           headers: ['Cluster', 'Pages', 'Who it fits'],
@@ -120,14 +120,14 @@ export const wave4Pages: Page[] = [
         title: 'Maha Chai and the Giant Swing block',
         paragraphs: [
           'Jay Fai (Raan Jay Fai) sits at 327 Maha Chai Road, Samran Rat, Phra Nakhon 10200. Michelin still gives it one star for the crab omelette and the yellow-curry prawns. The shop is walk-in only. Posted hours in 2026 are Wednesday to Saturday, 09:00 to 19:30, closed Sunday to Tuesday. Instagram (@jayfaibangkok) matches that window. Bring cash. The queue is organised; it is still a queue. Go at opening if you refuse to stand.',
-          'Thip Samai, the pad thai shop Thai people still argue about, is at 313 Maha Chai Road, a short walk from Jay Fai and the Giant Swing. Evenings are the point, often until about 03:00. Check on arrival. Order the classic plate, not a fusion special. MRT Sam Yot is the nearest rail; the last stretch is a walk or a motorbike taxi.',
+          'Thip Samai, the pad thai shop Thai people still argue about, is at 313 Maha Chai Road, a short walk from Jay Fai and the Giant Swing. Evenings are the point, often until about 03:00. Confirm current hours on the morning you go. Order the classic plate, not a fusion special. MRT Sam Yot is the nearest rail; the last stretch is a walk or a motorbike taxi.',
         ],
       },
       {
         id: 'wang-lang',
         title: 'Wang Lang, the lunch run that is not Khao San',
         paragraphs: [
-          'Wang Lang Market sits on the Siriraj, Thonburi side of the river. Take the Chao Phraya Express to N10 Wang Lang Pier, or the cross-river ferry from Tha Chang / Maharaj if you are already at the palaces. The useful hours are late morning to late afternoon, roughly 08:00 to 18:00. Check on arrival. This is a local lunch market: boat noodles, khanom jeen, fruit, and stalls that empty when the hospital and office crowd leaves.',
+          'Wang Lang Market sits on the Siriraj, Thonburi side of the river. Take the Chao Phraya Express to N10 Wang Lang Pier, or the cross-river ferry from Tha Chang / Maharaj if you are already at the palaces. The useful hours are late morning to late afternoon, roughly 08:00 to 18:00. Confirm current hours on the morning you go. This is a local lunch market: boat noodles, khanom jeen, fruit, and stalls that empty when the hospital and office crowd leaves.',
           'Do not confuse it with the night stalls on Khao San. Eat, walk the sois behind Siriraj, and boat back. Stay on the Bangkok side at night unless you already booked Thonburi.',
         ],
       },
@@ -210,7 +210,7 @@ export const wave4Pages: Page[] = [
         title: 'How to use the rest of the 44',
         paragraphs: [
           'Beer Hima (Chatuchak) is Southern Thai seafood on Thetsaban Songkhro, useful after Or Tor Kor, not a substitute for Phuket Town. Janhom in Wang Thonglang is the long-running Southern auntie room if you already have a Ramkhamhaeng day. Phed Phed Bistro at The Circle Ratchaphruek is the awarded Isan table, not the Ari shop with the same name. Keawloon near Ekkamai runs two seatings; book or miss it.',
-          'Hours move. "Check on arrival" is not filler. If a pot is empty, order the second dish or leave. Do not write the shop a one-star review because you arrived at 16:50 for a lunch-only room.',
+          'Hours move. Daily hours shift with stock. If a pot is empty, order the second dish or leave. Do not write the shop a one-star review because you arrived at 16:50 for a lunch-only room.',
         ],
         table: {
           headers: ['Shop', 'Door', 'Rail', 'Hours to treat as a start'],
@@ -301,7 +301,7 @@ export const wave4Pages: Page[] = [
             ['Khao Soi Mae Sai', 'Bib curry noodles on Ratchaphruek', 'Sunday'],
             ['Khao Soi Khun Yai', 'Reference yard inside the north moat', 'Sunday, and when the pot dies'],
             ['Huen Muan Jai', 'Northern table: dips, larb, soups', 'Wednesday'],
-            ['Lung Khajohn Wat Ket', 'Wat Gate street stall, east of the Ping', 'Check on arrival'],
+            ['Lung Khajohn Wat Ket', 'Wat Gate street stall, east of the Ping', 'Morning until sold out'],
           ],
         },
       },
@@ -406,7 +406,7 @@ export const wave4Pages: Page[] = [
     path: '/thai-food/night-markets',
     title: 'Thailand night markets: hours and rail exits',
     description:
-      'Bangkok night markets with hours and BTS or MRT exits, plus Chiang Mai walking streets and Phuket Lard Yai. Schedules move. Check on arrival.',
+      'Bangkok night markets with hours and BTS or MRT exits, plus Chiang Mai walking streets and Phuket Lard Yai. Schedules move. Confirm current hours on the morning you go.',
     lede:
       'Bangkok night markets are known for food halls with a clock and an exit number. Jodd Fairs is the nightly Ratchada food market. Chatuchak is a weekend day market.',
     schema: 'Article',
@@ -423,7 +423,7 @@ export const wave4Pages: Page[] = [
     chips: ['Exit numbers', 'Ratchada', 'Walking streets'],
     photo: '/photos/thai-food-night-markets.jpg',
     paragraphs: [
-      'Bangkok night markets are food halls with a clock and an exit number. Hours below are the posted windows used in 2026. Operators shift them for rain, exams, and royal dates. "Check on arrival" means the Facebook page or the station sign that night, not a screenshot from 2022. A 2026 market plate is often 60 to 150 THB.',
+      'Bangkok night markets are food halls with a clock and an exit number. Hours below are the posted windows used in 2026. Operators shift them for rain, exams, and royal dates. Always check the market Facebook page or the station sign that night, not a screenshot from 2022. A 2026 market plate is often 60 to 150 THB.',
       'Jodd Fairs on Ratchadaphisek is not Train Night Market Ratchada. They sit near the same MRT station and people still mix the names. Chatuchak is a weekend day market with a Friday wholesale night. Or Tor Kor is produce, not neon.',
     ],
     sections: [
@@ -433,7 +433,7 @@ export const wave4Pages: Page[] = [
         paragraphs: [
           'Jodd Fairs Ratchada, 129 Ratchadaphisek Road, Din Daeng 10400. Daily 17:00 to 01:00. MRT Thailand Cultural Centre (Blue Line) Exit 4, about 100 m, three minutes on foot. Free entry. Cash or Thai QR. The Rama 9 site is closed. This is the food-first night market.',
           'Train Night Market Ratchada (Talad Rot Fai) reopened 27 March 2026 behind Esplanade on the original lot after The One Ratchada shut in May 2025. Thursday to Sunday, 17:00 to 01:00. MRT Thailand Cultural Centre, Esplanade / Exit 3 side, about five minutes. Vintage, containers, and bars. Closed Monday to Wednesday. The Srinakarin Rot Fai is a different market on the Yellow Line at Suan Luang Rama 9, Thursday to Sunday about 17:00 to 24:00.',
-          'Chatuchak Weekend Market: Saturday and Sunday 09:00 to 18:00. BTS Mo Chit Exit 1, or MRT Chatuchak Park Exit 1. Friday evening wholesale is a separate, thinner session, often 18:00 to 24:00, better from MRT Kamphaeng Phet. Or Tor Kor, the national produce market, is next to MRT Kamphaeng Phet Exit 3, daily from early morning to early evening (listings vary 06:00-18:00 and 08:00-18:00). Check on arrival. Eat here at lunch, not at 21:00.',
+          'Chatuchak Weekend Market: Saturday and Sunday 09:00 to 18:00. BTS Mo Chit Exit 1, or MRT Chatuchak Park Exit 1. Friday evening wholesale is a separate, thinner session, often 18:00 to 24:00, better from MRT Kamphaeng Phet. Or Tor Kor, the national produce market, is next to MRT Kamphaeng Phet Exit 3, daily from early morning to early evening (listings vary 06:00-18:00 and 08:00-18:00). Confirm current hours on the morning you go. Eat here at lunch, not at 21:00.',
           'Yaowarat is a street, not a ticketed market: MRT Wat Mangkon after 18:00. Asiatique The Riverfront is a built river complex at Charoenkrung; BTS Saphan Taksin then the free shuttle boat. Stalls run into the late evening; the mall side opens earlier. Wang Lang is a day market (see the street-food page). Huai Khwang Night Market, MRT Huai Khwang, runs late for local supper, often toward 03:00. Patpong stalls by BTS Sala Daeng are souvenirs on a go-go block, not a food plan.',
         ],
         table: {
@@ -675,7 +675,7 @@ export const wave4Pages: Page[] = [
     ],
     portraits: [
       { title: 'Amanpuri', href: '/resort-living/amanpuri', photo: '/photos/phuket.jpg' },
-      { title: 'Avista Hideaway', href: '/resort-living/avista-hideaway-phuket', photo: '/photos/phuket.jpg' },
+      { title: 'Kamala and Surin', href: '/phuket/kamala-and-surin', photo: '/photos/kamala-and-surin.jpg' },
       { title: 'South and Baba-Nyonya', href: '/thai-food/southern-and-baba-nyonya', photo: '/photos/thai-food-southern.jpg' },
       { title: 'Kamala and Bang Tao clubs', href: '/interests/nightlife/phuket-kamala-bangtao', photo: '/photos/nightlife.jpg' },
     ],
@@ -961,7 +961,7 @@ export const wave4Pages: Page[] = [
       },
       {
         q: 'Do you need a booking?',
-        a: 'For the tiny home bars, a message helps on Friday. Mikkeller and the beer rooms are walk-in most weeknights. Check on arrival.',
+        a: 'For the tiny home bars, a message helps on Friday. Mikkeller and the beer rooms are walk-in most weeknights. Confirm current hours on the morning you go.',
       },
     ],
   },
@@ -1053,7 +1053,7 @@ export const wave4Pages: Page[] = [
     photo: '/photos/phuket.jpg',
     paragraphs: [
       'This coast is day-to-dusk beach clubs, not Patong Walking Street. Kamala has Cafe del Mar. Bang Tao has Catch. Laguna, behind Bang Tao, has XANA at Angsana. They share one west-facing coast and three driveways.',
-      'November to April is the settled Andaman window. In the wet months, a prepaid brunch is a gamble. Check on arrival. Book a car home. Do not rent a scooter after the second drink.',
+      'November to April is the settled Andaman window. In the wet months, a prepaid brunch is a gamble. Confirm current hours on the morning you go. Book a car home. Do not rent a scooter after the second drink.',
     ],
     sections: [
       {
