@@ -27,13 +27,14 @@ const HUBS = new Set([
   '/get-there',
   '/interests',
   '/about',
+  '/about/ratings',
   '/privacy',
   '/interests/resort-living',
   '/interests/nightlife',
   '/attractions',
 ]);
 
-const SKIP_MONEY = new Set(['/about', '/privacy']);
+const SKIP_MONEY = new Set(['/about', '/about/ratings', '/privacy']);
 
 const DEPTH_2500 = new Set([
   '/phuket',
@@ -218,7 +219,7 @@ function isCommercial(page) {
 }
 
 function needsKnownForLead(page) {
-  return !['/about', '/privacy'].includes(page.path);
+  return !['/about', '/about/ratings', '/privacy'].includes(page.path);
 }
 
 function decodeAffiliate(url) {
@@ -490,3 +491,14 @@ if (errors.length) {
 
 console.log(`audit:content ok (${pages.length} routes)`);
 
+
+// OPSEC / privacy check: never expose personal handles, repo names, or GitHub URLs in src/
+const forbiddenPrivacyPatterns = [
+  /nuranoel/i,
+  /thebeyond_traveller/i,
+  /enso-jp/i,
+  /github\.com/i,
+  /github\.io/i,
+  /tan\s+hai/i,
+  /firebirds/i,
+];

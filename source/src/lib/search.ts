@@ -72,7 +72,7 @@ export function searchIndex(): SearchItem[] {
       th: dish.nameLocal,
       sub: dish.line,
       group: 'Food',
-      href: pageHref(dish.href),
+        href: pageHref(dish.href),
       body: dish.line,
       text: `${dish.title} ${dish.nameLocal} ${dish.line} ${dish.find}`,
     });
@@ -80,7 +80,7 @@ export function searchIndex(): SearchItem[] {
 
   for (const [place, list] of Object.entries(ATTRACTIONS)) {
     for (const row of list) {
-      if (items.some((item) => item.href === pageHref(row.href) && item.title === row.name)) continue;
+      if (items.some((item) => item.href === row.href && item.title === row.name)) continue;
       items.push({
         title: row.name,
         localScript: row.nameLocal,

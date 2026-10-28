@@ -165,6 +165,7 @@ const HUB_HERO: Record<string, string> = {
   '/get-there': '/photos/get-there.jpg',
   '/interests': '/photos/interests.jpg',
   '/about': '/photos/about.jpg',
+  '/about/ratings': '/photos/grand-palace.jpg',
   '/privacy': '/photos/privacy.jpg',
 };
 
@@ -452,7 +453,7 @@ function defaultPortraits(page: Page, paths: Set<string>): Portrait[] {
     add('First week', '/itineraries/first-week-7-days', '/photos/sukhumvit.jpg');
     add('Best 14 days', '/itineraries/best-14-days', '/photos/chiang-mai.jpg');
   }
-  if (page.path === '/about' || page.path === '/privacy') {
+  if (page.path === '/about' || page.path === '/about/ratings' || page.path === '/privacy') {
     add('Destinations', '/destinations', '/photos/destinations.jpg');
     add('Itineraries', '/itineraries', '/photos/itineraries.jpg');
     add('Plan', '/plan', '/photos/plan.jpg');
@@ -485,7 +486,7 @@ function photoForPath(href: string): string {
 
 function defaultAffiliates(page: Page): Affiliate[] {
   const city = cityFor(page);
-  if (page.path === '/about' || page.path === '/privacy') {
+  if (page.path === '/about' || page.path === '/about/ratings' || page.path === '/privacy') {
     return [
       stay('Plan the first nights', 'Trip.com', 'A Bangkok stay search if you are still locking the landing city.', stayLink('bangkok'), '/photos/bangkok.jpg'),
     ];
@@ -532,7 +533,7 @@ function defaultAffiliates(page: Page): Affiliate[] {
 }
 
 function bookingCta(page: Page) {
-  if (page.path === '/about' || page.path === '/privacy') return undefined;
+  if (page.path === '/about' || page.path === '/about/ratings' || page.path === '/privacy') return undefined;
   const city = cityFor(page);
   const tourQ = page.path.startsWith('/resort-living/')
     ? page.title

@@ -48,24 +48,24 @@ const links = Object.fromEntries(
     <button type="button" role="tab" data-book-tab="trains" data-book-submit="Search trains" aria-selected="false">Ferries & Trains</button>
   </div>
   <form class="book-form" data-book-form>
-    <label>
-      Destination
+    <label class="book-field">
+      <span>Destination</span>
       <select name="city" data-book-city>
         {cities.map((city) => <option value={city.id}>{city.label}</option>)}
       </select>
     </label>
     <div class="book-dates">
-      <label>
-        Check-in
+      <label class="book-field">
+        <span>Check-in</span>
         <input type="date" name="checkin" data-book-in required />
       </label>
-      <label>
-        Check-out
+      <label class="book-field">
+        <span>Check-out</span>
         <input type="date" name="checkout" data-book-out required />
       </label>
     </div>
-    <label>
-      Guests
+    <label class="book-field">
+      <span>Guests</span>
       <select name="guests" data-book-guests>
         <option value="2-1" selected>2 adults, 1 room</option>
         <option value="1-1">1 adult, 1 room</option>
