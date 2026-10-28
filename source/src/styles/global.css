@@ -82,6 +82,8 @@ p { margin: 0.55rem 0; }
   font-size: 1.18rem;
   font-weight: 650;
   letter-spacing: -0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 .wordmark span { color: var(--lacquer); }
 .desk-nav { display: flex; gap: 1.1rem; justify-content: center; }
@@ -171,8 +173,8 @@ p { margin: 0.55rem 0; }
 .booking-cta {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  gap: 0.7rem;
-  margin: 1rem 0 0.2rem;
+  gap: 0.75rem;
+  margin: 1rem 0 1.15rem;
 }
 .booking-cta a {
   display: block;
@@ -688,7 +690,7 @@ th, td {
 .home-split {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 23.5rem;
-  column-gap: 1.75rem;
+  gap: 1.25rem 1.75rem;
   align-items: stretch;
   margin-top: var(--band-gap, 1.15rem);
 }
@@ -769,13 +771,13 @@ th, td {
 .book-stay {
   border: 1px solid var(--line);
   border-radius: 16px;
-  padding: 1rem 1.05rem 1.1rem;
+  padding: 1.1rem 1.15rem 1.2rem;
   background: #fff;
   box-shadow: 0 8px 22px rgba(28, 25, 21, 0.05);
 }
-.book-stay h2 { margin: 0 0 0.7rem; }
+.book-stay h2 { margin: 0 0 0.75rem; }
 .book-stay em, .stay-box h2 em { font-style: italic; color: var(--lacquer); }
-.book-tabs { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.7rem; }
+.book-tabs { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.85rem; }
 .book-tabs button {
   border: 1px solid var(--line);
   background: #fff;
@@ -791,19 +793,21 @@ th, td {
   color: #785300;
   font-weight: 650;
 }
-.book-form label { display: block; font-size: 0.82rem; color: var(--muted); margin: 0.35rem 0; }
+.book-form { display: flex; flex-direction: column; gap: 0.65rem; }
+.book-form label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--muted); margin: 0; }
 .book-form input, .book-form select {
   display: block;
   width: 100%;
-  margin-top: 0.2rem;
+  margin-top: 0.22rem;
   border: 1px solid var(--line);
   border-radius: 10px;
-  padding: 0.45rem 0.6rem;
+  padding: 0.48rem 0.65rem;
   font: inherit;
   background: #fff;
 }
-.book-dates { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
-.book-go { margin-top: 0.75rem; border: 0; cursor: pointer; width: 100%; text-align: center; }
+.book-dates { display: grid; grid-template-columns: 1fr 1fr; gap: 0.65rem; }
+.book-go { margin-top: 0.35rem; border: 0; cursor: pointer; width: 100%; text-align: center; }
+.book-form .note { margin: 0.15rem 0 0; font-size: 0.82rem; color: var(--muted); line-height: 1.4; }
 .home-ad {
   display: block;
   margin-top: 0.75rem;
@@ -905,12 +909,13 @@ th, td {
   stroke-width: 2.6px;
   paint-order: stroke fill;
 }
-.region-picks { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.7rem; }
+.region-picks { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.85rem; }
 .region-picks button {
   border: 1px solid var(--line);
   background: #fff;
   border-radius: 999px;
-  padding: 0.3rem 0.7rem;
+  padding: 0.38rem 0.78rem;
+  min-height: 2.35rem;
   font: inherit;
   font-size: 0.88rem;
   cursor: pointer;
@@ -1283,7 +1288,7 @@ th, td {
   .home-rail { position: static; }
   .top-grid, .plan-row, .food-grid { grid-template-columns: 1fr 1fr; }
   .interest-grid { grid-template-columns: 1fr 1fr; }
-  .region-swipe { display: block; }
+  .region-swipe { display: none; }
   .food-row { grid-template-columns: 7.4rem minmax(0, 1fr); gap: 0.75rem; }
   .nav-panel { display: none !important; }
   .story-thumb img { height: 6rem; }
@@ -1307,6 +1312,7 @@ th, td {
   color: #fff;
   flex: 0 0 auto;
 }
+.net-mark-th { background: #b8860b; }
 .net-mark-vn { background: #c8102e; }
 .phone-net-link {
   display: inline-flex;
@@ -1314,13 +1320,17 @@ th, td {
   gap: 0.4rem;
 }
 
+.place-top {
+  padding-top: 1.15rem;
+}
+
 .trip-cta {
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.5rem;
   width: 100%;
-  margin: 0.45rem 0 0;
-  padding: 0.9rem 0.95rem 1rem;
+  margin: 0.55rem 0 0;
+  padding: 1.05rem 1.05rem 1.15rem;
   border: 1px solid var(--line);
   border-radius: 12px;
   background: #faf8f3;
@@ -1335,43 +1345,44 @@ th, td {
 .trip-search-form {
   display: flex;
   flex-direction: column;
-  gap: 0.45rem;
+  gap: 0.65rem;
 }
 .trip-search-form label {
   display: block;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--muted);
+  margin: 0;
 }
 .trip-search-form select,
 .trip-search-form input {
   display: block;
   width: 100%;
-  margin-top: 0.18rem;
+  margin-top: 0.22rem;
   border: 1px solid var(--line);
   border-radius: 9px;
-  padding: 0.42rem 0.55rem;
+  padding: 0.48rem 0.6rem;
   font: inherit;
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: var(--ink);
   background: #fff;
 }
 .trip-search-dates {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.45rem;
+  gap: 0.65rem;
 }
 .trip-cta-btn {
   display: inline-block;
   width: 100%;
-  margin-top: 0.25rem;
+  margin-top: 0.35rem;
   border: 0;
   border-radius: 999px;
   background: var(--lacquer-btn);
   color: #fff;
-  padding: 0.55rem 0.95rem;
+  padding: 0.6rem 1rem;
   font: inherit;
-  font-size: 0.92rem;
+  font-size: 0.95rem;
   font-weight: 700;
   text-align: center;
   cursor: pointer;
@@ -1383,20 +1394,25 @@ th, td {
 }
 .trip-cta-sub {
   display: block;
+  margin-top: 0.15rem;
   color: var(--muted);
-  font-size: 0.78rem;
-  line-height: 1.35;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+.trip-more {
+  margin: 0.65rem 0 0;
+  font-size: 0.88rem;
 }
 
 .sister-network, .sister-routes {
-  margin-top: 2.2rem;
-  padding: 1.25rem 1.3rem 1.35rem;
+  margin-top: 2.25rem;
+  padding: 1.3rem 1.3rem 1.4rem;
   border: 1px solid #ead294;
   border-radius: 16px;
   background: linear-gradient(180deg, #fdfaf2 0%, #ffffff 100%);
 }
 .sister-head h2 {
-  margin: 0.35rem 0 0.35rem;
+  margin: 0.35rem 0 0.4rem;
   font-size: 1.35rem;
 }
 .sister-badge {
@@ -1410,21 +1426,22 @@ th, td {
   color: var(--lacquer);
 }
 .sister-lead {
-  margin: 0 0 0.95rem;
+  margin: 0 0 1rem;
   color: var(--muted);
   font-size: 0.96rem;
+  line-height: 1.5;
   max-width: 48rem;
 }
 .sister-grid, .sister-route-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15.5rem, 1fr));
-  gap: 0.85rem;
+  gap: 1rem;
 }
 .sister-card, .sister-route-card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0.95rem 1rem 1rem;
+  padding: 1.1rem 1.15rem 1.15rem;
   border: 1px solid var(--line);
   border-radius: 14px;
   background: #fff;
@@ -1444,31 +1461,33 @@ th, td {
   color: #c8102e;
 }
 .sister-card h3, .sister-route-card h3 {
-  margin: 0.25rem 0 0.3rem;
+  margin: 0.35rem 0 0.4rem;
   font-size: 1.06rem;
+  line-height: 1.25;
   color: var(--ink);
 }
 .sister-card p, .sister-route-card p {
-  margin: 0 0 0.65rem;
-  font-size: 0.9rem;
+  margin: 0 0 0.85rem;
+  font-size: 0.92rem;
   color: var(--muted);
-  line-height: 1.45;
+  line-height: 1.48;
 }
 .sister-cta {
   margin-top: auto;
-  font-size: 0.86rem;
+  padding-top: 0.15rem;
+  font-size: 0.88rem;
   font-weight: 700;
   color: #c8102e;
 }
 .sister-flights {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
-  gap: 0.65rem;
-  margin-top: 0.85rem;
+  gap: 0.75rem;
+  margin-top: 1rem;
 }
 .sister-flight-pill {
   display: block;
-  padding: 0.65rem 0.85rem;
+  padding: 0.75rem 0.95rem;
   border: 1px solid var(--gold-border);
   border-radius: 12px;
   background: var(--gold-soft);
@@ -1485,7 +1504,7 @@ th, td {
 }
 .sister-flight-pill span {
   display: block;
-  margin-top: 0.1rem;
+  margin-top: 0.18rem;
   font-size: 0.82rem;
   color: var(--lacquer);
   font-weight: 600;
@@ -1493,12 +1512,12 @@ th, td {
 .sister-route-links {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.35rem;
-  margin-bottom: 0.75rem;
+  gap: 0.4rem;
+  margin-bottom: 0.85rem;
 }
 .sister-chip {
   display: inline-block;
-  padding: 0.2rem 0.58rem;
+  padding: 0.24rem 0.62rem;
   border: 1px solid #f2cfd5;
   border-radius: 999px;
   background: #fdf2f4;
@@ -1511,13 +1530,16 @@ th, td {
   border-color: #c8102e;
 }
 .sister-flight-btn {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin-top: auto;
-  padding: 0.45rem 0.8rem;
+  min-height: 2.6rem;
+  padding: 0.5rem 0.9rem;
   border-radius: 999px;
   background: var(--lacquer-btn);
   color: #fff;
-  font-size: 0.84rem;
+  font-size: 0.86rem;
   font-weight: 700;
   text-align: center;
   text-decoration: none;
@@ -1526,17 +1548,38 @@ th, td {
   background: #6f4d04;
   color: #fff;
 }
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.footer-col > span {
+  margin-bottom: 0.15rem;
+  font-weight: 650;
+  color: var(--muted);
+}
+.footer-col a {
+  padding: 0.12rem 0;
+  line-height: 1.4;
+}
+.footer-brand {
+  gap: 0.45rem;
+}
+.footer-brand strong {
+  font-size: 1.08rem;
+  color: var(--ink);
+  margin-top: 0.05rem;
+}
+.footer-brand p {
+  margin: 0;
+  line-height: 1.5;
+}
 .footer-sister-head {
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
 }
-@media (max-width: 720px) {
-  .footer-grid { grid-template-columns: 1fr; }
-  .trip-search-dates { grid-template-columns: 1fr; }
-}
-
-
 .footer-pub-badge {
   display: inline-block;
   align-self: flex-start;
@@ -1548,33 +1591,40 @@ th, td {
   background: var(--gold-soft);
   border: 1px solid var(--gold-border);
   border-radius: 999px;
-  padding: 0.16rem 0.55rem;
-  margin-bottom: 0.25rem;
+  padding: 0.2rem 0.6rem;
+  margin-bottom: 0.1rem;
 }
 .footer-trust-links {
-  margin: 0.35rem 0 0;
-  font-size: 0.85rem;
-  line-height: 1.45;
+  margin: 0.25rem 0 0 !important;
+  font-size: 0.86rem;
+  line-height: 1.65 !important;
 }
 .footer-legal {
-  margin-top: 1.35rem;
-  padding-top: 1rem;
+  margin-top: 1.6rem;
+  padding-top: 1.15rem;
   border-top: 1px solid var(--line);
   font-size: 0.84rem;
-  line-height: 1.45;
+  line-height: 1.5;
   color: var(--muted);
 }
 .footer-legal p {
-  margin: 0.25rem 0;
+  margin: 0;
+}
+.footer-legal p + p {
+  margin-top: 0.55rem;
 }
 .book-field span {
   display: block;
 }
 
 @media (max-width: 860px) {
+  .bar {
+    gap: 0.5rem;
+  }
   .bar-icon, .menu-toggle, .search-toggle {
     min-height: 2.75rem;
-    padding: 0.45rem 0.85rem;
+    padding: 0.42rem 0.8rem;
+    font-size: 0.94rem;
     align-items: center;
     justify-content: center;
   }
@@ -1602,8 +1652,39 @@ th, td {
     align-items: center;
     justify-content: center;
   }
+  .rail {
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem 1.25rem;
+  }
+  .footer-brand,
+  .footer-sister {
+    grid-column: 1 / -1;
+  }
+  .trip-search-dates {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 @media (max-width: 640px) {
-  .book-dates { grid-template-columns: minmax(0, 1fr); }
+  .wrap {
+    width: min(var(--page), calc(100% - 2.25rem));
+  }
+  .wordmark {
+    font-size: 1.15rem;
+  }
+  .book-dates {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sister-network, .sister-routes {
+    padding: 1.15rem 1.05rem 1.25rem;
+  }
+  .top-grid, .plan-row, .food-grid, .hood-list, #attractions .card-list {
+    gap: 1rem;
+  }
 }

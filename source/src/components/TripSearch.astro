@@ -1,4 +1,9 @@
 ---
+const _now = new Date();
+const _in = new Date(_now); _in.setDate(_in.getDate() + 1);
+const _out = new Date(_now); _out.setDate(_out.getDate() + 4);
+const defaultCheckin = _in.toISOString().slice(0, 10);
+const defaultCheckout = _out.toISOString().slice(0, 10);
 import { tripCities, stayLink, klookTours, transferLink, trainLink, type StayCity } from '../lib/partners';
 
 interface Props {
@@ -50,11 +55,11 @@ const trains = trainLink('Bangkok', placeName);
     <div class="trip-search-dates">
       <label>
         Check-in
-        <input type="date" name="checkin" data-trip-in required />
+        <input type="date" name="checkin" value={defaultCheckin} data-trip-in required />
       </label>
       <label>
         Check-out
-        <input type="date" name="checkout" data-trip-out required />
+        <input type="date" name="checkout" value={defaultCheckout} data-trip-out required />
       </label>
     </div>
     <label>
