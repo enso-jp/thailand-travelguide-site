@@ -37,7 +37,7 @@ export const wave3Pages: Page[] = [
     path: '/get-there/bangkok-to-koh-phangan',
     title: 'Bangkok to Koh Phangan',
     description:
-      'Koh Phangan is the Gulf island north of Samui. Fly to Samui Airport then boat to Thong Sala, or take the Bangkok sleeper to Chumphon and the morning catamaran.',
+      'Koh Phangan has no airport. Fly to Samui then boat to Thong Sala, or take the Bangkok sleeper to Chumphon and the morning catamaran.',
     lede: 'Koh Phangan is the Gulf island north of Samui, known for west-coast bays and one Full Moon beach. There is no airport. Fly to Samui and boat to Thong Sala, or sleep on the Chumphon train and take the morning catamaran.',
     schema: 'Article',
     crumbs: [
@@ -54,7 +54,7 @@ export const wave3Pages: Page[] = [
     photo: '/photos/koh-phangan.jpg',
     paragraphs: [
       'Everyone lands at a pier. Thong Sala on the southwest is the useful one. Lomprayah, Seatran Discovery, Songserm, Raja, and Boonsiri each use a named berth. Read the operator on the ticket. Haad Rin boats are for Full Moon, not a normal arrival.',
-      'The short day: fly into Samui Airport (USM), ride to the Samui boat pier, then 30 to 45 minutes on a catamaran. The cheap night: a Lomprayah bus from Khaosan or Pinklao to Thung Makham Noi in Chumphon, then a morning catamaran that often calls at Koh Tao. The train version sleeps better. Board at Krung Thep Aphiwat, the main Bangkok station, then take a booked van to the pier.',
+      'The short day: fly into Samui Airport (USM), ride to the Samui boat pier, then the Lomprayah catamaran to Thong Sala in about 30 minutes (Seatran takes about 45). The cheap night: a Lomprayah bus from Khaosan or Pinklao to Thung Makham Noi in Chumphon, then a morning catamaran that often calls at Koh Tao. The train version sleeps better. Board at Krung Thep Aphiwat, the main Bangkok station, then take a booked van to the pier.',
     ],
     sections: [
       {
@@ -342,7 +342,7 @@ export const wave3Pages: Page[] = [
     chips: ['Saladan', 'Car ferry all year', 'Andaman'],
     photo: '/photos/krabi.jpg',
     paragraphs: [
-      'Koh Lanta Yai is a long west-facing island. Boats land at Saladan. Hotels sit down a single west-coast road. Book a pickup when you book the room. A tuk-tuk at Saladan is not a Bangkok habit.',
+      'Koh Lanta Yai is a long west-facing island. Boats land at Saladan. Hotels sit down a single west-coast road. Book a pickup when you book the room. A tuk-tuk at Saladan is not a Bangkok habit. All year, the road and Ban Hua Hin car ferry still work.',
       'From Krabi Town, passenger boats leave Klong Jilad mainly November to April. From Ao Nang they leave Nopparat Thara. Bundhaya and Andaman Wave Master are the names you will see. From May to October those passenger boats thin out or stop. The road still works.',
     ],
     sections: [
@@ -375,12 +375,6 @@ export const wave3Pages: Page[] = [
               'About 2 hours plus the ferry wait',
               'Charter',
               'The ferry has no useful fixed timetable. It leaves when the deck is full, roughly 06:00 to 22:00. Check on arrival.',
-            ],
-            [
-              'Phi Phi Tonsai to Saladan',
-              'About 1.5 hours',
-              'Speedboat bench. Wet bags in the nose',
-              'Bundhaya and Andaman Wave Master run Phi Phi to Lanta in season, about November to April. Not a Krabi-origin boat. Check on arrival.',
             ],
           ],
         },
@@ -769,7 +763,7 @@ export const wave3Pages: Page[] = [
       },
     ],
     portraits: [
-      { title: 'Pai and the loop', href: '/pai', photo: '/photos/northern.jpg' },
+      { title: 'Pai and the loop', href: '/pai', photo: '/photos/pai.jpg' },
       { title: 'Chiang Mai to Chiang Rai', href: '/get-there/chiang-mai-to-chiang-rai', photo: '/photos/northern.jpg' },
       { title: 'Chiang Mai', href: '/chiang-mai', photo: '/photos/chiang-mai.jpg' },
       { title: 'Scooters and road rules', href: '/plan/scooters-and-road-rules', photo: '/photos/northern.jpg' },
@@ -861,7 +855,7 @@ export const wave3Pages: Page[] = [
       },
     ],
     portraits: [
-      { title: 'Chiang Rai', href: '/chiang-rai', photo: '/photos/northern.jpg' },
+      { title: 'Chiang Rai', href: '/chiang-rai', photo: '/photos/chiang-rai.jpg' },
       { title: 'Chiang Mai to Pai', href: '/get-there/chiang-mai-to-pai', photo: '/photos/northern.jpg' },
       { title: 'Chiang Mai', href: '/chiang-mai', photo: '/photos/chiang-mai.jpg' },
       { title: 'Burn season', href: '/plan/monsoon-and-burn-season', photo: '/photos/northern.jpg' },
@@ -1047,7 +1041,7 @@ export const wave3Pages: Page[] = [
       },
     ],
     portraits: [
-      { title: 'Kanchanaburi', href: '/kanchanaburi', photo: '/photos/riverside.jpg' },
+      { title: 'Kanchanaburi', href: '/kanchanaburi', photo: '/photos/kanchanaburi.jpg' },
       { title: 'Bangkok to Ayutthaya', href: '/get-there/bangkok-to-ayutthaya', photo: '/photos/ayutthaya.jpg' },
       { title: 'Hua Hin', href: '/hua-hin', photo: '/photos/hua-hin.jpg' },
       { title: 'Trains and ferries', href: '/plan/trains-and-ferries', photo: '/photos/bts.jpg' },
@@ -1169,7 +1163,7 @@ export const wave3Pages: Page[] = [
     title: 'Money, ATMs, and PromptPay',
     description:
       'Thailand runs on cash and cards. Bank ATMs charge a flat fee on foreign cards. PromptPay QR needs a Thai bank account. Parks still want notes.',
-    lede: 'Thailand runs on cash and cards, not on foreign phone QR. Withdraw baht in large, rare hits at a bank ATM. Decline the machine converting to your home currency. PromptPay is for Thai bank accounts.',
+    lede: 'Thailand is a cash-and-card country, not a foreign-phone QR country. Withdraw baht in large, rare hits at a bank ATM. Decline the machine converting to your home currency. PromptPay is for Thai bank accounts.',
     schema: 'Article',
     crumbs: [
       { name: 'Plan', href: '/plan' },
@@ -1184,7 +1178,7 @@ export const wave3Pages: Page[] = [
     chips: ['THB cash', 'Decline DCC', 'Parks take cash'],
     photo: '/photos/bangkok.jpg',
     paragraphs: [
-      'The baht is the unit. Cards work in malls, hotels, and Grab. Cash still runs national parks, many longtails, ordinary SRT windows, and the noodle stall that does not own a reader. Super-Rich and a bank booth beat an airport counter for notes. ATMs beat both if your home card refunds fees.',
+      'Use cash plus card, not foreign-phone PromptPay. Cards work in malls, hotels, and Grab. Cash still runs national parks, many longtails, ordinary SRT windows, and the noodle stall that does not own a reader. Super-Rich and a bank booth beat an airport counter for notes. ATMs beat both if your home card refunds fees.',
       'Thai ATMs charge a flat operator fee on foreign cards, on top of whatever your bank adds. Krungsri\'s schedule effective 2026 lists 250 THB for a foreign Visa and 350 THB for a foreign Mastercard. Kasikorn and SCB have published the same split. The screen shows the number before you confirm. Believe the screen, not a 220 THB blog from 2023.',
     ],
     sections: [
@@ -1256,7 +1250,7 @@ export const wave3Pages: Page[] = [
     title: 'Monsoon and burn season',
     description:
       'Thailand has two beach seasons and a smoky north. Andaman is easier November to April. The Lower Gulf is easier January to September. Chiang Mai haze peaks in March and April.',
-    lede: 'Thailand is two beach calendars and a smoky north, not one winter. Phuket and Krabi are easier November to April. Samui and Phangan are easier January to September. Check Chiang Mai air before you book March.',
+    lede: 'Thailand is a two-calendar country plus a smoky north, not one winter. Phuket and Krabi are easier November to April. Samui and Phangan are easier January to September. Check Chiang Mai air before you book March.',
     schema: 'Article',
     crumbs: [
       { name: 'Plan', href: '/plan' },
@@ -1271,7 +1265,7 @@ export const wave3Pages: Page[] = [
     chips: ['Two coasts', 'Air4Thai', 'Do not stack seas'],
     photo: '/photos/phuket.jpg',
     paragraphs: [
-      'The southwest monsoon hits the Andaman first. Phuket, Krabi, Lanta, Lipe, and Khao Lak are the November to April trip. The Lower Gulf (Samui, Phangan, Tao) is the January to September trip. October is the messy overlap. Do not stack both seas on a first week.',
+      'The southwest monsoon hits the Andaman first. Phuket, Krabi, Lanta, Lipe, and Khao Lak are the November to April trip. The Lower Gulf (Samui, Phangan, Tao) is the January to September trip. October is the messy overlap. Do not stack both seas on a first week. Bangkok to either coast is about 70 to 85 minutes by air.',
       'The north has a different problem. Crop and forest smoke sits in the Chiang Mai and Chiang Rai valleys at the end of the dry season. Station averages for 2023 to 2026 put Chiang Mai\'s nastiest month in April. May rain usually clears it. Bangkok heat is year-round and is not this page.',
     ],
     sections: [
@@ -1354,7 +1348,7 @@ export const wave3Pages: Page[] = [
     title: 'Domestic flights and baggage',
     description:
       'Domestic flights are cheap until the bag fee. Low-cost airlines allow 7 kg in the cabin for both bags together. Bangkok has two airports. Samui Airport costs more.',
-    lede: 'Domestic flights are cheap until the bag fee. Buy the bag with the ticket. A 7 kg cabin limit is both bags together. Suvarnabhumi and Don Mueang are different airports.',
+    lede: 'Domestic flights are a cheap hop until the bag fee. Buy the bag with the ticket. A 7 kg cabin limit is both bags together. Suvarnabhumi and Don Mueang are different airports. Use the airport you already landed at.',
     schema: 'Article',
     crumbs: [
       { name: 'Plan', href: '/plan' },
@@ -1445,7 +1439,7 @@ export const wave3Pages: Page[] = [
     chips: ['IDP A', 'Helmet', 'Left side'],
     photo: '/photos/northern.jpg',
     paragraphs: [
-      'Thai law does not split scooters out of motorcycles. A 110 cc Honda Click and a 400 cc bike both need a motorcycle endorsement. The tourist path is your full home motorcycle licence carried with an International Driving Permit that lists category A (or the 1949 motorcycle class). Thailand accepts 1949 and, since May 2021, 1968 convention IDPs. The IDP is a translation. It cannot add a class you do not hold.',
+      'Thai law does not split scooters out of motorcycles. A 110 cc Honda Click and a 400 cc bike both need a motorcycle endorsement. A 2026 scooter rental is often 200 to 350 THB a day plus petrol. The tourist path is your full home motorcycle licence carried with an International Driving Permit that lists category A (or the 1949 motorcycle class). Thailand accepts 1949 and, since May 2021, 1968 convention IDPs. The IDP is a translation. It cannot add a class you do not hold.',
       'A UK CBT is training, not a full licence. An ASEAN motorcycle licence works without an IDP. A Thai car licence does not cover a scooter either. Police checkpoints on Phuket, Samui, and 1095 ask. Insurers ask after the crash. The shop that rented you a bike with a passport photocopy will not write the claim.',
     ],
     sections: [
@@ -1476,7 +1470,7 @@ export const wave3Pages: Page[] = [
       { title: 'Chiang Mai to Pai', href: '/get-there/chiang-mai-to-pai', photo: '/photos/northern.jpg' },
       { title: 'Grab and BTS', href: '/plan/grab-and-bts', photo: '/photos/bts.jpg' },
       { title: 'Koh Tao', href: '/koh-tao', photo: '/photos/koh-tao.jpg' },
-      { title: 'Koh Lanta', href: '/koh-lanta', photo: '/photos/krabi.jpg' },
+      { title: 'Koh Lanta', href: '/koh-lanta', photo: '/photos/koh-lanta.jpg' },
     ],
     affiliates: [
       stay('Skip the rental', 'Trip.com', 'Sleep where dinner is a walk if you will not ride.', stayLink('chiang-mai'), '/photos/chiang-mai.jpg'),
@@ -1502,7 +1496,7 @@ export const wave3Pages: Page[] = [
     title: 'Songkran and public holidays',
     description:
       'Songkran is Thailand\'s New Year water festival, 13 to 15 April. Trains and hotels sell out. Banks close. Buddhist holy days ban alcohol sales.',
-    lede: 'Songkran is Thailand\'s New Year water festival, 13 to 15 April. Book it on purpose, or leave the Old City that week. Thai holidays close banks and Immigration, not noodle shops. Buddhist holy days ban alcohol sales.',
+    lede: 'Songkran is the Thai New Year water festival, 13 to 15 April. Book it on purpose, or leave the Old City that week. Thai holidays close banks and Immigration, not noodle shops. Buddhist holy days ban alcohol sales.',
     schema: 'Article',
     crumbs: [
       { name: 'Plan', href: '/plan' },
@@ -1517,7 +1511,7 @@ export const wave3Pages: Page[] = [
     chips: ['13-15 April', 'Book trains early', 'Dry holy days'],
     photo: '/photos/bangkok.jpg',
     paragraphs: [
-      'The Bank of Thailand 2026 holiday list runs to 19 dates plus substitution Mondays when a holiday hits a weekend. Songkran 2026 is 13 to 15 April. New Year stacked into a long break at the start of January. Father\'s Day on Saturday 5 December picked up a Monday 7 December substitution. Check the BOT PDF the month you fly. Cabinets add bridge days.',
+      'Songkran is known as the mid-April water festival that sells out trains and hotels. The Bank of Thailand 2026 holiday list runs to 19 dates plus substitution Mondays when a holiday hits a weekend. Songkran 2026 is 13 to 15 April. New Year stacked into a long break at the start of January. Father\'s Day on Saturday 5 December picked up a Monday 7 December substitution. Check the BOT PDF the month you fly. Cabinets add bridge days.',
       'Songkran is a water festival, not a temple circuit in the Old City. Chiang Mai moat, Bangkok Khao San, and Pai turn into hose fights. If that is why you came, book the stay and the train 90 days out (SRT advance window). If it is not, leave the Old City or leave the north that week.',
     ],
     sections: [
