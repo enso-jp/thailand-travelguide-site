@@ -6,7 +6,7 @@
   --line: #e6e6e6;
   --lacquer: #8a6100;
   --lacquer-btn: #875f07;
-  --gold: #b8860b;
+  --gold: #8a6100;
   --vn-red: #c8102e;
   --gold-soft: #fbf3dc;
   --gold-border: #ead294;
@@ -866,7 +866,7 @@ th, td {
 .map-thailand .map-hit.is-active path,
 .map-thailand g.is-active path,
 .map-thailand .is-active path {
-  fill: #b8860b;
+  fill: #8a6100;
   stroke: #7c5802;
   stroke-width: 0.85;
 }
@@ -1138,7 +1138,7 @@ th, td {
 .jg-card h3 { margin: 0; font-size: 1.05rem; font-weight: 700; }
 .jg-card .jg-body p { margin: 0.3rem 0 0; font-size: 0.95rem; color: #3f3a34; }
 .rating { display: flex; gap: 0.35rem; align-items: center; font-size: 0.88rem; }
-.stars { color: #b8860b; letter-spacing: 0.04em; }
+.stars { color: #8a6100; letter-spacing: 0.04em; }
 .list-more {
   margin-top: 1rem;
   border: 1px solid var(--line);
@@ -1343,7 +1343,7 @@ th, td {
   color: #fff;
   flex: 0 0 auto;
 }
-.net-mark-th { background: #b8860b; }
+.net-mark-th { background: #8a6100; }
 .net-mark-vn { background: #c8102e; }
 .phone-net-link {
   display: inline-flex;
