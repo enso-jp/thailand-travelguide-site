@@ -1238,7 +1238,7 @@ const rawPages: Page[] = [
   {
     path: "/bangkok/riverside-charoenkrung",
     title: "Riverside and Charoenkrung",
-    description: "River hotels, warehouse bars, and the Chinatown edge sit along Charoenkrung. The BTS is a short Grab away, not at the hotel front door.",
+    description: "River hotels, warehouse bars, and the Chinatown edge sit along Charoenkrung. BTS Saphan Taksin is a short Grab or boat ride, not a walk.",
     lede: "Stay here for the Chao Phraya and a night walk on Charoenkrung. The BTS is a short Grab, not at the door.",
     schema: "TouristDestination",
     crumbs: [
