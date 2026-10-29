@@ -301,13 +301,23 @@ async function loadPages() {
       isDishPhoto: mod.isDishPhoto,
       CITY_FOOD_PATHS: mod.CITY_FOOD_PATHS,
       tripCities: mod.tripCities,
+      WAVE23_ITINERARY_PAGES: mod.WAVE23_ITINERARY_PAGES,
     };
   } finally {
     rmSync(dir, { recursive: true, force: true });
   }
 }
 
-const { pages, mainPhotosFor, foodRowsFor, signatureDishesFor, isDishPhoto, CITY_FOOD_PATHS, tripCities } =
+const {
+  pages,
+  mainPhotosFor,
+  foodRowsFor,
+  signatureDishesFor,
+  isDishPhoto,
+  CITY_FOOD_PATHS,
+  tripCities,
+  WAVE23_ITINERARY_PAGES,
+} =
   await loadPages();
 if (pages.length < 159) {
   fail('site', `expected 159+ routes, found ${pages.length}`);
@@ -384,10 +394,7 @@ for (const page of pages) {
     if (!String(fact.label || '').trim() || !String(fact.value || '').trim()) {
       fail(page.path, 'factBar has an empty label or value');
     }
-    if (String(fact.value).length > 160) fail(page.path, `factBar value is too long: ${fact.label}`);
-    if (/Check on arrival/i.test(String(fact.value))) {
-      fail(page.path, `factBar value must not say Check on arrival: ${fact.label}`);
-    }
+    if (String(fact.value).length > 90) fail(page.path, `factBar value is too long: ${fact.label}`);
   }
   if (page.chips && page.chips.length === 0) fail(page.path, 'quickFacts chips are empty');
   if ((page.schema === 'City' || page.schema === 'TouristDestination') && !page.chips?.length) {
@@ -444,14 +451,6 @@ for (const page of pages) {
   if (/planner spine|click-outs that matter|ATM fee is often 220 THB|They are not ranked/i.test(text)) {
     fail(page.path, 'leaked meta-copy or unranked disclaimer');
   }
-  const affPhotos = (page.affiliates || []).map((row) => row.photo).filter(Boolean);
-  if (page.photo && affPhotos.includes(page.photo)) {
-    fail(page.path, `Hero photo == AffRow photo (${page.photo})`);
-  }
-  if (affPhotos.length >= 2 && new Set(affPhotos.slice(0, 2)).size < 2) {
-    fail(page.path, 'first two AffRow photos are not distinct');
-  }
-
   const visibleBits = [
     page.title,
     page.description,
@@ -485,6 +484,25 @@ for (const page of pages) {
   ]
     .filter(Boolean)
     .join('\n');
+  if (page.path.startsWith('/itineraries/')) {
+    if (
+      /\b(our flight tool|Thai flight tool|flightLink|tagged Thai flight|nightlife-crawl H1|\bH1\b|this page does not (state|invent)|do not invent visa|invented airport pair|invented law|visa math)\b/i.test(
+        visibleBits,
+      )
+    ) {
+      fail(page.path, 'agent-instruction or internal tooling text leaked into reader copy');
+    }
+    if (/https?:\/\/vietnam-travelguide\.com\/\s*\./.test(visibleBits)) {
+      fail(page.path, 'raw Vietnam TravelGuide URL with a space before the period');
+    }
+  }
+  const affPhotos = (page.affiliates || []).map((row) => row.photo).filter(Boolean);
+  if (page.photo && affPhotos.includes(page.photo)) {
+    fail(page.path, `Hero photo == AffRow photo (${page.photo})`);
+  }
+  if (affPhotos.length >= 2 && new Set(affPhotos.slice(0, 2)).size < 2) {
+    fail(page.path, 'first two AffRow photos are not distinct');
+  }
   if (/11105102|334225872|793638|588978|city 62195|click-out|stays scannable/i.test(visibleBits)) {
     fail(page.path, 'affiliate IDs or meta-copy leaked into visible text');
   }
@@ -532,10 +550,134 @@ for (const page of pages) {
   }
 }
 
+const NUMBER_WORDS =
+  'one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen|twenty(?:-one|-two|-three|-four|-five|-six|-seven|-eight|-nine)?';
+const KIND_WORDS =
+  'first-timer|family|couples|backpacker|honeymoon|dive|kids|slow|classic';
+const HUB_CARD_PHOTOS = new Set([
+  '/photos/plan.jpg',
+  '/photos/itineraries.jpg',
+  '/photos/destinations.jpg',
+  '/photos/interests.jpg',
+  '/photos/about.jpg',
+  '/photos/privacy.jpg',
+]);
+
+function visiblePlain(text) {
+  return String(text || '')
+    .replace(/\[[^\]]+\]\(([^)]+)\)/g, '$1')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function firstSentence(text) {
+  const plain = visiblePlain(text);
+  const match = plain.match(/^[\s\S]+?[.!?](?=\s|$)/);
+  return (match ? match[0] : plain).trim();
+}
+
+function openerFrame(sentence) {
+  return sentence
+    .toLowerCase()
+    .replace(new RegExp(`\\b(?:${NUMBER_WORDS})\\b`, 'g'), 'N')
+    .replace(/\b\d+(?:-\d+)?\b/g, 'N')
+    .replace(new RegExp(`\\b(?:${KIND_WORDS})\\b`, 'g'), 'KIND')
+    .replace(/[^a-z0-9\s]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+const openerFrames = new Map();
+const openerTicketRuns = new Map();
+for (const page of WAVE23_ITINERARY_PAGES || []) {
+  const opener = firstSentence((page.paragraphs || [])[0] || page.lede || '');
+  const frame = openerFrame(opener);
+  if (/\bdays cover\b/i.test(opener) || /\bN(?: KIND)? days cover\b/.test(frame)) {
+    fail(page.path, `templated itinerary opener ("days cover"): ${opener}`);
+  }
+  if (/\bthen\b[^.]{0,90}\bis the\b[^.]{0,50}\b(?:trip|week|pair)\b/i.test(opener)) {
+    fail(page.path, `templated itinerary opener ("then ... is the trip/week/pair"): ${opener}`);
+  }
+  const openerBody = visiblePlain((page.paragraphs || [])[0] || '');
+  const ticketRun = openerBody.match(
+    /palace 500 thb[\s\S]{0,80}wat pho[\s\S]{0,40}300 thb[\s\S]{0,50}(?:ferry|tha tien)[\s\S]{0,40}5 thb[\s\S]{0,40}wat arun[\s\S]{0,40}200 thb/i,
+  );
+  if (ticketRun) {
+    const key = ticketRun[0].replace(/\s+/g, ' ').toLowerCase();
+    if (!openerTicketRuns.has(key)) openerTicketRuns.set(key, []);
+    openerTicketRuns.get(key).push(page.path);
+  }
+  if (frame) {
+    if (!openerFrames.has(frame)) openerFrames.set(frame, []);
+    openerFrames.get(frame).push(page.path);
+  }
+  const prefix = frame.split(' ').slice(0, 7).join(' ');
+  if (prefix.split(' ').length >= 6) {
+    const key = `prefix:${prefix}`;
+    if (!openerFrames.has(key)) openerFrames.set(key, []);
+    openerFrames.get(key).push(page.path);
+  }
+
+  const sourcePhotos = [
+    page.photo,
+    ...(page.days || []).map((day) => day.photo),
+    ...(page.portraits || []).map((item) => item.photo),
+    ...(page.affiliates || []).map((row) => row.photo),
+  ].filter(Boolean);
+  const seen = new Set();
+  for (const photo of sourcePhotos) {
+    if (seen.has(photo)) {
+      fail(page.path, `itinerary source photo repeats on this page: ${photo}`);
+    }
+    seen.add(photo);
+    if (HUB_CARD_PHOTOS.has(photo)) {
+      fail(page.path, `generic hub photo used on an itinerary card: ${photo}`);
+    }
+  }
+}
+
+for (const [frame, paths] of openerFrames) {
+  const unique = [...new Set(paths)];
+  if (unique.length >= 2) {
+    fail(unique[0], `repeated itinerary opener frame across ${unique.join(', ')} (${frame})`);
+  }
+}
+
+for (const [run, paths] of openerTicketRuns) {
+  const unique = [...new Set(paths)];
+  if (unique.length >= 3) {
+    fail(
+      unique[0],
+      `identical Bangkok ticket list repeated across ${unique.join(', ')} (${run})`,
+    );
+  }
+}
+
 scanPrivacyTree(join(ROOT, 'src'));
 scanPrivacyTree(join(ROOT, 'public'));
 scanPrivacyFile(join(ROOT, 'README.md'));
 scanPrivacyTree(join(ROOT, 'dist'), DIST_TEXT_EXT);
+
+{
+  const dist = join(ROOT, 'dist');
+  if (existsSync(dist)) {
+    const leak = /\]\(https?:|\]\(\//;
+    const htmlFiles = [];
+    function walkHtml(dir) {
+      for (const name of readdirSync(dir)) {
+        const full = join(dir, name);
+        if (statSync(full).isDirectory()) walkHtml(full);
+        else if (name.endsWith('.html')) htmlFiles.push(full);
+      }
+    }
+    walkHtml(dist);
+    for (const file of htmlFiles) {
+      if (leak.test(readFileSync(file, 'utf8'))) {
+        fail(relative(ROOT, file), 'raw markdown link fragment in built HTML');
+      }
+    }
+  }
+}
 
 if (errors.length) {
   console.error(`audit:content failed (${errors.length} error${errors.length === 1 ? '' : 's'})`);

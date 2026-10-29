@@ -199,7 +199,7 @@ export const wave6Pages: Page[] = [
         title: 'Lagoon, market, cape',
         paragraphs: [
           'Nai Harn (Nai Harn Lagoon) is one of the island\'s better dry-season swims: a curved bay, a lake behind the beach, and a short walk to Yanui if you want a smaller cove. The sand fills on weekends. Morning is the useful hour. Hotels sit behind the beach road, not on a club deck.',
-          'Rawai Beach is for boats and dinner, not for a long swim. The seafood market and the pier restaurants are the evening. Shared longtails run to Coral Island (Koh Hey) and Bon Island when the Andaman allows it. Agree the boat and the wait time on the sand. Morning only in the wet months. Check on arrival.',
+          'Rawai Beach is for boats and dinner, not for a long swim. The seafood market and the pier restaurants are the evening. Shared longtails run to Coral Island (Koh Hey) and Bon Island when the Andaman allows it. Agree the boat and the wait time on the sand. Morning only in the wet months.',
           'Promthep Cape is the southern viewpoint. Go for sunset, not lunch. The lot and the stalls are crowded. Pair it with Nai Harn the same afternoon if you already have a car. Do not build a day around the cape alone.',
         ],
         table: {

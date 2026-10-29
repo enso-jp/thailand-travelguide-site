@@ -83,6 +83,15 @@ for (const file of pages) {
       errors.push(`${rel} <img> references missing file ${src}`);
     }
   }
+  if (rel.includes('/itineraries/')) {
+    const main = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1] || html;
+    const srcs = [...main.matchAll(/<img\b[^>]*\bsrc="([^"]+)"/g)].map((m) => m[1]);
+    const seen = new Set();
+    for (const src of srcs) {
+      if (seen.has(src)) errors.push(`${rel} repeated photo in rendered HTML: ${src}`);
+      seen.add(src);
+    }
+  }
 }
 
 if (errors.length) {

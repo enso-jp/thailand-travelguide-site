@@ -42,7 +42,7 @@ export const wave2Pages: Page[] = [
     geo: { lat: 10.096, lon: 99.838, containedIn: 'Gulf of Thailand' },
     paragraphs: [
       'Koh Tao is the dive island of the Samui chain: smallest, most exposed, and priced around Open Water. That is why October to December boats cancel more often than they do at Samui. There is no airport. Everyone lands at Mae Haad on the west coast.',
-      'Do not add Tao on a first week unless the Open Water card is the trip. From Bangkok the useful path is a flight to USM, then Lomprayah via Phangan, or the overnight train or bus to Chumphon plus a morning catamaran. Book the boat the afternoon before. Check on arrival if a swell is running.',
+      'Do not add Tao on a first week unless the Open Water card is the trip. From Bangkok the useful path is a flight to USM, then Lomprayah via Phangan, or the overnight train or bus to Chumphon plus a morning catamaran. Book the boat the afternoon before. Confirm the boat if a swell is running.',
     ],
     sections: [
       {
@@ -74,7 +74,7 @@ export const wave2Pages: Page[] = [
         title: 'How you actually arrive',
         paragraphs: [
           'Lomprayah, Seatran Discovery, and Songserm use adjacent berths at Mae Haad. Boonsiri uses its own nearby pier. Read the operator name on the ticket. Chumphon boats use more than one mainland pier; Tung Makham Noi and Matapon are not the same desk.',
-          'From Samui the crossing is about 1.5 to 2 hours and usually calls at Phangan. From Phangan it is about 1 to 1.5 hours. From Chumphon a fast boat is about 1.5 to 2 hours. Schedules move with weather. Check on arrival.',
+          'From Samui the crossing is about 1.5 to 2 hours and usually calls at Phangan. From Phangan it is about 1 to 1.5 hours. From Chumphon a fast boat is about 1.5 to 2 hours. Schedules move with weather.',
         ],
       },
     ],
@@ -119,7 +119,7 @@ export const wave2Pages: Page[] = [
     facts: [
       { label: 'Season', value: 'Best November to April (Andaman)' },
       { label: 'Boats', value: 'Saladan in season; road plus car ferry all year' },
-      { label: 'Airport', value: 'KBV, then van and the Hua Hin (Krabi) car ferry' },
+      { label: 'Airport', value: 'KBV, then van and Hua Hin pier on the Krabi side' },
       { label: 'Move', value: 'No useful public bus; scooter or hotel pickup' },
     ],
     chips: ['Andaman', 'Saladan', 'West-coast road'],
@@ -226,7 +226,7 @@ export const wave2Pages: Page[] = [
         title: 'Monsoon note',
         paragraphs: [
           'Andaman winter sea. November to April is why you came. July here is not a Lower Gulf workaround; it is a long van to a pier that may not sail.',
-          'Operators include Satun Pakbara Speed Boat Club, Bundhaya, Ploysiam, Tigerline, and others. Times cluster around late morning. Check on arrival. Rough-day postponements are common. Keep a spare night in Hat Yai or Trang if you have a flight.',
+          'Operators include Satun Pakbara Speed Boat Club, Bundhaya, Ploysiam, Tigerline, and others. Times cluster around late morning. Rough-day postponements are common. Keep a spare night in Hat Yai or Trang if you have a flight.',
         ],
       },
     ],
@@ -277,7 +277,7 @@ export const wave2Pages: Page[] = [
     geo: { lat: 12.1, lon: 102.35, containedIn: 'Eastern Gulf of Thailand' },
     paragraphs: [
       'Chang and Kood are Trat islands: west-coast beaches, jungle hills, and an eastern Gulf calendar. Do not apply Samui dates here. Samui and Tao are easier January to September. The dry, busy window off Trat is November to February. May to October is rain, thinner boat lists, and closed beach bars. You can still cross to Chang most days. Kood boats drop to one or two sailings in June to September.',
-      'Trat Airport (TDX) is about 17 km from Ao Thammachat and about 60 km from Laem Sok. Bangkok is a five to six hour road. Bangkok Airways is the usual TDX carrier; check the day\'s last boat before you book an afternoon flight. Centrepoint / Trat Ferry to Dan Kao has been suspended since 2024. Plan on Ferry Koh Chang from Ao Thammachat unless an operator is back. Check on arrival.',
+      'Trat Airport (TDX) is about 17 km from Ao Thammachat and about 60 km from Laem Sok. Bangkok is a five to six hour road. Bangkok Airways is the usual TDX carrier; check the day\'s last boat before you book an afternoon flight. Centrepoint / Trat Ferry to Dan Kao has been suspended since 2024. Plan on Ferry Koh Chang from Ao Thammachat unless an operator is back.',
     ],
     sections: [
       {
@@ -336,7 +336,7 @@ export const wave2Pages: Page[] = [
       },
       {
         q: 'Is Centrepoint still running?',
-        a: 'It has been suspended since 2024. Use Ferry Koh Chang at Ao Thammachat unless a desk on the ground says otherwise. Tickets are typically cash at the pier. Check on arrival.',
+        a: 'It has been suspended since 2024. Use Ferry Koh Chang at Ao Thammachat unless a desk on the ground says otherwise. Tickets are typically cash at the pier.',
       },
     ],
   },
@@ -582,7 +582,7 @@ export const wave2Pages: Page[] = [
     path: '/sukhothai',
     title: 'Sukhothai',
     description: 'UNESCO park you bicycle at dawn: lotus-bud chedis, Old Sukhothai stays, not a Bangkok day trip.',
-    lede: 'Sukhothai is lotus-bud chedis you ride between on a bicycle, not a Bangkok day trip. Sleep in Old Sukhothai. New Sukhothai is a taxi.',
+    lede: 'Sukhothai is lotus-bud chedis you ride between on a bicycle, not a Bangkok day trip, so sleep in Old Sukhothai and treat the new town as a taxi if you land late.',
     schema: 'TouristDestination',
     crumbs: [
       { name: 'Destinations', href: '/destinations' },
@@ -591,14 +591,14 @@ export const wave2Pages: Page[] = [
     facts: [
       { label: 'Park', value: 'UNESCO; three paid zones plus open outskirts' },
       { label: 'Central zone', value: '200 THB foreigners; 06:30 to 19:30 most days' },
-      { label: 'Get there', value: 'Phitsanulok (PHS) then about one hour west' },
+      { label: 'Get there', value: 'THS on Bangkok Airways; PHS is the fallback' },
       { label: 'Move', value: 'Rent a bicycle at the central gate' },
     ],
     chips: ['UNESCO', 'Bicycle', 'Old town'],
     photo: '/photos/sukhothai.jpg',
     geo: { lat: 17.017, lon: 99.703, containedIn: 'Lower North' },
     paragraphs: [
-      'Sukhothai is the 13th-century capital, known for lotus-bud chedis you bicycle at opening. The Fine Arts Department splits the park. The inner historic zone is the one you came for: Wat Mahathat, Wat Sa Si, Wat Si Sawai. Their virtual park page lists 200 THB for foreign visitors in the inner zone, 120 THB each for the northern zone (Wat Si Chum, Wat Phra Phai Luang) and the western Aranyik zone, or 400 THB as a combined rate. Thai tickets are 20 THB a zone. Bicycles pay 10 THB a zone at the gate. An older QR page still shows 100 THB. Believe the staffed booth.',
+      'Sukhothai is the 13th-century capital, known for lotus-bud chedis you bicycle at opening. The Fine Arts Department splits the park. The inner historic zone is the one you came for: Wat Mahathat, Wat Sa Si, Wat Si Sawai. Their virtual park page lists 200 THB for foreign visitors in the inner zone, 120 THB each for the northern zone (Wat Si Chum, Wat Phra Phai Luang) and the western Aranyik zone, or 400 THB as a combined rate. Thai tickets are 20 THB a zone. Bicycles pay 10 THB a zone at the gate. An older QR page still shows 100 THB. Go by the price posted at the staffed ticket booth.',
       'Inner-zone hours on that official page are 06:30 to 19:30 Monday to Friday and Sunday, and 06:30 to 21:00 on Saturday. Wat Si Chum and Wat Phra Phai Luang list 07:30 to 17:30. Aranyik lists 08:00 to 16:30. Office line: 055 697 527. Si Satchanalai is a separate park to the north. It is a second morning, not a footnote.',
     ],
     sections: [
@@ -606,7 +606,7 @@ export const wave2Pages: Page[] = [
         id: 'stay',
         title: 'Where to stay',
         paragraphs: [
-          'Old Sukhothai (Muang Kao) puts you at the gate for 06:30 light. New Sukhothai, about 12 km east, has more hotels and a duller dawn. Phitsanulok is the transport city: airport, trains, and a night if you land late. Do not try this as a Bangkok day trip.',
+          'Old Sukhothai (Muang Kao) puts you at the gate for 06:30 light. New Sukhothai, about 12 km east, has more hotels and a duller dawn. Bangkok Airways flies into Sukhothai Airport (THS) when the schedule fits; Phitsanulok (PHS) is the cheaper fallback for trains and late landings. Do not try this as a Bangkok day trip.',
         ],
         table: {
           headers: ['Base', 'Who it fits', 'Trade-off'],
@@ -645,7 +645,7 @@ export const wave2Pages: Page[] = [
       },
       {
         q: 'How do you get there from Bangkok?',
-        a: 'Fly to Phitsanulok, then a van or car of about an hour. The train-plus-bus path works and eats a day. This is not the Ayutthaya commuter trick.',
+        a: 'Fly Bangkok Airways into Sukhothai Airport (THS) when the schedule fits. Phitsanulok (PHS) is about one hour east, then a van west to the park. The train-plus-bus path works and eats a day. This is not a same-day hop like Ayutthaya from Bangkok.',
       },
     ],
   },
@@ -745,7 +745,7 @@ export const wave2Pages: Page[] = [
     ],
     facts: [
       { label: 'Train', value: 'Thonburi station, not Krung Thep Aphiwat' },
-      { label: 'Erawan fee', value: '300 THB foreign adult (DNP category 3)' },
+      { label: 'Erawan fee', value: '300 THB foreign adult, cash at the gate' },
       { label: 'Erawan', value: 'Seven tiers, about 65 to 70 km from town' },
       { label: 'Nights', value: 'Two if you want falls plus the line' },
     ],
@@ -776,8 +776,13 @@ export const wave2Pages: Page[] = [
         id: 'erawan',
         title: 'Erawan National Park',
         paragraphs: [
-          'Seven limestone tiers along about 1.5 km of stream. Lower pools are the family stop. Tier 7 is stairs, roots, and a turnaround clock. The DNP fee table used in 2024-2026 lists 300 THB for a foreign adult and 150 THB for a foreign child, plus 30 THB per car or 20 THB per motorbike. Thai adult tickets are 60 THB. Carry cash. The park shop lists 08:00 to 16:30. Gate cutoffs are not clearly posted on the same page; arrive before 09:00 if you want the top.',
-          'Local bus 8170 runs from Kanchanaburi bus station in about 1.5 hours. Ask the driver the last bus back before you walk up. Heavy rain closes tiers. After the September 2026 floods the park reopened and then paused swimming when the water ran red. Call 034 574 222 or the DNP hotline 1362 the morning you go. Check on arrival.',
+          'Seven limestone tiers along about 1.5 km of stream. Lower pools are the family stop. Tier 7 is stairs, roots, and a turnaround clock. Arrive before 09:00 if you want the top.',
+        ],
+        bullets: [
+          '**Park fee:** 300 THB for a foreign adult, 150 THB for a child, plus 30 THB per car or 20 THB per motorbike. Thai adult tickets are 60 THB. Carry cash.',
+          '**Hours:** The park shop lists 08:00 to 16:30. Gate cutoffs are not always posted.',
+          '**Bus 8170:** About 1.5 hours from Kanchanaburi station. Ask the driver for the last bus back before you walk up.',
+          '**After rain:** Tiers can close and the water can run red. Call 034 574 222 or the 1362 park hotline the morning you go.',
         ],
       },
       {

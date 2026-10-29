@@ -151,7 +151,7 @@ export const wave21Pages: Page[] = [
         id: 'get-there',
         title: 'Getting around',
         paragraphs: [
-          'There is no airport. Boats from Rassada in Phuket or Klong Jilad in Krabi are the doors. Last boats move with weather, so check on arrival. On the island you walk, take a longtail, or hire a boat. There are no cars.',
+          'There is no airport. Boats from Rassada in Phuket or Klong Jilad in Krabi are the doors. Last boats move with weather, so confirm the board that morning. On the island you walk, take a longtail, or hire a boat. There are no cars.',
         ],
       },
     ],

@@ -1,77 +1,12 @@
 ---
-import { tripCities, stayLink, klookTours, transferLink, trainLink, type StayCity, type AirportCode } from '../lib/partners';
-
-const cityIds = Object.keys(tripCities) as StayCity[];
-const cities = cityIds.map((id) => ({ id, label: tripCities[id].name }));
-
-const cityAirports: Record<StayCity, AirportCode> = {
-  bangkok: 'BKK',
-  phuket: 'HKT',
-  'chiang-mai': 'CNX',
-  'koh-samui': 'USM',
-  krabi: 'KBV',
-  pattaya: 'BKK',
-  'hua-hin': 'BKK',
-  'khao-lak': 'HKT',
-  'koh-phangan': 'USM',
-  'koh-tao': 'USM',
-  ayutthaya: 'BKK',
-  'koh-lanta': 'KBV',
-  'koh-lipe': 'HKT',
-  'koh-chang': 'BKK',
-  'koh-kood': 'BKK',
-  'chiang-rai': 'CEI',
-  sukhothai: 'CNX',
-  kanchanaburi: 'BKK',
-  pai: 'CNX',
-};
-
-const links = Object.fromEntries(
-  cities.map((city) => [
-    city.id,
-    {
-      stay: stayLink(city.id, { trip_sub1: 'Homepage' }),
-      tours: klookTours(`${city.label} tours`),
-      transfer: transferLink(cityAirports[city.id] || 'BKK'),
-      trains: trainLink('Bangkok', city.label),
-    },
-  ]),
-);
+import { stayLink } from '../lib/partners';
+import TripSearch from './TripSearch.astro';
 ---
 
-<aside class="book-stay" data-book>
-  <h2>Book your <em>stay</em></h2>
-  <form class="book-form" data-book-form>
-    <label class="book-field">
-      <span>Destination</span>
-      <select name="city" data-book-city>
-        {cities.map((city) => <option value={city.id}>{city.label}</option>)}
-      </select>
-    </label>
-    <div class="book-dates">
-      <label class="book-field">
-        <span>Check-in</span>
-        <input type="date" name="checkin" data-book-in required />
-      </label>
-      <label class="book-field">
-        <span>Check-out</span>
-        <input type="date" name="checkout" data-book-out required />
-      </label>
-    </div>
-    <label class="book-field">
-      <span>Guests</span>
-      <select name="guests" data-book-guests>
-        <option value="2-1" selected>2 adults, 1 room</option>
-        <option value="1-1">1 adult, 1 room</option>
-        <option value="3-1">3 adults, 1 room</option>
-        <option value="4-2">4 adults, 2 rooms</option>
-      </select>
-    </label>
-    <button class="aff-btn book-go" type="submit" data-book-go>Search hotels</button>
-  </form>
-  <script type="application/json" data-book-links set:html={JSON.stringify(links)} />
-</aside>
-<a class="home-ad" href={stayLink('bangkok', { trip_sub1: 'Homepage_Ad' })} rel="sponsored noopener" target="_blank">
-  <strong>Bangkok first nights</strong>
-  <span>Lock two nights near a BTS station before you pick a coast.</span>
-</a>
+<div class="home-book">
+  <TripSearch variant="home" city="bangkok" placeName="Thailand" showMore={false} />
+  <a class="home-ad" href={stayLink('bangkok', { trip_sub1: 'Homepage_Ad' })} rel="sponsored noopener" target="_blank">
+    <strong>Bangkok first nights</strong>
+    <span>Lock two nights near a BTS station before you pick a coast.</span>
+  </a>
+</div>
