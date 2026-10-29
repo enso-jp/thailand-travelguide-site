@@ -17,7 +17,6 @@ interface Props {
 const { page } = Astro.props;
 const bag = new UniquePhotos(page.photo ? [page.photo] : []);
 const portraits = bag.takeBatch(page.portraits || [], (item) => `${page.path} ${item.title} ${item.href}`);
-const affiliates = bag.takeBatch(page.affiliates || [], (item) => `${page.path} ${item.title} ${item.kicker} ${item.body}`);
 const days = bag.takeBatch(page.days || [], (day) => `${page.path} ${day.title} ${day.body}`);
 const sections = (page.sections || []).map((section) => ({
   ...section,
@@ -25,7 +24,19 @@ const sections = (page.sections || []).map((section) => ({
     ...card,
     photo: bag.take(card.photo, `${page.path} ${card.kicker} ${card.title} ${card.href || ""}`),
   })),
+  affiliates: section.affiliates
+    ? bag.takeBatch(section.affiliates, (item) => `${page.path} ${item.title} ${item.kicker} ${item.body}`)
+    : undefined,
 }));
+const leadSections = sections.filter((section) => section.lead);
+const restSections = sections.filter((section) => !section.lead);
+const shownAffHrefs = new Set(
+  sections.flatMap((section) => (section.affiliates || []).map((item) => item.href)),
+);
+const affiliates = bag.takeBatch(
+  (page.affiliates || []).filter((item) => !shownAffHrefs.has(item.href)),
+  (item) => `${page.path} ${item.title} ${item.kicker} ${item.body}`,
+);
 const tabs = page.tabs;
 const showSisterRoutes = page.path === '/get-there' || page.path.startsWith('/get-there/') || page.path === '/itineraries' || page.path.startsWith('/itineraries/') || page.path === '/plan';
 const useGuideGrid =
@@ -138,6 +149,45 @@ function guideGridHeading(path: string): string {
     {page.paragraphs.map((p) => <p set:html={formatInline(p)} />)}
   </div>
 
+  {leadSections.map((section) => (
+    <section class="place-section" id={section.id}>
+      <h2>{section.title}</h2>
+      {section.paragraphs?.map((p) => <p set:html={formatInline(p)} />)}
+      {section.bullets && section.bullets.length > 0 && (
+        <ul class="scan-list">
+          {section.bullets.map((item) => (
+            <li set:html={formatInline(item)} />
+          ))}
+        </ul>
+      )}
+      {section.table && (
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                {section.table.headers.map((h) => (
+                  <th set:html={formatInline(h)} />
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {section.table.rows.map((row) => (
+                <tr>
+                  {row.map((cell) => (
+                    <td set:html={formatInline(cell)} />
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+      {section.affiliates && section.affiliates.length > 0 && (
+        <AffRow items={section.affiliates} />
+      )}
+    </section>
+  ))}
+
   {
     useGuideGrid && (
       <section class="place-section" id="related">
@@ -179,7 +229,7 @@ function guideGridHeading(path: string): string {
   }
 
   {
-    sections.map((section) => (
+    restSections.map((section) => (
       <section class="place-section" id={section.id}>
         <h2>{section.title}</h2>
         {section.paragraphs?.map((p) => <p set:html={formatInline(p)} />)}
@@ -242,6 +292,9 @@ function guideGridHeading(path: string): string {
               </tbody>
             </table>
           </div>
+        )}
+        {section.affiliates && section.affiliates.length > 0 && (
+          <AffRow items={section.affiliates} />
         )}
       </section>
     ))

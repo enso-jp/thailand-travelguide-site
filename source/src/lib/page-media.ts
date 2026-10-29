@@ -71,7 +71,7 @@ export function buildHomeMedia(reserved: string[] = []): HomeMedia {
   ];
   const plan: PlanTool[] = [
     { href: '/plan/when-to-go', title: 'Seasons & Monsoons', text: 'Andaman Nov to Apr. Gulf Jan to Sep.', icon: 'calendar' },
-    { href: '/plan/visas-and-tdac', title: 'Visas & TDAC', text: '60-day visa-free for many passports. File TDAC.', icon: 'passport' },
+    { href: '/plan/visas-and-tdac', title: 'Visas & TDAC', text: '30-day visa-free for many passports. File TDAC.', icon: 'passport' },
     { href: '/plan/trains-and-ferries', title: 'Airports & Sleeper Trains', text: 'BKK, DMK, and SRT 9 and 10 north.', icon: 'train' },
     { href: '/plan/trains-and-ferries', title: 'Ferries & Island Transfers', text: 'Lomprayah, Seatran, and longtails.', icon: 'ferry' },
     { href: '/plan/grab-and-bts', title: 'Grab, BTS & MRT', text: '2026 BTS tap 17 to 62 THB.', icon: 'metro' },
