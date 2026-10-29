@@ -919,7 +919,7 @@ export const wave7Pages: Page[] = [
     facts: [
       { label: 'Islands', value: '42 limestone islands; HQ on Wua Ta Lap' },
       { label: 'Park fee', value: '300 THB foreign adult, 150 THB child, cash' },
-      { label: 'Closed', value: '1 November to 15 December; check on arrival for swell days' },
+      { label: 'Closed', value: '1 November to 15 December; confirm swell days' },
       { label: 'Boats', value: 'No public ferry; tours from Nathon or Bophut' },
     ],
     chips: ['42 islands', 'Talay Nai', '300 THB'],

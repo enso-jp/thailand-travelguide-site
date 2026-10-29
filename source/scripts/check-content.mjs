@@ -253,6 +253,12 @@ for (const token of ['11105102', '334225872', '588978', '793638']) {
     errors.push(`partners.ts missing affiliate token ${token}`);
   }
 }
+if (!partners.includes('https://www.trip.com/hotels/list')) {
+  errors.push('partners.ts must submit stay search to https://www.trip.com/hotels/list');
+}
+if (/hotels\/\$\{[^}]+\}-hotels-list-/.test(partners) || partners.includes('-hotels-list-')) {
+  errors.push('partners.ts must use /hotels/list search cards, not slug hotel-list paths');
+}
 
 const astroConfig = readFileSync(join(ROOT, 'astro.config.mjs'), 'utf8');
 if (!astroConfig.includes("trailingSlash: 'always'")) {

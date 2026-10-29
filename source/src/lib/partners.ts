@@ -95,13 +95,16 @@ export function tripSearchWidgetUrl(sub1 = 'Destination Page'): string {
   return `https://www.trip.com/partners/ad/${TRIP_WIDGET_ID}?Allianceid=${TRIP_ALLIANCE}&SID=${TRIP_SID}&trip_sub1=${encodeURIComponent(sub1)}`;
 }
 
-function hotelListPath(row: TripCityEntry): string {
-  return `https://www.trip.com/hotels/${row.slug}-hotels-list-${row.id}/`;
+function hotelListUrl(row: TripCityEntry, extra: Record<string, string> = {}): string {
+  return `https://www.trip.com/hotels/list?city=${row.id}&${tripParams({
+    trip_sub1: row.name,
+    trip_sub3: row.sub3,
+    ...extra,
+  })}`;
 }
 
 export function stayLink(city: StayCity, extra: Record<string, string> = {}): string {
-  const row: TripCityEntry = tripCities[city];
-  return `${hotelListPath(row)}?${tripParams({ trip_sub1: row.name, trip_sub3: row.sub3, ...extra })}`;
+  return hotelListUrl(tripCities[city], extra);
 }
 
 export function tripHotelsUrl(city: StayCity, sub1?: string): string {
@@ -111,20 +114,21 @@ export function tripHotelsUrl(city: StayCity, sub1?: string): string {
 export function stayAreaLink(area: StayArea, extra: Record<string, string> = {}): string {
   const row = tripAreas[area];
   const city: TripCityEntry = tripCities[row.city as StayCity];
-  return `${hotelListPath(city)}?keyword=${encodeURIComponent(row.keyword)}&${tripParams({
+  return hotelListUrl(city, {
+    keyword: row.keyword,
     trip_sub1: row.keyword,
-    trip_sub3: city.sub3,
     ...extra,
-  })}`;
+  });
 }
 
 export function hotelSearchLink(query: string, city?: StayCity): string {
   const entry: TripCityEntry | undefined = city ? tripCities[city] : undefined;
-  const base = entry ? hotelListPath(entry) : 'https://www.trip.com/hotels/list';
-  return `${base}?keyword=${encodeURIComponent(query)}&${tripParams({
+  const params = tripParams({
     trip_sub1: query,
     trip_sub3: entry ? entry.sub3 : 'D20710097',
-  })}`;
+  });
+  const cityPart = entry ? `city=${entry.id}&` : '';
+  return `https://www.trip.com/hotels/list?${cityPart}keyword=${encodeURIComponent(query)}&${params}`;
 }
 
 export function flightLink(from: AirportCode, to: AirportCode): string {
