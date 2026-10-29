@@ -16,12 +16,15 @@ interface Props {
 
 const { page } = Astro.props;
 const bag = new UniquePhotos(page.photo ? [page.photo] : []);
-const portraits = (page.portraits || []).map((item) => ({ ...item, photo: bag.take(item.photo) }));
-const affiliates = (page.affiliates || []).map((item) => ({ ...item, photo: bag.take(item.photo) }));
-const days = (page.days || []).map((day) => ({ ...day, photo: bag.take(day.photo) }));
+const portraits = bag.takeBatch(page.portraits || [], (item) => `${page.path} ${item.title} ${item.href}`);
+const affiliates = bag.takeBatch(page.affiliates || [], (item) => `${page.path} ${item.title} ${item.kicker} ${item.body}`);
+const days = bag.takeBatch(page.days || [], (day) => `${page.path} ${day.title} ${day.body}`);
 const sections = (page.sections || []).map((section) => ({
   ...section,
-  cards: section.cards?.map((card) => ({ ...card, photo: bag.take(card.photo) })),
+  cards: section.cards?.map((card) => ({
+    ...card,
+    photo: bag.take(card.photo, `${page.path} ${card.kicker} ${card.title} ${card.href || ""}`),
+  })),
 }));
 const tabs = page.tabs;
 const showSisterRoutes = page.path === '/get-there' || page.path.startsWith('/get-there/') || page.path === '/itineraries' || page.path.startsWith('/itineraries/') || page.path === '/plan';

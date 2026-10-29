@@ -420,6 +420,14 @@ th, td {
   color: inherit;
   text-decoration: none;
 }
+.aff-row--no-photo,
+.aff-row:not(:has(.aff-photo)) {
+  grid-template-columns: minmax(0, 1fr);
+}
+.aff-row > .aff-copy:only-child,
+.aff-row > :only-child {
+  grid-column: 1 / -1;
+}
 .aff-photo { display: block; overflow: hidden; border-radius: 8px; background: #ececec; }
 .aff-photo img { width: 100%; height: 6.4rem; object-fit: cover; display: block; }
 .aff-copy strong { display: block; color: var(--ink); font-size: 1.05rem; }
@@ -546,6 +554,10 @@ th, td {
 @media (max-width: 720px) {
   .footer-grid { grid-template-columns: 1fr; }
   .aff-row { grid-template-columns: 6.2rem minmax(0, 1fr); }
+  .aff-row--no-photo,
+  .aff-row:not(:has(.aff-photo)) {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .nav-panel-inner { width: min(var(--page), calc(100% - 2rem)); margin: 0 auto; padding: 1.1rem 0 1.4rem; }
@@ -1266,7 +1278,19 @@ th, td {
   border-radius: 12px;
   display: block;
 }
-.food-row.is-text { grid-template-columns: minmax(0, 1fr); }
+.food-row.is-text,
+.food-row:not(:has(.food-row-photo)),
+.mini-card:not(:has(.media)),
+.story-row:not(:has(.story-thumb)) {
+  grid-template-columns: minmax(0, 1fr);
+}
+.food-row > :only-child,
+.mini-card > :only-child,
+.story-row > :only-child,
+.day-plan-card > :only-child,
+.sister-card > :only-child {
+  grid-column: 1 / -1;
+}
 .media-empty { display: block; aspect-ratio: 16 / 10; background: #f3f1ec; border-radius: 12px; }
 .spot-address { color: var(--muted); font-size: 0.92rem; }
 .food-guide > .rail { position: sticky; top: 6.4rem; align-self: start; }
@@ -1290,6 +1314,10 @@ th, td {
   .interest-grid { grid-template-columns: 1fr 1fr; }
   .region-swipe { display: none; }
   .food-row { grid-template-columns: 7.4rem minmax(0, 1fr); gap: 0.75rem; }
+  .food-row.is-text,
+  .food-row:not(:has(.food-row-photo)) {
+    grid-template-columns: minmax(0, 1fr);
+  }
   .nav-panel { display: none !important; }
   .story-thumb img { height: 6rem; }
 }
@@ -1686,5 +1714,9 @@ th, td {
   }
   .top-grid, .plan-row, .food-grid, .hood-list, #attractions .card-list {
     gap: 1rem;
+  }
+  .aff-row--no-photo,
+  .aff-row:not(:has(.aff-photo)) {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

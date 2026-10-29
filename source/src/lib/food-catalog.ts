@@ -117,7 +117,7 @@ export const SIGNATURE_DISHES: FoodDish[] = [
     title: 'Moo Hong',
     nameLocal: 'หมูฮ้อง',
     line: 'Phuket stewed pork with star anise. Order it in Old Town, not on a Patong beach grill.',
-    photo: undefined,
+    photo: '/photos/dish-khao-kha-moo.jpg',
     href: '/thai-food/phuket',
     region: 'Phuket',
     find: 'moo hong หมูฮ้อง phuket',

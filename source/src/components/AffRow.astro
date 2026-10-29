@@ -23,7 +23,7 @@ const { items } = Astro.props;
         items.map((item) => (
           <li>
             <a
-              class="aff-row"
+              class:list={['aff-row', { 'aff-row--no-photo': !item.photo }]}
               href={item.href}
               rel="sponsored noopener"
               target="_blank"
