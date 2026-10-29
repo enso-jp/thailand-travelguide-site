@@ -3,6 +3,7 @@ import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
 
 const DIST = join(process.cwd(), 'dist');
+const PUBLIC = join(process.cwd(), 'public');
 const errors = [];
 
 function walkHtml(dir, files = []) {
@@ -58,6 +59,29 @@ for (const file of pages) {
   }
   if (canonical && !canonical.endsWith('/')) {
     errors.push(`${rel} canonical missing trailing slash: ${canonical}`);
+  }
+  const affRows = [...html.matchAll(/<a[^>]*class="[^"]*\baff-row\b[^"]*"[^>]*>([\s\S]*?)<\/a>/g)];
+  for (const m of affRows) {
+    if (!/class="[^"]*\baff-photo\b[^"]*"/.test(m[1])) {
+      errors.push(`${rel} .aff-row missing .aff-photo`);
+    }
+  }
+  for (const cls of ['jg-card', 'food-card']) {
+    const cards = [...html.matchAll(new RegExp(`<a[^>]*class="[^"]*\\\\b${cls}\\\\b[^"]*"[^>]*>([\\\\s\\\\S]*?)<\\\\/a>`, 'g'))];
+    for (const m of cards) {
+      if (!/<img\b/.test(m[1])) {
+        errors.push(`${rel} .${cls} missing <img>`);
+      }
+    }
+  }
+  const imgs = [...html.matchAll(/<img\b([^>]*)>/g)];
+  for (const img of imgs) {
+    const src = img[1].match(/\bsrc="([^"]*)"/)?.[1];
+    if (!src) {
+      errors.push(`${rel} <img> missing src attribute`);
+    } else if (src.startsWith('/') && !existsSync(join(PUBLIC, src))) {
+      errors.push(`${rel} <img> references missing file ${src}`);
+    }
   }
 }
 

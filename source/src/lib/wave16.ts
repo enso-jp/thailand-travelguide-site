@@ -1,3 +1,6 @@
+import { UniquePhotos } from "./photos";
+import { attractionsFor, isPlacePage } from "./place-attractions";
+import { foodRowsFor } from "./dish-photos";
 import credits from '../../public/photos/credits.json';
 import type { Affiliate, EditorialCard, Page, Portrait } from './content';
 import { klookTours, stayLink, type StayCity } from './partners';
@@ -2003,12 +2006,11 @@ export function fixDayPhotos(page: Page, used: Set<string>): Page {
   return { ...page, days };
 }
 
-export function uniquifyPortraits(items: Portrait[], used: Set<string>): Portrait[] {
-  return items.map((item) => {
-    const photo = item.photo && !used.has(item.photo) ? item.photo : '';
-    if (photo) used.add(photo);
-    return { ...item, photo };
-  });
+export function uniquifyPortraits(items: Portrait[], used: Set<string>, pagePath = ''): Portrait[] {
+  const bag = new UniquePhotos([...used]);
+  const out = bag.takeBatch(items, (item) => `${pagePath} ${item.title} ${item.href}`);
+  for (const row of out) used.add(row.photo);
+  return out;
 }
 
 function stayCityFor(page: Page): StayCity {
@@ -2054,11 +2056,9 @@ export function uniquifyAffiliates(page: Page, used: Set<string>): Page {
       });
     }
   }
-  const affiliates: Affiliate[] = rows.map((row) => {
-    const photo = row.photo && !used.has(row.photo) ? row.photo : '';
-    if (photo) used.add(photo);
-    return { ...row, photo };
-  });
+  const bag = new UniquePhotos([...used]);
+  const affiliates: Affiliate[] = bag.takeBatch(rows, (row) => `${page.path} ${row.title} ${row.kicker} ${row.body}`);
+  for (const row of affiliates) if (row.photo) used.add(row.photo);
   return { ...page, affiliates };
 }
 
@@ -2178,7 +2178,8 @@ function pickCardPhoto(card: EditorialCard, page: Page, used: Set<string>): stri
       return c;
     }
   }
-  const fallback = nextUnusedPhoto(used) || '/photos/resort.jpg';
+  const bag = new UniquePhotos([...used]);
+  const fallback = bag.take(card.photo, `${page.path} ${card.kicker} ${card.title} ${card.href || ""}`);
   used.add(fallback);
   return fallback;
 }
@@ -2203,13 +2204,23 @@ export function applyWave16Finish(page: Page): Page {
   next = applyInterestPortraits(next);
   next = structureCopy(next);
   const usedPhotos = new Set<string>(next.photo ? [next.photo] : []);
-  next = assignEditorialCardPhotos(next, usedPhotos);
-  next = applyDepthPad(next);
-  next = fixDayPhotos(next, usedPhotos);
+  if (isPlacePage(next.path)) {
+    const attrBag = new UniquePhotos([...usedPhotos]);
+    for (const row of attrBag.takeBatch(attractionsFor(next.path), (r) => `${next.path} ${r.name} ${r.href}`)) {
+      usedPhotos.add(row.photo);
+    }
+  } else if (next.path.startsWith('/thai-food/')) {
+    for (const row of foodRowsFor(next.path, next.photo ? [next.photo] : [])) {
+      if (row.photo) usedPhotos.add(row.photo);
+    }
+  }
   if (next.portraits?.length) {
-    next = { ...next, portraits: uniquifyPortraits(next.portraits, usedPhotos) };
+    next = { ...next, portraits: uniquifyPortraits(next.portraits, usedPhotos, next.path) };
   }
   next = uniquifyAffiliates(next, usedPhotos);
+  next = applyDepthPad(next);
+  next = fixDayPhotos(next, usedPhotos);
+  next = assignEditorialCardPhotos(next, usedPhotos);
   next = { ...next, photoCredit: photoCreditFor(next.photo) };
   return next;
 }

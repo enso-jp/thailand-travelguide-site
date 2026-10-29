@@ -20,8 +20,8 @@ const { page } = Astro.props;
 const reserved = page.photo ? [page.photo] : [];
 const rows = foodRowsFor(page.path, reserved);
 const bag = new UniquePhotos([...reserved, ...rows.map((row) => row.photo).filter(Boolean) as string[]]);
-const portraits = assignExactPhotos(page.portraits || [], bag);
-const affiliates = assignExactPhotos(page.affiliates || [], bag);
+const portraits = bag.takeBatch(page.portraits || [], (item) => `${page.path} ${item.title} ${item.href}`);
+const affiliates = bag.takeBatch(page.affiliates || [], (item) => `${page.path} ${item.title} ${item.kicker} ${item.body}`);
 const city: StayCity = page.path.includes('chiang')
   ? 'chiang-mai'
   : page.path.includes('phuket')
@@ -150,7 +150,7 @@ const city: StayCity = page.path.includes('chiang')
             <div class="food-grid">
               {portraits.map((item) => (
                 <a class="food-card" href={pageHref(item.href)}>
-                  <span class="media"><Photo src={item.photo} alt={item.title} /></span>
+                  {item.photo && <span class="media"><Photo src={item.photo} alt={item.title} /></span>}
                   <strong>{item.title}</strong>
                 </a>
               ))}

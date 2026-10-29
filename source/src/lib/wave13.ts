@@ -338,14 +338,7 @@ function resortHubCards(): Portrait[] {
 }
 
 function uniquifyList(items: Portrait[]): Portrait[] {
-  const used = new Set<string>();
-  return items.map((item) => {
-    if (item.photo && !used.has(item.photo)) {
-      used.add(item.photo);
-      return item;
-    }
-    return { ...item, photo: '' };
-  });
+  return items.map((item) => ({ ...item }));
 }
 
 function uniquifyDays(page: Page): Page {

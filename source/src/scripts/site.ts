@@ -26,11 +26,16 @@ function wireDatePair(inInput: HTMLInputElement | null, outInput: HTMLInputEleme
   if (!inInput || !outInput) return;
   const today = new Date();
   const tomorrow = addDays(today, 1);
-  const checkout = addDays(today, 4);
-  inInput.min = fmtDate(today);
-  outInput.min = fmtDate(tomorrow);
-  if (!inInput.value) inInput.value = fmtDate(tomorrow);
-  if (!outInput.value) outInput.value = fmtDate(checkout);
+  const todayStr = fmtDate(today);
+  const checkinStr = fmtDate(tomorrow);
+  inInput.min = todayStr;
+  outInput.min = checkinStr;
+  const staleIn = !inInput.value || inInput.value < todayStr;
+  if (staleIn) inInput.value = checkinStr;
+  if (!outInput.value || outInput.value <= inInput.value || staleIn) {
+    const picked = new Date(`${inInput.value}T00:00:00`);
+    outInput.value = fmtDate(addDays(picked, 3));
+  }
   inInput.addEventListener('change', () => {
     if (!inInput.value) return;
     const picked = new Date(`${inInput.value}T00:00:00`);
@@ -211,10 +216,12 @@ ready(() => {
     });
   });
 
-  const hashed = document.querySelector(location.hash);
-  if (hashed?.classList.contains('is-extra')) {
-    hashed.closest('.attraction-stack')?.classList.add('is-open');
-    hashed.scrollIntoView({ block: 'center' });
+  if (location.hash) {
+    const hashed = document.querySelector(location.hash);
+    if (hashed?.classList.contains('is-extra')) {
+      hashed.closest('.attraction-stack')?.classList.add('is-open');
+      hashed.scrollIntoView({ block: 'center' });
+    }
   }
 
   const tabs = document.querySelectorAll<HTMLAnchorElement>('nav.tabs a[href^="#"]');

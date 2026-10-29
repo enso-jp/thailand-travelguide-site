@@ -23,10 +23,10 @@ interface Props {
 const { page } = Astro.props;
 const meta = PLACE_META[page.path];
 const reserved = page.photo ? [page.photo] : [];
-const attractions = assignExactPhotos(attractionsFor(page.path), new UniquePhotos(reserved));
-const bag = new UniquePhotos([...reserved, ...attractions.map((row) => row.photo).filter(Boolean) as string[]]);
-const portraits = assignExactPhotos(page.portraits || [], bag);
-const affiliates = assignExactPhotos(page.affiliates || [], bag);
+const bag = new UniquePhotos(reserved);
+const attractions = bag.takeBatch(attractionsFor(page.path), (row) => `${page.path} ${row.name} ${row.href}`);
+const portraits = bag.takeBatch(page.portraits || [], (item) => `${page.path} ${item.title} ${item.href}`);
+const affiliates = bag.takeBatch(page.affiliates || [], (item) => `${page.path} ${item.title} ${item.kicker} ${item.body}`);
 const city = (meta?.stayCity || 'bangkok') as StayCity;
 const region = (meta?.region || regionForPath(page.path)) as 'central' | 'north' | 'andaman' | 'gulf' | 'east';
 const stayHref = page.bookingCta?.stayHref || stayLink(city);
@@ -124,47 +124,58 @@ const tabs = [
       </section>
 
       {
-        page.sections?.map((section) => (
-          <section class="place-section" id={section.id}>
-            <h2>{section.title}</h2>
-            {section.paragraphs?.map((p) => <p set:html={formatInline(p)} />)}
-            {section.bullets && section.bullets.length > 0 && (
-              <ul class="scan-list">
-                {section.bullets.map((item) => (
-                  <li set:html={formatInline(item)} />
-                ))}
-              </ul>
-            )}
-            {section.table && (
-              <div class="table-wrap">
-                <table>
-                  <thead>
-                    <tr>
-                      {section.table.headers.map((h) => (
-                        <th set:html={formatInline(h)} />
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {section.table.rows.map((row) => (
+        page.sections?.map((section) => {
+          const secId =
+            section.id === 'neighbourhoods' || attractions.some((a) => a.slug === section.id)
+              ? `section-${section.id}`
+              : section.id;
+          return (
+            <section class="place-section" id={secId}>
+              <h2>{section.title}</h2>
+              {section.paragraphs?.map((p) => <p set:html={formatInline(p)} />)}
+              {section.bullets && section.bullets.length > 0 && (
+                <ul class="scan-list">
+                  {section.bullets.map((item) => (
+                    <li set:html={formatInline(item)} />
+                  ))}
+                </ul>
+              )}
+              {section.table && (
+                <div class="table-wrap">
+                  <table>
+                    <thead>
                       <tr>
-                        {row.map((cell) => (
-                          <td set:html={formatInline(cell)} />
+                        {section.table.headers.map((h) => (
+                          <th set:html={formatInline(h)} />
                         ))}
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            )}
-          </section>
-        ))
+                    </thead>
+                    <tbody>
+                      {section.table.rows.map((row) => (
+                        <tr>
+                          {row.map((cell) => (
+                            <td set:html={formatInline(cell)} />
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+              {section.id === 'stay' && affiliates.length > 0 && <AffRow items={affiliates} />}
+            </section>
+          );
+        })
       }
 
-      <section class="place-section" id="stay">
-        <h2>Where to stay</h2>
-        {affiliates.length > 0 && <AffRow items={affiliates} />}
-      </section>
+      {
+        !page.sections?.some((section) => section.id === 'stay') && (
+          <section class="place-section" id="stay">
+            <h2>Where to stay</h2>
+            {affiliates.length > 0 && <AffRow items={affiliates} />}
+          </section>
+        )
+      }
 
       {
         !page.sections?.some((section) => section.id === 'get-there') && (
