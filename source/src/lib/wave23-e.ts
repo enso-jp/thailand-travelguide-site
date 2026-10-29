@@ -32,7 +32,7 @@ export const WAVE23_E: Page[] = [
       'Boat toward Mae Haad. Sleep four nights using [Tao where to stay](/koh-tao/where-to-stay) on Sairee. Read [dive sites](/koh-tao/dive-sites). Many tickets add a 20 THB pier fee. Lomprayah Samui to Phangan is about 30 minutes; Tao is a second hop. Keep Phuket off this page. Dive context sits on [diving](/interests/diving-and-snorkeling).',
     ],
     days: [
-      ['Land USM', 'No dive. Sleep Bophut or Chaweng. Confirm the shop email.', '/photos/koh-samui.jpg'],
+      ['Land USM', 'No dive. Sleep Bophut or Chaweng. Confirm the shop email.', '/photos/samui-airport.jpg'],
       ['Beach or Ang Thong', '300 THB park if you want a boat day before classrooms.', '/photos/ang-thong.jpg'],
       ['Samui buffer', 'Pack. Read the pier name on the Tao ticket.', '/photos/chaweng.jpg'],
       ['Boat to Tao', 'Mae Haad. Sleep Sairee. Pool session if the shop starts late.', '/photos/ferry-gulf.jpg'],
@@ -58,7 +58,7 @@ export const WAVE23_E: Page[] = [
     affiliates: [
       stay('Samui landing nights', 'Bophut or Chaweng', 'Three nights before the dive boat.', stayLink('koh-samui'), '/photos/resort-four-seasons-koh-samui.jpg'),
       stay('Sairee dive rooms', 'Near the shops', 'Four nights. Ask the shop which soi they use.', stayLink('koh-tao'), '/photos/sairee-beach.jpg'),
-      hop('USM flights', 'Trip.com', 'Bangkok to Koh Samui, then a named pier.', flightLink('BKK', 'USM'), '/photos/samui-airport.jpg', 'flights', 'Search flights'),
+      hop('USM flights', 'Trip.com', 'Bangkok to Koh Samui, then a named pier.', flightLink('BKK', 'USM'), '/photos/get-there.jpg', 'flights', 'Search flights'),
     ],
     faqs: [
       { q: 'Can you certify in four Tao nights?', a: 'Yes if you arrive with e-learning done and seas are calm. Shops still add a weather day.' },
@@ -312,7 +312,7 @@ export const WAVE23_E: Page[] = [
     ],
     days: [
       ['CNX to Pai', 'Route 1095 van 3 to 4.5 hours. Sleep town.', '/photos/northern.jpg'],
-      ['Canyon and springs', 'One viewpoint. No night ride.', '/photos/doi-suthep.jpg'],
+      ['Canyon and springs', 'One viewpoint. No night ride.', '/photos/pai-canyon.jpg'],
       ['Pai buffer', 'Cafe morning. Pack for the next Route 1095 hop.', '/photos/nimman.jpg'],
       ['Van to Mae Hong Son', 'Another Route 1095 block. Town hotel.', '/photos/chiang-rai.jpg'],
       ['Pang Ung or town wats', 'Lake hour if the season is right. Otherwise town temples.', '/photos/chiang-mai.jpg'],
@@ -334,7 +334,7 @@ export const WAVE23_E: Page[] = [
       { title: 'Northern loop', href: '/itineraries/7-days-northern-thailand-loop', photo: '/photos/sukhothai.jpg' },
     ],
     affiliates: [
-      stay('Pai nights', 'Town or canyon', 'Three nights before the Mae Hong Son hop.', stayLink('pai'), '/photos/pai-canyon.jpg'),
+      stay('Pai nights', 'Town or canyon', 'Three nights before the Mae Hong Son hop.', stayLink('pai'), '/photos/night-market-cm.jpg'),
       stay('Chiang Mai landing', 'If you need a night before Route 1095', 'Book only if you land late.', stayLink('chiang-mai'), '/photos/tha-phae.jpg'),
       hop('Bangkok to Chiang Mai', 'Trip.com', 'About 70 to 75 minutes to CNX.', flightLink('BKK', 'CNX'), '/photos/chiang-mai-airport.jpg', 'flights', 'Search flights'),
     ],

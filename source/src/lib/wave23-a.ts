@@ -303,7 +303,7 @@ export const WAVE23_A: Page[] = [
       ['Bangkok tickets', 'Palace 500 THB, Wat Pho 300 THB, Wat Arun 200 THB plus 5 THB ferry.', '/photos/grand-palace.jpg'],
       ['Market night', 'Chatuchak or Or Tor Kor, then Yaowarat.', '/photos/chatuchak.jpg'],
       ['City buffer', 'Pack for USM. Jim Thompson or a Siam hour.', '/photos/siam.jpg'],
-      ['Land USM', 'No boat. Sleep Bophut, Choeng Mon, or Chaweng.', '/photos/chaweng.jpg'],
+      ['Land USM', 'No boat. Sleep Bophut, Choeng Mon, or Chaweng.', '/photos/samui-airport.jpg'],
       ['Beach and village', 'Bophut Fisherman Village if you sleep north. Learn Grab and songthaew fares.', '/photos/lamai.jpg'],
       ['Ang Thong day', 'Park fee 300 THB. No public ferry. Back before dark.', '/photos/ang-thong.jpg'],
       ['Second Samui coast', 'Swap to Lamai or a north bay if the first beach is wrong.', '/photos/ferry-gulf.jpg'],
