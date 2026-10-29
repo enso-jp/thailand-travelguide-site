@@ -48,7 +48,7 @@ export const wave3Pages: Page[] = [
       { label: 'Fast path', value: 'BKK or DMK to USM, then Lomprayah to Thong Sala' },
       { label: 'Night path', value: 'Sleeper to Chumphon, catamaran from Thung Makham Noi' },
       { label: 'Island pier', value: 'Thong Sala; Haad Rin is a different boat' },
-      { label: 'Season', value: 'Easier January to September; confirm in swell' },
+      { label: 'Season', value: 'Easier January to September; swell can delay boats' },
     ],
     chips: ['Thong Sala', 'USM or Chumphon', 'Lower Gulf'],
     photo: '/photos/koh-phangan.jpg',
@@ -73,13 +73,13 @@ export const wave3Pages: Page[] = [
               'Lomprayah VIP or regular bus plus catamaran',
               'About 12 to 13 hours overnight from Khaosan or Pinklao',
               'Recliner coach, then open-deck catamaran seats. No berths on the boat.',
-              'Office at 154 Thanon Ram Buttri near Khaosan, plus a Pinklao desk. Check-in about 30 minutes before. Check on arrival.',
+              'Office at 154 Thanon Ram Buttri near Khaosan, plus a Pinklao desk. Check-in about 30 minutes before.',
             ],
             [
               'SRT sleeper to Chumphon, van to Thung Makham Noi, catamaran',
               'About 7 hours on the train, then 45 minutes by van, then 2 to 3 hours at sea via Tao',
               '1st class AC berth, 2nd class AC berth, 2nd class AC seat, or 3rd class fan seat',
-              'Trains 37, 31, 83, 85, 173, and 167 are the useful night sets. Confirm the number on SRT. Check on arrival.',
+              'Trains 37, 31, 83, 85, 173, and 167 are the useful night sets. Confirm the number on SRT.',
             ],
             [
               'Flight to Surat Thani (URT) or Chumphon (CJM), then van and boat',
@@ -95,14 +95,19 @@ export const wave3Pages: Page[] = [
         title: 'Piers and operators',
         paragraphs: [
           'On Samui, Lomprayah uses Nathon and the Maenam / Pralarn area. Seatran Discovery uses Bangrak. Raja uses Lipa Noi. A ticket that says "Samui" without a pier is not finished. Book the hotel pickup or a Trip.com car to the named pier.',
-          'On Chumphon, Lomprayah\'s own pier is Thung Makham Noi (also written Tung Makham Noi). Boonsiri and some slow boats use nearby mainland berths such as Matapon. They are not the same desk. Songserm is slower and cheaper. Seatran is the heavier Gulf ferry. Schedules move with weather and Full Moon weeks. Check on arrival.',
+          'On Chumphon, Lomprayah\'s own pier is Thung Makham Noi (also written Tung Makham Noi). Boonsiri and some slow boats use nearby mainland berths such as Matapon. They are not the same desk. Songserm is slower and cheaper. Seatran is the heavier Gulf ferry. Schedules move with weather and Full Moon weeks.',
         ],
       },
       {
         id: 'season',
         title: 'When the boat is the risk',
         paragraphs: [
-          'This is Lower Gulf water. January to September is the easier sea. October to December is when catamarans cancel first. Keep a buffer night before an international flight out of BKK or DMK. Do not stack a same-day Phangan arrival onto a long-haul departure.',
+          'This is Lower Gulf water. January to September is the easier sea. October to December is when catamarans cancel first.',
+        ],
+        bullets: [
+          '**Buffer night:** Keep one spare night before an international flight out of BKK or DMK.',
+          '**Same-day exit:** Do not stack a Phangan arrival onto a long-haul departure.',
+          '**Swell days:** Confirm the catamaran board the morning you travel.',
         ],
       },
     ],
@@ -168,13 +173,13 @@ export const wave3Pages: Page[] = [
               'SRT to Chumphon plus Lomprayah catamaran',
               'Night on the train, about 1 hour 45 minutes on the 07:00 or 13:15 catamaran',
               '1st or 2nd class AC berth on the train; open catamaran seat on the boat',
-              'Lomprayah also lists a slower 05:45 ferry. Steadier in a swell. Check on arrival.',
+              'Lomprayah also lists a slower 05:45 ferry. Steadier in a swell.',
             ],
             [
               'Lomprayah through-ticket from Khaosan or Pinklao',
               'Overnight coach, boat about 08:15 to 08:45',
               'Regular or VIP recliner, then catamaran',
-              'The return through-ticket leaves Mae Haad late morning and is back at Pinklao about 20:30. Check on arrival.',
+              'The return through-ticket leaves Mae Haad late morning and is back at Pinklao about 20:30.',
             ],
             [
               'Flight to USM, Lomprayah via Thong Sala',
@@ -224,7 +229,7 @@ export const wave3Pages: Page[] = [
       },
       {
         q: 'Which boat in October?',
-        a: 'Prefer the slower ferry if a catamaran is bouncing. Check on arrival. Keep a night of slack.',
+        a: 'Prefer the slower ferry if a catamaran is bouncing. Keep a night of slack.',
       },
     ],
   },
@@ -289,7 +294,7 @@ export const wave3Pages: Page[] = [
         id: 'after',
         title: 'After you land',
         paragraphs: [
-          'Book a Trip.com airport car if you land after 20:00 or you are going to Railay. Shared vans dump you in Ao Nang or Town and call it done. From Ao Nang, longtails to Railay East or West leave from the beach and from Nopparat Thara. In the southwest monsoon, treat the last boat as optional. Check on arrival.',
+          'Book a Trip.com airport car if you land after 20:00 or you are going to Railay. Shared vans dump you in Ao Nang or Town and call it done. From Ao Nang, longtails to Railay East or West leave from the beach and from Nopparat Thara. In the southwest monsoon, treat the last boat as optional.',
           'Do not boat to Phi Phi the same afternoon you landed. Sleep on the Krabi side first. Lanta is a separate morning: see Krabi to Koh Lanta.',
         ],
       },
@@ -327,7 +332,7 @@ export const wave3Pages: Page[] = [
     title: 'Krabi to Koh Lanta',
     description:
       'Koh Lanta is the long, quieter Andaman island south of Krabi. Boats land at Saladan in the dry season. The road and car ferry run all year.',
-    lede: 'Koh Lanta is the long Andaman island south of Krabi, known for west-coast beaches and a slower pace than Phi Phi. In season, boat to Saladan. All year, take the road and the Ban Hua Hin car ferry. That pier is in Krabi, not the gulf resort.',
+    lede: 'Koh Lanta is the long Andaman island south of Krabi, known for west-coast beaches and a slower pace than Phi Phi. In season, boat to Saladan; all year, take the road and the car ferry from Hua Hin pier on the Krabi side, which is in Krabi province, not the gulf resort town.',
     schema: 'Article',
     crumbs: [
       { name: 'Get there', href: '/get-there' },
@@ -337,12 +342,12 @@ export const wave3Pages: Page[] = [
       { label: 'Passenger pier', value: 'Saladan, north tip of Lanta Yai' },
       { label: 'Krabi Town boats', value: 'Klong Jilad, mainly November to April' },
       { label: 'Ao Nang boats', value: 'Nopparat Thara; some speedboats year-round' },
-      { label: 'Road backup', value: 'Ban Hua Hin car ferry to Khlong Mak, Lanta Noi' },
+      { label: 'Road backup', value: 'Hua Hin pier on the Krabi side to Khlong Mak, Lanta Noi' },
     ],
     chips: ['Saladan', 'Car ferry all year', 'Andaman'],
     photo: '/photos/krabi.jpg',
     paragraphs: [
-      'Koh Lanta Yai is a long west-facing island. Boats land at Saladan. Hotels sit down a single west-coast road. Book a pickup when you book the room. A tuk-tuk at Saladan is not a Bangkok habit. All year, the road and Ban Hua Hin car ferry still work.',
+      'Koh Lanta Yai is a long west-facing island. Boats land at Saladan. Hotels sit down a single west-coast road. Book a pickup when you book the room. A tuk-tuk at Saladan is not a Bangkok habit. All year, the road and the car ferry from Hua Hin pier on the Krabi side still work.',
       'From Krabi Town, passenger boats leave Klong Jilad mainly November to April. From Ao Nang they leave Nopparat Thara. Bundhaya and Andaman Wave Master are the names you will see. From May to October those passenger boats thin out or stop. The road still works.',
     ],
     sections: [
@@ -356,25 +361,25 @@ export const wave3Pages: Page[] = [
               'Klong Jilad ferry to Saladan',
               'About 2 hours',
               'Open-deck or indoor ferry bench',
-              'November to April. No useful October departure on the Town boats. Check on arrival.',
+              'November to April. No useful October departure on the Town boats.',
             ],
             [
               'Nopparat Thara or Railay East speedboat',
               'About 1 to 1.5 hours',
               'Speedboat bench. Wet bags in the nose',
-              'Bundhaya lists a late-morning run that can hold in the wet months. Confirm the week you travel. Check on arrival.',
+              'Bundhaya lists a late-morning run that can hold in the wet months. Confirm the week you travel.',
             ],
             [
               'Airport or Town van plus car ferry',
               'About 2 to 2.5 hours from KBV, longer in December queues',
               'Minivan seat. Scooter on the ferry if you already ride',
-              'Ban Hua Hin pier is in Ko Klang, Krabi. Then Khlong Mak on Lanta Noi, then the Siri Lanta bridge onto Lanta Yai.',
+              'Hua Hin pier on the Krabi side (Ban Hua Hin, Ko Klang) leads to Khlong Mak on Lanta Noi, then the Siri Lanta bridge onto Lanta Yai.',
             ],
             [
               'Private car from KBV',
               'About 2 hours plus the ferry wait',
               'Charter',
-              'The ferry has no useful fixed timetable. It leaves when the deck is full, roughly 06:00 to 22:00. Check on arrival.',
+              'The ferry has no useful fixed timetable. It leaves when the deck is full, roughly 06:00 to 22:00.',
             ],
           ],
         },
@@ -383,7 +388,7 @@ export const wave3Pages: Page[] = [
         id: 'ferry',
         title: 'The car ferry people confuse',
         paragraphs: [
-          'Ban Hua Hin pier is not Hua Hin town. If the map pin sits in Prachuap Khiri Khan you have the wrong province. Songserm Tran Service runs the short crossing, about 15 minutes, up to about 45 cars. December and January queues can add hours. Leave slack if you have a KBV flight the same day.',
+          'Hua Hin pier on the Krabi side is not the gulf resort of the same name. If the map pin sits in Prachuap Khiri Khan you have the wrong province. Songserm Tran Service runs the short crossing, about 15 minutes, up to about 45 cars. December and January queues can add hours. Leave slack if you have a KBV flight the same day.',
           'A mainland-to-Lanta Noi road bridge was contracted in 2026 and is not open. Until it is, every road journey still boards a ferry.',
         ],
       },
@@ -456,7 +461,7 @@ export const wave3Pages: Page[] = [
               'Lomprayah bus plus catamaran via Laem Thuat, Donsak',
               'About 6.5 to 7 hours',
               'Coach seat, then catamaran to Nathon',
-              'Morning desks from the Phuket Town office. Same company on both legs. Check on arrival.',
+              'Morning desks from the Phuket Town office. Same company on both legs.',
             ],
             [
               'Phantip or Terminal 2 van plus Seatran or Raja',
@@ -570,7 +575,7 @@ export const wave3Pages: Page[] = [
         id: 'lake',
         title: 'Ratchaprapha Pier and the longtail',
         paragraphs: [
-          'Pay cash at the lake booth. Foreign adults pay 300 THB, children 150 THB. Thai tickets are 40 / 20. Headquarters and the lake are separate 24-hour tickets. Add about 40 THB as a pier fee. Cards fail here. Check on arrival if the booth has moved the number.',
+          'Pay cash at the lake booth. Foreign adults pay 300 THB, children 150 THB. Thai tickets are 40 / 20. Headquarters and the lake are separate 24-hour tickets. Add about 40 THB as a pier fee. Cards fail here. Confirm the posted fee at the booth.',
           'Longtails are arranged by the raft house, a tour desk, or the pier queue. A private two-hour boat is the walk-up product, often quoted around 2,000 to 2,200 THB for the boat, not per person. Day-trip boats pack the late morning. Dawn is why you slept on the water.',
           'Park hours at the lake side are roughly 07:00 to 17:00. Remote caves need a licensed guide. Nam Talu is not a casual add-on after a late URT landing.',
         ],
@@ -665,7 +670,7 @@ export const wave3Pages: Page[] = [
         title: 'If the lake is the point',
         paragraphs: [
           'Ratchaprapha Pier, also called Cheow Lan Pier, is in Ban Ta Khun, Surat Thani. From the village it is about 60 to 65 km east, roughly an hour. From Phuket you can skip the village if the raft house already sent a pickup pin.',
-          'Cash for the 300 THB foreign lake ticket and the pier fee. Headquarters is a different booth on a different day. Longtails are loud, wet, and the only machine that reaches the karsts. Pack a dry bag. Check on arrival for boat queues after 10:00.',
+          'Cash for the 300 THB foreign lake ticket and the pier fee. Headquarters is a different booth on a different day. Longtails are loud, wet, and the only machine that reaches the karsts. Pack a dry bag. After 10:00, expect a boat queue.',
         ],
       },
     ],
@@ -717,7 +722,7 @@ export const wave3Pages: Page[] = [
     photo: '/photos/northern.jpg',
     paragraphs: [
       'Pai is a mountain night, not a Chiang Mai district. You leave on Route 107 to Mae Malai, then 1095 over the ridge. The local count is 762 bends. Minivans do it in about 3.5 to 4.5 hours. A scooter does it in the same time if you do not stop, and in a full day if you do. Pai Airport has had no scheduled commercial flights since 2017.',
-      'Prempracha Transport holds the licensed service (route 612 toward Pang Mapha and Mae Hong Son). Vans leave Chiang Mai Arcade roughly hourly from 06:30 to 16:30, with a few minibus sets mixed in. Walk-up fares sit around 210 to 250 THB; online desks add a cut. They take a passport number. Check on arrival for the exact counter.',
+      'Prempracha Transport holds the licensed service (route 612 toward Pang Mapha and Mae Hong Son). Vans leave Chiang Mai Arcade roughly hourly from 06:30 to 16:30, with a few minibus sets mixed in. Walk-up fares sit around 210 to 250 THB; online desks add a cut. They take a passport number. Confirm the counter letter on the ticket.',
     ],
     sections: [
       {
@@ -730,7 +735,7 @@ export const wave3Pages: Page[] = [
               'Prempracha minivan, Arcade to Pai bus station',
               'About 3.5 to 4.5 hours',
               '12 to 14-seat van. Front seats if you get queasy',
-              'Arcade Terminal 2 is the usual counter; some tickets print Terminal 3. They face each other on Kaew Nawarat. Check on arrival.',
+              'Arcade Terminal 2 is the usual counter; some tickets print Terminal 3. They face each other on Kaew Nawarat.',
             ],
             [
               'Hotel-pickup van (Aya and similar)',
@@ -808,7 +813,7 @@ export const wave3Pages: Page[] = [
     chips: ['Green Bus', 'Arcade 3', 'CEI optional'],
     photo: '/photos/northern.jpg',
     paragraphs: [
-      'Chiang Rai is one or two nights for the White Temple and, if you still have a day, the Mekong. It is not a second Chiang Mai. The useful vehicle is a Green Bus coach on Highway 118. Green Bus publishes a daily board from Chiang Mai (07:00 through 18:30, plus a few day-specific extras) and the reverse from Chiang Rai. Check on arrival. Times move.',
+      'Chiang Rai is one or two nights for the White Temple and, if you still have a day, the Mekong. It is not a second Chiang Mai. The useful vehicle is a Green Bus coach on Highway 118. Green Bus publishes a daily board from Chiang Mai (07:00 through 18:30, plus a few day-specific extras) and the reverse from Chiang Rai. Times move; confirm the day\'s board.',
       'Fair-facing inventories in late 2026 showed about 301 THB on the 40-seat coach and about 422 THB on the VIP 24-seat set. Sit on the VIP if you want a bag at your feet and a toilet stop that is not a sprint.',
     ],
     sections: [
@@ -903,7 +908,7 @@ export const wave3Pages: Page[] = [
     photo: '/photos/ayutthaya.jpg',
     paragraphs: [
       'Ayutthaya is the ruin day that earns a first-trip slot. The island is about 70 km north. Trains beat vans once you count the expressway. Buy a return you can actually catch. The last useful afternoon train matters more than a sixth wat.',
-      'Long-distance rapid and express trains that stop at Ayutthaya now start at Krung Thep Aphiwat Central Terminal (Bang Sue). Ordinary and many commuter sets still use Hua Lamphong and can pick up at Bang Sue on the way north. Since 1 August 2026, SRT Bangkok Connex has run refurbished KIHA diesel railcars from Krung Thep Aphiwat to Ayutthaya on a commuter board, weekday-heavy in the morning, weekend-heavy later. Promotional fares at launch sat at 30 to 50 THB. Check on arrival.',
+      'Long-distance rapid and express trains that stop at Ayutthaya now start at Krung Thep Aphiwat Central Terminal (Bang Sue). Ordinary and many commuter sets still use Hua Lamphong and can pick up at Bang Sue on the way north. Since 1 August 2026, SRT Bangkok Connex has run refurbished KIHA diesel railcars from Krung Thep Aphiwat to Ayutthaya on a commuter board, weekday-heavy in the morning, weekend-heavy later. Promotional fares at launch sat at 30 to 50 THB.',
     ],
     sections: [
       {
@@ -922,7 +927,7 @@ export const wave3Pages: Page[] = [
               'SRT Bangkok Connex',
               'Commuter timing, AC',
               'Reserved-style commuter seat',
-              'Weekday trains 9001-9006 from about 05:15. Weekend board starts later. Check on arrival.',
+              'Weekday trains 9001-9006 from about 05:15. Weekend board starts later.',
             ],
             [
               'Ordinary or commuter from Hua Lamphong',
@@ -1008,7 +1013,7 @@ export const wave3Pages: Page[] = [
               'Ordinary 257 from Thonburi',
               'About 2 hours 45 minutes',
               '3rd class fan bench. Day-of ticket',
-              'About 07:45 to Kanchanaburi about 10:30, River Kwai Bridge about 10:35. Check on arrival. Seat61 and local boards drift by a few minutes.',
+              'About 07:45 to Kanchanaburi about 10:30, River Kwai Bridge about 10:35. Local boards drift by a few minutes.',
             ],
             [
               'Ordinary 259 from Thonburi',
@@ -1127,7 +1132,7 @@ export const wave3Pages: Page[] = [
         id: 'where',
         title: 'Where to buy',
         paragraphs: [
-          'Physical SIMs: Suvarnabhumi arrivals (dtac has listed gate 7 on the second floor of arrivals), Don Mueang between terminals 1 and 2, Phuket terminal 2, Samui near gates 6 and 7 on departures. Hours are not a promise. Check on arrival. 7-Eleven sells tourist packs and still wants the passport at the till.',
+          'Physical SIMs: Suvarnabhumi arrivals (dtac has listed gate 7 on the second floor of arrivals), Don Mueang between terminals 1 and 2, Phuket terminal 2, Samui near gates 6 and 7 on departures. Hours are not a promise. 7-Eleven tourist packs still want the passport at the till.',
           'eSIM: AIS and True both sell the same tourist tiers as eSIM. Registration still happens, in the app or at a shop. The queue you skip is the airport laminate desk, not the identity rule.',
           'Ignore blogs that still say airport SIMs are always double the city price. The official 8 / 15 / 30 day Infinite ladders match in town. What you overpay for is a confused reseller and a pack you did not read.',
         ],
@@ -1179,7 +1184,7 @@ export const wave3Pages: Page[] = [
     photo: '/photos/bangkok.jpg',
     paragraphs: [
       'Use cash plus card, not foreign-phone PromptPay. Cards work in malls, hotels, and Grab. Cash still runs national parks, many longtails, ordinary SRT windows, and the noodle stall that does not own a reader. Super-Rich and a bank booth beat an airport counter for notes. ATMs beat both if your home card refunds fees.',
-      'Thai ATMs charge a flat operator fee on foreign cards, on top of whatever your bank adds. Krungsri\'s schedule effective 2026 lists 250 THB for a foreign Visa and 350 THB for a foreign Mastercard. Kasikorn and SCB have published the same split. The screen shows the number before you confirm. Believe the screen, not a 220 THB blog from 2023.',
+      'Thai ATMs charge a flat operator fee on foreign cards, on top of whatever your bank adds. Krungsri\'s schedule effective 2026 lists 250 THB for a foreign Visa and 350 THB for a foreign Mastercard. Kasikorn and SCB have published the same split. The screen shows the number before you confirm. Go by the fee shown on the ATM screen, not the 220 THB figure in older blog posts.',
     ],
     sections: [
       {
@@ -1537,8 +1542,8 @@ export const wave3Pages: Page[] = [
         title: 'What actually breaks',
         paragraphs: [
           'Immigration extensions that land on a holiday move to the next working day. Do not assume a specific office is open. TDAC is digital and does not care about Songkran. Park booths and Fine Arts sites usually sell tickets. Erawan and Cheow Lan still want cash when the ATMs have queues.',
-          'Alcohol bans on the five Buddhist holy days are 24 hours and nationwide. Fines hit the vendor. Your beach club will sell food and shrug. Election windows in 2026 add extra dry hours. Check on arrival that week.',
-          'Chinese New Year is not a Thai public holiday and still fills Phuket and Samui with regional visitors. Thai long weekends fill Hua Hin and Kanchanaburi. Island boats keep a board. Check on arrival.',
+          'Alcohol bans on the five Buddhist holy days are 24 hours and nationwide. Fines hit the vendor. Your beach club will sell food and shrug. Election windows in 2026 add extra dry hours. Confirm dry hours that week.',
+          'Chinese New Year is not a Thai public holiday and still fills Phuket and Samui with regional visitors. Thai long weekends fill Hua Hin and Kanchanaburi. Island boats keep a board.',
         ],
       },
     ],
@@ -1556,7 +1561,7 @@ export const wave3Pages: Page[] = [
     faqs: [
       {
         q: 'Will my ferry run on Songkran?',
-        a: 'Usually. The people problem is the seat to the pier, not the catamaran. Book the Lomprayah or the USM hop early. Check on arrival if a swell shares the week.',
+        a: 'Usually. The people problem is the seat to the pier, not the catamaran. Book the Lomprayah or the USM hop early. Confirm the boat if a swell shares the week.',
       },
       {
         q: 'Can you tour temples during Songkran?',

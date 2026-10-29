@@ -5,7 +5,6 @@ import RegionStage from './RegionStage.astro';
 import type { Page } from '../lib/content';
 import { formatInline } from '../lib/inline';
 import { buildHomeMedia } from '../lib/page-media';
-import { assignExactPhotos } from '../lib/dish-photos';
 import { UniquePhotos } from '../lib/photos';
 import { pageHref } from '../lib/site';
 
@@ -19,7 +18,7 @@ const bag = new UniquePhotos([
   page.photo || '',
   ...home.regions.flatMap((region) => [...region.photos.map((p) => p.photo), region.swipePhoto]),
 ]);
-const portraits = assignExactPhotos(page.portraits || [], bag);
+const portraits = bag.takeBatch(page.portraits || [], (item) => `${page.path} ${item.title} ${item.href}`);
 ---
 
 <article class="wrap section">

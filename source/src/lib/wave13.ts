@@ -7,6 +7,7 @@ import {
   klookIslandHopping,
   klookTickets,
   klookRailFerry,
+  stayCityFromPath,
   type StayCity,
 } from './partners';
 import type { Affiliate, Page, Portrait } from './content';
@@ -14,6 +15,8 @@ import { wave13Copy } from './wave13-copy';
 import { wave13DistrictPages } from './wave13-districts';
 import { depthExtras } from './wave13-pad';
 import { applyWave16Finish, thaiFoodHubCards as wave16FoodCards } from './wave16';
+import { applyWave22Hubs } from './wave22';
+import { clipFactValue, stripSourceAnnotations } from './clean-copy';
 
 function stay(title: string, kicker: string, body: string, href: string, photo: string, cta = 'Search stays'): Affiliate {
   return { title, kicker, body, href, cta, photo, partner: 'stay' };
@@ -54,6 +57,8 @@ const DEST_HUBS = new Set([
   '/ayutthaya',
   '/kanchanaburi',
   '/hua-hin',
+  '/pattaya',
+  '/koh-phi-phi',
   '/destinations/northern-thailand',
   '/destinations/central-and-east',
 ]);
@@ -240,6 +245,8 @@ function destinationHubCards(): Portrait[] {
     card('Ayutthaya', '/ayutthaya', '/photos/ayutthaya.jpg'),
     card('Kanchanaburi', '/kanchanaburi', '/photos/kanchanaburi.jpg'),
     card('Hua Hin', '/hua-hin', '/photos/hua-hin.jpg'),
+    card('Pattaya', '/pattaya', '/photos/pattaya.jpg'),
+    card('Koh Phi Phi', '/koh-phi-phi', '/photos/phi-phi.jpg'),
     card('Northern corridor', '/destinations/northern-thailand', '/photos/northern.jpg'),
     card('Central and east', '/destinations/central-and-east', '/photos/hua-hin.jpg'),
   ];
@@ -263,6 +270,22 @@ function itineraryHubCards(): Portrait[] {
     card('2 weeks with kids', '/itineraries/2-weeks-thailand-with-kids', '/photos/kata-and-karon.jpg'),
     card('2 weeks honeymoon', '/itineraries/2-weeks-thailand-honeymoon', '/photos/resort.jpg'),
     card('3 weeks grand route', '/itineraries/3-weeks-grand-thailand', '/photos/itineraries.jpg'),
+    card('Bangkok food and rooftops', '/itineraries/3-days-bangkok-food-and-rooftops', '/photos/yaowarat.jpg'),
+    card('8 days Bangkok and Chiang Mai', '/itineraries/8-days-bangkok-and-chiang-mai', '/photos/chiang-mai-old-city.jpg'),
+    card('First-timer Gulf 10', '/itineraries/10-days-first-timer-gulf', '/photos/chaweng.jpg'),
+    card('12-day first timer', '/itineraries/12-days-thailand-first-timer', '/photos/doi-suthep.jpg'),
+    card('Bangkok and Hua Hin kids', '/itineraries/7-days-bangkok-and-hua-hin-kids', '/photos/hua-hin.jpg'),
+    card('Samui family slow', '/itineraries/14-days-samui-family-slow', '/photos/lamai.jpg'),
+    card('Railay and Phi Phi couples', '/itineraries/8-days-railay-phi-phi-couples', '/photos/railay.jpg'),
+    card('Andaman honeymoon 12', '/itineraries/12-days-andaman-honeymoon', '/photos/kamala-and-surin.jpg'),
+    card('Backpacker north 10', '/itineraries/10-days-backpacker-north', '/photos/pai.jpg'),
+    card('21-day backpacker', '/itineraries/21-days-backpacker-thailand', '/photos/destinations.jpg'),
+    card('Krabi and Lanta', '/itineraries/7-days-krabi-and-koh-lanta', '/photos/koh-lanta.jpg'),
+    card('Andaman without Phuket', '/itineraries/12-days-andaman-without-phuket', '/photos/tiger-cave.jpg'),
+    card('Slow north loop', '/itineraries/10-days-north-loop-slow', '/photos/night-market-cm.jpg'),
+    card('Central ruins 8', '/itineraries/8-days-central-ruins', '/photos/wat-mahathat-ayu.jpg'),
+    card('Bangkok and Ho Chi Minh', '/itineraries/10-days-bangkok-and-ho-chi-minh', '/photos/chinatown-day.jpg'),
+    card('Thailand Vietnam first-timer', '/itineraries/14-days-thailand-vietnam-first-timer', '/photos/get-there.jpg'),
   ];
 }
 
@@ -392,18 +415,7 @@ function parentFor(page: Page): { name: string; href: string } | undefined {
 
 function cityFor(page: Page): StayCity {
   if (RESORT_PARENT[page.path]) return RESORT_PARENT[page.path].city;
-  if (page.path.includes('phuket') || page.path.includes('khao-lak') || page.path.includes('yao')) return 'phuket';
-  if (page.path.includes('krabi') || page.path.includes('railay') || page.path.includes('lanta') || page.path.includes('phi-phi')) return 'krabi';
-  if (page.path.includes('samui') || page.path.includes('phangan') || page.path.includes('tao')) return 'koh-samui';
-  if (page.path.includes('chiang-mai') || page.path.includes('nimman') || page.path.includes('pai')) return 'chiang-mai';
-  if (page.path.includes('khao-sok') || page.path.includes('cheow')) return 'khao-lak';
-  if (page.path.includes('kood') || page.path.includes('soneva')) return 'koh-kood';
-  if (page.path.includes('chang')) return 'koh-chang';
-  if (page.path.includes('hua-hin')) return 'hua-hin';
-  if (page.path.includes('ayutthaya')) return 'ayutthaya';
-  if (page.path.includes('kanchanaburi')) return 'kanchanaburi';
-  if (page.path.includes('chiang-rai')) return 'chiang-rai';
-  return 'bangkok';
+  return stayCityFromPath(page.path);
 }
 
 function defaultPortraits(page: Page, paths: Set<string>): Portrait[] {
@@ -432,6 +444,21 @@ function defaultPortraits(page: Page, paths: Set<string>): Portrait[] {
   if (page.path.startsWith('/chiang-mai/')) {
     add('Old City', '/chiang-mai/old-city', '/photos/chiang-mai-old-city.jpg');
     add('Nimmanhaemin', '/chiang-mai/nimmanhaemin', '/photos/nimman.jpg');
+    add('Where to stay', '/chiang-mai/where-to-stay', '/photos/chiang-mai.jpg');
+  }
+  if (page.path.startsWith('/phuket/')) {
+    add('Where to stay', '/phuket/where-to-stay', '/photos/phuket.jpg');
+    add('Kata and Karon', '/phuket/kata-and-karon', '/photos/kata-and-karon.jpg');
+    add('Patong', '/phuket/patong', '/photos/patong-night.jpg');
+  }
+  if (page.path.startsWith('/krabi/')) {
+    add('Ao Nang', '/krabi/ao-nang', '/photos/krabi.jpg');
+    add('Railay', '/krabi/railay', '/photos/railay.jpg');
+  }
+  if (page.path.startsWith('/koh-samui/')) {
+    add('Where to stay', '/koh-samui/where-to-stay', '/photos/koh-samui.jpg');
+    add('Chaweng', '/koh-samui/chaweng', '/photos/chaweng.jpg');
+    add('Bophut', '/koh-samui/bophut', '/photos/lamai.jpg');
   }
   if (page.path.startsWith('/plan/')) {
     add('When to go', '/plan/when-to-go', '/photos/plan.jpg');
@@ -604,8 +631,17 @@ export function applyWave13(pages: Page[]): Page[] {
     }
     const cta = bookingCta(page);
     if (cta) page = { ...page, bookingCta: cta };
+    page = applyWave22Hubs(page, paths);
     page = applyWave16Finish(page);
     page = uniquifyDays(page);
+    page = {
+      ...page,
+      facts: (page.facts || []).map((fact) => ({
+        ...fact,
+        label: stripSourceAnnotations(fact.label),
+        value: clipFactValue(fact.value),
+      })),
+    };
     return page;
   });
 }

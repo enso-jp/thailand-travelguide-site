@@ -4,7 +4,7 @@ import Photo from './Photo.astro';
 import SisterNetwork from './SisterNetwork.astro';
 import type { Page } from '../lib/content';
 import { directoryGroups, FOOD_CITY_CARDS } from '../lib/food-catalog';
-import { assignExactPhotos, signatureDishesFor } from '../lib/dish-photos';
+import { signatureDishesFor } from '../lib/dish-photos';
 import { formatInline } from '../lib/inline';
 import { UniquePhotos } from '../lib/photos';
 import { pageHref } from '../lib/site';
@@ -16,7 +16,7 @@ interface Props {
 const { page } = Astro.props;
 const reserved = page.photo ? [page.photo] : [];
 const cityBag = new UniquePhotos(reserved);
-const cities = assignExactPhotos(FOOD_CITY_CARDS, cityBag);
+const cities = cityBag.takeBatch(FOOD_CITY_CARDS, (card) => `${card.title} ${card.href} food city`);
 const dishes = signatureDishesFor([...reserved, ...cities.map((card) => card.photo).filter(Boolean)]);
 const groups = directoryGroups();
 ---

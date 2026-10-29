@@ -1,4 +1,9 @@
 import type { Page } from './content';
+import { WAVE22_TITLE_CORE } from './wave22-bangkok';
+import { WAVE22_SECONDARY_TITLE_CORE } from './wave22-secondary';
+import { WAVE23_TITLE_CORE } from './wave23-itineraries';
+import { WAVE22_SOUTH_TITLE_CORE } from './wave22-south';
+import { WAVE22_GULF_NORTH_TITLE_CORE } from './wave22-gulf-north';
 
 const TITLE_SUFFIX = ' | Thailand Guide';
 const TITLE_MIN = 45;
@@ -183,6 +188,11 @@ const TITLE_CORE: Record<string, string> = {
   '/thai-food/thai-dishes-to-order-first-trip': 'Thai Dishes to Order on a First Trip',
   '/thai-food/wang-lang-and-talat-noi': 'Wang Lang Market and Talat Noi Food Guide',
   '/thai-food/yaowarat-chinatown-food-walk': 'Yaowarat Chinatown Food Walk: Stalls After Dark',
+  ...WAVE22_TITLE_CORE,
+  ...WAVE22_SOUTH_TITLE_CORE,
+  ...WAVE22_GULF_NORTH_TITLE_CORE,
+  ...WAVE22_SECONDARY_TITLE_CORE,
+  ...WAVE23_TITLE_CORE,
 };
 
 function visible(text: string): string {
