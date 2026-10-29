@@ -32,7 +32,7 @@ function pathHasSlug(path, slug) {
   return new RegExp(`(^|[^a-z0-9])${escaped}([^a-z0-9]|$)`).test(path);
 }
 
-function stayCityFromPath(path) {
+function stayCityFromPath(path, strict = false) {
   const p = path.toLowerCase();
   const has = (slug) => pathHasSlug(p, slug);
   if (has('koh-lipe') || has('ko-lipe')) return 'koh-lipe';
@@ -56,6 +56,10 @@ function stayCityFromPath(path) {
     return 'phuket';
   }
   if (has('krabi') || has('railay') || has('phi-phi') || has('ao-nang')) return 'krabi';
+  if (strict) {
+    const bangkokAreas = ['bangkok', 'yaowarat', 'chinatown', 'banthat-thong', 'talat-noi', 'wang-lang'];
+    return bangkokAreas.some((slug) => has(slug)) ? 'bangkok' : undefined;
+  }
   return 'bangkok';
 }
 
@@ -66,6 +70,13 @@ if (!existsSync(DIST)) {
 
 const ALLOWED_WIDGET = 'https://www.trip.com/partners/ad/S20729725?Allianceid=11105102&SID=334804079&trip_sub1=th_search_box';
 const EMBED_HTML = '<iframe border="0" src="https://www.trip.com/partners/ad/S20729725?Allianceid=11105102&SID=334804079&trip_sub1=th_search_box" style="width:320px;height:320px" frameborder="0" scrolling="no" style="border:none" id="S20729725"></iframe>';
+const CITY_BOXES = {};
+for (const m of readFileSync(join(process.cwd(), 'src/lib/trip-searchboxes.ts'), 'utf8').matchAll(/"([a-z-]+)": \{ id: "(S\d+)", embed: ("(?:[^"\\]|\\.)*") \}/g)) {
+  CITY_BOXES[m[1]] = JSON.parse(m[3]);
+}
+if (Object.keys(CITY_BOXES).length !== 20) errors.push(`expected 20 city search boxes, found ${Object.keys(CITY_BOXES).length}`);
+const ALLOWED_EMBEDS = new Set([EMBED_HTML, ...Object.values(CITY_BOXES)]);
+const cityCounts = {};
 const pages = walkHtml(DIST);
 let boxes = 0;
 
@@ -75,11 +86,15 @@ for (const file of pages) {
   if (!html.includes('data-trip-box')) continue;
   boxes += 1;
 
-  const widgets = html.match(/<iframe[^>]+trip\.com\/partners\/ad\/[^"]*/gi) || [];
-  if (widgets.length !== 1 || !widgets[0].includes(ALLOWED_WIDGET)) {
-    errors.push(`${rel} must embed exactly the S20729725 Partner search box (found ${widgets.length})`);
+  const widgets = html.match(/<iframe[^>]+trip\.com\/partners\/ad\/[^>]*><\/iframe>/gi) || [];
+  if (widgets.length !== 1 || !ALLOWED_EMBEDS.has(widgets[0])) {
+    errors.push(`${rel} must embed exactly one allowed Partner search box (found ${widgets.length})`);
   }
-  if (!html.includes(EMBED_HTML)) errors.push(`${rel} search box embed differs from the generated code`);
+  const strictCity = rel === '/' ? undefined : stayCityFromPath(rel, true);
+  const want = strictCity ? CITY_BOXES[strictCity] : EMBED_HTML;
+  if (!want || !html.includes(want)) errors.push(`${rel} should embed the ${strictCity || 'default'} search box`);
+  const key = strictCity || 'default';
+  cityCounts[key] = (cityCounts[key] || 0) + 1;
   if (/class="[^"]*\bstay-box\b[^"]*"[^>]*>[\s\S]{0,400}data-trip-box/.test(html) || /class="[^"]*\bpanel\b[^"]*\bstay-box\b[^"]*"[^>]*>[\s\S]{0,600}trip-cta/.test(html)) {
     errors.push(`${rel} stay search is nested inside stay-box/panel`);
   }
@@ -100,4 +115,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`check-stay-search ok (${boxes} search cards, each with the S20729725 Partner search box)`);
+console.log(`check-stay-search ok (${boxes} search cards; ${JSON.stringify(cityCounts)})`);

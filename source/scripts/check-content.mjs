@@ -364,6 +364,11 @@ if (!tripSearch.includes(ALLOWED_SEARCH_BOX)) {
 if ((tripSearch.match(/partners\/ad\//g) || []).length !== 1) {
   errors.push('TripSearch.astro may only reference the S20729725 Partner search box');
 }
+const cityBoxes = readFileSync(join(ROOT, 'src/lib/trip-searchboxes.ts'), 'utf8');
+const cityBoxIds = [...cityBoxes.matchAll(/partners\/ad\/(S\d+)\?Allianceid=11105102&SID=334804079&/g)].map((m) => m[1]);
+if (cityBoxIds.length !== 20 || new Set(cityBoxIds).size !== 20 || (cityBoxes.match(/partners\/ad\//g) || []).length !== 20) {
+  errors.push('trip-searchboxes.ts must hold exactly 20 distinct Partner city search boxes under SID 334804079');
+}
 if (!existsSync(join(ROOT, 'scripts/check-stay-search.mjs')) || !existsSync(join(ROOT, 'scripts/check-unique-photos.mjs')) || !existsSync(join(ROOT, 'scripts/check-facts.mjs'))) {
   errors.push('missing check-stay-search, check-unique-photos, or check-facts script');
 }

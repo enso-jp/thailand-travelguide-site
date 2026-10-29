@@ -173,7 +173,9 @@ function pathHasSlug(path: string, slug: string): boolean {
   return new RegExp(`(^|[^a-z0-9])${escaped}([^a-z0-9]|$)`).test(path);
 }
 
-export function stayCityFromPath(path: string): StayCity {
+export function stayCityFromPath(path: string): StayCity;
+export function stayCityFromPath(path: string, strict: true): StayCity | undefined;
+export function stayCityFromPath(path: string, strict = false): StayCity | undefined {
   const p = path.toLowerCase();
   const has = (slug: string) => pathHasSlug(p, slug);
   if (has('koh-lipe') || has('ko-lipe')) return 'koh-lipe';
@@ -197,6 +199,10 @@ export function stayCityFromPath(path: string): StayCity {
     return 'phuket';
   }
   if (has('krabi') || has('railay') || has('phi-phi') || has('ao-nang')) return 'krabi';
+  if (strict) {
+    const bangkokAreas = ['bangkok', 'yaowarat', 'chinatown', 'banthat-thong', 'talat-noi', 'wang-lang'];
+    return bangkokAreas.some((slug) => has(slug)) ? 'bangkok' : undefined;
+  }
   return 'bangkok';
 }
 
