@@ -774,7 +774,7 @@ export const WAVE12_ITINERARY_PAGES: Page[] = [
     path: '/itineraries/2-weeks-thailand-honeymoon',
     title: '2 weeks in Thailand honeymoon itinerary: river, mountains, and private pool villas',
     description:
-      'A 2-week honeymoon is known for 3 Chao Phraya nights, 4 mountain nights, and 6 private-pool villa nights. Fits couples who fly the long legs and charter a 06:30 longtail.',
+      'A 2-week honeymoon splits 3 Chao Phraya nights, 4 mountain nights, and 6 private-pool villa nights. Fly the long legs and keep one dry-season coast.',
     lede:
       'Known for a river, mountain, and villa split with private pools and 06:30 longtails. Fits couples who want a Chao Phraya hotel, a Lanna spa, then one dry-season coast.',
     schema: 'Article',

@@ -422,7 +422,7 @@ export const wave4Pages: Page[] = [
     path: '/thai-food/night-markets',
     title: 'Thailand night markets: hours and rail exits',
     description:
-      'Bangkok night markets with hours and BTS or MRT exits, plus Chiang Mai walking streets and Phuket Lard Yai. Schedules move. Confirm current hours on the morning you go.',
+      'This guide lists Bangkok night market hours and rail exits, plus Chiang Mai walking streets and Phuket Lard Yai. Confirm hours the morning you go.',
     lede:
       'Bangkok night markets are known for food halls with a clock and an exit number. Jodd Fairs is the nightly Ratchada food market. Chatuchak is a weekend day market.',
     schema: 'Article',

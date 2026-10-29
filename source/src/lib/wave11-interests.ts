@@ -89,7 +89,7 @@ export const WAVE11_INTEREST_PAGES: Page[] = [
     path: '/interests/thai-massage-and-spas',
     title: 'Thai massage, day spas, and onsen in Thailand',
     description:
-      'Thai massage is known for Wat Pho school tables (340 to 520 THB), Health Land and Let\'s Relax day spas, Bangkok Japanese onsen houses, and Chiang Mai Lanna herbal compress rooms.',
+      'Thai massage is known for Wat Pho tables at 340 to 520 THB plus Health Land and Let\'s Relax rooms. Chiang Mai adds Lanna herbal compress treatments.',
     lede:
       'Thai massage is known for Wat Pho school tables at 340 to 520 THB and clean day-spa chains. Come for a 30 to 120 minute table, a Bangkok onsen soak, or a Chiang Mai herbal compress.',
     schema: 'Article',
