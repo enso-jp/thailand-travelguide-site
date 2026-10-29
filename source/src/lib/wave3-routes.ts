@@ -138,7 +138,7 @@ export const wave3Pages: Page[] = [
     path: '/get-there/bangkok-to-koh-tao',
     title: 'Bangkok to Koh Tao',
     description:
-      'Koh Tao is the Gulf dive island past Phangan with no airport. Fly to Samui and boat to Mae Haad, or take the Chumphon sleeper and morning catamaran.',
+      'Koh Tao is the Gulf dive island past Phangan. There is no airport, so take a Samui boat or the Chumphon sleeper plus catamaran to Mae Haad.',
     lede: 'Koh Tao is the dive island past Phangan. There is no airport. Everyone lands at Mae Haad. Fly to Samui and boat north if Samui is already on the ticket. Take the Chumphon train plus catamaran if Tao is the only stop.',
     schema: 'Article',
     crumbs: [
@@ -792,7 +792,7 @@ export const wave3Pages: Page[] = [
     path: '/get-there/chiang-mai-to-chiang-rai',
     title: 'Chiang Mai to Chiang Rai',
     description:
-      'Chiang Rai is the White Temple city north of Chiang Mai. Take Green Bus from Arcade Terminal 3 for about 3.5 hours; a flight rarely saves time.',
+      'Chiang Rai is known for the White Temple, not as a second Chiang Mai. Take Green Bus from Arcade Terminal 3, about 3.5 hours on Highway 118.',
     lede: 'Chiang Rai is known for the White Temple, not as a second Chiang Mai. Take Green Bus from Arcade Terminal 3. The road is about 180 km. A flight between the two cities rarely beats the coach.',
     schema: 'Article',
     crumbs: [
