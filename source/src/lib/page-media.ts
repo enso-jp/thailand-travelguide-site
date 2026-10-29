@@ -8,10 +8,10 @@ import { REGIONS, type Region } from './regions';
 type PageLike = {
   path: string;
   photo?: string;
-  portraits?: { photo?: string }[];
-  affiliates?: { photo?: string }[];
-  days?: { photo?: string }[];
-  sections?: { cards?: { photo?: string }[] }[];
+  portraits?: { photo?: string; title?: string; href?: string }[];
+  affiliates?: { photo?: string; title?: string; kicker?: string; body?: string }[];
+  days?: { photo?: string; title?: string; body?: string }[];
+  sections?: { cards?: { photo?: string; kicker?: string; title?: string; href?: string }[] }[];
 };
 
 export const VISIBLE_ATTRACTIONS = 6;
@@ -149,12 +149,9 @@ export function interestHubPhotoList(page: PageLike): string[] {
 export function placePhotoList(page: PageLike): string[] {
   const reserved = page.photo ? [page.photo] : [];
   const bag = new UniquePhotos(reserved);
-  const attractions = attractionsFor(page.path)
-    .map((row) => bag.takeOrNone(row.photo))
-    .filter(Boolean) as string[];
-  const rest = new UniquePhotos([...reserved, ...attractions]);
-  const portraits = (page.portraits || []).map((row) => rest.takeOrNone(row.photo)).filter(Boolean) as string[];
-  const affiliates = (page.affiliates || []).map((row) => rest.takeOrNone(row.photo)).filter(Boolean) as string[];
+  const attractions = bag.takeBatch(attractionsFor(page.path), (row) => `${page.path} ${row.name} ${row.href}`).map((r) => r.photo);
+  const portraits = bag.takeBatch(page.portraits || [], (row) => `${page.path} ${row.title || ''} ${row.href || ''}`).map((r) => r.photo);
+  const affiliates = bag.takeBatch(page.affiliates || [], (row) => `${page.path} ${row.title || ''} ${row.kicker || ''} ${row.body || ''}`).map((r) => r.photo);
   return [page.photo, ...attractions, ...portraits, ...affiliates].filter(Boolean) as string[];
 }
 
@@ -164,17 +161,21 @@ export function foodGuidePhotoList(page: PageLike): string[] {
     .map((row) => row.photo)
     .filter(Boolean) as string[];
   const bag = new UniquePhotos([...reserved, ...rows]);
-  const portraits = (page.portraits || []).map((row) => bag.takeOrNone(row.photo)).filter(Boolean) as string[];
-  const affiliates = (page.affiliates || []).map((row) => bag.takeOrNone(row.photo)).filter(Boolean) as string[];
+  const portraits = bag.takeBatch(page.portraits || [], (row) => `${page.path} ${row.title || ''} ${row.href || ''}`).map((r) => r.photo);
+  const affiliates = bag.takeBatch(page.affiliates || [], (row) => `${page.path} ${row.title || ''} ${row.kicker || ''} ${row.body || ''}`).map((r) => r.photo);
   return [page.photo, ...rows, ...portraits, ...affiliates].filter(Boolean) as string[];
 }
 
 export function defaultPhotoList(page: PageLike): string[] {
   const bag = new UniquePhotos(page.photo ? [page.photo] : []);
-  const portraits = (page.portraits || []).map((row) => bag.take(row.photo));
-  const affiliates = (page.affiliates || []).map((row) => bag.take(row.photo));
-  const days = (page.days || []).map((day) => bag.take(day.photo));
-  const cards = (page.sections || []).flatMap((section) => (section.cards || []).map((card) => bag.take(card.photo)));
+  const portraits = bag.takeBatch(page.portraits || [], (row) => `${page.path} ${row.title || ''} ${row.href || ''}`).map((r) => r.photo);
+  const affiliates = bag.takeBatch(page.affiliates || [], (row) => `${page.path} ${row.title || ''} ${row.kicker || ''} ${row.body || ''}`).map((r) => r.photo);
+  const days = bag.takeBatch(page.days || [], (day) => `${page.path} ${day.title || ''} ${day.body || ''}`).map((r) => r.photo);
+  const cards = (page.sections || []).flatMap((section) =>
+    (section.cards || []).map((card) =>
+      bag.take(card.photo, `${page.path} ${card.kicker || ''} ${card.title || ''} ${card.href || ''}`),
+    ),
+  );
   return [page.photo, ...portraits, ...affiliates, ...days, ...cards].filter(Boolean) as string[];
 }
 

@@ -12,11 +12,15 @@ interface Props {
 const { src, alt = '', priority = false, width = 960, height = 640 } = Astro.props;
 ---
 
-<img
-  src={src}
-  alt={alt}
-  width={width}
-  height={height}
-  loading={priority ? 'eager' : 'lazy'}
-  decoding="async"
-/>
+{
+  src && (
+    <img
+      src={src}
+      alt={alt}
+      width={width}
+      height={height}
+      loading={priority ? 'eager' : 'lazy'}
+      decoding="async"
+    />
+  )
+}

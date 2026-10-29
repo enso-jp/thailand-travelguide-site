@@ -41,12 +41,6 @@ const links = Object.fromEntries(
 
 <aside class="book-stay" data-book>
   <h2>Book your <em>stay</em></h2>
-  <div class="book-tabs" role="tablist">
-    <button type="button" role="tab" data-book-tab="stay" data-book-submit="Search hotels" aria-selected="true">Hotels</button>
-    <button type="button" role="tab" data-book-tab="activities" data-book-submit="Search tours" aria-selected="false">Tours & Activities</button>
-    <button type="button" role="tab" data-book-tab="transfers" data-book-submit="Search transfers" aria-selected="false">Airport Transfers</button>
-    <button type="button" role="tab" data-book-tab="trains" data-book-submit="Search trains" aria-selected="false">Ferries & Trains</button>
-  </div>
   <form class="book-form" data-book-form>
     <label class="book-field">
       <span>Destination</span>
@@ -74,7 +68,6 @@ const links = Object.fromEntries(
       </select>
     </label>
     <button class="aff-btn book-go" type="submit" data-book-go>Search hotels</button>
-    <p class="note">Trip.com and Klook partner links. We may earn a commission.</p>
   </form>
   <script type="application/json" data-book-links set:html={JSON.stringify(links)} />
 </aside>
