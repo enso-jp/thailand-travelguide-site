@@ -510,7 +510,7 @@ export const wave9Pages: Page[] = [
     path: '/attractions/chiang-mai-ethical-elephant-sanctuaries',
     title: 'Chiang Mai ethical elephant sanctuaries',
     description:
-      'Observation-only sanctuaries in Mae Taeng and Mae Wang skip riding, hooks, and shows. Half-day trips run 1,800 to 2,500 THB with hotel van pickup.',
+      'Observation-only sanctuaries in Mae Taeng and Mae Wang skip riding, hooks, and shows. Half-day is 1,800 to 2,500 THB; full-day is 2,500 to 3,500 THB.',
     lede:
       'Half-day and full-day observation-and-feeding sanctuaries sit in the Mae Wang and Mae Taeng valleys outside Chiang Mai. Book a no-hook, no-show camp if you want to watch and feed, not ride; the van is part of the 2026 price.',
     schema: 'TouristDestination',
