@@ -62,7 +62,7 @@ export const wave21Pages: Page[] = [
     geo: { lat: 12.9236, lon: 100.8825, containedIn: 'Eastern Thailand' },
     paragraphs: [
       'Pattaya sits on the east gulf, 1.5 to 2.5 hours by road from Bangkok depending on Friday traffic. It is not an Andaman stop and not a Samui substitute. Sleep in Jomtien or Wongamat if Walking Street is not the trip. The Sanctuary of Truth is a 500 THB teak hall on the north cape, and Koh Larn is the day-trip island from Bali Hai pier.',
-      'Use Pattaya as a Bangkok weekend or a flight-gap day. Do not add it to a first week that already holds Phuket or Samui. Book the hotel on Trip.com, then book a Koh Larn seat or a Sanctuary timed ticket on Klook if you want a desk that names the transfer.',
+      'Use Pattaya as a Bangkok weekend or a flight-gap day. Do not add it to a first week that already holds Phuket or Samui. Book the hotel on Trip.com, then book a Koh Larn seat or a Sanctuary timed ticket on Klook if you want a desk that names the transfer. Eat using the [Pattaya food guide](/thai-food/pattaya): Jomtien weight-price fish, then Naklua if you sleep north.',
     ],
     sections: [
       {
@@ -93,7 +93,7 @@ export const wave21Pages: Page[] = [
       { title: 'Sanctuary of Truth', href: '/attractions/sanctuary-of-truth-pattaya', photo: '/photos/pattaya.jpg' },
       { title: 'Hua Hin', href: '/hua-hin', photo: '/photos/hua-hin.jpg' },
       { title: 'Bangkok', href: '/bangkok', photo: '/photos/bangkok.jpg' },
-      { title: 'Koh Chang', href: '/koh-chang', photo: '/photos/koh-chang.jpg' },
+      { title: 'Pattaya food', href: '/thai-food/pattaya', photo: '/photos/jomtien.jpg' },
     ],
     affiliates: [
       stay('Pattaya stays', 'Jomtien or Wongamat', 'Sleep on the sand you will actually use. Walking Street is a taxi, not a hotel filter.', stayLink('pattaya'), '/photos/pattaya.jpg'),
@@ -488,7 +488,7 @@ export const wave21Pages: Page[] = [
     geo: { lat: 7.8804, lon: 98.3923, containedIn: 'Phuket' },
     paragraphs: [
       'Eat Phuket in Town. Hokkien mee, moo hong, and oh aew live on Thalang, Dibuk, and Krabi Roads. A 2026 noodle plate is 60 to 90 THB. Mansion rooms such as The Charm take a phone booking for a Baba table. Sunday walking street on Thalang is snacks, not a full dinner.',
-      'Patong and Rawai grills are a different bill. Confirm seafood by weight. For the shophouse map use [Phuket Old Town](/thai-food/phuket-old-town-hokkien-and-peranakan-food). For sour curry and the wider south use [South and Baba-Nyonya](/thai-food/southern-and-baba-nyonya).',
+      'Patong and Rawai grills are a different bill. Confirm seafood by weight. Named dish pages start at Kopitiam mee Hokkien, Raya moo hong, and Tu Kab Khao oh aew. For the shophouse map use [Phuket Old Town](/thai-food/phuket-old-town-hokkien-and-peranakan-food). For sour curry and the wider south use [South and Baba-Nyonya](/thai-food/southern-and-baba-nyonya).',
     ],
     portraits: [
       { title: 'Old Town food', href: '/thai-food/phuket-old-town-hokkien-and-peranakan-food', photo: '/photos/phuket.jpg' },
@@ -534,7 +534,7 @@ export const wave21Pages: Page[] = [
     geo: { lat: 9.512, lon: 100.013, containedIn: 'Koh Samui' },
     paragraphs: [
       'Samui is an island menu. Chaweng walking street is the dinner default. Price the fish before it hits the coals. 200 to 400 THB a plate is common in 2026. Friday Fisherman Village in Bophut is useful if you already sleep there; the car from Chaweng is 20 to 40 minutes. Lamai’s night market is smaller and closer if that is your sand.',
-      'West-coast 7-Elevens thin after 22:00. Chaweng is the 24-hour strip. Ang Thong boats include a boxed lunch and a 300 THB park fee. For the island stay map use [Koh Samui](/koh-samui). For sour curry history use [South and Baba-Nyonya](/thai-food/southern-and-baba-nyonya).',
+      'West-coast 7-Elevens thin after 22:00. Chaweng is the 24-hour strip. Ang Thong boats include a boxed lunch and a 300 THB park fee. Named dish pages cover Chaweng grills, Bang Po gaeng som, and Friday Bophut. For the island stay map use [Koh Samui](/koh-samui). For sour curry history use [South and Baba-Nyonya](/thai-food/southern-and-baba-nyonya).',
     ],
     portraits: [
       { title: 'Koh Samui', href: '/koh-samui', photo: '/photos/koh-samui.jpg' },
@@ -580,7 +580,7 @@ export const wave21Pages: Page[] = [
     geo: { lat: 8.0863, lon: 98.9063, containedIn: 'Krabi' },
     paragraphs: [
       'Eat lunch in Krabi Town if you can. Kanom jeen nam ya poo at the morning market is 40 to 70 THB and gone by 13:00. Ao Nang is the night grill strip. Price seafood by weight. Railay dinners cost more because every crate crossed by longtail at 100 THB a person.',
-      'Khao soi is not a Krabi dish. If a beach menu lists it, order gaeng som instead. Hong Island boats include a box and a 300 THB park fee. For the stay map use [Krabi](/krabi). For Railay logistics use [Railay and Phra Nang](/attractions/railay-beach-and-phra-nang-cave).',
+      'Khao soi is not a Krabi dish. If a beach menu lists it, order gaeng som instead. Hong Island boats include a box and a 300 THB park fee. Named dish pages cover town kanom jeen, Ao Nang pla pao, and Railay surcharge pots. For the stay map use [Krabi](/krabi). For Railay logistics use [Railay and Phra Nang](/attractions/railay-beach-and-phra-nang-cave).',
     ],
     portraits: [
       { title: 'Krabi', href: '/krabi', photo: '/photos/krabi.jpg' },
@@ -626,7 +626,7 @@ export const wave21Pages: Page[] = [
     geo: { lat: 15.228, lon: 104.856, containedIn: 'Isan' },
     paragraphs: [
       'Isan cooking is papaya salad, minced-meat larb, grilled chicken, and sticky rice. The heat is not a Bangkok tom yum. Order som tum Thai first. Poo plara adds crab and fermented fish. A 2026 plate in a Bangkok Isan room is often 60 to 140 THB. Khao niew at 10 to 22 THB is the utensil, not a side you skip.',
-      'You do not have to fly to Ubon to eat this well. Named Bangkok rooms do the work. If you are in Pak Chong after Khao Yai, the night market is gai yang at 60 to 120 THB. Trat and the east islands are seafood, not Isan, unless the cook is from the plateau.',
+      'You do not have to fly to Ubon to eat this well. Named Bangkok rooms do the work. If you are actually on the plateau, use the [Khon Kaen](/thai-food/khon-kaen), [Udon Thani](/thai-food/udon-thani), and [Nong Khai](/thai-food/nong-khai) dish maps. Pak Chong after Khao Yai is gai yang at 60 to 120 THB.',
     ],
     portraits: [
       { title: 'Khao Yai', href: '/khao-yai', photo: '/photos/khao-yai.jpg' },
@@ -645,8 +645,368 @@ export const wave21Pages: Page[] = [
       },
       {
         q: 'Do you need to go to Isan to eat this?',
-        a: 'No. Bangkok Isan rooms are the first-trip move. Go to Ubon or Pak Chong when the park or the Mekong is already the trip.',
+        a: 'No. Bangkok Isan rooms are the first-trip move. Use the Khon Kaen, Udon, and Nong Khai dish pages when the plateau is already the trip.',
       },
+    ],
+  },
+  {
+    path: '/thai-food/chiang-rai',
+    title: 'Chiang Rai food guide',
+    description:
+      'Chiang Rai eating: khao soi at Phor Jai, night-bazaar sai ua, nam prik ong, and nam ngiao at lunch. Temple vans are a different ticket.',
+    lede:
+      'Chiang Rai food is known for a town khao soi lunch and night-bazaar sausage. It fits a clock-tower night after the White Temple, not a Chiang Mai coconut curry at 21:00.',
+    schema: 'Article',
+    crumbs: [
+      { name: 'Thai food', href: '/thai-food' },
+      { name: 'Chiang Rai', href: '/thai-food/chiang-rai' },
+    ],
+    facts: [
+      { label: 'Khao soi', value: '50 to 80 THB at Phor Jai; lunch clock' },
+      { label: 'Night bazaar', value: 'Sai ua 20 to 40 THB after 18:00' },
+      { label: 'Temple day', value: 'Eat in town. White Temple canteens are a skip' },
+      { label: 'From CM', value: 'Green Bus about 3.5 hours' },
+    ],
+    chips: ['Khao soi', 'Night bazaar', 'Lanna'],
+    photo: '/photos/chiang-rai.jpg',
+    geo: { lat: 19.907, lon: 99.831, containedIn: 'Chiang Rai' },
+    paragraphs: [
+      'Eat Chiang Rai in town. Khao Soi Phor Jai on Banphaprakan is the named lunch bowl at 50 to 80 THB. Night bazaar grills sell sai ua after 18:00. Nam ngiao is the sharper tomato noodle if coconut already filled yesterday.',
+      'The White Temple is a southbound hop, not a food plan. For the city stay map use [Chiang Rai](/chiang-rai). For the wider north use [Northern Lanna](/thai-food/northern-lanna).',
+    ],
+    portraits: [
+      { title: 'Chiang Rai', href: '/chiang-rai', photo: '/photos/blue-temple.jpg' },
+      { title: 'Northern Lanna', href: '/thai-food/northern-lanna', photo: '/photos/thai-food-lanna.jpg' },
+      { title: 'Chiang Mai food', href: '/thai-food/chiang-mai', photo: '/photos/night-market-cm.jpg' },
+      { title: 'White Temple day', href: '/chiang-rai/white-temple-day', photo: '/photos/baan-dam.jpg' },
+    ],
+    affiliates: [
+      stay('Chiang Rai stays', 'Town night bazaar', 'Sleep in town if dinner is the bazaar, not a temple van.', stayLink('chiang-rai'), '/photos/northern.jpg'),
+      klook('Town food walks', 'Tours', 'Useful only if you already sleep in town. Temple vans are a different ticket.', klookTours('Chiang Rai food tour'), '/photos/chiang-mai.jpg'),
+    ],
+    faqs: [
+      { q: 'Khao soi here or in Chiang Mai?', a: 'Both. Eat the town bowl you are standing in. Do not skip lunch for a temple snack.' },
+      { q: 'Night bazaar or sit-down Lanna?', a: 'Bazaar for sausage. Sit-down for nam prik ong and larb kua.' },
+    ],
+  },
+  {
+    path: '/thai-food/khon-kaen',
+    title: 'Khon Kaen food guide',
+    description:
+      'Khon Kaen eating: gai yang at Kai Yang Wanna in Khao Suan Kwang, plus larb, tam mua, sai krok, and jim jum.',
+    lede:
+      'Khon Kaen food is known for Khao Suan Kwang grilled chicken on Mittraphap. It fits a highway lunch north of town, not a Bangkok Isan room.',
+    schema: 'Article',
+    crumbs: [
+      { name: 'Thai food', href: '/thai-food' },
+      { name: 'Khon Kaen', href: '/thai-food/khon-kaen' },
+    ],
+    facts: [
+      { label: 'Gai yang', value: 'Wanna since 1973; 120 to 220 THB a bird' },
+      { label: 'Clock', value: 'Morning to mid-afternoon; birds sell out' },
+      { label: 'Drive', value: 'About 40 km north of Khon Kaen city' },
+      { label: 'Cash', value: 'Wanna is cash only' },
+    ],
+    chips: ['Gai yang', 'Larb', 'Tam mua'],
+    photo: '/photos/khao-yai.jpg',
+    geo: { lat: 16.4419, lon: 102.836, containedIn: 'Isan' },
+    paragraphs: [
+      'Drive north for the bird. Kai Yang Wanna at 271 Mu 11 Mittraphap, Khao Suan Kwang, has grilled since 1973. A 2026 bird is 120 to 220 THB. Larb, som tum, and nam tok sit on the same table. Cash only.',
+      'City night markets do sai krok and jim jum after the highway lunch. For the regional map use [Isan food](/thai-food/isan). For Udon night stalls use [Udon Thani](/thai-food/udon-thani).',
+    ],
+    portraits: [
+      { title: 'Isan food', href: '/thai-food/isan', photo: '/photos/thai-food-night-markets.jpg' },
+      { title: 'Udon Thani food', href: '/thai-food/udon-thani', photo: '/photos/pak-chong.jpg' },
+      { title: 'Nong Khai food', href: '/thai-food/nong-khai', photo: '/photos/haew-suwat.jpg' },
+      { title: 'Khao Yai', href: '/khao-yai', photo: '/photos/khao-sok.jpg' },
+    ],
+    affiliates: [
+      stay('Bangkok stays for Isan rooms', 'Or fly into Khon Kaen', 'Sleep in Khon Kaen if the grill is the trip.', stayLink('bangkok'), '/photos/sukhumvit.jpg'),
+      klook('Isan food walks', 'Tours', 'Useful if you are actually in Khon Kaen. In Bangkok the MRT is enough.', klookTours('Isan food Khon Kaen'), '/photos/chatuchak.jpg'),
+    ],
+    faqs: [
+      { q: 'Do you need the highway drive?', a: 'Yes if Khao Suan Kwang is why you came. City rooms still cook chicken. They are not this bird.' },
+      { q: 'Wanna or Rabeab?', a: 'Wanna is the 1973 room. Rabeab at 99 Mittraphap is the other named grill.' },
+    ],
+  },
+  {
+    path: '/thai-food/udon-thani',
+    title: 'Udon Thani food guide',
+    description:
+      'Udon Thani eating: UD Town night grills for som tum, sai krok, and city gai yang at 40 to 120 THB.',
+    lede:
+      'Udon Thani food is known for the UD Town night yard. It fits a city evening, not a same-night Mekong wrap in Nong Khai.',
+    schema: 'Article',
+    crumbs: [
+      { name: 'Thai food', href: '/thai-food' },
+      { name: 'Udon Thani', href: '/thai-food/udon-thani' },
+    ],
+    facts: [
+      { label: 'UD Town', value: '17:00 to 22:30; plates 40 to 120 THB' },
+      { label: 'Sai krok', value: '30 to 60 THB a set' },
+      { label: 'Gai yang', value: 'City bird; highway style is north of Khon Kaen' },
+      { label: 'Mekong', value: 'Nong Khai is a separate day' },
+    ],
+    chips: ['UD Town', 'Sai krok', 'Som tum'],
+    photo: '/photos/pak-chong.jpg',
+    geo: { lat: 17.415, lon: 102.787, containedIn: 'Isan' },
+    paragraphs: [
+      'UD Town on Thong Yai is the easy night map. Som tum Thai first. Sai krok with ginger. City gai yang if you are not driving to Khao Suan Kwang.',
+      'Keep Nong Khai for nam nuang. For the highway bird use [Khon Kaen](/thai-food/khon-kaen). For the regional map use [Isan food](/thai-food/isan).',
+    ],
+    portraits: [
+      { title: 'Isan food', href: '/thai-food/isan', photo: '/photos/thai-food-night-markets.jpg' },
+      { title: 'Khon Kaen food', href: '/thai-food/khon-kaen', photo: '/photos/khao-yai.jpg' },
+      { title: 'Nong Khai food', href: '/thai-food/nong-khai', photo: '/photos/haew-suwat.jpg' },
+      { title: 'Night markets', href: '/thai-food/night-markets', photo: '/photos/chatuchak.jpg' },
+    ],
+    affiliates: [
+      stay('Bangkok stays for Isan rooms', 'Or fly into Udon', 'Sleep in Udon if UD Town is the trip.', stayLink('bangkok'), '/photos/sukhumvit.jpg'),
+      klook('Isan food walks', 'Tours', 'Useful if you are actually in Udon. In Bangkok the MRT is enough.', klookTours('Isan food Udon Thani'), '/photos/chatuchak.jpg'),
+    ],
+    faqs: [
+      { q: 'UD Town or a hotel buffet?', a: 'UD Town. The buffet is a different dinner.' },
+      { q: 'Same night as Nong Khai?', a: 'No. Keep the Mekong wrap for its own day.' },
+    ],
+  },
+  {
+    path: '/thai-food/nong-khai',
+    title: 'Nong Khai food guide',
+    description:
+      'Nong Khai eating: nam nuang at Daeng Namnuang, Mekong grilled fish, and Saturday walking-street snacks.',
+    lede:
+      'Nong Khai food is known for nam nuang wraps on Meechai. It fits a Mekong day, not a same-night UD Town crawl.',
+    schema: 'Article',
+    crumbs: [
+      { name: 'Thai food', href: '/thai-food' },
+      { name: 'Nong Khai', href: '/thai-food/nong-khai' },
+    ],
+    facts: [
+      { label: 'Nam nuang', value: 'Daeng Namnuang, 689/1 Meechai; 120 to 220 THB' },
+      { label: 'River fish', value: '200 to 400 THB if you price it' },
+      { label: 'Walking street', value: 'Saturday from 16:00; snacks 30 to 80 THB' },
+      { label: 'From Udon', value: 'A separate Mekong day' },
+    ],
+    chips: ['Nam nuang', 'Mekong', 'Walking street'],
+    photo: '/photos/haew-suwat.jpg',
+    geo: { lat: 17.878, lon: 102.742, containedIn: 'Isan' },
+    paragraphs: [
+      'Daeng Namnuang at 689/1 Meechai is the named wrap table at 120 to 220 THB a set. Rimkhong rooms grill river fish if you ask the weight price. Saturday walking street is snacks, not a substitute for the wrap.',
+      'Udon is UD Town. Khon Kaen is the highway bird. Use those pages if that is where you actually are.',
+    ],
+    portraits: [
+      { title: 'Isan food', href: '/thai-food/isan', photo: '/photos/thai-food-night-markets.jpg' },
+      { title: 'Udon Thani food', href: '/thai-food/udon-thani', photo: '/photos/pak-chong.jpg' },
+      { title: 'Khon Kaen food', href: '/thai-food/khon-kaen', photo: '/photos/khao-yai.jpg' },
+      { title: 'Night markets', href: '/thai-food/night-markets', photo: '/photos/chatuchak.jpg' },
+    ],
+    affiliates: [
+      stay('Bangkok stays for Isan rooms', 'Or sleep on the Mekong', 'Sleep in Nong Khai if the wrap and the river are the trip.', stayLink('bangkok'), '/photos/sukhumvit.jpg'),
+      klook('Isan food walks', 'Tours', 'Useful on the Mekong if you are actually there.', klookTours('Isan food Nong Khai'), '/photos/chatuchak.jpg'),
+    ],
+    faqs: [
+      { q: 'Nam nuang or sai krok first?', a: 'Nam nuang. Sai krok is a walking-street snack.' },
+      { q: 'From Udon the same evening?', a: 'Only if you already dropped the UD Town night. They are different dinners.' },
+    ],
+  },
+  {
+    path: '/thai-food/ayutthaya',
+    title: 'Ayutthaya food guide',
+    description:
+      'Ayutthaya eating: Pa Lek boat noodles, roti sai mai opposite the hospital, and river prawns at Phae Krung Kao.',
+    lede:
+      'Ayutthaya food is known for 20 THB boat noodle cups and candy-floss roti. It fits a ruin day from Bangkok, or a river prawn night if you overnight.',
+    schema: 'Article',
+    crumbs: [
+      { name: 'Thai food', href: '/thai-food' },
+      { name: 'Ayutthaya', href: '/thai-food/ayutthaya' },
+    ],
+    facts: [
+      { label: 'Boat noodles', value: 'Pa Lek, about 20 THB a cup' },
+      { label: 'Roti sai mai', value: 'Abeedeen, 05:30 to 19:00, 20 to 40 THB' },
+      { label: 'Prawns', value: 'Phae Krung Kao; cash; 400 to 900 THB by size' },
+      { label: 'Market', value: 'Chao Phrom; Monday rest' },
+    ],
+    chips: ['Boat noodles', 'Roti sai mai', 'River prawns'],
+    photo: '/photos/ayutthaya.jpg',
+    geo: { lat: 14.353, lon: 100.565, containedIn: 'Ayutthaya' },
+    paragraphs: [
+      'Pa Lek opposite Wat Mahathat sells 20 THB cups. Order five a head. Roti Sai Mai Abeedeen at 32/1 Mu 4 U Thong, opposite the hospital, opens 05:30. Phae Krung Kao at 4/1 U Thong grills river prawns. Cash only.',
+      'Keep the last train in mind if this is a Bangkok day. For tickets and bikes use [Ayutthaya](/ayutthaya).',
+    ],
+    portraits: [
+      { title: 'Ayutthaya', href: '/ayutthaya', photo: '/photos/wat-mahathat-ayu.jpg' },
+      { title: 'Sukhothai food', href: '/thai-food/sukhothai', photo: '/photos/sukhothai.jpg' },
+      { title: 'Bangkok food', href: '/thai-food/bangkok', photo: '/photos/thai-food-bangkok-street.jpg' },
+      { title: 'From Bangkok', href: '/ayutthaya/from-bangkok', photo: '/photos/wat-phra-si-sanphet.jpg' },
+    ],
+    affiliates: [
+      stay('Ayutthaya stays', 'Only if you overnight', 'Park-side guesthouse, not a highway box.', stayLink('ayutthaya'), '/photos/kanchanaburi.jpg'),
+      klook('Temple tickets and bikes', 'Tours', 'A bicycle is quieter than a combo van. The noodle shop still takes cash.', klookTours('Ayutthaya food tour'), '/photos/bang-pa-in.jpg'),
+    ],
+    faqs: [
+      { q: 'Cups or prawns if you have one meal?', a: 'Cups if you are day-tripping. Prawns if you overnight and want a sit-down hour.' },
+      { q: 'Monday market?', a: 'Chao Phrom rests Monday. Pa Lek and the roti stall still work.' },
+    ],
+  },
+  {
+    path: '/thai-food/hua-hin',
+    title: 'Hua Hin food guide',
+    description:
+      'Hua Hin eating: Soi 72 night market, Naresdamri grilled fish, and Cicada snacks Friday to Sunday toward Khao Takiab.',
+    lede:
+      'Hua Hin food is known for the Soi 72 night market after the train. It fits a town dinner, or a Khao Takiab grill if you already sleep south.',
+    schema: 'Article',
+    crumbs: [
+      { name: 'Thai food', href: '/thai-food' },
+      { name: 'Hua Hin', href: '/thai-food/hua-hin' },
+    ],
+    facts: [
+      { label: 'Night market', value: 'Soi 72, 17:00 to 23:00, 50 to 120 THB' },
+      { label: 'Fish', value: 'Naresdamri rooms; price by weight' },
+      { label: 'Cicada', value: 'Friday to Sunday, 16:00 to 23:00' },
+      { label: 'Train', value: 'Special Express 43 is the useful morning set' },
+    ],
+    chips: ['Soi 72', 'Seafood', 'Cicada'],
+    photo: '/photos/hua-hin.jpg',
+    geo: { lat: 12.57, lon: 99.958, containedIn: 'Hua Hin' },
+    paragraphs: [
+      'Soi 72 is the every-night grill if you sleep in town. Plates 50 to 120 THB. Naresdamri rooms do sit-down fish if you ask the weight price. Cicada is Friday to Sunday toward Khao Takiab, snacks not a whole dinner.',
+      'For the stay split use [Hua Hin](/hua-hin). Pattaya is a different gulf. Do not treat them as the same weekend.',
+    ],
+    portraits: [
+      { title: 'Hua Hin', href: '/hua-hin', photo: '/photos/sam-roi-yot.jpg' },
+      { title: 'Pattaya food', href: '/thai-food/pattaya', photo: '/photos/pattaya.jpg' },
+      { title: 'Night markets', href: '/thai-food/night-markets', photo: '/photos/thai-food-night-markets.jpg' },
+      { title: 'Hua Hin stays', href: '/hua-hin/where-to-stay', photo: '/photos/jomtien.jpg' },
+    ],
+    affiliates: [
+      stay('Hua Hin stays', 'Town or Khao Takiab', 'Sleep in town if Soi 72 is dinner.', stayLink('hua-hin'), '/photos/khao-lak.jpg'),
+      klook('Hua Hin food', 'Tours', 'The night market is walkable. Book a tour only if the group will not split.', klookTours('Hua Hin night market'), '/photos/nang-thong.jpg'),
+    ],
+    faqs: [
+      { q: 'Soi 72 or Cicada?', a: 'Soi 72 every night in town. Cicada Friday to Sunday if you already sleep south.' },
+      { q: 'Train night one?', a: 'Yes if you sleep in town. Khao Takiab needs a Grab.' },
+    ],
+  },
+  {
+    path: '/thai-food/hat-yai',
+    title: 'Hat Yai food guide',
+    description:
+      'Hat Yai eating: turmeric fried chicken at Kaitod MEENA, morning dim sum at Gookchai, and southern sour curry in Khuan Lang.',
+    lede:
+      'Hat Yai food is known for garlic fried chicken in front of Kim Yong Market. It fits a rail-city lunch, not a beach hop.',
+    schema: 'Article',
+    crumbs: [
+      { name: 'Thai food', href: '/thai-food' },
+      { name: 'Hat Yai', href: '/thai-food/hat-yai' },
+    ],
+    facts: [
+      { label: 'Fried chicken', value: 'MEENA, 10:30 to 19:00, 20 to 70 THB a piece' },
+      { label: 'Dim sum', value: 'Gookchai, 06:00 to 13:00, 40 to 90 THB' },
+      { label: 'Sour curry', value: 'Suan Chuen Sook, 10:30 to 21:00' },
+      { label: 'Airport', value: 'HDY; this is a food city, not a sand stop' },
+    ],
+    chips: ['Fried chicken', 'Dim sum', 'Gaeng som'],
+    photo: '/photos/koh-lipe.jpg',
+    geo: { lat: 7.008, lon: 100.477, containedIn: 'Songkhla' },
+    paragraphs: [
+      'Kaitod MEENA on Niphat Uthit 3, in front of Kim Yong, fries turmeric chicken at 20 to 70 THB a piece from 10:30 to 19:00. Gookchai dim sum at 82 Thung Sao 1 is the morning cart, closed by 13:00. Suan Chuen Sook in Khuan Lang is the southern sour pot.',
+      'This is not Phuket Town and not a beach. For Baba plates use [Phuket food](/thai-food/phuket). For the wider south use [South and Baba-Nyonya](/thai-food/southern-and-baba-nyonya).',
+    ],
+    portraits: [
+      { title: 'South and Baba-Nyonya', href: '/thai-food/southern-and-baba-nyonya', photo: '/photos/thai-food-southern.jpg' },
+      { title: 'Phuket food', href: '/thai-food/phuket', photo: '/photos/phuket.jpg' },
+      { title: 'Koh Lipe', href: '/koh-lipe', photo: '/photos/ferry-gulf.jpg' },
+      { title: 'Night markets', href: '/thai-food/night-markets', photo: '/photos/thai-food-night-markets.jpg' },
+    ],
+    affiliates: [
+      stay('Phuket stays if you fly on', 'Hat Yai is a food city', 'Sleep in Hat Yai if fried chicken is the trip.', stayLink('phuket'), '/photos/kata-and-karon.jpg'),
+      klook('South Thailand food', 'Tours', 'Hat Yai is a rail and food city. Island boats are a different ticket.', klookTours('Hat Yai food'), '/photos/rawai-and-nai-harn.jpg'),
+    ],
+    faqs: [
+      { q: 'Kim Yong or Khuan Lang first?', a: 'Kim Yong for the fried bird. Khuan Lang if you want a sit-down sour curry.' },
+      { q: 'Is this a beach stop?', a: 'No. Eat, then move. Lipe and Phuket are different maps.' },
+    ],
+  },
+  {
+    path: '/thai-food/sukhothai',
+    title: 'Sukhothai food guide',
+    description:
+      'Sukhothai eating: kuay tiew Sukhothai after the dawn bicycle, morning kanom jeen, and park-gate jok.',
+    lede:
+      'Sukhothai food is known for pork-lime-peanut noodles in Old Town. It fits lunch after the park bicycle, not a Bangkok day trip.',
+    schema: 'Article',
+    crumbs: [
+      { name: 'Thai food', href: '/thai-food' },
+      { name: 'Sukhothai', href: '/thai-food/sukhothai' },
+    ],
+    facts: [
+      { label: 'Noodles', value: '40 to 70 THB; pork, lime, peanut, bean' },
+      { label: 'Clock', value: 'Lunch rooms 08:00 to 15:00' },
+      { label: 'Park', value: 'Inner zone 200 THB; bicycle at 06:30' },
+      { label: 'Night', value: 'Old town dining thins after 21:00' },
+    ],
+    chips: ['Sukhothai noodles', 'Kanom jeen', 'Old town'],
+    photo: '/photos/sukhothai.jpg',
+    geo: { lat: 17.017, lon: 99.703, containedIn: 'Sukhothai' },
+    paragraphs: [
+      'Old Sukhothai noodle rooms on Charotwithithong sell the namesake bowl at 40 to 70 THB. It is not boat noodles and not khao soi. Morning kanom jeen and park-gate jok match the 06:30 bicycle.',
+      'New town has more rooms and a duller dawn. For tickets use [Sukhothai](/sukhothai). For Ayutthaya cups use [Ayutthaya food](/thai-food/ayutthaya).',
+    ],
+    portraits: [
+      { title: 'Sukhothai', href: '/sukhothai', photo: '/photos/sukhothai-mahathat.jpg' },
+      { title: 'Historical park', href: '/sukhothai/historical-park', photo: '/photos/wat-sa-si.jpg' },
+      { title: 'Ayutthaya food', href: '/thai-food/ayutthaya', photo: '/photos/ayutthaya.jpg' },
+      { title: 'Northern Lanna', href: '/thai-food/northern-lanna', photo: '/photos/thai-food-lanna.jpg' },
+    ],
+    affiliates: [
+      stay('Sukhothai stays', 'Old town first', 'Sleep in Muang Kao if this bowl is lunch after the dawn bicycle.', stayLink('sukhothai'), '/photos/sukhothai-lake.jpg'),
+      klook('Park and food', 'Tours', 'A bicycle is the right machine. The noodle room still takes cash.', klookTours('Sukhothai food'), '/photos/si-satchanalai.jpg'),
+    ],
+    faqs: [
+      { q: 'Sukhothai or boat noodles?', a: 'Sukhothai noodles are lighter, with peanut and bean. Boat noodles are the Ayutthaya cup.' },
+      { q: 'New town lunch?', a: 'Exists. Sleep at the gate if the dawn bicycle is why you came.' },
+    ],
+  },
+  {
+    path: '/thai-food/pattaya',
+    title: 'Pattaya food guide',
+    description:
+      'Pattaya eating: Nang Nual and Jomtien grills, Naklua fish market, and som tum. Walking Street is a late mark-up.',
+    lede:
+      'Pattaya food is known for Jomtien seafood if you ask the weight price. It fits an east-gulf night, not a first-week Andaman substitute.',
+    schema: 'Article',
+    crumbs: [
+      { name: 'Thai food', href: '/thai-food' },
+      { name: 'Pattaya', href: '/thai-food/pattaya' },
+    ],
+    facts: [
+      { label: 'Jomtien', value: 'Nang Nual and beach grills; price by weight' },
+      { label: 'Naklua', value: 'Morning fish market, then a grill fee' },
+      { label: 'Walking Street', value: 'Late mark-up; eat a proper lunch first' },
+      { label: 'Som tum', value: '60 to 100 THB with sticky rice' },
+    ],
+    chips: ['Jomtien', 'Naklua', 'Som tum'],
+    photo: '/photos/pattaya.jpg',
+    geo: { lat: 12.9236, lon: 100.8825, containedIn: 'Pattaya' },
+    paragraphs: [
+      'Eat in Jomtien if you came to swim. Nang Nual near the pier is the named seafood house. Naklua is the north market if you sleep Wongamat. Walking Street is a late snack strip, not the best fish.',
+      'For the stay split use [Pattaya](/pattaya). Hua Hin is the train-town gulf, a different weekend.',
+    ],
+    portraits: [
+      { title: 'Pattaya', href: '/pattaya', photo: '/photos/sanctuary-truth.jpg' },
+      { title: 'Hua Hin food', href: '/thai-food/hua-hin', photo: '/photos/hua-hin.jpg' },
+      { title: 'Jomtien', href: '/pattaya/where-to-stay', photo: '/photos/jomtien.jpg' },
+      { title: 'Koh Larn', href: '/pattaya/koh-larn', photo: '/photos/koh-larn.jpg' },
+    ],
+    affiliates: [
+      stay('Pattaya stays', 'Jomtien or Wongamat', 'Sleep on the sand you will actually use.', stayLink('pattaya'), '/photos/wongamat.jpg'),
+      klook('Koh Larn and tickets', 'Tours', 'Ferry or a Sanctuary timed entry. Read whether transfer is included.', klookTours('Pattaya food tour'), '/photos/walking-street-pattaya.jpg'),
+    ],
+    faqs: [
+      { q: 'Jomtien or Walking Street for dinner?', a: 'Jomtien for fish. Walking Street only if that night is already the trip.' },
+      { q: 'Naklua from central Pattaya?', a: 'A long songthaew. Sleep north if the market is breakfast.' },
     ],
   },
 ];

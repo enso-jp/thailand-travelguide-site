@@ -51,7 +51,20 @@ const JOBS = [
   { key: 'dish-sai-krok', files: ['Sai krok Isan.jpg', 'Sour sausage Thailand.jpg', 'Sai krok.jpg'], q: 'Thai sour sausage sai krok' },
   { key: 'dish-bua-loi', files: ['Bua loi.jpg', 'Bua loy.jpg', 'Rice ball coconut milk Thailand.jpg'], q: 'Bua loi dessert Thailand' },
   { key: 'dish-khanom-tuay', files: ['Khanom thuai.jpg', 'Khanom tuay.jpg', 'Coconut pudding cup Thailand.jpg'], q: 'Khanom thuai coconut cup' },
-  { key: 'dish-jok-cm', files: ['Congee Chiang Mai.jpg', 'Jok Chiang Mai.jpg'], q: 'Thai rice porridge market' },
+  { key: 'dish-jok-cm', files: ['Congee.jpg', 'Congee Chiang Mai.jpg', 'Jok Chiang Mai.jpg'], q: 'Thai rice porridge market' },
+  { key: 'dish-hokkien-mee', files: ['Hokkien mee.jpg', 'Penang Hokkien mee.jpg', 'Mee Hokkien.jpg', 'Hokkien noodles.jpg'], q: 'Hokkien mee noodles' },
+  { key: 'dish-moo-hong', files: ['Phuket-Lohbak.jpg', 'Khao mu krop.jpg', 'Moo hong.jpg', 'Phuket moo hong.jpg'], q: 'Thai stewed pork five spice' },
+  { key: 'dish-nam-prik-kung', files: ['Nam phrik long ruea.jpg', 'Nam prik kung.jpg', 'Nam phrik kung.jpg'], q: 'Nam phrik long ruea' },
+  { key: 'dish-gai-tod-hat-yai', files: ['Kai thot krueng thae.JPG', 'Kai thot takhrai.jpg', 'Nang kai thot.JPG', 'Hat Yai fried chicken.jpg'], q: 'Kai thot fried chicken Thailand' },
+  { key: 'dish-dim-sum', files: ['Dim sum Thailand.jpg', 'Thai dim sum.jpg', 'Tim sum.jpg', 'Dimsum steam basket.jpg'], q: 'dim sum steamer Thailand' },
+  { key: 'dish-khao-mok', files: ['Khao mok gai.JPG', 'Khao mok gai.jpg', 'Thai chicken biryani.jpg'], q: 'Khao mok gai biryani' },
+  { key: 'dish-roti-sai-mai', files: ['Roti sai mai.jpg', 'Roti saimai.jpg', 'Ayutthaya cotton candy roti.jpg'], q: 'Roti sai mai Ayutthaya' },
+  { key: 'dish-sukhothai-noodles', files: ['Sukhothai noodle ก๋วยเตี๋ยวสุโขทัย - img 01.jpg', 'Sukhothai noodle ก๋วยเตี๋ยวสุโขทัย - img 02.jpg', 'Kuay tiew Sukhothai.jpg'], q: 'ก๋วยเตี๋ยวสุโขทัย' },
+  { key: 'dish-jim-jum', files: ['Jim jum.jpg', 'Chim chum.jpg', 'Thai hot pot jim jum.jpg'], q: 'Jim jum Thai hot pot' },
+  { key: 'dish-green-curry', files: ['Thai green chicken curry and roti.jpg', 'Chicken Thai Green Curry.jpg', 'Green curry (14511630130).jpg'], q: 'Kaeng khiao wan' },
+  { key: 'dish-pla-pao', files: ['Chiangmai grilled fish thanin market.jpg', 'Thanin market grilled fish 01.jpg', 'DFC 4185 Three whole fish sizzling over hot coals charred skin and smoky grill marks ready to be served.jpg'], q: 'Thai grilled whole fish market' },
+  { key: 'dish-roti-mataba', files: ['Phuket-Roti.jpg', 'Murtabak.jpg', 'Martabak.jpg'], q: 'Roti mataba Phuket' },
+  { key: 'dish-khao-niew', files: ['DFC 2215 A steaming bowl of savory soup with herbs and meat served alongside sticky rice in a woven bamboo container.jpg', 'Sticky Rice (85950).jpg', 'Lao sticky rice.jpg'], q: 'khao niao sticky rice basket' },
 ];
 
 async function lookup(title) {

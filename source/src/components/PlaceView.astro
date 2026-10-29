@@ -10,6 +10,7 @@ import TripSearch from './TripSearch.astro';
 import type { Page } from '../lib/content';
 import { chipHref, formatInline } from '../lib/inline';
 import { UniquePhotos } from '../lib/photos';
+import { CITY_FOOD_ROWS } from '../lib/food-catalog';
 import { attractionsFor, PLACE_META } from '../lib/place-attractions';
 import { klookTours, stayLink, stayCityFromPath } from '../lib/partners';
 import { regionForPath } from '../lib/regions';
@@ -30,6 +31,9 @@ const city = stayCityFromPath(page.path);
 const region = (meta?.region || regionForPath(page.path)) as 'central' | 'north' | 'andaman' | 'gulf' | 'east';
 const stayHref = page.bookingCta?.stayHref || stayLink(city);
 const tourHref = page.bookingCta?.tourHref || klookTours(`${page.title} tours`);
+const dishLinks = (CITY_FOOD_ROWS[meta?.foodHref || ''] || [])
+  .filter((row) => row.kind === 'dish')
+  .slice(0, 8);
 const tabs = [
   { href: '#intro', label: 'Overview' },
   { href: '#attractions', label: 'Top Attractions' },
@@ -192,6 +196,18 @@ const tabs = [
           <a href={pageHref(meta?.foodHref || '/thai-food')}>{page.title} food guide</a>.
           Ticketed markets sit on <a href={pageHref('/attractions')}>Attractions</a>.
         </p>
+        {
+          dishLinks.length > 0 && (
+            <ul class="scan-list">
+              {dishLinks.map((row) => (
+                <li>
+                  <a href={pageHref(row.href)}>{row.title}</a>
+                  {row.nameLocal ? ` (${row.nameLocal})` : ''}
+                </li>
+              ))}
+            </ul>
+          )
+        }
       </section>
 
       <SisterNetwork path={page.path} />

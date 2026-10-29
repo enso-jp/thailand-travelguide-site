@@ -520,7 +520,7 @@ export const wave2Pages: Page[] = [
     geo: { lat: 19.907, lon: 99.831, containedIn: 'Northern Thailand' },
     paragraphs: [
       'Chiang Rai is known for Wat Rong Khun, the White Temple, and a low-rise grid that closes earlier than Nimman. Add a second day for the Golden Triangle at Chiang Saen or Sop Ruak on the Mekong. Sleep in town. Day-trip the temples. A same-day van from Chiang Mai turns the White Temple into a parking lot and a lunch stop.',
-      'Wat Rong Khun sits about 13 to 15 km south on Highway 1. Chalermchai Kositpipat\'s project is a working temple and a private art site. Foreign tickets rose to 200 THB on 1 January 2026 and include the Cave of Art. Thai nationals, visitors 70 and over, and children under 120 cm enter free. Cash at the gate. Shoulders and knees covered. No photography inside the ubosot. Be there at 08:00; Chiang Mai coaches arrive late morning.',
+      'Wat Rong Khun sits about 13 to 15 km south on Highway 1. Chalermchai Kositpipat\'s project is a working temple and a private art site. Foreign tickets rose to 200 THB on 1 January 2026 and include the Cave of Art. Thai nationals, visitors 70 and over, and children under 120 cm enter free. Cash at the gate. Shoulders and knees covered. No photography inside the ubosot. Be there at 08:00; Chiang Mai coaches arrive late morning. Eat in town using the [Chiang Rai food guide](/thai-food/chiang-rai), not a temple canteen.',
     ],
     sections: [
       {
@@ -557,7 +557,7 @@ export const wave2Pages: Page[] = [
     portraits: [
       { title: 'Chiang Mai', href: '/chiang-mai', photo: '/photos/chiang-mai.jpg' },
       { title: 'Pai and the loop', href: '/pai', photo: '/photos/pai.jpg' },
-      { title: 'Northern corridor', href: '/destinations/northern-thailand', photo: '/photos/northern.jpg' },
+      { title: 'Chiang Rai food', href: '/thai-food/chiang-rai', photo: '/photos/thai-food-lanna.jpg' },
     ],
     affiliates: [
       stay('Chiang Rai stays', 'Town first', 'Sleep in the city. Temple hotels are a coach dump.', stayLink('chiang-rai'), '/photos/chiang-rai.jpg'),
@@ -599,7 +599,7 @@ export const wave2Pages: Page[] = [
     geo: { lat: 17.017, lon: 99.703, containedIn: 'Lower North' },
     paragraphs: [
       'Sukhothai is the 13th-century capital, known for lotus-bud chedis you bicycle at opening. The Fine Arts Department splits the park. The inner historic zone is the one you came for: Wat Mahathat, Wat Sa Si, Wat Si Sawai. Their virtual park page lists 200 THB for foreign visitors in the inner zone, 120 THB each for the northern zone (Wat Si Chum, Wat Phra Phai Luang) and the western Aranyik zone, or 400 THB as a combined rate. Thai tickets are 20 THB a zone. Bicycles pay 10 THB a zone at the gate. An older QR page still shows 100 THB. Go by the price posted at the staffed ticket booth.',
-      'Inner-zone hours on that official page are 06:30 to 19:30 Monday to Friday and Sunday, and 06:30 to 21:00 on Saturday. Wat Si Chum and Wat Phra Phai Luang list 07:30 to 17:30. Aranyik lists 08:00 to 16:30. Office line: 055 697 527. Si Satchanalai is a separate park to the north. It is a second morning, not a footnote.',
+      'Inner-zone hours on that official page are 06:30 to 19:30 Monday to Friday and Sunday, and 06:30 to 21:00 on Saturday. Wat Si Chum and Wat Phra Phai Luang list 07:30 to 17:30. Aranyik lists 08:00 to 16:30. Office line: 055 697 527. Si Satchanalai is a separate park to the north. It is a second morning, not a footnote. Lunch is [Sukhothai noodles](/thai-food/sukhothai), not a Bangkok day-trip snack.',
     ],
     sections: [
       {
@@ -628,7 +628,7 @@ export const wave2Pages: Page[] = [
     portraits: [
       { title: 'Ayutthaya', href: '/ayutthaya', photo: '/photos/ayutthaya.jpg' },
       { title: 'Chiang Mai', href: '/chiang-mai', photo: '/photos/chiang-mai.jpg' },
-      { title: 'Northern corridor', href: '/destinations/northern-thailand', photo: '/photos/northern.jpg' },
+      { title: 'Sukhothai food', href: '/thai-food/sukhothai', photo: '/photos/sukhothai-mahathat.jpg' },
     ],
     affiliates: [
       stay('Sukhothai stays', 'Old town first', 'Filter for Historical Park or Muang Kao.', stayLink('sukhothai'), '/photos/sukhothai.jpg'),
@@ -672,7 +672,7 @@ export const wave2Pages: Page[] = [
     geo: { lat: 14.353, lon: 100.565, containedIn: 'Central Thailand' },
     paragraphs: [
       'Ayutthaya is the island city of brick prangs and root-wrapped Buddhas, an hour north of Bangkok. The Fine Arts Department lists paid monuments at 80 THB each for foreign visitors or 300 THB as a flat ticket (Thai 10 / 40). The combo usually covers Wat Phra Si Sanphet, Wat Mahathat, Wat Ratchaburana, Wat Phra Ram, Wat Chaiwatthanaram, and a sixth site. Ask the booth which names are on today\'s stub. Hours on the department page read 08:00 or 08:30 to 18:00 or 18:30; Wat Phra Si Sanphet and Wat Ratchaburana often sell last tickets earlier. Office: 035 242 286.',
-      'Ordinary and express trains still make Ayutthaya in about an hour from Krung Thep Aphiwat. SRT also runs commuter sets on this line. Weekend tourist extras appear and vanish; check the board, not a screenshot. From the station you need a tuk-tuk, a bicycle, or a long hot walk. Wat Chaiwatthanaram sits off the island to the west. Wat Mahathat\'s root-wrapped head is the photograph everyone already has. Go at opening if you want it without a queue.',
+      'Ordinary and express trains still make Ayutthaya in about an hour from Krung Thep Aphiwat. SRT also runs commuter sets on this line. Weekend tourist extras appear and vanish; check the board, not a screenshot. From the station you need a tuk-tuk, a bicycle, or a long hot walk. Wat Chaiwatthanaram sits off the island to the west. Wat Mahathat\'s root-wrapped head is the photograph everyone already has. Go at opening if you want it without a queue. Eat using the [Ayutthaya food guide](/thai-food/ayutthaya): boat-noodle cups, roti sai mai, then river prawns if you overnight.',
     ],
     sections: [
       {
@@ -702,7 +702,7 @@ export const wave2Pages: Page[] = [
       { title: 'Bangkok', href: '/bangkok', photo: '/photos/bangkok.jpg' },
       { title: 'Sukhothai', href: '/sukhothai', photo: '/photos/sukhothai.jpg' },
       { title: 'Kanchanaburi', href: '/kanchanaburi', photo: '/photos/kanchanaburi.jpg' },
-      { title: 'Central and east', href: '/destinations/central-and-east', photo: '/photos/ayutthaya.jpg' },
+      { title: 'Ayutthaya food', href: '/thai-food/ayutthaya', photo: '/photos/wat-mahathat-ayu.jpg' },
     ],
     affiliates: [
       stay('Ayutthaya stays', 'Only if you overnight', 'Park-side guesthouse, not a highway box.', stayLink('ayutthaya'), '/photos/ayutthaya.jpg'),
@@ -849,7 +849,7 @@ export const wave2Pages: Page[] = [
     geo: { lat: 12.57, lon: 99.958, containedIn: 'Upper Gulf of Thailand' },
     paragraphs: [
       'Hua Hin is a mainland Gulf resort in Prachuap Khiri Khan, not an island and not Pattaya. The beach runs about 7 km from the fishing pier to the limestone hill at Khao Takiab. The water is shallow and often murky after rain. You come for a walkable town, seafood, and a train you can board with a suitcase, not for a postcard lagoon.',
-      'Special Express 43 leaves Krung Thep Aphiwat at 07:30 and is the clean morning option, about three hours. Other southbound trains take longer. Minivans from Ekkamai work and then dump you in traffic. Hua Hin Airport is not a useful Bangkok substitute. Avoid Thai long weekends unless you like full trains and full beach roads.',
+      'Special Express 43 leaves Krung Thep Aphiwat at 07:30 and is the clean morning option, about three hours. Other southbound trains take longer. Minivans from Ekkamai work and then dump you in traffic. Hua Hin Airport is not a useful Bangkok substitute. Avoid Thai long weekends unless you like full trains and full beach roads. Town dinner lives on the [Hua Hin food guide](/thai-food/hua-hin): Soi 72, then Naresdamri if you want a sit-down fish.',
     ],
     sections: [
       {
@@ -880,7 +880,7 @@ export const wave2Pages: Page[] = [
       { title: 'Bangkok', href: '/bangkok', photo: '/photos/bangkok.jpg' },
       { title: 'Ayutthaya', href: '/ayutthaya', photo: '/photos/ayutthaya.jpg' },
       { title: 'Kanchanaburi', href: '/kanchanaburi', photo: '/photos/kanchanaburi.jpg' },
-      { title: 'Koh Chang and Koh Kood', href: '/koh-chang-and-koh-kood', photo: '/photos/koh-chang.jpg' },
+      { title: 'Hua Hin food', href: '/thai-food/hua-hin', photo: '/photos/sam-roi-yot.jpg' },
     ],
     affiliates: [
       stay('Hua Hin stays', 'Town or Khao Takiab', 'Town if the train is late. Khao Takiab if Cicada is the evening.', stayLink('hua-hin'), '/photos/hua-hin.jpg'),
