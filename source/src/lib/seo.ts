@@ -214,6 +214,94 @@ function trimComplete(text: string, max: number): string {
   return out;
 }
 
+const ABBREV_MARK = '%%ABBREV%%';
+const ABBREV_RULES: RegExp[] = [
+  /(?<![A-Za-z])approx\./gi,
+  /(?<![A-Za-z])e\.g\./gi,
+  /(?<![A-Za-z])i\.e\./gi,
+  /(?<![A-Za-z])vs\./gi,
+  /(?<![A-Za-z])St\./g,
+  /(?<![A-Za-z])Mt\./g,
+  /(?<![A-Za-z])No\.(?=\s*\d)/g,
+];
+
+function protectAbbrevs(text: string): { text: string; marks: string[] } {
+  const marks: string[] = [];
+  let out = text;
+  for (const re of ABBREV_RULES) {
+    out = out.replace(re, (match) => {
+      marks.push(match);
+      return `${ABBREV_MARK}${marks.length - 1}%%`;
+    });
+  }
+  return { text: out, marks };
+}
+
+function restoreAbbrevs(text: string, marks: string[]): string {
+  return text.replace(new RegExp(`${ABBREV_MARK}(\\d+)%%`, 'g'), (_, idx) => marks[Number(idx)] ?? '');
+}
+
+function closeSentence(text: string): string {
+  const t = text.replace(/\s+/g, ' ').trim();
+  if (!t) return '';
+  return /[.!?]$/.test(t) ? t : `${t}.`;
+}
+
+export function splitSentences(text: string): string[] {
+  const raw = visible(text);
+  if (!raw) return [];
+  const { text: protectedText, marks } = protectAbbrevs(raw);
+  const chunks = protectedText.split(/(?<=[.!?])\s+/);
+  return chunks
+    .map((chunk) => closeSentence(restoreAbbrevs(chunk, marks)))
+    .filter((chunk) => chunk.length > 1);
+}
+
+function collectSentences(page: Page): string[] {
+  const seen = new Set<string>();
+  const sentences: string[] = [];
+  for (const block of pageSnippets(page)) {
+    for (const sentence of splitSentences(block)) {
+      if (seen.has(sentence)) continue;
+      seen.add(sentence);
+      sentences.push(sentence);
+    }
+  }
+  if (!sentences.length) sentences.push(closeSentence(visible(page.title)));
+  return sentences;
+}
+
+export function clipDescription(sentences: string[]): string {
+  const pool = sentences.map((s) => closeSentence(visible(s))).filter((s) => s.length > 1);
+
+  const build = (items: string[]): string | null => {
+    let acc = '';
+    for (const sentence of items) {
+      const joined = acc ? `${acc} ${sentence}` : sentence;
+      if (joined.length <= DESC_MAX) {
+        acc = joined;
+        if (acc.length >= DESC_MIN) return acc;
+        continue;
+      }
+      // Overflow: skip this sentence and try later shorter ones. Do not trim into the window.
+    }
+    return acc.length >= DESC_MIN && acc.length <= DESC_MAX ? acc : null;
+  };
+
+  for (let start = 0; start < pool.length; start++) {
+    const hit = build(pool.slice(start));
+    if (hit) return hit;
+  }
+
+  for (const sentence of pool) {
+    if (sentence.length >= DESC_MIN && sentence.length <= DESC_MAX) return sentence;
+  }
+
+  const fallback = pool[0] || '';
+  if (fallback.length > DESC_MAX) return trimAtWord(fallback, DESC_MAX);
+  return trimAtWord(pool.join(' '), DESC_MAX);
+}
+
 function stripSuffix(text: string): string {
   return text.replace(/\s*\|\s*Thailand(?:\s+Travel)?\s+Guide\s*$/i, '').trim();
 }
@@ -342,57 +430,8 @@ export function seoTitle(page: Page): string {
   return withSuffix;
 }
 
-function clipDescription(text: string): string {
-  const clean = text.replace(/\s+/g, ' ').trim();
-  if (clean.length <= DESC_MAX) return clean;
-  const window = clean.slice(0, DESC_MAX);
-  const stops = ['.', '!', '?']
-    .map((mark) => window.lastIndexOf(mark))
-    .filter((index) => index >= DESC_MIN - 1);
-  if (stops.length) {
-    return clean.slice(0, Math.max(...stops) + 1).trim();
-  }
-  return trimComplete(clean, DESC_MAX);
-}
-
-function sentencesOf(text: string): string[] {
-  return visible(text)
-    .split(/(?<=[.!?])\s+/)
-    .map((part) => part.trim())
-    .filter(Boolean);
-}
-
 export function seoDescription(page: Page): string {
-  const sentences: string[] = [];
-  const seen = new Set<string>();
-  for (const part of pageSnippets(page)) {
-    for (const sentence of sentencesOf(part)) {
-      if (seen.has(sentence)) continue;
-      seen.add(sentence);
-      sentences.push(sentence);
-    }
-  }
-  if (!sentences.length) {
-    const fallback = visible(page.title);
-    return fallback.length > DESC_MAX ? clipDescription(fallback) : fallback;
-  }
-
-  let text = '';
-  for (const sentence of sentences) {
-    const next = text ? `${text} ${sentence}` : sentence;
-    if (next.length >= DESC_MIN && next.length <= DESC_MAX) return next;
-    if (next.length > DESC_MAX) {
-      if (text.length >= DESC_MIN && text.length <= DESC_MAX) return text;
-      const clipped = clipDescription(next);
-      if (clipped.length >= DESC_MIN && clipped.length <= DESC_MAX) return clipped;
-      continue;
-    }
-    text = next;
-  }
-
-  if (text.length >= DESC_MIN && text.length <= DESC_MAX) return text;
-  if (text.length > DESC_MAX) return clipDescription(text);
-  return text;
+  return clipDescription(collectSentences(page));
 }
 
 export function assertSeoBounds(page: Page): { title: string; description: string } {
