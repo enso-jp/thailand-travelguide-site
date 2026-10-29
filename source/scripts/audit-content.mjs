@@ -85,6 +85,18 @@ const SKIP_AFFILIATES = new Set([
 const errors = [];
 
 const SKIP_DIRS = new Set(['node_modules', 'dist', '.git', '.astro', '.cursor']);
+const PRIVACY_SKIP_DIRS = new Set(['node_modules', '.git', '.astro', '.cursor', 'scripts']);
+
+// Kept in scripts/ so the public tree never lists these strings.
+const forbiddenPrivacyPatterns = [
+  /nuranoel/i,
+  /thebeyond_traveller/i,
+  /enso-jp/i,
+  /github\.com/i,
+  /github\.io/i,
+  /tan\s+hai/i,
+  /firebirds/i,
+];
 const TEXT_EXT = new Set([
   '.astro',
   '.ts',
@@ -101,15 +113,49 @@ const TEXT_EXT = new Set([
   '.txt',
   '.svg',
 ]);
+const DIST_TEXT_EXT = new Set([...TEXT_EXT, '.xml', '.webmanifest']);
 
-function walkFiles(dir, files = []) {
+function walkFiles(dir, files = [], skipDirs = SKIP_DIRS) {
   for (const name of readdirSync(dir)) {
-    if (SKIP_DIRS.has(name)) continue;
+    if (skipDirs.has(name)) continue;
     const full = join(dir, name);
-    if (statSync(full).isDirectory()) walkFiles(full, files);
+    if (statSync(full).isDirectory()) walkFiles(full, files, skipDirs);
     else files.push(full);
   }
   return files;
+}
+
+function isUnderScripts(rel) {
+  return rel === 'scripts' || rel.startsWith('scripts/') || rel.split(/[\\/]/).includes('scripts');
+}
+
+function isScanTextFile(file, allowedExt) {
+  const ext = extname(file).toLowerCase();
+  return allowedExt.has(ext) || (ext === '' && file.endsWith('_redirects'));
+}
+
+function scanPrivacyFile(file, allowedExt = TEXT_EXT) {
+  if (!existsSync(file)) return;
+  const rel = relative(ROOT, file);
+  if (isUnderScripts(rel)) return;
+  if (!isScanTextFile(file, allowedExt)) return;
+  readFileSync(file, 'utf8')
+    .split('\n')
+    .forEach((line, i) => {
+      for (const pattern of forbiddenPrivacyPatterns) {
+        if (pattern.test(line)) {
+          fail(rel, `privacy leak on line ${i + 1}`);
+          break;
+        }
+      }
+    });
+}
+
+function scanPrivacyTree(dir, allowedExt = TEXT_EXT) {
+  if (!existsSync(dir)) return;
+  for (const file of walkFiles(dir, [], PRIVACY_SKIP_DIRS)) {
+    scanPrivacyFile(file, allowedExt);
+  }
 }
 
 for (const file of walkFiles(ROOT)) {
@@ -483,6 +529,11 @@ for (const page of pages) {
   }
 }
 
+scanPrivacyTree(join(ROOT, 'src'));
+scanPrivacyTree(join(ROOT, 'public'));
+scanPrivacyFile(join(ROOT, 'README.md'));
+scanPrivacyTree(join(ROOT, 'dist'), DIST_TEXT_EXT);
+
 if (errors.length) {
   console.error(`audit:content failed (${errors.length} error${errors.length === 1 ? '' : 's'})`);
   for (const err of errors) console.error(`  ${err}`);
@@ -490,15 +541,3 @@ if (errors.length) {
 }
 
 console.log(`audit:content ok (${pages.length} routes)`);
-
-
-// OPSEC / privacy check: never expose personal handles, repo names, or GitHub URLs in src/
-const forbiddenPrivacyPatterns = [
-  /nuranoel/i,
-  /thebeyond_traveller/i,
-  /enso-jp/i,
-  /github\.com/i,
-  /github\.io/i,
-  /tan\s+hai/i,
-  /firebirds/i,
-];
