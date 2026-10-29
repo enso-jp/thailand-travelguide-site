@@ -1,5 +1,6 @@
 ---
 import { sisterSectionForPath } from '../lib/sister-network';
+import FlightCta from './FlightCta.astro';
 
 interface Props {
   path: string;
@@ -29,22 +30,20 @@ const section = sisterSectionForPath(path);
             <span class="sister-cta">{card.cta} →</span>
           </a>
         ))}
-        {section.flights &&
-          section.flights.map((fl) => (
-            <a
-              class="sister-card flight-cta"
-              href={fl.href}
-              target="_blank"
-              rel="sponsored noopener noreferrer"
-              data-partner="flights"
-            >
-              <span class="sister-kicker">Trip.com flights</span>
-              <h3>{fl.label}</h3>
-              <p>{fl.note}</p>
-              <span class="sister-cta">Search flights on Trip.com →</span>
-            </a>
-          ))}
       </div>
+      {section.flights && section.flights.length > 0 && (
+        <div class="sister-flights" aria-label="Cross-border flights on Trip.com">
+          {section.flights.map((fl) => (
+            <FlightCta
+              href={fl.href}
+              route={fl.route}
+              fromCode={fl.fromCode}
+              toCode={fl.toCode}
+              duration={fl.duration}
+            />
+          ))}
+        </div>
+      )}
     </section>
   )
 }

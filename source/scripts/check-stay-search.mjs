@@ -14,8 +14,10 @@ function walkHtml(dir, files = []) {
   for (const name of readdirSync(dir)) {
     const full = join(dir, name);
     const st = statSync(full);
-    if (st.isDirectory()) walkHtml(full, files);
-    else if (name === 'index.html') files.push(full);
+    if (st.isDirectory()) {
+      if (name === '404') continue;
+      walkHtml(full, files);
+    } else if (name === 'index.html') files.push(full);
   }
   return files;
 }

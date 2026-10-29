@@ -7,10 +7,22 @@ export type SisterCard = {
 };
 
 export type SisterFlightCta = {
-  label: string;
-  note: string;
   href: string;
+  route: string;
+  fromCode: string;
+  toCode: string;
+  duration: string;
 };
+
+function flightCta(
+  href: string,
+  route: string,
+  fromCode: string,
+  toCode: string,
+  duration: string,
+): SisterFlightCta {
+  return { href, route, fromCode, toCode, duration };
+}
 
 export type SisterSection = {
   heading: string;
@@ -43,13 +55,12 @@ export const SISTER_CROSS_BORDER_ROUTES = [
       { label: 'Ho Chi Minh City guide', href: `${VN}/ho-chi-minh-city` },
       { label: 'Phu Quoc Island guide', href: `${VN}/phu-quoc` },
     ],
-    flightLabel: 'Search BKK to SGN flights on Trip.com',
-    flightHref: crossBorderFlightUrl(
-      'bangkok',
-      'ho-chi-minh-city',
-      'bkk',
-      'sgn',
-      'CrossBorder_BKK_SGN',
+    flight: flightCta(
+      crossBorderFlightUrl('bangkok', 'ho-chi-minh-city', 'bkk', 'sgn', 'CrossBorder_BKK_SGN'),
+      'Bangkok to Ho Chi Minh City',
+      'BKK',
+      'SGN',
+      '1h 35m nonstop',
     ),
   },
   {
@@ -62,8 +73,13 @@ export const SISTER_CROSS_BORDER_ROUTES = [
       { label: 'Ha Long Bay guide', href: `${VN}/ha-long` },
       { label: 'Ninh Binh guide', href: `${VN}/ninh-binh` },
     ],
-    flightLabel: 'Search BKK to HAN flights on Trip.com',
-    flightHref: crossBorderFlightUrl('bangkok', 'hanoi', 'bkk', 'han', 'CrossBorder_BKK_HAN'),
+    flight: flightCta(
+      crossBorderFlightUrl('bangkok', 'hanoi', 'bkk', 'han', 'CrossBorder_BKK_HAN'),
+      'Bangkok to Hanoi',
+      'BKK',
+      'HAN',
+      '1h 50m nonstop',
+    ),
   },
   {
     kicker: '1h 40m nonstop · BKK / DMK to DAD',
@@ -75,8 +91,13 @@ export const SISTER_CROSS_BORDER_ROUTES = [
       { label: 'Hoi An Ancient Town', href: `${VN}/hoi-an` },
       { label: 'Hue imperial guide', href: `${VN}/hue` },
     ],
-    flightLabel: 'Search BKK to DAD flights on Trip.com',
-    flightHref: crossBorderFlightUrl('bangkok', 'da-nang', 'bkk', 'dad', 'CrossBorder_BKK_DAD'),
+    flight: flightCta(
+      crossBorderFlightUrl('bangkok', 'da-nang', 'bkk', 'dad', 'CrossBorder_BKK_DAD'),
+      'Bangkok to Da Nang',
+      'BKK',
+      'DAD',
+      '1h 40m nonstop',
+    ),
   },
   {
     kicker: 'Northern & Heritage Loop · CNX to HAN / DAD',
@@ -88,8 +109,13 @@ export const SISTER_CROSS_BORDER_ROUTES = [
       { label: 'Sapa highlands guide', href: `${VN}/sapa` },
       { label: 'Hanoi guide', href: `${VN}/hanoi` },
     ],
-    flightLabel: 'Search CNX to HAN flights on Trip.com',
-    flightHref: crossBorderFlightUrl('chiang-mai', 'hanoi', 'cnx', 'han', 'CrossBorder_CNX_HAN'),
+    flight: flightCta(
+      crossBorderFlightUrl('chiang-mai', 'hanoi', 'cnx', 'han', 'CrossBorder_CNX_HAN'),
+      'Chiang Mai to Hanoi',
+      'CNX',
+      'HAN',
+      'Direct or one-stop',
+    ),
   },
 ];
 
@@ -140,16 +166,20 @@ export function sisterSectionForPath(path: string): SisterSection | null {
         },
       ],
       flights: [
-        {
-          label: 'Bangkok to Ho Chi Minh City (BKK to SGN)',
-          note: '1h 35m nonstop · Check fares on Trip.com',
-          href: crossBorderFlightUrl('bangkok', 'ho-chi-minh-city', 'bkk', 'sgn', 'Sister_BKK_SGN'),
-        },
-        {
-          label: 'Bangkok to Hanoi (BKK to HAN)',
-          note: '1h 50m nonstop · Check fares on Trip.com',
-          href: crossBorderFlightUrl('bangkok', 'hanoi', 'bkk', 'han', 'Sister_BKK_HAN'),
-        },
+        flightCta(
+          crossBorderFlightUrl('bangkok', 'ho-chi-minh-city', 'bkk', 'sgn', 'Sister_BKK_SGN'),
+          'Bangkok to Ho Chi Minh City',
+          'BKK',
+          'SGN',
+          '1h 35m nonstop',
+        ),
+        flightCta(
+          crossBorderFlightUrl('bangkok', 'hanoi', 'bkk', 'han', 'Sister_BKK_HAN'),
+          'Bangkok to Hanoi',
+          'BKK',
+          'HAN',
+          '1h 50m nonstop',
+        ),
       ],
     };
   }
@@ -193,11 +223,13 @@ export function sisterSectionForPath(path: string): SisterSection | null {
         },
       ],
       flights: [
-        {
-          label: 'Chiang Mai to Hanoi (CNX to HAN)',
-          note: 'Connect Northern Thailand with Northern Vietnam on Trip.com',
-          href: crossBorderFlightUrl('chiang-mai', 'hanoi', 'cnx', 'han', 'Sister_CNX_HAN'),
-        },
+        flightCta(
+          crossBorderFlightUrl('chiang-mai', 'hanoi', 'cnx', 'han', 'Sister_CNX_HAN'),
+          'Chiang Mai to Hanoi',
+          'CNX',
+          'HAN',
+          'Direct or one-stop',
+        ),
       ],
     };
   }
@@ -250,11 +282,13 @@ export function sisterSectionForPath(path: string): SisterSection | null {
         },
       ],
       flights: [
-        {
-          label: 'Bangkok to Da Nang (BKK to DAD)',
-          note: '1h 40m nonstop to Central Vietnam beaches on Trip.com',
-          href: crossBorderFlightUrl('bangkok', 'da-nang', 'bkk', 'dad', 'Sister_Islands_DAD'),
-        },
+        flightCta(
+          crossBorderFlightUrl('bangkok', 'da-nang', 'bkk', 'dad', 'Sister_Islands_DAD'),
+          'Bangkok to Da Nang',
+          'BKK',
+          'DAD',
+          '1h 40m nonstop',
+        ),
       ],
     };
   }

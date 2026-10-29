@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import { site, absUrl, pageHref } from '../lib/site';
-import { jsonLdFor } from '../lib/jsonld';
+import { jsonLdFor, organizationLd, websiteLd } from '../lib/jsonld';
 import { seoDescription, seoTitle } from '../lib/seo';
 import type { Page } from '../lib/content';
 import { NAV_LINKS, NAV_SLOTS } from '../lib/nav';
@@ -9,14 +9,18 @@ import { sisterHeaderUrlForPath } from '../lib/sister-network';
 
 interface Props {
   page: Page;
+  robots?: string;
+  siteJsonLdOnly?: boolean;
+  documentTitle?: string;
+  documentDescription?: string;
 }
 
-const { page } = Astro.props;
+const { page, robots = 'index, follow, max-image-preview:large', siteJsonLdOnly = false, documentTitle, documentDescription } = Astro.props;
 const url = absUrl(page.path);
-const title = seoTitle(page);
-const description = seoDescription(page);
+const title = documentTitle ?? seoTitle(page);
+const description = documentDescription ?? seoDescription(page);
 const image = page.photo ? absUrl(page.photo) : absUrl('/photos/bangkok.jpg');
-const blocks = jsonLdFor(page);
+const blocks = siteJsonLdOnly ? [organizationLd(), websiteLd()] : jsonLdFor(page);
 const sisterHref = sisterHeaderUrlForPath(page.path);
 ---
 
@@ -39,7 +43,7 @@ const sisterHref = sisterHeaderUrlForPath(page.path);
     <meta name="author" content={site.name} />
     <meta name="application-name" content={site.shortName} />
     <meta name="theme-color" content={site.themeColor} />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="robots" content={robots} />
     <link rel="canonical" href={url} />
     <link rel="alternate" hreflang="en" href={url} />
     <link rel="alternate" hreflang="x-default" href={url} />

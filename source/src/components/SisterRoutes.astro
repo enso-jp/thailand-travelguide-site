@@ -1,5 +1,6 @@
 ---
 import { SISTER_CROSS_BORDER_ROUTES } from '../lib/sister-network';
+import FlightCta from './FlightCta.astro';
 ---
 
 <section class="place-section home-section sister-routes" id="vietnam-routes" aria-label="Combine Thailand and Vietnam routes">
@@ -27,17 +28,13 @@ import { SISTER_CROSS_BORDER_ROUTES } from '../lib/sister-network';
               </a>
             ))}
           </div>
-          <a
-            class="flight-cta"
-            href={route.flightHref}
-            target="_blank"
-            rel="sponsored noopener noreferrer"
-            data-partner="flights"
-          >
-            <span class="sister-kicker">Trip.com flights</span>
-            <strong>{route.flightLabel}</strong>
-            <span class="sister-cta">Search flights on Trip.com →</span>
-          </a>
+          <FlightCta
+            href={route.flight.href}
+            route={route.flight.route}
+            fromCode={route.flight.fromCode}
+            toCode={route.flight.toCode}
+            duration={route.flight.duration}
+          />
         </article>
       ))
     }
