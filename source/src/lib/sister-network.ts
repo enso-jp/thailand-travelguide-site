@@ -1,3 +1,5 @@
+import { generatedFlightLink } from './partners';
+
 export type SisterCard = {
   kicker: string;
   title: string;
@@ -42,6 +44,8 @@ export function crossBorderFlightUrl(
   toCode: string,
   sub1: string,
 ): string {
+  const generated = generatedFlightLink(fromCode, toCode);
+  if (generated) return generated;
   return `https://www.trip.com/flights/${fromSlug}-to-${toSlug}/tickets-${fromCode}-${toCode}?${TRIP_BASE}&trip_sub1=${encodeURIComponent(sub1)}`;
 }
 

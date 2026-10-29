@@ -348,7 +348,7 @@ for (const route of REQUIRED_ROUTES) {
 }
 
 const partners = readFileSync(join(ROOT, 'src/lib/partners.ts'), 'utf8');
-for (const token of ['11105102', '334225872', '588978', '793638']) {
+for (const token of ['11105102', '334225872', '334804079', '588978', '793638']) {
   if (!partners.includes(token)) {
     errors.push(`partners.ts missing affiliate token ${token}`);
   }

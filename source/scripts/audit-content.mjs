@@ -503,7 +503,7 @@ for (const page of pages) {
   if (affPhotos.length >= 2 && new Set(affPhotos.slice(0, 2)).size < 2) {
     fail(page.path, 'first two AffRow photos are not distinct');
   }
-  if (/11105102|334225872|793638|588978|city 62195|click-out|stays scannable/i.test(visibleBits)) {
+  if (/11105102|334225872|334804079|793638|588978|city 62195|click-out|stays scannable/i.test(visibleBits)) {
     fail(page.path, 'affiliate IDs or meta-copy leaked into visible text');
   }
 
@@ -541,8 +541,8 @@ for (const page of pages) {
     const trip = /trip\.com/i.test(decoded);
     const klookShort = /^https:\/\/klook\.tpx\.li\/[A-Za-z0-9]+$/.test(href);
     const klook = !klookShort && /klook\.com|tp\.media/i.test(decoded);
-    if (trip && (!decoded.includes('Allianceid=11105102') || !decoded.includes('SID=334225872'))) {
-      fail(page.path, `Trip.com URL missing Allianceid=11105102 or SID=334225872 (${row.title})`);
+    if (trip && (!decoded.includes('Allianceid=11105102') || !/SID=(334225872|334804079)\b/.test(decoded))) {
+      fail(page.path, `Trip.com URL missing Allianceid=11105102 or SID=334225872/334804079 (${row.title})`);
     }
     if (klook && (!decoded.includes('588978') || !decoded.includes('793638'))) {
       fail(page.path, `Klook/Travelpayouts URL missing 588978 or 793638 (${row.title})`);

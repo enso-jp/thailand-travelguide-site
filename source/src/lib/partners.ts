@@ -110,6 +110,47 @@ export const airports = {
 
 export type AirportCode = keyof typeof airports;
 
+
+/** Trip.com Partner tool links for SID 334804079. Copied exactly as generated. Never edit. */
+const TRIP_GENERATED_CITY_HOTELS: Partial<Record<string, string>> = {
+  "bangkok": "https://www.trip.com/hotels/list?city=359&cityName=Bangkok&Allianceid=11105102&SID=334804079&trip_sub1=th_bangkok_hotels&trip_sub3=D20729235",
+  "chiang-mai": "https://www.trip.com/hotels/list?city=623&cityName=Chiang Mai&Allianceid=11105102&SID=334804079&trip_sub1=th_chiang_mai_hotels&trip_sub3=D20729235",
+  "chiang-rai": "https://www.trip.com/hotels/list?city=647&cityName=Chiang Rai&Allianceid=11105102&SID=334804079&trip_sub1=th_chiang_rai_hotels&trip_sub3=D20729235",
+  "hua-hin": "https://www.trip.com/hotels/list?city=3759&cityName=Hua Hin&Allianceid=11105102&SID=334804079&trip_sub1=th_hua_hin_hotels&trip_sub3=D20729235",
+  "kanchanaburi": "https://www.trip.com/hotels/list?city=36027&cityName=Kanchanaburi City&Allianceid=11105102&SID=334804079&trip_sub1=th_kanchanaburi_hotels&trip_sub3=D20729235",
+  "khao-lak": "https://www.trip.com/hotels/list?city=79294&cityName=Takua Pa&Allianceid=11105102&SID=334804079&trip_sub1=th_khao_lak_hotels&trip_sub3=D20729235",
+  "koh-lanta": "https://www.trip.com/hotels/list?city=90741&cityName=Koh Lanta&Allianceid=11105102&SID=334804079&trip_sub1=th_koh_lanta_hotels&trip_sub3=D20729235",
+  "koh-lipe": "https://www.trip.com/hotels/list?city=36062&cityName=Koh Lipe&Allianceid=11105102&SID=334804079&trip_sub1=th_koh_lipe_hotels&trip_sub3=D20729235",
+  "koh-chang": "https://www.trip.com/hotels/list?city=3764&cityName=Koh Chang&Allianceid=11105102&SID=334804079&trip_sub1=th_koh_chang_hotels&trip_sub3=D20729235",
+  "koh-kood": "https://www.trip.com/hotels/list?city=62195&cityName=Koh Kood&Allianceid=11105102&SID=334804079&trip_sub1=th_koh_kood_hotels&trip_sub3=D20729235",
+  "koh-phangan": "https://www.trip.com/hotels/list?city=36057&cityName=Koh Phangan&Allianceid=11105102&SID=334804079&trip_sub1=th_koh_phangan_hotels&trip_sub3=D20729235",
+  "koh-samui": "https://www.trip.com/hotels/list?city=1229&cityName=Koh Samui&Allianceid=11105102&SID=334804079&trip_sub1=th_koh_samui_hotels&trip_sub3=D20729235",
+  "krabi": "https://www.trip.com/hotels/list?city=1405&cityName=Krabi Town&Allianceid=11105102&SID=334804079&trip_sub1=th_krabi_hotels&trip_sub3=D20729235",
+  "pai": "https://www.trip.com/hotels/list?city=35981&cityName=Pai&Allianceid=11105102&SID=334804079&trip_sub1=th_pai_hotels&trip_sub3=D20729235",
+  "pattaya": "https://www.trip.com/hotels/list?city=622&cityName=Pattaya&Allianceid=11105102&SID=334804079&trip_sub1=th_pattaya_hotels&trip_sub3=D20729235",
+  "phuket": "https://www.trip.com/hotels/list?city=725&cityName=Phuket&Allianceid=11105102&SID=334804079&trip_sub1=th_phuket_hotels&trip_sub3=D20729235",
+  "ayutthaya": "https://www.trip.com/hotels/list?city=36030&cityName=Phra Nakhon Si Ayutthaya&Allianceid=11105102&SID=334804079&trip_sub1=th_ayutthaya_hotels&trip_sub3=D20729235",
+  "sukhothai": "https://www.trip.com/hotels/list?city=6045&cityName=Sukhothai&Allianceid=11105102&SID=334804079&trip_sub1=th_sukhothai_hotels&trip_sub3=D20729235",
+  "surat-thani": "https://www.trip.com/hotels/list?city=1479&cityName=Surat Thani&Allianceid=11105102&SID=334804079&trip_sub1=th_surat_thani_hotels&trip_sub3=D20729235",
+  "koh-tao": "https://www.trip.com/hotels/list?city=19957&cityName=Koh Tao&Allianceid=11105102&SID=334804079&trip_sub1=th_koh_tao_hotels&trip_sub3=D20729235",
+};
+
+const TRIP_GENERATED_FLIGHTS: Partial<Record<string, string>> = {
+  "BKK-CNX": "https://www.trip.com/flights/bangkok-to-chiang-mai/tickets-bkk-cnx/?Allianceid=11105102&SID=334804079&trip_sub1=th_flight_bkk_cnx&trip_sub3=D20729235",
+  "BKK-HKT": "https://www.trip.com/flights/bangkok-to-phuket/tickets-bkk-hkt/?Allianceid=11105102&SID=334804079&trip_sub1=th_flight_bkk_hkt&trip_sub3=D20729235",
+  "BKK-KBV": "https://www.trip.com/flights/bangkok-to-krabi/tickets-bkk-kbv/?Allianceid=11105102&SID=334804079&trip_sub1=th_flight_bkk_kbv&trip_sub3=D20729235",
+  "BKK-USM": "https://www.trip.com/flights/bangkok-to-koh-samui/tickets-bkk-usm/?Allianceid=11105102&SID=334804079&trip_sub1=th_flight_bkk_usm&trip_sub3=D20729235",
+  "BKK-CEI": "https://www.trip.com/flights/bangkok-to-chiang-rai/tickets-bkk-cei/?Allianceid=11105102&SID=334804079&trip_sub1=th_flight_bkk_cei&trip_sub3=D20729235",
+  "BKK-SGN": "https://www.trip.com/flights/bangkok-to-ho-chi-minh-city/tickets-bkk-sgn/?Allianceid=11105102&SID=334804079&trip_sub1=th_flight_bkk_sgn&trip_sub3=D20729235",
+  "BKK-HAN": "https://www.trip.com/flights/bangkok-to-hanoi/tickets-bkk-han/?Allianceid=11105102&SID=334804079&trip_sub1=th_flight_bkk_han&trip_sub3=D20729235",
+  "BKK-DAD": "https://www.trip.com/flights/bangkok-to-da-nang/tickets-bkk-dad/?Allianceid=11105102&SID=334804079&trip_sub1=th_flight_bkk_dad&trip_sub3=D20729235",
+  "CNX-HAN": "https://www.trip.com/flights/chiang-mai-to-hanoi/tickets-cnx-han/?Allianceid=11105102&SID=334804079&trip_sub1=th_flight_cnx_han&trip_sub3=D20729235",
+};
+
+export function generatedFlightLink(from: string, to: string): string | undefined {
+  return TRIP_GENERATED_FLIGHTS[`${from.toUpperCase()}-${to.toUpperCase()}`];
+}
+
 function hotelListPath(row: TripCityEntry): string {
   return `https://www.trip.com/hotels/${row.slug}-hotels-list-${row.id}/`;
 }
@@ -183,6 +224,8 @@ export const cityAirports: Record<StayCity, AirportCode> = {
 };
 
 export function stayLink(city: StayCity, extra: Record<string, string> = {}): string {
+  const generated = TRIP_GENERATED_CITY_HOTELS[city];
+  if (generated && Object.keys(extra).every((k) => k === 'trip_sub1')) return generated;
   const row: TripCityEntry = tripCities[city];
   return `${hotelListPath(row)}?${tripParams({ trip_sub1: row.name, trip_sub3: row.sub3, ...extra })}`;
 }
@@ -212,6 +255,8 @@ export function hotelSearchLink(query: string, city?: StayCity): string {
 }
 
 export function flightLink(from: AirportCode, to: AirportCode): string {
+  const generated = generatedFlightLink(from, to);
+  if (generated) return generated;
   const origin = from.toLowerCase();
   const dest = to.toLowerCase();
   const fromCity = airports[from].city.toLowerCase().replace(/\s+/g, '-');
