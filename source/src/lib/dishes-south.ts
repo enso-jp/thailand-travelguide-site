@@ -56,7 +56,7 @@ export const PHUKET_DISHES: DishRecord[] = dishesForCity('phuket', [
       },
     ],
     related: ['mee-hokkien', 'gaeng-poo-bai-chaplu', 'nam-prik-kung-siap'],
-    photo: '/photos/dish-moo-hong.jpg',
+    photo: '',
     room: 'Raya, Dibuk',
     clock: '10:00 to 22:00',
     faqs: [
@@ -273,7 +273,7 @@ export const PHUKET_DISHES: DishRecord[] = dishesForCity('phuket', [
       },
     ],
     related: ['mee-hokkien', 'oh-aew', 'kopi-phuket'],
-    photo: '/photos/dish-jok.jpg',
+    photo: '/photos/dish-jok-cm.jpg',
     room: 'Go Benz, Town evening',
     clock: 'Evenings except Monday',
     faqs: [

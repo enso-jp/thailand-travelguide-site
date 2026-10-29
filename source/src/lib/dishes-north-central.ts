@@ -401,7 +401,7 @@ export const AYUTTHAYA_DISHES: DishRecord[] = dishesForCity('ayutthaya', [
       },
     ],
     related: ['roti-sai-mai', 'guay-tiew-reua', 'khao-man-gai-ayu'],
-    photo: '/photos/dish-jok.jpg',
+    photo: '/photos/dish-jok-cm.jpg',
     room: 'Chao Phrom Market',
     clock: 'Morning; Monday rest',
     faqs: [
