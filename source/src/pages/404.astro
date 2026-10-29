@@ -1,0 +1,63 @@
+---
+import Base from '../layouts/Base.astro';
+import { pageHref } from '../lib/site';
+import type { Page } from '../lib/content';
+
+const page: Page = {
+  path: '/404',
+  title: 'Page not found',
+  description: 'That page is not on Thailand Guide. Search the site or open a destination hub.',
+  lede: 'That URL is not a page on this guide. Search below or open a destination, itinerary, or city hub.',
+  schema: 'Article',
+  crumbs: [{ name: 'Home', href: '/' }],
+  facts: [],
+  paragraphs: [],
+  faqs: [],
+};
+
+const hubs = [
+  { href: '/bangkok', name: 'Bangkok' },
+  { href: '/chiang-mai', name: 'Chiang Mai' },
+  { href: '/phuket', name: 'Phuket' },
+  { href: '/krabi', name: 'Krabi' },
+  { href: '/koh-samui', name: 'Koh Samui' },
+];
+---
+
+<Base
+  page={page}
+  robots="noindex, nofollow"
+  siteJsonLdOnly
+  documentTitle="Page not found | Thailand Guide"
+  documentDescription="That page is not on Thailand Guide. Search places and routes, or open a destination hub."
+>
+  <article class="section wrap lost-page">
+    <p class="lost-kicker">404</p>
+    <h1>That page is not here.</h1>
+    <p class="lede">
+      The link may be old or mistyped. Search the guide, or open the homepage, destinations, itineraries, or a city hub.
+    </p>
+    <form class="lost-search" action={pageHref('/search')} role="search">
+      <label class="skip" for="lost-q">Search the guide</label>
+      <input
+        id="lost-q"
+        name="q"
+        type="search"
+        placeholder="Search places and routes"
+        autocomplete="off"
+      />
+      <button type="submit">Search</button>
+    </form>
+    <p class="lost-links">
+      <a href={pageHref('/')}>Homepage</a>
+      <a href={pageHref('/destinations')}>Destinations</a>
+      <a href={pageHref('/itineraries')}>Itineraries</a>
+    </p>
+    <h2>Top hubs</h2>
+    <p class="chips">
+      {hubs.map((hub) => (
+        <a class="chip" href={pageHref(hub.href)}>{hub.name}</a>
+      ))}
+    </p>
+  </article>
+</Base>

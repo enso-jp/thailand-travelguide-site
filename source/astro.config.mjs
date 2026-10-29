@@ -14,10 +14,15 @@ function trailingSlashRedirects() {
         for (const page of pages) {
           const withSlash = page.pathname.endsWith('/') ? page.pathname : `${page.pathname}/`;
           const noSlash = withSlash.replace(/\/+$/, '');
-          if (!noSlash || noSlash === '') continue;
+          if (!noSlash || noSlash === '' || noSlash === '/404' || noSlash === '404') continue;
           lines.push(`${noSlash} ${withSlash} 301`);
         }
         writeFileSync(join(dir.pathname, '_redirects'), `${lines.join('\n')}\n`);
+        const html404 = join(dir.pathname, '404.html');
+        const nested404 = join(dir.pathname, '404', 'index.html');
+        if (!existsSync(html404) && existsSync(nested404)) {
+          copyFileSync(nested404, html404);
+        }
         const sitemapZero = join(dir.pathname, 'sitemap-0.xml');
         if (existsSync(sitemapZero)) {
           copyFileSync(sitemapZero, join(dir.pathname, 'sitemap.xml'));
@@ -32,7 +37,7 @@ export default defineConfig({
   trailingSlash: 'always',
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/search'),
+      filter: (page) => !page.includes('/search') && !page.includes('/404'),
       serialize(item) {
         const url = new URL(item.url);
         if (!/\.[a-z0-9]{2,8}$/i.test(url.pathname) && !url.pathname.endsWith('/')) {

@@ -49,7 +49,7 @@ function localFor(page: Page): string | undefined {
 }
 
 export function searchIndex(): SearchItem[] {
-  const pages = allPages();
+  const pages = allPages().filter((page) => page.path !== '/404');
   const items: SearchItem[] = pages.map((page) => {
     const body = [page.lede, ...(page.paragraphs || []), ...(page.facts || []).map((f) => f.value)].join(' ');
     const local = localFor(page);

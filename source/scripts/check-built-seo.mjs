@@ -10,8 +10,10 @@ function walkHtml(dir, files = []) {
   for (const name of readdirSync(dir)) {
     const full = join(dir, name);
     const st = statSync(full);
-    if (st.isDirectory()) walkHtml(full, files);
-    else if (name === 'index.html') files.push(full);
+    if (st.isDirectory()) {
+      if (name === '404') continue;
+      walkHtml(full, files);
+    } else if (name === 'index.html') files.push(full);
   }
   return files;
 }
@@ -21,6 +23,15 @@ if (!existsSync(DIST)) {
   process.exit(1);
 }
 
+if (!existsSync(join(DIST, '404.html'))) {
+  errors.push('dist/404.html is missing');
+} else {
+  const html404 = readFileSync(join(DIST, '404.html'), 'utf8');
+  if (!/noindex/i.test(html404)) errors.push('dist/404.html must be noindex');
+  if (!/G-XWN3TGDF1V/.test(html404)) errors.push('dist/404.html missing GA4 tag');
+  if (!/Thailand\s+<span>Guide<\/span>/.test(html404)) errors.push('dist/404.html missing site wordmark');
+  if (!/name="q"/.test(html404)) errors.push('dist/404.html missing search box');
+}
 if (!existsSync(join(DIST, 'sitemap.xml'))) {
   errors.push('dist/sitemap.xml is missing');
 }
@@ -37,6 +48,9 @@ for (const loc of locs) {
   const url = new URL(loc);
   if (!url.pathname.endsWith('/')) {
     errors.push(`sitemap loc missing trailing slash: ${loc}`);
+  }
+  if (url.pathname === '/404' || url.pathname === '/404/' || url.pathname.endsWith('/404.html')) {
+    errors.push(`sitemap must not include 404: ${loc}`);
   }
 }
 
