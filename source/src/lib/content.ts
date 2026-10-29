@@ -87,6 +87,8 @@ export type Page = {
   tabs?: { href: string; label: string; current?: boolean }[];
   geo?: { lat: number; lon: number; containedIn?: string };
   alternateName?: string;
+  published?: string;
+  modified?: string;
   parentPill?: { name: string; href: string };
   bookingCta?: {
     stayHref: string;

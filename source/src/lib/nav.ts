@@ -240,6 +240,7 @@ export const NAV_SLOTS: NavSlot[] = [
 export const NAV_LINKS = [
   { href: '/thai-food', label: 'Food' },
   { href: '/attractions', label: 'Attractions' },
+  { href: '/stories', label: 'Stories' },
 ];
 
 export const INTEREST_GROUPS = [

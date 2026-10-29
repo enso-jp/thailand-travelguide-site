@@ -120,11 +120,14 @@ export function pageLd(page: Page) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: title,
+    headline: page.published ? page.title : title,
     description,
     url: absUrl(page.path),
     mainEntityOfPage: absUrl(page.path),
     image: page.photo ? absUrl(page.photo) : undefined,
+    datePublished: page.published,
+    dateModified: page.modified ?? page.published,
+    author: page.published ? { '@id': `${site.url}/#organization` } : undefined,
     publisher: { '@id': `${site.url}/#organization` },
   };
 }

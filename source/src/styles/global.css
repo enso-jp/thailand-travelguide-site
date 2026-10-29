@@ -1865,3 +1865,23 @@ th, td {
   max-width: 100%;
   border: 0;
 }
+
+/* Stories */
+.story-list { list-style: none; margin: 1.4rem 0 0; padding: 0; display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); }
+.story-card { display: flex; flex-direction: column; height: 100%; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; background: #fff; color: inherit; text-decoration: none; }
+.story-card:hover { border-color: var(--lacquer); }
+.story-card-media img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+.story-card-copy { display: flex; flex-direction: column; gap: 0.35rem; padding: 0.95rem 1.05rem 1.15rem; }
+.story-card-meta { color: var(--lacquer); text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.78rem; font-weight: 700; }
+.story-card strong { font-size: 1.15rem; line-height: 1.3; color: var(--ink); }
+.story-card-dek { color: var(--muted); font-size: 1rem; line-height: 1.45; }
+.story { max-width: 46rem; }
+.story .place-photo img { width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: 14px; }
+.story-body { max-width: var(--measure); }
+.story-body h2 { margin-top: 1.8rem; }
+.story-body ul { padding-left: 1.2rem; }
+.story-body li { margin: 0.35rem 0; }
+.story-next { margin-top: 2rem; padding: 1.1rem 1.2rem; border: 1px solid var(--line); border-radius: 16px; background: #fff; }
+.story-next h2 { margin: 0 0 0.5rem; font-size: 1.2rem; }
+.story-next ul { margin: 0; padding-left: 1.2rem; }
+.story-next li { margin: 0.4rem 0; }

@@ -306,6 +306,16 @@ const KLOOK_DEEP_LINKS: Record<string, string> = {
   'Thailand itinerary tours': 'https://klook.tpx.li/hxjjyGRa',
 };
 
+/** A Partner-generated Klook link for a known query, or undefined. Never builds a URL. */
+export function generatedKlookLink(query: string): string | undefined {
+  return KLOOK_DEEP_LINKS[query];
+}
+
+/** Generated Trip.com city hotel list, or undefined. */
+export function generatedStayLink(city: string): string | undefined {
+  return TRIP_GENERATED_CITY_HOTELS[city];
+}
+
 /** Travelpayouts click-out to a Klook URL (source 588978, marker 793638). */
 export function klookLink(path: string): string {
   const dest = klookUrl(path);
