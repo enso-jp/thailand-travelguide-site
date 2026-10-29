@@ -48,7 +48,7 @@ export const wave3Pages: Page[] = [
       { label: 'Fast path', value: 'BKK or DMK to USM, then Lomprayah to Thong Sala' },
       { label: 'Night path', value: 'Sleeper to Chumphon, catamaran from Thung Makham Noi' },
       { label: 'Island pier', value: 'Thong Sala; Haad Rin is a different boat' },
-      { label: 'Season', value: 'Easier January to September; Check on arrival in swell' },
+      { label: 'Season', value: 'Easier January to September; confirm in swell' },
     ],
     chips: ['Thong Sala', 'USM or Chumphon', 'Lower Gulf'],
     photo: '/photos/koh-phangan.jpg',
