@@ -137,18 +137,6 @@ const DAY_PHOTO_FIX: Record<string, Record<number, string>> = {
     6: '/photos/phi-phi.jpg',
     9: '/photos/ferry-gulf.jpg',
   },
-  '/itineraries/12-days-chiang-mai-and-hanoi': {
-    2: '/photos/doi-suthep-chedi.jpg',
-  },
-  '/itineraries/14-days-thailand-vietnam-first-timer': {
-    5: '/photos/doi-suthep-chedi.jpg',
-  },
-  '/itineraries/16-days-thailand-vietnam-coasts': {
-    6: '/photos/maya-bay.jpg',
-  },
-  '/itineraries/8-days-samui-and-koh-tao-dive': {
-    1: '/photos/samui-airport.jpg',
-  },
 };
 
 export const INTEREST_PORTRAITS: Record<string, { title: string; href: string; photo: string }[]> = {
@@ -1984,16 +1972,13 @@ function photoFromKeywords(title: string, body: string): string | undefined {
   if (/ratchaprapha|cheow|raft/.test(t)) return '/photos/cheow-lan.jpg';
   if (/khao sok|urt/.test(t)) return '/photos/khao-sok.jpg';
   if (/railay|phra nang|ao nang|hong island|\bhong\b/.test(t)) return '/photos/railay.jpg';
-  if (/maya bay|\bmaya\b/.test(t)) return '/photos/maya-bay.jpg';
-  if (/phi phi/.test(t)) return '/photos/phi-phi.jpg';
+  if (/maya|phi phi/.test(t)) return '/photos/phi-phi.jpg';
   if (/lanta/.test(t)) return '/photos/koh-lanta.jpg';
   if (/lipe/.test(t)) return '/photos/koh-lipe.jpg';
   if (/\bang thong\b/.test(t)) return '/photos/ang-thong.jpg';
   if (/phangan/.test(t)) return '/photos/koh-phangan.jpg';
-  if (/\busm\b|samui airport/.test(t)) return '/photos/samui-airport.jpg';
-  if (/koh tao|open water|certification dive|sea dives/.test(t)) return '/photos/koh-tao.jpg';
-  if (/doi suthep/.test(t)) return '/photos/doi-suthep-chedi.jpg';
-  if (/bua thong|baan dam|golden triangle|mae rim/.test(t)) return '/photos/doi-suthep.jpg';
+  if (/koh tao|dive/.test(t)) return '/photos/koh-tao.jpg';
+  if (/doi suthep|bua thong|baan dam|golden triangle|mae rim/.test(t)) return '/photos/doi-suthep.jpg';
   return undefined;
 }
 

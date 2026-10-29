@@ -302,6 +302,20 @@ for (const file of files) {
     if (rel.startsWith('src/') && /\(\s*(loop(?:\s+page)?|wikipedia|wikivoyage|dnp(?:\s+category\s+\d+)?)\s*\)/i.test(line)) {
       errors.push(`${rel}:${i + 1} scraper/source annotation is not allowed`);
     }
+    if (rel.startsWith('src/')) {
+      const banned = [
+        ['clean' + ' clock', 'clean clock'],
+        ['is a ' + 'roll', 'is a roll'],
+        ['Believe' + ' the', 'Believe the'],
+        ['GitHub' + ' Pages', 'GitHub Pages'],
+        ['return to ' + 'BKK', 'return to BKK'],
+      ];
+      for (const [needle, label] of banned) {
+        if (line.includes(needle)) {
+          errors.push(`${rel}:${i + 1} banned phrase is not allowed (${label})`);
+        }
+      }
+    }
   });
 }
 

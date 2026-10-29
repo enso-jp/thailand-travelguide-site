@@ -207,7 +207,7 @@ export const WAVE23_B: Page[] = [
       'Book [Ang Thong](/koh-samui/ang-thong-marine-park) once if the park is open (300 THB). Skip a default [Phangan](/koh-phangan) hop with small kids; Lomprayah is about 30 minutes but landing days still cost energy. January to September is the Gulf window. Do not add Phuket. Official Thailand Digital Arrival Card (TDAC) steps are on [visas and TDAC](/plan/visas-and-tdac).',
     ],
     days: [
-      ['Land USM', 'No boat. Pool hotel. Learn Grab and the resort shuttle.', '/photos/samui-airport.jpg'],
+      ['Land USM', 'No boat. Pool hotel. Learn Grab and the resort shuttle.', '/photos/koh-samui.jpg'],
       ['Beach reset', 'Shallow sand. Early dinner.', '/photos/chaweng.jpg'],
       ['Village hour', 'Bophut Fisherman Village in the cooler hours.', '/photos/lamai.jpg'],
       ['Pool day', 'Hotel grounds. No scooter.', '/photos/resort-six-senses-samui.jpg'],

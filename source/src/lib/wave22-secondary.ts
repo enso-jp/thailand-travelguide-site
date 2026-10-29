@@ -1696,7 +1696,7 @@ export const wave22SecondaryPages: Page[] = [
     photo: "/photos/doi-suthep.jpg",
     geo: { lat: 17.017, lon: 99.703, containedIn: "Lower North" },
     paragraphs: [
-      "Bangkok Airways flies into Sukhothai Airport (THS) when the schedule fits, and Phitsanulok (PHS) is the cheaper fallback. Old Sukhothai is about 70 km west of that city, about one hour by car or 1 to 1.5 hours by bus or van via the new town, about 12 km east of the old town. The train-plus-bus path works and eats a day, and this is not a same-day train hop like [Ayutthaya](/ayutthaya) from [Bangkok](/bangkok). Sleep in Old Sukhothai so 06:30 is a roll, not a transfer.",
+      "Bangkok Airways flies into Sukhothai Airport (THS) when the schedule fits, and Phitsanulok (PHS) is the cheaper fallback. Old Sukhothai is about 70 km west of that city, about one hour by car or 1 to 1.5 hours by bus or van via the new town, about 12 km east of the old town. The train-plus-bus path works and eats a day, and this is not a same-day train hop like [Ayutthaya](/ayutthaya) from [Bangkok](/bangkok). Sleep in Old Sukhothai so you can start cycling at 06:30 instead of spending that first hour on a transfer.",
       "Inside the [historical park](/sukhothai/historical-park), rent a bicycle at the central gate, and foreigners pay 200 THB for the central zone. A 2026 bicycle add-on is about 10 THB a zone, and songthaews link new town and old town if you booked the wrong pin. Do not tour the inner zone by idling tuk-tuk if you can ride.",
     ],
     sections: [

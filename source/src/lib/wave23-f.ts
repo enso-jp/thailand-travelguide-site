@@ -166,7 +166,7 @@ export const WAVE23_F: Page[] = [
       hop('Bangkok to Chiang Mai', 'Trip.com', 'About 70 to 75 minutes to Chiang Mai (CNX) for the second city.', flightLink('BKK', 'CNX'), '/photos/chiang-mai-airport.jpg', 'flights', 'Search flights'),
     ],
     faqs: [
-      { q: 'Is there a flight to Sukhothai?', a: 'Yes. Bangkok Airways uses Sukhothai Airport (THS). Phitsanulok (PHS) is the cheaper airport when THS is sold out; you still need a road hop of about one hour west to the park.' },
+      { q: 'Is there a flight to Sukhothai?', a: 'Yes. Bangkok Airways uses Sukhothai Airport (THS). Phitsanulok (PHS) is the cheaper airport when THS is sold out; Old Sukhothai is about 70 km / about one hour from Phitsanulok.' },
       { q: 'Day-trip Sukhothai from Bangkok?', a: 'No. Sleep at the park gate.' },
       { q: 'Add Pai?', a: 'Not on seven days. Route 1095 needs two nights of its own.' },
     ],

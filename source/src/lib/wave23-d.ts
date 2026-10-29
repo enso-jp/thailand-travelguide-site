@@ -216,7 +216,7 @@ export const WAVE23_D: Page[] = [
       'Book [Ang Thong](/koh-samui/ang-thong-marine-park) once (300 THB). Lomprayah to [Phangan](/koh-phangan) is about 30 minutes if you insist on a day hop, but this page keeps you on Samui. Keep Phuket off the week.',
     ],
     days: [
-      ['Land USM', 'No boat. Sleep Chaweng, Lamai, or Bophut.', '/photos/samui-airport.jpg'],
+      ['Land USM', 'No boat. Sleep Chaweng, Lamai, or Bophut.', '/photos/koh-samui.jpg'],
       ['Beach and village', 'Bophut evening if you sleep north. Chaweng if you want lights.', '/photos/lamai.jpg'],
       ['Ang Thong day', '300 THB. Back before dark.', '/photos/ang-thong.jpg'],
       ['Second coast', 'Swap bays if the first sand is wrong.', '/photos/resort-six-senses-samui.jpg'],
