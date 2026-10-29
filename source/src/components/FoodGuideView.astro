@@ -121,7 +121,7 @@ const city: StayCity = stayCityFromPath(page.path);
               </ul>
             )}
             {section.table && (
-              <div class="table-wrap">
+              <div class="table-wrap" tabindex="0" role="region" aria-label="Scrollable table">
                 <table>
                   <thead>
                     <tr>{section.table.headers.map((h) => <th set:html={formatInline(h)} />)}</tr>

@@ -28,7 +28,7 @@ function dots(n: number): string {
 
     <section class="home-sheet">
       <div class="sheet-rail" data-carousel>
-        <div class="sheet-row" data-carousel-row tabindex="0">
+        <div class="sheet-row" data-carousel-row tabindex="0" aria-label="Featured stories">
           {
             home.sheet.map((story) => (
               <a class="mini-card" href={pageHref(story.href)}>

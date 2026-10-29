@@ -135,7 +135,7 @@ function guideGridHeading(path: string): string {
 
   {
     tabs && tabs.length > 0 && (
-      <nav class="tabs" aria-label="Sections">
+      <nav class="tabs" aria-label="Sections" tabindex="0">
         {tabs.map((tab) => (
           <a href={pageHref(tab.href)} aria-current={tab.current ? 'page' : undefined}>
             {tab.label}
@@ -161,7 +161,7 @@ function guideGridHeading(path: string): string {
         </ul>
       )}
       {section.table && (
-        <div class="table-wrap">
+        <div class="table-wrap" tabindex="0" role="region" aria-label="Scrollable table">
           <table>
             <thead>
               <tr>
@@ -272,7 +272,7 @@ function guideGridHeading(path: string): string {
           </ul>
         )}
         {section.table && (
-          <div class="table-wrap">
+          <div class="table-wrap" tabindex="0" role="region" aria-label="Scrollable table">
             <table>
               <thead>
                 <tr>

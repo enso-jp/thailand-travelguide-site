@@ -88,7 +88,7 @@ const tabs = [
 
   <FactBar facts={page.facts} />
 
-  <nav class="tabs" aria-label={`${page.title} sections`}>
+  <nav class="tabs" aria-label={`${page.title} sections`} tabindex="0">
     {tabs.map((tab) => <a href={tab.href}>{tab.label}</a>)}
   </nav>
 
@@ -140,7 +140,7 @@ const tabs = [
                 </ul>
               )}
               {section.table && (
-                <div class="table-wrap">
+                <div class="table-wrap" tabindex="0" role="region" aria-label="Scrollable table">
                   <table>
                     <thead>
                       <tr>

@@ -65,7 +65,7 @@ const { regions, active = 'central' } = Astro.props;
   </div>
   <div class="region-swipe">
     <button class="region-swipe-arrow prev" type="button" data-region-prev aria-label="Previous region">‹</button>
-    <div class="region-swipe-row" data-region-swipe-row tabindex="0">
+    <div class="region-swipe-row" data-region-swipe-row tabindex="0" aria-label="Regions">
       {
         regions.map((region) => (
           <article class:list={['region-slide', { 'is-active': region.slug === active }]} data-region-slide={region.slug}>

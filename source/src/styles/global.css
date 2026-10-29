@@ -1799,3 +1799,56 @@ th, td {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+/* Mobile readability and tap targets */
+@media (max-width: 768px) {
+  .jg-card .jg-body p,
+  .aff-copy p,
+  .sister-card p,
+  .sister-route-card p,
+  .sister-lead,
+  .trip-more {
+    font-size: 1rem;
+  }
+  .collage-copy small,
+  .footer-pub-badge,
+  .explore-kicker,
+  .footer-col > span {
+    font-size: 0.75rem;
+  }
+  .chip,
+  .sister-chip,
+  .region-picks button,
+  .tabs a {
+    min-height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+  }
+  .wordmark,
+  .skip {
+    min-height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+  }
+  .chip { padding-inline: 0.75rem; }
+  .sister-chip { padding: 0.3rem 0.85rem; }
+  .footer-col { gap: 0; }
+  .footer-col a,
+  .nav-cols li a {
+    min-height: 2.75rem;
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+  .footer-col .footer-trust-links a {
+    display: inline-flex;
+  }
+  .tabs:focus-visible,
+  .table-wrap:focus-visible,
+  .sheet-row:focus-visible,
+  .region-swipe-row:focus-visible,
+  .portrait-row:focus-visible {
+    outline: 2px solid var(--lacquer);
+    outline-offset: 2px;
+  }
+}
