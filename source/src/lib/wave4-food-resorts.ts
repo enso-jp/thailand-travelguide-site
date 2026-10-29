@@ -359,6 +359,7 @@ export const wave4Pages: Page[] = [
       { label: 'Phuket 2026', value: '19 Bib Gourmand rooms on the island' },
       { label: 'One Chun', value: '48/1 Thep Krasatti Rd; roughly 10:00-22:00' },
       { label: 'The Charm', value: '93 Dibuk Rd; closed Wednesday' },
+      { label: 'Budget', value: 'Moo hong 120 to 180 THB; kanom jeen 40 to 60 THB' },
       { label: 'Season', value: 'Town works all year; west-coast boats follow Nov-Apr' },
     ],
     chips: ['Gaeng som', 'Moo hong', 'Old Town'],
@@ -383,6 +384,7 @@ export const wave4Pages: Page[] = [
         title: 'What to order, and what to skip',
         paragraphs: [
           'Gaeng som should taste sour first, then hot, with turmeric in the colour. If it is sweet coconut, you ordered a different curry. Moo hong should be glossy and soft, not a generic stew. O tao (oyster and taro omelette) and Hokkien mee are the Chinese-Phuket street cousins; hunt those at local stalls, not at a Kata hotel.',
+          '2026 prices in Town: moo hong runs 120 to 180 THB a plate, gaeng som 80 to 150 THB, a Hokkien noodle plate 60 to 90 THB, and kanom jeen nam ya 40 to 60 THB at the Ranong Road market. A Baba relish plate at The Charm is 150 to 300 THB.',
           'Patong barbecue is not Southern food. Island hopping is not a lunch plan. If you are based at Trisara or Laguna, make Old Town a half day: house, coffee on Thalang, Sunday Lard Yai if the date matches.',
         ],
         table: {

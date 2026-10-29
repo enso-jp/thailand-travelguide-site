@@ -1,11 +1,8 @@
-export type FoodSpot = {
-  name: string;
-  nameLocal?: string;
-  address: string;
-  hours: string;
-  price: string;
-  note: string;
-};
+import { BANGKOK_DISHES } from './dishes-bangkok';
+import { CHIANG_MAI_DISHES } from './dishes-chiang-mai';
+import { dishDirectoryItems, dishPath, type DishRecord, type FoodSpot } from './dish-model';
+
+export type { FoodSpot };
 
 export type FoodDish = {
   slug: string;
@@ -48,7 +45,7 @@ export const SIGNATURE_DISHES: FoodDish[] = [
     nameLocal: 'ข้าวซอย',
     line: 'Khao soi is the northern coconut curry noodle with a fried-noodle nest. Eat it at lunch in Chiang Mai for 50 to 80 THB.',
     photo: '/photos/dish-khao-soi-2.jpg',
-    href: '/thai-food/chiang-mai',
+    href: '/thai-food/chiang-mai--khao-soi',
     region: 'North',
     find: 'khao soi ข้าวซอย chiang mai',
   },
@@ -58,7 +55,7 @@ export const SIGNATURE_DISHES: FoodDish[] = [
     nameLocal: 'ผัดกะเพรา',
     line: 'Holy-basil wok with minced pork or chicken and a fried egg. A 2026 plate is often 60 to 90 THB.',
     photo: '/photos/dish-pad-kra-pao.jpg',
-    href: '/thai-food/thai-dishes-to-order-first-trip',
+    href: '/thai-food/bangkok--pad-kra-pao',
     region: 'Bangkok',
     find: 'pad kra pao gaprao ผัดกะเพรา',
   },
@@ -68,7 +65,7 @@ export const SIGNATURE_DISHES: FoodDish[] = [
     nameLocal: 'ต้มยำกุ้ง',
     line: 'Hot and sour prawn soup. Ask for nam khon if you want the creamy coconut version.',
     photo: '/photos/dish-tom-yum.jpg',
-    href: '/thai-food/thai-dishes-to-order-first-trip',
+    href: '/thai-food/bangkok--tom-yum-goong',
     region: 'Central',
     find: 'tom yum goong ต้มยำกุ้ง',
   },
@@ -88,7 +85,7 @@ export const SIGNATURE_DISHES: FoodDish[] = [
     nameLocal: 'ผัดไทย',
     line: 'Thip Samai on Maha Chai is the late classic plate, usually 80 to 150 THB.',
     photo: '/photos/dish-pad-thai.jpg',
-    href: '/thai-food/bangkok',
+    href: '/thai-food/bangkok--pad-thai',
     region: 'Bangkok',
     find: 'pad thai ผัดไทย thip samai',
   },
@@ -108,7 +105,7 @@ export const SIGNATURE_DISHES: FoodDish[] = [
     nameLocal: 'ข้าวมันไก่',
     line: 'Hainan chicken rice from Pratunam lunch shophouses, usually 50 to 70 THB.',
     photo: '/photos/dish-khao-man-gai.jpg',
-    href: '/thai-food/bangkok',
+    href: '/thai-food/bangkok--khao-man-gai',
     region: 'Bangkok',
     find: 'khao man gai ข้าวมันไก่ chicken rice',
   },
@@ -138,7 +135,7 @@ export const SIGNATURE_DISHES: FoodDish[] = [
     nameLocal: 'ก๋วยเตี๋ยวเรือ',
     line: 'Dark-broth boat noodles in the Victory Monument alleys, sold as 20 THB cups.',
     photo: '/photos/dish-boat-noodle.jpg',
-    href: '/thai-food/bangkok',
+    href: '/thai-food/bangkok--guay-tiew-reua',
     region: 'Bangkok',
     find: 'guay tiew reua boat noodle ก๋วยเตี๋ยวเรือ',
   },
@@ -148,7 +145,7 @@ export const SIGNATURE_DISHES: FoodDish[] = [
     nameLocal: 'หอยทอด',
     line: 'Crisp oyster omelette from Talat Phlu or Yaowarat. Share one plate.',
     photo: '/photos/dish-hoi-tod.jpg',
-    href: '/thai-food/bangkok',
+    href: '/thai-food/bangkok--hoi-tod',
     region: 'Bangkok',
     find: 'hoi tod หอยทอด oyster',
   },
@@ -158,7 +155,7 @@ export const SIGNATURE_DISHES: FoodDish[] = [
     nameLocal: 'ข้าวเหนียวมะม่วง',
     line: 'Seasonal mango with coconut sticky rice. Mae Varee on Thong Lo is the named box at 80 to 150 THB.',
     photo: '/photos/dish-mango-sticky.jpg',
-    href: '/thai-food/bangkok',
+    href: '/thai-food/bangkok--mango-sticky-rice',
     region: 'Bangkok',
     find: 'mango sticky rice ข้าวเหนียวมะม่วง mae varee',
   },
@@ -176,32 +173,37 @@ export type CityFoodRow = {
   price?: string;
 };
 
+function dishRows(dishes: DishRecord[]): CityFoodRow[] {
+  return dishes.map((dish) => {
+    const spot = dish.spots[0];
+    return {
+      title: dish.title,
+      nameLocal: dish.nameLocal,
+      href: dishPath(dish),
+      photo: dish.photo,
+      kind: 'dish' as const,
+      summary: `${dish.lede} **${spot.name}** is the named start. ${dish.price}.`,
+      address: `${spot.name}, ${spot.address}`,
+      hours: spot.hours,
+      price: dish.price,
+    };
+  });
+}
+
 export const CITY_FOOD_ROWS: Record<string, CityFoodRow[]> = {
   '/thai-food/bangkok': [
-    { title: 'Pad Thai', nameLocal: 'ผัดไทย', href: '/thai-food/thai-dishes-to-order-first-trip', kind: 'dish', photo: '/photos/dish-pad-thai.jpg', summary: '**Thip Samai** on Maha Chai is the late classic. Queue after 21:00 and share one plate. 80 to 150 THB.', address: 'Thip Samai (Pad Thai Pratu Phi), 313 Maha Chai Rd, Samran Rat, Phra Nakhon, Bangkok 10200', hours: '17:00 to 02:00; closed some Mondays', price: '80 to 150 THB' },
-    { title: 'Pad Kra Pao', nameLocal: 'ผัดกะเพรา', href: '/thai-food/thai-dishes-to-order-first-trip', kind: 'dish', photo: '/photos/dish-pad-kra-pao.jpg', summary: 'Holy basil wok with minced pork or chicken and a fried egg. Lunch shophouses around Thewet and Samsen beat hotel fried rice. 60 to 90 THB.', address: 'Samsen and Thewet lunch shophouses near Krua Apsorn, Dusit', hours: '10:00 to 20:00; many close Sunday', price: '60 to 90 THB' },
-    { title: 'Tom Yum Goong', nameLocal: 'ต้มยำกุ้ง', href: '/thai-food/thai-dishes-to-order-first-trip', kind: 'dish', photo: '/photos/dish-tom-yum.jpg', summary: 'Hot and sour prawn soup. Ask for nam khon if you want coconut. **Je Ngor** on Sukhumvit 20 is the sit-down bowl at 180 to 320 THB.', address: 'Je Ngor, 68/2 Soi Sukhumvit 20, Khlong Toei, Bangkok 10110', hours: '11:00 to 22:00', price: '180 to 320 THB' },
-    { title: 'Guay Tiew Reua', nameLocal: 'ก๋วยเตี๋ยวเรือ', href: '/thai-food/bangkok-street-food', kind: 'dish', photo: '/photos/dish-boat-noodle.jpg', summary: 'Dark-broth boat noodles sold as small cups. Order a few 20 THB cups in the Victory Monument alleys off Phaya Thai Road.', address: 'Victory Monument boat-noodle alleys, Phaya Thai Rd, Ratchathewi', hours: '10:00 to 20:00', price: '20 to 40 THB a cup' },
-    { title: 'Khao Man Gai', nameLocal: 'ข้าวมันไก่', href: '/thai-food/bangkok-street-food', kind: 'dish', photo: '/photos/dish-khao-man-gai.jpg', summary: 'Hainan chicken rice for lunch. **Go-Ang Pratunam** is the named room. Ask for the fermented bean sauce on the side. 50 to 70 THB.', address: 'Go-Ang Pratunam Chicken Rice, 516-518 Phetchaburi Rd, Ratchathewi', hours: '07:00 to 18:00; closed Monday', price: '50 to 70 THB' },
-    { title: 'Hoi Tod', nameLocal: 'หอยทอด', href: '/thai-food/yaowarat-chinatown-food-walk', kind: 'dish', photo: '/photos/dish-hoi-tod.jpg', summary: 'Crisp oyster omelette meant for sharing. **Nai Mong Hoi Thod** in Phraeng Phuton is the named room; Yaowarat is the night add. 80 to 150 THB.', address: 'Nai Mong Hoi Thod, 539 Phraeng Phuton, Phra Nakhon, Bangkok 10200', hours: '18:00 to 01:00', price: '80 to 150 THB' },
-    { title: 'Mango Sticky Rice', nameLocal: 'ข้าวเหนียวมะม่วง', href: '/thai-food/thai-dishes-to-order-first-trip', kind: 'dish', photo: '/photos/dish-mango-sticky.jpg', summary: 'Seasonal fruit with coconut sticky rice. **Mae Varee** boxes on Thong Lo sell out. Do not hunt it in July and expect the same plate. 80 to 150 THB.', address: 'Mae Varee, 1210 Sukhumvit Rd, Phra Khanong, Khlong Toei (Thong Lo)', hours: '06:00 to 22:00', price: '80 to 150 THB' },
-    { title: 'Guay Jub', nameLocal: 'ก๋วยจั๊บ', href: '/thai-food/yaowarat-chinatown-food-walk', kind: 'dish', photo: '/photos/dish-guay-jub.jpg', summary: 'Peppery rolled noodles and offal. **Nai Ek** is the named Yaowarat shophouse. Sit down. 60 to 100 THB.', address: 'Nai Ek Rolled Noodles, 398-402 Yaowarat Rd, Samphanthawong', hours: '16:00 to 23:00; Monday rest', price: '60 to 100 THB' },
-    { title: 'Jay Fai crab omelette', nameLocal: 'เจ๊ไฝ', href: '/thai-food/bangkok-bib-gourmand', kind: 'dish', summary: 'Raan Jay Fai is the one-star crab omelette that still cooks like a street wok. Michelin lists walk-in only, Wednesday to Saturday, 09:00 to 19:30; confirm closures on Instagram @jayfaibangkok. Budget 1,000 THB+ a head and go at opening if you refuse a long queue.', address: 'Raan Jay Fai, 327 Maha Chai Rd, Samran Rat, Phra Nakhon, Bangkok 10200', hours: '09:00 to 19:30 Wed to Sat; confirm @jayfaibangkok', price: '1,000 THB+ a head' },
+    ...dishRows(BANGKOK_DISHES),
     { title: 'Or Tor Kor fruit', nameLocal: 'อ.ต.ก.', href: '/thai-food/or-tor-kor-and-bangkok-fresh-markets', kind: 'place', summary: 'Graded fruit and northern sausages in cool air. Morning only at MRT Kamphaeng Phet. This is not a dinner market.', address: 'Or Tor Kor Market, Kamphaeng Phet Rd, Chatuchak, Bangkok 10900', hours: '06:00 to 18:00', price: 'Fruit by weight' },
     { title: 'Wang Lang lunch', nameLocal: 'วังหลัง', href: '/thai-food/wang-lang-and-talat-noi', kind: 'place', summary: 'Siriraj-side ferry lunch across from Tha Chang. Pots empty by 14:00. Plates 40 to 80 THB.', address: 'Wang Lang Market, Arun Amarin Rd, Bangkok Noi', hours: '07:00 to 14:00', price: '40 to 80 THB' },
     { title: 'Banthat Thong late', nameLocal: 'บรรทัดทอง', href: '/thai-food/banthat-thong-road-food-strip', kind: 'place', summary: 'Chula night strip from MRT Sam Yan. **Jeh O Chula** (Michelin Bib Gourmand) is the Mama tom yum pot at 150 to 300 THB, not a separate shop called Jeh O Mama.', address: 'Jeh O Chula, 113 Soi Charat Mueang, Rong Mueang, Pathum Wan, Bangkok 10330', hours: '15:50 to 00:00 daily', price: '150 to 300 THB' },
   ],
   '/thai-food/chiang-mai': [
-    { title: 'Khao Soi', nameLocal: 'ข้าวซอย', href: '/thai-food/chiang-mai-khao-soi-and-markets', kind: 'dish', photo: '/photos/dish-khao-soi-2.jpg', summary: 'Khao soi is the coconut curry noodle with a fried egg-noodle nest, eaten at lunch only. **Khao Soi Khun Yai** inside the north moat keeps a 10:00 to 14:00 window at 50 to 80 THB.', address: 'Khao Soi Khun Yai, between Sri Poom and Chang Moi inside the north moat, Chiang Mai', hours: '10:00 to 14:00; Sunday rest', price: '50 to 80 THB' },
-    { title: 'Khao Soi Lam Duan', nameLocal: 'ข้าวซอยลำดวน', href: '/thai-food/chiang-mai-khao-soi-and-markets', kind: 'dish', photo: '/photos/thai-food-lanna.jpg', summary: 'Khao Soi Lam Duan on Faham Road is the darker-broth classic on the same lunch clock. Order one bowl at 50 to 70 THB, then walk the river.', address: 'Khao Soi Lam Duan Faham, 352/22 Charoenrat Rd, Wat Ket', hours: '10:00 to 15:00', price: '50 to 70 THB' },
-    { title: 'Sai Ua', nameLocal: 'ไส้อั่ว', href: '/thai-food/northern-lanna', kind: 'dish', photo: '/photos/dish-sai-ua.jpg', summary: 'Herb sausage from a market grill, not a hotel breakfast. Buy it at **Warorot (Kad Luang)** and pair it with sticky rice. 20 to 40 THB a stick.', address: 'Warorot Market (Kad Luang), Wichayanon Rd, Chang Moi', hours: '06:00 to 16:00', price: '20 to 40 THB a stick' },
-    { title: 'Nam Prik Ong', nameLocal: 'น้ำพริกอ่อง', href: '/thai-food/northern-lanna', kind: 'dish', photo: '/photos/dish-nam-prik-ong.jpg', summary: 'Pork and tomato dip with boiled veg and pork crackling. **Huen Phen** still sets a Lanna table at lunch. 80 to 150 THB.', address: 'Huen Phen, 112 Ratchamanka Rd, Phra Sing, Chiang Mai', hours: '08:00 to 16:00 lunch room; dinner wing later', price: '80 to 150 THB' },
-    { title: 'Khao Kha Moo', nameLocal: 'ข้าวขาหมู', href: '/thai-food/chiang-mai-khao-soi-and-markets', kind: 'dish', photo: '/photos/dish-khao-kha-moo.jpg', summary: 'Khao kha moo is stewed pork leg on rice, and the jelly around the bone is why you order it. The Chang Phuak (North Gate) strip is the evening cluster at 60 to 70 THB.', address: 'Chang Phuak (North Gate) khao kha moo shophouses, Chiang Mai', hours: '08:00 to 15:00 lunch; evening strip later', price: '50 to 70 THB' },
-    { title: 'Kanom Jeen Nam Ngiao', nameLocal: 'ขนมจีนน้ำเงี้ยว', href: '/thai-food/northern-lanna', kind: 'dish', photo: '/photos/dish-kanom-jeen-2.jpg', summary: 'Tai Yai rice-noodle soup with tomato and pork, different from southern nam ya. **Kiat Ocha** on Inthawarorot is the named breakfast room. 40 to 60 THB.', address: 'Kiat Ocha, 5-7 Inthawarorot Rd, Si Phum', hours: '06:00 to 15:00; closed Monday', price: '40 to 60 THB' },
+    ...dishRows(CHIANG_MAI_DISHES),
+    { title: 'Khao Soi Lam Duan', nameLocal: 'ข้าวซอยลำดวน', href: '/thai-food/chiang-mai--khao-soi', kind: 'place', summary: 'Khao Soi Lam Duan on Faham Road is the darker-broth classic on the same lunch clock. Order one bowl at 50 to 70 THB, then walk the river.', address: 'Khao Soi Lam Duan Faham, 352/22 Charoenrat Rd, Wat Ket', hours: '10:00 to 15:00', price: '50 to 70 THB' },
+    { title: 'Khao Soi Mae Manee', nameLocal: 'ข้าวซอยแม่มณี', href: '/thai-food/chiang-mai--khao-soi', kind: 'place', summary: 'Khao Soi Mae Manee is the Chang Phueak lunch room north of the moat, not inside the Old City. TAT lists 09:00 to 15:30 at 40 to 120 THB. Arrive before 13:00.', address: 'Khao Soi Mae Manee, 18 Soi Chotana 24, Chotana Rd, Chang Phueak, Chiang Mai 50300', hours: '09:00 to 15:30', price: '50 to 80 THB' },
     { title: 'Sunday Walking Street snacks', nameLocal: 'ถนนคนเดิน', href: '/chiang-mai/old-city', kind: 'place', summary: 'Ratchadamnoen after 16:00 on Sunday. Grills and dessert cups, not a temple substitute. 20 to 60 THB.', address: 'Ratchadamnoen Rd, Phra Sing, Chiang Mai 50200', hours: 'Sunday from 16:00', price: '20 to 60 THB' },
     { title: 'Warorot breakfast', nameLocal: 'กาดหลวง', href: '/thai-food/chiang-mai-khao-soi-and-markets', kind: 'place', summary: 'Morning wholesale hall for jok, coffee, and fruit. Go before 09:00. 30 to 60 THB.', address: 'Warorot Market, Wichayanon Rd, Chang Moi, Chiang Mai', hours: '05:00 to 17:00', price: '30 to 60 THB' },
     { title: 'Nimman pour-over', nameLocal: 'นิมมานเหมินท์', href: '/chiang-mai/nimmanhaemin', kind: 'place', summary: 'Cafe morning west of the moat. **GRAPH Quarter** sits at 25 Soi 13 Sirimangkalajarn. 80 to 150 THB. Maya basement is air-con only.', address: 'GRAPH Quarter, 25 Soi 13 Sirimangkalajarn Rd, Suthep, Chiang Mai 50200', hours: '09:00 to 17:00', price: '80 to 150 THB' },
-    { title: 'Khao Soi Mae Manee', nameLocal: 'ข้าวซอยแม่มณี', href: '/thai-food/chiang-mai-khao-soi-and-markets', kind: 'dish', summary: 'Khao Soi Mae Manee is the Chang Phueak lunch room north of the moat, not inside the Old City. TAT lists 09:00 to 15:30 at 40 to 120 THB. Arrive before 13:00.', address: 'Khao Soi Mae Manee, 18 Soi Chotana 24, Chotana Rd, Chang Phueak, Chiang Mai 50300', hours: '09:00 to 15:30', price: '50 to 80 THB' },
   ],
   '/thai-food/phuket': [
     { title: 'Mee Hokkien', nameLocal: 'หมี่ฮกเกี้ยน', href: '/thai-food/phuket-old-town-hokkien-and-peranakan-food', kind: 'dish', summary: 'Yellow noodles in dark gravy. **Kopitiam by Wilai** at 18 Thalang Road is the named Old Town lunch. 60 to 105 THB.', address: 'Kopitiam by Wilai, 18 Thalang Rd, Talat Yai, Phuket 83000', hours: '11:00 to 20:00; Sunday rest', price: '60 to 105 THB' },
@@ -279,6 +281,7 @@ export function foodDirectory(): DirectoryItem[] {
       find: dish.find,
       letter: dish.title[0].toUpperCase(),
     })),
+    ...dishDirectoryItems([...BANGKOK_DISHES, ...CHIANG_MAI_DISHES]),
   ];
   const extra: DirectoryItem[] = [
     { title: 'Bangkok street food', href: '/thai-food/bangkok-street-food', line: 'Bangkok street food is rail-fed stalls and lunch shophouses.', find: 'bangkok street', letter: 'B' },

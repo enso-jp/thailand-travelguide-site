@@ -66,6 +66,7 @@ export function searchIndex(): SearchItem[] {
   });
 
   for (const dish of SIGNATURE_DISHES) {
+    if (items.some((item) => item.href === pageHref(dish.href))) continue;
     items.push({
       title: dish.title,
       localScript: dish.nameLocal,

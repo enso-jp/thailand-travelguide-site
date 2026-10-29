@@ -2,6 +2,7 @@ import type { Page } from './content';
 import { WAVE22_TITLE_CORE } from './wave22-bangkok';
 import { WAVE22_SECONDARY_TITLE_CORE } from './wave22-secondary';
 import { WAVE23_TITLE_CORE } from './wave23-itineraries';
+import { DISH_TITLE_CORE } from './dish-pages';
 import { WAVE22_SOUTH_TITLE_CORE } from './wave22-south';
 import { WAVE22_GULF_NORTH_TITLE_CORE } from './wave22-gulf-north';
 
@@ -193,6 +194,7 @@ const TITLE_CORE: Record<string, string> = {
   ...WAVE22_GULF_NORTH_TITLE_CORE,
   ...WAVE22_SECONDARY_TITLE_CORE,
   ...WAVE23_TITLE_CORE,
+  ...DISH_TITLE_CORE,
 };
 
 function visible(text: string): string {

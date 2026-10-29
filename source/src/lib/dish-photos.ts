@@ -1,4 +1,6 @@
 import { CITY_FOOD_ROWS, SIGNATURE_DISHES, type CityFoodRow, type FoodDish } from './food-catalog';
+import { BANGKOK_DISHES } from './dishes-bangkok';
+import { CHIANG_MAI_DISHES } from './dishes-chiang-mai';
 import { UniquePhotos } from './photos';
 
 /** Files that actually show a plated Thai dish, not a street or temple. */
@@ -32,6 +34,9 @@ export const DISH_PHOTO_KEYS = new Set([
   'dish-gai-yang',
   'dish-nam-tok',
   'thai-food-lanna',
+  ...[...BANGKOK_DISHES, ...CHIANG_MAI_DISHES]
+    .map((dish) => String(dish.photo || '').replace(/^\/photos\//, '').replace(/\.[^.]+$/, ''))
+    .filter((key) => key.startsWith('dish-')),
 ]);
 
 export function photoKey(photo?: string): string {

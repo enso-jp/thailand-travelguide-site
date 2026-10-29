@@ -17,6 +17,7 @@ import { wave6Pages } from './wave6-subguides';
 import { wave7Pages } from './wave7-itineraries-parks';
 import { wave9Pages } from './wave9-attractions';
 import { wave10Pages } from './wave10-food-guides';
+import { dishPages } from './dish-pages';
 import { WAVE11_INTEREST_PAGES } from './wave11-interests';
 import { WAVE12_ITINERARY_PAGES } from './wave12-itineraries';
 import { WAVE23_ITINERARY_PAGES } from './wave23-itineraries';
@@ -4137,6 +4138,7 @@ const rawPages: Page[] = [
   ...wave7Pages,
   ...wave9Pages,
   ...wave10Pages,
+  ...dishPages,
   ...WAVE11_INTEREST_PAGES,
   ...WAVE12_ITINERARY_PAGES,
   ...WAVE23_ITINERARY_PAGES,

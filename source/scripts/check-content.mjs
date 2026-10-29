@@ -331,6 +331,22 @@ for (const route of REQUIRED_ROUTES) {
   }
 }
 
+{
+  const bkkDishes = readFileSync(join(ROOT, 'src/lib/dishes-bangkok.ts'), 'utf8');
+  const cmDishes = readFileSync(join(ROOT, 'src/lib/dishes-chiang-mai.ts'), 'utf8');
+  const contentSrc = readFileSync(join(ROOT, 'src/lib/content.ts'), 'utf8');
+  const bkkCount = (bkkDishes.match(/slug: '/g) || []).length;
+  const cmCount = (cmDishes.match(/slug: '/g) || []).length;
+  if (bkkCount < 40) errors.push(`Bangkok dish catalog has ${bkkCount} slugs; need at least 40`);
+  if (cmCount < 30) errors.push(`Chiang Mai dish catalog has ${cmCount} slugs; need at least 30`);
+  if (!bkkDishes.includes("slug: 'pad-kra-pao'")) errors.push('missing Bangkok pad-kra-pao dish');
+  if (!cmDishes.includes("slug: 'khao-soi'")) errors.push('missing Chiang Mai khao-soi dish');
+  if (!contentSrc.includes('...dishPages')) errors.push('content.ts must spread dishPages');
+  if (!readFileSync(join(ROOT, 'src/lib/dish-pages.ts'), 'utf8').includes('dishPath')) {
+    errors.push('dish-pages.ts must build /thai-food/<city>--<slug> paths');
+  }
+}
+
 const partners = readFileSync(join(ROOT, 'src/lib/partners.ts'), 'utf8');
 for (const token of ['11105102', '334225872', '588978', '793638']) {
   if (!partners.includes(token)) {

@@ -122,7 +122,7 @@ export const wave10Pages: Page[] = [
         id: 'rooms',
         title: 'Jeh O, milk bread, Somboon, soy milk',
         paragraphs: [
-          'Nueng Nom Nua is the toasted milk-bread shop. Order a loaf to share, not a second dinner. Somboon Seafood Banthat Thong is the original flagship on this road, known for the curry crab that started here. Haeundae and CQK are the Korean barbecue and hotpot rooms on the same strip when the table wants a pot, not a stool. Jae Wan is sweet soy milk and ginkgo, useful at breakfast or as a late cool-down after Jeh O. Elvis Suki\'s Michelin Bib Gourmand shop sits on Soi Yotse, off this road; do not treat it as a Banthat Thong pin.',
+          'Nueng Nom Nua is the toasted milk-bread shop. Order a loaf to share, not a second dinner. Somboon Seafood Banthat Thong is the original flagship on this road, known for the curry crab that started here. Haeundae and CQK are the Korean barbecue and hotpot rooms on the same strip when the table wants a pot, not a stool. Jae Wan is sweet soy milk and ginkgo, useful at breakfast or as a late cool-down after Jeh O. Elvis Suki has a branch on this road, but its Michelin Bib Gourmand shop is the original on Soi Yotse in Pom Prap, near Hua Lamphong.',
         ],
         table: {
           headers: ['Stop', 'What you order', 'How you use it'],

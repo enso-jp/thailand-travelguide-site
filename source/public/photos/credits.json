@@ -1023,5 +1023,140 @@
     "author": "Movses",
     "license": "CC BY-SA 4.0",
     "source": "https://commons.wikimedia.org/wiki/File:Khlong_Bang_Niang_estuary.jpeg"
+  },
+  "dish-pad-see-ew": {
+    "author": "stu_spivack",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pad_see_ew.jpg"
+  },
+  "dish-rad-na": {
+    "author": "Takeaway",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kuai-tiao_rat_na_mu.JPG"
+  },
+  "dish-pad-kee-mao": {
+    "author": "Takeaway",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sen_yai_phat_khi_mao.jpg"
+  },
+  "dish-panang": {
+    "author": "Takeaway",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Phanaeng_mu.jpg"
+  },
+  "dish-tom-kha": {
+    "author": "Vysotsky",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tom_kha_kai.jpg"
+  },
+  "dish-moo-ping": {
+    "author": "Phoebus 28",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mu_ping.jpg"
+  },
+  "dish-khanom-krok": {
+    "author": "Takeaway",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Khanom_khrok.jpg"
+  },
+  "dish-pa-tong-go": {
+    "author": "Phoebus 28",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:%E0%B8%9B%E0%B8%B2%E0%B8%97%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B9%82%E0%B8%81%E0%B9%8B.jpg"
+  },
+  "dish-yen-ta-fo": {
+    "author": "surtr",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Yen_ta_fo_noodles.jpg"
+  },
+  "dish-khao-kluk-kapi": {
+    "author": "Bitterschoko",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Khao_khluk_kapi,_Bangkok,_2017-11-20.jpg"
+  },
+  "dish-satay": {
+    "author": "Athikhun",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pork_satay_2022.jpg"
+  },
+  "dish-tod-mun": {
+    "author": "pelican from Tokyo, Japan",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Thai_fish_cakes_(13982993054).jpg"
+  },
+  "dish-khao-pad": {
+    "author": "chomjong",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Khao_phat.jpg"
+  },
+  "dish-duck-noodle": {
+    "author": "Vee Satayamas from Bangkok, Thailand",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Yellow_noodle_soup_with_duck_at_Urai_Roasted_Duck,_Nawamin_Road_(8636850619).jpg"
+  },
+  "dish-khanom-buang": {
+    "author": "Paul_012",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Khanom_bueang.jpg"
+  },
+  "dish-tub-tim-grob": {
+    "author": "Chensiyuan at English Wikipedia",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tub_tim_krob_in_Singapore_-_20050520.jpg"
+  },
+  "dish-khao-tom": {
+    "author": "Takeaway",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Khao_tom_pla.jpg"
+  },
+  "dish-guay-tiew-tom-yum": {
+    "author": "lazy fri13th",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kuai_tiao_tom_yam_1.jpg"
+  },
+  "dish-nam-prik-kapi": {
+    "author": "Idear409",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Nam_Phrik_Kapi_(Shrimp_Paste_Sauce).jpg"
+  },
+  "dish-nam-prik-noom": {
+    "author": "Takeaway",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Nam_phrik_num.jpg"
+  },
+  "dish-gaeng-ho": {
+    "author": "Takeaway",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kaeng_ho.jpg"
+  },
+  "dish-nam-prik-kha": {
+    "author": "Takeaway",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Nam_phrik_kha.JPG"
+  },
+  "dish-naem": {
+    "author": "Takeaway",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Naem_khluk.jpg"
+  },
+  "dish-tam-khanun": {
+    "author": "Takeaway",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tam_khanun.jpg"
+  },
+  "dish-gaeng-om": {
+    "author": "Xufanc",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kaeng_khae-963.JPG"
+  },
+  "dish-sai-krok": {
+    "author": "Vee Satayamas",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sai_krok_Isan.jpg"
+  },
+  "dish-bua-loi": {
+    "author": "Bestyful",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Bua_Loi_with_sweet_egg,_taro_flesh_and_coconut_flesh.JPG"
   }
 }
