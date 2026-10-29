@@ -33,7 +33,7 @@ If a money page has no `.aff-row`, add one. If it has five, cut to the three tha
 ## Thursday: monsoon and freshness
 
 - Recheck ferry language if you are in a shoulder month.
-- Recheck TDAC and 60-day visa-free copy against official pages.
+- Recheck TDAC (file within 3 days before arrival) and 30-day visa-free copy against official pages.
 - Add a dated note only when a rule changed. Do not stamp every page with today's date.
 
 ## Friday: scoreboard

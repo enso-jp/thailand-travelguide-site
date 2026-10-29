@@ -57,6 +57,8 @@ export type Section = {
   bullets?: string[];
   cards?: EditorialCard[];
   table?: Table;
+  affiliates?: Affiliate[];
+  lead?: boolean;
 };
 
 export type Page = {
@@ -98,6 +100,18 @@ function klook(title: string, kicker: string, body: string, href: string, photo:
   return { title, kicker, body, href, cta, photo, partner: 'klook' };
 }
 
+function flights(title: string, kicker: string, body: string, href: string, photo: string, cta = 'Search flights'): Affiliate {
+  return { title, kicker, body, href, cta, photo, partner: 'flights' };
+}
+
+function train(title: string, kicker: string, body: string, href: string, photo: string, cta = 'Search trains'): Affiliate {
+  return { title, kicker, body, href, cta, photo, partner: 'train' };
+}
+
+function transfer(title: string, kicker: string, body: string, href: string, photo: string, cta = 'Book transfer'): Affiliate {
+  return { title, kicker, body, href, cta, photo, partner: 'transfer' };
+}
+
 const rawPages: Page[] = [
   {
     path: "/",
@@ -118,7 +132,7 @@ const rawPages: Page[] = [
       },
       {
         "label": "Visa",
-        "value": "60-day visa-free for US, UK, and most EU passports"
+        "value": "30-day visa-free for US, UK, and most EU passports from 15 Sep 2026"
       },
       {
         "label": "Season split",
@@ -549,7 +563,7 @@ const rawPages: Page[] = [
     path: "/plan",
     title: "Plan a trip to Thailand",
     description: "Season, visas and TDAC, trains, eSIM, money, and how you move in Bangkok: the lock-ins that decide a first trip.",
-    lede: "Thailand runs two separate island monsoon calendars, not one winter. If you land on a US, UK, or most EU passport, the 60-day visa-free stamp still applies, and you submit TDAC before the flight.",
+    lede: "Thailand runs two separate island monsoon calendars, not one winter. If you land on a US, UK, or most EU passport, the tourist visa-free stamp is 30 days from 15 September 2026, and you submit TDAC before the flight.",
     schema: "Article",
     crumbs: [
       {
@@ -560,7 +574,7 @@ const rawPages: Page[] = [
     facts: [
       {
         "label": "Entry",
-        "value": "60-day visa-free plus TDAC"
+        "value": "30-day visa-free plus TDAC from 15 Sep 2026"
       },
       {
         "label": "Season",
@@ -2071,7 +2085,7 @@ const rawPages: Page[] = [
     path: "/itineraries/first-week-7-days",
     title: "7-Day Thailand Itinerary: Bangkok plus one fork",
     description: "Thailand itinerary for 7 days: 3 nights Bangkok, then Chiang Mai or one south coast. Not both seas. Fly the 70-minute hop.",
-    lede: "A first week has one fork after Bangkok. North for temples and food. South for a beach. Pick with the monsoon, not with a map that shows both.",
+    lede: "A first week suits planners who want Bangkok plus one other place. North is temples and food. South is one beach. Pick with the monsoon, not with a map that shows both seas.",
     schema: "Article",
     crumbs: [
       {
@@ -2099,7 +2113,35 @@ const rawPages: Page[] = [
     ],
     photo: "/photos/bangkok.jpg",
     paragraphs: [
-      "A first week has one fork after Bangkok. Three nights in the city is enough. The remaining four nights belong to one other place. The fork flight is about 70 minutes to CNX, HKT, USM, or KBV."
+      "Three Bangkok nights are enough. The remaining four nights belong to Chiang Mai, Phuket, Samui, or Krabi, not two of them. The fork flight is about 70 minutes to CNX, HKT, USM, or KBV."
+    ],
+    sections: [
+      {
+        id: 'fork',
+        lead: true,
+        title: 'Pick the fork before you book day 4',
+        paragraphs: [
+          'Do not hold both a Chiang Mai sleeper and a Phuket beach. Book the first Sukhumvit nights, then one exit. [Bangkok to Chiang Mai](/get-there/bangkok-to-chiang-mai) is the north hop. [Bangkok to Phuket](/get-there/bangkok-to-phuket) or [Bangkok to Koh Samui](/get-there/bangkok-to-koh-samui) is the coast hop. File [TDAC](/plan/visas-and-tdac) before you fly in.',
+        ],
+        bullets: [
+          '**North:** temples and food. Fly BKK or DMK to CNX, or take SRT 9 from Krung Thep Aphiwat at 18:40, due Chiang Mai 07:15 (SRT 2026 timetable).',
+          '**Andaman:** west-coast beach. Fly to HKT, then 45 to 90 minutes to Kata, Kamala, or Surin. Easier November to April.',
+          '**Gulf:** Samui strip or a quieter north coast. Fly to USM. Easier January to September.',
+        ],
+        table: {
+          headers: ['Fork', 'How', 'Book'],
+          rows: [
+            ['Chiang Mai', 'About 70 min air, or SRT 9 overnight', 'CNX flight or sleeper berth'],
+            ['Phuket', 'About 80 min to HKT', 'West-coast hotel, not "Phuket" as one town'],
+            ['Koh Samui', 'About 70 min to USM', 'Chaweng if you land late; north coast if you want quiet'],
+          ],
+        },
+        affiliates: [
+          stay('Sukhumvit first nights', 'BTS Nana to Thonglor', 'Sleep on the Skytrain spine. Asok or Phrom Phong if you want a calm walk.', stayAreaLink('sukhumvit'), '/photos/sukhumvit.jpg'),
+          flights('North fork: BKK to CNX', 'Trip.com', 'About 70 minutes. Match the Bangkok airport you already use.', flightLink('BKK', 'CNX'), '/photos/chiang-mai.jpg'),
+          flights('Andaman fork: BKK to HKT', 'Trip.com', 'About 80 minutes, then a west-coast car. Skip the night bus.', flightLink('BKK', 'HKT'), '/photos/phuket.jpg'),
+        ],
+      },
     ],
     days: [
       {
@@ -2117,13 +2159,13 @@ const rawPages: Page[] = [
       {
         "n": 3,
         "title": "City buffer",
-        "body": "Siam, Chinatown, or a rest day. Fly or train tonight if you take the sleeper north.",
+        "body": "Siam, Chinatown, or a rest day. If you take SRT 9, leave for Krung Thep Aphiwat (not Hua Lamphong) in the late afternoon. The 18:40 sleeper is due Chiang Mai at 07:15.",
         "photo": "/photos/riverside.jpg"
       },
       {
         "n": 4,
         "title": "Fork day",
-        "body": "Chiang Mai Old City, or a HKT/USM/KBV landing and a beach transfer.",
+        "body": "Chiang Mai Old City, or a HKT, USM, or KBV landing and a named-beach transfer. Do not boat to Phi Phi the same afternoon you land HKT.",
         "photo": "/photos/chiang-mai.jpg"
       },
       {
@@ -2146,21 +2188,30 @@ const rawPages: Page[] = [
       }
     ],
     affiliates: [
-      stay("Bangkok", "First three nights", "Sukhumvit keeps the BTS simple.", stayLink('bangkok'), "/photos/bangkok.jpg"),
-      {title: "The fork flight", kicker: "Trip.com", body: "BKK-CNX, BKK-HKT, or BKK-USM.", href: flightLink('BKK', 'CNX'), cta: "Search flights", photo: "/photos/chiang-mai.jpg", partner: "flights"},
+      train("North fork sleeper", "SRT 9 from Krung Thep Aphiwat", "18:40 to 07:15 on the 2026 board. Book a berth if you want to sleep.", trainLink('Bangkok', 'Chiang Mai'), "/photos/chiang-mai-old-city.jpg"),
+      flights("Gulf fork: BKK to USM", "Trip.com", "About 70 minutes. Use this only if the monsoon points at Samui, not Phuket.", flightLink('BKK', 'USM'), '/photos/chaweng.jpg'),
+      transfer("BKK airport car", "Suvarnabhumi", "Use this on night one if you land after 22:00 or with luggage.", transferLink('BKK'), "/photos/bts.jpg"),
     ],
     faqs: [
       {
         "q": "North or south on a first week?",
         "a": "North if you care about food and wats. South if you need a beach. The 14-day plan is how you do both."
+      },
+      {
+        "q": "Flight or SRT 9 to Chiang Mai?",
+        "a": "Fly if day 4 is a temple morning you want intact. Take SRT 9 if you want the overnight from Krung Thep Aphiwat (18:40 to 07:15 on the 2026 SRT board). Book the berth, not a day seat, if you need sleep."
+      },
+      {
+        "q": "Can you add Phuket and Samui on a first week?",
+        "a": "No. That is two seas and a wasted transfer day. Pick one coast, or stay north."
       }
     ],
   },
   {
     path: "/itineraries/south-islands-10-days",
-    title: "10-Day South Thailand Itinerary: one sea only",
+    title: "10-Day South Thailand Itinerary: Andaman vs Gulf",
     description: "What to see in south Thailand in 10 days: Andaman (Phuket, Krabi, Khao Sok) Nov-Apr, or Gulf (Samui, Phangan, Tao) Jan-Sep. Do not cross seas.",
-    lede: "A 10-day southern route works best if you commit to one sea: the Andaman coast from November to April, or the Lower Gulf from January to September. Crossing Phuket to Samui on a first south trip burns a day you will not get back.",
+    lede: "A 10-day south trip fits travelers who will pick one sea, not both. Andaman (Phuket, Krabi, Khao Sok) from November to April. Gulf (Samui, Phangan, Tao) from January to September. Crossing Phuket to Samui burns a day you will not get back.",
     schema: "Article",
     crumbs: [
       {
@@ -2189,7 +2240,34 @@ const rawPages: Page[] = [
     photo: "/photos/phuket.jpg",
     paragraphs: [
       "Stay on one sea. Andaman version: Phuket two nights, Krabi or Railay three, Phi Phi one, Khao Sok one, buffer two. Phuket to Krabi is about 2 to 3 hours by van.",
-      "Gulf version: Samui three, Phangan three, optional Tao two, buffer two. Ferries in the morning. The Lomprayah Samui to Thong Sala catamaran is about 30 minutes. Seatran takes about 45."
+      "Gulf version: Samui three, Phangan three, optional Tao two, buffer two. Ferries in the morning. The Lomprayah Samui to Thong Sala catamaran is about 30 minutes (lomprayah.com). Seatran Discovery from Bangrak is about 45."
+    ],
+    sections: [
+      {
+        id: 'one-sea',
+        lead: true,
+        title: 'Book the sea you will actually use',
+        paragraphs: [
+          'October sits on the Andaman wet shoulder and the Gulf wet peak. If you land in late October, prefer Samui only if you accept rain days; prefer Phuket only if a resort is the point and boats can cancel. [When to go](/plan/when-to-go) is the calendar. [Bangkok to Phuket](/get-there/bangkok-to-phuket) and [Bangkok to Koh Samui](/get-there/bangkok-to-koh-samui) are the air hops.',
+        ],
+        bullets: [
+          '**Andaman (Nov to Apr):** land HKT or KBV. Sleep Kata, Karon, Kamala, or Ao Nang. Morning Phi Phi boats only.',
+          '**Gulf (Jan to Sep):** land USM. Sleep Chaweng if you arrive late; Bophut or Maenam if you want a quieter first night.',
+          '**Do not:** fly HKT then boat or fly to USM in the same 10 days. That is a day you will not get back.',
+        ],
+        table: {
+          headers: ['Sea', 'Airport', 'First hotel search', 'First boat'],
+          rows: [
+            ['Andaman', 'HKT or KBV', 'Kata or Ao Nang', 'Phi Phi morning boat'],
+            ['Gulf', 'USM', 'Chaweng or Bophut', 'Lomprayah to Thong Sala, about 30 min'],
+          ],
+        },
+        affiliates: [
+          stay('Andaman first nights', 'Kata and Karon', 'Name the west-coast beach. "Phuket" as a city search dumps you inland or on Patong.', stayAreaLink('kata'), '/photos/phuket.jpg'),
+          stay('Gulf first nights', 'Chaweng', 'Use this if you land USM after dark. Move north later if you want quiet.', stayAreaLink('chaweng'), '/photos/koh-samui.jpg'),
+          klook('Phi Phi morning boats', 'From Phuket or Krabi', 'Search the Andaman hop, not a generic Thailand tour. Cancel when the west coast is up.', klookIslandHopping('Phuket Phi Phi'), '/photos/krabi.jpg'),
+        ],
+      },
     ],
     days: [
       {
@@ -2254,9 +2332,9 @@ const rawPages: Page[] = [
       }
     ],
     affiliates: [
-      stay("Andaman hotels", "Phuket and Krabi", "Use this search in the winter window.", stayLink('phuket'), "/photos/phuket.jpg"),
-      stay("Gulf hotels", "Samui and Phangan", "Use this search in the summer window.", stayLink('koh-samui'), "/photos/koh-samui.jpg"),
-      klook("Island hopping", "Klook", "Phi Phi, four islands, or Ang Thong. Morning departures.", klookIslandHopping('Thailand'), "/photos/krabi.jpg"),
+      stay("Ao Nang nights", "Krabi mainland", "Use this if you land KBV. Railay is a longtail, not a same-day van from HKT.", stayAreaLink('ao-nang'), "/photos/railay.jpg"),
+      stay("Karon nights", "West-coast Phuket", "Quieter than Patong, still a short hop to Kata. Name the beach, not Phuket.", stayAreaLink('karon'), "/photos/kata-and-karon.jpg"),
+      klook("Khao Sok and Cheow Lan", "Andaman inland day", "A lake night sits on the Andaman plan only. Book when you already hold HKT or KBV dates.", klookTours('Khao Sok Cheow Lan'), "/photos/khao-sok.jpg"),
     ],
     faqs: [
       {
@@ -2364,9 +2442,9 @@ const rawPages: Page[] = [
   },
   {
     path: "/plan/visas-and-tdac",
-    title: "Thailand Visa and TDAC 2026: 60-day visa-free",
-    description: "Thailand visa 2026: 60 days visa-free for US, UK, and most EU tourist entries, plus the official TDAC arrival card before you fly. Recheck Immigration 72 hours out.",
-    lede: "Most Western passports now get 60 days visa-free on arrival for tourism. You still submit TDAC before the flight. This is not legal advice; recheck the Immigration Bureau and your airline 72 hours out.",
+    title: "Thailand Visa and TDAC 2026: 30-day visa-free",
+    description: "Thailand visa 2026: 30 days visa-free for US, UK, and most EU tourist entries from 15 September 2026, plus the official TDAC arrival card. Recheck Immigration before you fly.",
+    lede: "This page is for first-time visitors on US, UK, or most EU passports. From 15 September 2026 the tourist visa-free stamp is 30 days, and you file a free TDAC on the official Immigration site before you fly.",
     schema: "Article",
     crumbs: [
       {
@@ -2381,31 +2459,68 @@ const rawPages: Page[] = [
     facts: [
       {
         "label": "Visa-free",
-        "value": "60 days for US, UK, and most EU tourist entries"
+        "value": "30 days for US, UK, and 58 other listed passports from 15 Sep 2026"
       },
       {
         "label": "TDAC",
-        "value": "Submit before departure"
+        "value": "Free form at tdac.immigration.go.th, within 3 days before arrival"
       },
       {
-        "label": "Extensions",
-        "value": "Immigration offices can extend; do not plan that on day 2"
+        "label": "Longer stay",
+        "value": "Tourist e-visa is still a 60-day stay if you apply before you fly"
       }
     ],
     photo: "/photos/bangkok.jpg",
     paragraphs: [
-      "Most Western passports get 60 visa-free days plus a free TDAC form. TDAC replaced the old paper TM6 for most air arrivals. Complete it on the official Immigration site about 72 hours before you fly. Scam copies exist. Type the government address yourself.",
-      "Visa-free 60 days covers a 14-day trip with room left. If you hold a passport that is not on the exemption list, you need an e-visa or a visa from a consulate before you fly.",
-      "Overland arrivals and air arrivals can differ. Cruise and private-air rules differ again. Use the same official page, not a blog comment from 2022."
+      "The 60-day visa-exemption scheme ended on 15 September 2026 (Government PRD, 4 September 2026, citing MFA Consular Affairs). Ordinary US, UK, and most EU passports now sit on the 30-day tourist list (MFA ผ.30, 15 September 2026). A tourist visa applied through thaievisa.go.th is a different product and still grants up to 60 days on arrival.",
+      "TDAC replaced the paper TM6. File it only at tdac.immigration.go.th. The Immigration Bureau guide says to submit within 3 days before arrival. It is free. Sites that charge to file it are not the Bureau. Keep the emailed QR offline.",
+    ],
+    sections: [
+      {
+        id: 'after-tdac',
+        lead: true,
+        title: 'File TDAC, then lock the first two nights',
+        paragraphs: [
+          'TDAC asks for your first Thai address. Book the Bangkok hotel before you open the form. Do not plan a same-day island hop after a long-haul. [Grab, BTS, and the airport car](/plan/grab-and-bts) is the landing move. [First week](/itineraries/first-week-7-days) is the route after you sleep.',
+        ],
+        bullets: [
+          '**Who files:** every non-Thai national, including visa-free and visa holders (tdac.immigration.go.th/manual).',
+          '**When:** within 3 days before the arrival date. You can update the card before you travel.',
+          '**What you need:** passport, flight number, and the first hotel name. That is why the stay search sits here, not on a generic homepage.',
+          '**Stamp check:** the officer still decides entry. The London Thai Embassy notes proof of onward travel within 30 days and, if asked, funds of 20,000 THB per person.',
+        ],
+        table: {
+          headers: ['Document', 'What it is', 'Where'],
+          rows: [
+            ['TDAC', 'Arrival card, not a visa', 'tdac.immigration.go.th'],
+            ['Visa exemption', '30-day tourist stamp for listed passports', 'Immigration counter'],
+            ['Tourist e-visa', 'Up to 60 days stay if issued before you fly', 'thaievisa.go.th'],
+          ],
+        },
+        affiliates: [
+          stay('First two Bangkok nights', 'Sukhumvit BTS strip', 'Name Asok or Phrom Phong on TDAC. Land, sleep, then move.', stayAreaLink('sukhumvit'), '/photos/sukhumvit.jpg'),
+          transfer('BKK airport car', 'Suvarnabhumi', 'Use this if you land after 22:00 or with luggage. ARL is the cheap daylight move.', transferLink('BKK'), '/photos/bangkok.jpg'),
+          transfer('DMK airport car', 'Don Mueang', 'Low-cost arrivals have no Airport Rail Link. Book the car or follow the Grab pin.', transferLink('DMK'), '/photos/bts.jpg'),
+        ],
+      },
+    ],
+    affiliates: [
+      stay('Riverside first nights', 'Chao Phraya hotels', 'Use this if you want a river pin on TDAC instead of Sukhumvit. Still sleep before any island hop.', stayAreaLink('riverside'), '/photos/riverside.jpg'),
+      flights('Next hop: BKK to CNX', 'Trip.com', 'About 70 minutes. Book after the first two Bangkok nights, not as a same-day connection.', flightLink('BKK', 'CNX'), '/photos/chiang-mai.jpg'),
+      klook('Grand Palace tickets', 'Bangkok day-one slot', 'Timed entry is easier after you sleep. Do not stack this with a same-day island flight.', klookTickets('Grand Palace Bangkok'), '/photos/grand-palace.jpg'),
     ],
     faqs: [
       {
         "q": "When do you file TDAC?",
-        "a": "In the days before you fly, once your flight number is stable. Keep a screenshot offline."
+        "a": "Within 3 days before arrival, once the flight number is stable. Use tdac.immigration.go.th only. Keep the QR offline."
       },
       {
-        "q": "Does visa-free mean 60 days in, 60 days out, repeat forever?",
-        "a": "No. Immigration looks for tourism. Visa runs are a different hobby and not what this site is for."
+        "q": "Is visa-free still 60 days?",
+        "a": "No. From 15 September 2026 the tourist exemption is 30 days for the 60 listed passports. A tourist visa is still up to 60 days if you apply before you fly."
+      },
+      {
+        "q": "Can you extend the 30-day stamp?",
+        "a": "Immigration offices can extend at their discretion. The London Thai Embassy describes an extension of up to 30 days. Do not plan that on day 2 of a first trip."
       }
     ],
   },
