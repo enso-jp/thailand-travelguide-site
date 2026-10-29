@@ -62,12 +62,47 @@ function appendStayQuery(baseHref: string, checkin?: string, checkout?: string, 
   }
 }
 
+function trackAffiliate(partner: string, linkUrl: string) {
+  const g = (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag;
+  if (typeof g !== 'function') return;
+  g('event', 'affiliate_click', {
+    partner,
+    page_path: location.pathname,
+    link_url: linkUrl,
+    transport_type: 'beacon',
+  });
+}
+
+function partnerFor(href: string): string | null {
+  let host = '';
+  try {
+    host = new URL(href, location.href).hostname;
+  } catch {
+    return null;
+  }
+  if (/(^|\.)trip\.com$/.test(host)) return 'tripcom';
+  if (/(^|\.)klook\.com$/.test(host)) return 'klook';
+  if (/(^|\.)(tp\.media|tpk\.ro|travelpayouts\.com|tp\.st)$/.test(host)) return 'travelpayouts';
+  return null;
+}
+
 function ready(fn: () => void) {
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
   else fn();
 }
 
 ready(() => {
+  document.addEventListener(
+    'click',
+    (event) => {
+      const a = (event.target as Element | null)?.closest?.('a[href]') as HTMLAnchorElement | null;
+      if (!a) return;
+      const partner = partnerFor(a.href);
+      if (partner) trackAffiliate(partner, a.href);
+    },
+    { capture: true },
+  );
+
   const menuBtn = document.querySelector<HTMLButtonElement>('[data-menu]');
   const menu = document.querySelector<HTMLElement>('#site-menu');
   const backdrops = document.querySelectorAll<HTMLElement>('[data-menu]');
@@ -308,6 +343,7 @@ ready(() => {
       const base = links[city] || links.bangkok;
       if (!base) return;
       const href = appendStayQuery(base, inInput?.value, outInput?.value, guests);
+      trackAffiliate('tripcom', href);
       window.open(href, '_blank', 'noopener,noreferrer');
     });
   });

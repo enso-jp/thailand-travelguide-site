@@ -109,10 +109,6 @@ export const airports = {
 
 export type AirportCode = keyof typeof airports;
 
-export function tripSearchWidgetUrl(sub1 = 'Destination Page'): string {
-  return `https://www.trip.com/partners/ad/${TRIP_WIDGET_ID}?Allianceid=${TRIP_ALLIANCE}&SID=${TRIP_SID}&trip_sub1=${encodeURIComponent(sub1)}`;
-}
-
 function hotelListPath(row: TripCityEntry): string {
   return `https://www.trip.com/hotels/${row.slug}-hotels-list-${row.id}/`;
 }
