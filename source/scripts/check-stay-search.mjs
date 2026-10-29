@@ -64,6 +64,8 @@ if (!existsSync(DIST)) {
   process.exit(1);
 }
 
+const ALLOWED_WIDGET = 'https://www.trip.com/partners/ad/S20729725?Allianceid=11105102&SID=334804079&trip_sub1=th_search_box';
+const EMBED_HTML = '<iframe border="0" src="https://www.trip.com/partners/ad/S20729725?Allianceid=11105102&SID=334804079&trip_sub1=th_search_box" style="width:320px;height:320px" frameborder="0" scrolling="no" style="border:none" id="S20729725"></iframe>';
 const pages = walkHtml(DIST);
 let boxes = 0;
 
@@ -73,57 +75,17 @@ for (const file of pages) {
   if (!html.includes('data-trip-box')) continue;
   boxes += 1;
 
-  if (/<iframe[^>]+trip\.com\/partners\/ad/i.test(html)) {
-    errors.push(`${rel} embeds Trip.com /partners/ad widget`);
+  const widgets = html.match(/<iframe[^>]+trip\.com\/partners\/ad\/[^"]*/gi) || [];
+  if (widgets.length !== 1 || !widgets[0].includes(ALLOWED_WIDGET)) {
+    errors.push(`${rel} must embed exactly the S20729725 Partner search box (found ${widgets.length})`);
   }
+  if (!html.includes(EMBED_HTML)) errors.push(`${rel} search box embed differs from the generated code`);
   if (/class="[^"]*\bstay-box\b[^"]*"[^>]*>[\s\S]{0,400}data-trip-box/.test(html) || /class="[^"]*\bpanel\b[^"]*\bstay-box\b[^"]*"[^>]*>[\s\S]{0,600}trip-cta/.test(html)) {
     errors.push(`${rel} stay search is nested inside stay-box/panel`);
   }
   const cardCount = (html.match(/data-trip-box/g) || []).length;
   if (cardCount !== 1) {
     errors.push(`${rel} expected 1 stay search card, found ${cardCount}`);
-  }
-  if (!html.includes('data-trip-search-form')) errors.push(`${rel} missing search form`);
-  if (!html.includes('data-trip-city')) errors.push(`${rel} missing Destination`);
-  if (!html.includes('data-trip-in')) errors.push(`${rel} missing Check-in`);
-  if (!html.includes('data-trip-out')) errors.push(`${rel} missing Check-out`);
-  if (!html.includes('data-trip-guests')) errors.push(`${rel} missing Guests / Rooms`);
-  if (!/Search hotels/.test(html)) errors.push(`${rel} missing Search hotels button`);
-
-  const json = html.match(/<script type="application\/json" data-trip-links>([\s\S]*?)<\/script>/);
-  if (!json) {
-    errors.push(`${rel} missing data-trip-links`);
-    continue;
-  }
-  let links;
-  try {
-    links = JSON.parse(json[1]);
-  } catch {
-    errors.push(`${rel} data-trip-links is not JSON`);
-    continue;
-  }
-  const expected = stayCityFromPath(rel);
-  if (!links[expected]) {
-    errors.push(`${rel} links missing city ${expected}`);
-  }
-  for (const [city, href] of Object.entries(links)) {
-    if (typeof href !== 'string') {
-      errors.push(`${rel} ${city} link is not a string`);
-      continue;
-    }
-    if (!href.includes('/hotels/list?')) {
-      errors.push(`${rel} ${city} is not /hotels/list?: ${href}`);
-    }
-    if (/\/partners\/ad\//.test(href)) {
-      errors.push(`${rel} ${city} opens widget page: ${href}`);
-    }
-    if (!new URL(href, 'https://www.trip.com').searchParams.get('city')) {
-      errors.push(`${rel} ${city} missing city= id`);
-    }
-  }
-  const selected = html.match(/<option value="([^"]+)" selected/)?.[1];
-  if (selected && selected !== expected && rel !== '/') {
-    errors.push(`${rel} selected ${selected}, expected ${expected}`);
   }
 }
 
@@ -138,4 +100,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`check-stay-search ok (${boxes} search cards, all /hotels/list, 0 widgets)`);
+console.log(`check-stay-search ok (${boxes} search cards, each with the S20729725 Partner search box)`);

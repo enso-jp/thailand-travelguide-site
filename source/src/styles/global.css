@@ -1852,3 +1852,16 @@ th, td {
     outline-offset: 2px;
   }
 }
+
+/* Trip.com Partner search box embed */
+.trip-cta-embed {
+  display: flex;
+  justify-content: center;
+  margin-inline: -1.2rem;
+  min-height: 320px;
+}
+.trip-cta-embed iframe {
+  display: block;
+  max-width: 100%;
+  border: 0;
+}

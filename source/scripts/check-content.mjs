@@ -357,11 +357,12 @@ if (!partners.includes('hotelSearchListUrl') || !partners.includes('/hotels/list
   errors.push('partners.ts must export hotelSearchListUrl using /hotels/list?');
 }
 const tripSearch = readFileSync(join(ROOT, 'src/components/TripSearch.astro'), 'utf8');
-if (!tripSearch.includes('hotelSearchListUrl')) {
-  errors.push('TripSearch.astro must use hotelSearchListUrl');
+const ALLOWED_SEARCH_BOX = 'trip.com/partners/ad/S20729725?Allianceid=11105102&SID=334804079&trip_sub1=th_search_box';
+if (!tripSearch.includes(ALLOWED_SEARCH_BOX)) {
+  errors.push('TripSearch.astro must embed the Partner search box S20729725');
 }
-if (/partners\/ad/.test(tripSearch)) {
-  errors.push('TripSearch.astro must not open /partners/ad widget URLs');
+if ((tripSearch.match(/partners\/ad\//g) || []).length !== 1) {
+  errors.push('TripSearch.astro may only reference the S20729725 Partner search box');
 }
 if (!existsSync(join(ROOT, 'scripts/check-stay-search.mjs')) || !existsSync(join(ROOT, 'scripts/check-unique-photos.mjs')) || !existsSync(join(ROOT, 'scripts/check-facts.mjs'))) {
   errors.push('missing check-stay-search, check-unique-photos, or check-facts script');
