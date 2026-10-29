@@ -180,7 +180,7 @@ export const wave7Pages: Page[] = [
     photo: '/photos/phuket.jpg',
     paragraphs: [
       'Two Andaman weeks work if you move south once a stay, not twice a day. Start at Phuket or Krabi. Add Railay, a Phi Phi night, Lanta, then Lipe. End on the Satun mainland at Pak Bara and fly out of Hat Yai (HDY). Do not fly back to HKT the same afternoon the Lipe boat lands.',
-      'Phuket passenger boats use Rassada Pier, not Patong Beach. Ao Nang boats use Nopparat Thara. Railay has no road: a shared longtail is about 10 to 15 minutes and 100 to 200 THB a person in 2026. Tigerline and Bundhaya are the high-season names that string Phi Phi, Lanta, and Lipe. Those legs cancel first when the Andaman is up. Check on arrival.',
+      'Phuket passenger boats use Rassada Pier, not Patong Beach. Ao Nang boats use Nopparat Thara. Railay has no road: a shared longtail is about 10 to 15 minutes and 100 to 200 THB a person in 2026. Tigerline and Bundhaya are the high-season names that string Phi Phi, Lanta, and Lipe. Those legs cancel first when the Andaman is up.',
     ],
     days: [
       {
@@ -274,14 +274,14 @@ export const wave7Pages: Page[] = [
         title: 'Which pier, which operator',
         paragraphs: [
           'Write the pier on the ticket. Rassada is Phuket Town. Nopparat Thara is the Ao Nang passenger pier. Klong Jilad is Krabi Town. Saladan is Lanta. Pak Bara is the Satun mainland exit. A ticket that says "Phuket" without a pier is not finished.',
-          'Tigerline and Bundhaya sell the long Andaman chain in winter. Ploysiam and Satun Pakbara Speed Boat Club handle many Pak Bara runs. Songserm is slower. Morning boats fail less than afternoon ones. Check on arrival.',
+          'Tigerline and Bundhaya sell the long Andaman chain in winter. Ploysiam and Satun Pakbara Speed Boat Club handle many Pak Bara runs. Songserm is slower. Morning boats fail less than afternoon ones.',
         ],
         table: {
           headers: ['Leg', 'Usual pier pair', 'Notes'],
           rows: [
             ['Phuket to Phi Phi', 'Rassada to Tonsai', 'About 2 hours. Not a Patong beach pickup.'],
             ['Phi Phi to Lanta', 'Tonsai to Saladan', 'About 30 to 45 minutes on Tigerline or Bundhaya.'],
-            ['Ao Nang or Railay to Lanta', 'Nopparat Thara to Saladan', 'Bundhaya lists a late-morning speedboat. Check on arrival.'],
+            ['Ao Nang or Railay to Lanta', 'Nopparat Thara to Saladan', 'Bundhaya lists a late-morning speedboat.'],
             ['Lanta to Lipe', 'Saladan to Pattaya Beach roadstead', 'High season only. Cancels first.'],
             ['Lipe to mainland', 'Pattaya Beach to Pak Bara', 'Then van to HDY. Keep a spare night.'],
           ],
@@ -465,7 +465,7 @@ export const wave7Pages: Page[] = [
     photo: '/photos/chiang-mai.jpg',
     paragraphs: [
       'Seven north days fit Chiang Mai, one mountain day, Pai, and Chiang Rai. They do not fit the full 600 km Mae Hong Son Loop. Sleep two nights in the Old City, take Doi Inthanon as a day, ride Highway 1095 to Pai, then Green Bus to Chiang Rai. Coffee highlands sit on the Inthanon road at Mae Klang Luang and again toward Doi Chang if you have a spare morning.',
-      'Prempracha holds the licensed Pai vans (route 612). Arcade Terminal 2 is the usual counter; some tickets print Terminal 3. Walk-up fares sit around 210 to 250 THB. They take a passport number. Green Bus VIP 24-seat coaches leave Arcade Terminal 3 for Chiang Rai Terminal 1. Chang Phuak (Terminal 1) is the wrong station for both rides. Check on arrival.',
+      'Prempracha holds the licensed Pai vans (route 612). Arcade Terminal 2 is the usual counter; some tickets print Terminal 3. Walk-up fares sit around 210 to 250 THB. They take a passport number. Green Bus VIP 24-seat coaches leave Arcade Terminal 3 for Chiang Rai Terminal 1. Chang Phuak (Terminal 1) is the wrong station for both rides.',
     ],
     days: [
       {
@@ -770,7 +770,7 @@ export const wave7Pages: Page[] = [
     photo: '/photos/kanchanaburi.jpg',
     geo: { lat: 14.37, lon: 99.144, containedIn: 'Western Thailand' },
     paragraphs: [
-      'Erawan National Park is the seven-tier waterfall about 65 to 70 km from Kanchanaburi town. Foreign adults pay 300 THB, children 150 THB, plus 30 THB per car or 20 THB per motorbike. Carry cash. The useful public trip is local bus 8170 from Kanchanaburi Bus Terminal. The first bus is 08:00, about 1.5 hours and about 60 THB. Flag-downs exist on Highway 323 before the bridge. Check on arrival.',
+      'Erawan National Park is the seven-tier waterfall about 65 to 70 km from Kanchanaburi town. Foreign adults pay 300 THB, children 150 THB, plus 30 THB per car or 20 THB per motorbike. Carry cash. The useful public trip is local bus 8170 from Kanchanaburi Bus Terminal. The first bus is 08:00, about 1.5 hours and about 60 THB. Flag-downs exist on Highway 323 before the bridge.',
       'Lower pools are the family stop. Tier 7 is stairs and roots. Rangers clear the top in the mid-afternoon; treat 15:30 as the turnaround, not a debate. The last bus back leaves about 16:30. After heavy rain the park can close swimming. Call 034 574 222 or DNP 1362 the morning you go.',
     ],
     sections: [
@@ -919,7 +919,7 @@ export const wave7Pages: Page[] = [
     facts: [
       { label: 'Islands', value: '42 limestone islands; HQ on Wua Ta Lap' },
       { label: 'Park fee', value: '300 THB foreign adult, 150 THB child, cash' },
-      { label: 'Closed', value: '1 November to 15 December; confirm swell days' },
+      { label: 'Closed', value: '1 November to 15 December; swell can cancel boats' },
       { label: 'Boats', value: 'No public ferry; tours from Nathon or Bophut' },
     ],
     chips: ['42 islands', 'Talay Nai', '300 THB'],

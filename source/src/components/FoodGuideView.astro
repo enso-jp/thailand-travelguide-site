@@ -9,7 +9,7 @@ import type { Page } from '../lib/content';
 import { assignExactPhotos, foodRowsFor } from '../lib/dish-photos';
 import { chipHref, formatInline } from '../lib/inline';
 import { UniquePhotos } from '../lib/photos';
-import { klookTours, type StayCity } from '../lib/partners';
+import { klookTours, stayCityFromPath, type StayCity } from '../lib/partners';
 import { pageHref, routePath } from '../lib/site';
 
 interface Props {
@@ -22,15 +22,7 @@ const rows = foodRowsFor(page.path, reserved);
 const bag = new UniquePhotos([...reserved, ...rows.map((row) => row.photo).filter(Boolean) as string[]]);
 const portraits = bag.takeBatch(page.portraits || [], (item) => `${page.path} ${item.title} ${item.href}`);
 const affiliates = bag.takeBatch(page.affiliates || [], (item) => `${page.path} ${item.title} ${item.kicker} ${item.body}`);
-const city: StayCity = page.path.includes('chiang')
-  ? 'chiang-mai'
-  : page.path.includes('phuket')
-    ? 'phuket'
-    : page.path.includes('samui')
-      ? 'koh-samui'
-      : page.path.includes('krabi')
-        ? 'krabi'
-        : 'bangkok';
+const city: StayCity = stayCityFromPath(page.path);
 ---
 
 <article class="wrap food-guide-page">
@@ -177,8 +169,7 @@ const city: StayCity = page.path.includes('chiang')
     </div>
 
     <aside class="rail">
-      <div class="stay-box">
-        <h2>Book your <em>stay</em></h2>
+      <div class="rail-booking">
         <TripSearch variant="food" city={city} placeName={page.title} />
         <a class="promo-box" href={klookTours(`${page.title} food tour`)} rel="sponsored noopener" target="_blank">
           <strong>Klook food tours</strong>

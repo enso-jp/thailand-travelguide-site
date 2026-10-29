@@ -41,6 +41,7 @@ export const tripCities = {
   sukhothai: { id: 6045, name: 'Sukhothai', slug: 'sukhothai', sub3: 'D20710356' },
   kanchanaburi: { id: 36027, name: 'Kanchanaburi', slug: 'kanchanaburi', sub3: 'D20710097' },
   pai: { id: 35981, name: 'Pai', slug: 'pai', sub3: 'D20710356' },
+  'surat-thani': { id: 1479, name: 'Surat Thani', slug: 'surat-thani', sub3: 'D20710097' },
 } as const satisfies Record<string, TripCityEntry>;
 
 export type StayCity = keyof typeof tripCities;
@@ -73,6 +74,17 @@ export const tripAreas = {
   'klong-dao': { city: 'koh-lanta', keyword: 'Klong Dao' },
   'white-sand-beach': { city: 'koh-chang', keyword: 'White Sand Beach' },
   'bang-niang': { city: 'khao-lak', keyword: 'Bang Niang' },
+  'khao-san': { city: 'bangkok', keyword: 'Khao San' },
+  pratunam: { city: 'bangkok', keyword: 'Pratunam' },
+  'on-nut': { city: 'bangkok', keyword: 'On Nut' },
+  'bang-tao': { city: 'phuket', keyword: 'Bang Tao' },
+  'mai-khao': { city: 'phuket', keyword: 'Mai Khao' },
+  railay: { city: 'krabi', keyword: 'Railay' },
+  tubkaek: { city: 'krabi', keyword: 'Tubkaek' },
+  bophut: { city: 'koh-samui', keyword: 'Bophut' },
+  'haad-rin': { city: 'koh-phangan', keyword: 'Haad Rin' },
+  jomtien: { city: 'pattaya', keyword: 'Jomtien' },
+  'mae-rim': { city: 'chiang-mai', keyword: 'Mae Rim' },
 } as const;
 
 export type StayArea = keyof typeof tripAreas;
@@ -87,6 +99,12 @@ export const airports = {
   CEI: { city: 'Chiang Rai', name: 'Mae Fah Luang Chiang Rai' },
   URT: { city: 'Surat Thani', name: 'Surat Thani' },
   CJM: { city: 'Chumphon', name: 'Chumphon' },
+  HDY: { city: 'Hat Yai', name: 'Hat Yai' },
+  TST: { city: 'Trang', name: 'Trang' },
+  THS: { city: 'Sukhothai', name: 'Sukhothai' },
+  SGN: { city: 'Ho Chi Minh City', name: 'Tan Son Nhat' },
+  HAN: { city: 'Hanoi', name: 'Noi Bai' },
+  DAD: { city: 'Da Nang', name: 'Da Nang' },
 } as const;
 
 export type AirportCode = keyof typeof airports;
@@ -95,16 +113,81 @@ export function tripSearchWidgetUrl(sub1 = 'Destination Page'): string {
   return `https://www.trip.com/partners/ad/${TRIP_WIDGET_ID}?Allianceid=${TRIP_ALLIANCE}&SID=${TRIP_SID}&trip_sub1=${encodeURIComponent(sub1)}`;
 }
 
-function hotelListUrl(row: TripCityEntry, extra: Record<string, string> = {}): string {
-  return `https://www.trip.com/hotels/list?city=${row.id}&${tripParams({
-    trip_sub1: row.name,
-    trip_sub3: row.sub3,
+function hotelListPath(row: TripCityEntry): string {
+  return `https://www.trip.com/hotels/${row.slug}-hotels-list-${row.id}/`;
+}
+
+/** Live Trip.com hotel results for the search box. Never the /partners/ad widget. */
+export function hotelSearchListUrl(city: StayCity, extra: Record<string, string> = {}): string {
+  const row: TripCityEntry = tripCities[city];
+  return `https://www.trip.com/hotels/list?${tripParams({
+    city: String(row.id),
+    cityName: row.name,
+    trip_sub1: extra.trip_sub1 || row.name,
+    trip_sub3: extra.trip_sub3 || row.sub3,
     ...extra,
   })}`;
 }
 
+/** Word-bounded slug match so `yao` does not hit Yaowarat and `kata` does not hit longer tokens. */
+function pathHasSlug(path: string, slug: string): boolean {
+  const escaped = slug.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  return new RegExp(`(^|[^a-z0-9])${escaped}([^a-z0-9]|$)`).test(path);
+}
+
+export function stayCityFromPath(path: string): StayCity {
+  const p = path.toLowerCase();
+  const has = (slug: string) => pathHasSlug(p, slug);
+  if (has('koh-lipe') || has('ko-lipe')) return 'koh-lipe';
+  if (has('koh-lanta') || has('ko-lanta')) return 'koh-lanta';
+  if (has('koh-kood') || has('ko-kood') || has('soneva')) return 'koh-kood';
+  if (has('koh-chang') || has('ko-chang')) return 'koh-chang';
+  if (has('koh-phangan') || has('phangan')) return 'koh-phangan';
+  if (has('koh-tao') || has('ko-tao')) return 'koh-tao';
+  if (has('koh-samui') || has('samui')) return 'koh-samui';
+  if (has('khao-lak')) return 'khao-lak';
+  if (has('khao-sok') || has('cheow') || has('surat-thani')) return 'surat-thani';
+  if (has('chiang-rai')) return 'chiang-rai';
+  if (/(^|\/)pai(\/|$)/.test(p)) return 'pai';
+  if (has('chiang-mai') || has('nimman')) return 'chiang-mai';
+  if (has('hua-hin')) return 'hua-hin';
+  if (has('pattaya') || has('jomtien')) return 'pattaya';
+  if (has('ayutthaya')) return 'ayutthaya';
+  if (has('kanchanaburi') || has('erawan')) return 'kanchanaburi';
+  if (has('sukhothai')) return 'sukhothai';
+  if (has('phuket') || has('patong') || has('kata') || has('karon') || has('kamala') || has('koh-yao') || has('yao-noi') || has('yao-yai') || has('yao')) {
+    return 'phuket';
+  }
+  if (has('krabi') || has('railay') || has('phi-phi') || has('ao-nang')) return 'krabi';
+  return 'bangkok';
+}
+
+export const cityAirports: Record<StayCity, AirportCode> = {
+  bangkok: 'BKK',
+  phuket: 'HKT',
+  'chiang-mai': 'CNX',
+  'koh-samui': 'USM',
+  krabi: 'KBV',
+  pattaya: 'BKK',
+  'hua-hin': 'BKK',
+  'khao-lak': 'HKT',
+  'koh-phangan': 'USM',
+  'koh-tao': 'USM',
+  ayutthaya: 'BKK',
+  'koh-lanta': 'KBV',
+  'koh-lipe': 'HDY',
+  'koh-chang': 'BKK',
+  'koh-kood': 'BKK',
+  'chiang-rai': 'CEI',
+  sukhothai: 'THS',
+  kanchanaburi: 'BKK',
+  pai: 'CNX',
+  'surat-thani': 'URT',
+};
+
 export function stayLink(city: StayCity, extra: Record<string, string> = {}): string {
-  return hotelListUrl(tripCities[city], extra);
+  const row: TripCityEntry = tripCities[city];
+  return `${hotelListPath(row)}?${tripParams({ trip_sub1: row.name, trip_sub3: row.sub3, ...extra })}`;
 }
 
 export function tripHotelsUrl(city: StayCity, sub1?: string): string {
@@ -114,21 +197,21 @@ export function tripHotelsUrl(city: StayCity, sub1?: string): string {
 export function stayAreaLink(area: StayArea, extra: Record<string, string> = {}): string {
   const row = tripAreas[area];
   const city: TripCityEntry = tripCities[row.city as StayCity];
-  return hotelListUrl(city, {
-    keyword: row.keyword,
+  return `${hotelListPath(city)}?keyword=${encodeURIComponent(row.keyword)}&${tripParams({
     trip_sub1: row.keyword,
+    trip_sub3: city.sub3,
     ...extra,
-  });
+  })}`;
 }
 
 export function hotelSearchLink(query: string, city?: StayCity): string {
-  const entry: TripCityEntry | undefined = city ? tripCities[city] : undefined;
-  const params = tripParams({
+  if (city) {
+    return hotelSearchListUrl(city, { keyword: query, trip_sub1: query });
+  }
+  return `https://www.trip.com/hotels/list?keyword=${encodeURIComponent(query)}&${tripParams({
     trip_sub1: query,
-    trip_sub3: entry ? entry.sub3 : 'D20710097',
-  });
-  const cityPart = entry ? `city=${entry.id}&` : '';
-  return `https://www.trip.com/hotels/list?${cityPart}keyword=${encodeURIComponent(query)}&${params}`;
+    trip_sub3: 'D20710097',
+  })}`;
 }
 
 export function flightLink(from: AirportCode, to: AirportCode): string {

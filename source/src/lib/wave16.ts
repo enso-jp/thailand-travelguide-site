@@ -3,7 +3,7 @@ import { attractionsFor, isPlacePage } from "./place-attractions";
 import { foodRowsFor } from "./dish-photos";
 import credits from '../../public/photos/credits.json';
 import type { Affiliate, EditorialCard, Page, Portrait } from './content';
-import { klookTours, stayLink, type StayCity } from './partners';
+import { klookTours, stayLink, stayCityFromPath } from './partners';
 
 const BANNED = [
   /planner spine/i,
@@ -35,6 +35,12 @@ const SOUTH_POOL = [
   '/photos/krabi.jpg',
   '/photos/khao-sok.jpg',
   '/photos/khao-lak.jpg',
+  '/photos/bang-niang.jpg',
+  '/photos/khuk-khak.jpg',
+  '/photos/nang-thong.jpg',
+  '/photos/khao-lak-andaman.jpg',
+  '/photos/bang-niang-estuary.jpg',
+  '/photos/khao-lak-resort.jpg',
   '/photos/ferry-gulf.jpg',
   '/photos/longtail-andaman.jpg',
   '/photos/ang-thong.jpg',
@@ -1965,11 +1971,11 @@ function photoFromKeywords(title: string, body: string): string | undefined {
   const t = `${title} ${body}`.toLowerCase();
   if (/ratchaprapha|cheow|raft/.test(t)) return '/photos/cheow-lan.jpg';
   if (/khao sok|urt/.test(t)) return '/photos/khao-sok.jpg';
-  if (/railay|phra nang|ao nang|hong/.test(t)) return '/photos/railay.jpg';
+  if (/railay|phra nang|ao nang|hong island|\bhong\b/.test(t)) return '/photos/railay.jpg';
   if (/maya|phi phi/.test(t)) return '/photos/phi-phi.jpg';
   if (/lanta/.test(t)) return '/photos/koh-lanta.jpg';
   if (/lipe/.test(t)) return '/photos/koh-lipe.jpg';
-  if (/ang thong/.test(t)) return '/photos/ang-thong.jpg';
+  if (/\bang thong\b/.test(t)) return '/photos/ang-thong.jpg';
   if (/phangan/.test(t)) return '/photos/koh-phangan.jpg';
   if (/koh tao|dive/.test(t)) return '/photos/koh-tao.jpg';
   if (/doi suthep|bua thong|baan dam|golden triangle|mae rim/.test(t)) return '/photos/doi-suthep.jpg';
@@ -2013,22 +2019,6 @@ export function uniquifyPortraits(items: Portrait[], used: Set<string>, pagePath
   return out;
 }
 
-function stayCityFor(page: Page): StayCity {
-  const path = page.path;
-  if (path.includes('phuket') || path.includes('khao-lak') || path.includes('yao')) return 'phuket';
-  if (path.includes('krabi') || path.includes('railay') || path.includes('lanta') || path.includes('phi-phi')) return 'krabi';
-  if (path.includes('samui') || path.includes('phangan') || path.includes('tao')) return 'koh-samui';
-  if (path.includes('chiang-mai') || path.includes('nimman') || path.includes('pai')) return 'chiang-mai';
-  if (path.includes('khao-sok') || path.includes('cheow')) return 'khao-lak';
-  if (path.includes('kood') || path.includes('soneva')) return 'koh-kood';
-  if (path.includes('chang')) return 'koh-chang';
-  if (path.includes('hua-hin')) return 'hua-hin';
-  if (path.includes('ayutthaya')) return 'ayutthaya';
-  if (path.includes('kanchanaburi')) return 'kanchanaburi';
-  if (path.includes('chiang-rai')) return 'chiang-rai';
-  return 'bangkok';
-}
-
 export function uniquifyAffiliates(page: Page, used: Set<string>): Page {
   const rows = [...(page.affiliates || [])];
   if (!rows.length) return page;
@@ -2039,7 +2029,7 @@ export function uniquifyAffiliates(page: Page, used: Set<string>): Page {
         title: 'Search nearby stays',
         kicker: 'Trip.com',
         body: 'Compare live 2026 hotel rates and free-cancellation rooms on Trip.com.',
-        href: stayLink(stayCityFor(page)),
+        href: stayLink(stayCityFromPath(page.path)),
         cta: 'Search stays',
         photo: '',
         partner: 'stay',

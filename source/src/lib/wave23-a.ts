@@ -1,0 +1,340 @@
+import {
+  stayLink,
+  stayAreaLink,
+  flightLink,
+  trainLink,
+  transferLink,
+  klookTours,
+  klookTickets,
+} from './partners';
+import { hop, klook, stay, wave23Page } from './wave23-shared';
+import type { Page } from './content';
+
+export const WAVE23_A: Page[] = [
+  wave23Page({
+    path: '/itineraries/3-days-bangkok-food-and-rooftops',
+    title: '3 days in Bangkok: food and rooftops itinerary',
+    crumb: '3 days Bangkok food and rooftops',
+    description:
+      'Three Bangkok days put palace tickets first, then Yaowarat and Banthat Thong after dark, and close with one Sukhumvit rooftop. Built for a 72-hour stopover beside a BTS exit.',
+    lede:
+      'Land at BKK or DMK with three nights and eat before you bar-crawl. The loop is Rattanakosin in the morning, two market nights, and Octave at Soi 57 if dress code still holds.',
+    facts: [
+      ['Day 1 tickets', 'Palace 500 THB, Wat Pho 300 THB, Wat Arun 200 THB'],
+      ['BTS', '2026 tap 17 to 62 THB; sleep Sukhumvit or Siam'],
+      ['Markets', 'Chatuchak Sat-Sun; Or Tor Kor daily; Yaowarat after 18:00'],
+      ['Roof', 'Octave at Soi 57, BTS Thong Lo Exit 3'],
+    ],
+    chips: ['72-hour food', 'One rooftop', 'BTS hotel'],
+    photo: '/photos/yaowarat.jpg',
+    paragraphs: [
+      'A 72-hour food stopover tickets the royal river first, then eats after dark. Sleep beside a BTS exit on [Sukhumvit](/bangkok/sukhumvit) or [Siam](/bangkok/siam-silom) so Octave at Soi 57 is a last-night walk, not a taxi hunt. Day 1 stays in [Rattanakosin](/bangkok/old-city-rattanakosin): Grand Palace 500 THB via Mani Noppharat Gate at 08:30, [Wat Pho](/attractions/wat-pho) 300 THB, then the Tha Tien ferry (5 THB) to [Wat Arun](/attractions/wat-arun) at 200 THB. Dinner is [Wang Lang](/thai-food/wang-lang-and-talat-noi) or [Yaowarat](/thai-food/yaowarat-chinatown-food-walk) via MRT Wat Mangkon Exit 1.',
+      'Day 2 is [Chatuchak](/attractions/chatuchak-weekend-market) on Saturday or Sunday, or [Or Tor Kor](/thai-food/or-tor-kor-and-bangkok-fresh-markets) any day, both at MRT Kamphaeng Phet. Night food is [Banthat Thong](/thai-food/banthat-thong-road-food-strip). Day 3 is Talat Noi lanes, then one roof: Octave at Soi 57, BTS Thong Lo Exit 3. Dress notes sit on [rooftop bars](/thai-food/bangkok-rooftop-bars-and-river-dining). Stay picks live on [where to stay](/bangkok/where-to-stay). A 2026 BTS tap is 17 to 62 THB.',
+    ],
+    days: [
+      ['Royal river, then Yaowarat', 'Palace 500 THB at 08:30, Wat Pho 300 THB, Wat Arun 200 THB plus 5 THB ferry. Dinner on Yaowarat after 18:00.', '/photos/old-city.jpg'],
+      ['Market day and Banthat Thong', 'Chatuchak Sat-Sun or Or Tor Kor any day at MRT Kamphaeng Phet. Banthat Thong after dark.', '/photos/chatuchak.jpg'],
+      ['Talat Noi and one roof', 'Talat Noi in the cooler hours. Octave at Soi 57, BTS Thong Lo Exit 3. Airport car for the long-haul.', '/photos/siam.jpg'],
+    ],
+    sid: 'food-split',
+    stitle: 'Tickets first, then two food nights',
+    sp: 'This is a food week with one roof, not a [nightlife crawl](/bangkok/nightlife-districts). Drop Chatuchak on weekdays. For a longer city week use [first week](/itineraries/first-week-7-days).',
+    headers: ['Block', 'Focus', '2026 fee or clock'],
+    rows: [
+      ['Day 1 river wats', 'Palace, Wat Pho, Wat Arun', '500 / 300 / 200 THB; ferry 5 THB'],
+      ['Day 1 night', 'Yaowarat or Wang Lang', 'MRT Wat Mangkon Exit 1 after 18:00'],
+      ['Day 2', 'Chatuchak or Or Tor Kor', 'MRT Kamphaeng Phet Exit 2 or 3'],
+      ['Day 3', 'Talat Noi plus one roof', 'Octave: Soi 57, BTS Thong Lo Exit 3'],
+    ],
+    portraits: [
+      { title: 'Where to stay', href: '/bangkok/where-to-stay', photo: '/photos/sukhumvit.jpg' },
+      { title: 'Yaowarat food walk', href: '/thai-food/yaowarat-chinatown-food-walk', photo: '/photos/chinatown-day.jpg' },
+      { title: 'Rooftop bars', href: '/thai-food/bangkok-rooftop-bars-and-river-dining', photo: '/photos/nightlife.jpg' },
+      { title: '3-day stopover', href: '/itineraries/3-days-bangkok-stopover', photo: '/photos/riverside.jpg' },
+    ],
+    affiliates: [
+      stay('Bangkok food nights', 'Sukhumvit or Siam', 'Two or three nights beside a BTS exit.', stayLink('bangkok'), '/photos/bangkok.jpg'),
+      hop('Airport car', 'Trip.com', 'Book BKK or DMK to the hotel. A 2026 hotel van is often 1,200 to 2,000 THB.', transferLink('BKK'), '/photos/bts.jpg', 'flights', 'Search transfers'),
+      klook('Palace and SkyWalk tickets', 'Tickets', 'Timed palace or Mahanakhon tickets beat a midday queue.', klookTickets('Grand Palace Bangkok'), '/photos/grand-palace.jpg'),
+    ],
+    faqs: [
+      { q: 'Is this a nightlife crawl?', a: 'No. One rooftop is the night close. Use the nightlife districts page if you want bar streets, not this food loop.' },
+      { q: 'Chatuchak on a Tuesday?', a: 'No. Chatuchak runs Saturday and Sunday. Use Or Tor Kor at the same MRT on weekdays.' },
+      { q: 'Palace first or food first?', a: 'Palace at 08:30 (500 THB), then Wat Pho and Wat Arun. Markets work after 18:00 when the heat drops.' },
+    ],
+  }),
+  wave23Page({
+    path: '/itineraries/4-days-bangkok-and-ayutthaya',
+    title: '4 days in Bangkok and Ayutthaya: ruin-day itinerary',
+    crumb: '4 days Bangkok and Ayutthaya',
+    description:
+      'Four days keep two Bangkok nights and one Ayutthaya ruin day on the northbound train. Built for first-timers who want wats without adding the River Kwai.',
+    lede:
+      'Start with the Grand Palace block, keep one market night, then ride about one hour to Ayutthaya. Skip Kanchanaburi on this calendar; the 5-day page is the Erawan add.',
+    facts: [
+      ['Palace block', 'Palace 500 THB, Wat Pho 300 THB, Wat Arun 200 THB'],
+      ['Ayutthaya tickets', '80 THB per park site or 300 THB combo'],
+      ['Train', 'Hua Lamphong or Bang Sue; about one hour'],
+      ['BTS', '17 to 62 THB; sleep Sukhumvit for the return'],
+    ],
+    chips: ['Train ruin day', 'Two city nights', 'Skip Kwai'],
+    photo: '/photos/ayutthaya.jpg',
+    paragraphs: [
+      'The northbound train is why this four-day plan exists: two city nights, then one Ayutthaya ruin day, with the River Kwai left off. Sleep on [Sukhumvit](/bangkok/where-to-stay) so a 2026 BTS tap (17 to 62 THB) covers the return. Give [Rattanakosin](/bangkok/old-city-rattanakosin) its own morning: Palace 500 THB, [Wat Pho](/attractions/wat-pho) 300 THB, Tha Tien ferry 5 THB, [Wat Arun](/attractions/wat-arun) 200 THB.',
+      'Day 2 is a market or street-food hour, then Yaowarat. Day 3 is the [Ayutthaya train](/get-there/bangkok-to-ayutthaya) (about one hour). Park sites are 80 THB each or 300 THB for the combo. See [from Bangkok](/ayutthaya/from-bangkok). Day 4 is a buffer. For river-plus-falls, use [5 days Bangkok, Ayutthaya, Kanchanaburi](/itineraries/5-days-bangkok-ayutthaya-kanchanaburi).',
+    ],
+    days: [
+      ['Rattanakosin tickets', 'Mani Noppharat at 08:30. Palace 500 THB, Wat Pho 300 THB, Wat Arun 200 THB plus 5 THB ferry.', '/photos/grand-palace.jpg'],
+      ['Market and Chinatown', 'Chatuchak or Or Tor Kor. Yaowarat after 18:00 via MRT Wat Mangkon Exit 1.', '/photos/chatuchak.jpg'],
+      ['Ayutthaya by train', 'About one hour from Hua Lamphong or Bang Sue. 80 THB per site or 300 THB combo.', '/photos/wat-mahathat-ayu.jpg'],
+      ['Buffer or exit', 'One more Bangkok food street or an airport car. Do not add Erawan on this fourth day.', '/photos/bts.jpg'],
+    ],
+    sid: 'ruin-day',
+    stitle: 'Keep Kanchanaburi off this four-day spine',
+    sp: 'The [Ayutthaya](/ayutthaya) train is the point. Erawan is 300 THB and a full day from Kanchanaburi, not a same-day add after ruins.',
+    headers: ['Block', 'Sleep', '2026 clock or fee'],
+    rows: [
+      ['Nights 1 to 2', 'Sukhumvit or Siam', 'BTS 17 to 62 THB'],
+      ['Day 3', 'Same hotel or Ayutthaya dawn', 'Train about one hour; 80 or 300 THB'],
+      ['Day 4', 'Exit Bangkok', 'Airport car; skip a second ruin city'],
+    ],
+    portraits: [
+      { title: 'Ayutthaya from Bangkok', href: '/ayutthaya/from-bangkok', photo: '/photos/wat-phra-si-sanphet.jpg' },
+      { title: 'Bangkok day trips', href: '/bangkok/day-trips', photo: '/photos/bang-pa-in.jpg' },
+      { title: 'Where to stay', href: '/bangkok/where-to-stay', photo: '/photos/sukhumvit.jpg' },
+      { title: '5-day central loop', href: '/itineraries/5-days-bangkok-ayutthaya-kanchanaburi', photo: '/photos/kanchanaburi.jpg' },
+    ],
+    affiliates: [
+      stay('Bangkok base nights', 'BTS hotel', 'Three nights if you day-trip Ayutthaya.', stayLink('bangkok'), '/photos/bangkok.jpg'),
+      stay('Ayutthaya dawn', 'If you overnight', 'Book only if you want the park at opening.', stayLink('ayutthaya'), '/photos/erawan.jpg'),
+      hop('Northbound train', 'Trip.com', 'Hua Lamphong or Bang Sue to Ayutthaya, about one hour.', trainLink('Bangkok', 'Ayutthaya'), '/photos/get-there.jpg', 'train', 'Search trains'),
+    ],
+    faqs: [
+      { q: '80 THB or the 300 THB combo?', a: 'Pay per site at 80 THB if you will see two wats. Buy the 300 THB combo if you want the full historical park loop.' },
+      { q: 'Same day as the Grand Palace?', a: 'No. Palace, Wat Pho, and Wat Arun fill a first day. Put Ayutthaya on its own daylight block.' },
+      { q: 'Add Kanchanaburi?', a: 'Not on four days. Use the 5-day Bangkok, Ayutthaya, Kanchanaburi page if Erawan is the point.' },
+    ],
+  }),
+  wave23Page({
+    path: '/itineraries/3-days-bangkok-riverside-stopover',
+    title: '3 days in Bangkok: riverside stopover itinerary',
+    crumb: '3 days Bangkok riverside',
+    description:
+      'A 72-hour riverside stay puts you on a Chao Phraya pier hotel, with palace tickets and one Charoenkrung night. Built for long-haul stopovers who want boats more than the Sukhumvit grid.',
+    lede:
+      'Sleep on the river, walk Rattanakosin at 08:30, and use the 5 THB Tha Tien ferry for Wat Arun. Cross town only if you want a Siam hour on the way out.',
+    facts: [
+      ['Tickets', 'Palace 500 THB, Wat Pho 300 THB, Wat Arun 200 THB'],
+      ['Ferry', 'Tha Tien crossing 5 THB; tourist boat hops the piers'],
+      ['Sleep', 'Riverside or Charoenkrung; BTS 17 to 62 THB if you cross town'],
+      ['Night', 'One roof or a river dinner, not a bar-street list'],
+    ],
+    chips: ['River hotel', '5 THB ferry', '72 hours'],
+    photo: '/photos/riverside.jpg',
+    paragraphs: [
+      'A Chao Phraya pier hotel fits a long-haul stopover that wants boats more than the Sukhumvit grid. Book [riverside stays](/bangkok/riverside-charoenkrung), walk [Rattanakosin](/bangkok/old-city-rattanakosin) at 08:30, and use the 5 THB Tha Tien ferry for [Wat Arun](/attractions/wat-arun) at 200 THB after Grand Palace 500 THB and [Wat Pho](/attractions/wat-pho) 300 THB. Dinner at the hotel pier or [Wang Lang](/thai-food/wang-lang-and-talat-noi).',
+      'Day 2 is Talat Noi and Charoenkrung lanes, then one river dinner. Use the tourist boat between named piers. Day 3 is a short [getting around](/bangkok/getting-around) buffer or an Airport Rail Link hop. A 2026 BTS tap is 17 to 62 THB if you cross to Sukhumvit. Stay notes sit on [where to stay](/bangkok/where-to-stay). For markets and a roof instead, use the [food and rooftops](/itineraries/3-days-bangkok-food-and-rooftops) loop.',
+    ],
+    days: [
+      ['Palace from a river pier', 'Walk or boat to Mani Noppharat at 08:30. Palace 500 THB, Wat Pho 300 THB, Wat Arun 200 THB plus 5 THB ferry.', '/photos/wat-arun-night.jpg'],
+      ['Talat Noi and Charoenkrung', 'Lanes east of the river. Tourist boat between piers. River dinner, not a crawl list.', '/photos/chinatown-day.jpg'],
+      ['Buffer and airport', 'Hotel pool hour or one more boat hop. Airport Rail Link or a booked car to BKK or DMK.', '/photos/bts.jpg'],
+    ],
+    sid: 'river-base',
+    stitle: 'Sleep on the water, ticket one morning',
+    sp: 'Keep the hotel on [Charoenkrung](/bangkok/riverside-charoenkrung). Crossing to Thong Lo for a roof is optional, not the point of the stay.',
+    headers: ['Block', 'Focus', '2026 fee'],
+    rows: [
+      ['Day 1', 'Royal river loop', '500 / 300 / 200 THB; ferry 5 THB'],
+      ['Day 2', 'Talat Noi and a river dinner', 'Tourist boat between named piers'],
+      ['Day 3', 'Exit', 'ARL or hotel van 1,200 to 2,000 THB'],
+    ],
+    portraits: [
+      { title: 'Riverside stays', href: '/bangkok/riverside-charoenkrung', photo: '/photos/resort-capella-bangkok.jpg' },
+      { title: 'Wat Arun', href: '/attractions/wat-arun', photo: '/photos/bangkok.jpg' },
+      { title: 'Getting around', href: '/bangkok/getting-around', photo: '/photos/lumphini.jpg' },
+      { title: 'Where to stay', href: '/bangkok/where-to-stay', photo: '/photos/sukhumvit.jpg' },
+    ],
+    affiliates: [
+      stay('River nights', 'Charoenkrung or hotel pier', 'Two or three nights on the Chao Phraya.', stayAreaLink('riverside'), '/photos/resort-the-siam.jpg'),
+      hop('Airport car', 'Trip.com', 'BKK or DMK to a river hotel. A 2026 van is often 1,200 to 2,000 THB.', transferLink('BKK'), '/photos/get-there.jpg', 'flights', 'Search transfers'),
+      klook('River and palace tickets', 'Tickets', 'Timed palace entry plus a tourist-boat pass if you want a named pier hop.', klookTickets('Bangkok river boat'), '/photos/grand-palace.jpg'),
+    ],
+    faqs: [
+      { q: 'Do you need the BTS from a river hotel?', a: 'Not on day 1. Use boats and a short walk. The BTS (17 to 62 THB) is for a Siam or Sukhumvit hour.' },
+      { q: 'Ferry or tourist boat to Wat Arun?', a: 'The Tha Tien crossing is 5 THB and the short hop. The tourist boat is for named-pier sightseeing.' },
+      { q: 'Same as the food-and-rooftops page?', a: 'No. This one sleeps on the river. The food page sleeps on the BTS and closes with Octave.' },
+    ],
+  }),
+  wave23Page({
+    path: '/itineraries/8-days-bangkok-and-chiang-mai',
+    title: '8 days in Bangkok and Chiang Mai: first-timer itinerary',
+    crumb: '8 days Bangkok and Chiang Mai',
+    description:
+      'Eight days split 3 Bangkok nights and 4 Chiang Mai nights after a 70 to 75 minute hop. Built for first-timers who want hills and skip both Thai seas.',
+    lede:
+      'Ticket the royal river, fly BKK or DMK to CNX, then walk the moat and leave at 07:00 for Doi Suthep. Keep Phuket and Samui off this week.',
+    facts: [
+      ['Split', '3 nights Bangkok; 4 nights Chiang Mai; 1 exit buffer'],
+      ['Flight', 'BKK or DMK to CNX about 70 to 75 minutes'],
+      ['Bangkok tickets', 'Palace 500 THB, Wat Pho 300 THB, Wat Arun 200 THB'],
+      ['Doi Suthep', 'Leave 07:00; 30 THB plus songthaew 60 to 100 THB'],
+    ],
+    chips: ['No beach', '70-75 min hop', 'Old City base'],
+    photo: '/photos/chiang-mai.jpg',
+    paragraphs: [
+      'Bangkok temples and Chiang Mai moat wats share one first-timer week, with both Thai seas left off. Sleep three nights near a Sukhumvit BTS exit ([where to stay](/bangkok/where-to-stay)) so the 70 to 75 minute hop is a morning flight, not an 08:30 palace scramble on departure day. This fits people who fly into Bangkok and leave from Chiang Mai Airport.',
+      'Walk [Rattanakosin](/bangkok/old-city-rattanakosin) on the first daylight block: [Grand Palace](/attractions/grand-palace-and-wat-phra-kaew), [Wat Pho](/attractions/wat-pho), and the Tha Tien ferry to [Wat Arun](/attractions/wat-arun). Day 2 is Chatuchak or Or Tor Kor. Day 3 is a buffer or [Ayutthaya](/ayutthaya/from-bangkok) only if you skip a late dinner. Fly [Bangkok to Chiang Mai](/get-there/bangkok-to-chiang-mai) in about 70 to 75 minutes. Sleep four nights in the [Old City](/chiang-mai/old-city) or [Nimman](/chiang-mai/nimmanhaemin). Leave at 07:00 for [Doi Suthep](/attractions/wat-phra-that-doi-suthep). Book an [ethical elephant half-day](/attractions/chiang-mai-ethical-elephant-sanctuaries). Stay notes sit on [Chiang Mai where to stay](/chiang-mai/where-to-stay). Do not add Phuket on this week. File the Thailand Digital Arrival Card (TDAC) on [visas and TDAC](/plan/visas-and-tdac) before you fly.',
+    ],
+    days: [
+      ['Bangkok royal river', 'Palace 500 THB, Wat Pho 300 THB, Wat Arun 200 THB plus 5 THB ferry. Sleep Sukhumvit.', '/photos/grand-palace.jpg'],
+      ['Market night', 'Chatuchak Sat-Sun or Or Tor Kor. Yaowarat after 18:00.', '/photos/chatuchak.jpg'],
+      ['City buffer', 'Jim Thompson House or a canal hour. Pack for a morning CNX flight.', '/photos/jim-thompson.jpg'],
+      ['Fly Chiang Mai', 'About 70 to 75 minutes. Sleep inside the moat or Nimman. Wat Chedi Luang walk.', '/photos/chiang-mai-old-city.jpg'],
+      ['Doi Suthep at 07:00', '30 THB plus songthaew 60 to 100 THB. Lunch khao soi 55 to 90 THB Mon-Sat.', '/photos/doi-suthep.jpg'],
+      ['Elephant half-day', 'Named sanctuary, no riding. Nimman or a walking street after.', '/photos/nimman.jpg'],
+      ['Mae Rim or Inthanon', 'Rice-terrace hour in [Mae Rim](/chiang-mai/mae-rim) or a cooler [Doi Inthanon](/chiang-mai/doi-inthanon) day.', '/photos/northern.jpg'],
+      ['Exit CNX or BKK', 'Fly out of CNX, or hop back to BKK. Same-day long-haul from CNX is tight.', '/photos/night-market-cm.jpg'],
+    ],
+    sid: 'city-north',
+    stitle: 'Three Bangkok nights, four Chiang Mai nights',
+    sp: 'Keep one sea off this spine. For a beach fork after the north, use [12 days first-timer](/itineraries/12-days-thailand-first-timer) and pick Andaman or Gulf, not both.',
+    headers: ['Block', 'Sleep', 'Move'],
+    rows: [
+      ['Nights 1 to 3', 'Sukhumvit or Siam', 'BTS 17 to 62 THB; palace morning'],
+      ['Hop', 'CNX', 'About 70 to 75 minutes'],
+      ['Nights 4 to 7', 'Old City or Nimman', 'Doi Suthep 07:00; sanctuary half-day'],
+    ],
+    portraits: [
+      { title: 'Chiang Mai Old City', href: '/chiang-mai/old-city', photo: '/photos/wat-phra-singh.jpg' },
+      { title: 'Mae Rim', href: '/chiang-mai/mae-rim', photo: '/photos/resort-four-seasons-chiang-mai.jpg' },
+      { title: 'Bangkok to Chiang Mai', href: '/get-there/bangkok-to-chiang-mai', photo: '/photos/get-there.jpg' },
+      { title: 'First week', href: '/itineraries/first-week-7-days', photo: '/photos/sukhumvit.jpg' },
+    ],
+    affiliates: [
+      stay('Bangkok first block', 'BTS hotel', 'Three nights before the CNX hop.', stayLink('bangkok'), '/photos/bangkok.jpg'),
+      stay('Chiang Mai nights', 'Old City or Nimman', 'Four nights beside the moat or Nimman cafes.', stayLink('chiang-mai'), '/photos/tha-phae.jpg'),
+      hop('Bangkok to Chiang Mai', 'Trip.com', 'BKK or DMK to CNX, about 70 to 75 minutes.', flightLink('BKK', 'CNX'), '/photos/chiang-mai-airport.jpg', 'flights', 'Search flights'),
+    ],
+    faqs: [
+      { q: 'Add a beach on day 8?', a: 'No. Eight days already spend a day in the air. Use 12 days if you want one coast after Chiang Mai.' },
+      { q: 'BKK or DMK for the north hop?', a: 'Both fly to CNX. Match the airport to your Bangkok hotel side.' },
+      { q: 'Doi Suthep ticket?', a: '30 THB at the wat. Songthaew 60 to 100 THB each way. Leave at 07:00 for thinner queues.' },
+    ],
+  }),
+  wave23Page({
+    path: '/itineraries/9-days-bangkok-and-phuket',
+    title: '9 days in Bangkok and Phuket: city then beach itinerary',
+    crumb: '9 days Bangkok and Phuket',
+    description:
+      'Nine days put 3 Bangkok nights ahead of 5 Phuket west-coast nights. Built for November to April, when the Andaman is the dry sea and the Gulf is the wrong add.',
+    lede:
+      'Fly BKK to HKT in about 80 minutes and sleep Kata, Kamala, or Bang Tao. Book one boat day, not two, and leave Samui for a different trip.',
+    facts: [
+      ['Split', '3 nights Bangkok; 5 nights Phuket west coast'],
+      ['Flight', 'BKK to HKT about 80 minutes'],
+      ['Season', 'Andaman November to April'],
+      ['Bangkok tickets', 'Palace 500 THB, Wat Pho 300 THB, Wat Arun 200 THB'],
+    ],
+    chips: ['Andaman only', '80-min hop', 'West-coast sleep'],
+    photo: '/photos/phuket.jpg',
+    paragraphs: [
+      'Bangkok plus a Phuket west-coast beach is the first Andaman trip from November to April. Sleep three nights on [Sukhumvit](/bangkok/where-to-stay) so the 80-minute hop to Phuket Airport is a morning flight. This suits people who want one sea after the capital and will leave Samui for another calendar.',
+      'Walk the [old-city river temples](/bangkok/old-city-rattanakosin) on day 1, then a market on day 2 and a buffer on day 3. A 2026 BTS tap is 17 to 62 THB. Fly [Bangkok to Phuket](/get-there/bangkok-to-phuket) in about 80 minutes. Sleep five nights in [Kata or Karon](/phuket/kata-and-karon) or [Kamala and Surin](/phuket/kamala-and-surin). See [Phuket where to stay](/phuket/where-to-stay). Add one [Phang Nga](/attractions/phang-nga-bay-and-james-bond-island) boat or a [Phi Phi day](/attractions/phi-phi-islands-and-maya-bay) (Maya Bay 400 THB, no swim). Season notes sit on [when to go](/plan/when-to-go). Read the Thailand Digital Arrival Card (TDAC) page at [visas and TDAC](/plan/visas-and-tdac).',
+    ],
+    days: [
+      ['Bangkok tickets', 'Palace 500 THB, Wat Pho 300 THB, Wat Arun 200 THB plus 5 THB ferry.', '/photos/grand-palace.jpg'],
+      ['Market night', 'Chatuchak or Or Tor Kor, then Yaowarat.', '/photos/chatuchak.jpg'],
+      ['City buffer', 'Siam hour or Jim Thompson. Pack for an 80-minute HKT hop.', '/photos/jim-thompson.jpg'],
+      ['Fly HKT, west-coast base', 'No boat on landing day. Sleep Kata, Kamala, or Bang Tao.', '/photos/kata-and-karon.jpg'],
+      ['Old Town and a swim', 'Thalang Road in the cooler hours. Beach afternoon.', '/photos/kamala-and-surin.jpg'],
+      ['Phang Nga or rest', 'Sunrise bay boat or a second swim day. Do not book Phi Phi on the same morning.', '/photos/longtail-andaman.jpg'],
+      ['Phi Phi day or buffer', 'Maya Bay park 400 THB, no swim. Or stay on the west coast if swell rises.', '/photos/phi-phi.jpg'],
+      ['South peninsula hour', '[Rawai and Nai Harn](/phuket/rawai-and-nai-harn) if you want a quieter swim.', '/photos/rawai-and-nai-harn.jpg'],
+      ['Exit HKT', 'Airport car. Same-day long-haul from HKT is tight after a boat day.', '/photos/bts.jpg'],
+    ],
+    sid: 'city-andaman',
+    stitle: 'One capital, one Andaman island',
+    sp: 'Keep the [Gulf](/koh-samui) off this nine-day page. May to October is the wrong Andaman window; use a Gulf first-timer week instead.',
+    headers: ['Block', 'Sleep', 'Move'],
+    rows: [
+      ['Nights 1 to 3', 'Sukhumvit or Siam', 'BTS 17 to 62 THB'],
+      ['Hop', 'HKT', 'About 80 minutes'],
+      ['Nights 4 to 8', 'Kata, Kamala, or Bang Tao', 'One boat day, not two'],
+    ],
+    portraits: [
+      { title: 'Phuket where to stay', href: '/phuket/where-to-stay', photo: '/photos/resort-avista-hideaway-phuket.jpg' },
+      { title: 'Kata and Karon', href: '/phuket/kata-and-karon', photo: '/photos/big-buddha-phuket.jpg' },
+      { title: 'Bangkok to Phuket', href: '/get-there/bangkok-to-phuket', photo: '/photos/get-there.jpg' },
+      { title: 'When to go', href: '/plan/when-to-go', photo: '/photos/khao-lak.jpg' },
+    ],
+    affiliates: [
+      stay('Bangkok nights', 'BTS hotel', 'Three nights before the HKT hop.', stayLink('bangkok'), '/photos/bangkok.jpg'),
+      stay('Phuket west coast', 'Kata or Kamala', 'Five nights on a swim bay, not Patong as a first base.', stayAreaLink('kata'), '/photos/resort-amanpuri.jpg'),
+      hop('Bangkok to Phuket', 'Trip.com', 'BKK to HKT, about 80 minutes.', flightLink('BKK', 'HKT'), '/photos/phuket-airport.jpg', 'flights', 'Search flights'),
+    ],
+    faqs: [
+      { q: 'Can you add Samui after Phuket?', a: 'Not on nine days. The two seas do not share one dry season. Pick Andaman or Gulf.' },
+      { q: 'Maya Bay swim?', a: 'No. The conservation rule bans swimming in Maya Bay. The park fee is 400 THB.' },
+      { q: 'Which Phuket beach for a first stay?', a: 'Kata, Kamala, or Bang Tao. Patong is the nightlife strip, not a first swim base.' },
+    ],
+  }),
+  wave23Page({
+    path: '/itineraries/10-days-first-timer-gulf',
+    title: '10 days in Thailand: first-timer Gulf itinerary',
+    crumb: '10 days first-timer Gulf',
+    description:
+      'Ten first-timer days put 3 Bangkok nights ahead of 6 Koh Samui nights. Built for January to September, when the Gulf is the drier sea.',
+    lede:
+      'Fly BKK to USM after the palace morning, sleep Bophut or Chaweng, and take one 300 THB Ang Thong day if the park is open. Skip Phuket on this spine.',
+    facts: [
+      ['Split', '3 nights Bangkok; 6 nights Samui; 1 exit buffer'],
+      ['Flight', 'BKK to USM; Samui is a premium ticket'],
+      ['Season', 'Gulf January to September'],
+      ['Ang Thong', '300 THB foreign park fee; no public ferry'],
+    ],
+    chips: ['Gulf only', 'USM premium', 'Ang Thong day'],
+    photo: '/photos/koh-samui.jpg',
+    paragraphs: [
+      'Bangkok and Koh Samui make the first Gulf island week. Land at Suvarnabhumi, sleep [Sukhumvit](/bangkok/where-to-stay), and fly the premium hop into Samui Airport so landing day stays boat-free. January to September is the sea that works; Phuket is the wrong add.',
+      'Give the [Grand Palace](/attractions/grand-palace-and-wat-phra-kaew) and river wats their own morning (BTS 17 to 62 THB). Fly [Bangkok to Koh Samui](/get-there/bangkok-to-koh-samui). Samui Airport is a premium ticket. Sleep six nights using [Samui where to stay](/koh-samui/where-to-stay): [Chaweng](/koh-samui/chaweng), [Lamai](/koh-samui/lamai), or Bophut. Book [Ang Thong](/koh-samui/ang-thong-marine-park) (300 THB). A Lomprayah hop to [Phangan](/koh-phangan) is about 30 minutes if you want one bay night, not a Full Moon default. Season notes sit on [when to go](/plan/when-to-go).',
+    ],
+    days: [
+      ['Bangkok tickets', 'Palace 500 THB, Wat Pho 300 THB, Wat Arun 200 THB plus 5 THB ferry.', '/photos/grand-palace.jpg'],
+      ['Market night', 'Chatuchak or Or Tor Kor, then Yaowarat.', '/photos/chatuchak.jpg'],
+      ['City buffer', 'Pack for USM. Jim Thompson or a Siam hour.', '/photos/siam.jpg'],
+      ['Land USM', 'No boat. Sleep Bophut, Choeng Mon, or Chaweng.', '/photos/chaweng.jpg'],
+      ['Beach and village', 'Bophut Fisherman Village if you sleep north. Learn Grab and songthaew fares.', '/photos/lamai.jpg'],
+      ['Ang Thong day', 'Park fee 300 THB. No public ferry. Back before dark.', '/photos/ang-thong.jpg'],
+      ['Second Samui coast', 'Swap to Lamai or a north bay if the first beach is wrong.', '/photos/ferry-gulf.jpg'],
+      ['Optional Phangan day', 'Lomprayah about 30 minutes Bangrak or Maenam to Thong Sala. Back the same day unless you booked a bay night.', '/photos/koh-phangan.jpg'],
+      ['Buffer swim', 'Hotel day. Confirm the USM exit car.', '/photos/resort-six-senses-samui.jpg'],
+      ['Exit USM', 'Airport car. Same-day long-haul from Samui is tight.', '/photos/get-there.jpg'],
+    ],
+    sid: 'city-gulf',
+    stitle: 'Bangkok, then one Gulf island',
+    sp: 'Keep the [Andaman](/phuket) off this ten-day page. May to September swell hits Phuket first. For three islands, use [Gulf islands 10 days](/itineraries/10-days-gulf-islands-samui-phangan-tao).',
+    headers: ['Block', 'Sleep', 'Move'],
+    rows: [
+      ['Nights 1 to 3', 'Sukhumvit', 'BTS 17 to 62 THB'],
+      ['Hop', 'USM', 'Premium ticket; no boat on landing day'],
+      ['Nights 4 to 9', 'Bophut, Chaweng, or Lamai', 'Ang Thong 300 THB; optional 30-min Phangan hop'],
+    ],
+    portraits: [
+      { title: 'Samui where to stay', href: '/koh-samui/where-to-stay', photo: '/photos/resort-ritz-carlton-koh-samui.jpg' },
+      { title: 'Ang Thong', href: '/koh-samui/ang-thong-marine-park', photo: '/photos/longtail-andaman.jpg' },
+      { title: 'Bangkok to Samui', href: '/get-there/bangkok-to-koh-samui', photo: '/photos/old-city.jpg' },
+      { title: 'Gulf 10-day hop', href: '/itineraries/10-days-gulf-islands-samui-phangan-tao', photo: '/photos/koh-tao.jpg' },
+    ],
+    affiliates: [
+      stay('Bangkok nights', 'BTS hotel', 'Three nights before the USM hop.', stayLink('bangkok'), '/photos/bangkok.jpg'),
+      stay('Samui week', 'Bophut or Chaweng', 'Six nights on one island. Confirm a child seat if you need one.', stayLink('koh-samui'), '/photos/resort-four-seasons-koh-samui.jpg'),
+      hop('Bangkok to Samui', 'Trip.com', 'USM is a premium ticket. Book the hop before the beach nights.', flightLink('BKK', 'USM'), '/photos/bts.jpg', 'flights', 'Search flights'),
+    ],
+    faqs: [
+      { q: 'Why not add Phuket?', a: 'The Andaman and Gulf do not share one dry season. This page is a Gulf first trip.' },
+      { q: 'Ang Thong fee?', a: '300 THB for foreign adults. There is no public ferry. Tours leave from Samui piers.' },
+      { q: 'Is USM cheaper via Surat Thani?', a: 'URT plus a boat is the budget path. USM is the short hop and the premium fare.' },
+    ],
+  }),
+];

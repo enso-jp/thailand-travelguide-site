@@ -9,10 +9,9 @@ import SisterNetwork from './SisterNetwork.astro';
 import TripSearch from './TripSearch.astro';
 import type { Page } from '../lib/content';
 import { chipHref, formatInline } from '../lib/inline';
-import { assignExactPhotos } from '../lib/dish-photos';
 import { UniquePhotos } from '../lib/photos';
 import { attractionsFor, PLACE_META } from '../lib/place-attractions';
-import { klookTours, stayLink, type StayCity } from '../lib/partners';
+import { klookTours, stayLink, stayCityFromPath } from '../lib/partners';
 import { regionForPath } from '../lib/regions';
 import { pageHref, routePath } from '../lib/site';
 
@@ -27,7 +26,7 @@ const bag = new UniquePhotos(reserved);
 const attractions = bag.takeBatch(attractionsFor(page.path), (row) => `${page.path} ${row.name} ${row.href}`);
 const portraits = bag.takeBatch(page.portraits || [], (item) => `${page.path} ${item.title} ${item.href}`);
 const affiliates = bag.takeBatch(page.affiliates || [], (item) => `${page.path} ${item.title} ${item.kicker} ${item.body}`);
-const city = (meta?.stayCity || 'bangkok') as StayCity;
+const city = stayCityFromPath(page.path);
 const region = (meta?.region || regionForPath(page.path)) as 'central' | 'north' | 'andaman' | 'gulf' | 'east';
 const stayHref = page.bookingCta?.stayHref || stayLink(city);
 const tourHref = page.bookingCta?.tourHref || klookTours(`${page.title} tours`);
@@ -208,8 +207,7 @@ const tabs = [
     </div>
 
     <aside class="rail">
-      <div class="panel stay-box">
-        <h2>Book your <em>stay</em></h2>
+      <div class="rail-booking">
         <TripSearch variant="destination" city={city} placeName={page.title} />
         <a class="promo-box" href={stayHref} rel="sponsored noopener" target="_blank">
           <strong>Trip.com hotels</strong>

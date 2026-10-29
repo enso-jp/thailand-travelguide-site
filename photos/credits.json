@@ -184,6 +184,11 @@
     "license": "CC BY-SA 4.0",
     "source": "https://commons.wikimedia.org/wiki/File:Bangkok,_Thailand,_Sukhumvit_Road,_2024.jpg"
   },
+  "suvarnabhumi-arrivals": {
+    "author": "Exec8",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Bangkok_Suvarnabhumi_Airport_-_Arrivals_-_Immigration_(for_Wikimania_2020).jpg"
+  },
   "thai-food": {
     "author": "Marcin Konsek",
     "license": "CC BY-SA 4.0",
@@ -738,5 +743,285 @@
     "author": "Takeaway",
     "license": "CC BY-SA 3.0",
     "source": "https://commons.wikimedia.org/wiki/File:Khao_soi_Chiang_Mai.jpg"
+  },
+  "similan": {
+    "author": "Mathias Krumbholz",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Similan_Island_01_(MK).jpg"
+  },
+  "surin-islands": {
+    "author": "The Cosmonaut",
+    "license": "CC BY-SA 2.5 ca",
+    "source": "https://commons.wikimedia.org/wiki/File:Unnamed_beach,_North_Surin_Island.jpg"
+  },
+  "ao-nang": {
+    "author": "kallerna",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ao_Nang_beach.jpg"
+  },
+  "chiang-mai-airport": {
+    "author": "Setawut",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Chiang_Mai_International_Airport_2025.jpg"
+  },
+  "phuket-airport": {
+    "author": "Athikhun.suw",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Phuket_international_airport_domestic_terminal_2019.jpg"
+  },
+  "thonburi-station": {
+    "author": "Ahoerstemeier",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Thonburi_railway_station.jpg"
+  },
+  "hanoi": {
+    "author": "cloud",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ho%C3%A0n_Ki%E1%BA%BFm_Lake.jpg"
+  },
+  "ho-chi-minh": {
+    "author": "Tri Nguyen",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ho_Chi_Minh_City_skyline.jpg"
+  },
+  "da-nang": {
+    "author": "Kuroczynski",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Da_Nang_Dragon_Bridge_2020_IMG_3909.jpg"
+  },
+  "hoi-an": {
+    "author": "Steffen Schmitz",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:H%E1%BB%99i_An,_Ch%C3%B9a_C%E1%BA%A7u,_2020-01_CN-02.jpg"
+  },
+  "ha-long": {
+    "author": "Ondřej Žváček",
+    "license": "CC BY 2.5",
+    "source": "https://commons.wikimedia.org/wiki/File:Ha_Long_Bay.jpg"
+  },
+  "similan-boat": {
+    "author": "Sgroey",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Donald_Duck_bay,_similan_islands.jpg"
+  },
+  "hanoi-old-quarter": {
+    "author": "Jakub Hałun",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Street_seller_of_fingered_citrons_in_Old_Town_of_Hanoi,_20240204_1335_5772.jpg"
+  },
+  "hanoi-street-food": {
+    "author": "Christophe95",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Street_food_in_Hanoi.jpg"
+  },
+  "hcmc-notre-dame": {
+    "author": "SfdWASINO",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Notre-Dame_Cathedral_Basilica_of_Saigon.jpg"
+  },
+  "cu-chi-tunnels": {
+    "author": "Andre Hospers",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cu_Chi_Tunnels_Vietnam_war_5.jpg"
+  },
+  "ben-thanh": {
+    "author": "Charles Haynes",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:B%E1%BA%BFn_Th%C3%A0nh_Market.jpg"
+  },
+  "da-nang-beach": {
+    "author": "Dragfyre",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:My_Khe_Beach_Da_Nang.jpg"
+  },
+  "hoi-an-lanterns": {
+    "author": "Lishuilynn",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Hoi_An_lanterns.jpg"
+  },
+  "temple-of-literature": {
+    "author": "Arjunullas",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Temple_of_Literature_Hanoi.jpg"
+  },
+  "chiang-mai-elephant": {
+    "author": "Joel Wiramu Pauling",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Elephant_and_Man,_Elephant_Nature_Park,_Chiang_Mai_province.jpg"
+  },
+  "krabi-airport": {
+    "author": "Paolobon140",
+    "license": "CC0",
+    "source": "https://commons.wikimedia.org/wiki/File:Krabi_International_Airport,_Thailand.jpg"
+  },
+  "sukhothai-mahathat": {
+    "author": "Wiriya Somboonphol",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Wat_Mahathat_Sukhothai.jpg"
+  },
+  "death-railway": {
+    "author": "Vyacheslav Argenberg",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kanchanaburi,_Burma_Railway_(Death_Railway)_track,_Thailand.jpg"
+  },
+  "erawan-tiers": {
+    "author": "Kanchanaphum Jantrathip",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Erawan_Waterfall.jpg"
+  },
+  "suvarnabhumi-exterior": {
+    "author": "Jim Newberry",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Suvarnabhumi_Airport.jpg"
+  },
+  "pai-canyon": {
+    "author": "Christophe95",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Pai_Canyon.jpg"
+  },
+  "phra-nang": {
+    "author": "Maksym Kozlenko",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Phra_Nang_Cave_Beach.jpg"
+  },
+  "tha-phae": {
+    "author": "Jakub Hałun",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:20171105_Tha_Phae_Gate_Chiang_Mai_9784_DxO.jpg"
+  },
+  "cham-islands": {
+    "author": "Kok Leng Yeo",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Cu_Lao_Cham_Marine_Park,_Vietnam.jpg"
+  },
+  "sairee-beach": {
+    "author": "David Wilmot",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sairee_Beach.jpg"
+  },
+  "si-satchanalai": {
+    "author": "Gary Todd",
+    "license": "Public domain",
+    "source": "https://commons.wikimedia.org/wiki/File:13th_Century_Thai_City_of_Si_Satchanalai-_Wat_Phra_Si_Rattana_Mahathat-_1.jpg"
+  },
+  "wat-si-chum": {
+    "author": "Gzzz",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Hand_of_Wat_Si_Chum.jpg"
+  },
+  "sukhothai-lake": {
+    "author": "Vyacheslav Argenberg",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sukhothai,_Buddhist_stupas_on_the_lake,_Thailand.jpg"
+  },
+  "wat-sa-si": {
+    "author": "Dominic Nelson",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Sukhothai_-_Wat_Sa_Si_seen_across_the_lotus_pond_Jan_2024.jpg"
+  },
+  "wat-ratchaburana": {
+    "author": "Stefan Fussan",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ayutthaya_-_Wat_Ratchaburana_-_0059.jpg"
+  },
+  "maya-bay": {
+    "author": "Cybercap",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Maya_Bay.jpg"
+  },
+  "tan-son-nhat": {
+    "author": "Lưu Ly",
+    "license": "CC BY 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tan_Son_Nhat_International_Airport.jpg"
+  },
+  "noi-bai": {
+    "author": "Nguyen QuocTrung",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Noi_Bai_International_Airport.jpg"
+  },
+  "da-nang-airport": {
+    "author": "Chainwit",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:2024_Da_Nang_International_Airport_(DAD)_-_international_terminal_-_img_02.jpg"
+  },
+  "samui-airport": {
+    "author": "Per Meistrup",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Samui_Airport.jpg"
+  },
+  "marble-mountains": {
+    "author": "Christophe95",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Remote_view_of_the_Marble_Mountains.jpg"
+  },
+  "linh-ung": {
+    "author": "Christophe95",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Lady_Buddha_Da_Nang.jpg"
+  },
+  "doi-suthep-chedi": {
+    "author": "Tevaprasast Makklai",
+    "license": "CC BY 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Phra_That_Doi_Suthep_01.jpg"
+  },
+  "koh-kood-boat": {
+    "author": "Vyacheslav Argenberg",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Koh_Kut,_Thailand,_Eastern_Bay,_Fishing_boat.jpg"
+  },
+  "hoi-an-river": {
+    "author": "Dennis G. Jarvis",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:A_boat_on_the_Thu_Bon_River,_Hoi_An,_Vietnam.jpg"
+  },
+  "bang-niang": {
+    "author": "Abe Khao Lak",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Abraham_Bogerd_-_khao_lak_holiday-_monks_at_Bang_Niang_beach.jpg"
+  },
+  "hanoi-temple-literature": {
+    "author": "gorik",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Temple_of_Literature,_Hanoi.jpg"
+  },
+  "hcmc-ben-thanh": {
+    "author": "Jean-Marie Hullot",
+    "license": "CC BY 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ben_Thanh_Market.jpg"
+  },
+  "ninh-binh": {
+    "author": "Andre Hospers",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tam_Coc_Ninh_Binh.jpg"
+  },
+  "khuk-khak": {
+    "author": "Jmex",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Khukkhak_beach_Khao_Lak.jpg"
+  },
+  "khao-lak-resort": {
+    "author": "Reinhard Link",
+    "license": "CC BY-SA 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Thailand_-_Khao_Lak_-_Beach_Resort_(16345629343).jpg"
+  },
+  "hcmc-opera": {
+    "author": "HĐ",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Ho_Chi_Minh_City_Opera_House.jpg"
+  },
+  "nang-thong": {
+    "author": "Dirk Enthoven",
+    "license": "CC BY 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:White_sand_beach_khao_lak_-_panoramio_(1).jpg"
+  },
+  "khao-lak-andaman": {
+    "author": "Vyacheslav Argenberg",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Khao_Lak,_Andaman_Sea,_Thailand.jpg"
+  },
+  "bang-niang-estuary": {
+    "author": "Movses",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Khlong_Bang_Niang_estuary.jpeg"
   }
 }

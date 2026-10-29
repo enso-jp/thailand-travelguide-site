@@ -48,12 +48,51 @@ export function assignExactPhotos<T extends { photo?: string }>(items: T[], bag:
   return items.map((item) => ({ ...item, photo: bag.takeOrNone(item.photo) }));
 }
 
+function normalizeDishText(value: string): string {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+}
+
+function dishStem(key: string): string {
+  return key.replace(/^dish-/, '').replace(/-\d+$/, '').replace(/-/g, ' ');
+}
+
+/** True when the photo key is the same dish as the preferred file or title hint. */
+function dishKeyMatchesHint(key: string, dishHint: string): boolean {
+  const hay = normalizeDishText(dishHint);
+  if (!hay) return false;
+  const stem = dishStem(key);
+  if (stem.length < 4) return false;
+  if (hay.includes(stem)) return true;
+  const tokens = stem.split(' ').filter((token) => token.length >= 3);
+  return tokens.length >= 2 && tokens.every((token) => new RegExp(`(?:^| )${token}(?: |$)`).test(hay));
+}
+
+function takeDishPhoto(bag: UniquePhotos, preferred?: string, hint = ''): string | undefined {
+  const exact = bag.takeOrNone(preferred);
+  if (exact) return exact;
+  const dishHint = `${photoKey(preferred)} ${hint}`;
+  const matches = [...DISH_PHOTO_KEYS]
+    .filter((key) => dishKeyMatchesHint(key, dishHint))
+    .sort((a, b) => dishStem(b).length - dishStem(a).length);
+  for (const key of matches) {
+    const got = bag.takeOrNone(`/photos/${key}.jpg`);
+    if (got) return got;
+  }
+  return undefined;
+}
+
 export function foodRowsFor(path: string, reserved: string[] = []): CityFoodRow[] {
   const bag = new UniquePhotos(reserved);
-  return assignExactPhotos(CITY_FOOD_ROWS[path] || [], bag);
+  return (CITY_FOOD_ROWS[path] || []).map((row) => ({
+    ...row,
+    photo: takeDishPhoto(bag, row.photo, row.title),
+  }));
 }
 
 export function signatureDishesFor(reserved: string[] = []): FoodDish[] {
   const bag = new UniquePhotos(reserved);
-  return assignExactPhotos(SIGNATURE_DISHES, bag);
+  return SIGNATURE_DISHES.map((dish) => ({
+    ...dish,
+    photo: takeDishPhoto(bag, dish.photo, dish.title),
+  }));
 }
