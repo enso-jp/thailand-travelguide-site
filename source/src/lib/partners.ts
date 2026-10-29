@@ -8,6 +8,7 @@ function tripParams(extra: Record<string, string> = {}): string {
   const params = new URLSearchParams({
     Allianceid: TRIP_ALLIANCE,
     SID: TRIP_SID,
+    trip_sub2: 'th',
     ...extra,
   });
   return params.toString();
@@ -235,7 +236,7 @@ function klookUrl(path: string): string {
 /** Travelpayouts click-out to a Klook URL (source 588978, marker 793638). */
 export function klookLink(path: string): string {
   const dest = klookUrl(path);
-  return `https://tp.media/r?marker=${TP_MARKER}&u=${encodeURIComponent(dest)}`;
+  return `https://tp.media/r?marker=${TP_MARKER}&trs=${KLOOK_SOURCE}&sub_id=th&u=${encodeURIComponent(dest)}`;
 }
 
 export function klookTours(query: string): string {

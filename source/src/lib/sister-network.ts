@@ -33,7 +33,7 @@ export type SisterSection = {
 };
 
 const VN = 'https://vietnam-travelguide.com';
-const TRIP_BASE = 'Allianceid=11105102&SID=334225872';
+const TRIP_BASE = 'Allianceid=11105102&SID=334225872&trip_sub2=th';
 
 export function crossBorderFlightUrl(
   fromSlug: string,
