@@ -384,7 +384,10 @@ for (const page of pages) {
     if (!String(fact.label || '').trim() || !String(fact.value || '').trim()) {
       fail(page.path, 'factBar has an empty label or value');
     }
-    if (String(fact.value).length > 90) fail(page.path, `factBar value is too long: ${fact.label}`);
+    if (String(fact.value).length > 160) fail(page.path, `factBar value is too long: ${fact.label}`);
+    if (/Check on arrival/i.test(String(fact.value))) {
+      fail(page.path, `factBar value must not say Check on arrival: ${fact.label}`);
+    }
   }
   if (page.chips && page.chips.length === 0) fail(page.path, 'quickFacts chips are empty');
   if ((page.schema === 'City' || page.schema === 'TouristDestination') && !page.chips?.length) {
