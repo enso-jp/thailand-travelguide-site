@@ -1238,7 +1238,7 @@ const rawPages: Page[] = [
   {
     path: "/bangkok/riverside-charoenkrung",
     title: "Riverside and Charoenkrung",
-    description: "River hotels, warehouse bars, and the Chinatown edge along Charoenkrung. The BTS is a short Grab, not at the door.",
+    description: "River hotels, warehouse bars, and the Chinatown edge sit along Charoenkrung. The BTS is a short Grab away, not at the hotel front door.",
     lede: "Stay here for the Chao Phraya and a night walk on Charoenkrung. The BTS is a short Grab, not at the door.",
     schema: "TouristDestination",
     crumbs: [
@@ -3370,7 +3370,7 @@ const rawPages: Page[] = [
   {
     path: "/resort-living/four-seasons-chiang-mai",
     title: "Four Seasons Chiang Mai",
-    description: "Rice-terrace pavilions in the Mae Rim valley north of Chiang Mai. A valley stay, not a moat hotel.",
+    description: "Rice-terrace pavilions in Mae Rim make this a valley stay, not a moat hotel. CNX is 25 to 40 minutes by car; the Old City is 30 to 45.",
     lede: "Four Seasons Chiang Mai is known for rice-terrace pavilions in Mae Rim. Use it when the valley is the trip and you accept a 30 to 45 minute ride to the Old City.",
     schema: "Article",
     crumbs: [
@@ -3685,7 +3685,7 @@ const rawPages: Page[] = [
   {
     path: "/interests/nightlife",
     title: "Nightlife in Thailand",
-    description: "Bangkok nightlife is district pockets and rooftops. The south is Phuket and Samui beach clubs. Not dumped on the main city pages.",
+    description: "Bangkok nightlife is district pockets and rooftops, while the south is Phuket and Samui beach clubs. Pick a neighbourhood or coast before the first pour.",
     lede: "Thailand after dark is known for candlelit shophouse cocktail bars along Bangkok's riverfront, velvet speakeasies in Thonglor, and sunset beach clubs on Phuket and Koh Samui. Pick your neighbourhood or coast before the first pour.",
     schema: "Article",
     crumbs: [

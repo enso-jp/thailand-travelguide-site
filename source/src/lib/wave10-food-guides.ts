@@ -96,7 +96,7 @@ export const wave10Pages: Page[] = [
     path: '/thai-food/banthat-thong-road-food-strip',
     title: 'Banthat Thong Road food strip',
     description:
-      'Banthat Thong is the Chulalongkorn night food strip from Rama I toward Rama IV: Jeh O Mama bowls, toasted milk bread, Somboon curry crab, Haeundae and CQK, and soy milk. MRT Sam Yan or BTS National Stadium.',
+      'Banthat Thong is the Chula night strip for Jeh O Mama bowls, toasted milk bread, and Somboon curry crab. Use MRT Sam Yan or BTS National Stadium.',
     lede:
       'Banthat Thong is known for late university food, not Chinatown gold shops. It fits night eaters from 17:00 to midnight who will wait for Jeh O or buy a Klook queue pass.',
     schema: 'Article',

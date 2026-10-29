@@ -510,7 +510,7 @@ export const wave9Pages: Page[] = [
     path: '/attractions/chiang-mai-ethical-elephant-sanctuaries',
     title: 'Chiang Mai ethical elephant sanctuaries',
     description:
-      'Observation-only and feeding sanctuaries in Mae Taeng and Mae Wang. No riding, hooks, or shows. Half-day 1,800 to 2,500 THB; full-day 2,500 to 3,500 THB with hotel van pickup.',
+      'Observation-only sanctuaries in Mae Taeng and Mae Wang skip riding, hooks, and shows. Half-day trips run 1,800 to 2,500 THB with hotel van pickup.',
     lede:
       'Half-day and full-day observation-and-feeding sanctuaries sit in the Mae Wang and Mae Taeng valleys outside Chiang Mai. Book a no-hook, no-show camp if you want to watch and feed, not ride; the van is part of the 2026 price.',
     schema: 'TouristDestination',
@@ -996,7 +996,7 @@ export const wave9Pages: Page[] = [
     path: '/attractions/muay-thai-stadiums-rajadamnern-and-lumpinee',
     title: 'Rajadamnern and Lumpinee Muay Thai',
     description:
-      'Rajadamnern Stadium (1945) near Khao San runs RWS Saturdays and Petchyindee Thursdays at 1,500 to 3,500 THB. ONE Lumpinee is Friday nights near MRT Pink Line Ram Inthra 3 (PK17).',
+      'Rajadamnern runs RWS Saturdays and Petchyindee Thursdays at 1,500 to 3,500 THB. ONE Lumpinee is Friday at MRT Pink Line Ram Inthra 3 (PK17).',
     lede:
       'Rajadamnern is known for Thursday Petchyindee cards and Saturday RWS nights near Khao San. ONE Lumpinee on Fridays at the Ram Inthra stadium suits planners who want the Pink Line hall, not the old Rama IV venue.',
     schema: 'TouristDestination',
