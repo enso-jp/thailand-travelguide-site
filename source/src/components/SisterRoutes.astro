@@ -27,8 +27,16 @@ import { SISTER_CROSS_BORDER_ROUTES } from '../lib/sister-network';
               </a>
             ))}
           </div>
-          <a class="sister-flight-btn" href={route.flightHref} target="_blank" rel="sponsored noopener noreferrer">
-            {route.flightLabel}
+          <a
+            class="flight-cta"
+            href={route.flightHref}
+            target="_blank"
+            rel="sponsored noopener noreferrer"
+            data-partner="flights"
+          >
+            <span class="sister-kicker">Trip.com flights</span>
+            <strong>{route.flightLabel}</strong>
+            <span class="sister-cta">Search flights on Trip.com →</span>
           </a>
         </article>
       ))
