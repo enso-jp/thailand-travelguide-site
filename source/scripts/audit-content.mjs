@@ -539,14 +539,15 @@ for (const page of pages) {
     const href = row.href || '';
     const decoded = decodeAffiliate(href);
     const trip = /trip\.com/i.test(decoded);
-    const klook = /klook\.com|tp\.media/i.test(decoded);
+    const klookShort = /^https:\/\/klook\.tpx\.li\/[A-Za-z0-9]+$/.test(href);
+    const klook = !klookShort && /klook\.com|tp\.media/i.test(decoded);
     if (trip && (!decoded.includes('Allianceid=11105102') || !decoded.includes('SID=334225872'))) {
       fail(page.path, `Trip.com URL missing Allianceid=11105102 or SID=334225872 (${row.title})`);
     }
     if (klook && (!decoded.includes('588978') || !decoded.includes('793638'))) {
       fail(page.path, `Klook/Travelpayouts URL missing 588978 or 793638 (${row.title})`);
     }
-    if (!trip && !klook) fail(page.path, `affiliate href is not Trip.com or Klook (${row.title})`);
+    if (!trip && !klook && !klookShort) fail(page.path, `affiliate href is not Trip.com or Klook (${row.title})`);
   }
 }
 

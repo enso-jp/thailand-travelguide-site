@@ -233,9 +233,39 @@ function klookUrl(path: string): string {
   return url.toString();
 }
 
+/** Partner-generated Klook deep links (Travelpayouts short links), keyed by search query. Use exactly as issued. */
+const KLOOK_DEEP_LINKS: Record<string, string> = {
+  'Bangkok Grand Palace tickets': 'https://klook.tpx.li/Af6UqxKX',
+  'Grand Palace Bangkok': 'https://klook.tpx.li/Af6UqxKX',
+  'Phuket island hopping': 'https://klook.tpx.li/wRUJ1dV5',
+  'Krabi island hopping': 'https://klook.tpx.li/OCeCYWuV',
+  'Phi Phi Maya Bay island hopping': 'https://klook.tpx.li/LYSfwuai',
+  'Doi Suthep Chiang Mai': 'https://klook.tpx.li/Kdfxxkiz',
+  'Doi Inthanon day trip': 'https://klook.tpx.li/O1H3g2wg',
+  'Chatuchak Weekend Market': 'https://klook.tpx.li/omItio4V',
+  'Ang Thong Marine Park island hopping': 'https://klook.tpx.li/QdS0CN7t',
+  'Ang Thong Koh Samui': 'https://klook.tpx.li/QdS0CN7t',
+  'Ang Thong Marine Park': 'https://klook.tpx.li/QdS0CN7t',
+  'Lomprayah Koh Samui': 'https://klook.tpx.li/QlYvza34',
+  'Mahanakhon SkyWalk': 'https://klook.tpx.li/P3ETIlIr',
+  'Wat Arun Bangkok': 'https://klook.tpx.li/PvWOgyV1',
+  'Chiang Rai White Temple': 'https://klook.tpx.li/0FyiIKCD',
+  'Erawan National Park': 'https://klook.tpx.li/8N4fluS4',
+  'Sanctuary of Truth Pattaya': 'https://klook.tpx.li/49lJelOT',
+  'Cheow Lan Lake Khao Sok': 'https://klook.tpx.li/ipCYqbaK',
+  'Rajadamnern Muay Thai tickets': 'https://klook.tpx.li/RKAYvktO',
+  'Similan Islands day trip': 'https://klook.tpx.li/efblW5oA',
+  'Koh Lanta island hopping': 'https://klook.tpx.li/FO9nnzZC',
+  'Bangkok tours': 'https://klook.tpx.li/lGtSENES',
+  'Chiang Mai tours': 'https://klook.tpx.li/HDIsZLqg',
+  'Thailand itinerary tours': 'https://klook.tpx.li/hxjjyGRa',
+};
+
 /** Travelpayouts click-out to a Klook URL (source 588978, marker 793638). */
 export function klookLink(path: string): string {
   const dest = klookUrl(path);
+  const query = new URL(dest).searchParams.get('query');
+  if (query && KLOOK_DEEP_LINKS[query]) return KLOOK_DEEP_LINKS[query];
   return `https://tp.media/r?marker=${TP_MARKER}&trs=${KLOOK_SOURCE}&sub_id=th&u=${encodeURIComponent(dest)}`;
 }
 

@@ -81,7 +81,7 @@ function partnerFor(href: string): string | null {
     return null;
   }
   if (/(^|\.)trip\.com$/.test(host)) return 'tripcom';
-  if (/(^|\.)klook\.com$/.test(host)) return 'klook';
+  if (/(^|\.)klook\.com$/.test(host) || host === 'klook.tpx.li') return 'klook';
   if (/(^|\.)(tp\.media|tpk\.ro|travelpayouts\.com|tp\.st)$/.test(host)) return 'travelpayouts';
   return null;
 }
