@@ -1,1 +1,0 @@
-# Trailing-slash policy: HTML pages use /path/. The build writes the full 301 list to dist/_redirects.
