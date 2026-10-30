@@ -377,7 +377,7 @@ const NEIGHBOURHOOD_FALLBACK_CITY: Record<string, string> = Object.fromEntries(
 const NEARBY_AREAS = new Set(['kamala', 'surin', 'bang-niang']);
 const KEYWORD_LABELS: Record<string, string> = {
   khao_sok_raft_house: 'Khao Sok stays',
-  soneva_kiri: 'Hotels in Koh Kood',
+  soneva_kiri: 'Koh Kood stays',
   private_pool_villa: 'Hotels in Krabi province',
 };
 const TRIP_HOTEL_CTA: Record<string, string> = {

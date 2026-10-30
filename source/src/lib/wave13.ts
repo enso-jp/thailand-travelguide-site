@@ -593,7 +593,7 @@ function applySoneva(page: Page): Page {
       stay(
         'Soneva Kiri rates',
         'Koh Kood island resort',
-        'Search this Koh Kood hideaway and book the transfer with the room.',
+        "Soneva Kiri is Koh Kood's flagship barefoot-luxury resort, and it books direct. For more ways to stay on the island, from beach bungalows to boutique villas, compare stays across Koh Kood.",
         hotelSearchLink('Soneva Kiri', 'koh-kood'),
         '/photos/resort-soneva-kiri.jpg',
       ),

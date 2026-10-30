@@ -578,7 +578,7 @@ export const WAVE12_ITINERARY_PAGES: Page[] = [
     ],
     affiliates: [
       stay('Bangkok start', 'Three nights', 'Sukhumvit for the BTS. Riverside for boats.', stayLink('bangkok'), '/photos/bangkok.jpg'),
-      stay('Khao Sok and the lake', 'Valley then raft house', 'Search Khao Sok for night one. Cheow Lan raft house for night two.', hotelSearchLink('Khao Sok raft house'), '/photos/khao-sok.jpg'),
+      stay('Khao Sok and the lake', 'Valley then raft house', 'Many Khao Sok trips save night two for a floating raft house on Cheow Lan Lake, booked as part of a lake tour. Start by finding your base near the park entrance.', hotelSearchLink('Khao Sok raft house'), '/photos/khao-sok.jpg'),
       stay('Krabi finish', 'Railay, Ao Nang, or Lanta', 'Four nights before KBV.', stayLink('krabi'), '/photos/krabi.jpg'),
       {
         title: 'Bangkok to Surat Thani',
