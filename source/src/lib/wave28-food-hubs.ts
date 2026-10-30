@@ -63,7 +63,7 @@ const HUBS: Hub[] = [
     slug: 'pai',
     path: '/thai-food/pai',
     name: 'Pai',
-    description: 'Pai eating: khao soi at Khao Soi Zisters, nam ngiao at a Route 1095 noodle shop, and Walking Street pad thai every evening.',
+    description: 'Pai eating: khao soi at Khao Soi Zisters, nam ngiao at a Route 1095 noodle shop, and Walking Street pad thai stalls by the bus terminal every evening.',
     lede: 'Pai food is a khao soi lunch and a Walking Street dinner. Both fit a town stay, not a valley hut without a scooter.',
     facts: [
       ['Khao soi', 'Khao Soi Zisters; 60 to 90 THB'],
@@ -95,7 +95,7 @@ const HUBS: Hub[] = [
     slug: 'khao-lak',
     path: '/thai-food/khao-lak',
     name: 'Khao Lak',
-    description: 'Khao Lak eating: khao mok gai at Bang Niang Market, som tum at Krua Mae Dang, and banana blossom salad at Takiang.',
+    description: 'Khao Lak eating: khao mok gai at Bang Niang Market, som tum at Krua Mae Dang, and banana blossom salad at Takiang. Bring cash for the market.',
     lede: 'Khao Lak food is known for Bang Niang Market, four days a week. It fits a beach stay with sit-down rooms on other nights.',
     facts: [
       ['Market days', 'Mon, Wed, Thu, Sat; 14:00 to 22:00'],
@@ -127,7 +127,7 @@ const HUBS: Hub[] = [
     slug: 'koh-lanta',
     path: '/thai-food/koh-lanta',
     name: 'Koh Lanta',
-    description: 'Koh Lanta eating: fiery kua kling at Krua Dan Tai, massaman at Yawee in Saladan, and gaeng som at Fresh in Lanta Old Town.',
+    description: 'Koh Lanta eating: fiery kua kling at Krua Dan Tai, massaman at Yawee in Saladan, and gaeng som at Fresh on Sri Raya Road in Lanta Old Town.',
     lede: 'Koh Lanta food is southern heat in Saladan and a sour curry lunch in Old Town. Ask for less chili on a first plate.',
     facts: [
       ['Southern heat', 'Krua Dan Tai, Saladan; 11:00 to 22:00'],
@@ -191,7 +191,7 @@ const HUBS: Hub[] = [
     slug: 'koh-phangan',
     path: '/thai-food/koh-phangan',
     name: 'Koh Phangan',
-    description: 'Koh Phangan eating: Phantip Market in Thong Sala for khao gaeng at 60 to 70 THB, som tum, and tom kha gai every night.',
+    description: 'Koh Phangan eating: Phantip Market in Thong Sala for khao gaeng at 60 to 70 THB, som tum, and tom kha gai every night, a short walk from the pier.',
     lede: 'Koh Phangan food is known for Phantip Market in Thong Sala. It fits any night, at far less than Haad Rin.',
     facts: [
       ['Market', 'Phantip, Thong Sala; daily from about 16:00'],
@@ -223,7 +223,7 @@ const HUBS: Hub[] = [
     slug: 'koh-phi-phi',
     path: '/thai-food/koh-phi-phi',
     name: 'Koh Phi Phi',
-    description: 'Koh Phi Phi eating: green curry and tom yum at Garlic 1992 in Tonsai, plus big massaman plates at Papaya Restaurant.',
+    description: 'Koh Phi Phi eating: green curry and tom yum at Garlic 1992 in Tonsai, big massaman plates at Papaya Restaurant, and seafood grills priced by weight.',
     lede: 'Koh Phi Phi food is known for Tonsai village rooms near mainland prices. It fits an early dinner before the queues.',
     facts: [
       ['Garlic 1992', '160 Chaokoh Rd; 10:30 to 23:00'],
@@ -255,7 +255,7 @@ const HUBS: Hub[] = [
     slug: 'koh-lipe',
     path: '/thai-food/koh-lipe',
     name: 'Koh Lipe',
-    description: 'Koh Lipe eating: som tum at Papaya Mom, moo tod and spicy tom yum at Thai Derm, all on Walking Street.',
+    description: 'Koh Lipe eating: som tum at Papaya Mom, moo tod and spicy tom yum at Thai Derm, all on Walking Street. Eat early, since Thai Derm fills after 19:30.',
     lede: 'Koh Lipe food is known for Walking Street. It fits an early dinner, since Thai Derm fills after 19:30.',
     facts: [
       ['Thai Derm', 'Walking Street; 16:00 to 02:00'],
