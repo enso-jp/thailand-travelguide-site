@@ -1166,6 +1166,7 @@ export const wave22SecondaryPages: Page[] = [
       { label: "Bridge", value: "Tha Makham; Khwae Yai Bridge station" },
       { label: "Train in", value: "Thonburi station, not Krung Thep Aphiwat" },
       { label: "Erawan add", value: "300 THB, seven tiers, 65 to 70 km, next day" },
+      { label: "Hellfire Pass", value: "Closed since 27 Sep 2026, until further notice" },
       { label: "Nights", value: "Two if falls plus the line" },
     ],
     chips: [
@@ -1177,7 +1178,7 @@ export const wave22SecondaryPages: Page[] = [
     geo: { lat: 14.002, lon: 99.548, containedIn: "Western Thailand" },
     paragraphs: [
       "The postcard is the steel bridge on the Khwae Yai, and the useful hour is the Thailand-Burma Railway Centre and the allied war cemetery in [Kanchanaburi](/kanchanaburi) town. Ordinary trains still leave Thonburi, not Krung Thep Aphiwat, and read [Bangkok to Kanchanaburi](/get-there/bangkok-to-kanchanaburi) before you pin Bang Sue.",
-      "Hellfire Pass is closed since 27 Sep 2026 after floods, until further notice. Check the official notice before you go. It is about 80 km northwest by road past Nam Tok, not a passenger-train stop. [Erawan](/kanchanaburi/erawan-and-sai-yok) is a different day: 300 THB foreign adult, seven tiers, 65 to 70 km, and two nights if you want both. A 2026 songthaew to the bridge is a short fare if you agree it first.",
+      "Hellfire Pass is about 80 km northwest by road past Nam Tok, not a passenger-train stop. [Erawan](/kanchanaburi/erawan-and-sai-yok) is a different day: 300 THB foreign adult, seven tiers, 65 to 70 km, and two nights if you want both. A 2026 songthaew to the bridge is a short fare if you agree it first.",
     ],
     sections: [
       {

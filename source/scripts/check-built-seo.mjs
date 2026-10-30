@@ -134,6 +134,20 @@ for (const file of pages) {
   }
 }
 
+// Markdown bold must render. Literal ** in visible HTML text means a formatter missed it.
+{
+  const walkMd = (dir) => readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
+    e.isDirectory() ? walkMd(join(dir, e.name)) : e.name.endsWith('.html') ? [join(dir, e.name)] : []);
+  for (const file of walkMd(DIST)) {
+    const text = readFileSync(file, 'utf8')
+      .replace(/<script\b[\s\S]*?<\/script>/gi, '')
+      .replace(/<style\b[\s\S]*?<\/style>/gi, '')
+      .replace(/<[^>]+>/g, ' ');
+    const m = text.match(/.{0,40}\*\*.{0,40}/);
+    if (m) errors.push(`${file.slice(DIST.length)} has literal ** in page text: ${m[0].trim()}`);
+  }
+}
+
 if (errors.length) {
   console.error(`check-built-seo failed (${errors.length})`);
   for (const err of errors.slice(0, 80)) console.error(`  ${err}`);

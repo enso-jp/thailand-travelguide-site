@@ -756,6 +756,7 @@ export const wave7Pages: Page[] = [
       { label: 'First bus', value: '8170 at 08:00 from Kanchanaburi Bus Terminal, about 60 THB' },
       { label: 'Upper tiers', value: 'Start down by 15:30; last bus back about 16:30' },
       { label: 'Sai Yok Noi', value: 'Free roadside fall near Nam Tok; Hellfire Pass is by road' },
+      { label: 'Hellfire Pass', value: 'Closed since 27 Sep 2026, until further notice' },
     ],
     chips: ['Seven tiers', 'Bus 8170', 'One hinterland'],
     photo: '/photos/kanchanaburi.jpg',
@@ -770,7 +771,7 @@ export const wave7Pages: Page[] = [
         title: 'Erawan, Sai Yok Noi, Hellfire Pass',
         paragraphs: [
           'Sai Yok Noi (Khao Phang) is the free roadside waterfall near Nam Tok station, about 60 km from town. Weekend excursion trains dump people here. It is taller than many visitors expect and not the same place as Sai Yok Yai inside Sai Yok National Park, which sits farther upriver and charges its own park fee when open.',
-          '**Closed now.** Hellfire Pass is closed since 27 Sep 2026 after floods, until further notice. Check the official notice before you go. Hellfire Pass (Konyu Cutting) is an Australian-run memorial walk about 80 km northwest of Kanchanaburi town, about 1 hour by car. Nam Tok station is about 20 km south of the cutting. The passenger train ends at Nam Tok; the last stretch is by road. It is not a station and not a waterfall. Pick one hinterland besides Erawan. A car can do Erawan or Hellfire Pass. It cannot do both well with the 15:30 cutoff.',
+          'Hellfire Pass (Konyu Cutting) is an Australian-run memorial walk about 80 km northwest of Kanchanaburi town, about 1 hour by car. Nam Tok station is about 20 km south of the cutting. The passenger train ends at Nam Tok; the last stretch is by road. It is not a station and not a waterfall. Pick one hinterland besides Erawan. A car can do Erawan or Hellfire Pass. It cannot do both well with the 15:30 cutoff.',
         ],
         table: {
           headers: ['Site', 'Fee', 'How'],
@@ -803,7 +804,7 @@ export const wave7Pages: Page[] = [
       },
       {
         q: 'Can you add Hellfire Pass after Erawan?',
-        a: 'Not in one afternoon. The cutting is about 20 km past Nam Tok, and the Centre closes at 16:00. Give it its own morning. Closed since 27 Sep 2026 after floods, until further notice. Check the official notice before you go.',
+        a: 'Not in one afternoon. The cutting is about 20 km past Nam Tok, and the Centre closes at 16:00. Give it its own morning.',
       },
     ],
   },

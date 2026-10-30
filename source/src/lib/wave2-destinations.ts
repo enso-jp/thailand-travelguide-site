@@ -748,6 +748,7 @@ export const wave2Pages: Page[] = [
       { label: 'Erawan fee', value: '300 THB foreign adult, cash at the gate' },
       { label: 'Erawan', value: 'Seven tiers, about 65 to 70 km from town' },
       { label: 'Nights', value: 'Two if you want falls plus the line' },
+      { label: 'Hellfire Pass', value: 'Closed since 27 Sep 2026, until further notice' },
     ],
     chips: ['River Kwai', 'Erawan', 'Thonburi trains'],
     photo: '/photos/kanchanaburi.jpg',
@@ -814,7 +815,7 @@ export const wave2Pages: Page[] = [
       },
       {
         q: 'Is Hellfire Pass on the train?',
-        a: 'No. Nam Tok is the end of the passenger line. The cutting is farther up Highway 323 by road. Arrange the car before you leave town. Closed since 27 Sep 2026 after floods, until further notice. Check the official notice before you go.',
+        a: 'No. Nam Tok is the end of the passenger line. The cutting is farther up Highway 323 by road. Arrange the car before you leave town.',
       },
     ],
   },
