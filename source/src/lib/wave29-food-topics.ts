@@ -83,7 +83,7 @@ export const wave29FoodTopics: Page[] = [
     path: '/thai-food/bang-rak-food',
     title: 'Bang Rak food guide',
     description: 'Bang Rak food is Somtum Der on Sala Daeng Road and Charoen Krung shophouses. BTS Sala Daeng and MRT Silom. Not the Yaowarat night walk.',
-    lede: 'Bang Rak is known for a sit-down som tum room at Sala Daeng, not a Chinatown crawl. It fits a lunch between Silom and the river.',
+    lede: 'Bang Rak is a district that eats in two moods: papaya salad pounded to order at Somtum Der on Sala Daeng Road, and Charoen Krung shophouses drifting toward the river. Come at lunch, between the Silom towers and the water, and save Yaowarat\'s night crawl for another evening.',
     facts: [
       ['Room', 'Somtum Der, 5/5 Sala Daeng Rd'],
       ['Clock', '11:00 to 23:00; last order 22:15'],
@@ -125,7 +125,7 @@ export const wave29FoodTopics: Page[] = [
     path: '/thai-food/ari-food',
     title: 'Ari neighbourhood food',
     description: 'Ari food is Soi Ari shophouses and cafes off BTS Ari. A Thai plate is often 60 to 150 THB. Pour-over sits on the same lane at 80 to 150 THB.',
-    lede: 'Ari is known for shophouse Thai and cafes on Soi Ari, not a night-market grid. It fits a BTS lunch between meetings or a slow afternoon.',
+    lede: 'Ari runs on Soi Ari, a shady lane off BTS Ari where shophouses ladle khao soi and pad kra pao at lunch and the cafes take over once the rush thins. It is Bangkok\'s easy weekday neighbourhood meal, built for a long lunch rather than a market crawl.',
     facts: [
       ['Rail', 'BTS Ari on the Sukhumvit line'],
       ['Lane', 'Phahonyothin Soi 7, called Soi Ari'],
@@ -167,7 +167,7 @@ export const wave29FoodTopics: Page[] = [
     path: '/thai-food/thonglor-and-soi-38-food',
     title: 'Thonglor and Soi 38 food',
     description: 'Thonglor is BTS Thong Lo sit-down rooms. Soi 38 is the night stall lane between Thong Lo and Ekkamai, plates often 40 to 120 THB from about 17:00.',
-    lede: 'Thonglor is known for two clocks: sit-down rooms on Soi 55, and night stalls on Sukhumvit Soi 38. It fits a dinner that can be either cheap or booked.',
+    lede: 'Thonglor is known for eating on two clocks. The booked tables sit along Soi 55, while one stop east toward Ekkamai the stalls of Sukhumvit Soi 38 light up from about 17:00 with pad thai, grilled pork and mango sticky rice, so the same night can be cheap or polished.',
     facts: [
       ['Rail', 'BTS Thong Lo; Soi 38 is toward Ekkamai'],
       ['Stalls', 'Sukhumvit Soi 38 from about 17:00'],
@@ -209,7 +209,7 @@ export const wave29FoodTopics: Page[] = [
     path: '/thai-food/banglamphu-food',
     title: 'Banglamphu food',
     description: 'Banglamphu food is Roti Mataba on Phra Athit, closed Monday, plus Khao San stalls at 40 to 100 THB and a crab-omelette lunch on Dinso Road.',
-    lede: 'Banglamphu is known for Roti Mataba and Khao San stalls, not a Michelin queue. It fits a Phra Athit morning and a short Khao San graze.',
+    lede: 'Banglamphu\'s food story starts at Roti Mataba on Phra Athit Road, frying roti and chicken mataba since 1967 across from Phra Sumen Fort. From there it is a short wander to the Khao San stalls, a grazing walk rather than a Michelin queue.',
     facts: [
       ['Roti Mataba', '136 Phra Athit Rd; closed Monday'],
       ['Hours', 'Tue to Sun 09:00 to 22:00'],
@@ -251,7 +251,7 @@ export const wave29FoodTopics: Page[] = [
     path: '/thai-food/nang-loeng-market',
     title: 'Nang Loeng Market food',
     description: 'Nang Loeng is Bangkok\'s old land market on Nakhon Sawan Soi 6. Curry over rice and Thai sweets from 08:00 to 15:00. Go before noon. Plates often 40 to 80 THB.',
-    lede: 'Nang Loeng is known for morning curries and old sweets, not a night market. It fits an early Old Town lunch before the trays empty.',
+    lede: 'Nang Loeng is a morning market that King Rama V opened in 1900, and it still feeds the Old Town on curry over rice, noodles and trays of old Thai sweets. Arrive early: it is a daytime place, and the best trays are gone well before the afternoon.',
     facts: [
       ['Address', 'Nakhon Sawan Soi 6, Wat Sommanat'],
       ['Hours', '08:00 to 15:00; go before noon'],
@@ -293,7 +293,7 @@ export const wave29FoodTopics: Page[] = [
     path: '/thai-food/victory-monument-food',
     title: 'Victory Monument food',
     description: 'Victory Monument food is boat noodles at 15 to 20 THB a bowl from BTS Victory Monument. Stack five. The roundabout is the landmark, not a mall court.',
-    lede: 'Victory Monument is known for boat-noodle alleys, not a food court. It fits a BTS lunch where five small bowls make the meal.',
+    lede: 'Victory Monument is the boat-noodle address of Bangkok, a knot of lanes off the roundabout where each spiced pork or beef bowl is only a few mouthfuls. Nobody stops at one; the stacked empty bowls are the bill, and BTS Victory Monument drops you right there.',
     facts: [
       ['Rail', 'BTS Victory Monument'],
       ['Bowl', '15 to 20 THB'],
@@ -335,7 +335,7 @@ export const wave29FoodTopics: Page[] = [
     path: '/thai-food/pratunam-food',
     title: 'Pratunam food guide',
     description: 'Pratunam food is Go-Ang chicken rice at 65 THB and market-lane snacks. BTS Chit Lom or Ratchathewi. The malls are for shopping, not the meal.',
-    lede: 'Pratunam is known for chicken rice at Go-Ang, not a fashion-mall food court. It fits a market lunch between Platinum and the BTS.',
+    lede: 'Pratunam\'s signature plate is the poached chicken rice at Go-Ang, a busy counter amid the wholesale fashion streets. Eat there before the shopping starts, then walk it off between Platinum and the BTS.',
     facts: [
       ['Chicken rice', 'Go-Ang Pratunam, 65 THB'],
       ['Snacks', 'Market lanes, often 40 to 90 THB'],
@@ -377,7 +377,7 @@ export const wave29FoodTopics: Page[] = [
     path: '/thai-food/ekkamai-food',
     title: 'Ekkamai food guide',
     description: 'Ekkamai food is Soi 63 shophouses off BTS Ekkamai. Thai plates often 50 to 120 THB. Soi 38 night stalls are one stop away at Thong Lo.',
-    lede: 'Ekkamai is known for Soi 63 shophouse Thai, not a mall court. It fits a BTS dinner when Soi 38 is the cheap backup one stop west.',
+    lede: 'Ekkamai is a neighbourhood without a single famous address. Its pleasure is Sukhumvit Soi 63, where shophouses off BTS Ekkamai turn out rice plates, noodles and grilled pork, and the rule is simple: follow the Thai queue and sit down.',
     facts: [
       ['Rail', 'BTS Ekkamai'],
       ['Lane', 'Sukhumvit Soi 63'],
@@ -419,7 +419,7 @@ export const wave29FoodTopics: Page[] = [
     path: '/thai-food/sampheng-lane-food',
     title: 'Sampheng Lane food',
     description: 'Sampheng Lane is the daytime market off Yaowarat, Soi Wanit 1. Snacks and dried goods from morning into afternoon, often 20 to 60 THB. Night gold shops are a different walk.',
-    lede: 'Sampheng is known as the daytime lane beside Chinatown, not the Yaowarat night stalls. It fits a morning snack before the gold shops wake up.',
+    lede: 'Sampheng Lane is Chinatown by daylight, a covered market lane off Yaowarat stacked with dried fruit, snacks, cloth and small bites from the morning on. It is a grazing walk before the gold shops and the night noodle stalls take over the main road.',
     facts: [
       ['Lane', 'Soi Wanit 1, off Yaowarat'],
       ['Clock', 'Morning into afternoon'],
@@ -461,7 +461,7 @@ export const wave29FoodTopics: Page[] = [
     path: '/thai-food/thai-desserts',
     title: 'Thai desserts',
     description: 'Thai desserts are mango sticky rice, khanom krok, and coconut ices. Mango is best March to May. A portion is often 40 to 120 THB at a market stall.',
-    lede: 'Thai desserts are known for coconut, palm sugar, and ripe fruit, not a bakery case. They fit a last plate after a savoury meal.',
+    lede: 'Thai desserts are built on coconut cream, palm sugar and ripe fruit, and mango sticky rice is the one people cross town for, at its best from March to May. Judge it by the fruit and the cream: deep golden mango, and coconut that tastes salty as well as sweet.',
     facts: [
       ['Mango rice', 'Best March to May; 50 to 120 THB'],
       ['Khanom krok', 'Coconut cups, often 20 to 40 THB'],
@@ -503,7 +503,7 @@ export const wave29FoodTopics: Page[] = [
     path: '/thai-food/thai-fruit-by-season',
     title: 'Thai fruit by season',
     description: 'Thai fruit by season: mango March to May, durian and mangosteen from April, lychee in the north by June, longan from July. Buy at markets and ask the kilo price.',
-    lede: 'Thai fruit is known by the month, not a hotel basket. It fits travellers who will buy at a market and ask the price per kilo.',
+    lede: 'Thai fruit is known for following the calendar. Mango peaks from March to May, eastern durian around Chanthaburi follows from about April, and mangosteen, rambutan and longan carry the markets through the wet months, so the best basket is whatever the stall has piled highest.',
     facts: [
       ['Mango', 'March to May'],
       ['Durian', 'East from April; south follows'],
@@ -545,7 +545,7 @@ export const wave29FoodTopics: Page[] = [
     path: '/thai-food/thai-iced-drinks',
     title: 'Thai iced drinks',
     description: 'Thai iced drinks are cha yen and oliang at 25 to 45 THB, lime soda, and fruit shakes at 40 to 80 THB. Cafe pour-over is a different cup at 80 to 150 THB.',
-    lede: 'Thai iced drinks are known for strong tea, coffee, and fruit over ice. They fit a stall stop. A cafe pour-over is a different order.',
+    lede: 'Thailand\'s street drinks are strong and sweet over crushed ice: orange cha yen with condensed milk, dark oliang coffee, sharp lime soda and fruit shakes blended to order. They belong to the stall, not the cafe, and "mai wan" is the phrase that turns the sugar down.',
     facts: [
       ['Cha yen', 'Thai iced tea, often 25 to 45 THB'],
       ['Oliang', 'Thai iced coffee, often 25 to 45 THB'],
@@ -587,7 +587,7 @@ export const wave29FoodTopics: Page[] = [
     path: '/thai-food/vegetarian-and-jay-food',
     title: 'Vegetarian and jay food',
     description: 'Jay food skips meat, seafood, egg, and usually garlic and onion. Look for the yellow เจ flag. The Phuket festival runs about nine days in the ninth lunar month.',
-    lede: 'Jay food is known for the yellow เจ flag and a stricter rule than "vegetarian" on a resort menu. It fits anyone who needs no fish sauce, not only festival week.',
+    lede: 'Jay food, flagged by the yellow sign reading เจ, is Thailand\'s strict plant-based cooking from Chinese Buddhist practice: no meat, seafood or egg, and often no garlic or onion. It is a safer bet than a "vegetarian" line on a beach menu, which may still hide fish sauce.',
     facts: [
       ['Say', 'Jay, or gin jay'],
       ['Skips', 'Meat, seafood, egg; strict jay also garlic and onion'],
@@ -629,7 +629,7 @@ export const wave29FoodTopics: Page[] = [
     path: '/thai-food/thai-food-etiquette',
     title: 'Thai food etiquette',
     description: 'Thai food etiquette: spoon in the right hand, fork as a pusher, shared dishes plus one rice each. Say pet nit noi for less heat. Stalls are cash. A sit-down tip is optional.',
-    lede: 'Thai table manners are known for a spoon, shared plates, and a heat request. They fit a first meal where you would rather not guess.',
+    lede: 'A Thai meal is shared. Plates go in the middle, everyone gets their own rice, and the spoon in the right hand does the work while the fork only pushes. Learn that, plus how to ask for your heat level, and a first meal stops being guesswork.',
     facts: [
       ['Utensil', 'Spoon in the right hand; fork pushes'],
       ['Heat', 'Pet nit noi means a little spicy'],
@@ -671,7 +671,7 @@ export const wave29FoodTopics: Page[] = [
     path: '/thai-food/thai-breakfast',
     title: 'Thai breakfast',
     description: 'Thai breakfast is jok, khao tom, and pa tong go from about 06:00. A bowl is often 40 to 80 THB. Chicken rice and coffee follow. Hotel buffets are the later option.',
-    lede: 'Thai breakfast is known for rice soup and fried dough before 09:00. It fits anyone awake for a market, not a 10:00 hotel buffet.',
+    lede: 'Thai breakfast is a meal of rice soup and fried dough, eaten early. Jok porridge, clear khao tom and pa tong go dunked in coffee or soy milk fill the stalls from around 06:00, and most have packed up by 10:00, long before the hotel buffet closes.',
     facts: [
       ['Clock', 'Stalls from about 06:00'],
       ['Jok', 'Rice porridge, often 40 to 80 THB'],
@@ -713,7 +713,7 @@ export const wave29FoodTopics: Page[] = [
     path: '/thai-food/thai-curries',
     title: 'Thai curries',
     description: 'Thai curries split into coconut pots and sour southern pots. A market rice-and-curry plate is often 40 to 80 THB. Green is hotter than massaman. Gaeng som is sour, not sweet.',
-    lede: 'Thai curries are known as a family of pots, not one coconut dish. They fit a market tray where you point at two curries over rice.',
+    lede: 'Thai curry is a whole family of pots: green with basil, red, thick sweet panang, mild potato massaman and sour, fiery gaeng som. At a market tray, the local move is to point at two over one plate of rice.',
     facts: [
       ['Market plate', 'Rice and two curries, often 40 to 80 THB'],
       ['Mild', 'Massaman, with potato and peanut'],
@@ -755,7 +755,7 @@ export const wave29FoodTopics: Page[] = [
     path: '/thai-food/thai-noodles',
     title: 'Thai noodles',
     description: 'Thai noodles are boat noodles at 15 to 20 THB, pad thai, yen ta fo, and rad na. The broth and the noodle shape change the dish. Order by the Thai name.',
-    lede: 'Thai noodles are known as a set of broths and shapes, not one pad thai. They fit a lunch where the bowl is the whole meal.',
+    lede: 'Thai noodles go far beyond pad thai. There are tiny spiced boat-noodle bowls at Victory Monument, tamarind-glazed wok noodles, and pink yen ta fo coloured by fermented bean curd, and at lunch one bowl is the whole meal.',
     facts: [
       ['Boat noodles', '15 to 20 THB a small bowl'],
       ['Pad thai', 'Often 60 to 150 THB'],
@@ -797,7 +797,7 @@ export const wave29FoodTopics: Page[] = [
     path: '/thai-food/thai-yam-salads',
     title: 'Thai yam salads',
     description: 'Thai yam salads are sour, salty, and hot. Som tum is the papaya one. A plate is often 40 to 90 THB. Say the heat before the pestle starts. Fish sauce is the default.',
-    lede: 'Yam salads are known for lime, fish sauce, and chili, not a leafy side. They fit a grill lunch with sticky rice.',
+    lede: 'A Thai yam is a salad in name only: lime, fish sauce and chili drive it, whether the base is pounded green papaya, glass noodles or crisp catfish. Pair it with grilled meat and sticky rice, the way the Isan grills do.',
     facts: [
       ['Som tum', 'Green papaya, often 40 to 90 THB'],
       ['Heat', 'Say pet nit noi before they pound'],
@@ -839,7 +839,7 @@ export const wave29FoodTopics: Page[] = [
     path: '/thai-food/ordering-thai-seafood',
     title: 'Ordering Thai seafood',
     description: 'Order Thai seafood by pointing at the fish and asking the price per kilo before it hits the grill. Garlic, lime steam, or salt crust are the usual cooks. Island bills run higher.',
-    lede: 'Thai seafood is known as a weight-priced grill, not a printed main. It fits a pier lunch where you ask the kilo price first.',
+    lede: 'Thai seafood is a catch sold by weight. You point at the fish, ask the price per kilo, and only then choose how it is cooked, whether steamed with lime and chili, fried with garlic or grilled in a salt crust.',
     facts: [
       ['Rule', 'Price per kilo before they cook'],
       ['Steam', 'Pla nueng manao, lime and chili'],
@@ -881,7 +881,7 @@ export const wave29FoodTopics: Page[] = [
     path: '/thai-food/halal-and-thai-muslim-food',
     title: 'Halal and Thai Muslim food',
     description: 'Halal Thai food is khao mok gai, roti, and mataba, with no pork. Look for a halal sign. A chicken-rice plate is often 50 to 120 THB. Not every Thai kitchen qualifies.',
-    lede: 'Thai Muslim food is known for turmeric chicken rice, roti, and mataba. It fits a halal kitchen, which is a sign on the door, not a guess from the menu.',
+    lede: 'Thai Muslim cooking is known for turmeric chicken rice, khao mok gai, alongside flaky roti and stuffed mataba. Halal, though, is about the kitchen: look for the sign on the door rather than assuming from the menu.',
     facts: [
       ['Plate', 'Khao mok gai, often 50 to 120 THB'],
       ['Bread', 'Roti and mataba'],
@@ -923,7 +923,7 @@ export const wave29FoodTopics: Page[] = [
     path: '/thai-food/nam-prik-and-condiments',
     title: 'Nam prik and condiments',
     description: 'Nam prik is a chili relish eaten with vegetables and fish. A market set is often 40 to 80 THB. Nam pla prik is the table fish-sauce dip. They are not the same condiment.',
-    lede: 'Nam prik is known as a chili relish with vegetables, not a salsa for chips. It fits a northern or central lunch where the relish is the dish.',
+    lede: 'Nam prik is the pounded chili relish at the centre of a Thai table, eaten with raw or boiled vegetables, fried fish and rice. It comes smoky green in the north as nam prik num, tomato and pork as nam prik ong, and salty with shrimp paste as nam prik kapi.',
     facts: [
       ['Set', 'Often 40 to 80 THB with vegetables'],
       ['Nam prik ong', 'Northern tomato and pork'],
@@ -965,7 +965,7 @@ export const wave29FoodTopics: Page[] = [
     path: '/thai-food/thai-street-snacks',
     title: 'Thai street snacks',
     description: 'Thai street snacks are moo ping at 10 to 15 THB, fish balls, and coconut cups. They are a walk, not dinner. Night markets and walking streets are the stalls.',
-    lede: 'Thai street snacks are known as cheap sticks and cups between meals. They fit a market walk. They do not replace a rice plate.',
+    lede: 'Thai street snacks are the small bites between meals: sweet grilled moo ping on a stick, bagged fish balls, coconut khanom krok cups and grilled sticky rice. They make a market walk delicious, but they are a snack, not dinner.',
     facts: [
       ['Moo ping', '10 to 15 THB a stick in town'],
       ['Fish balls', 'Often 10 to 30 THB a bag'],
@@ -1007,7 +1007,7 @@ export const wave29FoodTopics: Page[] = [
     path: '/thai-food/thai-rice-plates',
     title: 'Thai rice plates',
     description: 'Thai rice plates are khao man gai at 65 THB, khao kha moo, curry over rice, and fried rice. One plate is lunch. Market curry sets are often 40 to 80 THB.',
-    lede: 'Thai rice plates are known as one-dish lunches. They fit a shophouse at noon, when a curry tray or chicken rice is the whole order.',
+    lede: 'The Thai rice plate is the one-dish lunch of every shophouse: poached chicken rice, stewed pork leg khao kha moo, or curry ladled over rice from a tray. At noon, one plate is the whole order.',
     facts: [
       ['Chicken rice', 'Go-Ang Pratunam, 65 THB'],
       ['Pork leg', 'Khao kha moo, often 50 to 70 THB'],
@@ -1049,7 +1049,7 @@ export const wave29FoodTopics: Page[] = [
     path: '/thai-food/festival-food',
     title: 'Thai festival food',
     description: 'Thai festival food: khao chae in the hot season around April, jay food for about nine days in the ninth lunar month, and ordinary street plates at Songkran because the holiday is water, not a banquet.',
-    lede: 'Festival food in Thailand is known for a few seasonal plates, not a new cuisine each holiday. It fits April heat and the vegetarian festival.',
+    lede: 'Thai festival food is a handful of seasonal plates rather than a new cuisine each holiday. Khao chae, rice in scented cool water with small sweet and salty sides, belongs to the April heat around Songkran, and the vegetarian festival brings its own jay food.',
     facts: [
       ['Khao chae', 'Rice in scented water, hot season, about April'],
       ['Songkran', '13 to 15 April; the event is water'],
@@ -1091,7 +1091,7 @@ export const wave29FoodTopics: Page[] = [
     path: '/thai-food/spice-levels',
     title: 'Thai spice levels',
     description: 'Thai spice starts hotter than a mild curry at home. Say mai pet for none or pet nit noi for a little. Massaman and chicken rice are the mild plates. Som tum and southern curries are not.',
-    lede: 'Thai heat is known for bird\'s eye chili in the paste, not a optional flake. It fits a first order where you say the level before the wok starts.',
+    lede: 'Thai heat comes from the bird\'s eye chili, prik kee nu, pounded into the paste rather than sprinkled on top. That is why the level has to be set before the wok starts: "mai pet" for not spicy, "pet nit noi" for a little.',
     facts: [
       ['None', 'Mai pet'],
       ['A little', 'Pet nit noi'],

@@ -799,7 +799,7 @@ export const KOH_KOOD_DISHES: DishRecord[] = dishesForCity('koh-kood', [
     clock: 'Lunch',
     faqs: [
       { q: 'Why by weight?', a: 'Crab size swings the bill. Weigh first.' },
-      { q: 'Open in monsoon?', a: 'May to October some rooms close. Call ahead.' },
+      { q: 'Open in monsoon?', a: 'May to October some rooms close.' },
     ],
   },
   {
@@ -829,7 +829,7 @@ export const KOH_KOOD_DISHES: DishRecord[] = dishesForCity('koh-kood', [
     room: 'Noochy, Ao Yai',
     clock: 'Before sunset',
     faqs: [
-      { q: 'Book?', a: 'Call ahead in high season or arrive early.' },
+      { q: 'Book?', a: 'Arrive early in high season.' },
       { q: 'How far from Klong Chao?', a: 'A fair drive on hilly roads. Make it a lunch trip.' },
     ],
   },

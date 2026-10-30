@@ -312,7 +312,7 @@ const HUBS: Hub[] = [
     klook: ['Koh Kood boats', 'Speedboats from Laem Sok take about an hour. Rough seas May to October.', 'Koh Kood tour', '/photos/koh-kood-boat.jpg'],
     faqs: [
       ['Is seafood cheap on Kood?', 'Better value than imported food, but crab and prawns swing with size.'],
-      ['Open in monsoon?', 'Some rooms close May to October. Call ahead.'],
+      ['Open in monsoon?', 'Some rooms close May to October.'],
     ],
   },
 ];
