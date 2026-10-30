@@ -148,34 +148,28 @@ for (const file of pages) {
   }
 }
 
-// Walls of text: 3+ consecutive body paragraphs over 60 characters fail the build.
+// Walls of text: 3+ consecutive sibling <p> elements over 60 visible characters anywhere in the
+// rendered page fail the build. Siblings means only whitespace between </p> and the next <p>.
 {
   const walkW = (dir) => readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
     e.isDirectory() ? walkW(join(dir, e.name)) : e.name.endsWith('.html') ? [join(dir, e.name)] : []);
   const walls = [];
   for (const file of walkW(DIST)) {
-    const html = readFileSync(file, 'utf8');
-    const main = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1] || '';
-    const runs = main.split(/<\/p>/i);
+    const html = readFileSync(file, 'utf8').replace(/<(script|style)\b[\s\S]*?<\/\1>/gi, '');
     let run = 0;
+    let last = -1;
     let hit = false;
-    for (const chunk of runs) {
-      const m = chunk.match(/<p\b[^>]*>([\s\S]*)$/i);
-      const between = m ? chunk.slice(0, chunk.length - m[0].length) : chunk;
-      if (between.replace(/<[^>]+>/g, '').trim() || /<(h[1-6]|ul|ol|table|div|section|figure)\b/i.test(between)) run = 0;
-      if (!m) { run = 0; continue; }
+    for (const m of html.matchAll(/<p\b[^>]*>([\s\S]*?)<\/p>/gi)) {
       const text = m[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
-      run = text.length > 60 ? run + 1 : 0;
+      const sibling = last >= 0 && html.slice(last, m.index).trim() === '';
+      run = text.length > 60 ? (sibling && run > 0 ? run + 1 : 1) : 0;
+      last = m.index + m[0].length;
       if (run >= 3) hit = true;
     }
     if (hit) walls.push(file.slice(DIST.length));
   }
-  if (walls.length) {
-    const msg = `wall-of-text warning: ${walls.length} pages with 3+ long paragraphs in a row (e.g. ${walls.slice(0, 5).join(', ')})`;
-    errors.push(msg);
-  } else {
-    console.log('wall-of-text check ok (0 pages)');
-  }
+  if (walls.length) errors.push(`wall of text: ${walls.length} pages with 3+ long paragraphs in a row: ${walls.join(', ')}`);
+  else console.log('wall-of-text check ok (0 pages)');
 }
 
 if (errors.length) {
