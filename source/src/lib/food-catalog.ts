@@ -5,6 +5,7 @@ import { HUA_HIN_DISHES, PATTAYA_DISHES, SUKHOTHAI_DISHES } from './dishes-gulf-
 import { HAT_YAI_DISHES, KOH_SAMUI_DISHES } from './dishes-hat-yai-samui';
 import { KHON_KAEN_DISHES, NONG_KHAI_DISHES, UDON_THANI_DISHES } from './dishes-isan-cities';
 import { KRABI_DISHES, PHUKET_DISHES } from './dishes-south';
+import { KANCHANABURI_DISHES, PAI_DISHES, KHAO_LAK_DISHES, KOH_LANTA_DISHES, KOH_TAO_DISHES, KOH_PHANGAN_DISHES, KOH_PHI_PHI_DISHES, KOH_LIPE_DISHES, KOH_KOOD_DISHES } from './dishes-batch3';
 import { ALL_DISHES } from './dish-pages';
 import { dishDirectoryItems, dishPath, type DishRecord, type FoodSpot } from './dish-model';
 
@@ -44,6 +45,15 @@ export const FOOD_CITY_CARDS: FoodCityCard[] = [
   { title: 'Pattaya', href: '/thai-food/pattaya', photo: '/photos/pattaya.jpg', line: 'Jomtien seafood and Naklua fish, not a Walking Street default.', find: 'pattaya jomtien seafood naklua' },
   { title: 'Sukhothai', href: '/thai-food/sukhothai', photo: '/photos/sukhothai.jpg', line: 'Sukhothai noodles after the dawn bicycle in Old Town.', find: 'sukhothai noodles kuay tiew' },
   { title: 'Hat Yai', href: '/thai-food/hat-yai', photo: '/photos/koh-lipe.jpg', line: 'Turmeric fried chicken at Kim Yong and morning dim sum.', find: 'hat yai fried chicken dim sum' },
+  { title: 'Kanchanaburi', href: '/thai-food/kanchanaburi', photo: '/photos/kanchanaburi.jpg', line: 'Pink yen ta fo on Saeng Chuto Road and a night market open to 04:00.', find: 'kanchanaburi yen ta fo night market river kwai' },
+  { title: 'Pai', href: '/thai-food/pai', photo: '/photos/pai.jpg', line: 'Khao Soi Zisters at lunch and Walking Street wok plates after 17:00.', find: 'pai khao soi walking street' },
+  { title: 'Khao Lak', href: '/thai-food/khao-lak', photo: '/photos/khao-lak.jpg', line: 'Bang Niang Market four days a week, plus Isan heat at the junction.', find: 'khao lak bang niang market' },
+  { title: 'Koh Lanta', href: '/thai-food/koh-lanta', photo: '/photos/koh-lanta.jpg', line: 'Fiery kua kling in Saladan and sour gaeng som in Old Town.', find: 'koh lanta saladan old town curry' },
+  { title: 'Koh Tao', href: '/thai-food/koh-tao', photo: '/photos/koh-tao.jpg', line: 'An 80 THB massaman in Sairee and roast duck noodles at 995.', find: 'koh tao sairee massaman duck' },
+  { title: 'Koh Phangan', href: '/thai-food/koh-phangan', photo: '/photos/koh-phangan.jpg', line: 'Phantip Market in Thong Sala: curry over rice for 60 to 70 THB.', find: 'koh phangan thong sala phantip market' },
+  { title: 'Koh Phi Phi', href: '/thai-food/koh-phi-phi', photo: '/photos/phi-phi.jpg', line: 'Garlic 1992 in Tonsai keeps village plates near town prices.', find: 'phi phi tonsai garlic 1992' },
+  { title: 'Koh Lipe', href: '/thai-food/koh-lipe', photo: '/photos/koh-lipe.jpg', line: 'Walking Street som tum and spicy Thai Derm plates before 19:30.', find: 'koh lipe walking street thai derm' },
+  { title: 'Koh Kood', href: '/thai-food/koh-kood', photo: '/photos/koh-kood.jpg', line: 'Ao Yai crab and fish by weight, Klong Chao tom yum at night.', find: 'koh kood ao yai seafood crab' },
   { title: 'Chinatown Yaowarat', href: '/thai-food/yaowarat-chinatown-food-walk', photo: '/photos/yaowarat.jpg', line: 'Yaowarat is the peppery guay jub and Texas Lane walk after 18:00.', find: 'yaowarat chinatown guay jub' },
   { title: 'Night Markets', href: '/thai-food/night-markets', photo: '/photos/thai-food-night-markets.jpg', line: 'Night markets that matter are Ratchada, Train Night Market, and city walking streets.', find: 'night market ratchada' },
   { title: 'Michelin Street Food', href: '/thai-food/bangkok-bib-gourmand', photo: '/photos/thai-food-bib.jpg', line: 'Bib Gourmand rooms are the value badge. Jay Fai is the one-star exception.', find: 'michelin bib jay fai' },
@@ -253,6 +263,15 @@ export const CITY_FOOD_ROWS: Record<string, CityFoodRow[]> = {
   '/thai-food/hat-yai': dishRows(HAT_YAI_DISHES),
   '/thai-food/sukhothai': dishRows(SUKHOTHAI_DISHES),
   '/thai-food/pattaya': dishRows(PATTAYA_DISHES),
+  '/thai-food/kanchanaburi': dishRows(KANCHANABURI_DISHES),
+  '/thai-food/pai': dishRows(PAI_DISHES),
+  '/thai-food/khao-lak': dishRows(KHAO_LAK_DISHES),
+  '/thai-food/koh-lanta': dishRows(KOH_LANTA_DISHES),
+  '/thai-food/koh-tao': dishRows(KOH_TAO_DISHES),
+  '/thai-food/koh-phangan': dishRows(KOH_PHANGAN_DISHES),
+  '/thai-food/koh-phi-phi': dishRows(KOH_PHI_PHI_DISHES),
+  '/thai-food/koh-lipe': dishRows(KOH_LIPE_DISHES),
+  '/thai-food/koh-kood': dishRows(KOH_KOOD_DISHES),
 };
 
 export type DirectoryItem = {

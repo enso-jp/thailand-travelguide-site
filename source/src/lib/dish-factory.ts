@@ -17,6 +17,15 @@ const WALKS: Record<DishCity, { walkHref: string; walkLabel: string; klookQuery:
   sukhothai: { walkHref: '/sukhothai/historical-park', walkLabel: 'Sukhothai historical park', klookQuery: 'Sukhothai food', stayKey: 'sukhothai' },
   pattaya: { walkHref: '/pattaya', walkLabel: 'Pattaya', klookQuery: 'Pattaya food tour', stayKey: 'pattaya' },
   'koh-samui': { walkHref: '/koh-samui/chaweng', walkLabel: 'Chaweng', klookQuery: 'Koh Samui food tour', stayKey: 'koh-samui' },
+  'kanchanaburi': { walkHref: '/kanchanaburi', walkLabel: 'Kanchanaburi', klookQuery: 'Kanchanaburi food tour', stayKey: 'kanchanaburi' },
+  'pai': { walkHref: '/pai', walkLabel: 'Pai', klookQuery: 'Pai tour', stayKey: 'pai' },
+  'khao-lak': { walkHref: '/khao-lak', walkLabel: 'Khao Lak', klookQuery: 'Khao Lak Similan', stayKey: 'khao-lak' },
+  'koh-lanta': { walkHref: '/koh-lanta', walkLabel: 'Koh Lanta', klookQuery: 'Koh Lanta tour', stayKey: 'koh-lanta' },
+  'koh-tao': { walkHref: '/koh-tao', walkLabel: 'Koh Tao', klookQuery: 'Koh Tao snorkeling', stayKey: 'koh-tao' },
+  'koh-phangan': { walkHref: '/koh-phangan', walkLabel: 'Koh Phangan', klookQuery: 'Koh Phangan tour', stayKey: 'koh-phangan' },
+  'koh-phi-phi': { walkHref: '/koh-phi-phi', walkLabel: 'Koh Phi Phi', klookQuery: 'Phi Phi tour', stayKey: 'krabi' },
+  'koh-lipe': { walkHref: '/koh-lipe', walkLabel: 'Koh Lipe', klookQuery: 'Koh Lipe tour', stayKey: 'koh-lipe' },
+  'koh-kood': { walkHref: '/koh-kood', walkLabel: 'Koh Kood', klookQuery: 'Koh Kood tour', stayKey: 'koh-kood' },
 };
 
 export type DishDraft = {

@@ -176,7 +176,7 @@ export const PLACE_META: Record<
     nameLocal: 'เกาะพะงัน',
     region: 'gulf',
     stayCity: 'koh-phangan',
-    foodHref: '/thai-food/koh-samui',
+    foodHref: '/thai-food/koh-phangan',
     nightlifeHref: '/interests/nightlife/koh-samui-beach-clubs',
     explore: [
       { href: '/koh-phangan/where-to-stay', label: 'Where to stay on Phangan' },
@@ -188,7 +188,7 @@ export const PLACE_META: Record<
     nameLocal: 'เกาะเต่า',
     region: 'gulf',
     stayCity: 'koh-tao',
-    foodHref: '/thai-food/koh-samui',
+    foodHref: '/thai-food/koh-tao',
     explore: [
       { href: '/koh-tao/where-to-stay', label: 'Sairee, Mae Haad, Chalok' },
       { href: '/koh-tao/dive-sites', label: 'Open Water sites' },
@@ -224,7 +224,7 @@ export const PLACE_META: Record<
     nameLocal: 'กาญจนบุรี',
     region: 'central',
     stayCity: 'kanchanaburi',
-    foodHref: '/thai-food/bangkok',
+    foodHref: '/thai-food/kanchanaburi',
     explore: [
       { href: '/kanchanaburi/erawan-and-sai-yok', label: 'Erawan and Sai Yok' },
       { href: '/kanchanaburi/river-kwai', label: 'River Kwai and the line' },
@@ -246,7 +246,7 @@ export const PLACE_META: Record<
     nameLocal: 'ปาย',
     region: 'north',
     stayCity: 'pai',
-    foodHref: '/thai-food/chiang-mai',
+    foodHref: '/thai-food/pai',
     explore: [
       { href: '/pai/where-to-stay', label: 'Where to stay in Pai' },
       { href: '/get-there/chiang-mai-to-pai', label: 'Route 1095 van' },
@@ -257,7 +257,7 @@ export const PLACE_META: Record<
     nameLocal: 'เกาะลันตา',
     region: 'andaman',
     stayCity: 'koh-lanta',
-    foodHref: '/thai-food/krabi',
+    foodHref: '/thai-food/koh-lanta',
     explore: [
       { href: '/koh-lanta/where-to-stay', label: 'Klong Dao to the south' },
       { href: '/koh-lanta/beaches', label: 'West-coast beaches' },
@@ -268,7 +268,7 @@ export const PLACE_META: Record<
     nameLocal: 'เกาะพีพี',
     region: 'andaman',
     stayCity: 'krabi',
-    foodHref: '/thai-food/krabi',
+    foodHref: '/thai-food/koh-phi-phi',
     explore: [
       { href: '/koh-phi-phi/where-to-stay', label: 'Tonsai vs Long Beach' },
       { href: '/koh-phi-phi/maya-bay', label: 'Maya Bay park fee' },
@@ -279,13 +279,13 @@ export const PLACE_META: Record<
     nameLocal: 'เกาะหลีเป๊ะ',
     region: 'andaman',
     stayCity: 'koh-lipe',
-    foodHref: '/thai-food/krabi',
+    foodHref: '/thai-food/koh-lipe',
   },
   '/khao-lak': {
     nameLocal: 'เขาหลัก',
     region: 'andaman',
     stayCity: 'khao-lak',
-    foodHref: '/thai-food/phuket',
+    foodHref: '/thai-food/khao-lak',
     explore: [
       { href: '/khao-lak/similan-and-surin-islands', label: 'Similan boats from Thap Lamu' },
       { href: '/khao-lak/bang-niang', label: 'Bang Niang hotel strip' },
@@ -302,7 +302,7 @@ export const PLACE_META: Record<
     nameLocal: 'เกาะกูด',
     region: 'east',
     stayCity: 'koh-kood',
-    foodHref: '/thai-food/isan',
+    foodHref: '/thai-food/koh-kood',
   },
   '/khao-yai': {
     nameLocal: 'เขาใหญ่',
