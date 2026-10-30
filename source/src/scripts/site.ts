@@ -76,8 +76,15 @@ function placementFor(el: Element | null): string {
 }
 
 function trackAffiliate(partner: string, linkUrl: string, placement = 'unknown') {
-  const g = (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag;
-  if (typeof g !== 'function') return;
+  const w = window as unknown as { gtag?: (...args: unknown[]) => void; dataLayer?: unknown[] };
+  // The inline GA snippet is wrapped in a function scope by define:vars, so
+  // fall back to the queue gtag.js reads if window.gtag is missing.
+  const g =
+    typeof w.gtag === 'function'
+      ? w.gtag
+      : function (..._args: unknown[]) {
+          (w.dataLayer = w.dataLayer || []).push(arguments);
+        };
   g('event', 'affiliate_click', {
     partner,
     link_url: linkUrl.slice(0, 500),

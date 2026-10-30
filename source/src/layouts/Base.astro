@@ -31,6 +31,7 @@ const sisterHref = sisterHeaderUrlForPath(page.path);
     <script is:inline define:vars={{ measurementId: site.gaMeasurementId }}>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
       gtag('js', new Date());
       gtag('config', measurementId);
     </script>
