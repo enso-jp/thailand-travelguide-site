@@ -94,7 +94,7 @@ function partnerFor(href: string): string | null {
   } catch {
     return null;
   }
-  if (/(^|\.)trip\.com$/.test(host)) return 'trip';
+  if (/(^|\.)trip\.com$/.test(host)) return 'tripcom';
   if (/(^|\.)klook\.com$/.test(host) || host === 'klook.tpx.li') return 'klook';
   if (/(^|\.)(tp\.media|tpk\.ro|travelpayouts\.com|tp\.st)$/.test(host)) return 'travelpayouts';
   return null;
@@ -373,7 +373,7 @@ ready(() => {
       const base = links[city] || links.bangkok;
       if (!base) return;
       const href = appendStayQuery(base, inInput?.value, outInput?.value, guests);
-      trackAffiliate('trip', href, 'trip_search');
+      trackAffiliate('tripcom', href, 'trip_search');
       window.open(href, '_blank', 'noopener,noreferrer');
     });
   });
