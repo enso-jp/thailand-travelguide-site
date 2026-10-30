@@ -345,6 +345,16 @@ function guideGridHeading(path: string): string {
   {showSisterRoutes && <SisterRoutes path={page.path} />}
 
   {
+    page.path === '/about' && (
+      <section class="place-section" id="embed-map">
+        <h2>Embed this map</h2>
+        <p>Free to use on blogs and trip pages. Paste this code where the map should appear.</p>
+        <pre class="embed-code"><code>{'<iframe src="https://thailand-travelguide.com/embed/map/" width="360" height="640" style="border:0;max-width:100%" loading="lazy" title="Thailand region map"></iframe>'}</code></pre>
+      </section>
+    )
+  }
+
+  {
     page.faqs.length > 0 && (
       <section class="place-section" id="questions">
         <h2>Common questions</h2>

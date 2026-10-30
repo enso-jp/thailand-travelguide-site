@@ -95,7 +95,7 @@ export default defineConfig({
   trailingSlash: 'always',
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/search') && !page.includes('/404'),
+      filter: (page) => !page.includes('/search') && !page.includes('/404') && !page.includes('/embed/'),
       serialize(item) {
         const url = new URL(item.url);
         if (!/\.[a-z0-9]{2,8}$/i.test(url.pathname) && !url.pathname.endsWith('/')) {

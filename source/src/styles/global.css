@@ -1912,3 +1912,5 @@ th, td {
   background-clip: padding-box;
   box-shadow: inset 0 0 0 1px var(--line);
 }
+
+.embed-code { white-space: pre-wrap; word-break: break-all; background: #f5f2ea; padding: 12px; border-radius: 8px; font-size: 0.85rem; }

@@ -2,6 +2,30 @@ import { site, absUrl } from './site';
 import type { Page } from './content';
 import { formatInline } from './inline';
 import { seoDescription, seoTitle } from './seo';
+import { execSync } from 'node:child_process';
+
+// Site launch date (first public edition) and build edition date, used when a page has no explicit dates.
+const SITE_PUBLISHED = '2026-10-28';
+const BUILD_MODIFIED = (() => {
+  try {
+    const d = execSync('git log -1 --format=%cs', { stdio: ['ignore', 'pipe', 'ignore'] }).toString().trim();
+    if (/^\d{4}-\d{2}-\d{2}$/.test(d)) return d;
+  } catch {}
+  return new Date().toISOString().slice(0, 10);
+})();
+
+function editorsLd() {
+  return {
+    '@type': 'Organization',
+    name: 'The Beyond Editors',
+    url: `${site.url}/about/`,
+    parentOrganization: { '@id': `${site.url}/#organization` },
+  };
+}
+
+function isAttractionPath(path: string) {
+  return /^\/attractions\/[^/]+\/?$/.test(path);
+}
 
 function visibleText(text: string): string {
   return formatInline(text)
@@ -70,8 +94,11 @@ export function breadcrumbLd(page: Page) {
   };
 }
 
+// Views that do not render the FAQ list. FAQPage markup must only describe visible Q&A.
+const NO_VISIBLE_FAQ = new Set(['/', '/thai-food', '/destinations', '/interests']);
+
 export function faqLd(page: Page) {
-  if (!page.faqs.length) return null;
+  if (!page.faqs.length || NO_VISIBLE_FAQ.has(page.path.replace(/\/+$/, '') || '/')) return null;
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -95,43 +122,42 @@ export function pageLd(page: Page) {
     image: page.photo ? absUrl(page.photo) : undefined,
   };
 
-  if (page.schema === 'City') {
-    return {
-      ...common,
-      '@type': 'City',
-      geo: page.geo
-        ? { '@type': 'GeoCoordinates', latitude: page.geo.lat, longitude: page.geo.lon }
-        : undefined,
-      containedInPlace: page.geo?.containedIn,
-    };
+  const geo = page.geo
+    ? { '@type': 'GeoCoordinates', latitude: page.geo.lat, longitude: page.geo.lon }
+    : undefined;
+  const containedInPlace = page.geo?.containedIn
+    ? { '@type': 'Place', name: page.geo.containedIn }
+    : undefined;
+  let place: Record<string, unknown> | null = null;
+
+  if (isAttractionPath(page.path)) {
+    place = { ...common, '@type': 'TouristAttraction', geo, containedInPlace };
+  } else if (page.schema === 'City') {
+    place = { ...common, '@type': 'City', geo, containedInPlace };
+  } else if (page.schema === 'TouristDestination') {
+    place = { ...common, '@type': 'TouristDestination', geo, containedInPlace, touristType: 'First-time visitors' };
   }
 
-  if (page.schema === 'TouristDestination') {
-    return {
-      ...common,
-      '@type': 'TouristDestination',
-      geo: page.geo
-        ? { '@type': 'GeoCoordinates', latitude: page.geo.lat, longitude: page.geo.lon }
-        : undefined,
-      touristType: 'First-time visitors',
-    };
-  }
-
-  return {
+  const datePublished = page.published ?? SITE_PUBLISHED;
+  const modified = page.modified ?? (page.published && page.published > BUILD_MODIFIED ? page.published : BUILD_MODIFIED);
+  const article = {
     '@context': 'https://schema.org',
     '@type': 'Article',
-    headline: page.published ? page.title : title,
+    headline: (page.published ? page.title : title).slice(0, 110),
     description,
     url: absUrl(page.path),
     mainEntityOfPage: absUrl(page.path),
     image: page.photo ? absUrl(page.photo) : undefined,
-    datePublished: page.published,
-    dateModified: page.modified ?? page.published,
-    author: page.published ? { '@id': `${site.url}/#organization` } : undefined,
+    datePublished,
+    dateModified: modified < datePublished ? datePublished : modified,
+    inLanguage: 'en',
+    author: editorsLd(),
     publisher: { '@id': `${site.url}/#organization` },
+    about: place ? { '@type': place['@type'], name: title } : undefined,
   };
+  return place ? [place, article] : [article];
 }
 
 export function jsonLdFor(page: Page) {
-  return [organizationLd(), websiteLd(), pageLd(page), faqLd(page), breadcrumbLd(page)].filter(Boolean);
+  return [organizationLd(), websiteLd(), ...(page.path === '/' ? [] : pageLd(page)), faqLd(page), breadcrumbLd(page)].filter(Boolean);
 }
