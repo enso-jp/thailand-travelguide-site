@@ -2481,7 +2481,7 @@ const rawPages: Page[] = [
       },
       {
         "label": "Longer stay",
-        "value": "Apply for a tourist e-visa at thaievisa.go.th before you fly"
+        "value": "Tourist e-visa: up to 60 days, apply before you fly"
       }
     ],
     photo: "/photos/bangkok.jpg",
@@ -2501,7 +2501,7 @@ const rawPages: Page[] = [
           '**Who files:** every non-Thai national, including visa-free and visa holders (tdac.immigration.go.th/manual).',
           '**When:** within 3 days before the arrival date. You can update the card before you travel.',
           '**What you need:** passport, flight number, and the first hotel name. That is why the stay search sits here, not on a generic homepage.',
-          '**Stamp check:** the officer still decides entry. Immigration may ask you to show proof of funds: at least 20,000 THB per person or 40,000 THB per family (cash or the equivalent). Carry enough to be safe, along with an onward ticket.',
+          '**Stamp check:** the officer still decides entry. Immigration may ask you to show proof of funds: at least 20,000 THB per person or 40,000 THB per family (cash or the equivalent). Carry enough to be safe, along with an onward ticket. The Tourism Authority of Thailand quotes 10,000 THB per person, but embassies advise 20,000, so carry the higher amount.',
         ],
         table: {
           headers: ['Document', 'What it is', 'Where'],
@@ -2509,7 +2509,7 @@ const rawPages: Page[] = [
             ['TDAC', 'Arrival card, not a visa', 'tdac.immigration.go.th'],
             ['Visa exemption', '30-day tourist stamp for listed passports', 'Immigration counter'],
             ['Bilateral exemption', '90 days for South Korea, Brazil, Argentina, Chile, Peru', 'Immigration counter'],
-            ['Tourist e-visa', 'Longer stay, issued before you fly', 'thaievisa.go.th'],
+            ['Tourist e-visa', 'Up to 60 days stay, issued before you fly (not the 30-day exemption)', 'thaievisa.go.th'],
           ],
         },
         affiliates: [
@@ -2531,7 +2531,7 @@ const rawPages: Page[] = [
       },
       {
         "q": "How long is visa-free now?",
-        "a": "Since 15 September 2026, most Western passport holders can enter Thailand visa-free for up to 30 days, for tourism only. Citizens of South Korea, Brazil, Argentina, Chile and Peru get 90 days under country-to-country agreements."
+        "a": "Since 15 September 2026, most Western passport holders can enter Thailand visa-free for up to 30 days, for tourism only. Citizens of South Korea, Brazil, Argentina, Chile and Peru get 90 days under country-to-country agreements. Need longer? A tourist e-visa from thaievisa.go.th allows up to 60 days, and it is a separate visa you get before you fly."
       },
       {
         "q": "Can you extend the 30-day stamp?",
