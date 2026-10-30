@@ -24,7 +24,7 @@ export const WAVE22_SECONDARY_TITLE_CORE: Record<string, string> = {
   "/pai/best-time-to-visit": "Best Time to Visit Pai: Cool Months versus Haze",
   "/pai/day-trips": "Pai Day Trips: Canyon, Springs, Mae Hong Son Loop",
   "/pai/top-attractions": "Pai Top Attractions: Canyon and Walking Street",
-  "/pattaya/where-to-stay": "Where to Stay in Pattaya: Jomtien versus Wongamat",
+  "/pattaya/where-to-stay": "Where to Stay in Pattaya: Jomtien vs Wongamat",
   "/pattaya/jomtien": "Jomtien Beach, Pattaya: Swim Sand vs Walking Street",
   "/pattaya/koh-larn": "Koh Larn from Pattaya: Ferry Fare, Time, and Pier",
   "/pattaya/best-time-to-visit": "Best Time to Visit Pattaya: Gulf Heat and Rain",

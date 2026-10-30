@@ -5,7 +5,7 @@ import AffRow from './AffRow.astro';
 import FaqList from './FaqList.astro';
 import SisterNetwork from './SisterNetwork.astro';
 import SisterRoutes from './SisterRoutes.astro';
-import type { Page } from '../lib/content';
+import { getPage, type Page } from '../lib/content';
 import { chipHref, formatInline } from '../lib/inline';
 import { pageHref, routePath } from '../lib/site';
 import { UniquePhotos } from '../lib/photos';
@@ -38,6 +38,14 @@ const affiliates = bag.takeBatch(
   (item) => `${page.path} ${item.title} ${item.kicker} ${item.body}`,
 );
 const tabs = page.tabs;
+const ROUTE_STAYS: Record<string, string[]> = {
+  'phuket-to-krabi-phi-phi': ['koh-phi-phi', 'krabi'],
+};
+const routeSlug = page.path.startsWith('/get-there/') ? page.path.slice('/get-there/'.length).replace(/\/$/, '') : '';
+const routeDests = routeSlug ? ROUTE_STAYS[routeSlug] || [routeSlug.split('-to-')[1]] : [];
+const stayLinks = routeDests
+  .map((slug) => getPage(`/${slug}/where-to-stay`))
+  .filter((p): p is Page => Boolean(p));
 const showSisterRoutes = page.path === '/get-there' || page.path.startsWith('/get-there/') || page.path === '/itineraries' || page.path.startsWith('/itineraries/') || page.path === '/plan';
 const useGuideGrid =
   (page.portraits?.length || 0) > 0 &&
@@ -314,6 +322,21 @@ function guideGridHeading(path: string): string {
       <section class="place-section" id="book">
         <h2>Book</h2>
         <AffRow items={affiliates} />
+      </section>
+    )
+  }
+
+  {
+    stayLinks.length > 0 && (
+      <section class="place-section" id="stay">
+        <h2>Where to stay on arrival</h2>
+        <ul>
+          {stayLinks.map((p) => (
+            <li>
+              <a href={pageHref(p.path)}>{p.title}</a>
+            </li>
+          ))}
+        </ul>
       </section>
     )
   }

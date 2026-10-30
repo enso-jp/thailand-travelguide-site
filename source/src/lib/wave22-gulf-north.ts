@@ -28,7 +28,7 @@ export const WAVE22_GULF_NORTH_TITLE_CORE: Record<string, string> = {
   "/koh-phangan/where-to-stay": "Where to Stay on Koh Phangan: Bays vs Haad Rin",
   "/koh-phangan/haad-rin": "Haad Rin, Koh Phangan: Full Moon Beach Only 2026",
   "/koh-phangan/best-time-to-visit": "Best Time to Visit Koh Phangan: Jan to Sep 2026",
-  "/koh-tao/where-to-stay": "Where to Stay on Koh Tao: Sairee vs Chalok 2026",
+  "/koh-tao/where-to-stay": "Where to Stay on Koh Tao: Sairee, Mae Haad or Chalok",
   "/koh-tao/dive-sites": "Koh Tao Dive Sites: Open Water and Fun Dives 2026",
   "/koh-tao/best-time-to-visit": "Best Time to Visit Koh Tao: Jan to Sep Gulf 2026",
   "/chiang-mai/where-to-stay": "Where to Stay in Chiang Mai: Old City, Nimman",
