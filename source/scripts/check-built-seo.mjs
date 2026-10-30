@@ -111,7 +111,7 @@ for (const file of pages) {
 // Old Trip.com SID 334225872 must never ship. Only the listed links still awaiting a Partner-generated
 // replacement are tolerated; remove each entry as soon as its batch link lands.
 {
-  const OLD_SID_PENDING = ['keyword=Karon&', 'keyword=Surin%20Beach&', 'keyword=Rawai&', 'keyword=Wongamat'];
+  const OLD_SID_PENDING = [];
   const walk = (dir) => readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
     e.isDirectory() ? walk(join(dir, e.name)) : /\.(html|xml|json|js|txt)$/.test(e.name) ? [join(dir, e.name)] : []);
   for (const file of walk(DIST)) {

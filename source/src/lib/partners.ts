@@ -160,6 +160,8 @@ const TRIP_GENERATED_FLIGHTS: Partial<Record<string, string>> = {
 
 /** Trip.com Partner tool links, batch 1, SID 334804079. Copied exactly as generated (spaces as %20). Never edit. */
 const TRIP_GENERATED_HOTEL_SEARCH: Record<string, string> = {
+  // Batch 3, SID 334804079, undated Partner tool link. Copied exactly as generated (spaces as %20). Never edit.
+  "Wongamat|pattaya": "https://www.trip.com/hotels/list?cityId=622&cityName=Pattaya&searchWord=Wong%20Amat%20Beach&searchType=LM&optionId=16180132&searchValue=13|16180132*13*12.9583058|100.8844263|Wong%20Amat%20Beach|16180132|1&crn=1&adult=2&Allianceid=11105102&SID=334804079&trip_sub1=th_h_wongamat&trip_sub3=D20762590",
   "Khao Sok|": "https://www.trip.com/hotels/list?keyword=Khao%20Sok&Allianceid=11105102&SID=334804079&trip_sub1=th_khao_sok_hotels&trip_sub3=D20753231",
   "Khao Yai|": "https://www.trip.com/hotels/list?keyword=Khao%20Yai&Allianceid=11105102&SID=334804079&trip_sub1=th_khao_yai_hotels&trip_sub3=D20753231",
   "Phi Phi|krabi": "https://www.trip.com/hotels/list?Allianceid=11105102&SID=334804079&city=1405&cityName=Krabi&trip_sub1=th_phi_phi_hotels&trip_sub3=D20753231&keyword=Phi%20Phi",
@@ -170,6 +172,10 @@ const TRIP_GENERATED_HOTEL_SEARCH: Record<string, string> = {
 
 /** Trip.com Partner tool links, batch 2, SID 334804079. Copied exactly as generated (spaces as %20). Never edit. */
 const TRIP_GENERATED_AREAS: Record<string, string> = {
+  // Batch 3, SID 334804079, undated Partner tool links. Copied exactly as generated (spaces as %20). Never edit.
+  "Karon|phuket": "https://www.trip.com/hotels/list?cityId=725&cityName=Phuket&searchWord=Karon%20Beach&searchType=Z&optionId=826&searchValue=8|826*8*826&crn=1&adult=2&Allianceid=11105102&SID=334804079&trip_sub1=th_h_karon&trip_sub3=D20762520",
+  "Surin Beach|phuket": "https://www.trip.com/hotels/list?cityId=725&cityName=Phuket&searchWord=Surin%20Beach&searchType=LM&optionId=15270062&searchValue=13|15270062*13*7.9754731|98.2784667|Surin%20Beach|15270062|1&crn=1&adult=2&Allianceid=11105102&SID=334804079&trip_sub1=th_h_surin&trip_sub3=D20762590",
+  "Rawai|phuket": "https://www.trip.com/hotels/list?cityId=725&cityName=Phuket&searchWord=Rawai%20Beach&searchType=Z&optionId=930&searchValue=8|930*8*930&crn=1&adult=2&Allianceid=11105102&SID=334804079&trip_sub1=th_h_rawai&trip_sub3=D20762590",
   "Ari|bangkok": "https://www.trip.com/hotels/bangkok-hotels-list-359/?keyword=Ari&Allianceid=11105102&SID=334804079&trip_sub1=th_h_ari&trip_sub3=D20757879",
   "Charoenkrung|bangkok": "https://www.trip.com/hotels/bangkok-hotels-list-359/?keyword=Charoenkrung&Allianceid=11105102&SID=334804079&trip_sub1=th_h_charoenkrung&trip_sub3=D20757942",
   "Old City|bangkok": "https://www.trip.com/hotels/bangkok-hotels-list-359/?keyword=Old%20City&Allianceid=11105102&SID=334804079&trip_sub1=th_h_old_city&trip_sub3=D20758005",
