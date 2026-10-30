@@ -755,8 +755,8 @@ export const wave7Pages: Page[] = [
       { label: 'Erawan fee', value: '300 THB foreign adult, 150 THB child, cash' },
       { label: 'First bus', value: '8170 at 08:00 from Kanchanaburi Bus Terminal, about 60 THB' },
       { label: 'Upper tiers', value: 'Start down by 15:30; last bus back about 16:30' },
-      { label: 'Sai Yok Noi', value: 'Free roadside fall near Nam Tok; Hellfire Pass is by road' },
-      { label: 'Hellfire Pass', value: 'Closed since 27 Sep 2026, until further notice' },
+      { label: 'Sai Yok Noi', value: 'Open, reopened 10 Oct. Lawa Cave closed' },
+      { label: 'Hellfire Pass', value: 'Official site lists 09:00 to 16:00, no closure notice (checked 30 Oct)' },
     ],
     chips: ['Seven tiers', 'Bus 8170', 'One hinterland'],
     photo: '/photos/kanchanaburi.jpg',
@@ -771,7 +771,9 @@ export const wave7Pages: Page[] = [
         title: 'Erawan, Sai Yok Noi, Hellfire Pass',
         paragraphs: [
           'Sai Yok Noi (Khao Phang) is the free roadside waterfall near Nam Tok station, about 60 km from town. Weekend excursion trains dump people here. It is taller than many visitors expect and not the same place as Sai Yok Yai inside Sai Yok National Park, which sits farther upriver and charges its own park fee when open.',
+          'Floods closed Sai Yok National Park from 27 September 2026. Sai Yok Noi waterfall reopened on 10 October. Lawa Cave stays closed because its access road was damaged. Call the park on 034 686 024 before you go.',
           'Hellfire Pass (Konyu Cutting) is an Australian-run memorial walk about 80 km northwest of Kanchanaburi town, about 1 hour by car. Nam Tok station is about 20 km south of the cutting. The passenger train ends at Nam Tok; the last stretch is by road. It is not a station and not a waterfall. Pick one hinterland besides Erawan. A car can do Erawan or Hellfire Pass. It cannot do both well with the 15:30 cutoff.',
+          'Hellfire Pass closed on 27 September 2026 after floods. On 30 October 2026 its official site listed normal hours of 09:00 to 16:00 and no closure notice. Call +66 34 919 605 before you go.',
         ],
         table: {
           headers: ['Site', 'Fee', 'How'],

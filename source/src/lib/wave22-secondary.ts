@@ -1107,7 +1107,8 @@ export const wave22SecondaryPages: Page[] = [
     facts: [
       { label: "Erawan", value: "300 THB foreign adult, seven tiers, 65 to 70 km" },
       { label: "Bus", value: "8170 about 1.5 hours from the bus station" },
-      { label: "Hellfire Pass", value: "Closed since 27 Sep 2026, until further notice" },
+      { label: "Hellfire Pass", value: "Official site lists 09:00 to 16:00, no closure notice (checked 30 Oct)" },
+      { label: "Sai Yok Noi", value: "Open, reopened 10 Oct. Lawa Cave closed" },
       { label: "Nights", value: "Two if falls plus the line" },
     ],
     chips: [
@@ -1119,6 +1120,8 @@ export const wave22SecondaryPages: Page[] = [
     geo: { lat: 14.002, lon: 99.548, containedIn: "Western Thailand" },
     paragraphs: [
       "[Erawan and Sai Yok](/kanchanaburi/erawan-and-sai-yok) is the waterfall day: 300 THB for a foreign adult, seven tiers, 65 to 70 km from [Kanchanaburi](/kanchanaburi) town. Bus 8170 leaves about 08:00 and takes about 1.5 hours, and treat 15:30 as the turnaround for tier 7. Hellfire Pass is a memorial walk by road, not a train stop.",
+      "Hellfire Pass closed on 27 September 2026 after floods. On 30 October 2026 its official site listed normal hours of 09:00 to 16:00 and no closure notice. Call +66 34 919 605 before you go.",
+      "Floods closed Sai Yok National Park from 27 September 2026. Sai Yok Noi waterfall reopened on 10 October. Lawa Cave stays closed because its access road was damaged. Call the park on 034 686 024 before you go.",
       "Do not add [Ayutthaya](/ayutthaya) to the same van, and trains in still leave Thonburi, not Krung Thep Aphiwat; see [Bangkok to Kanchanaburi](/get-there/bangkok-to-kanchanaburi). Two nights if Erawan and the railway are both planned, and the bridge itself lives on [River Kwai](/kanchanaburi/river-kwai).",
     ],
     sections: [
@@ -1166,7 +1169,7 @@ export const wave22SecondaryPages: Page[] = [
       { label: "Bridge", value: "Tha Makham; Khwae Yai Bridge station" },
       { label: "Train in", value: "Thonburi station, not Krung Thep Aphiwat" },
       { label: "Erawan add", value: "300 THB, seven tiers, 65 to 70 km, next day" },
-      { label: "Hellfire Pass", value: "Closed since 27 Sep 2026, until further notice" },
+      { label: "Hellfire Pass", value: "Official site lists 09:00 to 16:00, no closure notice (checked 30 Oct)" },
       { label: "Nights", value: "Two if falls plus the line" },
     ],
     chips: [
@@ -1179,6 +1182,7 @@ export const wave22SecondaryPages: Page[] = [
     paragraphs: [
       "The postcard is the steel bridge on the Khwae Yai, and the useful hour is the Thailand-Burma Railway Centre and the allied war cemetery in [Kanchanaburi](/kanchanaburi) town. Ordinary trains still leave Thonburi, not Krung Thep Aphiwat, and read [Bangkok to Kanchanaburi](/get-there/bangkok-to-kanchanaburi) before you pin Bang Sue.",
       "Hellfire Pass is about 80 km northwest by road past Nam Tok, not a passenger-train stop. [Erawan](/kanchanaburi/erawan-and-sai-yok) is a different day: 300 THB foreign adult, seven tiers, 65 to 70 km, and two nights if you want both. A 2026 songthaew to the bridge is a short fare if you agree it first.",
+      "Hellfire Pass closed on 27 September 2026 after floods. On 30 October 2026 its official site listed normal hours of 09:00 to 16:00 and no closure notice. Call +66 34 919 605 before you go.",
     ],
     sections: [
       {

@@ -994,7 +994,7 @@ export const wave3Pages: Page[] = [
       { label: 'Train station', value: 'Thonburi (Bangkok Noi), MRT Bang Khun Non' },
       { label: 'Trains', value: 'Ordinary 257 at 07:45, 259 at 13:55' },
       { label: 'Class', value: 'Third class only on the daily ordinary trains' },
-      { label: 'Hellfire Pass', value: 'Closed since 27 Sep 2026, until further notice' },
+      { label: 'Hellfire Pass', value: 'Official site lists 09:00 to 16:00, no closure notice (checked 30 Oct)' },
       { label: 'Faster path', value: 'Van or bus from Sai Tai Mai, about 2 to 2.5 hours' },
     ],
     chips: ['Thonburi', 'Third class', 'Two nights'],
@@ -1053,6 +1053,7 @@ export const wave3Pages: Page[] = [
         paragraphs: [
           'The passenger line continues past the bridge toward Nam Tok. Floods have shut the Tha Kilen to Nam Tok stretch before. Call SRT 1690 before you treat the viaduct as a must. Foreign tourist fares apply on these ordinary sets. Tickets are often day-of. The train cannot truly sell out the way a sleeper can.',
           'Hellfire Pass (Konyu Cutting) is about 80 km northwest by road past Nam Tok. It is not a station. Arrange the car in town. Erawan is a different 65 to 70 km road, local bus 8170, last-bus questions before you walk to tier 7.',
+          'Hellfire Pass closed on 27 September 2026 after floods. On 30 October 2026 its official site listed normal hours of 09:00 to 16:00 and no closure notice. Call +66 34 919 605 before you go.',
         ],
       },
     ],

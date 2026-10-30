@@ -748,7 +748,8 @@ export const wave2Pages: Page[] = [
       { label: 'Erawan fee', value: '300 THB foreign adult, cash at the gate' },
       { label: 'Erawan', value: 'Seven tiers, about 65 to 70 km from town' },
       { label: 'Nights', value: 'Two if you want falls plus the line' },
-      { label: 'Hellfire Pass', value: 'Closed since 27 Sep 2026, until further notice' },
+      { label: 'Hellfire Pass', value: 'Official site lists 09:00 to 16:00, no closure notice (checked 30 Oct)' },
+      { label: 'Sai Yok Noi', value: 'Open, reopened 10 Oct. Lawa Cave closed' },
     ],
     chips: ['River Kwai', 'Erawan', 'Thonburi trains'],
     photo: '/photos/kanchanaburi.jpg',
@@ -815,7 +816,11 @@ export const wave2Pages: Page[] = [
       },
       {
         q: 'Is Hellfire Pass on the train?',
-        a: 'No. Nam Tok is the end of the passenger line. The cutting is farther up Highway 323 by road. Arrange the car before you leave town.',
+        a: 'No. Nam Tok is the end of the passenger line. The cutting is farther up Highway 323 by road. Arrange the car before you leave town. Hellfire Pass closed on 27 September 2026 after floods. On 30 October 2026 its official site listed normal hours of 09:00 to 16:00 and no closure notice. Call +66 34 919 605 before you go.',
+      },
+      {
+        q: 'Is Sai Yok open?',
+        a: 'Floods closed Sai Yok National Park from 27 September 2026. Sai Yok Noi waterfall reopened on 10 October. Lawa Cave stays closed because its access road was damaged. Call the park on 034 686 024 before you go.',
       },
     ],
   },
