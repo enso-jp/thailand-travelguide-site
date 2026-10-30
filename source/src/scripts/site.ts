@@ -62,13 +62,27 @@ function appendStayQuery(baseHref: string, checkin?: string, checkout?: string, 
   }
 }
 
-function trackAffiliate(partner: string, linkUrl: string) {
+function placementFor(el: Element | null): string {
+  if (!el) return 'unknown';
+  const tagged = el.closest<HTMLElement>('[data-placement]');
+  if (tagged?.dataset.placement) return tagged.dataset.placement;
+  const named = el.closest<HTMLElement>('[data-trip-box],[data-book],[data-book-form],section[id],[class*="trip-cta"],[class*="aff"],[class*="flight"],header,footer,nav,main');
+  if (!named) return 'page';
+  if (named.hasAttribute('data-trip-box')) return 'trip_search';
+  if (named.hasAttribute('data-book') || named.hasAttribute('data-book-form')) return 'book_widget';
+  if (named.id) return named.id;
+  const cls = Array.from(named.classList).find((c) => /trip-cta|aff|flight/.test(c));
+  return cls || named.tagName.toLowerCase();
+}
+
+function trackAffiliate(partner: string, linkUrl: string, placement = 'unknown') {
   const g = (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag;
   if (typeof g !== 'function') return;
   g('event', 'affiliate_click', {
     partner,
+    link_url: linkUrl.slice(0, 500),
     page_path: location.pathname,
-    link_url: linkUrl,
+    placement,
     transport_type: 'beacon',
   });
 }
@@ -80,7 +94,7 @@ function partnerFor(href: string): string | null {
   } catch {
     return null;
   }
-  if (/(^|\.)trip\.com$/.test(host)) return 'tripcom';
+  if (/(^|\.)trip\.com$/.test(host)) return 'trip';
   if (/(^|\.)klook\.com$/.test(host) || host === 'klook.tpx.li') return 'klook';
   if (/(^|\.)(tp\.media|tpk\.ro|travelpayouts\.com|tp\.st)$/.test(host)) return 'travelpayouts';
   return null;
@@ -98,10 +112,24 @@ ready(() => {
       const a = (event.target as Element | null)?.closest?.('a[href]') as HTMLAnchorElement | null;
       if (!a) return;
       const partner = partnerFor(a.href);
-      if (partner) trackAffiliate(partner, a.href);
+      if (partner) trackAffiliate(partner, a.href, placementFor(a));
     },
     { capture: true },
   );
+
+  // Partner iframes (Trip.com search box): a click inside moves focus to the
+  // iframe and blurs the window. Count at most once per iframe per page view.
+  const seenFrames = new WeakSet<HTMLIFrameElement>();
+  window.addEventListener('blur', () => {
+    window.setTimeout(() => {
+      const f = document.activeElement;
+      if (!(f instanceof HTMLIFrameElement) || seenFrames.has(f)) return;
+      const partner = partnerFor(f.src);
+      if (!partner) return;
+      seenFrames.add(f);
+      trackAffiliate(partner, f.src, `${placementFor(f)}_iframe`);
+    }, 0);
+  });
 
   const menuBtn = document.querySelector<HTMLButtonElement>('[data-menu]');
   const menu = document.querySelector<HTMLElement>('#site-menu');
@@ -325,6 +353,8 @@ ready(() => {
             : tab === 'trains'
               ? pack.trains
               : appendStayQuery(pack.stay, inInput?.value, outInput?.value, guests);
+      const partner = partnerFor(href);
+      if (partner) trackAffiliate(partner, href, `book_widget_${tab}`);
       window.open(href, '_blank', 'noopener,noreferrer');
     });
   });
@@ -343,7 +373,7 @@ ready(() => {
       const base = links[city] || links.bangkok;
       if (!base) return;
       const href = appendStayQuery(base, inInput?.value, outInput?.value, guests);
-      trackAffiliate('tripcom', href);
+      trackAffiliate('trip', href, 'trip_search');
       window.open(href, '_blank', 'noopener,noreferrer');
     });
   });
