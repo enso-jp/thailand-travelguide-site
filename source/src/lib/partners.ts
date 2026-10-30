@@ -378,7 +378,7 @@ const NEARBY_AREAS = new Set(['kamala', 'surin', 'bang-niang']);
 const KEYWORD_LABELS: Record<string, string> = {
   khao_sok_raft_house: 'Khao Sok stays',
   soneva_kiri: 'Koh Kood stays',
-  private_pool_villa: 'Hotels in Krabi province',
+  private_pool_villa: 'Krabi pool villas',
 };
 const TRIP_HOTEL_CTA: Record<string, string> = {
   ...Object.fromEntries(
@@ -393,7 +393,7 @@ const TRIP_HOTEL_CTA: Record<string, string> = {
 
 const AREA_LIST_TITLES: Record<string, string> = {
   soneva_kiri: 'Koh Kood hotel list',
-  private_pool_villa: 'Krabi province hotel list',
+  private_pool_villa: 'Krabi pool villa list',
 };
 const TRIP_HOTEL_TITLE: Record<string, string> = Object.fromEntries(
   Object.values(TRIP_KEYWORD_LINKS).filter((r) => AREA_LIST_TITLES[r.slug]).map((r) => [encodeTripLink(r.link), AREA_LIST_TITLES[r.slug]]),

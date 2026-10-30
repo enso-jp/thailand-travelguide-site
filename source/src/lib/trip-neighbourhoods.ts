@@ -392,8 +392,8 @@ export const TRIP_KEYWORD_LINKS: Record<string, { slug: string; city: string; li
   "private pool villa": {
     "slug": "private_pool_villa",
     "city": "Krabi",
-    "link": "https://www.trip.com/hotels/list?flexType=1&cityId=-1&provinceId=10129&districtId=0&countryId=4&cityName=&destName=Krabi Province, Thailand&searchWord=Krabi Province&searchType=P&optionId=10129&searchValue=39|10129*39*10129&listFilters=29~1*29*1~2*2&curr=USD&locale=en-XX&old=1&Allianceid=11105102&SID=334804079&trip_sub1=th_h_private_pool_villa&trip_sub3=D20791472",
-    "fallback": true
+    "link": "https://www.trip.com/hotels/list?flexType=1&cityId=1405&provinceId=10129&countryId=4&cityName=Krabi Town&destName=Krabi, Krabi Town, Krabi Province, Thailand&searchWord=Krabi&searchType=LM&searchValue=13|14078964*13*8.0854803|98.9062856|Krabi|14078964|1&listFilters=29~1*29*1~2*2,17~1*17*1,77~228*77*228,80~0~1*80*0&curr=USD&locale=en-XX&old=1&Allianceid=11105102&SID=334804079&trip_sub1=th_h_private_pool_villa&trip_sub3=D20792228",
+    "fallback": false
   },
   "Sai Yok": {
     "slug": "sai_yok_hotels",
