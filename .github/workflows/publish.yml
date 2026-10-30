@@ -24,13 +24,15 @@ jobs:
       HAS_TOKEN: ${{ secrets.THAILAND_GUIDE_TOKEN != '' }}
     steps:
       - uses: actions/checkout@v4
+      - name: Resolve source
+        run: echo "SRC_REPO=${GITHUB_REPOSITORY%-site}" >> "$GITHUB_ENV"
       - name: Checkout Thailand Travel Guide
         if: env.HAS_TOKEN == 'true'
         env:
           HAS_TOKEN: ${{ secrets.THAILAND_GUIDE_TOKEN != '' }}
         uses: actions/checkout@v4
         with:
-          repository: enso-jp/thailand-travelguide
+          repository: ${{ env.SRC_REPO }}
           ref: main
           path: source
           token: ${{ secrets.THAILAND_GUIDE_TOKEN }}

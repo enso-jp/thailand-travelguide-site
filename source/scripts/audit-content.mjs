@@ -87,16 +87,14 @@ const errors = [];
 const SKIP_DIRS = new Set(['node_modules', 'dist', '.git', '.astro', '.cursor']);
 const PRIVACY_SKIP_DIRS = new Set(['node_modules', '.git', '.astro', '.cursor', 'scripts']);
 
-// Kept in scripts/ so the public tree never lists these strings.
-const forbiddenPrivacyPatterns = [
-  /nuranoel/i,
-  /thebeyond_traveller/i,
-  /enso-jp/i,
-  /github\.com/i,
-  /github\.io/i,
-  /tan\s+hai/i,
-  /firebirds/i,
-];
+// Encoded so the published tree never lists these strings in plain text.
+const forbiddenPrivacyPatterns = Buffer.from(
+  'bnVyYW5vZWwKdGhlYmV5b25kX3RyYXZlbGxlcgplbnNvLWpwCmdpdGh1YlwuY29tCmdpdGh1YlwuaW8KdGFuXHMraGFpCmZpcmViaXJkcwpwcm9qZWN0XHMrZnJlZWRvbQ==',
+  'base64',
+)
+  .toString('utf8')
+  .split('\n')
+  .map((p) => new RegExp(p, 'i'));
 const TEXT_EXT = new Set([
   '.astro',
   '.ts',
