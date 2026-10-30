@@ -398,6 +398,22 @@ export const wave21Pages: Page[] = [
       'Eat Bangkok by rail and by clock. Lunch is shophouses and boat-noodle alleys. Night is Yaowarat from MRT Wat Mangkon or Banthat Thong from MRT Sam Yan. A 2026 street plate is often 60 to 150 THB. Jay Fai on Maha Chai is the one-star exception that still cooks like a street wok and will take your evening.',
       'Do not stack Jay Fai, Chatuchak, and Texas Lane on the same calendar. One serious queue and one market is enough. For the stall map use [Bangkok street food](/thai-food/bangkok-street-food). For the gold-shop night use [Yaowarat](/thai-food/yaowarat-chinatown-food-walk).',
     ],
+    sections: [
+      {
+        id: 'neighbourhoods',
+        title: 'Neighbourhoods',
+        bullets: [
+          '**[Bang Rak](/thai-food/bang-rak-food):** Somtum Der at Sala Daeng, 11:00 to 23:00.',
+          '**[Ari](/thai-food/ari-food):** Soi Ari shophouses off BTS Ari, often 60 to 150 THB.',
+          '**[Thonglor and Soi 38](/thai-food/thonglor-and-soi-38-food):** night stalls from about 17:00.',
+          '**[Banglamphu](/thai-food/banglamphu-food):** Roti Mataba, closed Monday.',
+          '**[Nang Loeng](/thai-food/nang-loeng-market):** curry rice before noon, often 40 to 80 THB.',
+          '**[Victory Monument](/thai-food/victory-monument-food):** boat noodles at 15 to 20 THB.',
+          '**[Pratunam](/thai-food/pratunam-food):** Go-Ang chicken rice at 65 THB.',
+          '**[Ekkamai](/thai-food/ekkamai-food)** and **[Sampheng](/thai-food/sampheng-lane-food)** if you want Soi 63 or the daytime Chinatown lane.',
+        ],
+      },
+    ],
     portraits: [
       { title: 'Street food', href: '/thai-food/bangkok-street-food', photo: '/photos/thai-food-bangkok-street.jpg' },
       { title: 'Yaowarat', href: '/thai-food/yaowarat-chinatown-food-walk', photo: '/photos/yaowarat.jpg' },

@@ -36,12 +36,12 @@ export const wave4Pages: Page[] = [
     photo: '/photos/thai-food.jpg',
     paragraphs: [
       'Eat Thai food by city, not as one national plate. The Michelin Guide Thailand 2026 lists 137 Bib Gourmand rooms nationwide, including 44 in Bangkok and the surrounding provinces, 18 in Chiang Mai, and 19 in Phuket. Bib is the value badge, not a star. A 2026 street plate is often 60 to 150 THB. Jay Fai on Maha Chai is the one-star exception that still cooks like a street wok.',
-      'Do not stack a Jay Fai queue, a Chatuchak Saturday, and a Ratchada night market on the same day. One serious meal and one market is enough. The fifteen guides cover neighbourhoods, markets, rooftops, cooking classes, and a first-trip dish list.',
+      'Do not stack a Jay Fai queue, a Chatuchak Saturday, and a Ratchada night market on the same day. One serious meal and one market is enough. The directory covers neighbourhoods, markets, rooftops, cooking classes, and a first-trip dish list.',
     ],
     sections: [
       {
         id: 'guides',
-        title: 'Fifteen food guides',
+        title: 'Food guides',
         paragraphs: [
           'City maps and neighbourhood walks sit in two clusters. An Andaman inland day, a dress-code roof, a wok class, a menu decoder, or a pour-over sit in the rest.',
         ],

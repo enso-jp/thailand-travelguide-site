@@ -5,7 +5,7 @@ export type FoodSpot = {
   name: string;
   nameLocal?: string;
   address: string;
-  hours: string;
+  hours?: string;
   price: string;
   note: string;
 };
@@ -664,7 +664,7 @@ export function dishToPage(dish: DishRecord, catalog: DishRecord[]): Page {
         title: 'Where to try it',
         bullets: dish.spots.map(
           (spot) =>
-            `**${spot.name}**${spot.nameLocal ? ` (${spot.nameLocal})` : ''}, ${spot.address}. ${spot.hours}. ${spot.price}. ${spot.note}`,
+            `**${spot.name}**${spot.nameLocal ? ` (${spot.nameLocal})` : ''}, ${spot.address}.${spot.hours ? ` ${spot.hours}.` : ''} ${spot.price}. ${spot.note}`,
         ),
       },
       {

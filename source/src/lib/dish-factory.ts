@@ -47,7 +47,7 @@ export type DishDraft = {
   related: string[];
   photo: string;
   room: string;
-  clock: string;
+  clock?: string;
   faqs: DishRecord['faqs'];
   walkHref?: string;
   walkLabel?: string;
@@ -82,7 +82,7 @@ export function makeDish(draft: DishDraft): DishRecord {
       { label: 'Thai', value: `${draft.nameLocal} · ${draft.orderName}` },
       { label: 'Price', value: draft.price },
       { label: 'Room', value: draft.room },
-      { label: 'Clock', value: draft.clock },
+      ...(draft.clock ? [{ label: 'Clock', value: draft.clock }] : []),
     ],
     faqs: draft.faqs,
     klookQuery: draft.klookQuery || walk.klookQuery,

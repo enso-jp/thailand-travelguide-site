@@ -7,6 +7,7 @@ import { HAT_YAI_DISHES, KOH_SAMUI_DISHES } from './dishes-hat-yai-samui';
 import { KHON_KAEN_DISHES, NONG_KHAI_DISHES, UDON_THANI_DISHES } from './dishes-isan-cities';
 import { KRABI_DISHES, PHUKET_DISHES } from './dishes-south';
 import { KANCHANABURI_DISHES, PAI_DISHES, KHAO_LAK_DISHES, KOH_LANTA_DISHES, KOH_TAO_DISHES, KOH_PHANGAN_DISHES, KOH_PHI_PHI_DISHES, KOH_LIPE_DISHES, KOH_KOOD_DISHES } from './dishes-batch3';
+import { KANCHANABURI_MORE, PAI_MORE, KHAO_LAK_MORE, KOH_LANTA_MORE, KOH_TAO_MORE, KOH_PHANGAN_MORE, KOH_PHI_PHI_MORE, KOH_LIPE_MORE, KOH_KOOD_MORE } from './dishes-batch4';
 import { UniquePhotos } from './photos';
 
 /** Files that actually show a plated Thai dish, not a street or temple. */
@@ -64,6 +65,15 @@ export const DISH_PHOTO_KEYS = new Set([
     ...KOH_PHI_PHI_DISHES,
     ...KOH_LIPE_DISHES,
     ...KOH_KOOD_DISHES,
+    ...KANCHANABURI_MORE,
+    ...PAI_MORE,
+    ...KHAO_LAK_MORE,
+    ...KOH_LANTA_MORE,
+    ...KOH_TAO_MORE,
+    ...KOH_PHANGAN_MORE,
+    ...KOH_PHI_PHI_MORE,
+    ...KOH_LIPE_MORE,
+    ...KOH_KOOD_MORE,
   ]
     .map((dish) => String(dish.photo || '').replace(/^\/photos\//, '').replace(/\.[^.]+$/, ''))
     .filter((key) => key.startsWith('dish-')),

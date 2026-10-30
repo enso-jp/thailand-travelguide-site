@@ -25,6 +25,7 @@ import { applyWave13 } from './wave13';
 import { wave21Pages } from './wave21-pages';
 import { wave27Pages } from './wave27-compare';
 import { wave28FoodHubs } from './wave28-food-hubs';
+import { wave29FoodTopics } from './wave29-food-topics';
 import { wave22Pages } from './wave22-bangkok';
 import { wave22SouthPages } from './wave22-south';
 import { wave22GulfNorthPages } from './wave22-gulf-north';
@@ -4162,6 +4163,7 @@ const rawPages: Page[] = [
   ...wave21Pages,
   ...wave27Pages,
   ...wave28FoodHubs,
+  ...wave29FoodTopics,
   ...wave22Pages,
   ...wave22SouthPages,
   ...wave22GulfNorthPages,

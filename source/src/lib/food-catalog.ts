@@ -6,6 +6,7 @@ import { HAT_YAI_DISHES, KOH_SAMUI_DISHES } from './dishes-hat-yai-samui';
 import { KHON_KAEN_DISHES, NONG_KHAI_DISHES, UDON_THANI_DISHES } from './dishes-isan-cities';
 import { KRABI_DISHES, PHUKET_DISHES } from './dishes-south';
 import { KANCHANABURI_DISHES, PAI_DISHES, KHAO_LAK_DISHES, KOH_LANTA_DISHES, KOH_TAO_DISHES, KOH_PHANGAN_DISHES, KOH_PHI_PHI_DISHES, KOH_LIPE_DISHES, KOH_KOOD_DISHES } from './dishes-batch3';
+import { KANCHANABURI_MORE, PAI_MORE, KHAO_LAK_MORE, KOH_LANTA_MORE, KOH_TAO_MORE, KOH_PHANGAN_MORE, KOH_PHI_PHI_MORE, KOH_LIPE_MORE, KOH_KOOD_MORE } from './dishes-batch4';
 import { ALL_DISHES } from './dish-pages';
 import { dishDirectoryItems, dishPath, type DishRecord, type FoodSpot } from './dish-model';
 
@@ -263,15 +264,15 @@ export const CITY_FOOD_ROWS: Record<string, CityFoodRow[]> = {
   '/thai-food/hat-yai': dishRows(HAT_YAI_DISHES),
   '/thai-food/sukhothai': dishRows(SUKHOTHAI_DISHES),
   '/thai-food/pattaya': dishRows(PATTAYA_DISHES),
-  '/thai-food/kanchanaburi': dishRows(KANCHANABURI_DISHES),
-  '/thai-food/pai': dishRows(PAI_DISHES),
-  '/thai-food/khao-lak': dishRows(KHAO_LAK_DISHES),
-  '/thai-food/koh-lanta': dishRows(KOH_LANTA_DISHES),
-  '/thai-food/koh-tao': dishRows(KOH_TAO_DISHES),
-  '/thai-food/koh-phangan': dishRows(KOH_PHANGAN_DISHES),
-  '/thai-food/koh-phi-phi': dishRows(KOH_PHI_PHI_DISHES),
-  '/thai-food/koh-lipe': dishRows(KOH_LIPE_DISHES),
-  '/thai-food/koh-kood': dishRows(KOH_KOOD_DISHES),
+  '/thai-food/kanchanaburi': dishRows([...KANCHANABURI_DISHES, ...KANCHANABURI_MORE]),
+  '/thai-food/pai': dishRows([...PAI_DISHES, ...PAI_MORE]),
+  '/thai-food/khao-lak': dishRows([...KHAO_LAK_DISHES, ...KHAO_LAK_MORE]),
+  '/thai-food/koh-lanta': dishRows([...KOH_LANTA_DISHES, ...KOH_LANTA_MORE]),
+  '/thai-food/koh-tao': dishRows([...KOH_TAO_DISHES, ...KOH_TAO_MORE]),
+  '/thai-food/koh-phangan': dishRows([...KOH_PHANGAN_DISHES, ...KOH_PHANGAN_MORE]),
+  '/thai-food/koh-phi-phi': dishRows([...KOH_PHI_PHI_DISHES, ...KOH_PHI_PHI_MORE]),
+  '/thai-food/koh-lipe': dishRows([...KOH_LIPE_DISHES, ...KOH_LIPE_MORE]),
+  '/thai-food/koh-kood': dishRows([...KOH_KOOD_DISHES, ...KOH_KOOD_MORE]),
 };
 
 export type DirectoryItem = {
@@ -316,6 +317,31 @@ export function foodDirectory(): DirectoryItem[] {
     { title: 'South and Baba-Nyonya', href: '/thai-food/southern-and-baba-nyonya', line: 'Southern rooms cook sour curry and mansion Baba plates.', find: 'south baba nyonya', letter: 'S' },
     { title: 'Wang Lang and Talat Noi', href: '/thai-food/wang-lang-and-talat-noi', line: 'Wang Lang is the ferry lunch; Talat Noi is the morning lane.', find: 'wang lang talat noi', letter: 'W' },
     { title: 'Yaowarat walk', href: '/thai-food/yaowarat-chinatown-food-walk', line: 'The Yaowarat walk starts after 18:00 from MRT Wat Mangkon.', find: 'yaowarat chinatown', letter: 'Y' },
+    { title: 'Ari food', href: '/thai-food/ari-food', line: 'Ari food is Soi Ari shophouses and cafes off BTS Ari.', find: 'ari soi food cafe', letter: 'A' },
+    { title: 'Bang Rak food', href: '/thai-food/bang-rak-food', line: 'Bang Rak food is Somtum Der on Sala Daeng Road.', find: 'bang rak somtum der sala daeng', letter: 'B' },
+    { title: 'Banglamphu food', href: '/thai-food/banglamphu-food', line: 'Banglamphu food is Roti Mataba and a short Khao San graze.', find: 'banglamphu roti mataba khao san', letter: 'B' },
+    { title: 'Ekkamai food', href: '/thai-food/ekkamai-food', line: 'Ekkamai food is Soi 63 shophouses off BTS Ekkamai.', find: 'ekkamai soi 63', letter: 'E' },
+    { title: 'Halal and Thai Muslim food', href: '/thai-food/halal-and-thai-muslim-food', line: 'Halal Thai plates are khao mok gai, roti, and a signed kitchen.', find: 'halal khao mok roti', letter: 'H' },
+    { title: 'Nang Loeng Market food', href: '/thai-food/nang-loeng-market', line: 'Nang Loeng is morning curry rice and old sweets before noon.', find: 'nang loeng market sweets', letter: 'N' },
+    { title: 'Nam prik and condiments', href: '/thai-food/nam-prik-and-condiments', line: 'Nam prik is a chili relish with vegetables, often 40 to 80 THB.', find: 'nam prik chili relish', letter: 'N' },
+    { title: 'Ordering Thai seafood', href: '/thai-food/ordering-thai-seafood', line: 'Price Thai seafood per kilo before the grill starts.', find: 'seafood kilo grill', letter: 'O' },
+    { title: 'Pratunam food', href: '/thai-food/pratunam-food', line: 'Pratunam food is Go-Ang chicken rice at 65 THB.', find: 'pratunam go ang chicken rice', letter: 'P' },
+    { title: 'Sampheng Lane food', href: '/thai-food/sampheng-lane-food', line: 'Sampheng is the daytime snack lane off Yaowarat.', find: 'sampheng lane yaowarat day', letter: 'S' },
+    { title: 'Spice levels', href: '/thai-food/spice-levels', line: 'Say mai pet or pet nit noi before a Thai wok starts.', find: 'spice mai pet chili', letter: 'S' },
+    { title: 'Thai breakfast', href: '/thai-food/thai-breakfast', line: 'Thai breakfast is jok and pa tong go from about 06:00.', find: 'breakfast jok pa tong go', letter: 'T' },
+    { title: 'Thai curries', href: '/thai-food/thai-curries', line: 'Thai curries are a family of pots. Market sets are often 40 to 80 THB.', find: 'curry green massaman gaeng som', letter: 'T' },
+    { title: 'Thai desserts', href: '/thai-food/thai-desserts', line: 'Thai desserts are mango sticky rice and coconut sweets.', find: 'dessert mango sticky khanom', letter: 'T' },
+    { title: 'Thai festival food', href: '/thai-food/festival-food', line: 'Festival food is khao chae in April and jay food in the ninth lunar month.', find: 'festival khao chae songkran jay', letter: 'T' },
+    { title: 'Thai food etiquette', href: '/thai-food/thai-food-etiquette', line: 'Use a spoon, share the dishes, and say how hot you want it.', find: 'etiquette spoon order', letter: 'T' },
+    { title: 'Thai fruit by season', href: '/thai-food/thai-fruit-by-season', line: 'Mango peaks March to May. Durian follows from April.', find: 'fruit season mango durian', letter: 'T' },
+    { title: 'Thai iced drinks', href: '/thai-food/thai-iced-drinks', line: 'Cha yen and oliang are often 25 to 45 THB. Pour-over is separate.', find: 'cha yen oliang iced tea', letter: 'T' },
+    { title: 'Thai noodles', href: '/thai-food/thai-noodles', line: 'Boat noodles are 15 to 20 THB. Pad thai is only one of the bowls.', find: 'noodles boat pad thai yen ta fo', letter: 'T' },
+    { title: 'Thai rice plates', href: '/thai-food/thai-rice-plates', line: 'Rice plates are chicken rice, pork leg, and curry over rice.', find: 'khao man gai khao gaeng', letter: 'T' },
+    { title: 'Thai street snacks', href: '/thai-food/thai-street-snacks', line: 'Moo ping is 10 to 15 THB a stick. It is a snack, not dinner.', find: 'snack moo ping fish ball', letter: 'T' },
+    { title: 'Thai yam salads', href: '/thai-food/thai-yam-salads', line: 'Yam salads are som tum and sour plates. Say the heat first.', find: 'yam som tum salad', letter: 'T' },
+    { title: 'Thonglor and Soi 38 food', href: '/thai-food/thonglor-and-soi-38-food', line: 'Soi 38 is the night stall lane between Thong Lo and Ekkamai.', find: 'thonglor soi 38 night', letter: 'T' },
+    { title: 'Vegetarian and jay food', href: '/thai-food/vegetarian-and-jay-food', line: 'Jay food follows the yellow เจ flag and skips fish sauce.', find: 'jay vegetarian vegan', letter: 'V' },
+    { title: 'Victory Monument food', href: '/thai-food/victory-monument-food', line: 'Victory Monument is boat noodles at 15 to 20 THB a bowl.', find: 'victory monument boat noodles', letter: 'V' },
   ];
   return [...items, ...extra].sort((a, b) => a.title.localeCompare(b.title));
 }
