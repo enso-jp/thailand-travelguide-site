@@ -44,6 +44,12 @@ const sitemap = existsSync(join(DIST, 'sitemap.xml'))
   : '';
 const locs = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
 if (locs.length === 0) errors.push('dist/sitemap.xml has no <loc> entries');
+const sitemapZero = existsSync(join(DIST, 'sitemap-0.xml'))
+  ? readFileSync(join(DIST, 'sitemap-0.xml'), 'utf8')
+  : '';
+if (sitemapZero && sitemapZero !== sitemap) {
+  errors.push('dist/sitemap.xml must match dist/sitemap-0.xml so Search Console gets one urlset');
+}
 for (const loc of locs) {
   const url = new URL(loc);
   if (!url.pathname.endsWith('/')) {
@@ -52,6 +58,19 @@ for (const loc of locs) {
   if (url.pathname === '/404' || url.pathname === '/404/' || url.pathname.endsWith('/404.html')) {
     errors.push(`sitemap must not include 404: ${loc}`);
   }
+  if (url.pathname === '/search' || url.pathname === '/search/' || url.pathname.startsWith('/search/')) {
+    errors.push(`sitemap must not include search: ${loc}`);
+  }
+  if (url.pathname.startsWith('/stories/')) {
+    const escaped = loc.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const dated = new RegExp(`<loc>${escaped}</loc><lastmod>(\\d{4}-\\d{2}-\\d{2})</lastmod>`);
+    if (!dated.test(sitemap)) errors.push(`story URL missing YYYY-MM-DD lastmod: ${loc}`);
+  }
+}
+for (const lastmod of sitemap.matchAll(/<lastmod>([^<]*)<\/lastmod>/g)) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(lastmod[1])) {
+    errors.push(`sitemap lastmod must be YYYY-MM-DD: ${lastmod[1]}`);
+  }
 }
 
 const robots = readFileSync(join(DIST, 'robots.txt'), 'utf8');
@@ -59,6 +78,7 @@ if (!/Disallow:\s*\/search/.test(robots)) errors.push('dist/robots.txt missing D
 if (!robots.includes('sitemap.xml')) errors.push('dist/robots.txt missing sitemap.xml');
 
 const pages = walkHtml(DIST);
+const indexable = [];
 for (const file of pages) {
   const html = readFileSync(file, 'utf8');
   const title = html.match(/<title>([^<]*)<\/title>/)?.[1] ?? '';
@@ -73,6 +93,10 @@ for (const file of pages) {
   }
   if (canonical && !canonical.endsWith('/')) {
     errors.push(`${rel} canonical missing trailing slash: ${canonical}`);
+  }
+  const robotsMeta = html.match(/<meta name="robots" content="([^"]*)"/)?.[1] ?? '';
+  if (canonical && !canonical.includes('/search/') && !/noindex/i.test(robotsMeta)) {
+    indexable.push(canonical);
   }
   const affRows = [...html.matchAll(/<a[^>]*class="[^"]*\baff-row\b[^"]*"[^>]*>([\s\S]*?)<\/a>/g)];
   for (const m of affRows) {
@@ -176,6 +200,14 @@ for (const file of pages) {
   } else {
     console.log('wall-of-text check ok (0 pages)');
   }
+}
+
+const locSet = new Set(locs);
+for (const canonical of indexable) {
+  if (!locSet.has(canonical)) errors.push(`sitemap missing indexable URL: ${canonical}`);
+}
+if (indexable.length && locs.length !== indexable.length) {
+  errors.push(`sitemap has ${locs.length} URLs but ${indexable.length} indexable pages`);
 }
 
 if (errors.length) {
