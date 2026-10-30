@@ -443,7 +443,7 @@ export const ATTRACTIONS: Record<PlacePath, PlaceAttraction[]> = {
     a('sai-yok', 'Sai Yok', 'ไทรโยค', 'Sai Yok is the farther west park at 300 THB. Pair it with Erawan only if you overnight.', '/kanchanaburi/erawan-and-sai-yok', '/photos/khao-sok.jpg', 'Half day', '300 THB', 3),
     a('death-railway', 'Death Railway train', 'รถไฟสายมรณะ', 'The Death Railway is a short historic hop at 100 to 300 THB. Book the seat. It is not a Bangkok sleeper substitute.', '/get-there/bangkok-to-kanchanaburi', '/photos/get-there.jpg', '2 hours', 'Train 100 to 300 THB', 3),
     a('elephant-kwai', 'River camps', 'แพริมน้ำ', 'River camps are the raft hotels on the Kwai at 1,500 to 3,000 THB. Stay one night if you want dawn mist. A day trip already covers the bridge.', '/kanchanaburi', '/photos/riverside.jpg', 'Overnight', 'Raft 1,500 to 3,000 THB', 3),
-    a('hellfire', 'Hellfire Pass', 'ช่องเขาขาด', 'Hellfire Pass is the museum and railway cutting 80 km west. Entry is free or a donation. Hire a car and give it one history day.', '/kanchanaburi', '/photos/plan.jpg', 'Half day', 'Free / donation', 4),
+    a('hellfire', 'Hellfire Pass', 'ช่องเขาขาด', 'Hellfire Pass is the museum and railway cutting 80 km west. Entry is free or a donation. Hire a car and give it one history day. Closed since 27 Sep 2026 after floods, until further notice. Check the official notice before you go.', '/kanchanaburi', '/photos/plan.jpg', 'Half day', 'Free / donation', 4),
   ],
   '/sukhothai': [
     a('historical-park', 'Sukhothai Historical Park', 'อุทยานประวัติศาสตร์สุโขทัย', 'Sukhothai Historical Park is the bicycle loop of the old capital. Foreign tickets sit around 100 THB. Dawn beats midday.', '/sukhothai', '/photos/sukhothai.jpg', '3 to 4 hours', '100 THB', 5),

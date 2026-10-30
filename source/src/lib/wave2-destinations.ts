@@ -814,7 +814,7 @@ export const wave2Pages: Page[] = [
       },
       {
         q: 'Is Hellfire Pass on the train?',
-        a: 'No. Nam Tok is the end of the passenger line. The cutting is farther up Highway 323 by road. Arrange the car before you leave town.',
+        a: 'No. Nam Tok is the end of the passenger line. The cutting is farther up Highway 323 by road. Arrange the car before you leave town. Closed since 27 Sep 2026 after floods, until further notice. Check the official notice before you go.',
       },
     ],
   },

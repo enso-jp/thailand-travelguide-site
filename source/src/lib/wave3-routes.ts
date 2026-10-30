@@ -992,7 +992,7 @@ export const wave3Pages: Page[] = [
     ],
     facts: [
       { label: 'Train station', value: 'Thonburi (Bangkok Noi), MRT Bang Khun Non' },
-      { label: 'Useful sets', value: 'Ordinary 257 about 07:45, 259 about 13:55' },
+      { label: 'Trains', value: 'Ordinary 257 at 07:45, 259 at 13:55' },
       { label: 'Class', value: 'Third class only on the daily ordinary trains' },
       { label: 'Faster path', value: 'Van or bus from Sai Tai Mai, about 2 to 2.5 hours' },
     ],
@@ -1037,11 +1037,21 @@ export const wave3Pages: Page[] = [
         },
       },
       {
+        id: 'train-tickets',
+        title: 'Train tickets',
+        paragraphs: [
+          '**Two trains a day.** Ordinary 257 leaves Thonburi at 07:45 and reaches Kanchanaburi about 10:20 to 10:30. Ordinary 259 leaves at 13:55 and arrives about 16:20.',
+          '**Third class only.** Fan carriages with open windows and no reserved seats.',
+          '**100 THB flat.** Foreigners pay 100 THB to any station on the line. Thai citizens pay less.',
+          '**No online sale.** Buy at the Thonburi ticket window on the day. Arrive 30 to 60 minutes early.',
+        ],
+      },
+      {
         id: 'line',
         title: 'Nam Tok is not Hellfire Pass',
         paragraphs: [
           'The passenger line continues past the bridge toward Nam Tok. Floods have shut the Tha Kilen to Nam Tok stretch before. Call SRT 1690 before you treat the viaduct as a must. Foreign tourist fares apply on these ordinary sets. Tickets are often day-of. The train cannot truly sell out the way a sleeper can.',
-          'Hellfire Pass (Konyu Cutting) is about 80 km northwest by road past Nam Tok. It is not a station. Arrange the car in town. Erawan is a different 65 to 70 km road, local bus 8170, last-bus questions before you walk to tier 7.',
+          '**Hellfire Pass is closed** since 27 Sep 2026 after floods, until further notice. Check the official notice before you go. Hellfire Pass (Konyu Cutting) is about 80 km northwest by road past Nam Tok. It is not a station. Arrange the car in town. Erawan is a different 65 to 70 km road, local bus 8170, last-bus questions before you walk to tier 7.',
         ],
       },
     ],
