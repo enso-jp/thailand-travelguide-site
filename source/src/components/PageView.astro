@@ -1,4 +1,5 @@
 ---
+import { klookFallbackCta } from '../lib/partners';
 import FactBar from './FactBar.astro';
 import PortraitRail from './PortraitRail.astro';
 import AffRow from './AffRow.astro';
@@ -71,6 +72,7 @@ function guideGridHeading(path: string): string {
   if (path.startsWith('/interests/')) return 'Top destinations for this interest';
   return 'Guides on this hub';
 }
+const bookingTourCta = klookFallbackCta(page.bookingCta?.tourHref);
 ---
 
 <article class="section wrap">
@@ -134,8 +136,8 @@ function guideGridHeading(path: string): string {
           <em>{page.bookingCta.stayNote}</em>
         </a>
         <a href={page.bookingCta.tourHref} rel="sponsored noopener" target="_blank">
-          <strong>{page.bookingCta.tourLabel}</strong>
-          <em>{page.bookingCta.tourNote}</em>
+          <strong>{bookingTourCta ? bookingTourCta.label : page.bookingCta.tourLabel}</strong>
+          <em>{bookingTourCta ? bookingTourCta.note : page.bookingCta.tourNote}</em>
         </a>
       </div>
     )

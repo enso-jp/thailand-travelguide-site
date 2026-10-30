@@ -13,7 +13,16 @@ interface Props {
   items: Affiliate[];
 }
 
-const { items } = Astro.props;
+import { klookFallbackCta } from '../lib/partners';
+
+const { items: raw } = Astro.props;
+// City tours fallback links must not promise the original activity; relabel from the city.
+const items = raw.map((item) => {
+  const cta = klookFallbackCta(item.href);
+  return cta
+    ? { ...item, title: cta.label, kicker: 'Klook', body: cta.note, cta: 'See tours' }
+    : item;
+});
 ---
 
 {

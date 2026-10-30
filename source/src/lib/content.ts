@@ -2509,7 +2509,7 @@ const rawPages: Page[] = [
             ['TDAC', 'Arrival card, not a visa', 'tdac.immigration.go.th'],
             ['Visa exemption', '30-day tourist stamp for listed passports', 'Immigration counter'],
             ['Bilateral exemption', '90 days for South Korea, Brazil, Argentina, Chile, Peru', 'Immigration counter'],
-            ['Tourist e-visa', 'Up to 60 days stay, issued before you fly (not the 30-day exemption)', 'thaievisa.go.th'],
+            ['Tourist e-visa', 'Stay up to 60 days, issued before you fly (not the 30-day exemption)', 'thaievisa.go.th'],
           ],
         },
         affiliates: [

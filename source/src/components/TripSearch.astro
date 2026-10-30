@@ -1,6 +1,9 @@
 ---
 import {
   klookTours,
+  klookCityLink,
+  klookFallbackCta,
+  klookFoodLink,
   transferLink,
   trainLink,
   railDestination,
@@ -25,7 +28,9 @@ const TRIP_SEARCH_BOX_EMBED = "<iframe border=\"0\" src=\"https://www.trip.com/p
 const boxCity = variant === 'home' ? undefined : stayCityFromPath(Astro.url.pathname, true);
 const searchBoxEmbed = (boxCity && TRIP_CITY_SEARCH_BOXES[boxCity]?.embed) || TRIP_SEARCH_BOX_EMBED;
 
-const tours = klookTours(`${placeName} tours`);
+const pathText = Astro.url.pathname.replace(/[-/]/g, ' ');
+const tours = (variant === 'food' ? klookFoodLink(`${placeName} ${pathText}`, true) : undefined) || klookCityLink(Astro.url.pathname.replace(/[-/]/g, ' ')) || klookCityLink(placeName) || klookTours(`${placeName} tours`);
+const toursCta = klookFallbackCta(tours);
 const transfer = transferLink(cityAirports[city] || 'BKK');
 const railTo = railDestination(placeName);
 const trains = railTo ? trainLink('Bangkok', railTo) : null;
@@ -41,7 +46,7 @@ const trains = railTo ? trainLink('Bangkok', railTo) : null;
   showMore && (
     <p class="trip-more">
       <a href={tours} rel="sponsored noopener" target="_blank">
-        Klook tours
+        {toursCta ? toursCta.short : 'Klook tours'}
       </a>
       ·
       <a href={transfer} rel="sponsored noopener" target="_blank">

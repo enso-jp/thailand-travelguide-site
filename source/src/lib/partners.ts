@@ -438,10 +438,172 @@ const KLOOK_DEEP_LINKS: Record<string, string> = {
   'Rajadamnern Muay Thai tickets': 'https://klook.tpx.li/RKAYvktO',
   'Similan Islands day trip': 'https://klook.tpx.li/efblW5oA',
   'Koh Lanta island hopping': 'https://klook.tpx.li/FO9nnzZC',
-  'Bangkok tours': 'https://klook.tpx.li/lGtSENES',
-  'Chiang Mai tours': 'https://klook.tpx.li/HDIsZLqg',
+  'Bangkok tours': 'https://klook.tpx.li/s1rHaAdO',
+  'Chiang Mai tours': 'https://klook.tpx.li/wwgLEEcc',
   'Thailand itinerary tours': 'https://klook.tpx.li/hxjjyGRa',
+  'Phuket Old Town food': 'https://klook.tpx.li/PQxWViIn',
+  'Isan food Khon Kaen': 'https://klook.tpx.li/J6uUjL8k',
+  'Krabi food tour': 'https://klook.tpx.li/TxVqaT9i',
+  'Chiang Rai food tour': 'https://klook.tpx.li/CV8HJOs6',
+  'Hua Hin night market': 'https://klook.tpx.li/yAA1tuig',
+  'Hat Yai food': 'https://klook.tpx.li/nRuFGl2E',
+  'Pattaya food tour': 'https://klook.tpx.li/FEJ8EBLw',
+  'Koh Samui food tour': 'https://klook.tpx.li/PLiKjHJz',
+  'Isan food Nong Khai': 'https://klook.tpx.li/r8ZASMzN',
+  'Chiang Mai market food tour': 'https://klook.tpx.li/O4XbXkfh',
+  'Ayutthaya food tour': 'https://klook.tpx.li/31NabRdC',
+  'Isan food Udon Thani': 'https://klook.tpx.li/SChK8aLQ',
+  'Chiang Mai cooking class northern': 'https://klook.tpx.li/FiFW6kpD',
+  'Sukhothai food': 'https://klook.tpx.li/ybn4tMDS',
+  'Yaowarat Chinatown food tour': 'https://klook.tpx.li/8xcoqsW5',
+  'Pai Chiang Mai': 'https://klook.tpx.li/BB9oFQZC',
+  'Chiang Mai northern food tour': 'https://klook.tpx.li/RyGrQIQQ',
+  'Pai tour': 'https://klook.tpx.li/1jzWUN0h',
+  'Koh Lanta tour': 'https://klook.tpx.li/e67qVx5W',
+  'Khao Lak Similan': 'https://klook.tpx.li/2LvUeYPv',
+  'Koh Lipe tour': 'https://klook.tpx.li/qtRE968v',
+  'Phi Phi tour': 'https://klook.tpx.li/UkwOyOhl',
+  'Koh Kood tour': 'https://klook.tpx.li/aXfjXuki',
+  'Kanchanaburi food tour': 'https://klook.tpx.li/CIz4wxlC',
+  'Koh Tao snorkeling': 'https://klook.tpx.li/PuEE87dG',
+  'Bangkok Isan food tour': 'https://klook.tpx.li/ewyZc0rt',
+  'Koh Phangan tour': 'https://klook.tpx.li/DzyDjucv',
+  'Sukhothai Historical Park': 'https://klook.tpx.li/tV1MkIUN',
+  'Chiang Mai dessert food tour': 'https://klook.tpx.li/ImXmL9jC',
+  'Chiang Mai food tour khao soi': 'https://klook.tpx.li/t7LgYjUj',
+  'Bangkok market food tour': 'https://klook.tpx.li/4JDXv2Dv',
+  'Bangkok street food tour': 'https://klook.tpx.li/1iKcjmAa',
+  'Hua Hin Phraya Nakhon': 'https://klook.tpx.li/ZFCsHXUV',
+  'Koh Kood ferry': 'https://klook.tpx.li/tZY9GkMB',
+  'Lomprayah Koh Phangan': 'https://klook.tpx.li/B1dTX8dM',
+  'Lomprayah Koh Tao': 'https://klook.tpx.li/wQTUo9cz',
+  'Ayutthaya Historical Park': 'https://klook.tpx.li/2EwuYoVR',
+  'Pai canyon': 'https://klook.tpx.li/xafjcra1',
+  'Or Tor Kor Market Bangkok': 'https://klook.tpx.li/gLSh1kIa',
+  'Chiang Mai breakfast food tour': 'https://klook.tpx.li/Co8FCt4Y',
+  'Chiang Rai tours': 'https://klook.tpx.li/8VyJARU7',
+  'Pai tours': 'https://klook.tpx.li/21LAvFLh',
+  'Phuket tours': 'https://klook.tpx.li/mEUxiHVY',
+  'Krabi tours': 'https://klook.tpx.li/nrYR3OP7',
+  'Koh Samui tours': 'https://klook.tpx.li/utWNpEl9',
+  'Koh Phangan tours': 'https://klook.tpx.li/cSkSf8Lg',
+  'Koh Tao tours': 'https://klook.tpx.li/4SHuvaVE',
+  'Koh Lanta tours': 'https://klook.tpx.li/Mbj69cR2',
+  'Koh Phi Phi tours': 'https://klook.tpx.li/2YQOmg6h',
+  'Koh Lipe tours': 'https://klook.tpx.li/S2nWHDaO',
+  'Koh Chang tours': 'https://klook.tpx.li/hyPngBBi',
+  'Koh Kood tours': 'https://klook.tpx.li/SqwHjbnF',
+  'Pattaya tours': 'https://klook.tpx.li/LlYh3wsa',
+  'Hua Hin tours': 'https://klook.tpx.li/TG5XQ6Do',
+  'Ayutthaya tours': 'https://klook.tpx.li/wZAD69as',
+  'Sukhothai tours': 'https://klook.tpx.li/fZhhZZaN',
+  'Kanchanaburi tours': 'https://klook.tpx.li/LSJFj3pH',
+  'Khao Lak tours': 'https://klook.tpx.li/NoBEfwq7',
+  'Udon Thani tours': 'https://klook.tpx.li/WPnWynPW',
+  'Khon Kaen tours': 'https://klook.tpx.li/F3krpfS3',
+  'Hat Yai tours': 'https://klook.tpx.li/RSPVQQcT',
+  'Thailand tours': 'https://klook.tpx.li/26HKz5rQ',
+  'Khao Sok tours': 'https://klook.tpx.li/emvmTJTO',
+  'Khao Yai tours': 'https://klook.tpx.li/hdwpp8Qx',
+  'Nong Khai tours': 'https://klook.tpx.li/Z7GRe6Y3',
+  'Chatuchak market': 'https://klook.tpx.li/5h8c6FbZ',
+  'Damnoen Saduak floating market': 'https://klook.tpx.li/E3pXdB5i',
+  'Khao Lak food tour': 'https://klook.tpx.li/lpJvXHm7',
+  'Koh Lanta food tour': 'https://klook.tpx.li/MqpaT1wS',
+  'Koh Lipe food tour': 'https://klook.tpx.li/HliEKXi9',
+  'Koh Phangan food tour': 'https://klook.tpx.li/oq8VDxpV',
+  'Koh Phi Phi food tour': 'https://klook.tpx.li/RLNqOkIB',
+  'Koh Tao food tour': 'https://klook.tpx.li/NhizCft5',
+  'Koh Kood food tour': 'https://klook.tpx.li/GTCdoXgg',
+  'Pai food tour': 'https://klook.tpx.li/2X9UQOiu',
 };
+
+/** Partner-generated per-city Klook tours links (sub_id th_k_city_*), keyed by city slug. Use exactly as issued. */
+const KLOOK_CITY_LINKS: Record<string, string> = {
+  'bangkok': 'https://klook.tpx.li/s1rHaAdO',
+  'chiang-mai': 'https://klook.tpx.li/wwgLEEcc',
+  'chiang-rai': 'https://klook.tpx.li/8VyJARU7',
+  'pai': 'https://klook.tpx.li/21LAvFLh',
+  'phuket': 'https://klook.tpx.li/mEUxiHVY',
+  'krabi': 'https://klook.tpx.li/nrYR3OP7',
+  'koh-samui': 'https://klook.tpx.li/utWNpEl9',
+  'koh-phangan': 'https://klook.tpx.li/cSkSf8Lg',
+  'koh-tao': 'https://klook.tpx.li/4SHuvaVE',
+  'koh-lanta': 'https://klook.tpx.li/Mbj69cR2',
+  'koh-phi-phi': 'https://klook.tpx.li/2YQOmg6h',
+  'koh-lipe': 'https://klook.tpx.li/S2nWHDaO',
+  'koh-chang': 'https://klook.tpx.li/hyPngBBi',
+  'koh-kood': 'https://klook.tpx.li/SqwHjbnF',
+  'pattaya': 'https://klook.tpx.li/LlYh3wsa',
+  'hua-hin': 'https://klook.tpx.li/TG5XQ6Do',
+  'ayutthaya': 'https://klook.tpx.li/wZAD69as',
+  'sukhothai': 'https://klook.tpx.li/fZhhZZaN',
+  'kanchanaburi': 'https://klook.tpx.li/LSJFj3pH',
+  'khao-lak': 'https://klook.tpx.li/NoBEfwq7',
+  'udon-thani': 'https://klook.tpx.li/WPnWynPW',
+  'khon-kaen': 'https://klook.tpx.li/F3krpfS3',
+  'hat-yai': 'https://klook.tpx.li/RSPVQQcT',
+  'khao-sok': 'https://klook.tpx.li/emvmTJTO',
+  'khao-yai': 'https://klook.tpx.li/hdwpp8Qx',
+  'nong-khai': 'https://klook.tpx.li/Z7GRe6Y3',
+};
+
+
+/** City names and aliases, most specific first, mapped to KLOOK_CITY_LINKS slugs. */
+const KLOOK_CITY_ALIASES: Array<[RegExp, string]> = [
+  [/khao[- ]sok|cheow[- ]lan|surat[- ]thani/i, 'khao-sok'],
+  [/khao[- ]yai/i, 'khao-yai'],
+  [/nong[- ]khai/i, 'nong-khai'],
+  [/koh[- ]?phi[- ]?phi|phi[- ]phi|maya bay/i, 'koh-phi-phi'],
+  [/koh[- ]?lipe/i, 'koh-lipe'],
+  [/koh[- ]?lanta/i, 'koh-lanta'],
+  [/koh[- ]?kood|ko[- ]kut|soneva kiri/i, 'koh-kood'],
+  [/koh[- ]?chang/i, 'koh-chang'],
+  [/phangan|haad rin/i, 'koh-phangan'],
+  [/koh[- ]?tao/i, 'koh-tao'],
+  [/samui|bophut|lamai|chaweng|ang thong/i, 'koh-samui'],
+  [/khao[- ]lak|similan|bang niang/i, 'khao-lak'],
+  [/chiang[- ]rai|white temple|golden triangle|baan dam/i, 'chiang-rai'],
+  [/(^|[^a-z])pai([^a-z]|$)/i, 'pai'],
+  [/chiang[- ]mai|nimman|lanna|hang dong|mae rim|doi inthanon|doi suthep|wat ket/i, 'chiang-mai'],
+  [/hua[- ]hin/i, 'hua-hin'],
+  [/pattaya|jomtien|naklua|koh larn/i, 'pattaya'],
+  [/ayutthaya/i, 'ayutthaya'],
+  [/kanchanaburi|erawan|river kwai/i, 'kanchanaburi'],
+  [/sukhothai|si satchanalai/i, 'sukhothai'],
+  [/udon[- ]thani/i, 'udon-thani'],
+  [/khon[- ]kaen/i, 'khon-kaen'],
+  [/hat[- ]yai/i, 'hat-yai'],
+  [/phuket|patong|kata|karon|kamala|rawai|nai harn|bang tao|laguna|nai yang|mai khao|phang nga|yao noi|amanpuri/i, 'phuket'],
+  [/krabi|railay|ao[- ]nang|tubkaek|phra nang|rayavadee|phulay bay/i, 'krabi'],
+  [/bangkok|yaowarat|chinatown|sukhumvit|silom|sathorn|thonglor|ekkamai|chatuchak|rattanakosin|wat pho|wat arun|grand palace|charoenkrung|khao san|ari([^a-z]|$)|pratunam|iconsiam|talat noi|wang lang|or tor kor|jim thompson|phrom phong|thong lo|lumphini|lumpinee|rajadamnern|on nut|phra khanong|khlong|the siam|jeh o chula|banthat thong|damnoen saduak|amphawa/i, 'bangkok'],
+];
+
+const KLOOK_CITY_NAMES: Record<string, string> = {
+  'bangkok': 'Bangkok', 'chiang-mai': 'Chiang Mai', 'chiang-rai': 'Chiang Rai', 'pai': 'Pai', 'phuket': 'Phuket',
+  'krabi': 'Krabi', 'koh-samui': 'Koh Samui', 'koh-phangan': 'Koh Phangan', 'koh-tao': 'Koh Tao', 'koh-lanta': 'Koh Lanta',
+  'koh-phi-phi': 'Koh Phi Phi', 'koh-lipe': 'Koh Lipe', 'koh-chang': 'Koh Chang', 'koh-kood': 'Koh Kood', 'pattaya': 'Pattaya',
+  'hua-hin': 'Hua Hin', 'ayutthaya': 'Ayutthaya', 'sukhothai': 'Sukhothai', 'kanchanaburi': 'Kanchanaburi', 'khao-lak': 'Khao Lak',
+  'udon-thani': 'Udon Thani', 'khao-sok': 'Khao Sok', 'khao-yai': 'Khao Yai', 'nong-khai': 'Nong Khai', 'khon-kaen': 'Khon Kaen', 'hat-yai': 'Hat Yai',
+};
+
+/** If href is a generated per-city Klook tours link, the city name it covers; otherwise undefined. */
+export function klookCityName(href: string | undefined): string | undefined {
+  if (!href) return undefined;
+  for (const [slug, link] of Object.entries(KLOOK_CITY_LINKS)) if (link === href) return KLOOK_CITY_NAMES[slug];
+  return undefined;
+}
+
+/** Truthful label for a city tours fallback link. */
+export function klookCityLabel(city: string): string {
+  return `${city} tours and experiences`;
+}
+
+/** The generated per-city Klook link for any text (query, title or path), or undefined. */
+export function klookCityLink(text: string): string | undefined {
+  for (const [re, slug] of KLOOK_CITY_ALIASES) if (re.test(text)) return KLOOK_CITY_LINKS[slug];
+  return undefined;
+}
 
 /** A Partner-generated Klook link for a known query, or undefined. Never builds a URL. */
 export function generatedKlookLink(query: string): string | undefined {
@@ -457,8 +619,15 @@ export function generatedStayLink(city: string): string | undefined {
 export function klookLink(path: string): string {
   const dest = klookUrl(path);
   const query = new URL(dest).searchParams.get('query');
+  if (query && /chatuchak|jj weekend/i.test(query)) return KLOOK_DEEP_LINKS['Chatuchak market'];
+  if (query && /damnoen|amphawa|floating market/i.test(query)) return KLOOK_DEEP_LINKS['Damnoen Saduak floating market'];
   if (query && KLOOK_DEEP_LINKS[query]) return KLOOK_DEEP_LINKS[query];
-  return `https://tp.media/r?marker=${TP_MARKER}&trs=${KLOOK_SOURCE}&sub_id=th&u=${encodeURIComponent(dest)}`;
+  const foodLink = query ? klookFoodLink(query) : undefined;
+  if (foodLink) return foodLink;
+  const cityLink = query ? klookCityLink(query) : undefined;
+  if (cityLink) return cityLink;
+  // National pages and anything without a city: the generated country-wide Thailand tours link.
+  return KLOOK_DEEP_LINKS['Thailand tours'];
 }
 
 export function klookTours(query: string): string {
@@ -484,3 +653,105 @@ export const partners = {
   klookSource: KLOOK_SOURCE,
   travelpayoutsMarker: TP_MARKER,
 };
+
+/** Truthful CTA labels for generated Klook food links, keyed by the generated link. */
+const KLOOK_FOOD_LABELS: Record<string, string> = {
+  [KLOOK_DEEP_LINKS['Yaowarat Chinatown food tour']]: 'Yaowarat Chinatown food tours',
+  [KLOOK_DEEP_LINKS['Bangkok Isan food tour']]: 'Isan food tours in Bangkok',
+  [KLOOK_DEEP_LINKS['Or Tor Kor Market Bangkok']]: 'Or Tor Kor market visits',
+  [KLOOK_DEEP_LINKS['Bangkok street food tour']]: 'Bangkok street food tours',
+  [KLOOK_DEEP_LINKS['Bangkok market food tour']]: 'Bangkok market food tours',
+  [KLOOK_DEEP_LINKS['Chiang Mai cooking class northern']]: 'Chiang Mai northern cooking classes',
+  [KLOOK_DEEP_LINKS['Chiang Mai food tour khao soi']]: 'Chiang Mai khao soi food tours',
+  [KLOOK_DEEP_LINKS['Chiang Mai market food tour']]: 'Chiang Mai market food tours',
+  [KLOOK_DEEP_LINKS['Chiang Mai northern food tour']]: 'Chiang Mai northern food tours',
+  [KLOOK_DEEP_LINKS['Chiang Mai dessert food tour']]: 'Chiang Mai dessert food tours',
+  [KLOOK_DEEP_LINKS['Chiang Mai breakfast food tour']]: 'Chiang Mai breakfast food tours',
+  [KLOOK_DEEP_LINKS['Phuket Old Town food']]: 'Phuket Old Town food tours',
+  [KLOOK_DEEP_LINKS['Krabi food tour']]: 'Krabi food tours',
+  [KLOOK_DEEP_LINKS['Chiang Rai food tour']]: 'Chiang Rai food tours',
+  [KLOOK_DEEP_LINKS['Hua Hin night market']]: 'Hua Hin night market tours',
+  [KLOOK_DEEP_LINKS['Hat Yai food']]: 'Hat Yai food tours',
+  [KLOOK_DEEP_LINKS['Pattaya food tour']]: 'Pattaya food tours',
+  [KLOOK_DEEP_LINKS['Koh Samui food tour']]: 'Koh Samui food tours',
+  [KLOOK_DEEP_LINKS['Isan food Nong Khai']]: 'Nong Khai Isan food tours',
+  [KLOOK_DEEP_LINKS['Isan food Khon Kaen']]: 'Khon Kaen Isan food tours',
+  [KLOOK_DEEP_LINKS['Isan food Udon Thani']]: 'Udon Thani Isan food tours',
+  [KLOOK_DEEP_LINKS['Ayutthaya food tour']]: 'Ayutthaya food tours',
+  [KLOOK_DEEP_LINKS['Sukhothai food']]: 'Sukhothai food tours',
+  [KLOOK_DEEP_LINKS['Kanchanaburi food tour']]: 'Kanchanaburi food tours',
+  [KLOOK_DEEP_LINKS['Chatuchak market']]: 'Chatuchak market visits',
+  [KLOOK_DEEP_LINKS['Damnoen Saduak floating market']]: 'Damnoen Saduak floating market tours',
+  [KLOOK_DEEP_LINKS['Khao Lak food tour']]: 'Khao Lak food tours',
+  [KLOOK_DEEP_LINKS['Koh Lanta food tour']]: 'Koh Lanta food tours',
+  [KLOOK_DEEP_LINKS['Koh Lipe food tour']]: 'Koh Lipe food tours',
+  [KLOOK_DEEP_LINKS['Koh Phangan food tour']]: 'Koh Phangan food tours',
+  [KLOOK_DEEP_LINKS['Koh Phi Phi food tour']]: 'Koh Phi Phi food tours',
+  [KLOOK_DEEP_LINKS['Koh Tao food tour']]: 'Koh Tao food tours',
+  [KLOOK_DEEP_LINKS['Koh Kood food tour']]: 'Koh Kood food tours',
+  [KLOOK_DEEP_LINKS['Pai food tour']]: 'Pai food tours',
+};
+
+const KLOOK_FOOD_CONTEXT = /food|market|cooking|recipe|dessert|breakfast|coffee|khao soi|street|noodle|curry|grill|seafood|snack| in [A-Z][A-Za-z ]+( food tour| tours)$/i;
+
+function foodKey(text: string): string | undefined {
+  const t = text.toLowerCase();
+  if (/nong khai/.test(t)) return 'Isan food Nong Khai';
+  if (/(^| )thai food isan( |$)|isan and regional markets food guide/.test(t)) return 'Bangkok Isan food tour';
+  if (/khon kaen/.test(t)) return 'Isan food Khon Kaen';
+  if (/udon thani/.test(t)) return 'Isan food Udon Thani';
+  const slug = KLOOK_CITY_ALIASES.find(([re]) => re.test(text))?.[1];
+  switch (slug) {
+    case 'bangkok':
+      if (/chatuchak|jj weekend/.test(t)) return 'Chatuchak market';
+      if (/damnoen|amphawa|floating/.test(t)) return 'Damnoen Saduak floating market';
+      if (/yaowarat|chinatown|banthat thong|talat noi|wang lang/.test(t)) return 'Yaowarat Chinatown food tour';
+      if (/isan|som tum|larb|nam tok|gai yang|jim jum|tam mua/.test(t)) return 'Bangkok Isan food tour';
+      if (/market|fruit|or tor kor|mango|fresh/.test(t)) return 'Or Tor Kor Market Bangkok';
+      return 'Bangkok street food tour';
+    case 'chiang-mai':
+      if (/cooking|recipe|class/.test(t)) return 'Chiang Mai cooking class northern';
+      if (/khao soi/.test(t)) return 'Chiang Mai food tour khao soi';
+      if (/market/.test(t)) return 'Chiang Mai market food tour';
+      if (/dessert|khanom|bua loi|mango|sticky|sweet/.test(t)) return 'Chiang Mai dessert food tour';
+      if (/breakfast|jok|coffee|pa tong go/.test(t)) return 'Chiang Mai breakfast food tour';
+      return 'Chiang Mai northern food tour';
+    case 'khao-lak': return 'Khao Lak food tour';
+    case 'koh-lanta': return 'Koh Lanta food tour';
+    case 'koh-lipe': return 'Koh Lipe food tour';
+    case 'koh-phangan': return 'Koh Phangan food tour';
+    case 'koh-phi-phi': return 'Koh Phi Phi food tour';
+    case 'koh-tao': return 'Koh Tao food tour';
+    case 'koh-kood': return 'Koh Kood food tour';
+    case 'pai': return 'Pai food tour';
+    case 'phuket': return 'Phuket Old Town food';
+    case 'krabi': return 'Krabi food tour';
+    case 'chiang-rai': return 'Chiang Rai food tour';
+    case 'hua-hin': return 'Hua Hin night market';
+    case 'hat-yai': return 'Hat Yai food';
+    case 'pattaya': return 'Pattaya food tour';
+    case 'koh-samui': return 'Koh Samui food tour';
+    case 'ayutthaya': return 'Ayutthaya food tour';
+    case 'sukhothai': return 'Sukhothai food';
+    case 'kanchanaburi': return 'Kanchanaburi food tour';
+    default: return undefined;
+  }
+}
+
+/** The closest generated Klook food link for food or market text (query, title or path), or undefined. */
+export function klookFoodLink(text: string, force = false): string | undefined {
+  if (!force && !KLOOK_FOOD_CONTEXT.test(text)) return undefined;
+  const key = foodKey(text);
+  return key ? KLOOK_DEEP_LINKS[key] : undefined;
+}
+
+/** Truthful CTA copy when href is a generated city or food fallback link; otherwise undefined. */
+export function klookFallbackCta(href: string | undefined): { label: string; note: string; short: string } | undefined {
+  if (!href) return undefined;
+  const food = KLOOK_FOOD_LABELS[href];
+  if (food) return { label: food, note: `Browse ${food} on Klook.`, short: food };
+  if (href === KLOOK_DEEP_LINKS['Thailand tours']) return { label: 'Thailand tours and experiences', note: 'Browse tours, tickets, and day trips across Thailand.', short: 'Thailand tours' };
+  const city = klookCityName(href);
+  if (city) return { label: klookCityLabel(city), note: `Browse tours, tickets, and day trips in ${city}.`, short: `${city} tours` };
+  return undefined;
+}

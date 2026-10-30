@@ -12,7 +12,7 @@ import { chipHref, formatInline } from '../lib/inline';
 import { UniquePhotos } from '../lib/photos';
 import { CITY_FOOD_ROWS } from '../lib/food-catalog';
 import { attractionsFor, PLACE_META } from '../lib/place-attractions';
-import { klookTours, stayLink, stayCityFromPath } from '../lib/partners';
+import { klookTours, klookFallbackCta, stayLink, stayCityFromPath } from '../lib/partners';
 import { regionForPath } from '../lib/regions';
 import { pageHref, routePath } from '../lib/site';
 
@@ -31,6 +31,7 @@ const city = stayCityFromPath(page.path);
 const region = (meta?.region || regionForPath(page.path)) as 'central' | 'north' | 'andaman' | 'gulf' | 'east';
 const stayHref = page.bookingCta?.stayHref || stayLink(city);
 const tourHref = page.bookingCta?.tourHref || klookTours(`${page.title} tours`);
+const tourCta = klookFallbackCta(tourHref);
 const dishLinks = (CITY_FOOD_ROWS[meta?.foodHref || ''] || [])
   .filter((row) => row.kind === 'dish')
   .slice(0, 8);
@@ -230,8 +231,8 @@ const tabs = [
           <span>Compare {page.title} rooms and free-cancellation rates.</span>
         </a>
         <a class="promo-box" href={tourHref} rel="sponsored noopener" target="_blank">
-          <strong>Klook tours</strong>
-          <span>Boats, tickets, and transfers for this stop.</span>
+          <strong>{tourCta ? tourCta.label : 'Klook tours'}</strong>
+          <span>{tourCta ? tourCta.note : 'Boats, tickets, and transfers for this stop.'}</span>
         </a>
       </div>
       <div class="panel">

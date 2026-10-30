@@ -9,7 +9,7 @@ import type { Page } from '../lib/content';
 import { assignExactPhotos, foodRowsFor } from '../lib/dish-photos';
 import { chipHref, formatInline } from '../lib/inline';
 import { UniquePhotos } from '../lib/photos';
-import { klookTours, stayCityFromPath, type StayCity } from '../lib/partners';
+import { klookTours, klookFallbackCta, klookFoodLink, stayCityFromPath, type StayCity } from '../lib/partners';
 import { pageHref, routePath } from '../lib/site';
 
 interface Props {
@@ -23,6 +23,8 @@ const bag = new UniquePhotos([...reserved, ...rows.map((row) => row.photo).filte
 const portraits = bag.takeBatch(page.portraits || [], (item) => `${page.path} ${item.title} ${item.href}`);
 const affiliates = bag.takeBatch(page.affiliates || [], (item) => `${page.path} ${item.title} ${item.kicker} ${item.body}`);
 const city: StayCity = stayCityFromPath(page.path);
+const foodTourHref = klookFoodLink(`${page.title} ${Astro.url.pathname.replace(/[-/]/g, ' ')}`, true) || klookTours(`${page.title} food tour`);
+const foodTourCta = klookFallbackCta(foodTourHref);
 ---
 
 <article class="wrap food-guide-page">
@@ -174,9 +176,9 @@ const city: StayCity = stayCityFromPath(page.path);
     <aside class="rail">
       <div class="rail-booking">
         <TripSearch variant="food" city={city} placeName={page.title} />
-        <a class="promo-box" href={klookTours(`${page.title} food tour`)} rel="sponsored noopener" target="_blank">
-          <strong>Klook food tours</strong>
-          <span>Book a walk only if the group will not split on the MRT.</span>
+        <a class="promo-box" href={foodTourHref} rel="sponsored noopener" target="_blank">
+          <strong>{foodTourCta ? foodTourCta.label : 'Klook food tours'}</strong>
+          <span>{foodTourCta ? foodTourCta.note : 'Book a walk only if the group will not split on the MRT.'}</span>
         </a>
       </div>
     </aside>
