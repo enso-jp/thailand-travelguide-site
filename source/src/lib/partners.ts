@@ -144,7 +144,49 @@ const TRIP_GENERATED_FLIGHTS: Partial<Record<string, string>> = {
   "BKK-SGN": "https://www.trip.com/flights/bangkok-to-ho-chi-minh-city/tickets-bkk-sgn/?Allianceid=11105102&SID=334804079&trip_sub1=th_flight_bkk_sgn&trip_sub3=D20729235",
   "BKK-HAN": "https://www.trip.com/flights/bangkok-to-hanoi/tickets-bkk-han/?Allianceid=11105102&SID=334804079&trip_sub1=th_flight_bkk_han&trip_sub3=D20729235",
   "BKK-DAD": "https://www.trip.com/flights/bangkok-to-da-nang/tickets-bkk-dad/?Allianceid=11105102&SID=334804079&trip_sub1=th_flight_bkk_dad&trip_sub3=D20729235",
+  "BKK-CJM": "https://www.trip.com/flights/bangkok-to-chumphon/tickets-bkk-cjm?Allianceid=11105102&SID=334804079&trip_sub1=th_flight_bkk_cjm&trip_sub3=D20753147",
+  "BKK-URT": "https://www.trip.com/flights/bangkok-to-surat-thani/tickets-bkk-urt?Allianceid=11105102&SID=334804079&trip_sub1=th_flight_bkk_urt&trip_sub3=D20753147",
+  "CNX-BKK": "https://www.trip.com/flights/chiang-mai-to-bangkok/tickets-cnx-bkk?Allianceid=11105102&SID=334804079&trip_sub1=th_flight_cnx_bkk&trip_sub3=D20753147",
+  "CNX-HKT": "https://www.trip.com/flights/chiang-mai-to-phuket/tickets-cnx-hkt?Allianceid=11105102&SID=334804079&trip_sub1=th_flight_cnx_hkt&trip_sub3=D20753147",
+  "DMK-CEI": "https://www.trip.com/flights/bangkok-to-chiang-rai/tickets-dmk-cei?Allianceid=11105102&SID=334804079&trip_sub1=th_flight_dmk_cei&trip_sub3=D20753147",
+  "DMK-CNX": "https://www.trip.com/flights/bangkok-to-chiang-mai/tickets-dmk-cnx?Allianceid=11105102&SID=334804079&trip_sub1=th_flight_dmk_cnx&trip_sub3=D20753147",
+  "DMK-HKT": "https://www.trip.com/flights/bangkok-to-phuket/tickets-dmk-hkt?Allianceid=11105102&SID=334804079&trip_sub1=th_flight_dmk_hkt&trip_sub3=D20753189",
+  "DMK-KBV": "https://www.trip.com/flights/bangkok-to-krabi/tickets-dmk-kbv?Allianceid=11105102&SID=334804079&trip_sub1=th_flight_dmk_kbv&trip_sub3=D20753189",
+  "DMK-USM": "https://www.trip.com/flights/bangkok-to-koh-samui/tickets-dmk-usm?Allianceid=11105102&SID=334804079&trip_sub1=th_flight_dmk_usm&trip_sub3=D20753189",
+  "HKT-USM": "https://www.trip.com/flights/phuket-to-koh-samui/tickets-hkt-usm?Allianceid=11105102&SID=334804079&trip_sub1=th_flight_hkt_usm&trip_sub3=D20753189",
+  "KBV-BKK": "https://www.trip.com/flights/krabi-to-bangkok/tickets-kbv-bkk?Allianceid=11105102&SID=334804079&trip_sub1=th_flight_kbv_bkk&trip_sub3=D20753231",
   "CNX-HAN": "https://www.trip.com/flights/chiang-mai-to-hanoi/tickets-cnx-han/?Allianceid=11105102&SID=334804079&trip_sub1=th_flight_cnx_han&trip_sub3=D20729235",
+};
+
+/** Trip.com Partner tool links, batch 1, SID 334804079. Copied exactly as generated (spaces as %20). Never edit. */
+const TRIP_GENERATED_HOTEL_SEARCH: Record<string, string> = {
+  "Khao Sok|": "https://www.trip.com/hotels/list?keyword=Khao%20Sok&Allianceid=11105102&SID=334804079&trip_sub1=th_khao_sok_hotels&trip_sub3=D20753231",
+  "Khao Yai|": "https://www.trip.com/hotels/list?keyword=Khao%20Yai&Allianceid=11105102&SID=334804079&trip_sub1=th_khao_yai_hotels&trip_sub3=D20753231",
+  "Phi Phi|krabi": "https://www.trip.com/hotels/list?Allianceid=11105102&SID=334804079&city=1405&cityName=Krabi&trip_sub1=th_phi_phi_hotels&trip_sub3=D20753231&keyword=Phi%20Phi",
+  "Sai Yok|kanchanaburi": "https://www.trip.com/hotels/list?Allianceid=11105102&SID=334804079&city=36027&cityName=Kanchanaburi&trip_sub1=th_sai_yok_hotels&trip_sub3=D20753231&keyword=Sai%20Yok",
+  "Khao Sok raft house|": "https://www.trip.com/hotels/list?keyword=Khao%20Sok%20raft%20house&Allianceid=11105102&SID=334804079&trip_sub1=th_khao_sok_raft_house&trip_sub3=D20753231",
+  "private pool villa|krabi": "https://www.trip.com/hotels/list?Allianceid=11105102&SID=334804079&city=1405&cityName=Krabi&trip_sub1=th_private_pool_villa&trip_sub3=D20753231&keyword=private%20pool%20villa",
+};
+
+const TRIP_GENERATED_TRAINS: Record<string, string> = {
+  "Bangkok|Ayutthaya": "https://www.trip.com/trains/list?dname=Bangkok&aname=Ayutthaya&Allianceid=11105102&SID=334804079&trip_sub1=th_train_bkk_ayutthaya&trip_sub3=D20753231",
+  "Bangkok|Chiang Mai": "https://www.trip.com/trains/list?dname=Bangkok&aname=Chiang%20Mai&Allianceid=11105102&SID=334804079&trip_sub1=th_train_bkk_cnx&trip_sub3=D20753231",
+  "Bangkok|Chumphon": "https://www.trip.com/trains/list?dname=Bangkok&aname=Chumphon&Allianceid=11105102&SID=334804079&trip_sub1=th_train_bkk_chumphon&trip_sub3=D20753259",
+  "Bangkok|Hua Hin": "https://www.trip.com/trains/list?dname=Bangkok&aname=Hua%20Hin&Allianceid=11105102&SID=334804079&trip_sub1=th_train_bkk_hua_hin&trip_sub3=D20753259",
+  "Bangkok|Surat Thani": "https://www.trip.com/trains/list?dname=Bangkok&aname=Surat%20Thani&Allianceid=11105102&SID=334804079&trip_sub1=th_train_bkk_surat_thani&trip_sub3=D20753280",
+};
+
+const TRIP_GENERATED_TRANSFERS: Record<string, string> = {
+  "BKK": "https://www.trip.com/airport-transfers/?keyword=BKK&Allianceid=11105102&SID=334804079&trip_sub1=th_transfer_bkk&trip_sub3=D20753280",
+  "CEI": "https://www.trip.com/airport-transfers/?keyword=CEI&Allianceid=11105102&SID=334804079&trip_sub1=th_transfer_cei&trip_sub3=D20753280",
+  "CNX": "https://www.trip.com/airport-transfers/?keyword=CNX&Allianceid=11105102&SID=334804079&trip_sub1=th_transfer_cnx&trip_sub3=D20753280",
+  "DMK": "https://www.trip.com/airport-transfers/?keyword=DMK&Allianceid=11105102&SID=334804079&trip_sub1=th_transfer_dmk&trip_sub3=D20753280",
+  "HDY": "https://www.trip.com/airport-transfers/?keyword=HDY&Allianceid=11105102&SID=334804079&trip_sub1=th_transfer_hdy&trip_sub3=D20753301",
+  "HKT": "https://www.trip.com/airport-transfers/?keyword=HKT&Allianceid=11105102&SID=334804079&trip_sub1=th_transfer_hkt&trip_sub3=D20753301",
+  "KBV": "https://www.trip.com/airport-transfers/?keyword=KBV&Allianceid=11105102&SID=334804079&trip_sub1=th_transfer_kbv&trip_sub3=D20753301",
+  "THS": "https://www.trip.com/airport-transfers/?keyword=THS&Allianceid=11105102&SID=334804079&trip_sub1=th_transfer_ths&trip_sub3=D20753301",
+  "URT": "https://www.trip.com/airport-transfers/?keyword=URT&Allianceid=11105102&SID=334804079&trip_sub1=th_transfer_urt&trip_sub3=D20753301",
+  "USM": "https://www.trip.com/airport-transfers/?keyword=USM&Allianceid=11105102&SID=334804079&trip_sub1=th_transfer_usm&trip_sub3=D20753301",
 };
 
 export function generatedFlightLink(from: string, to: string): string | undefined {
@@ -251,6 +293,8 @@ export function stayAreaLink(area: StayArea, extra: Record<string, string> = {})
 }
 
 export function hotelSearchLink(query: string, city?: StayCity): string {
+  const generated = TRIP_GENERATED_HOTEL_SEARCH[`${query}|${city || ''}`];
+  if (generated) return generated;
   if (city) {
     return hotelSearchListUrl(city, { keyword: query, trip_sub1: query });
   }
@@ -283,10 +327,14 @@ export function railDestination(place?: string): string | null {
 }
 
 export function trainLink(from = 'Bangkok', to = 'Chiang Mai'): string {
+  const generated = TRIP_GENERATED_TRAINS[`${from}|${to}`];
+  if (generated) return generated;
   return `https://www.trip.com/trains/list?dname=${encodeURIComponent(from)}&aname=${encodeURIComponent(to)}&${tripParams()}`;
 }
 
 export function transferLink(airport: AirportCode): string {
+  const generated = TRIP_GENERATED_TRANSFERS[airport];
+  if (generated) return generated;
   return `https://www.trip.com/airport-transfers/?keyword=${encodeURIComponent(airport)}&${tripParams()}`;
 }
 

@@ -8,7 +8,7 @@ SITE="$(cd "${1:?site repo dir}" && pwd)"
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 [ -d "$ROOT/dist" ] || { echo "Run npm run build first" >&2; exit 1; }
 # Clear everything except the repo, its workflows and the source folder.
-find "$SITE" -mindepth 1 -maxdepth 1 ! -name .git ! -name .github ! -name source -exec rm -rf {} +
+find "$SITE" -mindepth 1 -maxdepth 1 ! -name .git ! -name .github ! -name source ! -name README.md -exec rm -rf {} +
 tar -C "$ROOT/dist" -cf - . | tar -C "$SITE" -xf -
 rm -rf "$SITE/source"
 mkdir -p "$SITE/source"
