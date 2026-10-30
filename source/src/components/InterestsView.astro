@@ -1,0 +1,57 @@
+---
+import Photo from './Photo.astro';
+import SisterNetwork from './SisterNetwork.astro';
+import type { Page } from '../lib/content';
+import { formatInline } from '../lib/inline';
+import { INTEREST_GROUPS } from '../lib/nav';
+import { UniquePhotos } from '../lib/photos';
+import { pageHref } from '../lib/site';
+
+interface Props {
+  page: Page;
+}
+
+const { page } = Astro.props;
+const bag = new UniquePhotos(page.photo ? [page.photo] : []);
+const groups = INTEREST_GROUPS.map((group) => ({
+  ...group,
+  items: group.items.map((item) => ({ ...item, photo: bag.take(item.photo) })),
+}));
+---
+
+<div class="wrap section">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <ol>
+      {page.crumbs.map((crumb) => (
+        <li><a href={pageHref(crumb.href)}>{crumb.name}</a></li>
+      ))}
+    </ol>
+  </nav>
+  <p class="eyebrow">Explore your interests</p>
+  <h1>{page.title}</h1>
+  <p class="lede" set:html={formatInline(page.lede)} />
+  {
+    page.photo && (
+      <figure class="place-photo">
+        <Photo src={page.photo} alt="" priority />
+        {page.photoCredit && <figcaption class="photo-credit">{page.photoCredit}</figcaption>}
+      </figure>
+    )
+  }
+  {
+    groups.map((group) => (
+      <section class="place-section">
+        <h2>{group.title}</h2>
+        <div class="interest-grid">
+          {group.items.map((item) => (
+            <a class="home-tile" href={pageHref(item.href)}>
+              <Photo src={item.photo} alt="" />
+              <span>{item.label}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    ))
+  }
+  <SisterNetwork path={page.path} />
+</div>

@@ -1,0 +1,100 @@
+---
+import FoodTabs from './FoodTabs.astro';
+import Photo from './Photo.astro';
+import SisterNetwork from './SisterNetwork.astro';
+import type { Page } from '../lib/content';
+import { directoryGroups, FOOD_CITY_CARDS } from '../lib/food-catalog';
+import { signatureDishesFor } from '../lib/dish-photos';
+import { formatInline } from '../lib/inline';
+import { UniquePhotos } from '../lib/photos';
+import { pageHref } from '../lib/site';
+
+interface Props {
+  page: Page;
+}
+
+const { page } = Astro.props;
+const reserved = page.photo ? [page.photo] : [];
+const cityBag = new UniquePhotos(reserved);
+const cities = cityBag.takeBatch(FOOD_CITY_CARDS, (card) => `${card.title} ${card.href} food city`);
+const dishes = signatureDishesFor([...reserved, ...cities.map((card) => card.photo).filter(Boolean)]);
+const groups = directoryGroups();
+---
+
+<article class="section wrap">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <ol>
+      {page.crumbs.map((crumb) => (
+        <li><a href={pageHref(crumb.href)}>{crumb.name}</a></li>
+      ))}
+    </ol>
+  </nav>
+  <h1>{page.title}</h1>
+  <p class="lede" set:html={formatInline(page.lede)} />
+  <FoodTabs current="food" />
+  <input
+    id="dish-search"
+    type="search"
+    placeholder="Find a dish, market, or Thai name..."
+    autocomplete="off"
+  />
+
+  <section class="place-section" id="cities">
+    <h2>City guides</h2>
+    <div class="food-grid">
+      {
+        cities.map((card) => (
+          <a class="food-card" href={pageHref(card.href)} data-find={card.find}>
+            <span class="media"><Photo src={card.photo} alt={card.title} /></span>
+            <strong>{card.title}</strong>
+            <em>{card.line}</em>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="place-section" id="dishes">
+    <h2>Signature dishes</h2>
+    <div class="food-grid">
+      {
+        dishes.map((dish) => (
+          <a class="food-card" href={pageHref(dish.href)} data-find={dish.find}>
+            {dish.photo && (
+              <span class="media"><Photo src={dish.photo} alt={`${dish.title}, ${dish.nameLocal}`} /></span>
+            )}
+            <strong>
+              {dish.title} <span class="vi" lang="th">{dish.nameLocal}</span>
+            </strong>
+            <em>{dish.line}</em>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="place-section" id="directory">
+    <h2>A-Z directory</h2>
+    {
+      groups.map((group) => (
+        <section data-letter={group.letter}>
+          <h3>{group.letter}</h3>
+          <ul class="guide-list">
+            {group.items.map((dish) => (
+              <li data-find={dish.find}>
+                <a class="guide-row" href={pageHref(dish.href)}>
+                  <strong>
+                    {dish.title}
+                    {dish.nameLocal && <span class="vi" lang="th"> {dish.nameLocal}</span>}
+                  </strong>
+                  <p>{dish.line}</p>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+  </section>
+  <SisterNetwork path={page.path} />
+</article>

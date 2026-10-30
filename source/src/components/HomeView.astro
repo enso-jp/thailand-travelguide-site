@@ -1,0 +1,165 @@
+---
+import BookStay from './BookStay.astro';
+import Icon from './Icon.astro';
+import Photo from './Photo.astro';
+import RegionStage from './RegionStage.astro';
+import SisterRoutes from './SisterRoutes.astro';
+import { buildHomeMedia } from '../lib/page-media';
+import { pageHref } from '../lib/site';
+
+const home = buildHomeMedia();
+
+function dots(n: number): string {
+  return '●'.repeat(n) + '○'.repeat(Math.max(0, 5 - n));
+}
+---
+
+<div class="home wrap">
+  <div class="home-top">
+    <a class="home-hero home-hero-lead" href={pageHref(home.lead.href)}>
+      <Photo src={home.lead.photo} alt="" priority />
+      <span class="home-hero-copy">
+        <small><i class="hero-mark" aria-hidden="true"></i>{home.lead.kicker}</small>
+        <h1>{home.lead.title}</h1>
+        <em><Icon name="clock" />{home.lead.when}</em>
+        <span class="pill pill-light">See the guide</span>
+      </span>
+    </a>
+
+    <section class="home-sheet">
+      <div class="sheet-rail" data-carousel>
+        <div class="sheet-row" data-carousel-row tabindex="0" aria-label="Featured stories">
+          {
+            home.sheet.map((story) => (
+              <a class="mini-card" href={pageHref(story.href)}>
+                <span class="media">
+                  <Photo src={story.photo} alt="" width="208" height="176" />
+                </span>
+                <span class="story-copy">
+                  <small>{story.kicker}</small>
+                  <strong>{story.title}</strong>
+                  <em>{story.when}</em>
+                </span>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <div class="home-split">
+      <div class="home-collage">
+        {
+          home.collage.map((story) => (
+            <a class={`collage-tile ${story.spot}`} href={pageHref(story.href)}>
+              <Photo src={story.photo} alt="" />
+              <span class="collage-copy">
+                <small><i class="hero-mark" aria-hidden="true"></i>{story.kicker}</small>
+                <strong>{story.title}</strong>
+              </span>
+            </a>
+          ))
+        }
+      </div>
+      <div class="home-rail">
+        <BookStay />
+      </div>
+    </div>
+  </div>
+
+  <RegionStage regions={home.regions} />
+
+  <section class="home-section dest-top">
+    <h2>Top destinations in Thailand</h2>
+    <div class="top-grid">
+      {
+        home.topPlaces.map((place, index) => (
+          <a class="top-card" href={pageHref(place.href)}>
+            <span class="top-photo">
+              <Photo src={place.photo} alt="" />
+              <span class="rank-badge">{index + 1}</span>
+            </span>
+            <span class="top-copy">
+              <strong>
+                {place.name}
+                <span class="edots" aria-label={`${place.dots} of 5`}><span aria-hidden="true">{dots(place.dots)}</span></span>
+              </strong>
+              <em>{place.line}</em>
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="home-section">
+    <h2>Plan your trip</h2>
+    <div class="plan-row">
+      {
+        home.plan.map((tool) => (
+          <a href={pageHref(tool.href)}>
+            <span class="plan-icon"><Icon name={tool.icon} /></span>
+            <strong>{tool.title}</strong>
+            <span>{tool.text}</span>
+          </a>
+        ))
+      }
+    </div>
+    <p class="home-actions"><a class="pill" href={pageHref('/plan')}>See all planning tools</a></p>
+  </section>
+
+  <section class="home-section">
+    <h2>Popular trips and routes</h2>
+    <div class="plan-row">
+      {
+        home.trips.map((tool) => (
+          <a href={pageHref(tool.href)}>
+            <span class="plan-icon"><Icon name={tool.icon} /></span>
+            <strong>{tool.title}</strong>
+            <span>{tool.text}</span>
+          </a>
+        ))
+      }
+    </div>
+    <p class="home-actions"><a class="pill" href={pageHref('/itineraries')}>See itineraries</a></p>
+  </section>
+
+  <SisterRoutes path="/" />
+
+  <section class="home-section">
+    <h2>Find your interest</h2>
+    <div class="interest-grid">
+      {
+        home.interests.map((item) => (
+          <a class="home-tile" href={pageHref(item.href)}>
+            <Photo src={item.photo} alt="" />
+            <span>{item.label}</span>
+          </a>
+        ))
+      }
+    </div>
+    <p class="home-actions"><a class="pill" href={pageHref('/interests')}>See all interests</a></p>
+  </section>
+
+  <section class="home-section home-stories" id="stories">
+    <h2>Stories & Deep Dives</h2>
+    <div class="story-list">
+      {
+        home.stories.map((story) => (
+          <a class="story-row" href={pageHref(story.href)}>
+            <span>
+              <small>{story.kicker}</small>
+              <strong>{story.title}</strong>
+              <em>{story.when}</em>
+              <p>{story.summary}</p>
+            </span>
+            <span class="story-thumb">
+              <Photo src={story.photo} alt="" />
+            </span>
+          </a>
+        ))
+      }
+    </div>
+    <p class="home-actions"><a class="pill" href={pageHref('/itineraries')}>More stories</a></p>
+  </section>
+</div>

@@ -1,0 +1,60 @@
+---
+import Photo from './Photo.astro';
+import { VISIBLE_ATTRACTIONS } from '../lib/page-media';
+import type { PlaceAttraction } from '../lib/place-attractions';
+import { pageHref } from '../lib/site';
+
+interface Props {
+  placeName: string;
+  items: PlaceAttraction[];
+}
+
+const { placeName, items } = Astro.props;
+const extra = items.length > VISIBLE_ATTRACTIONS;
+
+function stars(dots: number): string {
+  return '★★★★★'.slice(0, Math.round(dots)) + '☆☆☆☆☆'.slice(Math.round(dots), 5);
+}
+---
+
+<div class="attraction-stack">
+  <div class="card-list">
+    {
+      items.map((row, index) => {
+        const rank = index + 1;
+        const extraCard = rank > VISIBLE_ATTRACTIONS;
+        return (
+          <a class:list={['jg-card', { 'is-extra': extraCard }]} id={row.slug} href={pageHref(row.href)}>
+            <div class="media">
+              {row.photo ? <Photo src={row.photo} alt={row.name} /> : null}
+              <span class="rank-badge">{rank}</span>
+            </div>
+            <div class="jg-body">
+              <h3>
+                {row.name}
+                <span class="vi" lang="th"> {row.nameLocal}</span>
+                {row.dots >= 4 && <span class="mark" aria-hidden="true" />}
+              </h3>
+              <p>{row.summary}</p>
+              <p class="rating">
+                <span class="score">{row.dots.toFixed(1)}</span>
+                <span class="stars" aria-label={`${row.dots} of 5, editor rating`}>{stars(row.dots)}</span>
+                <span class="note">Editor</span>
+              </p>
+              <p class="meta">{row.timeNeeded} · {row.fee}</p>
+            </div>
+          </a>
+        );
+      })
+    }
+  </div>
+  {
+    extra && (
+      <button class="list-more" type="button" aria-expanded="false">
+        <span class="list-more-closed">Show all</span>
+        <span class="list-more-open">Show fewer</span>
+      </button>
+    )
+  }
+  <p class="note">{placeName} attractions ranked by how much they change a first stay.</p>
+</div>

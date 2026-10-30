@@ -1,0 +1,268 @@
+---
+import AffRow from './AffRow.astro';
+import AttractionCards from './AttractionCards.astro';
+import FactBar from './FactBar.astro';
+import FaqList from './FaqList.astro';
+import Photo from './Photo.astro';
+import ThailandMap from './ThailandMap.astro';
+import SisterNetwork from './SisterNetwork.astro';
+import TripSearch from './TripSearch.astro';
+import type { Page } from '../lib/content';
+import { chipHref, formatInline } from '../lib/inline';
+import { UniquePhotos } from '../lib/photos';
+import { CITY_FOOD_ROWS } from '../lib/food-catalog';
+import { attractionsFor, PLACE_META } from '../lib/place-attractions';
+import { klookTours, stayLink, stayCityFromPath } from '../lib/partners';
+import { regionForPath } from '../lib/regions';
+import { pageHref, routePath } from '../lib/site';
+
+interface Props {
+  page: Page;
+}
+
+const { page } = Astro.props;
+const meta = PLACE_META[page.path];
+const reserved = page.photo ? [page.photo] : [];
+const bag = new UniquePhotos(reserved);
+const attractions = bag.takeBatch(attractionsFor(page.path), (row) => `${page.path} ${row.name} ${row.href}`);
+const portraits = bag.takeBatch(page.portraits || [], (item) => `${page.path} ${item.title} ${item.href}`);
+const affiliates = bag.takeBatch(page.affiliates || [], (item) => `${page.path} ${item.title} ${item.kicker} ${item.body}`);
+const city = stayCityFromPath(page.path);
+const region = (meta?.region || regionForPath(page.path)) as 'central' | 'north' | 'andaman' | 'gulf' | 'east';
+const stayHref = page.bookingCta?.stayHref || stayLink(city);
+const tourHref = page.bookingCta?.tourHref || klookTours(`${page.title} tours`);
+const dishLinks = (CITY_FOOD_ROWS[meta?.foodHref || ''] || [])
+  .filter((row) => row.kind === 'dish')
+  .slice(0, 8);
+const tabs = [
+  { href: '#intro', label: 'Overview' },
+  { href: '#attractions', label: 'Top Attractions' },
+  { href: '#neighbourhoods', label: 'Neighbourhoods / Beaches' },
+  { href: '#stay', label: 'Where to Stay' },
+  { href: '#eat', label: 'Food & Markets' },
+  { href: '#get-there', label: 'Getting Around' },
+  { href: '#questions', label: 'FAQ' },
+];
+---
+
+<article class="wrap">
+  <header class="place-top" id="intro">
+    {
+      page.crumbs.length > 1 && (
+        <nav class="crumbs" aria-label="Breadcrumb">
+          <ol>
+            {page.crumbs.map((crumb) => (
+              <li>
+                <a href={pageHref(crumb.href)}>{crumb.name}</a>
+              </li>
+            ))}
+          </ol>
+        </nav>
+      )
+    }
+    {page.geo?.containedIn && <p class="meta">{page.geo.containedIn}</p>}
+    <h1>
+      {page.title}
+      {meta?.nameLocal && <span class="vi" lang="th"> {meta.nameLocal}</span>}
+    </h1>
+    <p class="lede" set:html={formatInline(page.lede)} />
+    {
+      page.chips && page.chips.length > 0 && (
+        <div class="chips">
+          {page.chips.map((chip) => {
+            const href = chipHref(chip, page.parentPill, page.path);
+            return href && routePath(href) !== page.path ? (
+              <a class="chip parent-pill" href={pageHref(href)}>{chip}</a>
+            ) : (
+              <span class="chip peak">{chip}</span>
+            );
+          })}
+        </div>
+      )
+    }
+    {
+      page.photo && (
+        <div class="place-photo">
+          <Photo src={page.photo} alt={page.title} priority />
+        </div>
+      )
+    }
+    {page.photoCredit && <p class="note photo-credit">{page.photoCredit}</p>}
+  </header>
+
+  <FactBar facts={page.facts} />
+
+  <nav class="tabs" aria-label={`${page.title} sections`} tabindex="0">
+    {tabs.map((tab) => <a href={tab.href}>{tab.label}</a>)}
+  </nav>
+
+  <div class="place-grid place-body">
+    <div>
+      <section class="place-section" id="overview">
+        <h2>Overview</h2>
+        {page.paragraphs.map((p) => <p set:html={formatInline(p)} />)}
+      </section>
+
+      <section class="place-section" id="attractions">
+        <h2>Top attractions in {page.title}</h2>
+        <AttractionCards placeName={page.title} items={attractions} />
+      </section>
+
+      <section class="place-section" id="neighbourhoods">
+        <h2>Neighbourhoods / Beaches</h2>
+        <div class="card-list hood-list">
+          {
+            portraits.map((item) => (
+              <a class="jg-card" href={pageHref(item.href)}>
+                <div class="media">
+                  {item.photo ? <Photo src={item.photo} alt={item.title} /> : null}
+                </div>
+                <div class="jg-body">
+                  <h3>{item.title}</h3>
+                </div>
+              </a>
+            ))
+          }
+        </div>
+      </section>
+
+      {
+        page.sections?.map((section) => {
+          const secId =
+            section.id === 'neighbourhoods' || attractions.some((a) => a.slug === section.id)
+              ? `section-${section.id}`
+              : section.id;
+          return (
+            <section class="place-section" id={secId}>
+              <h2>{section.title}</h2>
+              {section.paragraphs?.map((p) => <p set:html={formatInline(p)} />)}
+              {section.bullets && section.bullets.length > 0 && (
+                <ul class="scan-list">
+                  {section.bullets.map((item) => (
+                    <li set:html={formatInline(item)} />
+                  ))}
+                </ul>
+              )}
+              {section.table && (
+                <div class="table-wrap" tabindex="0" role="region" aria-label="Scrollable table">
+                  <table>
+                    <thead>
+                      <tr>
+                        {section.table.headers.map((h) => (
+                          <th set:html={formatInline(h)} />
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {section.table.rows.map((row) => (
+                        <tr>
+                          {row.map((cell) => (
+                            <td set:html={formatInline(cell)} />
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+              {section.id === 'stay' && affiliates.length > 0 && <AffRow items={affiliates} />}
+            </section>
+          );
+        })
+      }
+
+      {
+        !page.sections?.some((section) => section.id === 'stay') && (
+          <section class="place-section" id="stay">
+            <h2>Where to stay</h2>
+            {affiliates.length > 0 && <AffRow items={affiliates} />}
+          </section>
+        )
+      }
+
+      {
+        !page.sections?.some((section) => section.id === 'get-there') && (
+          <section class="place-section" id="get-there">
+            <h2>Getting around</h2>
+            <p>Use the fact bar for the local hop. City-to-city pages live on <a href={pageHref('/get-there')}>Get there</a>.</p>
+          </section>
+        )
+      }
+
+      <section class="place-section" id="eat">
+        <h2>Food & Markets</h2>
+        <p>
+          City plates live on the
+          <a href={pageHref(meta?.foodHref || '/thai-food')}>{page.title} food guide</a>.
+          Ticketed markets sit on <a href={pageHref('/attractions')}>Attractions</a>.
+        </p>
+        {
+          dishLinks.length > 0 && (
+            <ul class="scan-list">
+              {dishLinks.map((row) => (
+                <li>
+                  <a href={pageHref(row.href)}>{row.title}</a>
+                  {row.nameLocal ? ` (${row.nameLocal})` : ''}
+                </li>
+              ))}
+            </ul>
+          )
+        }
+      </section>
+
+      <SisterNetwork path={page.path} />
+
+      {
+        page.faqs.length > 0 && (
+          <section class="place-section" id="questions">
+            <h2>Common questions</h2>
+            <FaqList items={page.faqs} />
+          </section>
+        )
+      }
+    </div>
+
+    <aside class="rail">
+      <div class="rail-booking">
+        <TripSearch variant="destination" city={city} placeName={page.title} />
+        <a class="promo-box" href={stayHref} rel="sponsored noopener" target="_blank">
+          <strong>Trip.com hotels</strong>
+          <span>Compare {page.title} rooms and free-cancellation rates.</span>
+        </a>
+        <a class="promo-box" href={tourHref} rel="sponsored noopener" target="_blank">
+          <strong>Klook tours</strong>
+          <span>Boats, tickets, and transfers for this stop.</span>
+        </a>
+      </div>
+      <div class="panel">
+        <p class="explore-kicker">Explore</p>
+        <h2>{page.title}</h2>
+        <ul class="explore-list">
+          <li><a href="#neighbourhoods">Districts</a></li>
+          {(meta?.explore || [
+            { href: meta?.foodHref || '/thai-food', label: `${page.title} food guide` },
+            { href: '/interests/resort-living', label: 'Resort Living flagship stays' },
+            { href: meta?.nightlifeHref || '/interests/nightlife', label: `${page.title} nightlife` },
+            { href: '/itineraries', label: 'Thailand itineraries' },
+            { href: '/get-there', label: 'How to get there' },
+          ]).map((item) => (
+            <li><a href={pageHref(item.href)}>{item.label}</a></li>
+          ))}
+        </ul>
+      </div>
+      <div class="panel rail-map">
+        <h2>Map</h2>
+        <a href={pageHref('/destinations')} data-map-open>
+          <ThailandMap active={region} linked={false} variant="rail" />
+        </a>
+        {
+          page.geo && (
+            <p class="note">
+              {page.title} · {page.geo.lat}, {page.geo.lon}
+            </p>
+          )
+        }
+      </div>
+    </aside>
+  </div>
+</article>

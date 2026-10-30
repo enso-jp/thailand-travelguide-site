@@ -1,0 +1,60 @@
+name: Publish site
+
+on:
+  schedule:
+  # 00:15 UTC is 07:15 in Asia/Bangkok. GitHub may start the run later.
+  - cron: '15 0 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HAS_TOKEN: ${{ secrets.THAILAND_GUIDE_TOKEN != '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Resolve source
+        run: echo "SRC_REPO=${GITHUB_REPOSITORY%-site}" >> "$GITHUB_ENV"
+      - name: Checkout Thailand Travel Guide
+        if: env.HAS_TOKEN == 'true'
+        env:
+          HAS_TOKEN: ${{ secrets.THAILAND_GUIDE_TOKEN != '' }}
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.SRC_REPO }}
+          ref: main
+          path: source
+          token: ${{ secrets.THAILAND_GUIDE_TOKEN }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: source/package-lock.json
+      - name: Install and build
+        working-directory: source
+        run: npm ci && npm run check:content && npm run audit:content && npm run build
+      - name: Upload site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: source/dist
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,29 @@
+---
+interface Props {
+  href: string;
+  route: string;
+  fromCode: string;
+  toCode: string;
+  duration: string;
+}
+
+const { href, route, fromCode, toCode, duration } = Astro.props;
+const codes = `${fromCode} to ${toCode}`;
+---
+
+<a class="flight-cta" href={href} target="_blank" rel="sponsored noopener noreferrer">
+  <span class="flight-cta-mark" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7">
+      <path d="M3 20.5 21 12 3 3.5v6.4L14.2 12 3 14.1z"></path>
+    </svg>
+  </span>
+  <span class="flight-cta-copy">
+    <span class="flight-cta-kicker">Search flights</span>
+    <strong class="flight-cta-route">{route}</strong>
+    <span class="flight-cta-meta">
+      <span class="flight-cta-codes">{codes}</span>
+      <span class="flight-cta-sep" aria-hidden="true"></span>
+      <span class="flight-cta-duration">{duration}</span>
+    </span>
+  </span>
+</a>

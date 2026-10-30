@@ -1,0 +1,34 @@
+---
+import '../../styles/global.css';
+import ThailandMap from '../../components/ThailandMap.astro';
+import { site } from '../../lib/site';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, follow" />
+    <title>Thailand Region Map to Embed, Free | Thailand Guide</title>
+    <meta name="description" content="A free, lightweight map of Thailand by region with links to each destination guide, ready to embed on travel blogs and trip planning pages." />
+    <link rel="canonical" href={`${site.url}/embed/map/`} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <base target="_top" />
+    <style>
+      html, body { margin: 0; background: #fff; }
+      .embed-map { max-width: 420px; margin: 0 auto; padding: 8px; box-sizing: border-box; }
+      .embed-map svg { width: 100%; height: auto; display: block; }
+      .embed-credit { font: 13px/1.4 system-ui, sans-serif; text-align: center; margin: 6px 0 0; color: #444; }
+      .embed-credit a { color: inherit; }
+    </style>
+  </head>
+  <body>
+    <main class="embed-map">
+      <ThailandMap variant="home" />
+      <p class="embed-credit">
+        Map by The Beyond, <a href={`${site.url}/`} rel="noopener">thailand-travelguide.com</a>
+      </p>
+    </main>
+  </body>
+</html>

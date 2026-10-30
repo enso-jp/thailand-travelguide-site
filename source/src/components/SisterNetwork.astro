@@ -1,0 +1,53 @@
+---
+import { sisterSectionForPath, allowsBkkDadFlight } from '../lib/sister-network';
+import FlightCta from './FlightCta.astro';
+
+interface Props {
+  path: string;
+}
+
+const { path } = Astro.props;
+const rawSection = sisterSectionForPath(path);
+const section = rawSection && {
+  ...rawSection,
+  flights: (rawSection.flights ?? []).filter((fl) => fl.toCode !== 'DAD' || allowsBkkDadFlight(path)),
+};
+---
+
+{
+  section && (
+    <section class="place-section sister-network" id="compare-vietnam" aria-label="Compare with Vietnam TravelGuide">
+      <div class="sister-head">
+        <span class="sister-badge">
+          <i class="net-mark net-mark-vn" aria-hidden="true">V</i>
+          Southeast Asia TravelGuide Network
+        </span>
+        <h2>{section.heading}</h2>
+        <p class="sister-lead">{section.lead}</p>
+      </div>
+      <div class="sister-grid">
+        {section.cards.map((card) => (
+          <a class="sister-card" href={card.href} target="_blank" rel="noopener">
+            <span class="sister-kicker">{card.kicker}</span>
+            <h3>{card.title}</h3>
+            <p>{card.summary}</p>
+            <span class="sister-cta">{card.cta} →</span>
+          </a>
+        ))}
+      </div>
+      {section.flights && section.flights.length > 0 && (
+        <div class="sister-flights" aria-label="Cross-border flights on Trip.com">
+          {section.flights.map((fl) => (
+            <FlightCta
+              href={fl.href}
+              route={fl.route}
+              fromCode={fl.fromCode}
+              toCode={fl.toCode}
+              duration={fl.duration}
+            />
+          ))}
+        </div>
+      )}
+    </section>
+  )
+}

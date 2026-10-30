@@ -1,0 +1,64 @@
+---
+import FactBar from './FactBar.astro';
+import Photo from './Photo.astro';
+import RegionStage from './RegionStage.astro';
+import type { Page } from '../lib/content';
+import { formatInline } from '../lib/inline';
+import { buildHomeMedia } from '../lib/page-media';
+import { UniquePhotos } from '../lib/photos';
+import { pageHref } from '../lib/site';
+
+interface Props {
+  page: Page;
+}
+
+const { page } = Astro.props;
+const home = buildHomeMedia(page.photo ? [page.photo] : []);
+const bag = new UniquePhotos([
+  page.photo || '',
+  ...home.regions.flatMap((region) => [...region.photos.map((p) => p.photo), region.swipePhoto]),
+]);
+const portraits = bag.takeBatch(page.portraits || [], (item) => `${page.path} ${item.title} ${item.href}`);
+---
+
+<article class="wrap section">
+  <nav class="crumbs" aria-label="Breadcrumb">
+    <ol>
+      {page.crumbs.map((crumb) => (
+        <li><a href={pageHref(crumb.href)}>{crumb.name}</a></li>
+      ))}
+    </ol>
+  </nav>
+  <h1>{page.title}</h1>
+  <p class="lede" set:html={formatInline(page.lede)} />
+  {
+    page.photo && (
+      <figure class="place-photo">
+        <Photo src={page.photo} alt="" priority />
+        {page.photoCredit && <figcaption class="photo-credit">{page.photoCredit}</figcaption>}
+      </figure>
+    )
+  }
+  <FactBar facts={page.facts} />
+  <div class="reading">
+    {page.paragraphs.map((p) => <p set:html={formatInline(p)} />)}
+  </div>
+  <RegionStage regions={home.regions} />
+  <section class="place-section">
+    <h2>Destinations to compare</h2>
+    <div class="guide-grid">
+      {
+        portraits
+          .filter((item) => item.photo)
+          .map((item) => (
+          <a class="guide-card" href={pageHref(item.href)}>
+            <Photo src={item.photo} alt={item.title} />
+            <span>
+              <strong>{item.title}</strong>
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</article>
