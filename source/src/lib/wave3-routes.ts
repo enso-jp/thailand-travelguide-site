@@ -1050,10 +1050,13 @@ export const wave3Pages: Page[] = [
       {
         id: 'line',
         title: 'Nam Tok is not Hellfire Pass',
-        paragraphs: [
-          'The passenger line continues past the bridge toward Nam Tok. Floods have shut the Tha Kilen to Nam Tok stretch before. Call SRT 1690 before you treat the viaduct as a must. Foreign tourist fares apply on these ordinary sets. Tickets are often day-of. The train cannot truly sell out the way a sleeper can.',
-          'Hellfire Pass (Konyu Cutting) is about 80 km northwest by road past Nam Tok. It is not a station. Arrange the car in town. Erawan is a different 65 to 70 km road, local bus 8170, last-bus questions before you walk to tier 7.',
-          'Hellfire Pass closed on 27 September 2026 after floods. On 30 October 2026 its official site listed normal hours of 09:00 to 16:00 and no closure notice. Call +66 34 919 605 before you go.',
+        paragraphs: [],
+        bullets: [
+          '**Past the bridge:** the passenger line continues to Nam Tok. Floods have shut the Tha Kilen to Nam Tok stretch before. Call SRT 1690 before you treat the viaduct as a must.',
+          '**Tickets:** foreign tourist fares apply on these ordinary sets, sold on the day. The train cannot sell out the way a sleeper can.',
+          '**Hellfire Pass by road:** Konyu Cutting is about 80 km northwest past Nam Tok. It is not a station. Arrange the car in town.',
+          '**Hellfire Pass status:** closed on 27 September 2026 after floods. On 30 October 2026 its official site listed normal hours of 09:00 to 16:00 and no closure notice. Call +66 34 919 605 before you go.',
+          '**Erawan is another road:** 65 to 70 km on local bus 8170. Ask about the last bus before you walk to tier 7.',
         ],
       },
     ],

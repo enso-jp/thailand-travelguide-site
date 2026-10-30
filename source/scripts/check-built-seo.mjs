@@ -148,6 +148,37 @@ for (const file of pages) {
   }
 }
 
+// Walls of text: 3+ consecutive body paragraphs over 60 characters. Reported as a warning
+// with a page count; set WALL_STRICT=1 to fail the build on it.
+{
+  const walkW = (dir) => readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
+    e.isDirectory() ? walkW(join(dir, e.name)) : e.name.endsWith('.html') ? [join(dir, e.name)] : []);
+  const walls = [];
+  for (const file of walkW(DIST)) {
+    const html = readFileSync(file, 'utf8');
+    const main = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i)?.[1] || '';
+    const runs = main.split(/<\/p>/i);
+    let run = 0;
+    let hit = false;
+    for (const chunk of runs) {
+      const m = chunk.match(/<p\b[^>]*>([\s\S]*)$/i);
+      const between = m ? chunk.slice(0, chunk.length - m[0].length) : chunk;
+      if (between.replace(/<[^>]+>/g, '').trim() || /<(h[1-6]|ul|ol|table|div|section|figure)\b/i.test(between)) run = 0;
+      if (!m) { run = 0; continue; }
+      const text = m[1].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+      run = text.length > 60 ? run + 1 : 0;
+      if (run >= 3) hit = true;
+    }
+    if (hit) walls.push(file.slice(DIST.length));
+  }
+  if (walls.length) {
+    const msg = `wall-of-text warning: ${walls.length} pages with 3+ long paragraphs in a row (e.g. ${walls.slice(0, 5).join(', ')})`;
+    if (process.env.WALL_STRICT === '1') errors.push(msg); else console.warn(msg);
+  } else {
+    console.log('wall-of-text check ok (0 pages)');
+  }
+}
+
 if (errors.length) {
   console.error(`check-built-seo failed (${errors.length})`);
   for (const err of errors.slice(0, 80)) console.error(`  ${err}`);

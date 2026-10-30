@@ -1095,7 +1095,7 @@ function splitLead(text: string): { label: string; rest: string; glue: 'colon' |
     return { label: trimmed, rest: '', glue: 'keep' };
   }
   const sentence = trimmed.match(/^(.{6,120}?)(?<!\d)([.:])\s+(.+)$/);
-  if (sentence) return { label: sentence[1], rest: sentence[3], glue: sentence[2] === ':' ? 'colon' : 'colon' };
+  if (sentence) return { label: sentence[1], rest: sentence[3], glue: sentence[2] === ':' ? 'colon' : 'period' };
   const clause = trimmed.match(/^([^,;]{12,65})[,;]\s+(.+)$/);
   if (clause) return { label: clause[1], rest: clause[2], glue: 'colon' };
   const longFirst = trimmed.match(/^(.+?)(?<!\d)\.\s+(.+)$/);
