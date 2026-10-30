@@ -83,7 +83,7 @@ export const wave27Pages: Page[] = [
       { title: 'Khao Lak guide', href: '/khao-lak', photo: '/photos/khao-lak-resort.jpg' },
       { title: 'Bang Niang', href: '/khao-lak/bang-niang', photo: '/photos/bang-niang.jpg' },
       { title: 'Phuket guide', href: '/phuket', photo: '/photos/phuket.jpg' },
-      { title: 'Kata and Karon', href: '/phuket', photo: '/photos/kata-and-karon.jpg' },
+      { title: 'Kata and Karon', href: '/phuket/kata-and-karon', photo: '/photos/kata-and-karon.jpg' },
     ],
     affiliates: [
       ...stay('Khao Lak stays', 'Bang Niang or Nang Thong', 'Beachfront rooms in Khao Lak. Compare against Phuket for your dates.', 'khao-lak', '/photos/bang-niang-estuary.jpg'),
@@ -175,7 +175,7 @@ export const wave27Pages: Page[] = [
       { title: 'Phuket to Phi Phi', href: '/get-there/phuket-to-krabi-phi-phi', photo: '/photos/tonsai.jpg' },
     ],
     affiliates: [
-      ...stay('Koh Lipe stays', 'Sunrise or Sunset Beach', 'Sunrise for swimming, Sunset for quiet. Book early for December.', 'koh-lipe', '/photos/phi-phi-viewpoint.jpg'),
+      ...stay('Koh Lipe stays', 'Sunrise or Sunset Beach', 'Sunrise for swimming, Sunset for quiet. Book early for December.', 'koh-lipe', '/photos/koh-lipe.jpg'),
       ...klook('Phi Phi and Maya Bay', 'Tours', 'Go early. Confirm whether the 400 THB park fee is included.', 'Phi Phi Maya Bay island hopping', '/photos/maya-bay.jpg'),
     ],
     faqs: [
