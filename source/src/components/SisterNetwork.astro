@@ -1,5 +1,5 @@
 ---
-import { sisterSectionForPath } from '../lib/sister-network';
+import { sisterSectionForPath, allowsBkkDadFlight } from '../lib/sister-network';
 import FlightCta from './FlightCta.astro';
 
 interface Props {
@@ -7,7 +7,11 @@ interface Props {
 }
 
 const { path } = Astro.props;
-const section = sisterSectionForPath(path);
+const rawSection = sisterSectionForPath(path);
+const section = rawSection && {
+  ...rawSection,
+  flights: (rawSection.flights ?? []).filter((fl) => fl.toCode !== 'DAD' || allowsBkkDadFlight(path)),
+};
 ---
 
 {

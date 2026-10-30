@@ -640,3 +640,13 @@ export function sisterSectionForPath(path: string): SisterSection | null {
 
   return null;
 }
+
+// Placement rule for the Bangkok to Da Nang flight CTA: only the Bangkok hub,
+// the getting-there pages, and itineraries that combine Thailand and Vietnam.
+const TH_VN_ITINERARY = /^\/itineraries\/[^/]*(vietnam|hanoi|ho-chi-minh|da-nang|hoi-an|saigon)/;
+export function allowsBkkDadFlight(path: string): boolean {
+  const clean = path.replace(/\/$/, '') || '/';
+  if (clean === '/bangkok') return true;
+  if (clean === '/get-there' || clean.startsWith('/get-there/')) return true;
+  return TH_VN_ITINERARY.test(clean);
+}

@@ -342,7 +342,7 @@ function guideGridHeading(path: string): string {
   }
 
   <SisterNetwork path={page.path} />
-  {showSisterRoutes && <SisterRoutes />}
+  {showSisterRoutes && <SisterRoutes path={page.path} />}
 
   {
     page.faqs.length > 0 && (

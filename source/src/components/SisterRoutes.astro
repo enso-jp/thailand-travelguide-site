@@ -1,5 +1,10 @@
 ---
-import { SISTER_CROSS_BORDER_ROUTES } from '../lib/sister-network';
+import { SISTER_CROSS_BORDER_ROUTES, allowsBkkDadFlight } from '../lib/sister-network';
+interface Props {
+  path: string;
+}
+const { path } = Astro.props;
+const showDad = allowsBkkDadFlight(path);
 import FlightCta from './FlightCta.astro';
 ---
 
@@ -28,13 +33,15 @@ import FlightCta from './FlightCta.astro';
               </a>
             ))}
           </div>
-          <FlightCta
-            href={route.flight.href}
-            route={route.flight.route}
-            fromCode={route.flight.fromCode}
-            toCode={route.flight.toCode}
-            duration={route.flight.duration}
-          />
+          {(route.flight.toCode !== 'DAD' || showDad) && (
+            <FlightCta
+              href={route.flight.href}
+              route={route.flight.route}
+              fromCode={route.flight.fromCode}
+              toCode={route.flight.toCode}
+              duration={route.flight.duration}
+            />
+          )}
         </article>
       ))
     }
