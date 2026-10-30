@@ -148,8 +148,7 @@ for (const file of pages) {
   }
 }
 
-// Walls of text: 3+ consecutive body paragraphs over 60 characters. Reported as a warning
-// with a page count; set WALL_STRICT=1 to fail the build on it.
+// Walls of text: 3+ consecutive body paragraphs over 60 characters fail the build.
 {
   const walkW = (dir) => readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
     e.isDirectory() ? walkW(join(dir, e.name)) : e.name.endsWith('.html') ? [join(dir, e.name)] : []);
@@ -173,7 +172,7 @@ for (const file of pages) {
   }
   if (walls.length) {
     const msg = `wall-of-text warning: ${walls.length} pages with 3+ long paragraphs in a row (e.g. ${walls.slice(0, 5).join(', ')})`;
-    if (process.env.WALL_STRICT === '1') errors.push(msg); else console.warn(msg);
+    errors.push(msg);
   } else {
     console.log('wall-of-text check ok (0 pages)');
   }

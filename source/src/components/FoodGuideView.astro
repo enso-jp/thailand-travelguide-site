@@ -95,11 +95,11 @@ const city: StayCity = stayCityFromPath(page.path);
                     </a>
                   </h3>
                   <p set:html={formatInline(row.summary)} />
-                  {row.address && <p class="spot-address">{row.address}</p>}
+                  {row.address && <div class="spot-address">{row.address}</div>}
                   {(row.hours || row.price) && (
-                    <p class="spot-address">
+                    <div class="spot-address">
                       {[row.hours, row.price].filter(Boolean).join(' · ')}
-                    </p>
+                    </div>
                   )}
                 </div>
               </article>

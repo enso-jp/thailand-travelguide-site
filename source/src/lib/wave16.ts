@@ -1515,8 +1515,7 @@ export function structureCopy(page: Page): Page {
   sections = sections.map((section) => {
     if (section.cards?.length) return section;
     const paras = section.paragraphs || [];
-    if (paras.length < 4 && (section.bullets?.length || 0) > 0) return section;
-    if (paras.length < 4) return section;
+    if (paras.length < 3) return section;
     return {
       ...section,
       paragraphs: paras.slice(0, 2),
