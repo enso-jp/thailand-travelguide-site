@@ -270,6 +270,18 @@ export function flightLink(from: AirportCode, to: AirportCode): string {
   return `https://www.trip.com/flights/${fromCity}-to-${toCity}/tickets-${origin}-${dest}?${tripParams()}`;
 }
 
+/** Destinations with a real SRT rail service from Bangkok. Train CTAs render only for these. */
+export const RAIL_DESTINATIONS = [
+  'Chiang Mai', 'Ayutthaya', 'Hua Hin', 'Surat Thani', 'Hat Yai', 'Nong Khai', 'Udon Thani',
+  'Khon Kaen', 'Lampang', 'Phitsanulok', 'Kanchanaburi', 'Chumphon',
+] as const;
+
+/** Returns the rail destination when the place is a real rail stop from Bangkok, else null. */
+export function railDestination(place?: string): string | null {
+  const key = (place || '').trim().toLowerCase();
+  return RAIL_DESTINATIONS.find((d) => d.toLowerCase() === key) || null;
+}
+
 export function trainLink(from = 'Bangkok', to = 'Chiang Mai'): string {
   return `https://www.trip.com/trains/list?dname=${encodeURIComponent(from)}&aname=${encodeURIComponent(to)}&${tripParams()}`;
 }
