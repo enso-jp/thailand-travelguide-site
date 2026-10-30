@@ -108,10 +108,7 @@ for (const file of pages) {
   }
 }
 
-if (errors.length) {
-  console.error(`check-built-seo failed (${errors.length})`);
-  for (const err of errors.slice(0, 80)) console.error(`  ${err}`);
-  // Old Trip.com SID 334225872 must never ship. Only the listed links still awaiting a Partner-generated
+// Old Trip.com SID 334225872 must never ship. Only the listed links still awaiting a Partner-generated
 // replacement are tolerated; remove each entry as soon as its batch link lands.
 {
   const OLD_SID_PENDING = ['keyword=Karon&', 'keyword=Surin%20Beach&', 'keyword=Rawai&', 'keyword=Wongamat'];
@@ -125,7 +122,22 @@ if (errors.length) {
   }
 }
 
-if (errors.length > 80) console.error(`  ... ${errors.length - 80} more`);
+// Trip.com hrefs must never carry a raw space; spaces in query values are written as %20.
+{
+  const walkSp = (dir) => readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
+    e.isDirectory() ? walkSp(join(dir, e.name)) : e.name.endsWith('.html') ? [join(dir, e.name)] : []);
+  for (const file of walkSp(DIST)) {
+    const html = readFileSync(file, 'utf8');
+    for (const m of html.matchAll(/href="(https?:\/\/[^"]*trip\.com[^"]*)"/g)) {
+      if (/\s/.test(m[1])) errors.push(`${file.slice(DIST.length)} has a raw space in a Trip.com href: ${m[1].slice(0, 120)}`);
+    }
+  }
+}
+
+if (errors.length) {
+  console.error(`check-built-seo failed (${errors.length})`);
+  for (const err of errors.slice(0, 80)) console.error(`  ${err}`);
+  if (errors.length > 80) console.error(`  ... ${errors.length - 80} more`);
   process.exit(1);
 }
 
