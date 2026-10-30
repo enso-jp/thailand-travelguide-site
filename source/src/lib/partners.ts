@@ -1,3 +1,4 @@
+import { TRIP_NEIGHBOURHOOD_LINKS, TRIP_KEYWORD_LINKS } from './trip-neighbourhoods';
 const TRIP_ALLIANCE = '11105102';
 const TRIP_SID = '334225872';
 const KLOOK_SOURCE = '588978';
@@ -351,7 +352,71 @@ export function tripHotelsUrl(city: StayCity, sub1?: string): string {
   return stayLink(city, sub1 ? { trip_sub1: sub1 } : {});
 }
 
+/** Encode a decoded generated Trip.com link for rendering: each query value is URL-encoded, nothing else changes. */
+export function encodeTripLink(raw: string): string {
+  const q = raw.indexOf('?');
+  if (q < 0) return raw;
+  // Split only on & that starts a new key=, so a literal & inside a decoded value (e.g. 'Villas & Residences') stays in that value.
+  const query = raw.slice(q + 1).split(/&(?=[A-Za-z_][A-Za-z0-9_]*=)/).map((pair) => {
+    const eq = pair.indexOf('=');
+    return eq < 0 ? pair : `${pair.slice(0, eq)}=${encodeURIComponent(pair.slice(eq + 1))}`;
+  });
+  return `${raw.slice(0, q)}?${query.join('&')}`;
+}
+
+/** Generated neighbourhood hotel link for an area slug, encoded for rendering. */
+export function neighbourhoodLink(area: string): string | undefined {
+  const row = TRIP_NEIGHBOURHOOD_LINKS[area];
+  return row ? encodeTripLink(row.link) : undefined;
+}
+
+const NEIGHBOURHOOD_FALLBACK_CITY: Record<string, string> = Object.fromEntries(
+  Object.values(TRIP_NEIGHBOURHOOD_LINKS).filter((r) => r.fallback).map((r) => [encodeTripLink(r.link), r.city]),
+);
+
+const NEARBY_AREAS = new Set(['kamala', 'surin', 'bang-niang']);
+const KEYWORD_LABELS: Record<string, string> = {
+  khao_sok_raft_house: 'Khao Sok stays',
+  soneva_kiri: 'Hotels in Koh Kood',
+  private_pool_villa: 'Hotels in Krabi province',
+};
+const TRIP_HOTEL_CTA: Record<string, string> = {
+  ...Object.fromEntries(
+    Object.entries(TRIP_NEIGHBOURHOOD_LINKS).flatMap(([slug, r]) =>
+      r.fallback ? [[encodeTripLink(r.link), `Hotels in ${r.city}`]] : NEARBY_AREAS.has(slug) ? [[encodeTripLink(r.link), `Hotels in ${r.area} and nearby`]] : [],
+    ),
+  ),
+  ...Object.fromEntries(
+    Object.values(TRIP_KEYWORD_LINKS).filter((r) => KEYWORD_LABELS[r.slug]).map((r) => [encodeTripLink(r.link), KEYWORD_LABELS[r.slug]]),
+  ),
+};
+
+const AREA_LIST_TITLES: Record<string, string> = {
+  soneva_kiri: 'Koh Kood hotel list',
+  private_pool_villa: 'Krabi province hotel list',
+};
+const TRIP_HOTEL_TITLE: Record<string, string> = Object.fromEntries(
+  Object.values(TRIP_KEYWORD_LINKS).filter((r) => AREA_LIST_TITLES[r.slug]).map((r) => [encodeTripLink(r.link), AREA_LIST_TITLES[r.slug]]),
+);
+
+/** Card title for a generated link that falls back to an area list instead of the named property; otherwise undefined. */
+export function tripHotelTitle(href: string | undefined): string | undefined {
+  return href ? TRIP_HOTEL_TITLE[href] : undefined;
+}
+
+/** Truthful button text for a generated hotel link whose list is wider than the named place; otherwise undefined. */
+export function tripHotelCta(href: string | undefined): string | undefined {
+  return href ? TRIP_HOTEL_CTA[href] : undefined;
+}
+
+/** If href is a neighbourhood link that falls back to the whole city, the city name; otherwise undefined. */
+export function neighbourhoodFallbackCity(href: string | undefined): string | undefined {
+  return href ? NEIGHBOURHOOD_FALLBACK_CITY[href] : undefined;
+}
+
 export function stayAreaLink(area: StayArea, extra: Record<string, string> = {}): string {
+  const csvLink = neighbourhoodLink(area);
+  if (csvLink) return csvLink;
   const row = tripAreas[area];
   const generated = TRIP_GENERATED_AREAS[`${row.keyword}|${row.city}`];
   if (generated && Object.keys(extra).length === 0) return generated;
@@ -364,6 +429,13 @@ export function stayAreaLink(area: StayArea, extra: Record<string, string> = {})
 }
 
 export function hotelSearchLink(query: string, city?: StayCity): string {
+  const areaSlug = (Object.keys(tripAreas) as StayArea[]).find(
+    (k) => tripAreas[k].keyword === query && (!city || tripAreas[k].city === city),
+  );
+  const areaLink = areaSlug ? neighbourhoodLink(areaSlug) : undefined;
+  if (areaLink) return areaLink;
+  const kw = TRIP_KEYWORD_LINKS[query];
+  if (kw) return encodeTripLink(kw.link);
   const generated = TRIP_GENERATED_HOTEL_SEARCH[`${query}|${city || ''}`] || TRIP_GENERATED_HOTEL_SEARCH_B2[query];
   if (generated) return generated;
   if (city) {
