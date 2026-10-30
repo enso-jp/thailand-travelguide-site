@@ -4,4 +4,3 @@ Disallow: /search
 Disallow: /search/
 
 Sitemap: https://thailand-travelguide.com/sitemap.xml
-Sitemap: https://thailand-travelguide.com/sitemap-index.xml
