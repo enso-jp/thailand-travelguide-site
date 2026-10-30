@@ -1111,7 +1111,7 @@ export const wave22SouthPages: Page[] = [
       { title: "Best time", href: "/krabi/best-time-to-visit", photo: "/photos/tiger-cave.jpg" },
     ],
     affiliates: [
-    stay("Tubkaek and west Krabi", "Quiet sand", "Search Krabi, then filter west of Ao Nang if you want space.", stayLink('krabi'), "/photos/krabi.jpg"),
+    stay("Tubkaek hotels", "Quiet sand", "Search Tubkaek if you want space west of Ao Nang.", stayAreaLink('tubkaek'), "/photos/krabi.jpg"),
     stay("Phulay Bay coast", "Resort week", "Use this when the pavilion is the stay, not the walking street.", stayLink('krabi'), "/photos/resort-six-senses-yao-noi.jpg"),
     ],
     faqs: [

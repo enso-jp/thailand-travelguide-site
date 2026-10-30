@@ -431,7 +431,7 @@ export const wave22Pages: Page[] = [
       { title: "Chinatown", href: "/bangkok/chinatown-yaowarat", photo: "/photos/yaowarat.jpg" },
     ],
     affiliates: [
-    stay("Old City and Khao San rooms", "Only if the street is the stay", "Search Rattanakosin, then filter for a soi off the road.", stayAreaLink('old-city'), "/photos/chinatown-day.jpg"),
+    stay("Khao San Road hotels", "Only if the street is the stay", "Search Khao San, then filter for a soi off the road.", stayAreaLink('khao-san'), "/photos/chinatown-day.jpg"),
     klook("Palace morning tickets", "Tickets", "Walk or Grab to Mani Noppharat at 08:30. Do not buy a closed-palace tuk-tuk.", klookTickets('Grand Palace Bangkok'), "/photos/wat-pho.jpg"),
     ],
     faqs: [
