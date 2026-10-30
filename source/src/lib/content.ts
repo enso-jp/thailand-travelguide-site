@@ -23,6 +23,7 @@ import { WAVE12_ITINERARY_PAGES } from './wave12-itineraries';
 import { WAVE23_ITINERARY_PAGES } from './wave23-itineraries';
 import { applyWave13 } from './wave13';
 import { wave21Pages } from './wave21-pages';
+import { wave27Pages } from './wave27-compare';
 import { wave22Pages } from './wave22-bangkok';
 import { wave22SouthPages } from './wave22-south';
 import { wave22GulfNorthPages } from './wave22-gulf-north';
@@ -2756,6 +2757,17 @@ const rawPages: Page[] = [
             ]
           ]
         }
+      },
+      {
+        "id": "verdict",
+        "title": "Sleeper or flight: the verdict",
+        "bullets": [
+          "**Verdict:** take SRT train 9 if you have a night to spare. It saves a hotel night and the ride north is the trip.",
+          "**Time:** the flight is 1 hr 15 min to 1 hr 30 min in the air, about 4 hours door to door. Train 9 leaves Krung Thep Aphiwat at 18:40 and reaches Chiang Mai at 07:15 the next morning.",
+          "**Cost:** BKK or DMK to CNX one-way fares on 3 November 2026 start at 1,260 to 1,490 THB before bags. A train 9 second-class sleeper is 938 THB upper or 1,038 THB lower.",
+          "**Experience:** made-up bunks with curtains, a restaurant car with set meals around 200 THB, and hills at sunrise. No alcohol is sold on board.",
+          "**Fly instead** if you land the same day, travel at New Year or Songkran without a booking, or need a 09:00 start in Chiang Mai."
+        ]
       }
     ],
     affiliates: [
@@ -4145,6 +4157,7 @@ const rawPages: Page[] = [
   ...WAVE12_ITINERARY_PAGES,
   ...WAVE23_ITINERARY_PAGES,
   ...wave21Pages,
+  ...wave27Pages,
   ...wave22Pages,
   ...wave22SouthPages,
   ...wave22GulfNorthPages,
