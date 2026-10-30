@@ -2486,7 +2486,7 @@ const rawPages: Page[] = [
     ],
     photo: "/photos/bangkok.jpg",
     paragraphs: [
-      "The 60-day visa-exemption scheme ended on 15 September 2026 (Government PRD, 4 September 2026, citing MFA Consular Affairs). Since 15 September 2026, most Western passport holders can enter Thailand visa-free for up to 30 days, for tourism only. Citizens of South Korea, Brazil, Argentina, Chile and Peru get 90 days under country-to-country agreements. The old 60-day exemption scheme ended that day (MFA Consular Affairs). For a longer trip, apply for a tourist visa at thaievisa.go.th before you fly.",
+      "The 60-day visa-exemption scheme ended on 15 September 2026 (Government PRD, 4 September 2026, citing MFA Consular Affairs). Since 15 September 2026, most Western passport holders can enter Thailand visa-free for up to 30 days, for tourism only. Citizens of South Korea, Brazil, Argentina, Chile and Peru get 90 days under country-to-country agreements. For a longer trip, apply for a tourist visa at thaievisa.go.th before you fly.",
       "TDAC replaced the paper TM6. Complete the free TDAC at tdac.immigration.go.th within 3 days before arrival. Never pay a third-party site. Keep the emailed QR offline.",
     ],
     sections: [
