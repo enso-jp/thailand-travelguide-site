@@ -1052,7 +1052,6 @@ export const wave3Pages: Page[] = [
       { title: 'Trains and ferries', href: '/plan/trains-and-ferries', photo: '/photos/bts.jpg' },
     ],
     affiliates: [
-      trains('Bangkok to Kanchanaburi', 'Trip.com', 'Confirm Thonburi on the ticket. Bang Sue is the wrong terminal.', trainLink('Bangkok', 'Kanchanaburi'), '/photos/bts.jpg'),
       stay('Town or river', 'Trip.com', 'Two nights if Erawan is on the list.', stayLink('kanchanaburi'), '/photos/riverside.jpg'),
       klook('Erawan and Hellfire Pass', 'Tours', 'A car for both hinterland sites beats a missed 8170.', klookTours('Erawan National Park'), '/photos/khao-sok.jpg'),
     ],

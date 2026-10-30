@@ -168,6 +168,69 @@ const TRIP_GENERATED_HOTEL_SEARCH: Record<string, string> = {
   "private pool villa|krabi": "https://www.trip.com/hotels/list?Allianceid=11105102&SID=334804079&city=1405&cityName=Krabi&trip_sub1=th_private_pool_villa&trip_sub3=D20753231&keyword=private%20pool%20villa",
 };
 
+/** Trip.com Partner tool links, batch 2, SID 334804079. Copied exactly as generated (spaces as %20). Never edit. */
+const TRIP_GENERATED_AREAS: Record<string, string> = {
+  "Ari|bangkok": "https://www.trip.com/hotels/bangkok-hotels-list-359/?keyword=Ari&Allianceid=11105102&SID=334804079&trip_sub1=th_h_ari&trip_sub3=D20757879",
+  "Charoenkrung|bangkok": "https://www.trip.com/hotels/bangkok-hotels-list-359/?keyword=Charoenkrung&Allianceid=11105102&SID=334804079&trip_sub1=th_h_charoenkrung&trip_sub3=D20757942",
+  "Old City|bangkok": "https://www.trip.com/hotels/bangkok-hotels-list-359/?keyword=Old%20City&Allianceid=11105102&SID=334804079&trip_sub1=th_h_old_city&trip_sub3=D20758005",
+  "Phrom Phong|bangkok": "https://www.trip.com/hotels/bangkok-hotels-list-359/?keyword=Phrom%20Phong&Allianceid=11105102&SID=334804079&trip_sub1=th_h_phrom_phong&trip_sub3=D20758005",
+  "Rattanakosin|bangkok": "https://www.trip.com/hotels/bangkok-hotels-list-359/?keyword=Rattanakosin&Allianceid=11105102&SID=334804079&trip_sub1=th_h_rattanakosin&trip_sub3=D20758005",
+  "Riverside|bangkok": "https://www.trip.com/hotels/bangkok-hotels-list-359/?keyword=Riverside&Allianceid=11105102&SID=334804079&trip_sub1=th_h_riverside&trip_sub3=D20758005",
+  "Sathorn|bangkok": "https://www.trip.com/hotels/bangkok-hotels-list-359/?keyword=Sathorn&Allianceid=11105102&SID=334804079&trip_sub1=th_h_sathorn&trip_sub3=D20758005",
+  "Siam|bangkok": "https://www.trip.com/hotels/bangkok-hotels-list-359/?keyword=Siam&Allianceid=11105102&SID=334804079&trip_sub1=th_h_siam&trip_sub3=D20758026",
+  "Silom|bangkok": "https://www.trip.com/hotels/bangkok-hotels-list-359/?keyword=Silom&Allianceid=11105102&SID=334804079&trip_sub1=th_h_silom&trip_sub3=D20758026",
+  "Sukhumvit|bangkok": "https://www.trip.com/hotels/bangkok-hotels-list-359/?keyword=Sukhumvit&Allianceid=11105102&SID=334804079&trip_sub1=th_h_sukhumvit&trip_sub3=D20758026",
+  "Thonglor|bangkok": "https://www.trip.com/hotels/bangkok-hotels-list-359/?keyword=Thonglor&Allianceid=11105102&SID=334804079&trip_sub1=th_h_thonglor&trip_sub3=D20758026",
+  "Nimmanhaemin|chiang-mai": "https://www.trip.com/hotels/chiang-mai-hotels-list-623/?keyword=Nimmanhaemin&Allianceid=11105102&SID=334804079&trip_sub1=th_h_nimmanhaemin&trip_sub3=D20758026",
+  "Old City|chiang-mai": "https://www.trip.com/hotels/chiang-mai-hotels-list-623/?keyword=Old%20City&Allianceid=11105102&SID=334804079&trip_sub1=th_h_old_city&trip_sub3=D20758026",
+  "Bang Niang|khao-lak": "https://www.trip.com/hotels/khao-lak-hotels-list-4106/?keyword=Bang%20Niang&Allianceid=11105102&SID=334804079&trip_sub1=th_h_bang_niang&trip_sub3=D20758026",
+  "Klong Dao|koh-lanta": "https://www.trip.com/hotels/ko-lanta-hotels-list-90741/?keyword=Klong%20Dao&Allianceid=11105102&SID=334804079&trip_sub1=th_h_klong_dao&trip_sub3=D20758026",
+  "White Sand Beach|koh-chang": "https://www.trip.com/hotels/koh-chang-hotels-list-3764/?keyword=White%20Sand%20Beach&Allianceid=11105102&SID=334804079&trip_sub1=th_h_white_sand_beach&trip_sub3=D20758026",
+  "Chaweng|koh-samui": "https://www.trip.com/hotels/koh-samui-hotels-list-1229/?keyword=Chaweng&Allianceid=11105102&SID=334804079&trip_sub1=th_h_chaweng&trip_sub3=D20758117",
+  "Lamai|koh-samui": "https://www.trip.com/hotels/koh-samui-hotels-list-1229/?keyword=Lamai&Allianceid=11105102&SID=334804079&trip_sub1=th_h_lamai&trip_sub3=D20758117",
+  "Sairee|koh-tao": "https://www.trip.com/hotels/koh-tao-hotels-list-19957/?keyword=Sairee&Allianceid=11105102&SID=334804079&trip_sub1=th_h_sairee&trip_sub3=D20758117",
+  "Ao Nang|krabi": "https://www.trip.com/hotels/krabi-hotels-list-1405/?keyword=Ao%20Nang&Allianceid=11105102&SID=334804079&trip_sub1=th_h_ao_nang&trip_sub3=D20758117",
+  "Railay|krabi": "https://www.trip.com/hotels/krabi-hotels-list-1405/?keyword=Railay&Allianceid=11105102&SID=334804079&trip_sub1=th_h_railay&trip_sub3=D20758117",
+  "Jomtien|pattaya": "https://www.trip.com/hotels/pattaya-hotels-list-622/?keyword=Jomtien&Allianceid=11105102&SID=334804079&trip_sub1=th_h_jomtien&trip_sub3=D20758341",
+  "Kamala|phuket": "https://www.trip.com/hotels/phuket-hotels-list-725/?keyword=Kamala&Allianceid=11105102&SID=334804079&trip_sub1=th_h_kamala&trip_sub3=D20758467",
+  "Kata|phuket": "https://www.trip.com/hotels/phuket-hotels-list-725/?keyword=Kata&Allianceid=11105102&SID=334804079&trip_sub1=th_h_kata&trip_sub3=D20758467",
+  "Nai Harn|phuket": "https://www.trip.com/hotels/phuket-hotels-list-725/?keyword=Nai%20Harn&Allianceid=11105102&SID=334804079&trip_sub1=th_h_nai_harn&trip_sub3=D20758467",
+  "Patong|phuket": "https://www.trip.com/hotels/phuket-hotels-list-725/?keyword=Patong&Allianceid=11105102&SID=334804079&trip_sub1=th_h_patong&trip_sub3=D20758467",
+};
+
+const TRIP_GENERATED_HOTEL_SEARCH_B2: Record<string, string> = {
+  "137 Pillars House Chiang Mai": "https://www.trip.com/hotels/list?keyword=137%20Pillars%20House%20Chiang%20Mai&Allianceid=11105102&SID=334804079&trip_sub1=th_h_137_pillars_house_chiang_mai&trip_sub3=D20758117",
+  "Amanpuri Phuket": "https://www.trip.com/hotels/list?keyword=Amanpuri%20Phuket&Allianceid=11105102&SID=334804079&trip_sub1=th_h_amanpuri_phuket&trip_sub3=D20758166",
+  "Anantara Chiang Mai": "https://www.trip.com/hotels/list?keyword=Anantara%20Chiang%20Mai&Allianceid=11105102&SID=334804079&trip_sub1=th_h_anantara_chiang_mai&trip_sub3=D20758166",
+  "Avista Hideaway Phuket": "https://www.trip.com/hotels/list?keyword=Avista%20Hideaway%20Phuket&Allianceid=11105102&SID=334804079&trip_sub1=th_h_avista_hideaway_phuket&trip_sub3=D20758180",
+  "Bang Tao": "https://www.trip.com/hotels/list?keyword=Bang%20Tao&Allianceid=11105102&SID=334804079&trip_sub1=th_h_bang_tao&trip_sub3=D20758201",
+  "Bophut": "https://www.trip.com/hotels/list?keyword=Bophut&Allianceid=11105102&SID=334804079&trip_sub1=th_h_bophut&trip_sub3=D20758201",
+  "Capella Bangkok": "https://www.trip.com/hotels/list?keyword=Capella%20Bangkok&Allianceid=11105102&SID=334804079&trip_sub1=th_h_capella_bangkok&trip_sub3=D20758201",
+  "Four Seasons Bangkok Chao Phraya": "https://www.trip.com/hotels/list?keyword=Four%20Seasons%20Bangkok%20Chao%20Phraya&Allianceid=11105102&SID=334804079&trip_sub1=th_h_four_seasons_bangkok_chao_ph&trip_sub3=D20758257",
+  "Four Seasons Chiang Mai": "https://www.trip.com/hotels/list?keyword=Four%20Seasons%20Chiang%20Mai&Allianceid=11105102&SID=334804079&trip_sub1=th_h_four_seasons_chiang_mai&trip_sub3=D20758278",
+  "Four Seasons Koh Samui": "https://www.trip.com/hotels/list?keyword=Four%20Seasons%20Koh%20Samui&Allianceid=11105102&SID=334804079&trip_sub1=th_h_four_seasons_koh_samui&trip_sub3=D20758278",
+  "Haad Rin": "https://www.trip.com/hotels/list?keyword=Haad%20Rin&Allianceid=11105102&SID=334804079&trip_sub1=th_h_haad_rin&trip_sub3=D20758278",
+  "Jomtien": "https://www.trip.com/hotels/list?keyword=Jomtien&Allianceid=11105102&SID=334804079&trip_sub1=th_h_jomtien&trip_sub3=D20758278",
+  "Khao Takiab": "https://www.trip.com/hotels/list?keyword=Khao%20Takiab&Allianceid=11105102&SID=334804079&trip_sub1=th_h_khao_takiab&trip_sub3=D20758278",
+  "Mae Rim": "https://www.trip.com/hotels/list?keyword=Mae%20Rim&Allianceid=11105102&SID=334804079&trip_sub1=th_h_mae_rim&trip_sub3=D20758278",
+  "Mai Khao": "https://www.trip.com/hotels/list?keyword=Mai%20Khao&Allianceid=11105102&SID=334804079&trip_sub1=th_h_mai_khao&trip_sub3=D20758278",
+  "Mandarin Oriental Bangkok": "https://www.trip.com/hotels/list?keyword=Mandarin%20Oriental%20Bangkok&Allianceid=11105102&SID=334804079&trip_sub1=th_h_mandarin_oriental_bangkok&trip_sub3=D20758299",
+  "Old Sukhothai": "https://www.trip.com/hotels/list?keyword=Old%20Sukhothai&Allianceid=11105102&SID=334804079&trip_sub1=th_h_old_sukhothai&trip_sub3=D20758299",
+  "On Nut": "https://www.trip.com/hotels/list?keyword=On%20Nut&Allianceid=11105102&SID=334804079&trip_sub1=th_h_on_nut&trip_sub3=D20758299",
+  "Phulay Bay Ritz-Carlton": "https://www.trip.com/hotels/list?keyword=Phulay%20Bay%20Ritz-Carlton&Allianceid=11105102&SID=334804079&trip_sub1=th_h_phulay_bay_ritz_carlton&trip_sub3=D20758320",
+  "Railay": "https://www.trip.com/hotels/list?keyword=Railay&Allianceid=11105102&SID=334804079&trip_sub1=th_h_railay&trip_sub3=D20758320",
+  "Rayavadee Krabi": "https://www.trip.com/hotels/list?keyword=Rayavadee%20Krabi&Allianceid=11105102&SID=334804079&trip_sub1=th_h_rayavadee_krabi&trip_sub3=D20758320",
+  "Ritz-Carlton Koh Samui": "https://www.trip.com/hotels/list?keyword=Ritz-Carlton%20Koh%20Samui&Allianceid=11105102&SID=334804079&trip_sub1=th_h_ritz_carlton_koh_samui&trip_sub3=D20758320",
+  "Rosewood Bangkok": "https://www.trip.com/hotels/list?keyword=Rosewood%20Bangkok&Allianceid=11105102&SID=334804079&trip_sub1=th_h_rosewood_bangkok&trip_sub3=D20758320",
+  "Six Senses Samui": "https://www.trip.com/hotels/list?keyword=Six%20Senses%20Samui&Allianceid=11105102&SID=334804079&trip_sub1=th_h_six_senses_samui&trip_sub3=D20758320",
+  "Six Senses Yao Noi": "https://www.trip.com/hotels/list?keyword=Six%20Senses%20Yao%20Noi&Allianceid=11105102&SID=334804079&trip_sub1=th_h_six_senses_yao_noi&trip_sub3=D20758320",
+  "Soneva Kiri": "https://www.trip.com/hotels/list?keyword=Soneva%20Kiri&Allianceid=11105102&SID=334804079&trip_sub1=th_h_soneva_kiri&trip_sub3=D20758341",
+  "The Siam Bangkok": "https://www.trip.com/hotels/list?keyword=The%20Siam%20Bangkok&Allianceid=11105102&SID=334804079&trip_sub1=th_h_the_siam_bangkok&trip_sub3=D20758341",
+  "Trisara Phuket": "https://www.trip.com/hotels/list?keyword=Trisara%20Phuket&Allianceid=11105102&SID=334804079&trip_sub1=th_h_trisara_phuket&trip_sub3=D20758341",
+  "VIE Hotel Bangkok MGallery": "https://www.trip.com/hotels/list?keyword=VIE%20Hotel%20Bangkok%20MGallery&Allianceid=11105102&SID=334804079&trip_sub1=th_h_vie_hotel_bangkok_mgallery&trip_sub3=D20758341",
+  "Veranda High Chiang Mai": "https://www.trip.com/hotels/list?keyword=Veranda%20High%20Chiang%20Mai&Allianceid=11105102&SID=334804079&trip_sub1=th_h_veranda_high_chiang_mai&trip_sub3=D20758341",
+};
+
 const TRIP_GENERATED_TRAINS: Record<string, string> = {
   "Bangkok|Ayutthaya": "https://www.trip.com/trains/list?dname=Bangkok&aname=Ayutthaya&Allianceid=11105102&SID=334804079&trip_sub1=th_train_bkk_ayutthaya&trip_sub3=D20753231",
   "Bangkok|Chiang Mai": "https://www.trip.com/trains/list?dname=Bangkok&aname=Chiang%20Mai&Allianceid=11105102&SID=334804079&trip_sub1=th_train_bkk_cnx&trip_sub3=D20753231",
@@ -284,6 +347,8 @@ export function tripHotelsUrl(city: StayCity, sub1?: string): string {
 
 export function stayAreaLink(area: StayArea, extra: Record<string, string> = {}): string {
   const row = tripAreas[area];
+  const generated = TRIP_GENERATED_AREAS[`${row.keyword}|${row.city}`];
+  if (generated && Object.keys(extra).length === 0) return generated;
   const city: TripCityEntry = tripCities[row.city as StayCity];
   return `${hotelListPath(city)}?keyword=${encodeURIComponent(row.keyword)}&${tripParams({
     trip_sub1: row.keyword,
@@ -293,7 +358,7 @@ export function stayAreaLink(area: StayArea, extra: Record<string, string> = {})
 }
 
 export function hotelSearchLink(query: string, city?: StayCity): string {
-  const generated = TRIP_GENERATED_HOTEL_SEARCH[`${query}|${city || ''}`];
+  const generated = TRIP_GENERATED_HOTEL_SEARCH[`${query}|${city || ''}`] || TRIP_GENERATED_HOTEL_SEARCH_B2[query];
   if (generated) return generated;
   if (city) {
     return hotelSearchListUrl(city, { keyword: query, trip_sub1: query });
@@ -317,7 +382,7 @@ export function flightLink(from: AirportCode, to: AirportCode): string {
 /** Destinations with a real SRT rail service from Bangkok. Train CTAs render only for these. */
 export const RAIL_DESTINATIONS = [
   'Chiang Mai', 'Ayutthaya', 'Hua Hin', 'Surat Thani', 'Hat Yai', 'Nong Khai', 'Udon Thani',
-  'Khon Kaen', 'Lampang', 'Phitsanulok', 'Kanchanaburi', 'Chumphon',
+  'Khon Kaen', 'Lampang', 'Phitsanulok', 'Chumphon',
 ] as const;
 
 /** Returns the rail destination when the place is a real rail stop from Bangkok, else null. */

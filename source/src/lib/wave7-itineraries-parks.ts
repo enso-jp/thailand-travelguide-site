@@ -637,15 +637,6 @@ export const wave7Pages: Page[] = [
     affiliates: [
       stay('Bangkok nights', 'Riverside or Sukhumvit', 'Two nights before the north and west day trips.', stayLink('bangkok'), '/photos/bangkok.jpg'),
       stay('Kanchanaburi', 'Town', 'Two nights if Erawan is on the list. One night if you only want the bridge.', stayLink('kanchanaburi'), '/photos/kanchanaburi.jpg'),
-      {
-        title: 'Thonburi and Ayutthaya trains',
-        kicker: 'Trip.com',
-        body: 'Confirm Thonburi for Kanchanaburi. Krung Thep Aphiwat does not run that branch.',
-        href: trainLink('Bangkok', 'Kanchanaburi'),
-        cta: 'Search trains',
-        photo: '/photos/bts.jpg',
-        partner: 'trains',
-      },
     ],
     faqs: [
       {
@@ -800,15 +791,6 @@ export const wave7Pages: Page[] = [
     affiliates: [
       stay('Kanchanaburi town', 'Two nights', 'Town if Erawan is tomorrow. Upriver only if you skip the 08:00 bus.', stayLink('kanchanaburi'), '/photos/kanchanaburi.jpg'),
       klook('Erawan or Hellfire Pass, not both', 'Tours', 'A car for one hinterland site beats a missed 16:30 bus.', klookTours('Erawan National Park'), '/photos/kanchanaburi.jpg'),
-      {
-        title: 'Thonburi trains',
-        kicker: 'Trip.com',
-        body: 'Ordinary 257 and 259. Foreigners pay 100 THB. Confirm Thonburi, not Krung Thep Aphiwat (Bang Sue Grand).',
-        href: trainLink('Bangkok', 'Kanchanaburi'),
-        cta: 'Search trains',
-        photo: '/photos/bts.jpg',
-        partner: 'trains',
-      },
     ],
     faqs: [
       {

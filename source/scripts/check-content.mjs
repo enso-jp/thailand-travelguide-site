@@ -371,6 +371,18 @@ for (const token of ['11105102', '334225872', '334804079', '588978', '793638']) 
     errors.push(`partners.ts missing affiliate token ${token}`);
   }
 }
+// Old Trip.com SID 334225872: only the two fallback constants may hold it (used solely for links
+// still awaiting a Partner-generated replacement). Any other occurrence in src fails the build.
+{
+  const { readdirSync: rd } = await import('node:fs');
+  const ALLOWED = ["const TRIP_SID = '334225872';", "const TRIP_BASE = 'Allianceid=11105102&SID=334225872&trip_sub2=th';"];
+  const walk = (dir) => rd(dir, { withFileTypes: true }).flatMap((e) => e.isDirectory() ? walk(join(dir, e.name)) : [join(dir, e.name)]);
+  for (const file of walk(join(ROOT, 'src'))) {
+    readFileSync(file, 'utf8').split('\n').forEach((line, n) => {
+      if (line.includes('334225872') && !ALLOWED.includes(line.trim())) errors.push(`${file.slice(ROOT.length)}:${n + 1} has old Trip.com SID 334225872`);
+    });
+  }
+}
 if (!partners.includes('hotelSearchListUrl') || !partners.includes('/hotels/list?')) {
   errors.push('partners.ts must export hotelSearchListUrl using /hotels/list?');
 }

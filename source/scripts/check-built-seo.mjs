@@ -111,7 +111,21 @@ for (const file of pages) {
 if (errors.length) {
   console.error(`check-built-seo failed (${errors.length})`);
   for (const err of errors.slice(0, 80)) console.error(`  ${err}`);
-  if (errors.length > 80) console.error(`  ... ${errors.length - 80} more`);
+  // Old Trip.com SID 334225872 must never ship. Only the listed links still awaiting a Partner-generated
+// replacement are tolerated; remove each entry as soon as its batch link lands.
+{
+  const OLD_SID_PENDING = ['keyword=Karon&', 'keyword=Surin%20Beach&', 'keyword=Rawai&', 'keyword=Wongamat'];
+  const walk = (dir) => readdirSync(dir, { withFileTypes: true }).flatMap((e) =>
+    e.isDirectory() ? walk(join(dir, e.name)) : /\.(html|xml|json|js|txt)$/.test(e.name) ? [join(dir, e.name)] : []);
+  for (const file of walk(DIST)) {
+    const text = readFileSync(file, 'utf8').replace(/&amp;/g, '&');
+    for (const m of text.matchAll(/[^"'\s<>]*334225872[^"'\s<>]*/g)) {
+      if (!OLD_SID_PENDING.some((k) => m[0].includes(k))) errors.push(`${file.slice(DIST.length)} has old Trip.com SID 334225872: ${m[0].slice(0, 120)}`);
+    }
+  }
+}
+
+if (errors.length > 80) console.error(`  ... ${errors.length - 80} more`);
   process.exit(1);
 }
 

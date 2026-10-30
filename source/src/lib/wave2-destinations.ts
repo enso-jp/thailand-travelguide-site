@@ -801,15 +801,6 @@ export const wave2Pages: Page[] = [
     ],
     affiliates: [
       stay('Kanchanaburi stays', 'Town or river', 'Two nights if Erawan is on the list. One night if you only want the bridge.', stayLink('kanchanaburi'), '/photos/kanchanaburi.jpg'),
-      {
-        title: 'Bangkok to Kanchanaburi trains',
-        kicker: 'Trip.com',
-        body: 'Confirm the origin station. Ordinary Nam Tok trains still mean Thonburi.',
-        href: trainLink('Bangkok', 'Kanchanaburi'),
-        cta: 'Search trains',
-        photo: '/photos/bts.jpg',
-        partner: 'trains',
-      },
       klook('Erawan and Hellfire Pass', 'Tours', 'A car for both hinterland sites beats a missed 8170.', klookTours('Erawan National Park'), '/photos/khao-sok.jpg'),
     ],
     faqs: [

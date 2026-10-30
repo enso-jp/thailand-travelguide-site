@@ -213,7 +213,6 @@ export const WAVE23_F: Page[] = [
     ],
     affiliates: [
       stay('Kanchanaburi town', 'Three nights', 'Bridge plus Erawan without a same-day rush.', stayLink('kanchanaburi'), '/photos/death-railway.jpg'),
-      hop('Thonburi trains', 'Trip.com', 'Ordinary trains leave Thonburi station for Kanchanaburi in about 2.5 to 3 hours, about 100 THB for a 2026 foreigner fare. Krung Thep Aphiwat (Bang Sue) is the wrong station.', trainLink('Bangkok', 'Kanchanaburi'), '/photos/thonburi-station.jpg', 'train', 'Search trains'),
       klook('Erawan vans', 'Tours', 'Check whether the 300 THB park ticket is included in the tour price.', klookTours('Erawan Falls'), '/photos/erawan-tiers.jpg'),
     ],
     faqs: [

@@ -1033,15 +1033,6 @@ export const wave22SecondaryPages: Page[] = [
     ],
     affiliates: [
     stay("Town hotels on the songthaew line", "River bend", "Sleep where the 8170 still works at 08:00.", stayLink('kanchanaburi'), "/photos/kanchanaburi.jpg"),
-    {
-      title: "Bangkok to Kanchanaburi trains",
-      kicker: "Trip.com",
-      body: "Confirm Thonburi as the origin. Ordinary Nam Tok trains have not moved to Bang Sue.",
-      href: trainLink('Bangkok', 'Kanchanaburi'),
-      cta: 'Search trains',
-      photo: "/photos/erawan.jpg",
-      partner: 'trains',
-    },
     ],
     faqs: [
       { q: "Which Bangkok station?", a: "Thonburi for the daily ordinary trains. Krung Thep Aphiwat does not run that branch." },
