@@ -647,7 +647,7 @@ export const wave4Pages: Page[] = [
     ],
     affiliates: [
       stay('Rosewood Bangkok rates', 'Trip.com', 'Live rates for the Ploenchit tower.', hotelSearchLink('Rosewood Bangkok', 'bangkok'), '/photos/siam.jpg'),
-      stay('Siam stays', 'If you want the BTS without the manor rate', 'Same rail spine, broader inventory.', stayAreaLink('siam'), '/photos/siam.jpg'),
+      stay('Siam stays', 'If you want the BTS without the Rosewood rate', 'Same rail spine, broader inventory.', stayAreaLink('siam'), '/photos/siam.jpg'),
     ],
     faqs: [
       {

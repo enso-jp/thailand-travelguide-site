@@ -676,7 +676,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         lead: 'Direct BTS bridges for travellers who want central dining, embassies, and a short Airport Rail Link hop.',
         bullets: [
           'Skytrain hotels here trade a river view for BTS Ploenchit at the door.',
-          'Ratchathewi is the cheaper ARL-and-BTS pocket one hop from Siam if the manor rate is closed.',
+          'Ratchathewi is the cheaper ARL-and-BTS pocket one hop from Siam if Phloen Chit rates run high.',
           'These rooms skip the river road when skytrain, not a barge, is the Bangkok plan.',
         ],
       },
@@ -781,7 +781,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         lead: 'Skytrain living if BTS beats a boat on a short Bangkok stay.',
         bullets: [
           'Skytrain hotels here trade a river view for BTS Ploenchit at the door.',
-          'Ratchathewi is the cheaper design-room pocket if the manor rate is closed.',
+          'Ratchathewi is the cheaper design-room pocket if Phloen Chit rates run high.',
           'The Siam remains the upriver teak alternative if you want a barge and a garden.',
         ],
       },
@@ -817,7 +817,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         bullets: [
           'Ratchathewi is the cheaper design-room pocket one stop from Siam, with ARL at the same interchange.',
           'Dusit upriver is the garden alternative if you want teak houses instead of a tower.',
-          'This alternative wins when the manor rate is closed and you still want rails, not a river road.',
+          'This alternative wins when Rosewood rates run high and you still want rails, not a river road.',
         ],
       },
     ],
@@ -1705,7 +1705,7 @@ export function applyResortLivingHub(page: Page): Page {
             lead: 'Direct BTS Skytrain bridges for travellers prioritizing central dining, embassies, and quick Airport Rail Link hops.',
             bullets: [
               'Skytrain hotels here trade a river view for BTS Ploenchit at the door.',
-              'Ratchathewi is the cheaper ARL-and-BTS pocket one hop from Siam if the manor rate is closed.',
+              'Ratchathewi is the cheaper ARL-and-BTS pocket one hop from Siam if Phloen Chit rates run high.',
             ],
           },
         ],
