@@ -18,12 +18,12 @@ export const WAVE23_A: Page[] = [
     description:
       'Three Bangkok days put palace tickets first, then Yaowarat and Banthat Thong after dark, and close with one Sukhumvit rooftop. Built for a 72-hour stopover beside a BTS exit.',
     lede:
-      'Land at BKK or DMK with three nights and eat before you bar-crawl. The loop is Rattanakosin in the morning, two market nights, and Octave at Soi 57 if dress code still holds.',
+      "Three days of Bangkok's best eating: temples and river ferries in the morning, Yaowarat street food and night markets after dark, and one rooftop bar to finish. Sleep near a BTS station on Sukhumvit or around Siam so every stop is a short ride.",
     facts: [
       ['Day 1 tickets', 'Palace 500 THB, Wat Pho 300 THB, Wat Arun 200 THB'],
       ['BTS', '2026 tap 17 to 62 THB; sleep Sukhumvit or Siam'],
       ['Markets', 'Chatuchak Sat-Sun; Or Tor Kor daily; Yaowarat after 18:00'],
-      ['Roof', 'Octave at Soi 57, BTS Thong Lo Exit 3'],
+      ['Roof', 'Octave at Soi 57, BTS Thong Lo. Smart casual, no flip-flops.'],
     ],
     chips: ['72-hour food', 'One rooftop', 'BTS hotel'],
     photo: '/photos/yaowarat.jpg',
