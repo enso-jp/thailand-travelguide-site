@@ -6,6 +6,7 @@ import AffRow from './AffRow.astro';
 import FaqList from './FaqList.astro';
 import SisterNetwork from './SisterNetwork.astro';
 import SisterRoutes from './SisterRoutes.astro';
+import { flightKeysInPage } from '../lib/sister-network';
 import { getPage, type Page } from '../lib/content';
 import { chipHref, formatInline } from '../lib/inline';
 import { pageHref, routePath } from '../lib/site';
@@ -39,6 +40,7 @@ const affiliates = bag.takeBatch(
   (item) => `${page.path} ${item.title} ${item.kicker} ${item.body}`,
 );
 const tabs = page.tabs;
+const pageFlightKeys = flightKeysInPage(page);
 const ROUTE_STAYS: Record<string, string[]> = {
   'phuket-to-krabi-phi-phi': ['koh-phi-phi', 'krabi'],
 };
@@ -343,8 +345,8 @@ const bookingTourCta = klookFallbackCta(page.bookingCta?.tourHref);
     )
   }
 
-  <SisterNetwork path={page.path} />
-  {showSisterRoutes && <SisterRoutes path={page.path} />}
+  <SisterNetwork path={page.path} exclude={pageFlightKeys} max={showSisterRoutes ? 0 : 2} />
+  {showSisterRoutes && <SisterRoutes path={page.path} exclude={pageFlightKeys} />}
 
   {
     page.path === '/about' && (

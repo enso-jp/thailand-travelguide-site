@@ -103,7 +103,11 @@ export const wave22Pages: Page[] = [
       { title: "Old City stays", href: "/bangkok/old-city-rattanakosin", photo: "/photos/old-city.jpg" },
       { title: "Getting around", href: "/bangkok/getting-around", photo: "/photos/bts.jpg" },
     ],
-    affiliates: [],
+    // Same links as the best-areas cards; PageView hides repeats, so no second hotel and Klook pair renders.
+    affiliates: [
+      stay("Sukhumvit hotels", "First trip", "Hotels near BTS Nana to Phrom Phong.", stayAreaLink('sukhumvit'), "/photos/sukhumvit.jpg"),
+      stay("Riverside hotels", "Hotel piers", "Hotels on the Chao Phraya with their own docks.", stayAreaLink('riverside'), "/photos/riverside.jpg"),
+    ],
     faqs: [
       { q: "Sukhumvit or riverside for two nights?", a: "Sukhumvit if you want dinner and the BTS. Riverside if you want boats and a quieter evening. Do not split one night each." },
       { q: "Is the Old City a good first hotel?", a: "Only if temples are the whole stay. Evening food thins after 21:00. Most first-timers sleep on Sukhumvit and Grab in at 07:15." },

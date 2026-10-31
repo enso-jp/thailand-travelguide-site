@@ -1,20 +1,22 @@
 ---
-import { sisterSectionForPath, allowsBkkDadFlight, allowsVietnamFlights, thaiDomesticFlightsForPath } from '../lib/sister-network';
+import { sisterSectionForPath, allowsBkkDadFlight, allowsVietnamFlights, thaiDomesticFlightsForPath, trimFlights } from '../lib/sister-network';
 import FlightCta from './FlightCta.astro';
 
 interface Props {
   path: string;
+  exclude?: string[];
+  max?: number;
 }
 
-const { path } = Astro.props;
+const { path, exclude = [], max = 2 } = Astro.props;
 const rawSection = sisterSectionForPath(path);
 const section = rawSection && {
   ...rawSection,
   flights: !rawSection.flights?.length
     ? []
     : allowsVietnamFlights(path)
-      ? rawSection.flights.filter((fl) => fl.toCode !== 'DAD' || allowsBkkDadFlight(path))
-      : thaiDomesticFlightsForPath(path),
+      ? rawSection.flights.filter((fl) => fl.toCode !== 'DAD' || allowsBkkDadFlight(path)).slice(0, max)
+      : trimFlights(thaiDomesticFlightsForPath(path), exclude, max),
 };
 ---
 

@@ -6,6 +6,7 @@ import FaqList from './FaqList.astro';
 import Photo from './Photo.astro';
 import ThailandMap from './ThailandMap.astro';
 import SisterNetwork from './SisterNetwork.astro';
+import { flightKeysInPage } from '../lib/sister-network';
 import TripSearch from './TripSearch.astro';
 import type { Page } from '../lib/content';
 import { chipHref, formatInline } from '../lib/inline';
@@ -28,6 +29,7 @@ const attractions = bag.takeBatch(attractionsFor(page.path), (row) => `${page.pa
 const portraits = bag.takeBatch(page.portraits || [], (item) => `${page.path} ${item.title} ${item.href}`);
 const affiliates = bag.takeBatch(page.affiliates || [], (item) => `${page.path} ${item.title} ${item.kicker} ${item.body}`);
 const city = stayCityFromPath(page.path);
+const hasKlookInStay = affiliates.some((a) => /klook/.test(a.href));
 const region = (meta?.region || regionForPath(page.path)) as 'central' | 'north' | 'andaman' | 'gulf' | 'east';
 const stayHref = page.bookingCta?.stayHref || stayLink(city);
 const tourHref = page.bookingCta?.tourHref || klookTours(`${page.title} tours`);
@@ -211,8 +213,6 @@ const tabs = [
         }
       </section>
 
-      <SisterNetwork path={page.path} />
-
       {
         page.faqs.length > 0 && (
           <section class="place-section" id="questions">
@@ -221,19 +221,13 @@ const tabs = [
           </section>
         )
       }
+
+      <SisterNetwork path={page.path} max={1} exclude={flightKeysInPage(page)} />
     </div>
 
     <aside class="rail">
       <div class="rail-booking">
-        <TripSearch variant="destination" city={city} placeName={page.title} />
-        <a class="promo-box" href={stayHref} rel="sponsored noopener" target="_blank">
-          <strong>Trip.com hotels</strong>
-          <span>Compare {page.title} rooms and free-cancellation rates.</span>
-        </a>
-        <a class="promo-box" href={tourHref} rel="sponsored noopener" target="_blank">
-          <strong>{tourCta ? tourCta.label : 'Klook tours'}</strong>
-          <span>{tourCta ? tourCta.note : 'Boats, tickets, and transfers for this stop.'}</span>
-        </a>
+        <TripSearch variant="destination" city={city} placeName={page.title} skipTours={hasKlookInStay} />
       </div>
       <div class="panel">
         <p class="explore-kicker">Explore</p>

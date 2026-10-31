@@ -175,11 +175,11 @@ const foodTourCta = klookFallbackCta(foodTourHref);
 
     <aside class="rail">
       <div class="rail-booking">
-        <TripSearch variant="food" city={city} placeName={page.title} />
-        <a class="promo-box" href={foodTourHref} rel="sponsored noopener" target="_blank">
+        <TripSearch variant="food" city={city} placeName={page.title} skipTours={true} />
+        {!affiliates.some((a) => a.href === foodTourHref) && <a class="promo-box" href={foodTourHref} rel="sponsored noopener" target="_blank">
           <strong>{foodTourCta ? foodTourCta.label : 'Klook food tours'}</strong>
           <span>{foodTourCta ? foodTourCta.note : 'Book a walk only if the group will not split on the MRT.'}</span>
-        </a>
+        </a>}
       </div>
     </aside>
   </div>

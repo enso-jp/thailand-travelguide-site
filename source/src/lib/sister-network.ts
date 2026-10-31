@@ -674,6 +674,8 @@ function domesticCta(key: string): SisterFlightCta | null {
 function domesticKeysForPath(clean: string): string[] {
   const has = (re: RegExp) => re.test(clean);
   if (has(/^\/get-there\/bangkok-to-chiang-mai/)) return ['BKK-CNX', 'CNX-HKT'];
+  if (has(/^\/get-there\/phuket-to-krabi/)) return ['BKK-HKT', 'BKK-KBV'];
+  if (has(/^\/get-there\/chiang-mai-to-pai/)) return ['BKK-CNX'];
   if (has(/^\/get-there\/bangkok-to-chiang-rai/)) return ['BKK-CEI', 'BKK-CNX'];
   if (has(/^\/get-there\/bangkok-to-phuket/)) return ['BKK-HKT', 'HKT-USM'];
   if (has(/^\/get-there\/bangkok-to-krabi/)) return ['BKK-KBV', 'BKK-HKT'];
@@ -685,7 +687,8 @@ function domesticKeysForPath(clean: string): string[] {
   if (has(/^\/(koh-samui|koh-phangan|koh-tao)(\/|$)/)) return ['BKK-USM', 'BKK-URT'];
   if (has(/^\/itineraries\/.*(gulf|samui|phangan|tao)/)) return ['BKK-USM', 'BKK-URT'];
   if (has(/^\/itineraries\/.*(phuket|krabi|phi-phi|andaman)/)) return ['BKK-HKT', 'BKK-KBV'];
-  if (has(/^\/itineraries\/.*(chiang|north)/)) return ['BKK-CNX', 'BKK-CEI'];
+  if (has(/^\/itineraries\/.*(chiang-rai|rai-pai)/)) return ['BKK-CEI', 'BKK-CNX'];
+  if (has(/^\/itineraries\/.*(chiang|north)/)) return ['BKK-CNX'];
   return ['BKK-CNX', 'BKK-HKT', 'BKK-USM'];
 }
 
@@ -704,4 +707,29 @@ export function thaiDomesticFlightsForPath(path: string): SisterFlightCta[] {
 export function allowsVietnamFlights(path: string): boolean {
   const clean = path.replace(/\/$/, '') || '/';
   return clean === '/' || TH_VN_ITINERARY.test(clean);
+}
+
+/** Route key like BKK-CNX from a Trip.com flight URL (Don Mueang counts as Bangkok). */
+export function flightRouteKey(href: string): string | null {
+  const m = /tickets-([a-z]{3})-([a-z]{3})/i.exec(href);
+  if (!m) return null;
+  const norm = (c: string) => (c.toUpperCase() === 'DMK' ? 'BKK' : c.toUpperCase());
+  return `${norm(m[1])}-${norm(m[2])}`;
+}
+
+/** Route keys of every flight link already in a page's own content, so the flight block never repeats one. */
+export function flightKeysInPage(page: unknown): string[] {
+  const text = JSON.stringify(page) || '';
+  const keys = new Set<string>();
+  for (const m of text.matchAll(/https:\/\/www\.trip\.com\/flights\/[^"\s]*/g)) {
+    const k = flightRouteKey(m[0]);
+    if (k) keys.add(k);
+  }
+  return [...keys];
+}
+
+/** Final flight list for a block: no repeats of page links, capped. */
+export function trimFlights(flights: SisterFlightCta[], exclude: string[] = [], max = 2): SisterFlightCta[] {
+  const skip = new Set(exclude);
+  return flights.filter((f) => !skip.has(`${f.fromCode}-${f.toCode}`.replace(/^DMK/, 'BKK'))).slice(0, max);
 }
