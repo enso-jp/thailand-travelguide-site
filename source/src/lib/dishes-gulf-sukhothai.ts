@@ -574,7 +574,7 @@ export const SUKHOTHAI_DISHES: DishRecord[] = dishesForCity('sukhothai', [
     lede: 'Jok is rice porridge. It fits a 06:30 bowl beside the Old Sukhothai park gate before the bicycle.',
     taste: 'Rice porridge, pork, and fried garlic.',
     orderName: 'jok',
-    orderPhrase: 'Khor jok mu, khrap/kha.',
+    orderPhrase: 'Khor jok moo, khrap/kha.',
     orderNote: 'Dawn. The inner zone opens 06:30.',
     price: '40 to 60 THB',
     spice: 'Mild.',
