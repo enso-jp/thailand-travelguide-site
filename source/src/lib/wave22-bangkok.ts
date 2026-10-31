@@ -117,7 +117,7 @@ export const wave22Pages: Page[] = [
     path: "/bangkok/getting-around",
     title: "Getting around Bangkok",
     description: "Bangkok transit in 2026: BTS taps 17 to 62 THB, MRT one-stop hops, Airport Rail Link to Phaya Thai, and Chao Phraya boats from Saphan Taksin.",
-    lede: "Bangkok is known for the BTS and MRT, not tuk-tuk circuits, so use rail by day and Grab after midnight when the Skytrain stops. River boats suit the Old City and hotel piers, not a Thonglor dinner hop.",
+    lede: "**From Don Mueang, take the Red Line, not a taxi.** It runs from the terminal skywalk to Krung Thep Aphiwat in about 17 minutes for 33 THB, with no traffic. In town, use the BTS and MRT by day and Grab after midnight.",
     schema: 'TouristDestination',
     crumbs: [
       { name: 'Destinations', href: '/destinations' },
@@ -125,6 +125,8 @@ export const wave22Pages: Page[] = [
       { name: "Getting around", href: "/bangkok/getting-around" },
     ],
     facts: [
+      { label: "DMK Red Line", value: "33 THB, about 17 min to Krung Thep Aphiwat, 05:00 to midnight" },
+      { label: "DMK taxi", value: "Meter plus 50 THB airport fee plus tolls; rush hour can pass an hour" },
       { label: "BTS tap", value: "17 to 62 THB in 2026" },
       { label: "ARL", value: "About 30 minutes BKK to Phaya Thai" },
       { label: "River", value: "Orange-flag boat from Saphan Taksin" },
@@ -142,6 +144,18 @@ export const wave22Pages: Page[] = [
       "Chao Phraya orange-flag boats start at Saphan Taksin (BTS), and the Tha Tien crossing to Wat Arun is 5 THB. Grab replaces the train after midnight; Soi 11 to Thonglor is often 80 to 160 THB. Skip rented scooters on the frontage roads, and pair this page with [Grab and BTS](/plan/grab-and-bts) for app notes.",
     ],
     sections: [
+      {
+        id: "don-mueang",
+        lead: true,
+        title: "Don Mueang: Red Line or taxi",
+        bullets: [
+          "**Red Line wins** from about 05:00 to midnight: trains every 10 minutes at peaks, 15 minutes otherwise, on a raised track above the traffic.",
+          "**How:** follow Red Line signs from the terminal's second floor across the skywalk. Buy a token at the machine, or tap a contactless Visa or Mastercard.",
+          "**Onward:** change at Krung Thep Aphiwat to the MRT Blue Line at Bang Sue for Sukhumvit, Silom and Chinatown.",
+          "**Taxi wins** after midnight, with three bags, or for a group of four splitting the fare. Use the official queue or Grab, never a hall tout.",
+          "**Sources:** SRT Electrified Train fare table and Red Line timetable at srtet.co.th, checked 1 November 2026.",
+        ],
+      },
       {
         id: "modes",
         title: "Which mode for which hop",

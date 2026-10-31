@@ -1421,7 +1421,7 @@ const rawPages: Page[] = [
     path: "/chiang-mai",
     title: "Chiang Mai",
     description: "Chiang Mai first-trip guide: Old City wats, Nimman, the 70-minute flight or 12-hour sleeper from Bangkok, and the Pai van.",
-    lede: "Chiang Mai is the north base. Give it three nights. Sleep inside the moat for temples on foot. Sleep in Nimman for coffee and a later evening.",
+    lede: "**Chiang Mai or the islands?** Pick Chiang Mai from November to February for cool mornings, 300-plus temples, mountain day trips and cheaper rooms. Pick the islands only if beach time is the whole point. Give it three nights.",
     schema: "City",
     crumbs: [
       {
@@ -1434,6 +1434,10 @@ const rawPages: Page[] = [
       }
     ],
     facts: [
+      {
+        "label": "Best months",
+        "value": "November to February; skip the March to April smoke season"
+      },
       {
         "label": "Get there",
         "value": "CNX flight about 70 minutes, SRT 9/10 sleeper about 12 hours"
@@ -2671,7 +2675,7 @@ const rawPages: Page[] = [
     paragraphs: [
       "Use a tap-in Skytrain, not a cash taxi from the airport. Buy a Rabbit card only if you will ride BTS for many days. A 2026 contactless tap is 17 to 62 THB. A Visa or Mastercard tap is enough for a first week on most gates. Keep a coin stash for the odd older gate.",
       "MRT Blue intersects BTS at Si Lom/Sala Daeng, Sukhumvit/Asok, and Chatuchak. That is the useful map. You do not need the whole system.",
-      "Don Mueang has no ARL. Use the A1 bus links, a booked car, or Grab. Suvarnabhumi has ARL and taxis. Book a Trip.com transfer if you land after 22:00 with three bags."
+      "Don Mueang has no ARL, but the SRT Red Line runs from the terminal skywalk to Krung Thep Aphiwat in about 17 minutes for 33 THB. Late at night, use the A1 bus, a booked car, or Grab. Suvarnabhumi has ARL and taxis. Book a Trip.com transfer if you land after 22:00 with three bags."
     ],
     affiliates: [
       {title: "BKK airport car", kicker: "Trip.com", body: "Suvarnabhumi to the first hotel.", href: transferLink('BKK'), cta: "Book transfer", photo: "/photos/bangkok.jpg", partner: "transfer"},
@@ -2699,7 +2703,7 @@ const rawPages: Page[] = [
     path: "/get-there/bangkok-to-chiang-mai",
     title: "Bangkok to Chiang Mai: 70-min flight or 12-hr sleeper",
     description: "Bangkok to Chiang Mai: fly about 70 minutes (often 1,200-4,500 THB / $35-130 in 2026) or take the 12-hour SRT 9/10 sleeper (800-1,400 THB / $23-40).",
-    lede: "Fly if the day matters. Take SRT trains 9 and 10 if you want the overnight ride from Krung Thep Aphiwat.",
+    lede: "**Verdict: take the sleeper if you have a night to spare.** Train 9 leaves Krung Thep Aphiwat at 18:40 and reaches Chiang Mai at 07:15, and the berth replaces a hotel night. Fly only when the day matters.",
     schema: "Article",
     crumbs: [
       {
@@ -2713,21 +2717,21 @@ const rawPages: Page[] = [
     ],
     facts: [
       {
+        "label": "Sleeper",
+        "value": "Train 9: Krung Thep Aphiwat 18:40, Chiang Mai 07:15"
+      },
+      {
+        "label": "Berth price",
+        "value": "Second-class sleeper 938 THB upper, 1,038 THB lower"
+      },
+      {
         "label": "Flight",
-        "value": "About 70 minutes, BKK or DMK to CNX. Often 1,200-4,500 THB ($35-130) in 2026"
-      },
-      {
-        "label": "Train",
-        "value": "SRT 9/10 sleeper, about 12 hours. Lower berth often 800-1,400 THB ($23-40)"
-      },
-      {
-        "label": "Who should train",
-        "value": "Anyone who wants the ride, not a 6:00 meeting"
+        "value": "About 70 minutes in the air, about 4 hours door to door"
       }
     ],
     photo: "/photos/chiang-mai.jpg",
     paragraphs: [
-      "This is the usual Bangkok-to-north choice: a short flight or the useful Thai sleeper. The return is the same mix. Train 10 is the southbound sleeper. Confirm today's numbers on SRT the week you ride. 2026 published seats often sit at 1,200 to 4,500 THB ($35 to $130) on the air hop and 800 to 1,400 THB ($23 to $40) for a lower berth."
+      "Train 10 is the southbound return. Book berths on the SRT D-Ticket site, dticket.railway.co.th; lower berths go first before weekends and holidays. **Sources:** State Railway of Thailand timetable and D-Ticket fares."
     ],
     sections: [
       {
@@ -2765,6 +2769,7 @@ const rawPages: Page[] = [
       },
       {
         "id": "verdict",
+        "lead": true,
         "title": "Sleeper or flight: the verdict",
         "bullets": [
           "**Verdict:** take SRT train 9 if you have a night to spare. It saves a hotel night and the ride north is the trip.",

@@ -35,8 +35,9 @@ export const wave13Copy: Record<string, Partial<Page>> = {
   },
   '/chiang-mai': {
     paragraphs: [
+      "- **Culture:** wats inside a square moat, two weekend walking streets and a cooking class every morning. - **Nature:** Doi Inthanon, Thailand's highest peak, and ethical elephant sanctuaries in the hills. - **Cost:** city hotels and food usually run below island prices in peak season. - **Islands win** if you want swimming every day; the Andaman side is calm November to April.",
       'Chiang Mai is known for Lanna wats inside a square moat and a cafe strip west of it. Give it three nights. Sleep inside the moat for temples on foot. Sleep in Nimman for coffee and a later evening. The Old City still closes temple doors for lunch. Nimmanhaemin, past Suan Dok, is where you eat late.',
-      'Fly CNX in about 70 minutes from Bangkok, or take SRT trains 9 and 10 from Krung Thep Aphiwat. The sleeper is about 12 hours. A 2026 upper berth is often 800 to 1,200 THB. Fly if you land at noon and want dinner in the Old City. Take the train if you want the ride.',
+      'Fly CNX in about 70 minutes from Bangkok, or take SRT trains 9 and 10 from Krung Thep Aphiwat. The sleeper is about 12 hours. A second-class upper berth is 938 THB, lower 1,038 THB. Fly if you land at noon and want dinner in the Old City. Take the train if you want the ride.',
       'Sunday Walking Street fills Ratchadamnoen. Saturday is Wua Lai, south of the moat. Temple booths at Wat Phra Singh and Chedi Luang often ask 20 to 50 THB in cash. Wat Chiang Man is generally free. Doi Suthep is 30 THB at the wat plus a songthaew, often 40 THB from the zoo or 60 THB from Chang Phuak Gate. Doi Inthanon is 300 THB for foreigners and a full day. Smoke season from late February to April can sit in the valley. Check the air before you lock March.',
       'Open [Old City](/chiang-mai/old-city) and [Nimmanhaemin](/chiang-mai/nimmanhaemin) before you book the room. Open [Doi Inthanon](/chiang-mai/doi-inthanon) only if you want the mountain day. Chiang Rai is a side trip, not a must on a first week.',
     ],
