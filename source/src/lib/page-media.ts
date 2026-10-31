@@ -21,7 +21,7 @@ export type HomeTile = { href: string; label: string; photo: string };
 export type PlanTool = { href: string; title: string; text: string; icon: string };
 
 export type HomeMedia = {
-  lead: { href: string; photo: string; kicker: string; title: string; when: string };
+  lead: { href: string; photo: string; kicker: string; title: string; sub?: string; when: string };
   sheet: HomeStory[];
   collage: Array<HomeStory & { spot: string }>;
   regions: Array<Region & { photos: Array<{ name: string; href: string; photo: string }>; swipePhoto: string }>;
@@ -37,8 +37,9 @@ export function buildHomeMedia(reserved: string[] = []): HomeMedia {
   const lead = {
     href: '/bangkok',
     photo: bag.take('/photos/bangkok.jpg'),
-    kicker: 'Land in the capital',
-    title: 'Thailand, planned from the ground',
+    kicker: 'Thailand travel guide, checked on the ground',
+    title: 'Temples in Bangkok, beaches on two coasts, and mountains around Chiang Mai',
+    sub: 'Start in Bangkok, then choose the Andaman side (Phuket, Krabi) from November to April or the Gulf side (Samui) from January to September. We give you the routes, honest prices and where to sleep.',
     when: '12 min read',
   };
   const sheet: HomeStory[] = [

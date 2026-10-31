@@ -21,6 +21,7 @@ function dots(n: number): string {
       <span class="home-hero-copy">
         <small><i class="hero-mark" aria-hidden="true"></i>{home.lead.kicker}</small>
         <h1>{home.lead.title}</h1>
+        {home.lead.sub && <span class="home-hero-sub">{home.lead.sub}</span>}
         <em><Icon name="clock" />{home.lead.when}</em>
         <span class="pill pill-light">See the guide</span>
       </span>
