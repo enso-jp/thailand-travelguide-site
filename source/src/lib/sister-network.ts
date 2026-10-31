@@ -690,8 +690,13 @@ function domesticKeysForPath(clean: string): string[] {
 }
 
 /** Thai domestic flight cards for a Thailand page, from generated links only. */
+// Topic pages (food, culture, nightlife and similar) get no flight block: no domestic route fits them.
+const TOPIC_PAGE = /(food|eat|dish|restaurant|nightlife|bars?\b|rooftop|temple|\bwat-|culture|history|heritage|market|shopping|mall|massage|spa\b|cafe|coffee|museum|festival|songkran|krathong|etiquette|khlong|canal|chinatown|lumphini|iconsiam|chatuchak|muay|cooking|dining)/;
+
 export function thaiDomesticFlightsForPath(path: string): SisterFlightCta[] {
   const clean = path.replace(/\/$/, '') || '/';
+  const routePage = clean.startsWith('/get-there/');
+  if (!routePage && TOPIC_PAGE.test(clean)) return [];
   return domesticKeysForPath(clean).map(domesticCta).filter((f): f is SisterFlightCta => f !== null);
 }
 

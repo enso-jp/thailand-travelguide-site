@@ -78,7 +78,7 @@ export const wave22Pages: Page[] = [
           stay("Sukhumvit hotels", "First trip", "Hotels near BTS Nana to Phrom Phong.", stayAreaLink('sukhumvit'), "/photos/sukhumvit.jpg"),
           stay("Siam hotels", "Malls and trains", "Hotels around the Siam interchange.", stayAreaLink('siam'), "/photos/siam.jpg"),
           stay("Riverside hotels", "Hotel piers", "Hotels on the Chao Phraya with their own docks.", stayAreaLink('riverside'), "/photos/riverside.jpg"),
-          stay("Silom hotels", "Lumphini and night food", "Hotels between Silom and Sathorn.", stayAreaLink('silom'), "/photos/siam.jpg"),
+          stay("Silom hotels", "Lumphini and night food", "Hotels between Silom and Sathorn.", stayAreaLink('silom'), "/photos/silom-and-sathorn.jpg"),
           stay("Khao San hotels", "Budget", "Guesthouses and hotels around Khao San Road.", stayAreaLink('khao-san'), "/photos/old-city.jpg"),
         ],
       },
