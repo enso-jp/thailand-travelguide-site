@@ -43,4 +43,4 @@ stayCity: bangkok
 
 - **MRT Blue Line and BTS:** you pay normal fares there. Changing to the Blue Line at Bang Sue, next to Krung Thep Aphiwat, starts a new fare.
 - **Airport Rail Link:** also outside the cap. It has taken contactless cards at all 8 stations since 8 November 2025, with fares from **15 to 45 THB**.
-- **Rabbit cards:** they do not qualify for either cap. BTS and MRT card tips are on [Grab, BTS and MRT](/plan/grab-and-bts).
+- **Rabbit cards:** they do not qualify for either cap. BTS and MRT card tips are in our guide to [Grab, BTS and MRT](/plan/grab-and-bts).
