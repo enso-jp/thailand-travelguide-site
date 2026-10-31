@@ -1542,11 +1542,13 @@ export function applyResortLivingHub(page: Page): Page {
       {
         id: 'transfers',
         title: 'Airport hops by coast',
-        paragraphs: ['Rank below is a 2026 nightly THB band, not a review score.'],
+        paragraphs: ['Private car or flight time from the nearest airport. Ranks in the flagship table follow coast order, not price or review score.'],
         bullets: [
           '**Phuket:** West-coast villas are 25 to 75 minutes by private car from HKT.',
           '**Koh Samui:** Headlands are 15 to 45 minutes from USM.',
           '**Koh Kood:** Eco-villas need a dedicated one-hour flight to Trat or a private island plane.',
+          '**Krabi:** Tubkaek resorts are about 30 to 45 minutes by car from KBV; Railay and Phra Nang stays add a longtail boat from Ao Nang.',
+          '**Bangkok:** Riverside hotels on Charoenkrung are 45 to 75 minutes by car from BKK, depending on traffic.',
         ],
       },
       {
