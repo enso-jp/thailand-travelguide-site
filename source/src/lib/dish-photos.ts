@@ -1,3 +1,4 @@
+import { dishHero } from './dish-heroes';
 import { CITY_FOOD_ROWS, SIGNATURE_DISHES, type CityFoodRow, type FoodDish } from './food-catalog';
 import { BANGKOK_DISHES } from './dishes-bangkok';
 import { CHIANG_MAI_DISHES } from './dishes-chiang-mai';
@@ -108,7 +109,7 @@ export const DISH_PHOTO_KEYS = new Set([
     ...UDON_THANI_B6,
     ...STANDALONE_DISHES,
   ]
-    .map((dish) => String(dish.photo || '').replace(/^\/photos\//, '').replace(/\.[^.]+$/, ''))
+    .map((dish) => String(dishHero(dish) || '').replace(/^\/photos\//, '').replace(/\.[^.]+$/, ''))
     .filter((key) => key.startsWith('dish-')),
 ]);
 

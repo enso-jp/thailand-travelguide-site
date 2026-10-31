@@ -14,7 +14,7 @@ export const HUA_HIN_DISHES: DishRecord[] = dishesForCity('hua-hin', [
     orderPhrase: 'Khor hoi thot, khrap/kha.',
     orderNote: 'Walk Soi 72. Sleep in town if this is dinner.',
     price: '50 to 120 THB',
-    spice: 'Varies by stall.',
+    spice: 'Mild. Chilli sauce for the oyster omelette sits on the side.',
     diet: 'Mixed stalls. Ask each cart.',
     spots: [
       {
@@ -333,7 +333,7 @@ export const PATTAYA_DISHES: DishRecord[] = dishesForCity('pattaya', [
     orderPhrase: 'Khor pla muek yang, thao rai, khrap/kha.',
     orderNote: 'Ask the number. Jomtien is cheaper for a sit-down fish.',
     price: '150 to 400 THB',
-    spice: 'Varies.',
+    spice: 'Mild squid. The green seafood dip is the hot part.',
     diet: 'Mixed stalls.',
     spots: [
       {

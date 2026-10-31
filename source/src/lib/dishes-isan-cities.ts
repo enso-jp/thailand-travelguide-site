@@ -523,7 +523,7 @@ export const NONG_KHAI_DISHES: DishRecord[] = dishesForCity('nong-khai', [
     orderPhrase: 'Khor sai krok, khrap/kha.',
     orderNote: 'Saturday late afternoon. Other nights are thinner.',
     price: '30 to 80 THB',
-    spice: 'Varies.',
+    spice: 'Mild. Fresh chilli and ginger come on the side.',
     diet: 'Mixed stalls.',
     spots: [
       {

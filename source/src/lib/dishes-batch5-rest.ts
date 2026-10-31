@@ -292,7 +292,7 @@ const phuket: Spec[] = [
     orderPhrase: 'Khor mu ping, khrap/kha.',
     orderNote: 'Walk. Do not plan to drive Thalang on Sunday evening.',
     price: '30 to 80 THB',
-    spice: 'Varies by stall.',
+    spice: 'Mild. Sweet garlic marinade, no chilli on the pork.',
     diet: 'Mixed stalls. Ask each cart.',
     spot: 'Lard Yai, Thalang Road',
     address: 'Thalang Rd, Talat Yai, Phuket 83000',

@@ -1,3 +1,4 @@
+import { dishHero } from './dish-heroes';
 import { BANGKOK_DISHES } from './dishes-bangkok';
 import { CHIANG_MAI_DISHES } from './dishes-chiang-mai';
 import { AYUTTHAYA_DISHES, CHIANG_RAI_DISHES } from './dishes-north-central';
@@ -210,7 +211,7 @@ function dishRows(dishes: DishRecord[]): CityFoodRow[] {
       title: dish.title,
       nameLocal: dish.nameLocal,
       href: dishPath(dish),
-      photo: dish.photo,
+      photo: dishHero(dish),
       kind: 'dish' as const,
       summary: `${dish.lede} **${spot.name}** is the named start. ${dish.price}.`,
       address: `${spot.name}, ${spot.address}`,

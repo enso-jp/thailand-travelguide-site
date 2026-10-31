@@ -1,5 +1,6 @@
 import { hotelSearchLink, klookTours, stayAreaLink, stayLink, type StayCity } from './partners';
 import type { Affiliate, Faq, Fact, Page } from './content';
+import { dishHero } from './dish-heroes';
 
 export type FoodSpot = {
   name: string;
@@ -717,7 +718,7 @@ export function dishToPage(dish: DishRecord, catalog: DishRecord[]): Page {
         ],
     facts: dish.facts,
     chips: [city, dish.price, dish.orderName],
-    photo: dish.photo,
+    photo: dishHero(dish),
     geo: meta.geo,
     parentPill: dish.standalone ? { name: 'Thai food', href: '/thai-food' } : { name: `${city} food`, href: hub },
     paragraphs: [dish.lede],

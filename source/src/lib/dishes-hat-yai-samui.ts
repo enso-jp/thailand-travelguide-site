@@ -428,7 +428,7 @@ export const KOH_SAMUI_DISHES: DishRecord[] = dishesForCity('koh-samui', [
     orderPhrase: 'Khor phat thai, khrap/kha.',
     orderNote: 'Sunday sessions sit on this coast. Confirm the night you go.',
     price: '60 to 150 THB',
-    spice: 'Varies by stall.',
+    spice: 'Mild. Chilli flakes are on the table to add.',
     diet: 'Mixed stalls. Ask each cart.',
     spots: [
       {
