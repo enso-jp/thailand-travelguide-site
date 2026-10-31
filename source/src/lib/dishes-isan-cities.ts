@@ -197,8 +197,8 @@ export const KHON_KAEN_DISHES: DishRecord[] = dishesForCity('khon-kaen', [
     taste: 'Grilled beef, toasted rice, mint, and lime.',
     orderName: 'nam tok nuea',
     extraFacts: [
-      { label: 'Meat', value: 'pork or beef' },
-      { label: 'Heat', value: 'hot, with toasted rice and chilli' },
+      { label: 'Meat', value: 'Beef here. Nam tok mu is the pork version' },
+      { label: 'Heat', value: 'Hot, with toasted rice and chili' },
     ],
     orderPhrase: 'Khor nam tok nuea, pet nit noi, khrap/kha.',
     orderNote: 'Share it. The bird is still the reason to drive.',

@@ -620,7 +620,7 @@ export const BANGKOK_DISHES: DishRecord[] = [
     facts: [
       { label: 'Thai', value: 'แกงเขียวหวาน · kaeng khiao wan' },
       { label: 'Price', value: '60 to 220 THB' },
-      { label: 'Heat', value: "medium to hot. Say 'phet nit noi' for milder" },
+      { label: 'Heat', value: "Medium to hot. Say 'phet nit noi' for milder" },
       { label: 'Rice', value: 'Order jasmine on the side' },
     ],
     faqs: [
@@ -1785,7 +1785,7 @@ export const BANGKOK_DISHES: DishRecord[] = [
       { label: 'Thai', value: 'ปลาเผา · pla phao' },
       { label: 'Price', value: '200 to 400 THB a fish' },
       { label: 'Order', value: 'Share one' },
-      { label: 'Heat', value: 'none in the fish, the green dipping sauce is hot' },
+      { label: 'Heat', value: 'None in the fish. The green dipping sauce is hot' },
     ],
     faqs: [
       { q: 'Which fish?', a: 'Seabass (pla kapong) is the usual. Ask what is fresh.' },
