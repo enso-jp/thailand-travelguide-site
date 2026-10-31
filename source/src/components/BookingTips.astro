@@ -1,0 +1,14 @@
+---
+import { bookingTipsFor } from '../lib/booking-tips';
+interface Props { path: string }
+const tips = bookingTipsFor(Astro.props.path);
+---
+{tips.length > 0 && (
+  <div class="booking-tips">
+    {tips.map((t) => <p class="booking-tip">{t}</p>)}
+  </div>
+)}
+<style>
+  .booking-tips { margin: 0.75rem 0 0; display: grid; gap: 0.4rem; }
+  .booking-tip { margin: 0; font-size: 0.92rem; line-height: 1.5; color: var(--ink-soft, #555); }
+</style>

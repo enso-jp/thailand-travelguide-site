@@ -4,6 +4,7 @@ import { klookFallbackCta } from '../lib/partners';
 import FactBar from './FactBar.astro';
 import PortraitRail from './PortraitRail.astro';
 import AffRow from './AffRow.astro';
+import BookingTips from './BookingTips.astro';
 import FaqList from './FaqList.astro';
 import SisterNetwork from './SisterNetwork.astro';
 import SisterRoutes from './SisterRoutes.astro';
@@ -80,6 +81,8 @@ function guideGridHeading(path: string): string {
   return 'Guides on this hub';
 }
 const bookingTourCta = klookFallbackCta(page.bookingCta?.tourHref);
+const tipSectionId = sections.find((s) => s.affiliates && s.affiliates.length > 0)?.id;
+const tipsPlaced = Boolean(tipSectionId);
 ---
 
 <article class="section wrap">
@@ -211,6 +214,7 @@ const bookingTourCta = klookFallbackCta(page.bookingCta?.tourHref);
       {section.affiliates && section.affiliates.length > 0 && (
         <AffRow items={section.affiliates} />
       )}
+      {section.id === tipSectionId && <BookingTips path={page.path} />}
     </section>
   ))}
 
@@ -322,6 +326,7 @@ const bookingTourCta = klookFallbackCta(page.bookingCta?.tourHref);
         {section.affiliates && section.affiliates.length > 0 && (
           <AffRow items={section.affiliates} />
         )}
+        {section.id === tipSectionId && <BookingTips path={page.path} />}
       </section>
     ))
   }
@@ -340,6 +345,7 @@ const bookingTourCta = klookFallbackCta(page.bookingCta?.tourHref);
       <section class="place-section" id="book">
         <h2>Book</h2>
         <AffRow items={affiliates} />
+        {!tipsPlaced && <BookingTips path={page.path} />}
       </section>
     )
   }

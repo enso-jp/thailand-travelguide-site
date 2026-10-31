@@ -9,6 +9,7 @@ import ThailandMap from './ThailandMap.astro';
 import SisterNetwork from './SisterNetwork.astro';
 import { flightKeysInPage } from '../lib/sister-network';
 import TripSearch from './TripSearch.astro';
+import BookingTips from './BookingTips.astro';
 import type { Page } from '../lib/content';
 import { chipHref, formatInline } from '../lib/inline';
 import { UniquePhotos } from '../lib/photos';
@@ -245,6 +246,7 @@ const tabs = [
     <aside class="rail">
       <div class="rail-booking">
         <TripSearch variant="destination" city={city} placeName={page.title} skipTours={hasKlookInStay} skipHrefs={railSkip} />
+        <BookingTips path={page.path} />
       </div>
       <div class="panel">
         <p class="explore-kicker">Explore</p>
