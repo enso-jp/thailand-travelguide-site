@@ -2221,6 +2221,13 @@ export const RESORT_FLAGSHIPS = [
   '/resort-living/capella-bangkok',
 ];
 
+// Live resort pages missing from the coast tables; listed so the hub links them.
+const RESORT_HUB_EXTRAS: [string, string, string, string][] = [
+  ['Phuket', 'Avista Hideaway Phuket (MGallery)', '/resort-living/avista-hideaway-phuket', 'West-coast hills'],
+  ['Bangkok river and skytrain', 'VIE Hotel Bangkok (MGallery)', '/resort-living/vie-hotel-bangkok', 'Ratchathewi BTS'],
+  ['Chiang Mai valley', 'Veranda High Chiang Mai (MGallery)', '/resort-living/veranda-high-chiang-mai', 'Hill above the valley'],
+];
+
 function curateResortHub(page: Page): Page {
   const all = page.sections || [];
   const coasts = all.filter((s) => s.table?.rows?.length);
@@ -2243,6 +2250,9 @@ function curateResortHub(page: Page): Page {
   }
   for (const sec of coasts) {
     const rest = sec.table!.rows.filter((r) => !RESORT_FLAGSHIPS.includes(linkOf(r[1]) || ''));
+    for (const [coast, label, href, zone] of RESORT_HUB_EXTRAS) {
+      if (coastName(sec.title) === coast && !rest.some((r) => linkOf(r[1]) === href)) rest.push(['', `[${label}](${href})`, zone, '']);
+    }
     if (rest.length) more.push(`**${coastName(sec.title)}:** ${rest.map((r) => `${r[1]} (${r[2]})`).join(', ')}`);
   }
   return {

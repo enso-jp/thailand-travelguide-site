@@ -22,10 +22,10 @@ export function reviewDateFor(path: string): string | undefined {
   return DATES.get(norm(path));
 }
 
-/** "Checked on the ground: 31 Oct 2026" for a logged path, otherwise undefined. */
+/** "Fact-checked: 31 Oct 2026" for a logged path, otherwise undefined. */
 export function checkedLabel(path: string): string | undefined {
   const iso = reviewDateFor(path);
   if (!iso) return undefined;
   const [y, mo, d] = iso.split('-').map(Number);
-  return `Checked on the ground: ${d} ${MONTHS[mo - 1]} ${y}`;
+  return `Fact-checked: ${d} ${MONTHS[mo - 1]} ${y}`;
 }
