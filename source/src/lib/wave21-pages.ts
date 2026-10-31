@@ -458,7 +458,7 @@ export const wave21Pages: Page[] = [
     geo: { lat: 18.788, lon: 98.985, containedIn: 'Chiang Mai' },
     paragraphs: [
       'Chiang Mai cooking is a lunch city. Khao soi rooms open late morning and empty by 15:00. A 2026 bowl is 50 to 80 THB. Warorot (Kad Luang) is the morning market for sai ua and fruit. Huen Phen still does a Lanna table at lunch. Sunday walking street is snacks on Ratchadamnoen, not a second dinner plan after a late arrival.',
-      'Nimman is pour-over at 80 to 150 THB, not khao soi. Maya basement is air-con. For the bowl circuit use [khao soi and markets](/thai-food/chiang-mai-khao-soi-and-markets). For the broader north use [Northern Lanna](/thai-food/northern-lanna).',
+      'Nimman is pour-over at 80 to 150 THB, not only khao soi. Neighbourhood plates: [Nimman](/thai-food/chiang-mai-nimman-food), [Old City](/thai-food/chiang-mai-old-city-food), [Chang Phueak](/thai-food/chiang-mai-chang-phueak-food), [Santitham](/thai-food/chiang-mai-santitham-food), and [Wualai](/thai-food/chiang-mai-wualai-food). For the bowl circuit use [khao soi and markets](/thai-food/chiang-mai-khao-soi-and-markets).',
     ],
     portraits: [
       { title: 'Khao soi circuit', href: '/thai-food/chiang-mai-khao-soi-and-markets', photo: '/photos/night-market-cm.jpg' },
@@ -504,7 +504,7 @@ export const wave21Pages: Page[] = [
     geo: { lat: 7.8804, lon: 98.3923, containedIn: 'Phuket' },
     paragraphs: [
       'Eat Phuket in Town. Hokkien mee, moo hong, and oh aew live on Thalang, Dibuk, and Krabi Roads. A 2026 noodle plate is 60 to 90 THB. Mansion rooms such as The Charm take a phone booking for a Baba table. Sunday walking street on Thalang is snacks, not a full dinner.',
-      'Patong and Rawai grills are a different bill. Confirm seafood by weight. Named dish pages start at Kopitiam mee Hokkien, Raya moo hong, and Tu Kab Khao oh aew. For the shophouse map use [Phuket Old Town](/thai-food/phuket-old-town-hokkien-and-peranakan-food). For sour curry and the wider south use [South and Baba-Nyonya](/thai-food/southern-and-baba-nyonya).',
+      'Patong and Rawai grills are a different bill. Ask the seafood weight price. [Rawai market](/thai-food/phuket--rawai-seafood-market), [Kata and Karon](/thai-food/phuket--kata-karon-grills), and [One Chun](/thai-food/phuket--one-chun) are the new maps. For the shophouse walk use [Phuket Old Town](/thai-food/phuket-old-town-hokkien-and-peranakan-food).',
     ],
     portraits: [
       { title: 'Old Town food', href: '/thai-food/phuket-old-town-hokkien-and-peranakan-food', photo: '/photos/phuket.jpg' },

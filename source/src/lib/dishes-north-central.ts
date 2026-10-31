@@ -382,6 +382,7 @@ export const AYUTTHAYA_DISHES: DishRecord[] = dishesForCity('ayutthaya', [
     slug: 'chao-phrom-jok',
     title: 'Chao Phrom Jok',
     nameLocal: 'โจ๊กเจ้าพรหม',
+    orderLocal: 'โจ๊ก',
     hook: 'Morning Market Rice Porridge',
     lede: 'Chao Phrom jok is morning rice porridge at the island market. It fits a 07:00 bowl before the paid wats, not a dinner plan.',
     taste: 'Rice porridge, pork, and fried dough. Ginger on the side.',

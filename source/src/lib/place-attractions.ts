@@ -158,7 +158,7 @@ export const PLACE_META: Record<
     nameLocal: 'เขาสก',
     region: 'andaman',
     stayCity: 'surat-thani',
-    foodHref: '/thai-food/krabi',
+    foodHref: '/thai-food/khao-sok',
   },
   '/chiang-rai': {
     nameLocal: 'เชียงราย',
@@ -296,7 +296,7 @@ export const PLACE_META: Record<
     nameLocal: 'เกาะช้าง',
     region: 'east',
     stayCity: 'koh-chang',
-    foodHref: '/thai-food/isan',
+    foodHref: '/thai-food/koh-chang',
   },
   '/koh-kood': {
     nameLocal: 'เกาะกูด',
@@ -308,7 +308,7 @@ export const PLACE_META: Record<
     nameLocal: 'เขาใหญ่',
     region: 'east',
     stayCity: 'bangkok',
-    foodHref: '/thai-food/isan',
+    foodHref: '/thai-food/khao-yai',
   },
 };
 

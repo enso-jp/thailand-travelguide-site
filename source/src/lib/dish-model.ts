@@ -1,4 +1,4 @@
-import { klookTours, stayAreaLink, stayLink, type StayCity } from './partners';
+import { hotelSearchLink, klookTours, stayAreaLink, stayLink, type StayCity } from './partners';
 import type { Affiliate, Faq, Fact, Page } from './content';
 
 export type FoodSpot = {
@@ -33,13 +33,17 @@ export type DishCity =
   | 'koh-phangan'
   | 'koh-phi-phi'
   | 'koh-lipe'
-  | 'koh-kood';
+  | 'koh-kood'
+  | 'koh-chang'
+  | 'khao-sok'
+  | 'khao-yai';
 
 export type DishRecord = {
   city: DishCity;
   slug: string;
   title: string;
   nameLocal: string;
+  orderLocal?: string;
   hook: string;
   lede: string;
   description: string;
@@ -515,6 +519,63 @@ export const DISH_CITY_META: Record<
       { title: 'Dishes to order', href: '/thai-food/thai-dishes-to-order-first-trip', photo: '/photos/ari.jpg' },
     ],
   },
+  'koh-chang': {
+    label: 'Koh Chang',
+    hub: '/thai-food/koh-chang',
+    geo: { lat: 12.1036, lon: 102.3518, containedIn: 'Trat' },
+    stayTitle: 'Koh Chang stays',
+    stayKicker: 'White Sand or Klong Prao',
+    stayBody: 'Sleep on the west-coast beach where dinner actually is. The pier songthaew thins out after dark.',
+    stayHref: () => stayLink('koh-chang'),
+    stayPhoto: '/photos/white-sand-chang.jpg',
+    klookTitle: 'Koh Chang boats',
+    klookBody: 'Name the Trat pier on the ticket. Dinner stays on the island.',
+    klookPhoto: '/photos/ferry-gulf.jpg',
+    portraits: [
+      { title: 'Koh Chang', href: '/koh-chang', photo: '/photos/koh-chang.jpg' },
+      { title: 'Koh Kood food', href: '/thai-food/koh-kood', photo: '/photos/koh-kood.jpg' },
+      { title: 'Koh Kood', href: '/koh-kood', photo: '/photos/bang-bao-kood.jpg' },
+      { title: 'Dishes to order', href: '/thai-food/thai-dishes-to-order-first-trip', photo: '/photos/ari.jpg' },
+    ],
+  },
+  'khao-sok': {
+    label: 'Khao Sok',
+    hub: '/thai-food/khao-sok',
+    geo: { lat: 8.91, lon: 98.53, containedIn: 'Surat Thani' },
+    stayTitle: 'Khao Sok stays',
+    stayKicker: 'Village or lake',
+    stayBody: 'Sleep in the Highway 401 village for restaurants. Sleep on a raft if dawn on the lake is the point.',
+    stayHref: () => hotelSearchLink('Khao Sok'),
+    stayPhoto: '/photos/khao-sok.jpg',
+    klookTitle: 'Khao Sok lake boats',
+    klookBody: 'Book the lake boat with the village transfer. Lunch on the raft is a different ticket from a village curry.',
+    klookPhoto: '/photos/cheow-lan.jpg',
+    portraits: [
+      { title: 'Khao Sok', href: '/khao-sok', photo: '/photos/cheow-lan.jpg' },
+      { title: 'Cheow Lan Lake', href: '/attractions/cheow-lan-lake-khao-sok', photo: '/photos/khao-sok.jpg' },
+      { title: 'Krabi food', href: '/thai-food/krabi', photo: '/photos/krabi.jpg' },
+      { title: 'Dishes to order', href: '/thai-food/thai-dishes-to-order-first-trip', photo: '/photos/ari.jpg' },
+    ],
+  },
+  'khao-yai': {
+    label: 'Khao Yai',
+    hub: '/thai-food/khao-yai',
+    geo: { lat: 14.439, lon: 101.372, containedIn: 'Nakhon Ratchasima' },
+    stayTitle: 'Khao Yai stays',
+    stayKicker: 'Pak Chong',
+    stayBody: 'Sleep in Pak Chong if the night market is dinner. Park-edge rooms need the car you already booked.',
+    stayHref: () => hotelSearchLink('Khao Yai'),
+    stayPhoto: '/photos/pak-chong.jpg',
+    klookTitle: 'Khao Yai park vans',
+    klookBody: 'Dawn loops and night-safari seats. The 400 THB foreign park fee is often extra.',
+    klookPhoto: '/photos/haew-suwat.jpg',
+    portraits: [
+      { title: 'Khao Yai', href: '/khao-yai', photo: '/photos/khao-yai.jpg' },
+      { title: 'Isan food', href: '/thai-food/isan', photo: '/photos/dish-som-tum.jpg' },
+      { title: 'Bangkok food', href: '/thai-food/bangkok', photo: '/photos/thai-food-bangkok-street.jpg' },
+      { title: 'Dishes to order', href: '/thai-food/thai-dishes-to-order-first-trip', photo: '/photos/ari.jpg' },
+    ],
+  },
 };
 
 export function dishPath(dish: Pick<DishRecord, 'city' | 'slug'>): string {
@@ -649,7 +710,7 @@ export function dishToPage(dish: DishRecord, catalog: DishRecord[]): Page {
         id: 'order',
         title: 'How to order it',
         bullets: [
-          `**Thai name:** ${dish.orderName} (${dish.nameLocal}).`,
+          `**Thai name:** ${dish.orderName} (${dish.orderLocal ?? dish.nameLocal}).`,
           `**Say:** ${dish.orderPhrase}`,
           dish.orderNote,
         ],
@@ -707,7 +768,7 @@ export function dishDirectoryItems(dishes: DishRecord[]) {
     nameLocal: dish.nameLocal,
     href: dishPath(dish),
     line: dish.lede,
-    find: `${dish.title} ${dish.nameLocal} ${dish.city} ${dish.orderName}`,
+    find: `${dish.title} ${dish.orderLocal ?? dish.nameLocal} ${dish.nameLocal} ${dish.city} ${dish.orderName}`,
     letter: dish.title[0].toUpperCase(),
   }));
 }

@@ -7,6 +7,8 @@ import { KHON_KAEN_DISHES, NONG_KHAI_DISHES, UDON_THANI_DISHES } from './dishes-
 import { KRABI_DISHES, PHUKET_DISHES } from './dishes-south';
 import { KANCHANABURI_DISHES, PAI_DISHES, KHAO_LAK_DISHES, KOH_LANTA_DISHES, KOH_TAO_DISHES, KOH_PHANGAN_DISHES, KOH_PHI_PHI_DISHES, KOH_LIPE_DISHES, KOH_KOOD_DISHES } from './dishes-batch3';
 import { KANCHANABURI_MORE, PAI_MORE, KHAO_LAK_MORE, KOH_LANTA_MORE, KOH_TAO_MORE, KOH_PHANGAN_MORE, KOH_PHI_PHI_MORE, KOH_LIPE_MORE, KOH_KOOD_MORE } from './dishes-batch4';
+import { KHAO_SOK_DISHES, KOH_CHANG_DISHES } from './dishes-batch5';
+import { AYUTTHAYA_MORE, CHIANG_RAI_MORE, HUA_HIN_MORE, KHAO_YAI_DISHES, KOH_SAMUI_MORE, KRABI_MORE, PATTAYA_MORE, PHUKET_MORE, SUKHOTHAI_MORE } from './dishes-batch5-rest';
 import { dishPath, dishTitleCore, dishToPage, type DishRecord } from './dish-model';
 import type { Page } from './content';
 
@@ -43,6 +45,17 @@ export const ALL_DISHES: DishRecord[] = [
   ...KOH_LIPE_MORE,
   ...KOH_KOOD_DISHES,
   ...KOH_KOOD_MORE,
+  ...KOH_CHANG_DISHES,
+  ...KHAO_SOK_DISHES,
+  ...KHAO_YAI_DISHES,
+  ...PHUKET_MORE,
+  ...KOH_SAMUI_MORE,
+  ...KRABI_MORE,
+  ...HUA_HIN_MORE,
+  ...PATTAYA_MORE,
+  ...CHIANG_RAI_MORE,
+  ...AYUTTHAYA_MORE,
+  ...SUKHOTHAI_MORE,
 ];
 
 export const dishPages: Page[] = ALL_DISHES.map((dish) => dishToPage(dish, ALL_DISHES));

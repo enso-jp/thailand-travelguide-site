@@ -293,6 +293,7 @@ async function loadPages() {
     const mod = await import(pathToFileURL(outfile).href);
     return {
       pages: mod.allPages(),
+      allDishes: mod.allDishes,
       mainPhotosFor: mod.mainPhotosFor,
       foodRowsFor: mod.foodRowsFor,
       signatureDishesFor: mod.signatureDishesFor,
@@ -308,6 +309,7 @@ async function loadPages() {
 
 const {
   pages,
+  allDishes,
   mainPhotosFor,
   foodRowsFor,
   signatureDishesFor,
@@ -319,6 +321,45 @@ const {
   await loadPages();
 if (pages.length < 159) {
   fail('site', `expected 159+ routes, found ${pages.length}`);
+}
+
+const PLACE_MARKERS = /ตลาด|ถนน|ท่าเรือ|(?<!ข้าว)ซอย|ร้าน/;
+const FOOD_NAME_OK = new Set([
+  'อาหารทะเลย่าง',
+  'อาหารทะเล',
+  'อาหารทะเลปักษ์ใต้',
+  'อาหารฮาลาล',
+  'บุฟเฟ่ต์อาหารทะเล',
+  'บาร์บีคิวอาหารทะเล',
+]);
+const AREA_NAMES = [
+  'ปากช่อง', 'บางเบ้า', 'หาดทรายขาว', 'บ้านตาขุน', 'เขาสก', 'เชี่ยวหลาน', 'ราไวย์', 'กะตะ', 'กะรน',
+  'ในหาน', 'กมลา', 'สุรินทร์', 'ป่าตอง', 'หลาดใหญ่', 'อ่างทอง', 'บ่อผุด', 'หน้าทอน', 'บางปอ', 'ละไม',
+  'เฉวง', 'มหาราช', 'เจ้าฟ้า', 'อ่าวนาง', 'ณเรศ', 'เขาตะเกียบ', 'เทพประสิทธิ์', 'จอมเทียน', 'นาเกลือ',
+  'เกาะล้าน', 'ร่องขุ่น', 'อู่ทอง', 'ศรีสัชนาลัย', 'เมืองเก่า', 'นางนวล', 'วอล์คกิ้ง', 'ยูดีทาวน์',
+  'ไร่เลย์', 'แถวน้ำ', 'กินดี', 'เจ๊เอียว', 'ลาบร้อยเอ็ด', 'โคโค่', 'ราฟเฟิลเซีย', 'วันจันทร์', 'จัดจ้าน',
+  'ห้าถ้วย', 'หอนาฬิกา', 'พ่อใจ', 'ป้าเล็ก', 'อุทยาน', 'หลังสี่ทุ่ม', 'โกเบนซ์', 'อ่าวสลัด', 'โขง',
+  'อยุธยา', 'หัวหิน', 'กระบี่', 'กุ๊กชัย', 'เจ้าพรหม', 'บาซาร์',
+];
+
+function nameLocalNamesPlace(nameLocal) {
+  const name = String(nameLocal || '');
+  if (!name || FOOD_NAME_OK.has(name)) return false;
+  if (PLACE_MARKERS.test(name)) return true;
+  if (name.includes('อาหาร')) return true;
+  return AREA_NAMES.some((area) => name.includes(area));
+}
+
+if (!Array.isArray(allDishes) || !allDishes.length) {
+  fail('src/lib/dish-pages.ts', 'allDishes is empty');
+}
+for (const dish of allDishes || []) {
+  if (dish.orderLocal) continue;
+  if (!nameLocalNamesPlace(dish.nameLocal)) continue;
+  fail(
+    `/thai-food/${dish.city}--${dish.slug}`,
+    `nameLocal names a place (${dish.nameLocal}) and orderLocal is missing`,
+  );
 }
 
 const paths = new Set(pages.map((page) => page.path));

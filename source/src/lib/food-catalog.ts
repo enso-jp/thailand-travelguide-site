@@ -7,6 +7,8 @@ import { KHON_KAEN_DISHES, NONG_KHAI_DISHES, UDON_THANI_DISHES } from './dishes-
 import { KRABI_DISHES, PHUKET_DISHES } from './dishes-south';
 import { KANCHANABURI_DISHES, PAI_DISHES, KHAO_LAK_DISHES, KOH_LANTA_DISHES, KOH_TAO_DISHES, KOH_PHANGAN_DISHES, KOH_PHI_PHI_DISHES, KOH_LIPE_DISHES, KOH_KOOD_DISHES } from './dishes-batch3';
 import { KANCHANABURI_MORE, PAI_MORE, KHAO_LAK_MORE, KOH_LANTA_MORE, KOH_TAO_MORE, KOH_PHANGAN_MORE, KOH_PHI_PHI_MORE, KOH_LIPE_MORE, KOH_KOOD_MORE } from './dishes-batch4';
+import { KHAO_SOK_DISHES, KOH_CHANG_DISHES } from './dishes-batch5';
+import { AYUTTHAYA_MORE, CHIANG_RAI_MORE, HUA_HIN_MORE, KHAO_YAI_DISHES, KOH_SAMUI_MORE, KRABI_MORE, PATTAYA_MORE, PHUKET_MORE, SUKHOTHAI_MORE } from './dishes-batch5-rest';
 import { ALL_DISHES } from './dish-pages';
 import { dishDirectoryItems, dishPath, type DishRecord, type FoodSpot } from './dish-model';
 
@@ -55,6 +57,9 @@ export const FOOD_CITY_CARDS: FoodCityCard[] = [
   { title: 'Koh Phi Phi', href: '/thai-food/koh-phi-phi', photo: '/photos/phi-phi.jpg', line: 'Garlic 1992 in Tonsai keeps village plates near town prices.', find: 'phi phi tonsai garlic 1992' },
   { title: 'Koh Lipe', href: '/thai-food/koh-lipe', photo: '/photos/koh-lipe.jpg', line: 'Walking Street som tum and spicy Thai Derm plates before 19:30.', find: 'koh lipe walking street thai derm' },
   { title: 'Koh Kood', href: '/thai-food/koh-kood', photo: '/photos/koh-kood.jpg', line: 'Ao Yai crab and fish by weight, Klong Chao tom yum at night.', find: 'koh kood ao yai seafood crab' },
+  { title: 'Koh Chang', href: '/thai-food/koh-chang', photo: '/photos/kai-bae.jpg', line: 'Bang Bao pier seafood and 40 to 70 THB curry rice on the west-coast road.', find: 'koh chang bang bao seafood klong prao' },
+  { title: 'Khao Sok', href: '/thai-food/khao-sok', photo: '/photos/cheow-lan.jpg', line: 'Village curry at 40 to 80 THB before 09:00, then a raft kitchen on Cheow Lan.', find: 'khao sok morning market cheow lan' },
+  { title: 'Khao Yai', href: '/thai-food/khao-yai', photo: '/photos/pak-chong.jpg', line: 'Pak Chong Night Market, 17:00 to 22:00, often 80 to 150 THB a person.', find: 'khao yai pak chong night market som tum' },
   { title: 'Chinatown Yaowarat', href: '/thai-food/yaowarat-chinatown-food-walk', photo: '/photos/yaowarat.jpg', line: 'Yaowarat is the peppery guay jub and Texas Lane walk after 18:00.', find: 'yaowarat chinatown guay jub' },
   { title: 'Night Markets', href: '/thai-food/night-markets', photo: '/photos/thai-food-night-markets.jpg', line: 'Night markets that matter are Ratchada, Train Night Market, and city walking streets.', find: 'night market ratchada' },
   { title: 'Michelin Street Food', href: '/thai-food/bangkok-bib-gourmand', photo: '/photos/thai-food-bib.jpg', line: 'Bib Gourmand rooms are the value badge. Jay Fai is the one-star exception.', find: 'michelin bib jay fai' },
@@ -227,19 +232,27 @@ export const CITY_FOOD_ROWS: Record<string, CityFoodRow[]> = {
     { title: 'Sunday Walking Street snacks', nameLocal: 'ถนนคนเดิน', href: '/chiang-mai/old-city', kind: 'place', summary: 'Ratchadamnoen after 16:00 on Sunday. Grills and dessert cups, not a temple substitute. 20 to 60 THB.', address: 'Ratchadamnoen Rd, Phra Sing, Chiang Mai 50200', hours: 'Sunday from 16:00', price: '20 to 60 THB' },
     { title: 'Warorot breakfast', nameLocal: 'กาดหลวง', href: '/thai-food/chiang-mai-khao-soi-and-markets', kind: 'place', summary: 'Morning wholesale hall for jok, coffee, and fruit. Go before 09:00. 30 to 60 THB.', address: 'Warorot Market, Wichayanon Rd, Chang Moi, Chiang Mai', hours: '05:00 to 17:00', price: '30 to 60 THB' },
     { title: 'Nimman pour-over', nameLocal: 'นิมมานเหมินท์', href: '/chiang-mai/nimmanhaemin', kind: 'place', summary: 'Cafe morning west of the moat. **GRAPH Quarter** sits at 25 Soi 13 Sirimangkalajarn. 80 to 150 THB. Maya basement is air-con only.', address: 'GRAPH Quarter, 25 Soi 13 Sirimangkalajarn Rd, Suthep, Chiang Mai 50200', hours: '09:00 to 17:00', price: '80 to 150 THB' },
+    { title: 'Nimman food', nameLocal: 'นิมมาน', href: '/thai-food/chiang-mai-nimman-food', kind: 'place', photo: '/photos/nimman.jpg', summary: 'Kao Soy Nimman on Soi 7, about 220 THB for two bowls, and Huen Phen Soi 5 from 11:00 to 22:00.', address: '22 Nimman Soi 7, Suthep, Chiang Mai 50200', hours: 'Huen Phen 11:00 to 22:00', price: 'Two bowls about 220 THB' },
+    { title: 'Old City food', nameLocal: 'เมืองเก่า', href: '/thai-food/chiang-mai-old-city-food', kind: 'place', photo: '/photos/chiang-mai-old-city.jpg', summary: 'Huen Phen on Ratchamankha and Khun Yai khao soi, Monday to Saturday 10:00 to 14:00, 40 to 60 THB.', address: '112 Ratchamankha Rd, Phra Sing, Chiang Mai 50200', hours: 'Khun Yai 10:00 to 14:00', price: '40 to 60 THB' },
+    { title: 'Chang Phueak food', nameLocal: 'ช้างเผือก', href: '/thai-food/chiang-mai-chang-phueak-food', kind: 'place', photo: '/photos/doi-suthep.jpg', summary: 'Mae Sai khao soi on Ratchaphruek, Monday to Saturday 08:00 to 16:00, 55 to 90 THB. Closed Sunday.', address: '29/1 Ratchaphruek Rd, Chang Phueak, Chiang Mai 50300', hours: '08:00 to 16:00 Mon to Sat', price: '55 to 90 THB' },
+    { title: 'Santitham food', nameLocal: 'สันติธรรม', href: '/thai-food/chiang-mai-santitham-food', kind: 'place', photo: '/photos/northern.jpg', summary: 'Akha Ama Living Factory on Hussadhisewee Soi 3. A pour-over in Chiang Mai is often 80 to 150 THB.', address: 'Hussadhisewee Soi 3, Santitham, Chiang Mai', price: '80 to 150 THB' },
+    { title: 'Wualai food', nameLocal: 'วัวลาย', href: '/thai-food/chiang-mai-wualai-food', kind: 'place', photo: '/photos/wat-phra-singh.jpg', summary: 'Saturday walking street on Wua Lai Road near Chiang Mai Gate, about 17:00 to 22:00. Sunday is Ratchadamnoen.', address: 'Wua Lai Rd, Chiang Mai Gate, Chiang Mai', hours: 'Saturday about 17:00 to 22:00', price: 'Snack walk' },
   ],
   '/thai-food/phuket': [
     ...dishRows(PHUKET_DISHES),
+    ...dishRows(PHUKET_MORE),
     { title: 'Sunday Walking Street', nameLocal: 'ถนนคนเดินภูเก็ต', href: '/thai-food/night-markets', kind: 'place', summary: 'Thalang Road on Sunday late afternoon. Snacks, not a full dinner plan. 30 to 80 THB.', address: 'Thalang Rd, Talat Yai, Phuket 83000', hours: 'Sunday from 16:00', price: '30 to 80 THB' },
     { title: 'Lobster grill (only if priced)', nameLocal: 'กุ้งมังกร', href: '/phuket', kind: 'place', summary: 'Rawai and Chalong desks quote by weight. Confirm the THB number before the grill and walk away from a shrug.', address: 'Rawai seafood promenade, Viset Rd, Rawai, Phuket 83130', hours: '16:00 to 22:00', price: 'By weight; ask first' },
   ],
   '/thai-food/koh-samui': [
     ...dishRows(KOH_SAMUI_DISHES),
+    ...dishRows(KOH_SAMUI_MORE),
     { title: 'USM airport snack', nameLocal: 'สนามบินสมุย', href: '/get-there/bangkok-to-koh-samui', kind: 'place', summary: 'The bag belt is slow. Eat after you clear, not in a 20-minute connection. Terminal snacks 80 to 150 THB.', address: 'Samui Airport terminal, Bo Phut, Koh Samui 84320', hours: 'Flight hours', price: '80 to 150 THB' },
     { title: 'Ang Thong picnic skip', nameLocal: 'อ่างทอง', href: '/koh-samui/ang-thong-marine-park', kind: 'place', photo: '/photos/ang-thong.jpg', summary: 'Boat lunch is boxed. Bring water. The 300 THB park fee is extra. Closed 1 Nov to 15 Dec.', address: 'Ang Thong Marine Park boats, Nathon / Maenam piers', hours: 'Boats 08:00 to 09:00', price: 'Tour plus 300 THB' },
   ],
   '/thai-food/krabi': [
     ...dishRows(KRABI_DISHES),
+    ...dishRows(KRABI_MORE),
     { title: 'Klong Jilad pier snack', nameLocal: 'คลองจิหลาด', href: '/get-there/phuket-to-krabi-phi-phi', kind: 'place', summary: 'Phi Phi boats leave from Klong Jilad Pier. Eat a proper lunch in Krabi Town first, because pier snacks run 60 to 100 THB and do not fill you.', address: 'Klong Jilad Pier, Krabi 81000', hours: 'Boat mornings 08:00 to 13:00', price: '60 to 100 THB' },
     { title: 'Hong Island boxed lunch', nameLocal: 'เกาะห้อง', href: '/krabi', kind: 'place', summary: 'Park longtail days include a box. The 300 THB park fee is extra. Leave by 08:00.', address: 'Noppharat Thara / Ao Nang longtail desks', hours: 'Boats 08:00', price: 'Tour plus 300 THB' },
   ],
@@ -255,15 +268,15 @@ export const CITY_FOOD_ROWS: Record<string, CityFoodRow[]> = {
     { title: 'Khao Niew', nameLocal: 'ข้าวเหนียว', href: '/thai-food/khon-kaen--khao-niew-kk', kind: 'dish', photo: '/photos/dish-khao-niew.jpg', summary: 'Sticky rice is the utensil. Order a basket with every grill. 10 to 22 THB.', address: 'Any Isan grill; ask for khao niew, not jasmine', hours: 'With the grill', price: '10 to 22 THB' },
     { title: 'Ubon night market', nameLocal: 'อุบลราชธานี', href: '/thai-food/night-markets', kind: 'place', summary: 'If you are actually in Ubon, night markets beat hotel buffets. Plates 40 to 80 THB.', address: 'Ubon Night Market, Khammalai Rd, Ubon Ratchathani 34000', hours: '17:00 to 22:00', price: '40 to 80 THB' },
   ],
-  '/thai-food/chiang-rai': dishRows(CHIANG_RAI_DISHES),
+  '/thai-food/chiang-rai': dishRows([...CHIANG_RAI_DISHES, ...CHIANG_RAI_MORE]),
   '/thai-food/khon-kaen': dishRows(KHON_KAEN_DISHES),
   '/thai-food/udon-thani': dishRows(UDON_THANI_DISHES),
   '/thai-food/nong-khai': dishRows(NONG_KHAI_DISHES),
-  '/thai-food/ayutthaya': dishRows(AYUTTHAYA_DISHES),
-  '/thai-food/hua-hin': dishRows(HUA_HIN_DISHES),
+  '/thai-food/ayutthaya': dishRows([...AYUTTHAYA_DISHES, ...AYUTTHAYA_MORE]),
+  '/thai-food/hua-hin': dishRows([...HUA_HIN_DISHES, ...HUA_HIN_MORE]),
   '/thai-food/hat-yai': dishRows(HAT_YAI_DISHES),
-  '/thai-food/sukhothai': dishRows(SUKHOTHAI_DISHES),
-  '/thai-food/pattaya': dishRows(PATTAYA_DISHES),
+  '/thai-food/sukhothai': dishRows([...SUKHOTHAI_DISHES, ...SUKHOTHAI_MORE]),
+  '/thai-food/pattaya': dishRows([...PATTAYA_DISHES, ...PATTAYA_MORE]),
   '/thai-food/kanchanaburi': dishRows([...KANCHANABURI_DISHES, ...KANCHANABURI_MORE]),
   '/thai-food/pai': dishRows([...PAI_DISHES, ...PAI_MORE]),
   '/thai-food/khao-lak': dishRows([...KHAO_LAK_DISHES, ...KHAO_LAK_MORE]),
@@ -273,6 +286,9 @@ export const CITY_FOOD_ROWS: Record<string, CityFoodRow[]> = {
   '/thai-food/koh-phi-phi': dishRows([...KOH_PHI_PHI_DISHES, ...KOH_PHI_PHI_MORE]),
   '/thai-food/koh-lipe': dishRows([...KOH_LIPE_DISHES, ...KOH_LIPE_MORE]),
   '/thai-food/koh-kood': dishRows([...KOH_KOOD_DISHES, ...KOH_KOOD_MORE]),
+  '/thai-food/koh-chang': dishRows(KOH_CHANG_DISHES),
+  '/thai-food/khao-sok': dishRows(KHAO_SOK_DISHES),
+  '/thai-food/khao-yai': dishRows(KHAO_YAI_DISHES),
 };
 
 export type DirectoryItem = {
@@ -342,6 +358,11 @@ export function foodDirectory(): DirectoryItem[] {
     { title: 'Thonglor and Soi 38 food', href: '/thai-food/thonglor-and-soi-38-food', line: 'Soi 38 is the night stall lane between Thong Lo and Ekkamai.', find: 'thonglor soi 38 night', letter: 'T' },
     { title: 'Vegetarian and jay food', href: '/thai-food/vegetarian-and-jay-food', line: 'Jay food follows the yellow เจ flag and skips fish sauce.', find: 'jay vegetarian vegan', letter: 'V' },
     { title: 'Victory Monument food', href: '/thai-food/victory-monument-food', line: 'Victory Monument is boat noodles at 15 to 20 THB a bowl.', find: 'victory monument boat noodles', letter: 'V' },
+    { title: 'Chang Phueak food', href: '/thai-food/chiang-mai-chang-phueak-food', line: 'Mae Sai khao soi north of the moat, 55 to 90 THB, closed Sunday.', find: 'chang phueak mae sai khao soi', letter: 'C' },
+    { title: 'Nimman food', href: '/thai-food/chiang-mai-nimman-food', line: 'Kao Soy Nimman and Huen Phen Soi 5, west of the moat.', find: 'nimman khao soi huen phen', letter: 'N' },
+    { title: 'Old City Chiang Mai food', href: '/thai-food/chiang-mai-old-city-food', line: 'Khun Yai and Huen Phen inside the moat.', find: 'old city khun yai huen phen', letter: 'O' },
+    { title: 'Santitham food', href: '/thai-food/chiang-mai-santitham-food', line: 'Akha Ama Living Factory and a short ride to Chang Phueak khao soi.', find: 'santitham akha ama', letter: 'S' },
+    { title: 'Wualai food', href: '/thai-food/chiang-mai-wualai-food', line: 'Saturday walking street near Chiang Mai Gate, about 17:00 to 22:00.', find: 'wualai saturday walking street', letter: 'W' },
   ];
   return [...items, ...extra].sort((a, b) => a.title.localeCompare(b.title));
 }

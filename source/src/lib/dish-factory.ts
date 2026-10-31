@@ -26,6 +26,9 @@ const WALKS: Record<DishCity, { walkHref: string; walkLabel: string; klookQuery:
   'koh-phi-phi': { walkHref: '/koh-phi-phi', walkLabel: 'Koh Phi Phi', klookQuery: 'Phi Phi tour', stayKey: 'krabi' },
   'koh-lipe': { walkHref: '/koh-lipe', walkLabel: 'Koh Lipe', klookQuery: 'Koh Lipe tour', stayKey: 'koh-lipe' },
   'koh-kood': { walkHref: '/koh-kood', walkLabel: 'Koh Kood', klookQuery: 'Koh Kood tour', stayKey: 'koh-kood' },
+  'koh-chang': { walkHref: '/koh-chang', walkLabel: 'Koh Chang', klookQuery: 'Koh Chang ferry', stayKey: 'koh-chang' },
+  'khao-sok': { walkHref: '/khao-sok', walkLabel: 'Khao Sok', klookQuery: 'Khao Sok lake tour', stayKey: 'surat-thani' },
+  'khao-yai': { walkHref: '/khao-yai', walkLabel: 'Khao Yai', klookQuery: 'Khao Yai National Park', stayKey: 'bangkok' },
 };
 
 export type DishDraft = {
@@ -33,6 +36,7 @@ export type DishDraft = {
   slug: string;
   title: string;
   nameLocal: string;
+  orderLocal?: string;
   hook: string;
   lede: string;
   description?: string;
@@ -65,6 +69,7 @@ export function makeDish(draft: DishDraft): DishRecord {
     slug: draft.slug,
     title: draft.title,
     nameLocal: draft.nameLocal,
+    ...(draft.orderLocal ? { orderLocal: draft.orderLocal } : {}),
     hook: draft.hook,
     lede: draft.lede,
     description: draft.description || `${draft.lede} ${draft.spots[0].name} is the named start at ${draft.price}.`,
@@ -81,7 +86,7 @@ export function makeDish(draft: DishDraft): DishRecord {
     walkLabel: draft.walkLabel || walk.walkLabel,
     photo: draft.photo,
     facts: [
-      { label: 'Thai', value: `${draft.nameLocal} · ${draft.orderName}` },
+      { label: 'Thai', value: `${draft.orderLocal ?? draft.nameLocal} · ${draft.orderName}` },
       { label: 'Price', value: draft.price },
       ...(draft.extraFacts
         ? draft.extraFacts
