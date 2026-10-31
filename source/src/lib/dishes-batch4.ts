@@ -937,7 +937,7 @@ export const KOH_PHANGAN_MORE: DishRecord[] = dishesForCity('koh-phangan', [
     nameLocal: 'ข้าวซอย',
     hook: 'Northern Noodles in Ban Tai',
     lede: 'At Chiang Mai in Ban Tai brings northern khao soi, coconut curry noodles, to Koh Phangan. It is a sit-down room away from the Thong Sala stalls.',
-    description: 'At Chiang Mai in Ban Tai serves khao soi on Koh Phangan. A Thong Sala curry plate is 60 to 70 THB if you want the cheaper night.',
+    description: 'At Chiang Mai, a sit-down room in Ban Tai, serves northern khao soi on Koh Phangan for 90 to 160 THB. Thong Sala market curry plates cost 60 to 70 THB.',
     taste: 'Coconut curry, egg noodles, and a crisp noodle top. Lime and shallot on the side.',
     orderName: 'khao soi',
     orderPhrase: 'Khor khao soi kai, khrap/kha.',
