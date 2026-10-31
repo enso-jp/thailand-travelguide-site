@@ -30,7 +30,7 @@ stayCity: bangkok
 - **Lines:** the **SRT Red lines** and the **MRT Purple Line** only.
 - **The deal:** an adult pays **no more than 40 THB a day** in total, with no limit on rides.
 - **How to pay:** tap a **contactless bank card** in and out. MRTA lists Visa, Mastercard and UnionPay credit cards for foreign visitors.
-- **Use one card:** tap in and out with the same card for every ride that day.
+- **Use one card:** tap in and out with the same card for every ride that day. A missed tap loses the cap for that day.
 - **Refund:** you are charged the normal fare per trip, and anything above 40 THB goes back to the card within 3 working days.
 - **End date:** **30 November 2026**. An extension to 31 December 2027 has been proposed but not approved yet.
 
@@ -41,6 +41,6 @@ stayCity: bangkok
 
 ## What the cap does not cover
 
-- **The Blue Line, BTS and Airport Rail Link:** you pay normal fares there. Changing to the MRT Blue Line at Krung Thep Aphiwat starts a new fare.
-- **Airport Rail Link:** it has taken contactless cards at all 8 stations since 8 November 2025, with fares from **15 to 45 THB**.
+- **MRT Blue Line and BTS:** you pay normal fares there. Changing to the Blue Line at Bang Sue, next to Krung Thep Aphiwat, starts a new fare.
+- **Airport Rail Link:** also outside the cap. It has taken contactless cards at all 8 stations since 8 November 2025, with fares from **15 to 45 THB**.
 - **Rabbit cards:** they do not qualify for either cap. BTS and MRT card tips are on [Grab, BTS and MRT](/plan/grab-and-bts).
