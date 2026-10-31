@@ -9,6 +9,9 @@ import { KANCHANABURI_DISHES, PAI_DISHES, KHAO_LAK_DISHES, KOH_LANTA_DISHES, KOH
 import { KANCHANABURI_MORE, PAI_MORE, KHAO_LAK_MORE, KOH_LANTA_MORE, KOH_TAO_MORE, KOH_PHANGAN_MORE, KOH_PHI_PHI_MORE, KOH_LIPE_MORE, KOH_KOOD_MORE } from './dishes-batch4';
 import { KHAO_SOK_DISHES, KOH_CHANG_DISHES } from './dishes-batch5';
 import { AYUTTHAYA_MORE, CHIANG_RAI_MORE, HUA_HIN_MORE, KHAO_YAI_DISHES, KOH_SAMUI_MORE, KRABI_MORE, PATTAYA_MORE, PHUKET_MORE, SUKHOTHAI_MORE } from './dishes-batch5-rest';
+import { HAT_YAI_B6, KHAO_SOK_B6, KHAO_YAI_B6, KOH_CHANG_B6, NONG_KHAI_B6, UDON_THANI_B6 } from './dishes-batch6-rest';
+import { KANCHANABURI_B6, KHAO_LAK_B6, KHON_KAEN_B6, KOH_KOOD_B6, KOH_LANTA_B6, KOH_LIPE_B6, KOH_PHANGAN_B6, KOH_PHI_PHI_B6, KOH_TAO_B6, PAI_B6 } from './dishes-batch6';
+import { STANDALONE_DISHES } from './dishes-batch6-standalone';
 import { dishPath, dishTitleCore, dishToPage, type DishRecord } from './dish-model';
 import type { Page } from './content';
 
@@ -56,6 +59,23 @@ export const ALL_DISHES: DishRecord[] = [
   ...CHIANG_RAI_MORE,
   ...AYUTTHAYA_MORE,
   ...SUKHOTHAI_MORE,
+  ...KANCHANABURI_B6,
+  ...PAI_B6,
+  ...KHAO_LAK_B6,
+  ...KHON_KAEN_B6,
+  ...KOH_KOOD_B6,
+  ...KOH_LANTA_B6,
+  ...KOH_LIPE_B6,
+  ...KOH_PHANGAN_B6,
+  ...KOH_PHI_PHI_B6,
+  ...KOH_TAO_B6,
+  ...HAT_YAI_B6,
+  ...KHAO_SOK_B6,
+  ...KHAO_YAI_B6,
+  ...KOH_CHANG_B6,
+  ...NONG_KHAI_B6,
+  ...UDON_THANI_B6,
+  ...STANDALONE_DISHES,
 ];
 
 export const dishPages: Page[] = ALL_DISHES.map((dish) => dishToPage(dish, ALL_DISHES));

@@ -1,4 +1,4 @@
-import { copyFileSync, existsSync, readdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { copyFileSync, existsSync, readdirSync, readFileSync, unlinkSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
@@ -53,15 +53,7 @@ ${urls.join('\n')}
   writeFileSync(join(dir, 'sitemap.xml'), xml);
 
   const indexPath = join(dir, 'sitemap-index.xml');
-  if (!existsSync(indexPath)) return;
-  const newest = [...lastmods.values()].sort().at(-1);
-  const child = `${SITE}/sitemap-0.xml`;
-  const index = `<?xml version="1.0" encoding="UTF-8"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <sitemap><loc>${child}</loc>${newest ? `<lastmod>${newest}</lastmod>` : ''}</sitemap>
-</sitemapindex>
-`;
-  writeFileSync(indexPath, index);
+  if (existsSync(indexPath)) unlinkSync(indexPath);
 }
 
 function trailingSlashRedirects() {

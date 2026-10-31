@@ -43,6 +43,7 @@ export type DishDraft = {
   taste: string;
   orderName: string;
   orderPhrase: string;
+  standalone?: boolean;
   orderNote: string;
   price: string;
   spice: string;
@@ -76,6 +77,7 @@ export function makeDish(draft: DishDraft): DishRecord {
     taste: draft.taste,
     orderName: draft.orderName,
     orderPhrase: draft.orderPhrase,
+    ...(draft.standalone ? { standalone: true } : {}),
     orderNote: draft.orderNote,
     price: draft.price,
     spice: draft.spice,

@@ -50,6 +50,8 @@ export type DishRecord = {
   taste: string;
   orderName: string;
   orderPhrase: string;
+  /** National dish URL at /thai-food/<slug>, not a city--slug page. */
+  standalone?: boolean;
   orderNote: string;
   price: string;
   spice: string;
@@ -578,7 +580,8 @@ export const DISH_CITY_META: Record<
   },
 };
 
-export function dishPath(dish: Pick<DishRecord, 'city' | 'slug'>): string {
+export function dishPath(dish: Pick<DishRecord, 'city' | 'slug' | 'standalone'>): string {
+  if (dish.standalone) return `/thai-food/${dish.slug}`;
   return `/thai-food/${dish.city}--${dish.slug}`;
 }
 
@@ -591,6 +594,7 @@ export function cityHubPath(city: DishCity): string {
 }
 
 export function dishTitleCore(dish: DishRecord): string {
+  if (dish.standalone) return `${dish.title}: ${dish.hook}`;
   return `${dish.title} in ${cityLabel(dish.city)}: ${dish.hook}`;
 }
 
@@ -682,23 +686,40 @@ export function dishToPage(dish: DishRecord, catalog: DishRecord[]): Page {
     .filter((row): row is DishRecord => Boolean(row));
   const stay = stayAffiliate(dish);
 
+  const nextBullets = dish.standalone
+    ? [
+        `Back to the [Thai food hub](/thai-food) for the city rows.`,
+        `Use the [${dish.walkLabel}](${dish.walkHref}) page if you want the neighbourhood, not a second dish.`,
+        ...related.map((row) => `[${row.title}](${dishPath(row)}) is the nearby order if this plate is done.`),
+      ]
+    : [
+        `Back to the [${city} food hub](${hub}) for the neighbourhood rows.`,
+        `Use the [${dish.walkLabel}](${dish.walkHref}) page if you want the walk, not a second dish.`,
+        ...related.map((row) => `[${row.title}](${dishPath(row)}) is the nearby order if this plate is done.`),
+      ];
+
   return {
     path,
-    title: `${dish.title} in ${city}`,
+    title: dish.standalone ? dish.title : `${dish.title} in ${city}`,
     alternateName: dish.nameLocal,
     description: dish.description,
     lede: dish.lede,
     schema: 'Article',
-    crumbs: [
-      { name: 'Thai food', href: '/thai-food' },
-      { name: city, href: hub },
-      { name: dish.title, href: path },
-    ],
+    crumbs: dish.standalone
+      ? [
+          { name: 'Thai food', href: '/thai-food' },
+          { name: dish.title, href: path },
+        ]
+      : [
+          { name: 'Thai food', href: '/thai-food' },
+          { name: city, href: hub },
+          { name: dish.title, href: path },
+        ],
     facts: dish.facts,
     chips: [city, dish.price, dish.orderName],
     photo: dish.photo,
     geo: meta.geo,
-    parentPill: { name: `${city} food`, href: hub },
+    parentPill: dish.standalone ? { name: 'Thai food', href: '/thai-food' } : { name: `${city} food`, href: hub },
     paragraphs: [dish.lede],
     sections: [
       {
@@ -736,11 +757,7 @@ export function dishToPage(dish: DishRecord, catalog: DishRecord[]): Page {
       {
         id: 'next',
         title: 'Next plates',
-        bullets: [
-          `Back to the [${city} food hub](${hub}) for the neighbourhood rows.`,
-          `Use the [${dish.walkLabel}](${dish.walkHref}) page if you want the walk, not a second dish.`,
-          ...related.map((row) => `[${row.title}](${dishPath(row)}) is the nearby order if this plate is done.`),
-        ],
+        bullets: nextBullets,
       },
     ],
     portraits: meta.portraits.map((row) =>

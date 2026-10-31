@@ -9,6 +9,8 @@ import { KANCHANABURI_DISHES, PAI_DISHES, KHAO_LAK_DISHES, KOH_LANTA_DISHES, KOH
 import { KANCHANABURI_MORE, PAI_MORE, KHAO_LAK_MORE, KOH_LANTA_MORE, KOH_TAO_MORE, KOH_PHANGAN_MORE, KOH_PHI_PHI_MORE, KOH_LIPE_MORE, KOH_KOOD_MORE } from './dishes-batch4';
 import { KHAO_SOK_DISHES, KOH_CHANG_DISHES } from './dishes-batch5';
 import { AYUTTHAYA_MORE, CHIANG_RAI_MORE, HUA_HIN_MORE, KHAO_YAI_DISHES, KOH_SAMUI_MORE, KRABI_MORE, PATTAYA_MORE, PHUKET_MORE, SUKHOTHAI_MORE } from './dishes-batch5-rest';
+import { KANCHANABURI_B6, KHAO_LAK_B6, KHON_KAEN_B6, KOH_KOOD_B6, KOH_LANTA_B6, KOH_LIPE_B6, KOH_PHANGAN_B6, KOH_PHI_PHI_B6, KOH_TAO_B6, PAI_B6 } from './dishes-batch6';
+import { HAT_YAI_B6, KHAO_SOK_B6, KHAO_YAI_B6, KOH_CHANG_B6, NONG_KHAI_B6, UDON_THANI_B6 } from './dishes-batch6-rest';
 import { ALL_DISHES } from './dish-pages';
 import { dishDirectoryItems, dishPath, type DishRecord, type FoodSpot } from './dish-model';
 
@@ -269,26 +271,26 @@ export const CITY_FOOD_ROWS: Record<string, CityFoodRow[]> = {
     { title: 'Ubon night market', nameLocal: 'อุบลราชธานี', href: '/thai-food/night-markets', kind: 'place', summary: 'If you are actually in Ubon, night markets beat hotel buffets. Plates 40 to 80 THB.', address: 'Ubon Night Market, Khammalai Rd, Ubon Ratchathani 34000', hours: '17:00 to 22:00', price: '40 to 80 THB' },
   ],
   '/thai-food/chiang-rai': dishRows([...CHIANG_RAI_DISHES, ...CHIANG_RAI_MORE]),
-  '/thai-food/khon-kaen': dishRows(KHON_KAEN_DISHES),
-  '/thai-food/udon-thani': dishRows(UDON_THANI_DISHES),
-  '/thai-food/nong-khai': dishRows(NONG_KHAI_DISHES),
+  '/thai-food/khon-kaen': dishRows([...KHON_KAEN_DISHES, ...KHON_KAEN_B6]),
+  '/thai-food/udon-thani': dishRows([...UDON_THANI_DISHES, ...UDON_THANI_B6]),
+  '/thai-food/nong-khai': dishRows([...NONG_KHAI_DISHES, ...NONG_KHAI_B6]),
   '/thai-food/ayutthaya': dishRows([...AYUTTHAYA_DISHES, ...AYUTTHAYA_MORE]),
   '/thai-food/hua-hin': dishRows([...HUA_HIN_DISHES, ...HUA_HIN_MORE]),
-  '/thai-food/hat-yai': dishRows(HAT_YAI_DISHES),
+  '/thai-food/hat-yai': dishRows([...HAT_YAI_DISHES, ...HAT_YAI_B6]),
   '/thai-food/sukhothai': dishRows([...SUKHOTHAI_DISHES, ...SUKHOTHAI_MORE]),
   '/thai-food/pattaya': dishRows([...PATTAYA_DISHES, ...PATTAYA_MORE]),
-  '/thai-food/kanchanaburi': dishRows([...KANCHANABURI_DISHES, ...KANCHANABURI_MORE]),
-  '/thai-food/pai': dishRows([...PAI_DISHES, ...PAI_MORE]),
-  '/thai-food/khao-lak': dishRows([...KHAO_LAK_DISHES, ...KHAO_LAK_MORE]),
-  '/thai-food/koh-lanta': dishRows([...KOH_LANTA_DISHES, ...KOH_LANTA_MORE]),
-  '/thai-food/koh-tao': dishRows([...KOH_TAO_DISHES, ...KOH_TAO_MORE]),
-  '/thai-food/koh-phangan': dishRows([...KOH_PHANGAN_DISHES, ...KOH_PHANGAN_MORE]),
-  '/thai-food/koh-phi-phi': dishRows([...KOH_PHI_PHI_DISHES, ...KOH_PHI_PHI_MORE]),
-  '/thai-food/koh-lipe': dishRows([...KOH_LIPE_DISHES, ...KOH_LIPE_MORE]),
-  '/thai-food/koh-kood': dishRows([...KOH_KOOD_DISHES, ...KOH_KOOD_MORE]),
-  '/thai-food/koh-chang': dishRows(KOH_CHANG_DISHES),
-  '/thai-food/khao-sok': dishRows(KHAO_SOK_DISHES),
-  '/thai-food/khao-yai': dishRows(KHAO_YAI_DISHES),
+  '/thai-food/kanchanaburi': dishRows([...KANCHANABURI_DISHES, ...KANCHANABURI_MORE, ...KANCHANABURI_B6]),
+  '/thai-food/pai': dishRows([...PAI_DISHES, ...PAI_MORE, ...PAI_B6]),
+  '/thai-food/khao-lak': dishRows([...KHAO_LAK_DISHES, ...KHAO_LAK_MORE, ...KHAO_LAK_B6]),
+  '/thai-food/koh-lanta': dishRows([...KOH_LANTA_DISHES, ...KOH_LANTA_MORE, ...KOH_LANTA_B6]),
+  '/thai-food/koh-tao': dishRows([...KOH_TAO_DISHES, ...KOH_TAO_MORE, ...KOH_TAO_B6]),
+  '/thai-food/koh-phangan': dishRows([...KOH_PHANGAN_DISHES, ...KOH_PHANGAN_MORE, ...KOH_PHANGAN_B6]),
+  '/thai-food/koh-phi-phi': dishRows([...KOH_PHI_PHI_DISHES, ...KOH_PHI_PHI_MORE, ...KOH_PHI_PHI_B6]),
+  '/thai-food/koh-lipe': dishRows([...KOH_LIPE_DISHES, ...KOH_LIPE_MORE, ...KOH_LIPE_B6]),
+  '/thai-food/koh-kood': dishRows([...KOH_KOOD_DISHES, ...KOH_KOOD_MORE, ...KOH_KOOD_B6]),
+  '/thai-food/koh-chang': dishRows([...KOH_CHANG_DISHES, ...KOH_CHANG_B6]),
+  '/thai-food/khao-sok': dishRows([...KHAO_SOK_DISHES, ...KHAO_SOK_B6]),
+  '/thai-food/khao-yai': dishRows([...KHAO_YAI_DISHES, ...KHAO_YAI_B6]),
 };
 
 export type DirectoryItem = {

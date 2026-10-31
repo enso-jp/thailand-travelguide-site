@@ -35,8 +35,8 @@ if (!existsSync(join(DIST, '404.html'))) {
 if (!existsSync(join(DIST, 'sitemap.xml'))) {
   errors.push('dist/sitemap.xml is missing');
 }
-if (!existsSync(join(DIST, 'sitemap-index.xml'))) {
-  errors.push('dist/sitemap-index.xml is missing');
+if (existsSync(join(DIST, 'sitemap-index.xml'))) {
+  errors.push('dist/sitemap-index.xml must not be produced');
 }
 
 const sitemap = existsSync(join(DIST, 'sitemap.xml'))
@@ -76,6 +76,7 @@ for (const lastmod of sitemap.matchAll(/<lastmod>([^<]*)<\/lastmod>/g)) {
 const robots = readFileSync(join(DIST, 'robots.txt'), 'utf8');
 if (!/Disallow:\s*\/search/.test(robots)) errors.push('dist/robots.txt missing Disallow: /search');
 if (!robots.includes('sitemap.xml')) errors.push('dist/robots.txt missing sitemap.xml');
+if (/sitemap-index\.xml/.test(robots)) errors.push('dist/robots.txt must not list sitemap-index.xml');
 
 const pages = walkHtml(DIST);
 const indexable = [];
