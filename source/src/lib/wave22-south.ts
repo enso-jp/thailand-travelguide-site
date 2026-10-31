@@ -72,7 +72,7 @@ export const wave22SouthPages: Page[] = [
     photo: "/photos/phuket.jpg",
     geo: { lat: 7.88, lon: 98.392, containedIn: "Phuket" },
     paragraphs: [
-      "- **Kata and Karon:** walkable first-timer pair with easy swimming and plenty of places to eat.\n- **Kamala and Surin:** quieter bays between Patong and Bang Tao.\n- **Bang Tao and Laguna:** long sand, big resorts and golf.\n- **Rawai and Nai Harn:** far south, best for calm swims.\n- **Patong:** Bangla Road nightlife, better for one night than a whole stay.",
+      "- **[Kata and Karon](/phuket/kata-and-karon):** walkable first-timer pair with easy swimming and plenty of places to eat.\n- **[Kamala and Surin](/phuket/kamala-and-surin):** quieter bays between Patong and Bang Tao.\n- **[Bang Tao and Laguna](/phuket/bang-tao-and-laguna):** long sand, big resorts and golf.\n- **[Rawai and Nai Harn](/phuket/rawai-and-nai-harn):** far south, best for calm swims.\n- **[Patong](/phuket/patong):** Bangla Road nightlife, better for one night than a whole stay.",
       "HKT to the west coast takes 45 to 90 minutes. The Smart Bus costs 100 THB, and a limousine to Kata is about 1,000 THB at the airport desk. Book two nights first, then move beaches once you know what you like.",
     ],
     sections: [
