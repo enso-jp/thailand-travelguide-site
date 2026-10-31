@@ -12,6 +12,7 @@ import { KHAO_SOK_DISHES, KOH_CHANG_DISHES } from './dishes-batch5';
 import { AYUTTHAYA_MORE, CHIANG_RAI_MORE, HUA_HIN_MORE, KHAO_YAI_DISHES, KOH_SAMUI_MORE, KRABI_MORE, PATTAYA_MORE, PHUKET_MORE, SUKHOTHAI_MORE } from './dishes-batch5-rest';
 import { KANCHANABURI_B6, KHAO_LAK_B6, KHON_KAEN_B6, KOH_KOOD_B6, KOH_LANTA_B6, KOH_LIPE_B6, KOH_PHANGAN_B6, KOH_PHI_PHI_B6, KOH_TAO_B6, PAI_B6 } from './dishes-batch6';
 import { HAT_YAI_B6, KHAO_SOK_B6, KHAO_YAI_B6, KOH_CHANG_B6, NONG_KHAI_B6, UDON_THANI_B6 } from './dishes-batch6-rest';
+import { AYUTTHAYA_B7, HUA_HIN_B7, KOH_PHANGAN_B7, KOH_SAMUI_B7, KRABI_B7, PATTAYA_B7 } from './dishes-batch7';
 import { ALL_DISHES } from './dish-pages';
 import { dishDirectoryItems, dishPath, type DishRecord, type FoodSpot } from './dish-model';
 
@@ -250,12 +251,14 @@ export const CITY_FOOD_ROWS: Record<string, CityFoodRow[]> = {
   '/thai-food/koh-samui': [
     ...dishRows(KOH_SAMUI_DISHES),
     ...dishRows(KOH_SAMUI_MORE),
+    ...dishRows(KOH_SAMUI_B7),
     { title: 'USM airport snack', nameLocal: 'สนามบินสมุย', href: '/get-there/bangkok-to-koh-samui', kind: 'place', summary: 'The bag belt is slow. Eat after you clear, not in a 20-minute connection. Terminal snacks 80 to 150 THB.', address: 'Samui Airport terminal, Bo Phut, Koh Samui 84320', hours: 'Flight hours', price: '80 to 150 THB' },
     { title: 'Ang Thong picnic skip', nameLocal: 'อ่างทอง', href: '/koh-samui/ang-thong-marine-park', kind: 'place', photo: '/photos/ang-thong.jpg', summary: 'Boat lunch is boxed. Bring water. The 300 THB park fee is extra. Closed 1 Nov to 15 Dec.', address: 'Ang Thong Marine Park boats, Nathon / Maenam piers', hours: 'Boats 08:00 to 09:00', price: 'Tour plus 300 THB' },
   ],
   '/thai-food/krabi': [
     ...dishRows(KRABI_DISHES),
     ...dishRows(KRABI_MORE),
+    ...dishRows(KRABI_B7),
     { title: 'Klong Jilad pier snack', nameLocal: 'คลองจิหลาด', href: '/get-there/phuket-to-krabi-phi-phi', kind: 'place', summary: 'Phi Phi boats leave from Klong Jilad Pier. Eat a proper lunch in Krabi Town first, because pier snacks run 60 to 100 THB and do not fill you.', address: 'Klong Jilad Pier, Krabi 81000', hours: 'Boat mornings 08:00 to 13:00', price: '60 to 100 THB' },
     { title: 'Hong Island boxed lunch', nameLocal: 'เกาะห้อง', href: '/krabi', kind: 'place', summary: 'Park longtail days include a box. The 300 THB park fee is extra. Leave by 08:00.', address: 'Noppharat Thara / Ao Nang longtail desks', hours: 'Boats 08:00', price: 'Tour plus 300 THB' },
   ],
@@ -275,17 +278,17 @@ export const CITY_FOOD_ROWS: Record<string, CityFoodRow[]> = {
   '/thai-food/khon-kaen': dishRows([...KHON_KAEN_DISHES, ...KHON_KAEN_B6]),
   '/thai-food/udon-thani': dishRows([...UDON_THANI_DISHES, ...UDON_THANI_B6]),
   '/thai-food/nong-khai': dishRows([...NONG_KHAI_DISHES, ...NONG_KHAI_B6]),
-  '/thai-food/ayutthaya': dishRows([...AYUTTHAYA_DISHES, ...AYUTTHAYA_MORE]),
-  '/thai-food/hua-hin': dishRows([...HUA_HIN_DISHES, ...HUA_HIN_MORE]),
+  '/thai-food/ayutthaya': dishRows([...AYUTTHAYA_DISHES, ...AYUTTHAYA_MORE, ...AYUTTHAYA_B7]),
+  '/thai-food/hua-hin': dishRows([...HUA_HIN_DISHES, ...HUA_HIN_MORE, ...HUA_HIN_B7]),
   '/thai-food/hat-yai': dishRows([...HAT_YAI_DISHES, ...HAT_YAI_B6]),
   '/thai-food/sukhothai': dishRows([...SUKHOTHAI_DISHES, ...SUKHOTHAI_MORE]),
-  '/thai-food/pattaya': dishRows([...PATTAYA_DISHES, ...PATTAYA_MORE]),
+  '/thai-food/pattaya': dishRows([...PATTAYA_DISHES, ...PATTAYA_MORE, ...PATTAYA_B7]),
   '/thai-food/kanchanaburi': dishRows([...KANCHANABURI_DISHES, ...KANCHANABURI_MORE, ...KANCHANABURI_B6]),
   '/thai-food/pai': dishRows([...PAI_DISHES, ...PAI_MORE, ...PAI_B6]),
   '/thai-food/khao-lak': dishRows([...KHAO_LAK_DISHES, ...KHAO_LAK_MORE, ...KHAO_LAK_B6]),
   '/thai-food/koh-lanta': dishRows([...KOH_LANTA_DISHES, ...KOH_LANTA_MORE, ...KOH_LANTA_B6]),
   '/thai-food/koh-tao': dishRows([...KOH_TAO_DISHES, ...KOH_TAO_MORE, ...KOH_TAO_B6]),
-  '/thai-food/koh-phangan': dishRows([...KOH_PHANGAN_DISHES, ...KOH_PHANGAN_MORE, ...KOH_PHANGAN_B6]),
+  '/thai-food/koh-phangan': dishRows([...KOH_PHANGAN_DISHES, ...KOH_PHANGAN_MORE, ...KOH_PHANGAN_B6, ...KOH_PHANGAN_B7]),
   '/thai-food/koh-phi-phi': dishRows([...KOH_PHI_PHI_DISHES, ...KOH_PHI_PHI_MORE, ...KOH_PHI_PHI_B6]),
   '/thai-food/koh-lipe': dishRows([...KOH_LIPE_DISHES, ...KOH_LIPE_MORE, ...KOH_LIPE_B6]),
   '/thai-food/koh-kood': dishRows([...KOH_KOOD_DISHES, ...KOH_KOOD_MORE, ...KOH_KOOD_B6]),

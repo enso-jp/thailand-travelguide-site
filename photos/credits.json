@@ -560,9 +560,9 @@
     "source": "https://commons.wikimedia.org/wiki/File:Kaeng_som-marum63.JPG"
   },
   "dish-gaeng-som-2": {
-    "author": "Sumit Surai",
-    "license": "CC BY-SA 4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Gaeng_Som_Pla_Or_Thai_sour_fish_soup.jpg"
+    "author": "Takeaway",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kaeng_som_chaom_thot.jpg"
   },
   "dish-grilled-squid": {
     "author": "PattayaPatrol",
@@ -2173,5 +2173,65 @@
     "author": "Takeaway",
     "license": "CC BY-SA 4.0",
     "source": "https://commons.wikimedia.org/wiki/File:2017_0426_Khanom_chin_nam_ya_Ayutthaya_market_01.jpg"
+  },
+  "dish-b7-ayutthaya-lotus-root-curry": {
+    "author": "Takeaway",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kaeng_lueang.JPG"
+  },
+  "dish-b7-ayutthaya-khanom-mo-kaeng": {
+    "author": "Takeaway",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mo_kaeng.jpg"
+  },
+  "dish-b7-ayutthaya-clear-tofu-soup": {
+    "author": "Takeaway",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Tom_jued_tahoo.jpg"
+  },
+  "dish-b7-pattaya-beef-noodle-soup": {
+    "author": "chomjong",
+    "license": "CC BY 2.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Kuai_tiao_nuea.jpg"
+  },
+  "dish-b7-koh-samui-crab-coconut-curry": {
+    "author": "Chainwit.",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:%E0%B8%82%E0%B8%99%E0%B8%A1%E0%B8%88%E0%B8%B5%E0%B8%99%E0%B9%81%E0%B8%81%E0%B8%87%E0%B8%9B%E0%B8%B9%E0%B9%83%E0%B8%9A%E0%B8%8A%E0%B8%B0%E0%B8%9E%E0%B8%A5%E0%B8%B9.jpg"
+  },
+  "dish-b7-koh-samui-coconut-fish-curry": {
+    "author": "Takeaway",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Chuchi_pla_thu_sot.jpg"
+  },
+  "dish-b7-koh-phangan-fermented-catfish": {
+    "author": "Xufanc",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Fried_pladuk85.jpg"
+  },
+  "dish-b7-krabi-crab-relish": {
+    "author": "Chainwit.",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Methavalai_Sorndaeng_-_Lon_pu_-_%E0%B8%AB%E0%B8%A5%E0%B8%99%E0%B8%9B%E0%B8%B9_%E0%B9%80%E0%B8%A1%E0%B8%98%E0%B8%B2%E0%B8%A7%E0%B8%A5%E0%B8%B1%E0%B8%A2_%E0%B8%A8%E0%B8%A3%E0%B9%81%E0%B8%94%E0%B8%87_(Dec_2021).jpg"
+  },
+  "dish-b7-hua-hin-bird-eye-sour-curry": {
+    "author": "Sumit Surai",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Gaeng_Som_Pla_Or_Thai_sour_fish_soup.jpg"
+  },
+  "dish-b7-bangkok-five-spice-pork-eggs": {
+    "author": "Takeaway",
+    "license": "CC BY-SA 3.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Mu_phalo.JPG"
+  },
+  "dish-b7-bangkok-son-in-law-eggs": {
+    "author": "Takeaway",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Khai_luk_khoei.jpg"
+  },
+  "dish-b7-bangkok-miang-leaf-wrap": {
+    "author": "Jpatokal",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Miang_kham_platter.jpg"
   }
 }
