@@ -164,7 +164,15 @@ const bookingTourCta = klookFallbackCta(page.bookingCta?.tourHref);
   }
 
   <div class="reading">
-    {page.paragraphs.map((p) => <p set:html={formatInline(p)} />)}
+    {page.paragraphs.map((p) =>
+      /^- /.test(p) ? (
+        <ul class="scan-list">
+          {p.split(/\s+-\s+(?=\*\*)/).map((line) => <li set:html={formatInline(line.replace(/^- /, ''))} />)}
+        </ul>
+      ) : (
+        <p set:html={formatInline(p)} />
+      ),
+    )}
   </div>
 
   {leadSections.map((section) => (

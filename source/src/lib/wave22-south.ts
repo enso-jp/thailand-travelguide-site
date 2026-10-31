@@ -51,7 +51,7 @@ export const wave22SouthPages: Page[] = [
     path: "/phuket/where-to-stay",
     title: "Where to stay in Phuket",
     description: "Phuket stays split by west-coast beach: Kata or Kamala for first nights, Bang Tao for space, Patong only if Bangla is the night plan.",
-    lede: "Phuket is known for west-coast hotel strips rather than one downtown, so first nights usually sit on Kata, Kamala, or Bang Tao. Patong fits a night out, not a first four-night base.",
+    lede: "Phuket has no single downtown, so you pick a beach, not a town. First-timers do best in Kata or Karon for walkable sand and food, Kamala or Surin for quieter bays, or Bang Tao for long beaches and big resorts. Keep Patong for a night out.",
     schema: 'TouristDestination',
     crumbs: [
       { name: 'Destinations', href: '/destinations' },
@@ -72,8 +72,8 @@ export const wave22SouthPages: Page[] = [
     photo: "/photos/phuket.jpg",
     geo: { lat: 7.88, lon: 98.392, containedIn: "Phuket" },
     paragraphs: [
-      "Book a beach name, not \"Phuket\" as one town, and [Kata and Karon](/phuket/kata-and-karon) are the walkable first-timer pair. [Kamala and Surin](/phuket/kamala-and-surin) sit quieter between Patong and Bang Tao, and [Bang Tao and Laguna](/phuket/bang-tao-and-laguna) give a longer sand and golf grid. [Rawai and Nai Harn](/phuket/rawai-and-nai-harn) are the far-south swim, and [Patong](/phuket/patong) is Bangla after dark.",
-      "HKT to the west coast is 45 to 90 minutes, and the Smart Bus is 100 THB. A Kata limousine sits near 1,000 THB on the airport board, and lock two nights on Trip.com, then move if a boat week or [Krabi](/krabi) is next. Pair with [getting around](/phuket/getting-around).",
+      "- **Kata and Karon:** walkable first-timer pair with easy swimming and plenty of places to eat.\n- **Kamala and Surin:** quieter bays between Patong and Bang Tao.\n- **Bang Tao and Laguna:** long sand, big resorts and golf.\n- **Rawai and Nai Harn:** far south, best for calm swims.\n- **Patong:** Bangla Road nightlife, better for one night than a whole stay.",
+      "HKT to the west coast takes 45 to 90 minutes. The Smart Bus costs 100 THB, and a limousine to Kata is about 1,000 THB at the airport desk. Book two nights first, then move beaches once you know what you like.",
     ],
     sections: [
       {
