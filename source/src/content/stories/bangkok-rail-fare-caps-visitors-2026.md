@@ -21,7 +21,7 @@ stayCity: bangkok
 
 - **What it is:** a common fare of **17 THB to board and no more than 45 THB per trip**, even when you change lines.
 - **Lines:** Red, Airport Rail Link, Blue, Purple, Yellow, Pink, Green and Gold.
-- **Start date:** the target is **1 January 2027**. The Cabinet meeting of 27 October 2026 did not approve the funding.
+- **Start date:** the target is **1 January 2027**. The Transport Ministry was due to ask the Cabinet for the funding on 26 October 2026, and the funding is not yet approved.
 - **Who gets it:** **Thai nationals only**, registered on the Paotang app and paying with a contactless Visa or Mastercard.
 - **How it works:** you pay the full fare at the gate, and the difference is refunded later through Paotang.
 
@@ -29,7 +29,7 @@ stayCity: bangkok
 
 - **Lines:** the **SRT Red lines** and the **MRT Purple Line** only.
 - **The deal:** an adult pays **no more than 40 THB a day** in total, with no limit on rides.
-- **How to pay:** tap a **contactless bank card** in and out. MRTA lists Visa, Mastercard and UnionPay credit cards for foreign visitors.
+- **How to pay:** tap a contactless **Visa, Mastercard or UnionPay credit or debit card** in and out. Mangmoom and MRT EMV cards also qualify.
 - **Use one card:** tap in and out with the same card for every ride that day. A missed tap loses the cap for that day.
 - **Refund:** you are charged the normal fare per trip, and anything above 40 THB goes back to the card within 3 working days.
 - **End date:** **30 November 2026**. An extension to 31 December 2027 has been proposed but not approved yet.
