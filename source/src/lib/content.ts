@@ -1076,7 +1076,7 @@ const rawPages: Page[] = [
     path: "/bangkok",
     title: "Bangkok",
     description: "Bangkok first-trip guide: BTS and MRT, two airports, Sukhumvit vs riverside stays, and the next hop to Chiang Mai, Phuket, or Samui.",
-    lede: "Bangkok is the usual first stop. Sleep on Sukhumvit or in Siam for the BTS. Sleep riverside for the Chao Phraya. The Old City is for temples, not late nights.",
+    lede: "Bangkok is Thailand's capital, known for gilded temples on the Chao Phraya, street food past midnight and rooftop bars above the BTS. Give it two or three nights. Sleep on Sukhumvit or near Siam for the BTS, or by the river for temples and slower evenings.",
     schema: "City",
     alternateName: "Krung Thep Maha Nakhon",
     crumbs: [
@@ -1607,7 +1607,7 @@ const rawPages: Page[] = [
     path: "/phuket",
     title: "Phuket",
     description: "Phuket first-trip guide: west-coast beaches, the 80-minute Bangkok flight, morning boats to Phi Phi and Krabi, and where not to base.",
-    lede: "Phuket is the easy Andaman airport with beaches attached. Stay on the west coast. Use Patong for a night if you want it, not as a four-night base.",
+    lede: "Phuket is Thailand's biggest island, known for long west-coast beaches, sunset viewpoints and boat days to Phang Nga Bay and Phi Phi. Base yourself in Kata, Kamala or Bang Tao, and keep Patong for a night out. November to April brings the calmest sea.",
     schema: "TouristDestination",
     alternateName: "Phuket Island",
     crumbs: [
@@ -1757,7 +1757,7 @@ const rawPages: Page[] = [
     path: "/koh-samui",
     title: "Koh Samui",
     description: "Koh Samui first-trip guide: USM vs the Donsak ferry, Chaweng vs the quieter coasts, and boats to Phangan and Tao.",
-    lede: "Samui is the Gulf hub with an airport on the island. Stay on Chaweng for nightlife. Stay north or south if you want a quieter coast. January to September is the easier sea.",
+    lede: "Koh Samui is the Gulf's palm-fringed island hub, known for villa resorts on quiet bays, its own airport and ferries to Koh Phangan and Koh Tao. Stay in Chaweng for nightlife, or Bophut, Maenam or the south for calm. January to September is the easier sea.",
     schema: "TouristDestination",
     crumbs: [
       {
