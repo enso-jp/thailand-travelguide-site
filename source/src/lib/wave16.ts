@@ -1531,10 +1531,10 @@ export function structureCopy(page: Page): Page {
 
 export function applyResortLivingHub(page: Page): Page {
   if (page.path !== '/interests/resort-living') return page;
-  return {
+  return curateResortHub({
     ...page,
     lede:
-      "Thailand's flagship resorts are known for private Andaman headlands, lantern-lit Mae Rim rice terraces, and Chao Phraya river sanctuaries where the stay itself shapes the journey. Compare the six regions by coast, season, and nightly tier.",
+      "Thailand's flagship resorts are known for private Andaman headlands, lantern-lit Mae Rim rice terraces, and Chao Phraya river sanctuaries where the stay itself shapes the journey. Compare five flagships by coast and beach zone, then browse the rest by region.",
     paragraphs: [
       "Wake to limestone karsts rising out of Phang Nga Bay, step off a mahogany river barge onto a private Bangkok pier, or trade Phuket's main beaches for a gated coconut grove on Pansea Cove. The stay is the itinerary, so the coast and the month come before the brand name.",
     ],
@@ -1790,8 +1790,8 @@ export function applyResortLivingHub(page: Page): Page {
         },
       },
     ],
-    portraits: RESORT_RANKED.map((row) => card(row.title, row.href, row.photo)),
-  };
+    portraits: RESORT_FLAGSHIPS.map((href) => RESORT_RANKED.find((row) => row.href === href)!).map((row) => card(row.title.replace(/^\d+\. /, ''), row.href, row.photo)),
+  });
 }
 
 export function applyNightlifeHub(page: Page): Page {
@@ -2208,4 +2208,54 @@ export function applyWave16Finish(page: Page): Page {
   next = assignEditorialCardPhotos(next, usedPhotos);
   next = { ...next, photoCredit: photoCreditFor(next.photo) };
   return next;
+}
+
+// Hub showcase: top flagships only. Every other resort page stays live and linked in the compact list.
+export const RESORT_FLAGSHIPS = [
+  '/resort-living/amanpuri',
+  '/resort-living/four-seasons-koh-samui',
+  '/resort-living/phulay-bay',
+  '/resort-living/soneva-kiri',
+  '/resort-living/capella-bangkok',
+];
+
+function curateResortHub(page: Page): Page {
+  const all = page.sections || [];
+  const coasts = all.filter((s) => s.table?.rows?.length);
+  const keep = all.filter((s) => !s.table?.rows?.length);
+  const linkOf = (cell: string) => /\]\((\/resort-living\/[^)]+)\)/.exec(cell)?.[1];
+  const coastName = (t: string) => t.replace(/ flagships$/, '');
+  const cards: any[] = [];
+  const rows: string[][] = [];
+  const more: string[] = [];
+  for (const href of RESORT_FLAGSHIPS) {
+    for (const sec of coasts) {
+      const row = sec.table!.rows.find((r) => linkOf(r[1]) === href);
+      if (!row) continue;
+      rows.push([String(rows.length + 1), row[1], coastName(sec.title), row[2], row[3]]);
+      const card = (sec.cards || []).find((c: any) => (c.bullets || []).some((b: string) => b.includes(`](${href})`)));
+      if (card) {
+        cards.push({ kicker: coastName(sec.title), title: card.title, lead: card.lead, bullets: card.bullets.filter((b: string) => b.includes(`](${href})`)) });
+      }
+    }
+  }
+  for (const sec of coasts) {
+    const rest = sec.table!.rows.filter((r) => !RESORT_FLAGSHIPS.includes(linkOf(r[1]) || ''));
+    if (rest.length) more.push(`**${coastName(sec.title)}:** ${rest.map((r) => `${r[1]} (${r[2]})`).join(', ')}`);
+  }
+  return {
+    ...page,
+    sections: [
+      ...keep.filter((s) => s.id === 'transfers'),
+      {
+        id: 'flagships',
+        title: 'The five flagships',
+        paragraphs: ['One flagship per coast, compared by beach zone and 2026 nightly band.'],
+        cards,
+        table: { headers: ['Rank', 'Resort', 'Coast', 'Zone', '2026 night band'], rows },
+      },
+      { id: 'more-resorts', title: 'More resorts', paragraphs: [], bullets: more },
+      ...keep.filter((s) => s.id !== 'transfers'),
+    ],
+  };
 }

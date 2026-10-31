@@ -2,7 +2,7 @@
 // Update that file to change a page's "Checked" line and dateModified. Never use the build date here.
 import raw from '../data/review-dates.csv?raw';
 
-const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 function norm(path: string): string {
   return path.replace(/\/+$/, '') || '/';
@@ -22,10 +22,10 @@ export function reviewDateFor(path: string): string | undefined {
   return DATES.get(norm(path));
 }
 
-/** "Checked October 2026" for a logged path, otherwise undefined. */
+/** "Checked on the ground: 31 Oct 2026" for a logged path, otherwise undefined. */
 export function checkedLabel(path: string): string | undefined {
   const iso = reviewDateFor(path);
   if (!iso) return undefined;
-  const [y, mo] = iso.split('-').map(Number);
-  return `Checked ${MONTHS[mo - 1]} ${y}`;
+  const [y, mo, d] = iso.split('-').map(Number);
+  return `Checked on the ground: ${d} ${MONTHS[mo - 1]} ${y}`;
 }

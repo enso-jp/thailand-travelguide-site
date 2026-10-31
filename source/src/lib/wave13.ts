@@ -354,7 +354,7 @@ function thaiFoodHubCards(): Portrait[] {
 function resortHubCards(): Portrait[] {
   return Object.entries(RESORT_PHOTO)
     // Hub grid shows 2 or 3 flagships per coast; the other resort pages stay live and linked from their coast.
-    .filter(([href]) => !['/resort-living/vie-hotel-bangkok', '/resort-living/veranda-high-chiang-mai', '/resort-living/four-seasons-bangkok', '/resort-living/rosewood-bangkok'].includes(href))
+    .filter(([href]) => ['/resort-living/amanpuri', '/resort-living/four-seasons-koh-samui', '/resort-living/phulay-bay', '/resort-living/soneva-kiri', '/resort-living/capella-bangkok'].includes(href))
     .map(([href, photo]) => {
       const title = href.replace('/resort-living/', '').replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
       return card(title, href, photo);
