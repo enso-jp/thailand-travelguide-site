@@ -39,7 +39,7 @@ export const wave22Pages: Page[] = [
     path: "/bangkok/where-to-stay",
     title: "Where to stay in Bangkok",
     description: "Bangkok hotel areas split by BTS: Sukhumvit for first nights, riverside for boats, Siam for malls, Old City only if temples are the whole stay.",
-    lede: "Bangkok is known for a hotel strip along the BTS rather than one downtown, so first-timers usually sleep on Sukhumvit or in Siam for the trains and riverside if they want a boat dock. Old City rooms only fit a stay that is really about the temples.",
+    lede: "Stay on Sukhumvit for a first trip, in Siam for malls and trains, on the Riverside for hotel piers, in Silom for Lumphini and business, or on Khao San for budget beds near the temples.",
     schema: 'TouristDestination',
     crumbs: [
       { name: 'Destinations', href: '/destinations' },
@@ -65,6 +65,24 @@ export const wave22Pages: Page[] = [
     ],
     sections: [
       {
+        id: "best-areas",
+        title: "Best areas to stay in Bangkok",
+        bullets: [
+          "**Sukhumvit:** the first-timer pick. BTS Nana to Phrom Phong, dinner and nightlife on every soi.",
+          "**Siam:** the BTS interchange and the big malls. Easy for a short stay or with kids.",
+          "**Riverside:** hotel piers and boats to the temples. Quieter evenings, longer BTS walks.",
+          "**Silom:** Lumphini Park, offices and night food. MRT and BTS both stop here.",
+          "**Khao San:** budget beds and backpacker bars, a walk from the Grand Palace.",
+        ],
+        affiliates: [
+          stay("Sukhumvit hotels", "First trip", "Hotels near BTS Nana to Phrom Phong.", stayAreaLink('sukhumvit'), "/photos/sukhumvit.jpg"),
+          stay("Siam hotels", "Malls and trains", "Hotels around the Siam interchange.", stayAreaLink('siam'), "/photos/siam.jpg"),
+          stay("Riverside hotels", "Hotel piers", "Hotels on the Chao Phraya with their own docks.", stayAreaLink('riverside'), "/photos/riverside.jpg"),
+          stay("Silom hotels", "Lumphini and night food", "Hotels between Silom and Sathorn.", stayAreaLink('silom'), "/photos/siam.jpg"),
+          stay("Khao San hotels", "Budget", "Guesthouses and hotels around Khao San Road.", stayAreaLink('khao-san'), "/photos/old-city.jpg"),
+        ],
+      },
+      {
         id: "areas",
         title: "Which area fits which trip",
         table: {
@@ -85,10 +103,7 @@ export const wave22Pages: Page[] = [
       { title: "Old City stays", href: "/bangkok/old-city-rattanakosin", photo: "/photos/old-city.jpg" },
       { title: "Getting around", href: "/bangkok/getting-around", photo: "/photos/bts.jpg" },
     ],
-    affiliates: [
-    stay("Sukhumvit hotels", "First-timer default", "Search Nana to Phrom Phong if you do not yet have a soi.", stayAreaLink('sukhumvit'), "/photos/ari.jpg"),
-    stay("Riverside hotels", "Boat docks", "Use this search if a hotel pier matters more than a BTS gate.", stayAreaLink('riverside'), "/photos/wat-arun-night.jpg"),
-    ],
+    affiliates: [],
     faqs: [
       { q: "Sukhumvit or riverside for two nights?", a: "Sukhumvit if you want dinner and the BTS. Riverside if you want boats and a quieter evening. Do not split one night each." },
       { q: "Is the Old City a good first hotel?", a: "Only if temples are the whole stay. Evening food thins after 21:00. Most first-timers sleep on Sukhumvit and Grab in at 07:15." },

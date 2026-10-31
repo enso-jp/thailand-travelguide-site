@@ -650,3 +650,53 @@ export function allowsBkkDadFlight(path: string): boolean {
   if (clean === '/get-there' || clean.startsWith('/get-there/')) return true;
   return TH_VN_ITINERARY.test(clean);
 }
+
+// Thailand domestic flight cards. Only Trip.com Partner tool links already in partners.ts are used;
+// a route without a generated link is skipped, never hand-built.
+const DOMESTIC: Record<string, { route: string; duration: string }> = {
+  'BKK-CNX': { route: 'Bangkok to Chiang Mai', duration: 'About 1h 15m nonstop' },
+  'BKK-HKT': { route: 'Bangkok to Phuket', duration: 'About 1h 25m nonstop' },
+  'BKK-USM': { route: 'Bangkok to Koh Samui', duration: 'About 1h 5m nonstop' },
+  'BKK-KBV': { route: 'Bangkok to Krabi', duration: 'About 1h 20m nonstop' },
+  'BKK-CEI': { route: 'Bangkok to Chiang Rai', duration: 'About 1h 20m nonstop' },
+  'BKK-URT': { route: 'Bangkok to Surat Thani', duration: 'About 1h 10m nonstop' },
+  'CNX-HKT': { route: 'Chiang Mai to Phuket', duration: 'About 2h nonstop' },
+  'HKT-USM': { route: 'Phuket to Koh Samui', duration: 'About 1h nonstop' },
+};
+
+function domesticCta(key: string): SisterFlightCta | null {
+  const [from, to] = key.split('-');
+  const href = generatedFlightLink(from, to);
+  const meta = DOMESTIC[key];
+  return href && meta ? flightCta(href, meta.route, from, to, meta.duration) : null;
+}
+
+function domesticKeysForPath(clean: string): string[] {
+  const has = (re: RegExp) => re.test(clean);
+  if (has(/^\/get-there\/bangkok-to-chiang-mai/)) return ['BKK-CNX', 'CNX-HKT'];
+  if (has(/^\/get-there\/bangkok-to-chiang-rai/)) return ['BKK-CEI', 'BKK-CNX'];
+  if (has(/^\/get-there\/bangkok-to-phuket/)) return ['BKK-HKT', 'HKT-USM'];
+  if (has(/^\/get-there\/bangkok-to-krabi/)) return ['BKK-KBV', 'BKK-HKT'];
+  if (has(/^\/get-there\/bangkok-to-(koh-samui|samui|koh-phangan|koh-tao|surat-thani)/)) return ['BKK-USM', 'BKK-URT'];
+  if (has(/^\/(chiang-mai|pai)(\/|$)|^\/destinations\/northern-thailand/)) return ['BKK-CNX', 'CNX-HKT'];
+  if (has(/^\/chiang-rai(\/|$)/)) return ['BKK-CEI', 'BKK-CNX'];
+  if (has(/^\/(phuket|khao-lak)(\/|$)/)) return ['BKK-HKT', 'HKT-USM'];
+  if (has(/^\/(krabi|koh-lanta|koh-lipe)(\/|$)/)) return ['BKK-KBV', 'BKK-HKT'];
+  if (has(/^\/(koh-samui|koh-phangan|koh-tao)(\/|$)/)) return ['BKK-USM', 'BKK-URT'];
+  if (has(/^\/itineraries\/.*(gulf|samui|phangan|tao)/)) return ['BKK-USM', 'BKK-URT'];
+  if (has(/^\/itineraries\/.*(phuket|krabi|phi-phi|andaman)/)) return ['BKK-HKT', 'BKK-KBV'];
+  if (has(/^\/itineraries\/.*(chiang|north)/)) return ['BKK-CNX', 'BKK-CEI'];
+  return ['BKK-CNX', 'BKK-HKT', 'BKK-USM'];
+}
+
+/** Thai domestic flight cards for a Thailand page, from generated links only. */
+export function thaiDomesticFlightsForPath(path: string): SisterFlightCta[] {
+  const clean = path.replace(/\/$/, '') || '/';
+  return domesticKeysForPath(clean).map(domesticCta).filter((f): f is SisterFlightCta => f !== null);
+}
+
+/** Vietnam flight cards only where the page is about a Thailand and Vietnam trip. */
+export function allowsVietnamFlights(path: string): boolean {
+  const clean = path.replace(/\/$/, '') || '/';
+  return clean === '/' || TH_VN_ITINERARY.test(clean);
+}
