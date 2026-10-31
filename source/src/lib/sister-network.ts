@@ -51,7 +51,7 @@ export function crossBorderFlightUrl(
 
 export const SISTER_CROSS_BORDER_ROUTES = [
   {
-    kicker: '1h 35m nonstop · BKK / DMK to SGN',
+    kicker: 'About 1h 35m nonstop · BKK / DMK to SGN',
     title: 'Bangkok to Ho Chi Minh City & Phu Quoc',
     summary:
       'Pair 4 days in Bangkok with District 1 rooftop bars, Thao Dien dining, and a short hop to Phu Quoc Island on the same Gulf of Thailand weather window.',
@@ -68,7 +68,7 @@ export const SISTER_CROSS_BORDER_ROUTES = [
     ),
   },
   {
-    kicker: '1h 50m nonstop · BKK / DMK to HAN',
+    kicker: 'About 1h 50m nonstop · BKK / DMK to HAN',
     title: 'Bangkok to Hanoi, Ha Long Bay & Ninh Binh',
     summary:
       'Combine Bangkok or Phuket with 36 streets in Hanoi Old Quarter, an overnight limestone-karst cruise on Ha Long Bay, and rowboat caves in Ninh Binh.',
@@ -86,7 +86,7 @@ export const SISTER_CROSS_BORDER_ROUTES = [
     ),
   },
   {
-    kicker: '1h 40m nonstop · BKK / DMK to DAD',
+    kicker: 'About 1h 40m nonstop · BKK / DMK to DAD',
     title: 'Bangkok to Da Nang, Hoi An & Hue',
     summary:
       'Fly nonstop from Bangkok to Central Vietnam for My Khe Beach resorts in Da Nang, lantern-lit tailor lanes in Hoi An Ancient Town, and the imperial citadel in Hue.',
@@ -145,7 +145,7 @@ export function sisterSectionForPath(path: string): SisterSection | null {
       sisterUrl: `${VN}/ho-chi-minh-city`,
       cards: [
         {
-          kicker: 'Vietnam Southern Metropolis · 1h 35m flight',
+          kicker: 'Vietnam Southern Metropolis · About 1h 35m flight',
           title: 'Ho Chi Minh City (Saigon)',
           href: `${VN}/ho-chi-minh-city`,
           summary:
@@ -153,7 +153,7 @@ export function sisterSectionForPath(path: string): SisterSection | null {
           cta: 'Explore Ho Chi Minh City on Vietnam Guide',
         },
         {
-          kicker: 'Vietnam Northern Capital · 1h 50m flight',
+          kicker: 'Vietnam Northern Capital · About 1h 50m flight',
           title: 'Hanoi & the Old Quarter',
           href: `${VN}/hanoi`,
           summary:
@@ -161,7 +161,7 @@ export function sisterSectionForPath(path: string): SisterSection | null {
           cta: 'Explore Hanoi on Vietnam Guide',
         },
         {
-          kicker: 'Vietnam Coastal City · 1h 40m flight',
+          kicker: 'Vietnam Coastal City · About 1h 40m flight',
           title: 'Da Nang & Hoi An',
           href: `${VN}/da-nang`,
           summary:

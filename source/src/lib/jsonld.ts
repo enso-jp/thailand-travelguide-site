@@ -140,7 +140,8 @@ export function pageLd(page: Page) {
   }
 
   const datePublished = page.published ?? SITE_PUBLISHED;
-  const modified = reviewDateFor(page.path) ?? page.modified ?? (page.published && page.published > BUILD_MODIFIED ? page.published : BUILD_MODIFIED);
+  // dateModified only from Quill's review log (src/data/review-dates.csv); omitted when a page has no review.
+  const modified = reviewDateFor(page.path);
   const article = {
     '@context': 'https://schema.org',
     '@type': 'Article',
@@ -150,7 +151,7 @@ export function pageLd(page: Page) {
     mainEntityOfPage: absUrl(page.path),
     image: page.photo ? absUrl(page.photo) : undefined,
     datePublished,
-    dateModified: modified < datePublished ? datePublished : modified,
+    dateModified: modified ? (modified < datePublished ? datePublished : modified) : undefined,
     inLanguage: 'en',
     author: editorsLd(),
     publisher: { '@id': `${site.url}/#organization` },

@@ -14,7 +14,7 @@ import { chipHref, formatInline } from '../lib/inline';
 import { UniquePhotos } from '../lib/photos';
 import { CITY_FOOD_ROWS } from '../lib/food-catalog';
 import { attractionsFor, PLACE_META } from '../lib/place-attractions';
-import { klookTours, klookFallbackCta, stayLink, stayCityFromPath } from '../lib/partners';
+import { klookTours, klookFallbackCta, stayLink, stayCityFromPath, transferLink, cityAirports } from '../lib/partners';
 import { regionForPath } from '../lib/regions';
 import { pageHref, routePath } from '../lib/site';
 
@@ -31,6 +31,15 @@ const portraits = bag.takeBatch(page.portraits || [], (item) => `${page.path} ${
 const affiliates = bag.takeBatch(page.affiliates || [], (item) => `${page.path} ${item.title} ${item.kicker} ${item.body}`);
 const city = stayCityFromPath(page.path);
 const pageHrefs = [...(JSON.stringify(page).match(/https:\/\/www\.trip\.com\/[^"\\\s]+/g) || [])];
+// Train and airport-car links belong in Getting around, not Where to stay or the booking rail.
+const isTransport = (href: string) => /trip\.com\/(trains|airport-transfers)/.test(href);
+const stayAffiliates = affiliates.filter((a) => !isTransport(a.href));
+const moveAffiliates = affiliates.filter((a) => isTransport(a.href));
+const railTransfer = transferLink(cityAirports[city] || 'BKK');
+if (moveAffiliates.length > 0 && !pageHrefs.includes(railTransfer)) {
+  moveAffiliates.push({ title: 'Airport car', kicker: 'Trip.com', body: `Private transfer from ${cityAirports[city] || 'BKK'}.`, href: railTransfer, cta: 'See transfers', photo: '/photos/get-there.jpg' });
+}
+const railSkip = [...pageHrefs, ...moveAffiliates.map((a) => a.href)];
 const hasKlookInStay = affiliates.some((a) => /klook/.test(a.href));
 const region = (meta?.region || regionForPath(page.path)) as 'central' | 'north' | 'andaman' | 'gulf' | 'east';
 const stayHref = page.bookingCta?.stayHref || stayLink(city);
@@ -171,7 +180,8 @@ const tabs = [
                   </table>
                 </div>
               )}
-              {section.id === 'stay' && affiliates.length > 0 && <AffRow items={affiliates} />}
+              {section.id === 'stay' && stayAffiliates.length > 0 && <AffRow items={stayAffiliates} />}
+              {section.id === 'get-there' && moveAffiliates.length > 0 && <AffRow items={moveAffiliates} />}
             </section>
           );
         })
@@ -181,7 +191,7 @@ const tabs = [
         !page.sections?.some((section) => section.id === 'stay') && (
           <section class="place-section" id="stay">
             <h2>Where to stay</h2>
-            {affiliates.length > 0 && <AffRow items={affiliates} />}
+            {stayAffiliates.length > 0 && <AffRow items={stayAffiliates} />}
           </section>
         )
       }
@@ -191,6 +201,7 @@ const tabs = [
           <section class="place-section" id="get-there">
             <h2>Getting around</h2>
             <p>Use the fact bar for the local hop. City-to-city pages live on <a href={pageHref('/get-there')}>Get there</a>.</p>
+            {moveAffiliates.length > 0 && <AffRow items={moveAffiliates} />}
           </section>
         )
       }
@@ -230,7 +241,7 @@ const tabs = [
 
     <aside class="rail">
       <div class="rail-booking">
-        <TripSearch variant="destination" city={city} placeName={page.title} skipTours={hasKlookInStay} skipHrefs={pageHrefs} />
+        <TripSearch variant="destination" city={city} placeName={page.title} skipTours={hasKlookInStay} skipHrefs={railSkip} />
       </div>
       <div class="panel">
         <p class="explore-kicker">Explore</p>

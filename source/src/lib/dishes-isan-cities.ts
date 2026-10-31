@@ -192,19 +192,19 @@ export const KHON_KAEN_DISHES: DishRecord[] = dishesForCity('khon-kaen', [
     slug: 'nam-tok-kk',
     title: 'Nam Tok',
     nameLocal: 'น้ำตก',
-    hook: 'Grilled Beef Isan Salad',
-    lede: 'Nam tok is grilled-beef salad in the same herb family as larb. It fits the Khao Suan Kwang table with sticky rice.',
-    taste: 'Grilled beef, toasted rice, mint, and lime.',
+    hook: 'Grilled Pork or Beef Isan Salad',
+    lede: 'Nam tok is a grilled pork or beef salad in the same herb family as larb. It fits the Khao Suan Kwang table with sticky rice.',
+    taste: 'Grilled pork or beef, toasted rice, mint, and lime.',
     orderName: 'nam tok nuea',
     extraFacts: [
-      { label: 'Meat', value: 'Beef here. Nam tok mu is the pork version' },
+      { label: 'Meat', value: 'Pork or beef' },
       { label: 'Heat', value: 'Hot, with toasted rice and chili' },
     ],
     orderPhrase: 'Khor nam tok nuea, pet nit noi, khrap/kha.',
     orderNote: 'Share it. The bird is still the reason to drive.',
     price: '80 to 140 THB',
     spice: 'Hot.',
-    diet: 'Beef.',
+    diet: 'Pork or beef.',
     spots: [
       {
         name: 'Kai Yang Wanna',
@@ -219,8 +219,8 @@ export const KHON_KAEN_DISHES: DishRecord[] = dishesForCity('khon-kaen', [
     room: 'Kai Yang Wanna',
     clock: 'Morning to mid-afternoon',
     faqs: [
-      { q: 'Larb or nam tok?', a: 'Larb is minced. Nam tok is sliced grilled beef. Order both if the table is four.' },
-      { q: 'Pork nam tok?', a: 'Ask. Beef is the usual.' },
+      { q: 'Larb or nam tok?', a: 'Larb is minced. Nam tok is sliced grilled pork or beef. Order both if the table is four.' },
+      { q: 'Pork nam tok?', a: 'Both. Pork (nam tok moo) is the most common at Isan stalls, and beef (nam tok neua) is easy to find too.' },
     ],
   },
   {

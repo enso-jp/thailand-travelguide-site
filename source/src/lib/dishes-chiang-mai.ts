@@ -1065,7 +1065,7 @@ export const CHIANG_MAI_DISHES: DishRecord[] = [
       { label: 'Thai', value: 'ผักเหนียง · phak niang' },
       { label: 'Taste', value: 'Bitter leaf' },
       { label: 'Use', value: 'Side' },
-      { label: 'Where', value: 'Lanna kitchens, usually stir-fried with egg' },
+      { label: 'Served', value: 'Stir-fried with egg' },
     ],
     faqs: [
       { q: 'Very bitter?', a: 'Yes. That is the leaf. Egg softens it.' },
