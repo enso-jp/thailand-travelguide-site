@@ -1408,8 +1408,8 @@ export const CHIANG_MAI_DISHES: DishRecord[] = [
     description:
       'Khao Soi Islam is the Muslim beef curry noodle on Charoen Prathet, south of the Old City. It is a lunch bowl, not a moat-yard chicken pot.',
     taste: 'Darker beef curry, less sweet coconut, and a Muslim spice note. No pork. The fried nest still sits on top.',
-    orderName: 'khao soi neua',
-    orderPhrase: 'Khor khao soi neua, khrap/kha.',
+    orderName: 'khao soi nuea',
+    orderPhrase: 'Khor khao soi nuea, khrap/kha.',
     orderNote: 'Charoen Prathet, not inside the moat. Lunch clock. Do not hunt it in Nimman.',
     price: '50 to 80 THB',
     spice: 'Medium.',
