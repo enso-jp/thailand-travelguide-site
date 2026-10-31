@@ -14,7 +14,7 @@ export const wave31FoodBatch8: Page[] = [
     path: '/thai-food/chiang-mai-sam-lan-food',
     title: 'Sam Lan food guide',
     description:
-      'Sam Lan food is the charcoal chicken at SP Chicken, 105 THB for half a bird, daily from 10:00 to 17:00 beside Wat Phra Singh.',
+      'Sam Lan food is the charcoal chicken at SP Chicken beside Wat Phra Singh: 105 THB a half bird, 190 THB a whole one, daily 10:00 to 17:00.',
     lede:
       'Sam Lan is known for a garlic-stuffed chicken turned over charcoal. The grill sits on Soi 1 and shuts at 17:00, which makes it a lunch lane, not a night market.',
     schema: 'Article',
@@ -55,7 +55,7 @@ export const wave31FoodBatch8: Page[] = [
     path: '/thai-food/chiang-mai-faham-food',
     title: 'Fa Ham food guide',
     description:
-      'Fa Ham food is khao soi at Samer Jai, 60 to 70 THB, daily 08:00 to 17:00 on Charoenrat Road beside Wat Fa Ham.',
+      'Fa Ham food is khao soi at Samer Jai on Charoenrat Road beside Wat Fa Ham: 60 to 70 THB a bowl, daily 08:00 to 17:00, for lunch only.',
     lede:
       'Fa Ham is known for a lunch khao soi on the Ping river road. Samer Jai opens at 08:00 and stops at 17:00, which is earlier than a Nimman dinner.',
     schema: 'Article',
@@ -96,7 +96,7 @@ export const wave31FoodBatch8: Page[] = [
     path: '/thai-food/chiang-rai-phahonyothin-food',
     title: 'Phahonyothin food guide',
     description:
-      'Phahonyothin food is Salung Kham at 834/3, open 10:30 to 22:00, with sai ua at 275 THB a half kilo.',
+      'Phahonyothin Road food in Chiang Rai is Salung Kham at 834/3, a northern deli open 10:30 to 22:00, with sai ua at 275 THB a half kilo.',
     lede:
       'This stretch of Phahonyothin Road is known for Salung Kham, a northern kitchen that sells sausage and curry by the pack. It is open 10:30 to 22:00 every day.',
     schema: 'Article',
@@ -137,7 +137,7 @@ export const wave31FoodBatch8: Page[] = [
     path: '/thai-food/phuket-dibuk-food',
     title: 'Dibuk Road food guide',
     description:
-      'Dibuk Road food is Raya, open 10:00 to 22:00 with last order at 21:30. Crab curry is 400 THB small and 600 THB large.',
+      'Dibuk Road food in Phuket Town is Raya, known for crab curry with betel leaf at 400 THB small and 600 THB large. Last order is 21:30.',
     lede:
       'Dibuk Road is known for Raya, a southern kitchen in an old shophouse. A small crab curry is 400 THB and a large one is 600 THB, with last order at 21:30.',
     schema: 'Article',
@@ -178,7 +178,7 @@ export const wave31FoodBatch8: Page[] = [
     path: '/thai-food/pattaya-naklua-seafood',
     title: 'Naklua seafood guide',
     description:
-      'Naklua seafood is Moom Aroi at the end of Na Kluea Alley 4, 10:30 to 21:30, with lime sea bass at 480 THB.',
+      'Naklua seafood in Pattaya is Moom Aroi at the end of Na Kluea Alley 4, open 10:30 to 21:30, with lime sea bass at 480 THB and a printed menu.',
     lede:
       'Naklua is known for a waterfront seafood room with a printed menu, not a Walking Street grill. Moom Aroi runs 10:30 to 21:30.',
     schema: 'Article',
@@ -219,7 +219,7 @@ export const wave31FoodBatch8: Page[] = [
     path: '/thai-food/hua-hin-phetkasem-food',
     title: 'Phetkasem food guide',
     description:
-      'Phetkasem food in Hua Hin is Jek Pia at 69/7, open 06:15 to 14:30 and 17:30 to 21:00, with chicken rice at 50 THB.',
+      'Phetkasem Road food in Hua Hin is Jek Pia at 69/7: chicken rice from 06:15 to 14:30, pork satay from 17:30 to 21:00. Ask the current prices.',
     lede:
       'This corner of Phetkasem Road is known for Jek Pia, an old coffee shop that still does jok and chicken rice. Chicken rice was 50 THB on a 13 August 2024 bill.',
     schema: 'Article',
@@ -260,7 +260,7 @@ export const wave31FoodBatch8: Page[] = [
     path: '/thai-food/koh-samui-maenam-food',
     title: 'Maenam food guide',
     description:
-      'Maenam food is Ko Seng, open 10:00 to 21:00 at 226/9 Moo 1. Ask the grilled-fish price per kilo before it hits the charcoal.',
+      'Maenam food on Koh Samui is Ko Seng, a seafood grill at 226/9 Moo 1, open 10:00 to 21:00. Ask the kilo price before the fish hits the charcoal.',
     lede:
       'Maenam is known for Ko Seng, a seafood room a short ride from the beach. The grill runs 10:00 to 21:00, and whole fish is sold by the kilo.',
     schema: 'Article',
@@ -280,7 +280,7 @@ export const wave31FoodBatch8: Page[] = [
     geo: { lat: 9.57, lon: 100.01, containedIn: 'Koh Samui' },
     paragraphs: [
       'Point at the fish and ask the price per kilo before it goes on the charcoal. Recent shared dinners have run about 800 to 1,000 THB a person. The airport ride is about 25 minutes.',
-      'The south-coast soup room is [Sabienglae](/thai-food/koh-samui--sabienglae-tom-yum), open until 22:00. Ask that bowl price too. The island hub is [Koh Samui food](/thai-food/koh-samui).',
+      'The south-coast soup room is [Sabienglae](/thai-food/koh-samui--sabienglae-tom-yum), open until 22:00. No soup price is posted, so ask first. The island hub is [Koh Samui food](/thai-food/koh-samui).',
     ],
     portraits: [
       { title: 'Koh Samui food', href: '/thai-food/koh-samui', photo: '/photos/koh-samui.jpg' },
@@ -301,7 +301,7 @@ export const wave31FoodBatch8: Page[] = [
     path: '/thai-food/krabi-sai-thai-food',
     title: 'Sai Thai food guide',
     description:
-      'Sai Thai food is Ruen Mai at 117 Moo 3, open 10:30 to 15:00 and 17:00 to 21:00. The crab curry is 350 THB.',
+      'Sai Thai food in Krabi is Ruen Mai at 117 Moo 3, a garden kitchen with 350 THB crab curry, open 10:30 to 15:00 and 17:00 to 21:00.',
     lede:
       'Sai Thai is known for Ruen Mai, a southern kitchen between Krabi Town and Ao Nang. The day is split, with a break from 15:00 to 17:00.',
     schema: 'Article',
@@ -342,7 +342,7 @@ export const wave31FoodBatch8: Page[] = [
     path: '/thai-food/kanchanaburi-river-road-food',
     title: 'River road food guide',
     description:
-      'River-road food in Kanchanaburi is On\'s Thai-Issan at 77/9 Mae Nam Kwai Road, open 10:00 to 21:00, with plates at 80 THB.',
+      'River-road food in Kanchanaburi is On\'s Thai-Issan at 77/9 Mae Nam Kwai Road, a vegan kitchen open 10:00 to 21:00, with most plates around 80 THB.',
     lede:
       'Mae Nam Kwai Road is known for a vegan Isan kitchen a short walk from the railway. On\'s runs 10:00 to 21:00, and a December 2024 visit put the plates at 80 THB.',
     schema: 'Article',
@@ -424,7 +424,7 @@ export const wave31FoodBatch8: Page[] = [
     path: '/thai-food/koh-tao-sairee-beach-food',
     title: 'Sairee beach food guide',
     description:
-      'Sairee beach food at Barracuda on the Beach runs 10:30 to 22:30, with crab curry at 390 THB and fried snapper at 420 THB.',
+      'Sairee Beach food on Koh Tao is Barracuda on the Beach, open 10:30 to 22:30, with crab curry at 390 THB and fried snapper at 420 THB.',
     lede:
       'Sairee Beach is known for a beachfront room with fixed main prices, which is rare on this island. Barracuda on the Beach opens at 10:30 and closes at 22:30.',
     schema: 'Article',
