@@ -75,7 +75,9 @@ function placementFor(el: Element | null): string {
   return cls || named.tagName.toLowerCase();
 }
 
-function trackAffiliate(partner: string, linkUrl: string, placement = 'unknown') {
+type AffiliateClick = { partner: string; linkUrl: string; subId: string; linkText: string; placement: string };
+
+function trackAffiliate(click: AffiliateClick) {
   const w = window as unknown as { gtag?: (...args: unknown[]) => void; dataLayer?: unknown[] };
   // The inline GA snippet is wrapped in a function scope by define:vars, so
   // fall back to the queue gtag.js reads if window.gtag is missing.
@@ -85,26 +87,56 @@ function trackAffiliate(partner: string, linkUrl: string, placement = 'unknown')
       : function (..._args: unknown[]) {
           (w.dataLayer = w.dataLayer || []).push(arguments);
         };
-  g('event', 'affiliate_click', {
-    partner,
-    link_url: linkUrl.slice(0, 500),
-    page_path: location.pathname,
-    placement,
-    transport_type: 'beacon',
-  });
+  let linkDomain = '';
+  try {
+    linkDomain = new URL(click.linkUrl, location.href).hostname;
+  } catch {
+    /* keep empty */
+  }
+  try {
+    g('event', 'affiliate_click', {
+      partner: click.partner,
+      link_domain: linkDomain,
+      sub_id: click.subId,
+      link_text: click.linkText.replace(/\s+/g, ' ').trim().slice(0, 100),
+      page_path: location.pathname,
+      placement: click.placement,
+      link_url: click.linkUrl.slice(0, 500),
+      transport_type: 'beacon',
+    });
+  } catch {
+    /* analytics must never break navigation */
+  }
 }
 
+/** 'trip' or 'klook' for affiliate URLs (including Travelpayouts redirects), else null. */
 function partnerFor(href: string): string | null {
-  let host = '';
+  let url: URL;
   try {
-    host = new URL(href, location.href).hostname;
+    url = new URL(href, location.href);
   } catch {
     return null;
   }
-  if (/(^|\.)trip\.com$/.test(host)) return 'tripcom';
-  if (/(^|\.)klook\.com$/.test(host) || host === 'klook.tpx.li') return 'klook';
-  if (/(^|\.)(tp\.media|tpk\.ro|travelpayouts\.com|tp\.st)$/.test(host)) return 'travelpayouts';
+  const host = url.hostname;
+  if (/(^|\.)trip\.com$/.test(host)) return 'trip';
+  if (/(^|\.)klook\.com$/.test(host) || /(^|\.)tpx\.li$/.test(host)) return 'klook';
+  if (/(^|\.)(tp\.media|tpk\.ro|travelpayouts\.com|tp\.st)$/.test(host)) {
+    const inner = url.searchParams.get('u') || '';
+    if (/klook\.com/.test(inner) || url.searchParams.get('trs') === '588978') return 'klook';
+    if (/trip\.com/.test(inner)) return 'trip';
+    return 'travelpayouts';
+  }
   return null;
+}
+
+/** trip_sub1, else Travelpayouts sub_id, else marker. */
+function subIdFor(href: string): string {
+  try {
+    const p = new URL(href, location.href).searchParams;
+    return p.get('trip_sub1') || p.get('sub_id') || p.get('marker') || '';
+  } catch {
+    return '';
+  }
 }
 
 function ready(fn: () => void) {
@@ -119,7 +151,15 @@ ready(() => {
       const a = (event.target as Element | null)?.closest?.('a[href]') as HTMLAnchorElement | null;
       if (!a) return;
       const partner = partnerFor(a.href);
-      if (partner) trackAffiliate(partner, a.href, placementFor(a));
+      if (partner) {
+        trackAffiliate({
+          partner,
+          linkUrl: a.href,
+          subId: subIdFor(a.href),
+          linkText: a.textContent || a.getAttribute('aria-label') || '',
+          placement: placementFor(a),
+        });
+      }
     },
     { capture: true },
   );
@@ -131,10 +171,16 @@ ready(() => {
     window.setTimeout(() => {
       const f = document.activeElement;
       if (!(f instanceof HTMLIFrameElement) || seenFrames.has(f)) return;
-      const partner = partnerFor(f.src);
-      if (!partner) return;
+      // Proxy for search box use: only the Trip.com iframe, once per page view.
+      if (partnerFor(f.src) !== 'trip') return;
       seenFrames.add(f);
-      trackAffiliate(partner, f.src, `${placementFor(f)}_iframe`);
+      trackAffiliate({
+        partner: 'trip',
+        linkUrl: f.src,
+        subId: subIdFor(f.src),
+        linkText: 'search_box',
+        placement: `${placementFor(f)}_iframe`,
+      });
     }, 0);
   });
 
@@ -361,7 +407,7 @@ ready(() => {
               ? pack.trains
               : appendStayQuery(pack.stay, inInput?.value, outInput?.value, guests);
       const partner = partnerFor(href);
-      if (partner) trackAffiliate(partner, href, `book_widget_${tab}`);
+      if (partner) trackAffiliate({ partner, linkUrl: href, subId: subIdFor(href), linkText: `book_widget_${tab}`, placement: `book_widget_${tab}` });
       window.open(href, '_blank', 'noopener,noreferrer');
     });
   });
@@ -380,7 +426,7 @@ ready(() => {
       const base = links[city] || links.bangkok;
       if (!base) return;
       const href = appendStayQuery(base, inInput?.value, outInput?.value, guests);
-      trackAffiliate('tripcom', href, 'trip_search');
+      trackAffiliate({ partner: 'trip', linkUrl: href, subId: subIdFor(href), linkText: 'trip_search', placement: 'trip_search' });
       window.open(href, '_blank', 'noopener,noreferrer');
     });
   });
