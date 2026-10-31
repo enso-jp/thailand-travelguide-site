@@ -598,7 +598,8 @@ export const wave2Pages: Page[] = [
     photo: '/photos/sukhothai.jpg',
     geo: { lat: 17.017, lon: 99.703, containedIn: 'Lower North' },
     paragraphs: [
-      'Sukhothai is the 13th-century capital, known for lotus-bud chedis you bicycle at opening. The Fine Arts Department splits the park. The inner historic zone is the one you came for: Wat Mahathat, Wat Sa Si, Wat Si Sawai. Their virtual park page lists 200 THB for foreign visitors in the inner zone, 120 THB each for the northern zone (Wat Si Chum, Wat Phra Phai Luang) and the western Aranyik zone, or 400 THB as a combined rate. Thai tickets are 20 THB a zone. Bicycles pay 10 THB a zone at the gate. An older QR page still shows 100 THB. Go by the price posted at the staffed ticket booth.',
+      'Sukhothai is the 13th-century capital, known for lotus-bud chedis you bicycle at opening. The Fine Arts Department splits the park. The inner historic zone is the one you came for: Wat Mahathat, Wat Sa Si, Wat Si Sawai.',
+      'The Fine Arts Department virtual park page lists 200 THB for foreign visitors in the inner zone, 120 THB each for the northern zone (Wat Si Chum, Wat Phra Phai Luang) and the western Aranyik zone, or 400 THB as a combined rate. Thai tickets are 20 THB a zone. Bicycles pay 10 THB a zone at the gate. An older QR page still shows 100 THB. Go by the price posted at the staffed ticket booth.',
       'Inner-zone hours on that official page are 06:30 to 19:30 Monday to Friday and Sunday, and 06:30 to 21:00 on Saturday. Wat Si Chum and Wat Phra Phai Luang list 07:30 to 17:30. Aranyik lists 08:00 to 16:30. Office line: 055 697 527. Si Satchanalai is a separate park to the north. It is a second morning, not a footnote. Lunch is [Sukhothai noodles](/thai-food/sukhothai), not a Bangkok day-trip snack.',
     ],
     sections: [

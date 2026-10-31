@@ -237,14 +237,14 @@ export const WAVE11_INTEREST_PAGES: Page[] = [
     facts: [
       { label: 'Bangkok royal wats', value: 'Palace 500 THB, Wat Pho 300 THB, Wat Arun 200 THB' },
       { label: 'Ayutthaya', value: 'About 1 hour north; 50 THB per temple; train or van' },
-      { label: 'Sukhothai', value: 'Historical Park 100 THB per zone; bicycle circuit' },
+      { label: 'Sukhothai', value: 'Historical Park 200 THB central zone; bicycle circuit' },
       { label: 'Chiang Mai', value: 'Doi Suthep 30 THB; Wat Chedi Luang 50 THB' },
     ],
     chips: ['Dress code', 'Palace 500 THB', 'Sukhothai bikes'],
     photo: '/photos/old-city.jpg',
     paragraphs: [
       'Bangkok royal temples are known for one ticketed morning: Grand Palace and Wat Phra Kaew at 500 THB via Mani Noppharat Gate, Wat Pho at 300 THB, Wat Arun at 200 THB plus the cross-river ferry. Do not add Chatuchak the same day. See [Grand Palace](/attractions/grand-palace-and-wat-phra-kaew), [Wat Pho](/attractions/wat-pho), and [Wat Arun](/attractions/wat-arun).',
-      'Ayutthaya sits about 1 hour north of Bangkok by train or van. Brick prangs are 50 THB per temple. Sukhothai Historical Park is a bicycle circuit at 100 THB per zone. Chiang Mai Lanna wats: Doi Suthep 30 THB, Wat Chedi Luang 50 THB. Dress code is strict everywhere: covered shoulders and knees, slip-off shoes at chapel doors, feet never pointed at Buddha images.',
+      'Ayutthaya sits about 1 hour north of Bangkok by train or van. Brick prangs are 50 THB per temple. Sukhothai Historical Park is a bicycle circuit at 200 THB for the central zone. Chiang Mai Lanna wats: Doi Suthep 30 THB, Wat Chedi Luang 50 THB. Dress code is strict everywhere: covered shoulders and knees, slip-off shoes at chapel doors, feet never pointed at Buddha images.',
     ],
     sections: [
       {
@@ -260,7 +260,7 @@ export const WAVE11_INTEREST_PAGES: Page[] = [
             ['Wat Pho', '300 THB', 'Walk south from the palace'],
             ['Wat Arun', '200 THB plus ferry', 'Tha Tien crossing'],
             ['Ayutthaya temples', '50 THB each', 'Train or van; about 1 hour north'],
-            ['Sukhothai Historical Park', '100 THB per zone', 'Bicycle loop; fly or bus north'],
+            ['Sukhothai Historical Park', '200 THB central; 120 THB outer zones', 'Bicycle loop; fly or bus north'],
             ['Doi Suthep / Chedi Luang', '30 THB / 50 THB', 'Songthaew or Old City walk'],
           ],
         },
@@ -287,7 +287,7 @@ export const WAVE11_INTEREST_PAGES: Page[] = [
       },
       {
         q: 'Sukhothai on foot or by bike?',
-        a: 'Bicycle. The park is a circuit at 100 THB per zone. Walking the outer zone in heat wastes the day.',
+        a: 'Bicycle. The park is a circuit at 200 THB for the central zone. Walking the outer zone in heat wastes the day.',
       },
     ],
   },

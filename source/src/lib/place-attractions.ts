@@ -446,7 +446,7 @@ export const ATTRACTIONS: Record<PlacePath, PlaceAttraction[]> = {
     a('hellfire', 'Hellfire Pass', 'ช่องเขาขาด', 'Hellfire Pass is the museum and railway cutting 80 km west. Entry is free or a donation. Hire a car and give it one history day.', '/kanchanaburi', '/photos/plan.jpg', 'Half day', 'Free / donation', 4),
   ],
   '/sukhothai': [
-    a('historical-park', 'Sukhothai Historical Park', 'อุทยานประวัติศาสตร์สุโขทัย', 'Sukhothai Historical Park is the bicycle loop of the old capital. Foreign tickets sit around 100 THB. Dawn beats midday.', '/sukhothai', '/photos/sukhothai.jpg', '3 to 4 hours', '100 THB', 5),
+    a('historical-park', 'Sukhothai Historical Park', 'อุทยานประวัติศาสตร์สุโขทัย', 'Sukhothai Historical Park is the bicycle loop of the old capital. Foreign tickets are 200 THB for the central zone. Dawn beats midday.', '/sukhothai', '/photos/sukhothai.jpg', '3 to 4 hours', '200 THB', 5),
     a('wat-mahathat-suk', 'Wat Mahathat', 'วัดมหาธาตุ', 'Wat Mahathat is the main chedi of the old capital. It sits inside the central-zone ticket.', '/sukhothai', '/photos/ayutthaya.jpg', '45 minutes', 'Included', 4),
     a('si-satchanalai', 'Si Satchanalai', 'ศรีสัชนาลัย', 'Si Satchanalai is the second park north, also about 100 THB. Add it only if you overnight. It is not a same-morning extra.', '/sukhothai', '/photos/northern.jpg', 'Half day', '100 THB', 3),
     a('new-town', 'New Sukhothai', 'เมืองสุโขทัย', 'New Sukhothai is where you sleep and eat. A songthaew or Grab to the park is 20 to 40 THB. The night market plates run 40 to 80 THB.', '/sukhothai', '/photos/night-market-cm.jpg', 'Evening', 'Songthaew 20 to 40 THB', 3),
