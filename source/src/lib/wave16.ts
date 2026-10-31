@@ -2223,9 +2223,9 @@ export const RESORT_FLAGSHIPS = [
 
 // Live resort pages missing from the coast tables; listed so the hub links them.
 const RESORT_HUB_EXTRAS: [string, string, string, string][] = [
-  ['Phuket', 'Avista Hideaway Phuket (MGallery)', '/resort-living/avista-hideaway-phuket', 'West-coast hills'],
-  ['Bangkok river and skytrain', 'VIE Hotel Bangkok (MGallery)', '/resort-living/vie-hotel-bangkok', 'Ratchathewi BTS'],
-  ['Chiang Mai valley', 'Veranda High Chiang Mai (MGallery)', '/resort-living/veranda-high-chiang-mai', 'Hill above the valley'],
+  ['Phuket', 'Avista Hideaway Phuket', '/resort-living/avista-hideaway-phuket', 'MGallery on the west-coast hills'],
+  ['Bangkok river and skytrain', 'VIE Hotel Bangkok', '/resort-living/vie-hotel-bangkok', 'MGallery tower at Ratchathewi BTS'],
+  ['Chiang Mai valley', 'Veranda High Chiang Mai', '/resort-living/veranda-high-chiang-mai', 'MGallery hill hotel above the valley'],
 ];
 
 function curateResortHub(page: Page): Page {
