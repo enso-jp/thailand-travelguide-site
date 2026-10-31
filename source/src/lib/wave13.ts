@@ -555,7 +555,7 @@ function defaultAffiliates(page: Page): Affiliate[] {
 const ITINERARY_KLOOK_TOURS: Record<string, { label: string; href: string }> = {
   '/itineraries/10-days-classic-thailand': { label: 'Ayutthaya temples day tour from Bangkok', href: 'https://klook.tpx.li/B2xNJP6H' },
   '/itineraries/best-14-days': { label: 'Doi Inthanon and elephant sanctuary from Chiang Mai', href: 'https://klook.tpx.li/UUFWhcxn' },
-  '/itineraries/7-days-phuket-krabi-phi-phi': { label: 'Phi Phi, Maya Bay and Khai speedboat tour', href: 'https://klook.tpx.li/o3dLesey' },
+  '/itineraries/7-days-phuket-krabi-phi-phi': { label: 'Phi Phi, James Bond Island and Khai speedboat from Phuket', href: 'https://klook.tpx.li/o3dLesey' },
   '/itineraries/10-days-gulf-islands-samui-phangan-tao': { label: 'Ang Thong Marine Park speedboat tour from Samui', href: 'https://klook.tpx.li/sfzFubbJ' },
 };
 

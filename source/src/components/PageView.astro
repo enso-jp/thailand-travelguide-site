@@ -33,7 +33,11 @@ const sections = (page.sections || []).map((section) => ({
 const leadSections = sections.filter((section) => section.lead);
 const restSections = sections.filter((section) => !section.lead);
 const shownAffHrefs = new Set(
-  sections.flatMap((section) => (section.affiliates || []).map((item) => item.href)),
+  [
+    ...sections.flatMap((section) => (section.affiliates || []).map((item) => item.href)),
+    // The booking CTA above already shows these; keep the first copy only.
+    ...(page.bookingCta ? [page.bookingCta.stayHref, page.bookingCta.tourHref] : []),
+  ],
 );
 const affiliates = bag.takeBatch(
   (page.affiliates || []).filter((item) => !shownAffHrefs.has(item.href)),
