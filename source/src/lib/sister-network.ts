@@ -64,7 +64,7 @@ export const SISTER_CROSS_BORDER_ROUTES = [
       'Bangkok to Ho Chi Minh City',
       'BKK',
       'SGN',
-      '1h 35m nonstop',
+      'About 1h 35m nonstop',
     ),
   },
   {
@@ -82,7 +82,7 @@ export const SISTER_CROSS_BORDER_ROUTES = [
       'Bangkok to Hanoi',
       'BKK',
       'HAN',
-      '1h 50m nonstop',
+      'About 1h 50m nonstop',
     ),
   },
   {
@@ -100,7 +100,7 @@ export const SISTER_CROSS_BORDER_ROUTES = [
       'Bangkok to Da Nang',
       'BKK',
       'DAD',
-      '1h 40m nonstop',
+      'About 1h 40m nonstop',
     ),
   },
   {
@@ -118,7 +118,7 @@ export const SISTER_CROSS_BORDER_ROUTES = [
       'Chiang Mai to Hanoi',
       'CNX',
       'HAN',
-      'Direct or one-stop',
+      'Few nonstops, most connect in Bangkok',
     ),
   },
 ];
@@ -175,14 +175,14 @@ export function sisterSectionForPath(path: string): SisterSection | null {
           'Bangkok to Ho Chi Minh City',
           'BKK',
           'SGN',
-          '1h 35m nonstop',
+          'About 1h 35m nonstop',
         ),
         flightCta(
           crossBorderFlightUrl('bangkok', 'hanoi', 'bkk', 'han', 'Sister_BKK_HAN'),
           'Bangkok to Hanoi',
           'BKK',
           'HAN',
-          '1h 50m nonstop',
+          'About 1h 50m nonstop',
         ),
       ],
     };
@@ -232,7 +232,7 @@ export function sisterSectionForPath(path: string): SisterSection | null {
           'Chiang Mai to Hanoi',
           'CNX',
           'HAN',
-          'Direct or one-stop',
+          'Few nonstops, most connect in Bangkok',
         ),
       ],
     };
@@ -291,7 +291,7 @@ export function sisterSectionForPath(path: string): SisterSection | null {
           'Bangkok to Da Nang',
           'BKK',
           'DAD',
-          '1h 40m nonstop',
+          'About 1h 40m nonstop',
         ),
       ],
     };

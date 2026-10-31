@@ -196,6 +196,10 @@ export const KHON_KAEN_DISHES: DishRecord[] = dishesForCity('khon-kaen', [
     lede: 'Nam tok is grilled-beef salad in the same herb family as larb. It fits the Khao Suan Kwang table with sticky rice.',
     taste: 'Grilled beef, toasted rice, mint, and lime.',
     orderName: 'nam tok nuea',
+    extraFacts: [
+      { label: 'Meat', value: 'pork or beef' },
+      { label: 'Heat', value: 'hot, with toasted rice and chilli' },
+    ],
     orderPhrase: 'Khor nam tok nuea, pet nit noi, khrap/kha.',
     orderNote: 'Share it. The bird is still the reason to drive.',
     price: '80 to 140 THB',

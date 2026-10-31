@@ -782,7 +782,7 @@ export const CHIANG_MAI_DISHES: DishRecord[] = [
       { label: 'Thai', value: 'ข้าวเหนียว · khao niao' },
       { label: 'Price', value: '10 to 22 THB a basket' },
       { label: 'Use', value: 'Pinch, do not spoon' },
-      { label: 'Ask', value: 'Khao niao, not jasmine' },
+      { label: 'Heat', value: 'none' },
     ],
     faqs: [
       { q: 'Do you need a fork?', a: 'No. Pinch the rice and scoop the dip. A fork is fine if you refuse the hand.' },
@@ -1065,7 +1065,7 @@ export const CHIANG_MAI_DISHES: DishRecord[] = [
       { label: 'Thai', value: 'ผักเหนียง · phak niang' },
       { label: 'Taste', value: 'Bitter leaf' },
       { label: 'Use', value: 'Side' },
-      { label: 'Season', value: 'Ask' },
+      { label: 'Where', value: 'southern Thai kitchens, usually stir-fried with egg' },
     ],
     faqs: [
       { q: 'Very bitter?', a: 'Yes. That is the leaf. Egg softens it.' },

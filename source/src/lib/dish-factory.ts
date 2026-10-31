@@ -48,6 +48,8 @@ export type DishDraft = {
   photo: string;
   room: string;
   clock?: string;
+  /** Replaces the Room and Clock boxes when a reviewed fact fits better. */
+  extraFacts?: { label: string; value: string }[];
   faqs: DishRecord['faqs'];
   walkHref?: string;
   walkLabel?: string;
@@ -81,8 +83,9 @@ export function makeDish(draft: DishDraft): DishRecord {
     facts: [
       { label: 'Thai', value: `${draft.nameLocal} · ${draft.orderName}` },
       { label: 'Price', value: draft.price },
-      { label: 'Room', value: draft.room },
-      ...(draft.clock ? [{ label: 'Clock', value: draft.clock }] : []),
+      ...(draft.extraFacts
+        ? draft.extraFacts
+        : [{ label: 'Room', value: draft.room }, ...(draft.clock ? [{ label: 'Clock', value: draft.clock }] : [])]),
     ],
     faqs: draft.faqs,
     klookQuery: draft.klookQuery || walk.klookQuery,
