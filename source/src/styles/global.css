@@ -1914,3 +1914,26 @@ th, td {
 }
 
 .embed-code { white-space: pre-wrap; word-break: break-all; background: #f5f2ea; padding: 12px; border-radius: 8px; font-size: 0.85rem; }
+
+/* Review freshness line under the H1, from src/data/review-dates.csv */
+.checked-line { margin: 0.25rem 0 0.5rem; font-size: 0.85rem; color: var(--muted, #6b6b6b); }
+
+/* Mobile tap targets: at least 44px tall for small inline links and chips */
+@media (max-width: 720px) {
+  .crumbs a,
+  .chip,
+  .tag,
+  .sister-chip,
+  .tabs a,
+  .explore-list a,
+  .trip-more a,
+  .story-next li a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .rail-arrow {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}

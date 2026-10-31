@@ -831,7 +831,7 @@ export const BANGKOK_DISHES: DishRecord[] = [
       { label: 'Thai', value: 'ส้มตำไทย · som tam Thai' },
       { label: 'Price', value: '80 to 140 THB' },
       { label: 'Room', value: 'Somtum Der, Sukhumvit 49' },
-      { label: 'Heat', value: 'Ask first' },
+      { label: 'Heat', value: 'Hot unless you ask for mild' },
     ],
     faqs: [
       { q: 'How do you ask for less heat?', a: 'Pet nit noi is a little. Mai phet is none. Say it when you order.' },
@@ -1743,7 +1743,7 @@ export const BANGKOK_DISHES: DishRecord[] = [
     facts: [
       { label: 'Thai', value: 'ก๋วยเตี๋ยวต้มยำ · kuai tiao tom yam' },
       { label: 'Price', value: '50 to 80 THB' },
-      { label: 'Heat', value: 'Ask down' },
+      { label: 'Heat', value: 'Sour and hot, chili jars on the table' },
       { label: 'Clock', value: 'Lunch stall' },
     ],
     faqs: [

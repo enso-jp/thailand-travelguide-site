@@ -1,4 +1,5 @@
 ---
+import CheckedLine from './CheckedLine.astro';
 import { klookFallbackCta } from '../lib/partners';
 import FactBar from './FactBar.astro';
 import PortraitRail from './PortraitRail.astro';
@@ -98,6 +99,7 @@ const bookingTourCta = klookFallbackCta(page.bookingCta?.tourHref);
 
   <header>
     <h1>{page.title}</h1>
+    <CheckedLine path={page.path} />
     <p class="lede" set:html={formatInline(page.lede)} />
     {
       page.parentPill && routePath(page.parentPill.href) !== page.path && (
@@ -230,7 +232,7 @@ const bookingTourCta = klookFallbackCta(page.bookingCta?.tourHref);
           {days.map((day) => (
             <article class="day-plan-card" id={`day-${day.n}`}>
               <div class="media">
-                <img src={day.photo} alt="" width="960" height="400" loading="lazy" decoding="async" />
+                <img src={day.photo} alt={`Day ${day.n}: ${day.title}`} width="960" height="400" loading="lazy" decoding="async" />
                 <span class="rank-badge">{day.n}</span>
               </div>
               <div class="jg-body">

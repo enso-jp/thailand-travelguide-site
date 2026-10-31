@@ -19,9 +19,10 @@ interface Props {
   placeName?: string;
   showMore?: boolean;
   skipTours?: boolean;
+  skipHrefs?: string[];
 }
 
-const { variant = 'destination', city = 'bangkok', placeName = 'Thailand', showMore = variant !== 'home', skipTours = false } = Astro.props;
+const { variant = 'destination', city = 'bangkok', placeName = 'Thailand', showMore = variant !== 'home', skipTours = false, skipHrefs = [] } = Astro.props;
 
 /** Trip.com Partner search box S20729725 (SID 334804079). Pasted exactly as generated. Never edit. */
 const TRIP_SEARCH_BOX_EMBED = "<iframe border=\"0\" src=\"https://www.trip.com/partners/ad/S20729725?Allianceid=11105102&SID=334804079&trip_sub1=th_search_box\" style=\"width:320px;height:320px\" frameborder=\"0\" scrolling=\"no\" style=\"border:none\" id=\"S20729725\"></iframe>";
@@ -34,7 +35,10 @@ const tours = (variant === 'food' ? klookFoodLink(`${placeName} ${pathText}`, tr
 const toursCta = klookFallbackCta(tours);
 const transfer = transferLink(cityAirports[city] || 'BKK');
 const railTo = railDestination(placeName);
-const trains = railTo ? trainLink('Bangkok', railTo) : null;
+const trainsRaw = railTo ? trainLink('Bangkok', railTo) : null;
+// Links already in the page's getting-there content are not repeated here.
+const trains = trainsRaw && !skipHrefs.includes(trainsRaw) ? trainsRaw : null;
+const showTransfer = !skipHrefs.includes(transfer);
 ---
 
 <div class:list={['trip-cta', `trip-cta-${variant}`]} data-partner="stay" data-trip-box>
@@ -54,12 +58,14 @@ const trains = railTo ? trainLink('Bangkok', railTo) : null;
       ·
         </>
       )}
-      <a href={transfer} rel="sponsored noopener" target="_blank">
-        Airport car
-      </a>
+      {showTransfer && (
+        <a href={transfer} rel="sponsored noopener" target="_blank">
+          Airport car
+        </a>
+      )}
       {trains && (
         <>
-          ·
+          {showTransfer && '·'}
           <a href={trains} rel="sponsored noopener" target="_blank">
             Trains
           </a>

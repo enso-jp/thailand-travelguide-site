@@ -1,4 +1,5 @@
 ---
+import CheckedLine from './CheckedLine.astro';
 import AffRow from './AffRow.astro';
 import FactBar from './FactBar.astro';
 import FaqList from './FaqList.astro';
@@ -40,6 +41,7 @@ const foodTourCta = klookFallbackCta(foodTourHref);
       {page.title}
       {page.alternateName && <span class="vi" lang="th"> {page.alternateName}</span>}
     </h1>
+    <CheckedLine path={page.path} />
     <p class="lede" set:html={formatInline(page.lede)} />
     {
       page.chips && (

@@ -1,4 +1,5 @@
 ---
+import CheckedLine from './CheckedLine.astro';
 import FactBar from './FactBar.astro';
 import Photo from './Photo.astro';
 import RegionStage from './RegionStage.astro';
@@ -30,11 +31,12 @@ const portraits = bag.takeBatch(page.portraits || [], (item) => `${page.path} ${
     </ol>
   </nav>
   <h1>{page.title}</h1>
+    <CheckedLine path={page.path} />
   <p class="lede" set:html={formatInline(page.lede)} />
   {
     page.photo && (
       <figure class="place-photo">
-        <Photo src={page.photo} alt="" priority />
+        <Photo src={page.photo} alt={page.title} priority />
         {page.photoCredit && <figcaption class="photo-credit">{page.photoCredit}</figcaption>}
       </figure>
     )

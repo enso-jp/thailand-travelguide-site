@@ -1,4 +1,5 @@
 ---
+import CheckedLine from './CheckedLine.astro';
 import FoodTabs from './FoodTabs.astro';
 import Photo from './Photo.astro';
 import SisterNetwork from './SisterNetwork.astro';
@@ -30,6 +31,7 @@ const groups = directoryGroups();
     </ol>
   </nav>
   <h1>{page.title}</h1>
+    <CheckedLine path={page.path} />
   <p class="lede" set:html={formatInline(page.lede)} />
   <FoodTabs current="food" />
   <input

@@ -656,7 +656,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         lead: "Low-rise waterfront courtyards, private shuttle boats to the Grand Palace piers, and Asia's top cocktail rooms next door.",
         bullets: [
           '**[Capella Bangkok](/resort-living/capella-bangkok)** locks river suites at 32,000 to 85,000+ THB with a hotel boat and a sunset terrace.',
-          '**[Four Seasons Bangkok](/resort-living/four-seasons-bangkok)** and **[Mandarin Oriental, Bangkok](/resort-living/mandarin-oriental-bangkok)** sit on the same bank at 25,000 to 65,000+ THB.',
+          '**[Mandarin Oriental, Bangkok](/resort-living/mandarin-oriental-bangkok)** sits on the same bank at 25,000 to 65,000+ THB.',
           'Charoenkrung cocktail rooms are a short Grab. The palace is a morning boat, not a 10:00 taxi loop.',
         ],
       },
@@ -675,7 +675,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         title: 'Phloen Chit skytrain spine',
         lead: 'Direct BTS bridges for travellers who want central dining, embassies, and a short Airport Rail Link hop.',
         bullets: [
-          '**[Rosewood Bangkok](/resort-living/rosewood-bangkok)** is the vertical manor at 14,000 to 32,000+ THB beside BTS Ploenchit.',
+          'Skytrain hotels here trade a river view for BTS Ploenchit at the door.',
           'Ratchathewi is the cheaper ARL-and-BTS pocket one hop from Siam if the manor rate is closed.',
           'These rooms skip the river road when skytrain, not a barge, is the Bangkok plan.',
         ],
@@ -700,7 +700,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         title: 'Charoenkrung cocktail bank',
         lead: 'Newer river courtyards closer to ICONSIAM and the Charoenkrung bar rooms.',
         bullets: [
-          '**[Capella Bangkok](/resort-living/capella-bangkok)** and **[Four Seasons Bangkok](/resort-living/four-seasons-bangkok)** sit downriver at 26,000 to 85,000+ THB.',
+          '**[Capella Bangkok](/resort-living/capella-bangkok)** sits downriver at 32,000 to 85,000+ THB.',
           'Mandarin Oriental keeps the historic Bang Rak pier if you want Authors Lounge and city noise at the door.',
           'Pick this rival when cocktail rooms and a promenade matter more than a private garden.',
         ],
@@ -710,7 +710,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         title: 'Siam and Ratchathewi rails',
         lead: 'Airport Rail Link and BTS without a compound, if two river nights are not the plan.',
         bullets: [
-          '**[Rosewood Bangkok](/resort-living/rosewood-bangkok)** is the Phloen Chit vertical manor at 14,000 to 32,000+ THB.',
+          'Skytrain hotels here trade a river view for BTS Ploenchit at the door.',
           'Ratchathewi stays the cheaper BTS-and-ARL pocket if two river nights are not the plan.',
           'These rooms win when ARL plus BTS beats a barge timetable.',
         ],
@@ -770,7 +770,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         title: 'Charoenkrung new-build suites',
         lead: 'Newer river courtyards if you want larger rooms and a quieter terrace than Bang Rak.',
         bullets: [
-          '**[Capella Bangkok](/resort-living/capella-bangkok)** and **[Four Seasons Bangkok](/resort-living/four-seasons-bangkok)** sit up the same bank at 26,000 to 85,000+ THB.',
+          '**[Capella Bangkok](/resort-living/capella-bangkok)** sits up the same bank at 32,000 to 85,000+ THB.',
           'ICONSIAM and the cocktail rooms are closer to those courtyards than to the old pier.',
           'Pick the new-builds when suite size beats Authors Lounge history.',
         ],
@@ -780,7 +780,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         title: 'Phloen Chit vertical manor',
         lead: 'Skytrain living if BTS beats a boat on a short Bangkok stay.',
         bullets: [
-          '**[Rosewood Bangkok](/resort-living/rosewood-bangkok)** is the 14,000 to 32,000+ THB tower beside BTS Ploenchit.',
+          'Skytrain hotels here trade a river view for BTS Ploenchit at the door.',
           'Ratchathewi is the cheaper design-room pocket if the manor rate is closed.',
           'The Siam remains the upriver teak alternative if you want a barge and a garden.',
         ],
@@ -816,7 +816,7 @@ const RESORT_ZONE: Record<string, { title: string; cards: EditorialCard[] }> = {
         lead: 'A cheaper ARL pocket one stop from Siam, or an upriver garden if you want teak instead of a tower.',
         bullets: [
           'Ratchathewi is the cheaper design-room pocket one stop from Siam, with ARL at the same interchange.',
-          '**[The Siam](/resort-living/the-siam)** remains the upriver teak compound if you want a garden instead of a tower.',
+          'Dusit upriver is the garden alternative if you want teak houses instead of a tower.',
           'This alternative wins when the manor rate is closed and you still want rails, not a river road.',
         ],
       },
@@ -1687,7 +1687,7 @@ export function applyResortLivingHub(page: Page): Page {
             lead: "Low-rise waterfront courtyards, private shuttle boats to the Grand Palace piers, and Asia's top cocktail rooms next door.",
             bullets: [
               '**[Capella Bangkok](/resort-living/capella-bangkok)** runs 32,000 to 85,000+ THB on the Bangkok-side promenade.',
-              '**[Four Seasons Bangkok](/resort-living/four-seasons-bangkok)** runs 26,000 to 65,000+ THB in a courtyard spa wing. **[Mandarin Oriental, Bangkok](/resort-living/mandarin-oriental-bangkok)** runs 25,000 to 65,000+ THB at the historic Bang Rak pier.',
+              '**[Mandarin Oriental, Bangkok](/resort-living/mandarin-oriental-bangkok)** runs 25,000 to 65,000+ THB at the historic Bang Rak pier.',
             ],
           },
           {
@@ -1704,7 +1704,7 @@ export function applyResortLivingHub(page: Page): Page {
             title: 'Phloen Chit and Ratchathewi',
             lead: 'Direct BTS Skytrain bridges for travellers prioritizing central dining, embassies, and quick Airport Rail Link hops.',
             bullets: [
-              '**[Rosewood Bangkok](/resort-living/rosewood-bangkok)** runs 14,000 to 32,000+ THB at BTS Ploenchit.',
+              'Skytrain hotels here trade a river view for BTS Ploenchit at the door.',
               'Ratchathewi is the cheaper ARL-and-BTS pocket one hop from Siam if the manor rate is closed.',
             ],
           },
@@ -1714,9 +1714,7 @@ export function applyResortLivingHub(page: Page): Page {
           rows: [
             ['1', '[Capella Bangkok](/resort-living/capella-bangkok)', 'Charoenkrung river suites', '32,000 to 85,000+ THB'],
             ['2', '[The Siam](/resort-living/the-siam)', 'Dusit upriver compound', '28,000 to 75,000+ THB'],
-            ['3', '[Four Seasons Bangkok](/resort-living/four-seasons-bangkok)', 'Charoenkrung courtyard', '26,000 to 65,000+ THB'],
-            ['4', '[Mandarin Oriental, Bangkok](/resort-living/mandarin-oriental-bangkok)', 'Bang Rak historic pier', '25,000 to 65,000+ THB'],
-            ['5', '[Rosewood Bangkok](/resort-living/rosewood-bangkok)', 'Phloen Chit vertical manor', '14,000 to 32,000+ THB'],
+            ['3', '[Mandarin Oriental, Bangkok](/resort-living/mandarin-oriental-bangkok)', 'Bang Rak historic pier', '25,000 to 65,000+ THB'],
           ],
         },
       },

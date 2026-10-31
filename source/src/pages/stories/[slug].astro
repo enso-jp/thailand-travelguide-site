@@ -1,4 +1,5 @@
 ---
+import CheckedLine from '../../components/CheckedLine.astro';
 import Base from '../../layouts/Base.astro';
 import { render } from 'astro:content';
 import { pageHref } from '../../lib/site';
@@ -32,6 +33,7 @@ const tourHref = d.tourQuery ? generatedKlookLink(d.tourQuery) : undefined;
     </nav>
     <p class="eyebrow">{d.category} · <time datetime={isoDate(d.date)}>{displayDate(d.date)}</time></p>
     <h1>{d.title}</h1>
+    <CheckedLine path={page.path} />
     <p class="lede">{d.lede}</p>
     {d.note && <p class="note">{d.note}</p>}
     <figure class="place-photo">

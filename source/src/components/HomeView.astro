@@ -17,7 +17,7 @@ function dots(n: number): string {
 <div class="home wrap">
   <div class="home-top">
     <a class="home-hero home-hero-lead" href={pageHref(home.lead.href)}>
-      <Photo src={home.lead.photo} alt="" priority />
+      <Photo src={home.lead.photo} alt={home.lead.title} priority />
       <span class="home-hero-copy">
         <small><i class="hero-mark" aria-hidden="true"></i>{home.lead.kicker}</small>
         <h1>{home.lead.title}</h1>

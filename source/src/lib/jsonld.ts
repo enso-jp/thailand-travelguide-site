@@ -1,3 +1,4 @@
+import { reviewDateFor } from './review-dates';
 import { site, absUrl } from './site';
 import type { Page } from './content';
 import { formatInline } from './inline';
@@ -139,7 +140,7 @@ export function pageLd(page: Page) {
   }
 
   const datePublished = page.published ?? SITE_PUBLISHED;
-  const modified = page.modified ?? (page.published && page.published > BUILD_MODIFIED ? page.published : BUILD_MODIFIED);
+  const modified = reviewDateFor(page.path) ?? page.modified ?? (page.published && page.published > BUILD_MODIFIED ? page.published : BUILD_MODIFIED);
   const article = {
     '@context': 'https://schema.org',
     '@type': 'Article',

@@ -662,7 +662,7 @@ export const CHIANG_MAI_DISHES: DishRecord[] = [
       { label: 'Thai', value: 'ตำขนุน · tam khanun' },
       { label: 'Fruit', value: 'Young jackfruit' },
       { label: 'Room', value: 'Tong Tem Toh, Nimman 13' },
-      { label: 'Heat', value: 'Ask first' },
+      { label: 'Heat', value: 'Hot unless you ask for mild' },
     ],
     faqs: [
       { q: 'Sweet jackfruit?', a: 'No. This is young, savoury jackfruit. Dessert jackfruit is a different plate.' },
@@ -1146,7 +1146,7 @@ export const CHIANG_MAI_DISHES: DishRecord[] = [
       { label: 'Thai', value: 'ยำหนังหมู · yam nang mu' },
       { label: 'Price', value: '80 to 140 THB' },
       { label: 'Use', value: 'Share plate' },
-      { label: 'Heat', value: 'Ask down' },
+      { label: 'Heat', value: 'Hot and sour' },
     ],
     faqs: [
       { q: 'Gelatinous?', a: 'Chewy, not a jelly cup. If it is flabby, the kitchen sat on it.' },

@@ -17,7 +17,9 @@ import { klookFallbackCta, tripHotelCta, tripHotelTitle } from '../lib/partners'
 
 const { items: raw } = Astro.props;
 // City tours fallback links must not promise the original activity; relabel from the city.
-const items = raw.map((item) => {
+// One card per link: a repeated href keeps only its first copy.
+const seen = new Set<string>();
+const items = raw.filter((item) => (seen.has(item.href) ? false : (seen.add(item.href), true))).map((item) => {
   const stayCta = tripHotelCta(item.href);
   if (stayCta) return { ...item, title: tripHotelTitle(item.href) ?? item.title, cta: stayCta };
   const cta = klookFallbackCta(item.href);

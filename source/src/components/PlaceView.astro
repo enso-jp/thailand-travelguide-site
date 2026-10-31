@@ -1,4 +1,5 @@
 ---
+import CheckedLine from './CheckedLine.astro';
 import AffRow from './AffRow.astro';
 import AttractionCards from './AttractionCards.astro';
 import FactBar from './FactBar.astro';
@@ -29,6 +30,7 @@ const attractions = bag.takeBatch(attractionsFor(page.path), (row) => `${page.pa
 const portraits = bag.takeBatch(page.portraits || [], (item) => `${page.path} ${item.title} ${item.href}`);
 const affiliates = bag.takeBatch(page.affiliates || [], (item) => `${page.path} ${item.title} ${item.kicker} ${item.body}`);
 const city = stayCityFromPath(page.path);
+const pageHrefs = [...(JSON.stringify(page).match(/https:\/\/www\.trip\.com\/[^"\\\s]+/g) || [])];
 const hasKlookInStay = affiliates.some((a) => /klook/.test(a.href));
 const region = (meta?.region || regionForPath(page.path)) as 'central' | 'north' | 'andaman' | 'gulf' | 'east';
 const stayHref = page.bookingCta?.stayHref || stayLink(city);
@@ -68,6 +70,7 @@ const tabs = [
       {page.title}
       {meta?.nameLocal && <span class="vi" lang="th"> {meta.nameLocal}</span>}
     </h1>
+    <CheckedLine path={page.path} />
     <p class="lede" set:html={formatInline(page.lede)} />
     {
       page.chips && page.chips.length > 0 && (
@@ -227,7 +230,7 @@ const tabs = [
 
     <aside class="rail">
       <div class="rail-booking">
-        <TripSearch variant="destination" city={city} placeName={page.title} skipTours={hasKlookInStay} />
+        <TripSearch variant="destination" city={city} placeName={page.title} skipTours={hasKlookInStay} skipHrefs={pageHrefs} />
       </div>
       <div class="panel">
         <p class="explore-kicker">Explore</p>
