@@ -37,7 +37,10 @@ const stayAffiliates = affiliates.filter((a) => !isTransport(a.href));
 const moveAffiliates = affiliates.filter((a) => isTransport(a.href));
 const railTransfer = transferLink(cityAirports[city] || 'BKK');
 if (moveAffiliates.length > 0 && !pageHrefs.includes(railTransfer)) {
-  moveAffiliates.push({ title: 'Airport car', kicker: 'Trip.com', body: `Private transfer from ${cityAirports[city] || 'BKK'}.`, href: railTransfer, cta: 'See transfers', photo: '/photos/get-there.jpg' });
+  // Airport photo first so the card never repeats a photo already on the page (e.g. Hua Hin station).
+  const airportPhotos: Record<string, string> = { BKK: '/photos/suvarnabhumi-arrivals.jpg', CNX: '/photos/chiang-mai-airport.jpg', HKT: '/photos/phuket-airport.jpg', KBV: '/photos/krabi-airport.jpg', USM: '/photos/samui-airport.jpg' };
+  const carPhoto = bag.takeOrNone(airportPhotos[cityAirports[city] || 'BKK']) || bag.takeOrNone('/photos/get-there.jpg') || bag.take(undefined, 'airport transfer');
+  moveAffiliates.push({ title: 'Airport car', kicker: 'Trip.com', body: `Private transfer from ${cityAirports[city] || 'BKK'}.`, href: railTransfer, cta: 'See transfers', photo: carPhoto });
 }
 const railSkip = [...pageHrefs, ...moveAffiliates.map((a) => a.href)];
 const hasKlookInStay = affiliates.some((a) => /klook/.test(a.href));
