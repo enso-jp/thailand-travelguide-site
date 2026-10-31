@@ -27,6 +27,7 @@ import { wave27Pages } from './wave27-compare';
 import { wave28FoodHubs } from './wave28-food-hubs';
 import { wave29FoodTopics } from './wave29-food-topics';
 import { wave30FoodBatch5 } from './wave30-food-batch5';
+import { wave31FoodBatch8 } from './wave31-food-batch8';
 import { wave22Pages } from './wave22-bangkok';
 import { wave22SouthPages } from './wave22-south';
 import { wave22GulfNorthPages } from './wave22-gulf-north';
@@ -4171,6 +4172,7 @@ const rawPages: Page[] = [
   ...wave28FoodHubs,
   ...wave29FoodTopics,
   ...wave30FoodBatch5,
+  ...wave31FoodBatch8,
   ...wave22Pages,
   ...wave22SouthPages,
   ...wave22GulfNorthPages,

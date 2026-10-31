@@ -12,6 +12,7 @@ import { KHAO_SOK_DISHES, KOH_CHANG_DISHES } from './dishes-batch5';
 import { AYUTTHAYA_MORE, CHIANG_RAI_MORE, HUA_HIN_MORE, KHAO_YAI_DISHES, KOH_SAMUI_MORE, KRABI_MORE, PATTAYA_MORE, PHUKET_MORE, SUKHOTHAI_MORE } from './dishes-batch5-rest';
 import { KANCHANABURI_B6, KHAO_LAK_B6, KHON_KAEN_B6, KOH_KOOD_B6, KOH_LANTA_B6, KOH_LIPE_B6, KOH_PHANGAN_B6, KOH_PHI_PHI_B6, KOH_TAO_B6, PAI_B6 } from './dishes-batch6';
 import { HAT_YAI_B6, KHAO_SOK_B6, KHAO_YAI_B6, KOH_CHANG_B6, NONG_KHAI_B6, UDON_THANI_B6 } from './dishes-batch6-rest';
+import { AYUTTHAYA_B8, CHIANG_MAI_B8, CHIANG_RAI_B8, HUA_HIN_B8, KANCHANABURI_B8, KOH_SAMUI_B8, KOH_TAO_B8, KRABI_B8, PATTAYA_B8, PHUKET_B8 } from './dishes-batch8';
 import { AYUTTHAYA_B7, HUA_HIN_B7, KOH_PHANGAN_B7, KOH_SAMUI_B7, KRABI_B7, PATTAYA_B7 } from './dishes-batch7';
 import { ALL_DISHES } from './dish-pages';
 import { dishDirectoryItems, dishPath, type DishRecord, type FoodSpot } from './dish-model';
@@ -231,6 +232,7 @@ export const CITY_FOOD_ROWS: Record<string, CityFoodRow[]> = {
   ],
   '/thai-food/chiang-mai': [
     ...dishRows(CHIANG_MAI_DISHES),
+    ...dishRows(CHIANG_MAI_B8),
     { title: 'Khao Soi Lam Duan', nameLocal: 'ข้าวซอยลำดวน', href: '/thai-food/chiang-mai--khao-soi', kind: 'place', summary: 'Khao Soi Lam Duan on Faham Road is the darker-broth classic on the same lunch clock. Order one bowl at 50 to 70 THB, then walk the river.', address: 'Khao Soi Lam Duan Faham, 352/22 Charoenrat Rd, Wat Ket', hours: '10:00 to 15:00', price: '50 to 70 THB' },
     { title: 'Khao Soi Mae Manee', nameLocal: 'ข้าวซอยแม่มณี', href: '/thai-food/chiang-mai--khao-soi', kind: 'place', summary: 'Khao Soi Mae Manee is the Chang Phueak lunch room north of the moat, not inside the Old City. TAT lists 09:00 to 15:30 at 40 to 120 THB. Arrive before 13:00.', address: 'Khao Soi Mae Manee, 18 Soi Chotana 24, Chotana Rd, Chang Phueak, Chiang Mai 50300', hours: '09:00 to 15:30', price: '50 to 80 THB' },
     { title: 'Sunday Walking Street snacks', nameLocal: 'ถนนคนเดิน', href: '/chiang-mai/old-city', kind: 'place', summary: 'Ratchadamnoen after 16:00 on Sunday. Grills and dessert cups, not a temple substitute. 20 to 60 THB.', address: 'Ratchadamnoen Rd, Phra Sing, Chiang Mai 50200', hours: 'Sunday from 16:00', price: '20 to 60 THB' },
@@ -245,12 +247,14 @@ export const CITY_FOOD_ROWS: Record<string, CityFoodRow[]> = {
   '/thai-food/phuket': [
     ...dishRows(PHUKET_DISHES),
     ...dishRows(PHUKET_MORE),
+    ...dishRows(PHUKET_B8),
     { title: 'Sunday Walking Street', nameLocal: 'ถนนคนเดินภูเก็ต', href: '/thai-food/night-markets', kind: 'place', summary: 'Thalang Road on Sunday late afternoon. Snacks, not a full dinner plan. 30 to 80 THB.', address: 'Thalang Rd, Talat Yai, Phuket 83000', hours: 'Sunday from 16:00', price: '30 to 80 THB' },
     { title: 'Lobster grill (only if priced)', nameLocal: 'กุ้งมังกร', href: '/phuket', kind: 'place', summary: 'Rawai and Chalong desks quote by weight. Confirm the THB number before the grill and walk away from a shrug.', address: 'Rawai seafood promenade, Viset Rd, Rawai, Phuket 83130', hours: '16:00 to 22:00', price: 'By weight; ask first' },
   ],
   '/thai-food/koh-samui': [
     ...dishRows(KOH_SAMUI_DISHES),
     ...dishRows(KOH_SAMUI_MORE),
+    ...dishRows(KOH_SAMUI_B8),
     ...dishRows(KOH_SAMUI_B7),
     { title: 'USM airport snack', nameLocal: 'สนามบินสมุย', href: '/get-there/bangkok-to-koh-samui', kind: 'place', summary: 'The bag belt is slow. Eat after you clear, not in a 20-minute connection. Terminal snacks 80 to 150 THB.', address: 'Samui Airport terminal, Bo Phut, Koh Samui 84320', hours: 'Flight hours', price: '80 to 150 THB' },
     { title: 'Ang Thong picnic skip', nameLocal: 'อ่างทอง', href: '/koh-samui/ang-thong-marine-park', kind: 'place', photo: '/photos/ang-thong.jpg', summary: 'Boat lunch is boxed. Bring water. The 300 THB park fee is extra. Closed 1 Nov to 15 Dec.', address: 'Ang Thong Marine Park boats, Nathon / Maenam piers', hours: 'Boats 08:00 to 09:00', price: 'Tour plus 300 THB' },
@@ -258,6 +262,7 @@ export const CITY_FOOD_ROWS: Record<string, CityFoodRow[]> = {
   '/thai-food/krabi': [
     ...dishRows(KRABI_DISHES),
     ...dishRows(KRABI_MORE),
+    ...dishRows(KRABI_B8),
     ...dishRows(KRABI_B7),
     { title: 'Klong Jilad pier snack', nameLocal: 'คลองจิหลาด', href: '/get-there/phuket-to-krabi-phi-phi', kind: 'place', summary: 'Phi Phi boats leave from Klong Jilad Pier. Eat a proper lunch in Krabi Town first, because pier snacks run 60 to 100 THB and do not fill you.', address: 'Klong Jilad Pier, Krabi 81000', hours: 'Boat mornings 08:00 to 13:00', price: '60 to 100 THB' },
     { title: 'Hong Island boxed lunch', nameLocal: 'เกาะห้อง', href: '/krabi', kind: 'place', summary: 'Park longtail days include a box. The 300 THB park fee is extra. Leave by 08:00.', address: 'Noppharat Thara / Ao Nang longtail desks', hours: 'Boats 08:00', price: 'Tour plus 300 THB' },
@@ -274,20 +279,20 @@ export const CITY_FOOD_ROWS: Record<string, CityFoodRow[]> = {
     { title: 'Khao Niew', nameLocal: 'ข้าวเหนียว', href: '/thai-food/khon-kaen--khao-niew-kk', kind: 'dish', photo: '/photos/dish-khao-niew.jpg', summary: 'Sticky rice is the utensil. Order a basket with every grill. 10 to 22 THB.', address: 'Any Isan grill; ask for khao niew, not jasmine', hours: 'With the grill', price: '10 to 22 THB' },
     { title: 'Ubon night market', nameLocal: 'อุบลราชธานี', href: '/thai-food/night-markets', kind: 'place', summary: 'If you are actually in Ubon, night markets beat hotel buffets. Plates 40 to 80 THB.', address: 'Ubon Night Market, Khammalai Rd, Ubon Ratchathani 34000', hours: '17:00 to 22:00', price: '40 to 80 THB' },
   ],
-  '/thai-food/chiang-rai': dishRows([...CHIANG_RAI_DISHES, ...CHIANG_RAI_MORE]),
+  '/thai-food/chiang-rai': dishRows([...CHIANG_RAI_DISHES, ...CHIANG_RAI_MORE, ...CHIANG_RAI_B8]),
   '/thai-food/khon-kaen': dishRows([...KHON_KAEN_DISHES, ...KHON_KAEN_B6]),
   '/thai-food/udon-thani': dishRows([...UDON_THANI_DISHES, ...UDON_THANI_B6]),
   '/thai-food/nong-khai': dishRows([...NONG_KHAI_DISHES, ...NONG_KHAI_B6]),
-  '/thai-food/ayutthaya': dishRows([...AYUTTHAYA_DISHES, ...AYUTTHAYA_MORE, ...AYUTTHAYA_B7]),
-  '/thai-food/hua-hin': dishRows([...HUA_HIN_DISHES, ...HUA_HIN_MORE, ...HUA_HIN_B7]),
+  '/thai-food/ayutthaya': dishRows([...AYUTTHAYA_DISHES, ...AYUTTHAYA_MORE, ...AYUTTHAYA_B8, ...AYUTTHAYA_B7]),
+  '/thai-food/hua-hin': dishRows([...HUA_HIN_DISHES, ...HUA_HIN_MORE, ...HUA_HIN_B8, ...HUA_HIN_B7]),
   '/thai-food/hat-yai': dishRows([...HAT_YAI_DISHES, ...HAT_YAI_B6]),
   '/thai-food/sukhothai': dishRows([...SUKHOTHAI_DISHES, ...SUKHOTHAI_MORE]),
-  '/thai-food/pattaya': dishRows([...PATTAYA_DISHES, ...PATTAYA_MORE, ...PATTAYA_B7]),
-  '/thai-food/kanchanaburi': dishRows([...KANCHANABURI_DISHES, ...KANCHANABURI_MORE, ...KANCHANABURI_B6]),
+  '/thai-food/pattaya': dishRows([...PATTAYA_DISHES, ...PATTAYA_MORE, ...PATTAYA_B8, ...PATTAYA_B7]),
+  '/thai-food/kanchanaburi': dishRows([...KANCHANABURI_DISHES, ...KANCHANABURI_MORE, ...KANCHANABURI_B6, ...KANCHANABURI_B8]),
   '/thai-food/pai': dishRows([...PAI_DISHES, ...PAI_MORE, ...PAI_B6]),
   '/thai-food/khao-lak': dishRows([...KHAO_LAK_DISHES, ...KHAO_LAK_MORE, ...KHAO_LAK_B6]),
   '/thai-food/koh-lanta': dishRows([...KOH_LANTA_DISHES, ...KOH_LANTA_MORE, ...KOH_LANTA_B6]),
-  '/thai-food/koh-tao': dishRows([...KOH_TAO_DISHES, ...KOH_TAO_MORE, ...KOH_TAO_B6]),
+  '/thai-food/koh-tao': dishRows([...KOH_TAO_DISHES, ...KOH_TAO_MORE, ...KOH_TAO_B6, ...KOH_TAO_B8]),
   '/thai-food/koh-phangan': dishRows([...KOH_PHANGAN_DISHES, ...KOH_PHANGAN_MORE, ...KOH_PHANGAN_B6, ...KOH_PHANGAN_B7]),
   '/thai-food/koh-phi-phi': dishRows([...KOH_PHI_PHI_DISHES, ...KOH_PHI_PHI_MORE, ...KOH_PHI_PHI_B6]),
   '/thai-food/koh-lipe': dishRows([...KOH_LIPE_DISHES, ...KOH_LIPE_MORE, ...KOH_LIPE_B6]),
