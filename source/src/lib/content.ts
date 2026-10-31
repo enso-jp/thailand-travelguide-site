@@ -1436,7 +1436,7 @@ const rawPages: Page[] = [
     facts: [
       {
         "label": "Best months",
-        "value": "November to February; skip the March to April smoke season"
+        "value": "November to February; skip the late February to April smoke season"
       },
       {
         "label": "Get there",
