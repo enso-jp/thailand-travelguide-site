@@ -220,7 +220,7 @@ export const KHON_KAEN_DISHES: DishRecord[] = dishesForCity('khon-kaen', [
     clock: 'Morning to mid-afternoon',
     faqs: [
       { q: 'Larb or nam tok?', a: 'Larb is minced. Nam tok is sliced grilled pork or beef. Order both if the table is four.' },
-      { q: 'Pork nam tok?', a: 'Both. Pork (nam tok moo) is the most common at Isan stalls, and beef (nam tok neua) is easy to find too.' },
+      { q: 'Pork nam tok?', a: 'Yes. Nam tok mu (pork) is the most common at Isan stalls. Nam tok nuea (beef) is easy to find too.' },
     ],
   },
   {
