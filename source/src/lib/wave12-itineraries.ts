@@ -462,7 +462,7 @@ export const WAVE12_ITINERARY_PAGES: Page[] = [
         a: 'Read the ticket. Both run to Thong Sala in about 30 minutes. Nathon and Lipa Noi are different desks.',
       },
       {
-        q: 'Do you need Koh Tao to this route?',
+        q: 'Do you need to add Koh Tao to this route?',
         a: 'Only if a dive course is the point. A day snorkel works. A full Open Water card needs the 10-day Gulf plan.',
       },
     ],
