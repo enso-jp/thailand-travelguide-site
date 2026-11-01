@@ -440,7 +440,7 @@ const rawPages: Page[] = [
     path: "/itineraries",
     title: "Thailand itineraries",
     description: "Duration plans from a 3-day Bangkok stopover to a 21-day north-south loop, plus family and honeymoon spines. Each page names nights, fees, and the monsoon coast.",
-    lede: "Known for duration and style plans: 3, 5, 7, 10, 14, and 21 days, plus kids and honeymoon routes. Use 7 or 10 days for a first trip. Keep Andaman and Gulf hops on one sea.",
+    lede: "Pick your trip length, then a route. Each plan lists the stops, transfers and where to sleep.",
     schema: "Article",
     crumbs: [
       {
@@ -467,19 +467,17 @@ const rawPages: Page[] = [
       }
     ],
     paragraphs: [
-      "Each itinerary names the transport and the booking links. Drop a night before you add a second island group. Fly the long legs: Bangkok to Chiang Mai is about 70 minutes."
+      "Thailand rewards a plan more than most countries do. Here, routes are grouped by trip length and style: Bangkok with the north, island hops on the Andaman and Gulf coasts, and first-timer loops that fit a week. Each one gives day-by-day stops, travel times between them and where to sleep.",
+      "Fly the long legs: Bangkok to Chiang Mai is about 70 minutes."
     ],
     sections: [
       {
-        id: 'all-plans',
-        title: 'Every itinerary on this hub',
-        paragraphs: [
-          'Short city and inland plans: [3 days in Bangkok](/itineraries/3-days-bangkok-stopover), [first week](/itineraries/first-week-7-days), and [5 days Bangkok, Ayutthaya, Kanchanaburi](/itineraries/5-days-bangkok-ayutthaya-kanchanaburi). North plans: [5 days Chiang Mai and Chiang Rai](/itineraries/5-days-chiang-mai-and-chiang-rai) and the [7-day northern loop](/itineraries/7-days-northern-thailand-loop).',
-          'Classic and south spines: [classic 10 days](/itineraries/10-days-classic-thailand), [best 14 days](/itineraries/best-14-days), [Bangkok, Khao Sok, and Krabi](/itineraries/10-days-bangkok-khao-sok-krabi), [south islands 10 days](/itineraries/south-islands-10-days), [Phuket, Krabi, and Phi Phi](/itineraries/7-days-phuket-krabi-phi-phi), [Samui and Phangan](/itineraries/7-days-koh-samui-and-koh-phangan), [Andaman 2 weeks](/itineraries/2-weeks-andaman-island-hopping), and [Gulf islands 10 days](/itineraries/10-days-gulf-islands-samui-phangan-tao).',
-          'Style and long loops: [2 weeks with kids](/itineraries/2-weeks-thailand-with-kids), [2 weeks honeymoon](/itineraries/2-weeks-thailand-honeymoon), and the [3-week grand route](/itineraries/3-weeks-grand-thailand).',
-          'Stopovers and first-timers: [Bangkok food and rooftops](/itineraries/3-days-bangkok-food-and-rooftops), [riverside stopover](/itineraries/3-days-bangkok-riverside-stopover), [Bangkok and Ayutthaya](/itineraries/4-days-bangkok-and-ayutthaya), [8 days Bangkok and Chiang Mai](/itineraries/8-days-bangkok-and-chiang-mai), [9 days Bangkok and Phuket](/itineraries/9-days-bangkok-and-phuket), [first-timer Gulf](/itineraries/10-days-first-timer-gulf), and [12-day first-timer](/itineraries/12-days-thailand-first-timer).',
-          'Families, couples, and backpackers: [Bangkok and Hua Hin kids](/itineraries/7-days-bangkok-and-hua-hin-kids), [Chiang Mai and Hua Hin family](/itineraries/10-days-chiang-mai-hua-hin-family), [Samui family slow](/itineraries/14-days-samui-family-slow), [Khao Lak family](/itineraries/10-days-khao-lak-family), [Bangkok couples](/itineraries/5-days-bangkok-couples), [Chiang Mai and Pai couples](/itineraries/7-days-chiang-mai-and-pai-couples), [Railay and Phi Phi couples](/itineraries/8-days-railay-phi-phi-couples), [Chang and Kood](/itineraries/10-days-koh-chang-and-koh-kood), [Andaman honeymoon](/itineraries/12-days-andaman-honeymoon), [backpacker north](/itineraries/10-days-backpacker-north), [backpacker Gulf](/itineraries/14-days-backpacker-gulf), [backpacker Andaman](/itineraries/14-days-backpacker-andaman), and [21-day backpacker](/itineraries/21-days-backpacker-thailand).',
-          'Islands, north, central, and Vietnam hops: [Phuket west coast](/itineraries/5-days-phuket-west-coast), [Samui beaches](/itineraries/5-days-koh-samui-beaches), [Krabi and Lanta](/itineraries/7-days-krabi-and-koh-lanta), [Samui and Tao dive](/itineraries/8-days-samui-and-koh-tao-dive), [Lanta and Lipe](/itineraries/10-days-lanta-and-lipe), [Andaman without Phuket](/itineraries/12-days-andaman-without-phuket), [Khao Lak and Similan](/itineraries/7-days-khao-lak-and-similan), [Chiang Mai only](/itineraries/4-days-chiang-mai-only), [Pai and Mae Hong Son](/itineraries/6-days-pai-mae-hong-son), [Mai, Rai, and Pai](/itineraries/8-days-chiang-mai-rai-pai), [slow north loop](/itineraries/10-days-north-loop-slow), [Sukhothai and Chiang Mai](/itineraries/7-days-sukhothai-and-chiang-mai), [Kanchanaburi and Erawan](/itineraries/4-days-kanchanaburi-erawan), [Bangkok and Pattaya](/itineraries/6-days-bangkok-and-pattaya), [central ruins](/itineraries/8-days-central-ruins), [Bangkok and Ho Chi Minh](/itineraries/10-days-bangkok-and-ho-chi-minh), [Chiang Mai and Hanoi](/itineraries/12-days-chiang-mai-and-hanoi), [Thailand Vietnam first-timer](/itineraries/14-days-thailand-vietnam-first-timer), [Bangkok, Da Nang, and Hoi An](/itineraries/7-days-bangkok-da-nang-hoi-an), and [Thailand Vietnam coasts](/itineraries/16-days-thailand-vietnam-coasts).',
+        id: 'choose',
+        title: 'Choose a length',
+        bullets: [
+          '**One week:** Bangkok plus Chiang Mai, or Bangkok plus one beach.',
+          '**Ten days to two weeks:** the north, then the islands.',
+          '**Beach only:** Krabi, Koh Lanta and the Phuket coast.',
         ],
       },
     ],

@@ -1,0 +1,311 @@
+---
+import CheckedLine from './CheckedLine.astro';
+import FactBar from './FactBar.astro';
+import AffRow from './AffRow.astro';
+import FaqList from './FaqList.astro';
+import SisterNetwork from './SisterNetwork.astro';
+import SisterRoutes from './SisterRoutes.astro';
+import { klookFallbackCta } from '../lib/partners';
+import { allPages, type Page } from '../lib/content';
+import { formatInline } from '../lib/inline';
+import { buildItineraryHub } from '../lib/itinerary-hub';
+import { flightKeysInPage } from '../lib/sister-network';
+import { pageHref, trailCrumbs } from '../lib/site';
+
+interface Props {
+  page: Page;
+}
+
+const { page } = Astro.props;
+const intro = page.paragraphs[0] || '';
+const note = page.paragraphs[1] || '';
+const bullets = page.sections?.find((section) => section.id === 'choose')?.bullets || [];
+if (!intro || bullets.length < 3) throw new Error('Itineraries hub copy is missing');
+
+const shownAffHrefs = new Set(page.bookingCta ? [page.bookingCta.stayHref, page.bookingCta.tourHref] : []);
+const affiliates = (page.affiliates || []).filter((item) => !shownAffHrefs.has(item.href));
+const hub = buildItineraryHub(
+  allPages(),
+  affiliates.map((item) => item.photo || '').filter(Boolean),
+);
+const bookingTourCta = klookFallbackCta(page.bookingCta?.tourHref);
+const trail = trailCrumbs(page);
+const pageFlightKeys = flightKeysInPage(page);
+---
+
+<article class="section wrap itin-hub">
+  {
+    trail.length > 1 && (
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          {trail.map((crumb) => (
+            <li>
+              <a href={pageHref(crumb.href)}>{crumb.name}</a>
+            </li>
+          ))}
+        </ol>
+      </nav>
+    )
+  }
+
+  <header class="itin-head">
+    <h1>{page.title}</h1>
+    <CheckedLine path={page.path} />
+    <p class="lede">{page.lede}</p>
+  </header>
+
+  <div class="reading">
+    <p>{intro}</p>
+    <ul class="scan-list">
+      {bullets.map((item) => <li set:html={formatInline(item)} />)}
+    </ul>
+    {note && <p>{note}</p>}
+  </div>
+
+  <nav class="itin-jumps" aria-label="Trip length">
+    {hub.groups.map((group) => (
+      <a href={`#${group.id}`}>{group.label}</a>
+    ))}
+  </nav>
+
+  <section class="place-section itin-block" id="top-picks">
+    <h2>Top picks</h2>
+    <div class="itin-picks">
+      {hub.picks.map((pick) => (
+        <a class="itin-pick" href={pageHref(pick.href)}>
+          <img src={pick.photo} alt="" width="160" height="160" loading="lazy" decoding="async" />
+          <span>
+            <strong>{pick.name}</strong>
+            <em>{pick.dayLabel}</em>
+            <span>{pick.route}</span>
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="place-section itin-block" id="by-length">
+    <h2>By length</h2>
+    {hub.groups.map((group) => (
+      <details class="itin-fold" id={group.id}>
+        <summary>
+          <span>{group.label}</span>
+          <span class="itin-count">{group.items.length} routes</span>
+        </summary>
+        <div class="itin-rows">
+          {group.items.map((item) => (
+            <a class="itin-row" href={pageHref(item.href)}>
+              <img src={item.photo} alt="" width="96" height="96" loading="lazy" decoding="async" />
+              <span>
+                <strong>{item.name}</strong>
+                <em>{item.dayLabel}</em>
+                <span>{item.suits}</span>
+              </span>
+            </a>
+          ))}
+        </div>
+      </details>
+    ))}
+  </section>
+
+  <details class="itin-fold itin-all" id="all-itineraries">
+    <summary>
+      <span>All itineraries</span>
+      <span class="itin-count">{hub.all.length} routes</span>
+    </summary>
+    <ul class="itin-index">
+      {hub.all.map((item) => (
+        <li>
+          <a href={pageHref(item.href)}>{item.name}</a>
+          <span>{item.dayLabel}</span>
+        </li>
+      ))}
+    </ul>
+  </details>
+
+  <FactBar facts={page.facts} />
+
+  {
+    page.bookingCta && (
+      <div class="booking-cta" aria-label="Book stays and tickets">
+        <a href={page.bookingCta.stayHref} rel="sponsored noopener" target="_blank">
+          <strong>{page.bookingCta.stayLabel}</strong>
+          <em>{page.bookingCta.stayNote}</em>
+        </a>
+        <a href={page.bookingCta.tourHref} rel="sponsored noopener" target="_blank">
+          <strong>{bookingTourCta ? bookingTourCta.label : page.bookingCta.tourLabel}</strong>
+          <em>{bookingTourCta ? bookingTourCta.note : page.bookingCta.tourNote}</em>
+        </a>
+      </div>
+    )
+  }
+
+  {
+    affiliates.length > 0 && (
+      <section class="place-section" id="book">
+        <h2>Book</h2>
+        <AffRow items={affiliates} />
+      </section>
+    )
+  }
+
+  <SisterNetwork path={page.path} exclude={pageFlightKeys} max={0} />
+  <SisterRoutes path={page.path} exclude={pageFlightKeys} />
+
+  {
+    page.faqs.length > 0 && (
+      <section class="place-section" id="questions">
+        <h2>Common questions</h2>
+        <FaqList items={page.faqs} />
+      </section>
+    )
+  }
+</article>
+
+<script is:inline>
+  function openItineraryHash() {
+    var id = location.hash.replace(/^#/, '');
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (el && el.tagName === 'DETAILS') el.open = true;
+  }
+  openItineraryHash();
+  window.addEventListener('hashchange', openItineraryHash);
+</script>
+
+<style>
+  .itin-head { margin-bottom: 0.2rem; }
+  .itin-head .lede { max-width: var(--measure); }
+  .itin-jumps {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+    margin: 0.9rem 0 0.2rem;
+  }
+  .itin-jumps a {
+    flex: 0 0 auto;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0.42rem 0.8rem;
+    background: #fff;
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 650;
+    font-size: 0.95rem;
+  }
+  .itin-jumps a:hover { border-color: var(--lacquer); color: var(--lacquer); }
+  .itin-block { margin-top: 1.1rem; }
+  .itin-block h2 { margin-top: 0.2rem; }
+  .itin-picks {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
+  .itin-pick,
+  .itin-row {
+    display: grid;
+    grid-template-columns: 4.6rem 1fr;
+    gap: 0.7rem;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    background: #fff;
+  }
+  .itin-pick {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    min-height: 4.6rem;
+  }
+  .itin-pick:hover,
+  .itin-row:hover { border-color: var(--lacquer); }
+  .itin-pick img,
+  .itin-row img {
+    width: 4.6rem;
+    height: 4.6rem;
+    object-fit: cover;
+    display: block;
+  }
+  .itin-pick strong,
+  .itin-row strong { display: block; font-size: 1.02rem; line-height: 1.25; }
+  .itin-pick em,
+  .itin-row em {
+    display: inline-block;
+    margin: 0.12rem 0;
+    color: var(--peak);
+    font-style: normal;
+    font-weight: 650;
+    font-size: 0.82rem;
+  }
+  .itin-pick span span,
+  .itin-row span span {
+    display: block;
+    color: var(--muted);
+    font-size: 0.9rem;
+    line-height: 1.35;
+  }
+  .itin-fold {
+    border-top: 1px solid var(--line);
+    scroll-margin-top: 4.4rem;
+  }
+  .itin-all { margin-top: 0.2rem; }
+  .itin-fold summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.72rem 0.1rem;
+    cursor: pointer;
+    font-weight: 650;
+    list-style: none;
+  }
+  .itin-fold summary::-webkit-details-marker { display: none; }
+  .itin-fold summary::after {
+    content: "";
+    width: 0.45rem;
+    height: 0.45rem;
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+    transform: rotate(45deg) translateY(-0.1rem);
+    flex: 0 0 auto;
+  }
+  .itin-fold[open] summary::after { transform: rotate(225deg) translateY(-0.1rem); }
+  .itin-count { color: var(--muted); font-weight: 500; font-size: 0.88rem; margin-left: auto; }
+  .itin-rows { padding-bottom: 0.35rem; }
+  .itin-row {
+    grid-template-columns: 3.4rem 1fr;
+    border: 0;
+    border-top: 1px solid var(--line);
+    border-radius: 0;
+    padding: 0.45rem 0;
+    min-height: 0;
+  }
+  .itin-row img {
+    width: 3.4rem;
+    height: 3.4rem;
+    border-radius: 8px;
+  }
+  .itin-index {
+    list-style: none;
+    margin: 0 0 0.6rem;
+    padding: 0;
+    columns: 1;
+  }
+  .itin-index li {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.8rem;
+    padding: 0.28rem 0;
+    border-top: 1px solid var(--line);
+  }
+  .itin-index span { color: var(--muted); font-size: 0.88rem; white-space: nowrap; }
+  #top-picks, #by-length, #all-itineraries { scroll-margin-top: 4.4rem; }
+  @media (min-width: 720px) {
+    .itin-picks { grid-template-columns: 1fr 1fr; }
+    .itin-index { columns: 2; column-gap: 1.5rem; }
+    .itin-index li { break-inside: avoid; }
+  }
+  @media (min-width: 1100px) {
+    .itin-picks { grid-template-columns: 1fr 1fr 1fr; }
+  }
+</style>
