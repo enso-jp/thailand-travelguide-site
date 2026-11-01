@@ -123,17 +123,6 @@ export const SISTER_CROSS_BORDER_ROUTES = [
   },
 ];
 
-export function sisterHeaderUrlForPath(path: string): string {
-  const clean = path.replace(/\/$/, '') || '/';
-  const sec = sisterSectionForPath(clean);
-  if (sec) return sec.sisterUrl;
-  if (clean === '/destinations' || clean.startsWith('/destinations/')) return `${VN}/destinations`;
-  if (clean === '/itineraries' || clean.startsWith('/itineraries/')) return `${VN}/itineraries`;
-  if (clean === '/get-there' || clean.startsWith('/get-there/')) return `${VN}/get-there`;
-  if (clean === '/attractions' || clean.startsWith('/attractions/')) return `${VN}/destinations`;
-  return `${VN}/`;
-}
-
 export function sisterSectionForPath(path: string): SisterSection | null {
   const clean = path.replace(/\/$/, '') || '/';
 

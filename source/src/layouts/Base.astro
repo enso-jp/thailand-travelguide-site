@@ -4,8 +4,9 @@ import { site, absUrl, pageHref } from '../lib/site';
 import { jsonLdFor, organizationLd, websiteLd } from '../lib/jsonld';
 import { seoDescription, seoTitle } from '../lib/seo';
 import type { Page } from '../lib/content';
-import { NAV_LINKS, NAV_SLOTS } from '../lib/nav';
-import { sisterHeaderUrlForPath } from '../lib/sister-network';
+import { NAV_SLOTS } from '../lib/nav';
+import { showPlanTabBar } from '../lib/plan-tabs';
+import PlanTabs from '../components/PlanTabs.astro';
 
 interface Props {
   page: Page;
@@ -21,7 +22,6 @@ const title = documentTitle ?? seoTitle(page);
 const description = documentDescription ?? seoDescription(page);
 const image = page.photo ? absUrl(page.photo) : absUrl('/photos/bangkok.jpg');
 const blocks = siteJsonLdOnly ? [organizationLd(), websiteLd()] : jsonLdFor(page);
-const sisterHref = sisterHeaderUrlForPath(page.path);
 ---
 
 <!doctype html>
@@ -126,9 +126,6 @@ const sisterHref = sisterHeaderUrlForPath(page.path);
               </div>
             ))
           }
-          {NAV_LINKS.map((link) => (
-            <a href={pageHref(link.href)}>{link.label}</a>
-          ))}
         </nav>
         <button class="bar-icon search-toggle" type="button" data-search-toggle aria-label="Search" aria-expanded="false" aria-controls="site-search">
           Search
@@ -140,11 +137,6 @@ const sisterHref = sisterHeaderUrlForPath(page.path);
       <button class="phone-backdrop" type="button" data-menu tabindex="-1" aria-label="Close menu"></button>
       <div id="site-menu" class="phone-menu" hidden>
         {NAV_SLOTS.map((slot) => <a href={pageHref(slot.href)}>{slot.label}</a>)}
-        {NAV_LINKS.map((link) => <a href={pageHref(link.href)}>{link.label}</a>)}
-        <a href={pageHref('/get-there')}>Get there</a>
-        <a class="phone-net-link" href={sisterHref} target="_blank" rel="noopener">
-          <i class="net-mark net-mark-vn" aria-hidden="true">V</i> Vietnam TravelGuide →
-        </a>
       </div>
       <div id="site-search" class="search-pop" hidden>
         <form class="search-form wrap" action={pageHref('/search')} role="search">
@@ -155,6 +147,7 @@ const sisterHref = sisterHeaderUrlForPath(page.path);
       </div>
     </header>
     <main id="main">
+      {showPlanTabBar(page.path) && <PlanTabs path={page.path} />}
       <slot />
     </main>
     <footer class="site-footer">
@@ -180,6 +173,7 @@ const sisterHref = sisterHeaderUrlForPath(page.path);
           <span>Explore</span>
           <a href={pageHref('/attractions')}>Attractions</a>
           <a href={pageHref('/thai-food')}>Food</a>
+          <a href={pageHref('/stories')}>Stories</a>
           <a href={pageHref('/itineraries')}>Itineraries</a>
           <a href={pageHref('/interests')}>Interests</a>
         </div>
