@@ -91,7 +91,7 @@ export const WAVE23_B: Page[] = [
     photo: '/photos/hua-hin.jpg',
     paragraphs: [
       'Parents who want a hospital town and a short hop should use a Bangkok pool hotel, then the Southern Line (about 4 hours) to Hua Hin sand. Sleep three nights using [where to stay](/bangkok/where-to-stay); a Chao Phraya tourist boat beats a full palace queue if naps are short. SEA LIFE Ocean World at Siam Paragon is the indoor hour (adult tickets often 900 to 1,200 THB). A 2026 BTS tap is 17 to 62 THB. Wider notes sit on [family travel](/interests/family-travel-with-kids).',
-      'Take the Southern Line about 4 hours (often 200 to 500 THB), or a child-seat van, to [Hua Hin](/hua-hin). Sleep three nights using [Hua Hin where to stay](/hua-hin/where-to-stay). Night-market plates run 50 to 120 THB. A 2026 Grab to Khao Takiab is often 80 to 180 THB. [Sam Roi Yot](/hua-hin/day-trips) is an optional older-kid morning. Do not add Phuket on this week. File the Thailand Digital Arrival Card (TDAC) via [visas and TDAC](/plan/visas-and-tdac).',
+      'Take the Southern Line about 4 hours (often 200 to 500 THB), or a child-seat van, to [Hua Hin](/hua-hin). Sleep three nights using [Hua Hin where to stay](/hua-hin/where-to-stay). Night-market plates run 50 to 120 THB. A 2026 Grab to Khao Takiab is often 80 to 180 THB. [Sam Roi Yot](/hua-hin/day-trips) is an optional older-kid morning. Do not add Phuket to this route. File the Thailand Digital Arrival Card (TDAC) via [visas and TDAC](/plan/visas-and-tdac).',
     ],
     days: [
       ['Bangkok pool arrival', 'Private van with a listed child seat. Riverside or Siam pool hotel. No palace on landing day.', '/photos/riverside.jpg'],

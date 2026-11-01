@@ -148,7 +148,7 @@ export const WAVE23_F: Page[] = [
     ],
     sid: 'ruin-moat',
     stitle: 'Park dawn first, then the moat',
-    sp: 'For two ruin cities without Chiang Mai, use [8 days central ruins](/itineraries/8-days-central-ruins). Ayutthaya is the Bangkok train day, not this week.',
+    sp: 'For two ruin cities without Chiang Mai, use [8 days central ruins](/itineraries/8-days-central-ruins). Ayutthaya is the Bangkok train day, not this route.',
     headers: ['Block', 'Sleep', '2026 fee'],
     rows: [
       ['Nights 1 to 2', 'Old Sukhothai', 'Central zone 200 THB'],

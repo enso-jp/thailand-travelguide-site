@@ -28,7 +28,7 @@ export const WAVE23_E: Page[] = [
     chips: ['Open Water', 'USM in', 'Sairee sleep'],
     photo: '/photos/koh-tao.jpg',
     paragraphs: [
-      'Open Water on [Koh Tao](/koh-tao) is why this week lands USM first. Fly [Bangkok to Koh Samui](/get-there/bangkok-to-koh-samui). Sleep three nights using [Samui where to stay](/koh-samui/where-to-stay). Optional [Ang Thong](/koh-samui/ang-thong-marine-park) at 300 THB if you are not diving the next dawn.',
+      'Open Water on [Koh Tao](/koh-tao) is why this route lands USM first. Fly [Bangkok to Koh Samui](/get-there/bangkok-to-koh-samui). Sleep three nights using [Samui where to stay](/koh-samui/where-to-stay). Optional [Ang Thong](/koh-samui/ang-thong-marine-park) at 300 THB if you are not diving the next dawn.',
       'Boat toward Mae Haad. Sleep four nights using [Tao where to stay](/koh-tao/where-to-stay) on Sairee. Read [dive sites](/koh-tao/dive-sites). Many tickets add a 20 THB pier fee. Lomprayah Samui to Phangan is about 30 minutes; Tao is a second hop. Keep Phuket off this page. Dive context sits on [diving](/interests/diving-and-snorkeling).',
     ],
     days: [
@@ -233,7 +233,7 @@ export const WAVE23_E: Page[] = [
     ],
     faqs: [
       { q: 'Similan dates?', a: 'The usual window is 15 October to 15 May. Boats leave from Thap Lamu.' },
-      { q: 'Day trip or liveaboard?', a: 'A day trip fits this week. A liveaboard replaces hotel nights and needs its own booking.' },
+      { q: 'Day trip or liveaboard?', a: 'A day trip fits this route. A liveaboard replaces hotel nights and needs its own booking.' },
       { q: 'Add Phi Phi?', a: 'Not on seven days with Similan. That is a different pier and a long boat.' },
     ],
   }),

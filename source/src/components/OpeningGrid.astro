@@ -1,0 +1,48 @@
+---
+import Photo from './Photo.astro';
+
+interface Props {
+  photos: string[];
+  place: string;
+}
+
+const { photos, place } = Astro.props;
+const ALT: Record<string, string> = {
+  bangkok: 'Wat Arun on the Chao Phraya River, Bangkok',
+  yaowarat: 'Neon signs over Yaowarat Road in Chinatown, Bangkok',
+  'grand-palace': 'Golden chedis at the Grand Palace, Bangkok',
+  phuket: 'Big Buddha statue above Phuket',
+  'kata-and-karon': 'Kata and Karon beach on the Phuket west coast',
+  'patong-night': 'Bangla Road neon in Patong at night',
+  'chiang-mai': 'Temple hall in Chiang Mai',
+  'doi-suthep-chedi': 'Golden chedi at Wat Phra That Doi Suthep',
+  'wat-phra-singh': 'Wat Phra Singh temple grounds in the Chiang Mai old city',
+  'thai-food': 'Spring rolls and fried snacks at a Thai street stall',
+  'thai-food-night-markets': 'Grilled river prawns at a Thai market',
+  'thai-food-lanna': 'Khao soi curry noodles, a Northern Thai dish',
+  plan: 'Suvarnabhumi Airport terminal, Bangkok',
+  railay: 'Railay Beach, Krabi',
+  resort: 'Sunset over a resort pool',
+  'resort-amanpuri': 'Beach below Amanpuri, Phuket',
+  'resort-soneva-kiri': 'Palm trees at Soneva Kiri, Koh Kood',
+};
+const label = (src: string) => {
+  const key = src.replace(/^.*\//, '').replace(/\.[^.]+$/, '');
+  if (ALT[key]) return ALT[key];
+  const name = key.replace(/-/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+  return name === place ? `${place} view` : `${name}, ${place}`;
+};
+const shown = photos.filter(Boolean).slice(0, 3);
+---
+
+{
+  shown.length === 3 && (
+    <div class="opening-grid">
+      {shown.map((src, index) => (
+        <figure class:list={['og-cell', { 'og-main': index === 0 }]}>
+          <Photo src={src} alt={label(src)} priority={index === 0} />
+        </figure>
+      ))}
+    </div>
+  )
+}

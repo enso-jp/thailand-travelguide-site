@@ -300,7 +300,7 @@ export const WAVE12_ITINERARY_PAGES: Page[] = [
         id: 'andaman-split',
         title: 'West coast, Phi Phi Don, then Krabi',
         paragraphs: [
-          'Stay on one sea. A [Railay](/attractions/railay-beach-and-phra-nang-cave) longtail is 100 THB in daylight. Hong Islands cancel first when the Andaman is up. Do not add Samui on this week.',
+          'Stay on one sea. A [Railay](/attractions/railay-beach-and-phra-nang-cave) longtail is 100 THB in daylight. Hong Islands cancel first when the Andaman is up. Do not add Samui to this route.',
         ],
         table: {
           headers: ['Block', 'Sleep', 'Move'],
@@ -455,14 +455,14 @@ export const WAVE12_ITINERARY_PAGES: Page[] = [
     faqs: [
       {
         q: 'Why January to September?',
-        a: 'That is the easier Lower Gulf window. May to September is also when Andaman swell is up, so this week is the south plan in those months.',
+        a: 'That is the easier Lower Gulf window. May to September is also when Andaman swell is up, so this route is the south plan in those months.',
       },
       {
         q: 'Bangrak or Maenam for Lomprayah?',
         a: 'Read the ticket. Both run to Thong Sala in about 30 minutes. Nathon and Lipa Noi are different desks.',
       },
       {
-        q: 'Do you need Koh Tao on this week?',
+        q: 'Do you need Koh Tao to this route?',
         a: 'Only if a dive course is the point. A day snorkel works. A full Open Water card needs the 10-day Gulf plan.',
       },
     ],

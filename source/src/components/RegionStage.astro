@@ -43,7 +43,7 @@ const { regions, active = 'central' } = Astro.props;
             <div class="region-photos">
               {region.photos.map((place) => (
                 <a href={pageHref(place.href)}>
-                  <Photo src={place.photo} alt="" />
+                  <Photo src={place.photo} alt={place.name} />
                   <span>{place.name}</span>
                 </a>
               ))}
@@ -70,7 +70,7 @@ const { regions, active = 'central' } = Astro.props;
         regions.map((region) => (
           <article class:list={['region-slide', { 'is-active': region.slug === active }]} data-region-slide={region.slug}>
             <a class="region-slide-photo" href={pageHref(region.href)}>
-              <Photo src={region.swipePhoto} alt="" />
+              <Photo src={region.swipePhoto} alt={region.name} />
             </a>
             <a class="region-slide-copy" href={pageHref(region.href)}>
               <small>Explore</small>

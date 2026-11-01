@@ -173,7 +173,7 @@ export const WAVE23_A: Page[] = [
     description:
       'Eight days split 3 Bangkok nights and 4 Chiang Mai nights after a 70 to 75 minute hop. Built for first-timers who want hills and skip both Thai seas.',
     lede:
-      'Ticket the royal river, fly BKK or DMK to CNX, then walk the moat and leave at 07:00 for Doi Suthep. Keep Phuket and Samui off this week.',
+      'Ticket the royal river, fly BKK or DMK to CNX, then walk the moat and leave at 07:00 for Doi Suthep. Keep Phuket and Samui off this route.',
     facts: [
       ['Split', '3 nights Bangkok; 4 nights Chiang Mai; 1 exit buffer'],
       ['Flight', 'BKK or DMK to CNX about 70 to 75 minutes'],
@@ -184,7 +184,7 @@ export const WAVE23_A: Page[] = [
     photo: '/photos/chiang-mai.jpg',
     paragraphs: [
       'Bangkok temples and Chiang Mai moat wats share one first-timer week, with both Thai seas left off. Sleep three nights near a Sukhumvit BTS exit ([where to stay](/bangkok/where-to-stay)) so the 70 to 75 minute hop is a morning flight, not an 08:30 palace scramble on departure day. This fits people who fly into Bangkok and leave from Chiang Mai Airport.',
-      'Walk [Rattanakosin](/bangkok/old-city-rattanakosin) on the first daylight block: [Grand Palace](/attractions/grand-palace-and-wat-phra-kaew), [Wat Pho](/attractions/wat-pho), and the Tha Tien ferry to [Wat Arun](/attractions/wat-arun). Day 2 is Chatuchak or Or Tor Kor. Day 3 is a buffer or [Ayutthaya](/ayutthaya/from-bangkok) only if you skip a late dinner. Fly [Bangkok to Chiang Mai](/get-there/bangkok-to-chiang-mai) in about 70 to 75 minutes. Sleep four nights in the [Old City](/chiang-mai/old-city) or [Nimman](/chiang-mai/nimmanhaemin). Leave at 07:00 for [Doi Suthep](/attractions/wat-phra-that-doi-suthep). Book an [ethical elephant half-day](/attractions/chiang-mai-ethical-elephant-sanctuaries). Stay notes sit on [Chiang Mai where to stay](/chiang-mai/where-to-stay). Do not add Phuket on this week. File the Thailand Digital Arrival Card (TDAC) on [visas and TDAC](/plan/visas-and-tdac) before you fly.',
+      'Walk [Rattanakosin](/bangkok/old-city-rattanakosin) on the first daylight block: [Grand Palace](/attractions/grand-palace-and-wat-phra-kaew), [Wat Pho](/attractions/wat-pho), and the Tha Tien ferry to [Wat Arun](/attractions/wat-arun). Day 2 is Chatuchak or Or Tor Kor. Day 3 is a buffer or [Ayutthaya](/ayutthaya/from-bangkok) only if you skip a late dinner. Fly [Bangkok to Chiang Mai](/get-there/bangkok-to-chiang-mai) in about 70 to 75 minutes. Sleep four nights in the [Old City](/chiang-mai/old-city) or [Nimman](/chiang-mai/nimmanhaemin). Leave at 07:00 for [Doi Suthep](/attractions/wat-phra-that-doi-suthep). Book an [ethical elephant half-day](/attractions/chiang-mai-ethical-elephant-sanctuaries). Stay notes sit on [Chiang Mai where to stay](/chiang-mai/where-to-stay). Do not add Phuket to this route. File the Thailand Digital Arrival Card (TDAC) on [visas and TDAC](/plan/visas-and-tdac) before you fly.',
     ],
     days: [
       ['Bangkok royal river', 'Palace 500 THB, Wat Pho 300 THB, Wat Arun 200 THB plus 5 THB ferry. Sleep Sukhumvit.', '/photos/grand-palace.jpg'],

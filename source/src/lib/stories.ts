@@ -39,7 +39,7 @@ export function storiesIndexPage(): Page {
     path: STORIES_PATH,
     title: 'Thailand travel stories and updates',
     description:
-      'Short, checked Thailand travel stories: festival dates, park seasons, entry rules, and what changed this week, with sources and practical next steps.',
+      'Short, checked Thailand travel stories: festival dates, park seasons, entry rules, and what changed lately, with sources and practical next steps.',
     lede: 'Short, checked updates for planning a trip to Thailand. Newest first.',
     crumbs: [
       { name: 'Thailand', href: '/' },

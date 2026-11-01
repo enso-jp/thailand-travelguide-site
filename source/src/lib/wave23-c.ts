@@ -43,7 +43,7 @@ export const WAVE23_C: Page[] = [
     ],
     sid: 'cliff-then-bay',
     stitle: 'Railay cliffs, then a Phi Phi dawn',
-    sp: 'Do not add Phuket town on this week. For a longer Andaman honeymoon see [12 days Andaman honeymoon](/itineraries/12-days-andaman-honeymoon).',
+    sp: 'Do not add Phuket town to this route. For a longer Andaman honeymoon see [12 days Andaman honeymoon](/itineraries/12-days-andaman-honeymoon).',
     headers: ['Block', 'Sleep', 'Move'],
     rows: [
       ['Nights 1 to 4', 'Railay', 'KBV; 100 THB daytime longtail'],

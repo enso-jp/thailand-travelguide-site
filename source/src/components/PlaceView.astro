@@ -5,6 +5,8 @@ import AttractionCards from './AttractionCards.astro';
 import FactBar from './FactBar.astro';
 import FaqList from './FaqList.astro';
 import Photo from './Photo.astro';
+import OpeningGrid from './OpeningGrid.astro';
+import { OPENING_EXTRAS } from '../lib/opening-grid';
 import ThailandMap from './ThailandMap.astro';
 import SisterNetwork from './SisterNetwork.astro';
 import { flightKeysInPage } from '../lib/sister-network';
@@ -27,6 +29,9 @@ const { page } = Astro.props;
 const meta = PLACE_META[page.path];
 const reserved = page.photo ? [page.photo] : [];
 const bag = new UniquePhotos(reserved);
+const openingGrid = ['/bangkok', '/phuket', '/chiang-mai'].includes(page.path) && page.photo
+  ? [page.photo, ...(OPENING_EXTRAS[page.path] || []).map((src) => bag.take(src, `${page.path} ${page.title}`))]
+  : [];
 const attractions = bag.takeBatch(attractionsFor(page.path), (row) => `${page.path} ${row.name} ${row.href}`);
 const portraits = bag.takeBatch(page.portraits || [], (item) => `${page.path} ${item.title} ${item.href}`);
 const affiliates = bag.takeBatch(page.affiliates || [], (item) => `${page.path} ${item.title} ${item.kicker} ${item.body}`);
@@ -84,6 +89,7 @@ const tabs = [
       {meta?.nameLocal && <span class="vi" lang="th"> {meta.nameLocal}</span>}
     </h1>
     <CheckedLine path={page.path} />
+    {openingGrid.length === 3 && <OpeningGrid photos={openingGrid} place={page.title} />}
     <p class="lede" set:html={formatInline(page.lede)} />
     {
       page.chips && page.chips.length > 0 && (
@@ -100,7 +106,7 @@ const tabs = [
       )
     }
     {
-      page.photo && (
+      page.photo && openingGrid.length === 0 && (
         <div class="place-photo">
           <Photo src={page.photo} alt={page.title} priority />
         </div>

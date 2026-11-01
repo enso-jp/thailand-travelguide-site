@@ -516,7 +516,7 @@ export const wave7Pages: Page[] = [
         id: 'fork',
         title: 'Pai, Chiang Rai, or both',
         paragraphs: [
-          'Both fit this week if Doi Inthanon stays a day trip and Pai stays one night. Drop Pai if you hate vans. Drop the Golden Triangle if the White Temple is enough. The Mae Hong Son Loop is a different, longer product.',
+          'Both fit this route if Doi Inthanon stays a day trip and Pai stays one night. Drop Pai if you hate vans. Drop the Golden Triangle if the White Temple is enough. The Mae Hong Son Loop is a different, longer product.',
         ],
         table: {
           headers: ['Stop', 'Who it fits', 'Skip if'],

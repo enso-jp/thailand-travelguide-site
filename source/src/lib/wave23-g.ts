@@ -201,7 +201,7 @@ export const WAVE23_G: Page[] = [
     photo: '/photos/siam.jpg',
     paragraphs: [
       'Three Bangkok nights and Hoi An lantern streets make a short week that skips Thai islands. Sleep three nights using [Bangkok where to stay](/bangkok/where-to-stay) near a BTS exit, walk the [old-city river temples](/bangkok/old-city-rattanakosin) on the first full morning (BTS 17 to 62 THB), then fly from Suvarnabhumi to Da Nang. File the [Thailand Digital Arrival Card (TDAC)](/plan/visas-and-tdac).',
-      'Fly to Da Nang on an international ticket. Sleep Hoi An old town or a Da Nang beach. Notes sit on [Da Nang on Vietnam TravelGuide](https://vietnam-travelguide.com/da-nang/). Do not add Samui or Phuket on this week.',
+      'Fly to Da Nang on an international ticket. Sleep Hoi An old town or a Da Nang beach. Notes sit on [Da Nang on Vietnam TravelGuide](https://vietnam-travelguide.com/da-nang/). Do not add Samui or Phuket to this route.',
     ],
     days: [
       ['Bangkok tickets', 'Palace 500 THB, Wat Pho 300 THB, Wat Arun 200 THB plus 5 THB ferry.', '/photos/grand-palace.jpg'],

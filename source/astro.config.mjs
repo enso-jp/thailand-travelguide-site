@@ -100,4 +100,6 @@ export default defineConfig({
     trailingSlashRedirects(),
   ],
   compressHTML: true,
+  // Inline the site CSS so a slow stylesheet can never paint the page unstyled first (CLS).
+  build: { inlineStylesheets: 'always' },
 });

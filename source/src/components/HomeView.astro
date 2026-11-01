@@ -34,7 +34,7 @@ function dots(n: number): string {
             home.sheet.map((story) => (
               <a class="mini-card" href={pageHref(story.href)}>
                 <span class="media">
-                  <Photo src={story.photo} alt="" width="208" height="176" />
+                  <Photo src={story.photo} alt={story.title} width="208" height="176" />
                 </span>
                 <span class="story-copy">
                   <small>{story.kicker}</small>
@@ -53,7 +53,7 @@ function dots(n: number): string {
         {
           home.collage.map((story) => (
             <a class={`collage-tile ${story.spot}`} href={pageHref(story.href)}>
-              <Photo src={story.photo} alt="" />
+              <Photo src={story.photo} alt={story.title} />
               <span class="collage-copy">
                 <small><i class="hero-mark" aria-hidden="true"></i>{story.kicker}</small>
                 <strong>{story.title}</strong>
@@ -77,7 +77,7 @@ function dots(n: number): string {
         home.topPlaces.map((place, index) => (
           <a class="top-card" href={pageHref(place.href)}>
             <span class="top-photo">
-              <Photo src={place.photo} alt="" />
+              <Photo src={place.photo} alt={place.name} />
               <span class="rank-badge">{index + 1}</span>
             </span>
             <span class="top-copy">
@@ -133,7 +133,7 @@ function dots(n: number): string {
       {
         home.interests.map((item) => (
           <a class="home-tile" href={pageHref(item.href)}>
-            <Photo src={item.photo} alt="" />
+            <Photo src={item.photo} alt={item.label} />
             <span>{item.label}</span>
           </a>
         ))
@@ -155,7 +155,7 @@ function dots(n: number): string {
               <p>{story.summary}</p>
             </span>
             <span class="story-thumb">
-              <Photo src={story.photo} alt="" />
+              <Photo src={story.photo} alt={story.title} />
             </span>
           </a>
         ))

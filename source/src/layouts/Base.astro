@@ -104,7 +104,7 @@ const sisterHref = sisterHeaderUrlForPath(page.path);
                     <div class="nav-cards cards-3">
                       {slot.cards.map((card) => (
                         <a class="nav-card" href={pageHref(card.href)}>
-                          <img src={card.photo} alt="" width="480" height="320" loading="lazy" decoding="async" />
+                          <img src={card.photo} alt={card.name} width="480" height="320" loading="lazy" decoding="async" />
                           <span>{card.name}</span>
                         </a>
                       ))}

@@ -12,6 +12,8 @@ import { flightKeysInPage } from '../lib/sister-network';
 import { getPage, type Page } from '../lib/content';
 import { chipHref, formatInline } from '../lib/inline';
 import { pageHref, routePath } from '../lib/site';
+import OpeningGrid from './OpeningGrid.astro';
+import { OPENING_EXTRAS } from '../lib/opening-grid';
 import { UniquePhotos } from '../lib/photos';
 
 interface Props {
@@ -20,6 +22,10 @@ interface Props {
 
 const { page } = Astro.props;
 const bag = new UniquePhotos(page.photo ? [page.photo] : []);
+const openingHint = `${page.path} ${page.title}`;
+const openingGrid = ['/plan', '/interests/resort-living'].includes(page.path)
+  ? [page.photo || bag.take(undefined, openingHint), ...(OPENING_EXTRAS[page.path] || []).map((src) => bag.take(src, openingHint))]
+  : [];
 const portraits = bag.takeBatch(page.portraits || [], (item) => `${page.path} ${item.title} ${item.href}`);
 const days = bag.takeBatch(page.days || [], (day) => `${page.path} ${day.title} ${day.body}`);
 const sections = (page.sections || []).map((section) => ({
@@ -103,6 +109,7 @@ const tipsPlaced = Boolean(tipSectionId);
   <header>
     <h1>{page.title}</h1>
     <CheckedLine path={page.path} />
+    {openingGrid.length === 3 && <OpeningGrid photos={openingGrid} place="Thailand" />}
     <p class="lede" set:html={formatInline(page.lede)} />
     {
       page.parentPill && routePath(page.parentPill.href) !== page.path && (
@@ -128,7 +135,7 @@ const tipsPlaced = Boolean(tipSectionId);
       )
     }
     {
-      page.photo && (
+      page.photo && openingGrid.length === 0 && (
         <figure class="place-photo">
           <img src={page.photo} alt={page.title} width="960" height="540" loading="eager" decoding="async" />
           {page.photoCredit && <figcaption class="photo-credit">{page.photoCredit}</figcaption>}

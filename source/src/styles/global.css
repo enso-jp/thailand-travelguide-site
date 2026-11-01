@@ -1947,3 +1947,22 @@ th, td {
   .home-hero h1 { font-size: 1.6rem; line-height: 1.2; }
   .home-hero-sub { font-size: 0.95rem; }
 }
+
+/* Magazine opening: three photos under the title, space reserved so nothing shifts. */
+.opening-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 6px;
+  aspect-ratio: 16 / 9;
+  max-height: 26rem;
+  margin: 0.8rem 0 0.4rem;
+  border-radius: 14px;
+  overflow: hidden;
+}
+.opening-grid .og-cell { margin: 0; min-height: 0; background: #ececec; }
+.opening-grid .og-main { grid-row: 1 / span 2; }
+.opening-grid img { width: 100%; height: 100%; object-fit: cover; display: block; }
+@media (max-width: 640px) {
+  .opening-grid { aspect-ratio: 4 / 3; }
+}
