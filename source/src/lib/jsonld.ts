@@ -1,5 +1,5 @@
 import { reviewDateFor } from './review-dates';
-import { site, absUrl } from './site';
+import { site, absUrl, trailCrumbs } from './site';
 import type { Page } from './content';
 import { formatInline } from './inline';
 import { seoDescription, seoTitle } from './seo';
@@ -83,10 +83,12 @@ export function websiteLd() {
 }
 
 export function breadcrumbLd(page: Page) {
+  const crumbs = trailCrumbs(page);
+  if (crumbs.length < 2) return null;
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    itemListElement: page.crumbs.map((crumb, i) => ({
+    itemListElement: crumbs.map((crumb, i) => ({
       '@type': 'ListItem',
       position: i + 1,
       name: crumb.name,

@@ -28,6 +28,9 @@ if (!existsSync(join(DIST, '404.html'))) {
 } else {
   const html404 = readFileSync(join(DIST, '404.html'), 'utf8');
   if (!/noindex/i.test(html404)) errors.push('dist/404.html must be noindex');
+  if (!html404.includes('rel="canonical" href="https://thailand-travelguide.com/404.html"')) {
+    errors.push('dist/404.html canonical must be https://thailand-travelguide.com/404.html');
+  }
   if (!/G-XWN3TGDF1V/.test(html404)) errors.push('dist/404.html missing GA4 tag');
   if (!/Thailand\s+<span>Guide<\/span>/.test(html404)) errors.push('dist/404.html missing site wordmark');
   if (!/name="q"/.test(html404)) errors.push('dist/404.html missing search box');
@@ -96,6 +99,43 @@ for (const file of pages) {
     errors.push(`${rel} canonical missing trailing slash: ${canonical}`);
   }
   const robotsMeta = html.match(/<meta name="robots" content="([^"]*)"/)?.[1] ?? '';
+  const decode = (value) => value
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;|&apos;/g, "'");
+  const crumbBlocks = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)]
+    .map((match) => {
+      try { return JSON.parse(match[1]); } catch { return null; }
+    })
+    .filter((block) => block && block['@type'] === 'BreadcrumbList');
+  const nav = html.match(/<nav class="crumbs"[\s\S]*?<\/nav>/);
+  const visibleNames = nav
+    ? [...nav[0].matchAll(/<a [^>]*>([^<]*)<\/a>/g)].map((match) => decode(match[1]))
+    : [];
+  if (rel === '/index.html' && crumbBlocks.length) {
+    errors.push('/index.html must not emit a one-item BreadcrumbList');
+  }
+  if (crumbBlocks.length > 1) errors.push(`${rel} has ${crumbBlocks.length} BreadcrumbList blocks`);
+  if (crumbBlocks.length === 1) {
+    const items = crumbBlocks[0].itemListElement || [];
+    const names = items.map((item) => item.name);
+    if (items.length < 2) errors.push(`${rel} BreadcrumbList has ${items.length} items`);
+    const positions = items.map((item) => item.position);
+    if (positions.some((position, index) => position !== index + 1)) {
+      errors.push(`${rel} breadcrumb positions are not 1..n`);
+    }
+    const lastItem = items.length ? items[items.length - 1].item : '';
+    if (canonical && lastItem !== canonical) {
+      errors.push(`${rel} last breadcrumb item is not the canonical`);
+    }
+    if (names.join('\n') !== visibleNames.join('\n')) {
+      errors.push(`${rel} visible crumbs do not match BreadcrumbList`);
+    }
+  } else if (visibleNames.length) {
+    errors.push(`${rel} has a visible breadcrumb and no BreadcrumbList`);
+  }
   if (canonical && !canonical.includes('/search/') && !/noindex/i.test(robotsMeta)) {
     indexable.push(canonical);
   }

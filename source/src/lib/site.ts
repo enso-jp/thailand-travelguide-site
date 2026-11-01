@@ -50,6 +50,23 @@ export function absUrl(path: string): string {
   return href.startsWith('/') ? `${site.url}${href}` : href;
 }
 
+export type TrailCrumb = { name: string; href: string };
+
+/**
+ * Crumbs that are both visible and safe to mark up.
+ * Google requires at least two ListItems, and the names must be on the page.
+ * The homepage has no parent, so it gets no trail.
+ * A hub with only itself gets Home in front so the list qualifies.
+ */
+export function trailCrumbs(page: { path: string; crumbs?: TrailCrumb[] }): TrailCrumb[] {
+  const crumbs = page.crumbs ?? [];
+  if (!page.path || page.path === '/' || crumbs.length === 0) return [];
+  if (crumbs.length === 1 && crumbs[0]?.href !== '/') {
+    return [{ name: 'Home', href: '/' }, crumbs[0]];
+  }
+  return crumbs.length >= 2 ? crumbs : [];
+}
+
 /** Route key used in page.path and getStaticPaths. Home is `/`; other pages have no trailing slash. */
 export function routePath(path: string): string {
   if (!path || path === '/') return '/';

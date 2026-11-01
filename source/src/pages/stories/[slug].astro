@@ -26,7 +26,7 @@ const tourHref = d.tourQuery ? generatedKlookLink(d.tourQuery) : undefined;
   <article class="section wrap story">
     <nav class="crumbs" aria-label="Breadcrumb">
       <ol>
-        {page.crumbs.slice(0, 2).map((crumb) => (
+        {page.crumbs.map((crumb) => (
           <li><a href={pageHref(crumb.href)}>{crumb.name}</a></li>
         ))}
       </ol>

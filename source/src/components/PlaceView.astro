@@ -19,7 +19,7 @@ import { CITY_FOOD_ROWS } from '../lib/food-catalog';
 import { attractionsFor, PLACE_META } from '../lib/place-attractions';
 import { klookTours, klookFallbackCta, stayLink, stayCityFromPath, transferLink, cityAirports } from '../lib/partners';
 import { regionForPath } from '../lib/regions';
-import { pageHref, routePath } from '../lib/site';
+import { pageHref, routePath, trailCrumbs } from '../lib/site';
 
 interface Props {
   page: Page;
@@ -62,6 +62,7 @@ const BEACH_PLACES = ['/phuket', '/krabi', '/koh-samui', '/koh-phangan', '/koh-t
 const CITY_PLACES = ['/bangkok', '/chiang-mai', '/chiang-rai'];
 const areaWord = BEACH_PLACES.includes(page.path) ? 'Beaches' : CITY_PLACES.includes(page.path) ? 'Neighbourhoods' : 'Areas';
 const areaHeading = `${page.title.split(' and the ')[0]} ${areaWord.toLowerCase()} and guides`;
+const trail = trailCrumbs(page);
 const tabs = [
   { href: '#intro', label: 'Overview' },
   { href: '#attractions', label: 'Top Attractions' },
@@ -76,10 +77,10 @@ const tabs = [
 <article class="wrap">
   <header class="place-top" id="intro">
     {
-      page.crumbs.length > 1 && (
+      trail.length > 1 && (
         <nav class="crumbs" aria-label="Breadcrumb">
           <ol>
-            {page.crumbs.map((crumb) => (
+            {trail.map((crumb) => (
               <li>
                 <a href={pageHref(crumb.href)}>{crumb.name}</a>
               </li>

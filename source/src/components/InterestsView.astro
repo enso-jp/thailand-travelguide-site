@@ -6,7 +6,7 @@ import type { Page } from '../lib/content';
 import { formatInline } from '../lib/inline';
 import { INTEREST_GROUPS } from '../lib/nav';
 import { UniquePhotos } from '../lib/photos';
-import { pageHref } from '../lib/site';
+import { pageHref, trailCrumbs } from '../lib/site';
 
 interface Props {
   page: Page;
@@ -18,12 +18,13 @@ const groups = INTEREST_GROUPS.map((group) => ({
   ...group,
   items: group.items.map((item) => ({ ...item, photo: bag.take(item.photo) })),
 }));
+const trail = trailCrumbs(page);
 ---
 
 <div class="wrap section">
   <nav class="crumbs" aria-label="Breadcrumb">
     <ol>
-      {page.crumbs.map((crumb) => (
+      {trail.map((crumb) => (
         <li><a href={pageHref(crumb.href)}>{crumb.name}</a></li>
       ))}
     </ol>
