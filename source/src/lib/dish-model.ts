@@ -37,7 +37,8 @@ export type DishCity =
   | 'koh-kood'
   | 'koh-chang'
   | 'khao-sok'
-  | 'khao-yai';
+  | 'khao-yai'
+  | 'ubon';
 
 export type DishRecord = {
   city: DishCity;
@@ -576,6 +577,25 @@ export const DISH_CITY_META: Record<
       { title: 'Khao Yai', href: '/khao-yai', photo: '/photos/khao-yai.jpg' },
       { title: 'Isan food', href: '/thai-food/isan', photo: '/photos/dish-som-tum.jpg' },
       { title: 'Bangkok food', href: '/thai-food/bangkok', photo: '/photos/thai-food-bangkok-street.jpg' },
+      { title: 'Dishes to order', href: '/thai-food/thai-dishes-to-order-first-trip', photo: '/photos/ari.jpg' },
+    ],
+  },
+  ubon: {
+    label: 'Ubon Ratchathani',
+    hub: '/thai-food/ubon-ratchathani-food',
+    geo: { lat: 15.228, lon: 104.857, containedIn: 'Ubon Ratchathani' },
+    stayTitle: 'Ubon stays',
+    stayKicker: 'Town kitchens',
+    stayBody: 'Sleep in Ubon if the mortar is the trip. The stay search starts in Bangkok if you are still there.',
+    stayHref: () => stayLink('bangkok'),
+    stayPhoto: '/photos/sukhumvit.jpg',
+    klookTitle: 'Isan night train',
+    klookBody: 'The sleeper is a different ticket from lunch in town.',
+    klookPhoto: '/photos/haew-suwat.jpg',
+    portraits: [
+      { title: 'Ubon food', href: '/thai-food/ubon-ratchathani-food', photo: '/photos/khao-yai.jpg' },
+      { title: 'Isan food', href: '/thai-food/isan', photo: '/photos/thai-food-night-markets.jpg' },
+      { title: 'Khon Kaen food', href: '/thai-food/khon-kaen', photo: '/photos/pak-chong.jpg' },
       { title: 'Dishes to order', href: '/thai-food/thai-dishes-to-order-first-trip', photo: '/photos/ari.jpg' },
     ],
   },

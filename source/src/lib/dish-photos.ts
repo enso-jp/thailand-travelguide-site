@@ -24,6 +24,16 @@ import {
   PATTAYA_B7,
   STANDALONE_B7,
 } from './dishes-batch7';
+import {
+  BANGKOK_B9,
+  KHON_KAEN_B9,
+  UDON_THANI_B9,
+  UBON_B9,
+  KHAO_LAK_B9,
+  KHAO_YAI_B9,
+  PHUKET_B9,
+  KOH_SAMUI_B9,
+} from './dishes-batch9';
 import { UniquePhotos } from './photos';
 
 /** Files that actually show a plated Thai dish, not a street or temple. */
@@ -135,6 +145,14 @@ export const DISH_PHOTO_KEYS = new Set([
     ...AYUTTHAYA_B7,
     ...KOH_PHANGAN_B7,
     ...STANDALONE_B7,
+    ...BANGKOK_B9,
+    ...KHON_KAEN_B9,
+    ...UDON_THANI_B9,
+    ...UBON_B9,
+    ...KHAO_LAK_B9,
+    ...KHAO_YAI_B9,
+    ...PHUKET_B9,
+    ...KOH_SAMUI_B9,
   ]
     .map((dish) => String(dishHero(dish) || '').replace(/^\/photos\//, '').replace(/\.[^.]+$/, ''))
     .filter((key) => key.startsWith('dish-')),

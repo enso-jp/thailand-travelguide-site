@@ -22,6 +22,16 @@ import {
   PATTAYA_B7,
   STANDALONE_B7,
 } from './dishes-batch7';
+import {
+  BANGKOK_B9,
+  KHON_KAEN_B9,
+  UDON_THANI_B9,
+  UBON_B9,
+  KHAO_LAK_B9,
+  KHAO_YAI_B9,
+  PHUKET_B9,
+  KOH_SAMUI_B9,
+} from './dishes-batch9';
 import { dishPath, dishTitleCore, dishToPage, type DishRecord } from './dish-model';
 import type { Page } from './content';
 
@@ -103,6 +113,14 @@ export const ALL_DISHES: DishRecord[] = [
   ...AYUTTHAYA_B7,
   ...KOH_PHANGAN_B7,
   ...STANDALONE_B7,
+  ...BANGKOK_B9,
+  ...KHON_KAEN_B9,
+  ...UDON_THANI_B9,
+  ...UBON_B9,
+  ...KHAO_LAK_B9,
+  ...KHAO_YAI_B9,
+  ...PHUKET_B9,
+  ...KOH_SAMUI_B9,
 ];
 
 export const dishPages: Page[] = ALL_DISHES.map((dish) => dishToPage(dish, ALL_DISHES));

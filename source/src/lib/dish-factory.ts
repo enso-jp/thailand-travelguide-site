@@ -29,6 +29,7 @@ const WALKS: Record<DishCity, { walkHref: string; walkLabel: string; klookQuery:
   'koh-chang': { walkHref: '/koh-chang', walkLabel: 'Koh Chang', klookQuery: 'Koh Chang ferry', stayKey: 'koh-chang' },
   'khao-sok': { walkHref: '/khao-sok', walkLabel: 'Khao Sok', klookQuery: 'Khao Sok lake tour', stayKey: 'surat-thani' },
   'khao-yai': { walkHref: '/khao-yai', walkLabel: 'Khao Yai', klookQuery: 'Khao Yai National Park', stayKey: 'bangkok' },
+  ubon: { walkHref: '/thai-food/ubon-ratchathani-food', walkLabel: 'Ubon food', klookQuery: 'Ubon Ratchathani', stayKey: 'bangkok' },
 };
 
 export type DishDraft = {
