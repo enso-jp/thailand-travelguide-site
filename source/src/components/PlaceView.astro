@@ -57,10 +57,15 @@ const tourCta = klookFallbackCta(tourHref);
 const dishLinks = (CITY_FOOD_ROWS[meta?.foodHref || ''] || [])
   .filter((row) => row.kind === 'dish')
   .slice(0, 8);
+// Name the area card grid for what the place actually has: beaches on the coast, neighbourhoods in cities, areas elsewhere.
+const BEACH_PLACES = ['/phuket', '/krabi', '/koh-samui', '/koh-phangan', '/koh-tao', '/koh-phi-phi', '/koh-lanta', '/koh-lipe', '/koh-chang', '/koh-kood', '/khao-lak', '/hua-hin', '/pattaya'];
+const CITY_PLACES = ['/bangkok', '/chiang-mai', '/chiang-rai'];
+const areaWord = BEACH_PLACES.includes(page.path) ? 'Beaches' : CITY_PLACES.includes(page.path) ? 'Neighbourhoods' : 'Areas';
+const areaHeading = `${page.title.split(' and the ')[0]} ${areaWord.toLowerCase()} and guides`;
 const tabs = [
   { href: '#intro', label: 'Overview' },
   { href: '#attractions', label: 'Top Attractions' },
-  { href: '#neighbourhoods', label: 'Neighbourhoods / Beaches' },
+  { href: '#neighbourhoods', label: areaWord },
   { href: '#stay', label: 'Where to Stay' },
   { href: '#eat', label: 'Food & Markets' },
   { href: '#get-there', label: 'Getting Around' },
@@ -134,7 +139,7 @@ const tabs = [
       </section>
 
       <section class="place-section" id="neighbourhoods">
-        <h2>Neighbourhoods / Beaches</h2>
+        <h2>{areaHeading}</h2>
         <div class="card-list hood-list">
           {
             portraits.map((item) => (
@@ -258,7 +263,7 @@ const tabs = [
         <p class="explore-kicker">Explore</p>
         <h2>{page.title}</h2>
         <ul class="explore-list">
-          <li><a href="#neighbourhoods">Districts</a></li>
+          <li><a href="#neighbourhoods">{areaWord}</a></li>
           {(meta?.explore || [
             { href: meta?.foodHref || '/thai-food', label: `${page.title} food guide` },
             { href: '/interests/resort-living', label: 'Resort Living flagship stays' },

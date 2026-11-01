@@ -114,7 +114,23 @@ export const CHIP_HREF: Record<string, string> = {
   'Rawai and Nai Harn': '/phuket/rawai-and-nai-harn',
 };
 
+// Area chips on a city hub that have their own area guide. Scoped to the hub so a shared label never links to another city.
+const HUB_CHIP_HREF: Record<string, Record<string, string>> = {
+  '/bangkok': {
+    'Sukhumvit and Thonglor': '/bangkok/sukhumvit-thonglor',
+    Riverside: '/bangkok/riverside-charoenkrung',
+    'Siam and Silom': '/bangkok/siam-silom',
+    Ari: '/bangkok/ari',
+  },
+  '/krabi': {
+    'Ao Nang': '/krabi/ao-nang',
+    Railay: '/krabi/railay',
+  },
+};
+
 export function chipHref(label: string, parent?: { name: string; href: string }, pagePath = ''): string | undefined {
+  const hubPath = pagePath.replace(/\/$/, '');
+  if (HUB_CHIP_HREF[hubPath]?.[label]) return pageHref(HUB_CHIP_HREF[hubPath][label]);
   if (label === 'Old City') {
     if (pagePath.startsWith('/chiang-mai')) return pageHref('/chiang-mai/old-city');
     if (pagePath.startsWith('/bangkok')) return pageHref('/bangkok/old-city-rattanakosin');
