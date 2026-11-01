@@ -11,7 +11,7 @@ import { assignExactPhotos, foodRowsFor } from '../lib/dish-photos';
 import { chipHref, formatInline } from '../lib/inline';
 import { UniquePhotos } from '../lib/photos';
 import { klookTours, klookFallbackCta, klookFoodLink, stayCityFromPath, type StayCity } from '../lib/partners';
-import { pageHref, routePath } from '../lib/site';
+import { pageHref, routePath, trailCrumbs } from '../lib/site';
 
 interface Props {
   page: Page;
@@ -26,13 +26,14 @@ const affiliates = bag.takeBatch(page.affiliates || [], (item) => `${page.path} 
 const city: StayCity = stayCityFromPath(page.path);
 const foodTourHref = klookFoodLink(`${page.title} ${Astro.url.pathname.replace(/[-/]/g, ' ')}`, true) || klookTours(`${page.title} food tour`);
 const foodTourCta = klookFallbackCta(foodTourHref);
+const trail = trailCrumbs(page);
 ---
 
 <article class="wrap food-guide-page">
   <header class="place-top" id="intro">
     <nav class="crumbs" aria-label="Breadcrumb">
       <ol>
-        {page.crumbs.map((crumb) => (
+        {trail.map((crumb) => (
           <li><a href={pageHref(crumb.href)}>{crumb.name}</a></li>
         ))}
       </ol>

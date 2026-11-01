@@ -7,7 +7,7 @@ import type { Page } from '../lib/content';
 import { formatInline } from '../lib/inline';
 import { buildHomeMedia } from '../lib/page-media';
 import { UniquePhotos } from '../lib/photos';
-import { pageHref } from '../lib/site';
+import { pageHref, trailCrumbs } from '../lib/site';
 
 interface Props {
   page: Page;
@@ -20,12 +20,13 @@ const bag = new UniquePhotos([
   ...home.regions.flatMap((region) => [...region.photos.map((p) => p.photo), region.swipePhoto]),
 ]);
 const portraits = bag.takeBatch(page.portraits || [], (item) => `${page.path} ${item.title} ${item.href}`);
+const trail = trailCrumbs(page);
 ---
 
 <article class="wrap section">
   <nav class="crumbs" aria-label="Breadcrumb">
     <ol>
-      {page.crumbs.map((crumb) => (
+      {trail.map((crumb) => (
         <li><a href={pageHref(crumb.href)}>{crumb.name}</a></li>
       ))}
     </ol>

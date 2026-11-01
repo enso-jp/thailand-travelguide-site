@@ -11,7 +11,7 @@ import SisterRoutes from './SisterRoutes.astro';
 import { flightKeysInPage } from '../lib/sister-network';
 import { getPage, type Page } from '../lib/content';
 import { chipHref, formatInline } from '../lib/inline';
-import { pageHref, routePath } from '../lib/site';
+import { pageHref, routePath, trailCrumbs } from '../lib/site';
 import OpeningGrid from './OpeningGrid.astro';
 import { OPENING_EXTRAS } from '../lib/opening-grid';
 import { UniquePhotos } from '../lib/photos';
@@ -87,16 +87,17 @@ function guideGridHeading(path: string): string {
   return 'Guides on this hub';
 }
 const bookingTourCta = klookFallbackCta(page.bookingCta?.tourHref);
+const trail = trailCrumbs(page);
 const tipSectionId = sections.find((s) => s.affiliates && s.affiliates.length > 0)?.id;
 const tipsPlaced = Boolean(tipSectionId);
 ---
 
 <article class="section wrap">
   {
-    page.crumbs.length > 1 && (
+    trail.length > 1 && (
       <nav class="crumbs" aria-label="Breadcrumb">
         <ol>
-          {page.crumbs.map((crumb) => (
+          {trail.map((crumb) => (
             <li>
               <a href={pageHref(crumb.href)}>{crumb.name}</a>
             </li>
