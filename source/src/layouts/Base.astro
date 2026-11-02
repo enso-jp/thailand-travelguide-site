@@ -5,8 +5,6 @@ import { jsonLdFor, organizationLd, websiteLd } from '../lib/jsonld';
 import { seoDescription, seoTitle } from '../lib/seo';
 import type { Page } from '../lib/content';
 import { NAV_SLOTS } from '../lib/nav';
-import { showPlanTabBar } from '../lib/plan-tabs';
-import PlanTabs from '../components/PlanTabs.astro';
 
 interface Props {
   page: Page;
@@ -147,7 +145,6 @@ const blocks = siteJsonLdOnly ? [organizationLd(), websiteLd()] : jsonLdFor(page
       </div>
     </header>
     <main id="main">
-      {showPlanTabBar(page.path) && <PlanTabs path={page.path} />}
       <slot />
     </main>
     <footer class="site-footer">
