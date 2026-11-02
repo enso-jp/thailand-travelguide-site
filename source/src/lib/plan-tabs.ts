@@ -1,11 +1,11 @@
-/** Sub-menu under the header on /plan/, /plan/*, and /itineraries/. Hrefs are existing pages. */
+/** In-page plan links on /plan/, /plan/*, and /itineraries/. Hrefs are existing pages. */
 
 export const PLAN_TABS = [
-  { id: 'plan', label: 'Plan a trip', href: '/plan' },
   { id: 'before', label: 'Before you go', href: '/plan/when-to-go' },
+  { id: 'learn', label: 'Learn', href: '/plan' },
+  { id: 'itineraries', label: 'Itinerary ideas', href: '/itineraries' },
   { id: 'stay', label: 'Accommodation', href: '/bangkok/where-to-stay' },
   { id: 'transport', label: 'Transportation', href: '/get-there' },
-  { id: 'itineraries', label: 'Itineraries', href: '/itineraries' },
   { id: 'living', label: 'Living', href: '/interests/resort-living' },
 ] as const;
 
@@ -24,7 +24,7 @@ export function showPlanTabBar(path: string): boolean {
 }
 
 export function activePlanTab(path: string): PlanTabId | undefined {
-  if (path === '/plan') return 'plan';
+  if (path === '/plan') return 'learn';
   if (path === '/itineraries') return 'itineraries';
   if (path === '/plan/when-to-go') return 'before';
   if (path === '/bangkok/where-to-stay') return 'stay';

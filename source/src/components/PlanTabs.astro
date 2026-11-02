@@ -10,14 +10,12 @@ const { path } = Astro.props;
 const active = activePlanTab(path);
 ---
 
-<div class="plan-tabbar">
-  <nav class="tabs plan-tabs wrap" aria-label="Plan a trip">
-    {
-      PLAN_TABS.map((tab) => (
-        <a href={pageHref(tab.href)} aria-current={active === tab.id ? 'page' : undefined}>
-          {tab.label}
-        </a>
-      ))
-    }
-  </nav>
-</div>
+<nav class="tabs plan-tabs" aria-label="Plan a trip">
+  {
+    PLAN_TABS.map((tab) => (
+      <a href={pageHref(tab.href)} aria-current={active === tab.id ? 'page' : undefined}>
+        {tab.label}
+      </a>
+    ))
+  }
+</nav>

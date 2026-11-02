@@ -9,6 +9,7 @@ import { klookFallbackCta } from '../lib/partners';
 import { allPages, type Page } from '../lib/content';
 import { formatInline } from '../lib/inline';
 import { buildItineraryHub } from '../lib/itinerary-hub';
+import PlanTabs from './PlanTabs.astro';
 import { flightKeysInPage } from '../lib/sister-network';
 import { pageHref, trailCrumbs } from '../lib/site';
 
@@ -55,6 +56,7 @@ function routeCount(count: number): string {
   <header class="itin-head">
     <h1>{page.title}</h1>
     <CheckedLine path={page.path} />
+    <PlanTabs path={page.path} />
     <p class="lede">{page.lede}</p>
   </header>
 
@@ -269,7 +271,7 @@ function routeCount(count: number): string {
   }
   .itin-fold {
     border-top: 1px solid var(--line);
-    scroll-margin-top: 4.4rem;
+    scroll-margin-top: 7.2rem;
   }
   .itin-all { margin-top: 0.2rem; }
   .itin-sub { margin-left: 0.85rem; }
@@ -324,7 +326,7 @@ function routeCount(count: number): string {
     border-top: 1px solid var(--line);
   }
   .itin-index span { color: var(--muted); font-size: 0.88rem; white-space: nowrap; }
-  #top-picks, #by-region, #all-itineraries { scroll-margin-top: 4.4rem; }
+  #top-picks, #by-region, #all-itineraries { scroll-margin-top: 7.2rem; }
   @media (min-width: 720px) {
     .itin-picks { grid-template-columns: 1fr 1fr; }
     .itin-index { columns: 2; column-gap: 1.5rem; }
