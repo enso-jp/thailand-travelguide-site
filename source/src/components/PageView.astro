@@ -12,6 +12,8 @@ import { flightKeysInPage } from '../lib/sister-network';
 import { getPage, type Page } from '../lib/content';
 import { chipHref, formatInline } from '../lib/inline';
 import { pageHref, routePath, trailCrumbs } from '../lib/site';
+import { showPlanTabBar } from '../lib/plan-tabs';
+import PlanTabs from './PlanTabs.astro';
 import OpeningGrid from './OpeningGrid.astro';
 import { OPENING_EXTRAS } from '../lib/opening-grid';
 import { UniquePhotos } from '../lib/photos';
@@ -110,6 +112,7 @@ const tipsPlaced = Boolean(tipSectionId);
   <header>
     <h1>{page.title}</h1>
     <CheckedLine path={page.path} />
+    {showPlanTabBar(page.path) && <PlanTabs path={page.path} />}
     {openingGrid.length === 3 && <OpeningGrid photos={openingGrid} place="Thailand" />}
     <p class="lede" set:html={formatInline(page.lede)} />
     {
@@ -395,4 +398,3 @@ const tipsPlaced = Boolean(tipSectionId);
     )
   }
 </article>
-
