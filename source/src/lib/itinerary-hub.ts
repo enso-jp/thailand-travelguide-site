@@ -1,5 +1,6 @@
 import type { Page } from './content';
 import { UniquePhotos } from './photos';
+import { REGIONS, regionForPath, type RegionSlug } from './regions';
 
 export type ItineraryLink = {
   href: string;
@@ -14,6 +15,13 @@ export type ItineraryGroup = {
   id: string;
   label: string;
   items: ItineraryLink[];
+};
+
+export type ItineraryRegionGroup = {
+  id: string;
+  label: string;
+  count: number;
+  lengths: ItineraryGroup[];
 };
 
 export type TopPick = ItineraryLink & { route: string };
@@ -155,13 +163,107 @@ function groupFor(days: number): { id: string; label: string } {
   return LENGTH_GROUPS.find((group) => days <= group.max) || LENGTH_GROUPS[LENGTH_GROUPS.length - 1];
 }
 
+type HubRegion = RegionSlug | 'multi';
+
+const REGION_ORDER: HubRegion[] = ['central', 'north', 'andaman', 'gulf', 'east', 'multi'];
+
+const REGION_LABELS: Record<HubRegion, string> = {
+  central: 'Bangkok & Central',
+  north: 'North',
+  andaman: 'Andaman',
+  gulf: 'Gulf',
+  east: 'East & Isan',
+  multi: 'More than one region',
+};
+
+const SLUG_REGIONS: Array<{ region: RegionSlug; pattern: RegExp }> = [
+  { region: 'north', pattern: /(^|-)(chiang-mai|chiang-rai|pai|sukhothai|northern|north)(-|$)/ },
+  { region: 'andaman', pattern: /(^|-)(phuket|krabi|phi-phi|lanta|lipe|khao-lak|khao-sok|andaman|railay|similan)(-|$)/ },
+  { region: 'gulf', pattern: /(^|-)(samui|phangan|tao|ang-thong|gulf)(-|$)/ },
+  { region: 'east', pattern: /(^|-)(pattaya|koh-chang|koh-kood|khao-yai)(-|$)/ },
+  { region: 'central', pattern: /(^|-)(bangkok|ayutthaya|kanchanaburi|hua-hin|central)(-|$)/ },
+];
+
+const PLACE_ALIASES: Array<{ name: string; region: RegionSlug }> = [
+  { name: 'Andaman', region: 'andaman' },
+  { name: 'Gulf', region: 'gulf' },
+  { name: 'Railay', region: 'andaman' },
+  { name: 'Similan', region: 'andaman' },
+  { name: 'Khao Lak', region: 'andaman' },
+  { name: 'Phi Phi', region: 'andaman' },
+  { name: 'Lanta', region: 'andaman' },
+  { name: 'Lipe', region: 'andaman' },
+  { name: 'Samui', region: 'gulf' },
+  { name: 'Phangan', region: 'gulf' },
+  { name: 'Ang Thong', region: 'gulf' },
+  { name: 'Northern', region: 'north' },
+];
+
+const PLACE_NAMES: Array<{ name: string; region: RegionSlug }> = (() => {
+  const seen = new Set<string>();
+  const places: Array<{ name: string; region: RegionSlug }> = [];
+  for (const region of REGIONS) {
+    for (const place of region.places) {
+      const key = place.name.toLowerCase();
+      if (seen.has(key)) continue;
+      seen.add(key);
+      places.push({ name: place.name, region: regionForPath(place.href) });
+    }
+  }
+  for (const alias of PLACE_ALIASES) {
+    const key = alias.name.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    places.push(alias);
+  }
+  return places.sort((a, b) => b.name.length - a.name.length);
+})();
+
+function regionsInSlug(path: string): Set<RegionSlug> {
+  const slug = path.split('/').filter(Boolean).pop() || '';
+  const found = new Set<RegionSlug>();
+  for (const rule of SLUG_REGIONS) {
+    if (rule.pattern.test(slug)) found.add(rule.region);
+  }
+  return found;
+}
+
+function regionsInText(text: string): Set<RegionSlug> {
+  const found = new Set<RegionSlug>();
+  for (const place of PLACE_NAMES) {
+    const escaped = place.name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    if (new RegExp(`(^|[^A-Za-z])${escaped}([^A-Za-z]|$)`, 'i').test(text)) found.add(place.region);
+  }
+  if (/\bthe north\b/i.test(text)) found.add('north');
+  return found;
+}
+
+function planningSentences(page: Page): string {
+  const raw = [page.lede, ...(page.facts || []).map((fact) => fact.value)].join('\n');
+  return raw
+    .split(/\n+|(?<=[.!?])\s+/)
+    .filter((sentence) => !/\b(skip|keep|do not|don't|without|off this|off the|different trip)\b/i.test(sentence))
+    .join('\n');
+}
+
+function hubRegionFor(page: Page): HubRegion {
+  const found = regionsInSlug(page.path);
+  for (const region of regionsInText(page.title)) found.add(region);
+  if (found.size < 2 && regionsInSlug(page.path).size === 0) {
+    for (const region of regionsInText(planningSentences(page))) found.add(region);
+  }
+  if (found.size === 0) throw new Error(`Unclassified itinerary region: ${page.path}`);
+  if (found.size > 1) return 'multi';
+  return [...found][0];
+}
+
 function byDaysThenName(a: ItineraryLink, b: ItineraryLink): number {
   return a.days - b.days || a.name.localeCompare(b.name);
 }
 
 export function buildItineraryHub(pages: Page[], reservedPhotos: string[] = []): {
   picks: TopPick[];
-  groups: ItineraryGroup[];
+  regions: ItineraryRegionGroup[];
   all: ItineraryLink[];
 } {
   const itineraries = pages.filter((page) => page.path.startsWith('/itineraries/'));
@@ -194,16 +296,25 @@ export function buildItineraryHub(pages: Page[], reservedPhotos: string[] = []):
       photo: featuredPick?.photo || bag.take(page.photo, `${page.path} ${page.title}`),
     };
   });
-  const groups = LENGTH_GROUPS.map((group) => ({
-    id: group.id,
-    label: group.label,
-    items: links
-      .filter((item) => !featured.has(item.href) && groupFor(item.days).id === group.id)
-      .sort(byDaysThenName),
-  })).filter((group) => group.items.length > 0);
+  const listed = links.filter((item) => !featured.has(item.href));
+  const regionByHref = new Map(itineraries.map((page) => [page.path, hubRegionFor(page)]));
+  const regions = REGION_ORDER.map((region) => {
+    const items = listed.filter((item) => regionByHref.get(item.href) === region);
+    const lengths = LENGTH_GROUPS.map((group) => ({
+      id: `region-${region}-${group.id}`,
+      label: group.label,
+      items: items.filter((item) => groupFor(item.days).id === group.id).sort(byDaysThenName),
+    })).filter((group) => group.items.length > 0);
+    return {
+      id: `region-${region}`,
+      label: REGION_LABELS[region],
+      count: items.length,
+      lengths,
+    };
+  }).filter((region) => region.count > 0);
   const order = new Map(LENGTH_GROUPS.map((group, index) => [group.id, index]));
   const all = [...links].sort(
     (a, b) => (order.get(groupFor(a.days).id)! - order.get(groupFor(b.days).id)!) || byDaysThenName(a, b),
   );
-  return { picks, groups, all };
+  return { picks, regions, all };
 }

@@ -440,7 +440,7 @@ const rawPages: Page[] = [
     path: "/itineraries",
     title: "Thailand itineraries",
     description: "Duration plans from a 3-day Bangkok stopover to a 21-day north-south loop, plus family and honeymoon spines. Each page names nights, fees, and the monsoon coast.",
-    lede: "Pick your trip length, then a route. Each plan lists the stops, transfers and where to sleep.",
+    lede: "Pick a region, then a trip length. Each plan lists the stops, transfers, and where to sleep.",
     schema: "Article",
     crumbs: [
       {
@@ -467,13 +467,13 @@ const rawPages: Page[] = [
       }
     ],
     paragraphs: [
-      "Thailand rewards a plan more than most countries do. Here, routes are grouped by trip length and style: Bangkok with the north, island hops on the Andaman and Gulf coasts, and first-timer loops that fit a week. Each one gives day-by-day stops, travel times between them and where to sleep.",
+      "Routes are grouped by region, then by length: Bangkok and central, the north, the Andaman, the Gulf, the east, and trips that cross more than one region. Each plan gives day-by-day stops, travel times between them, and where to sleep.",
       "Fly the long legs: Bangkok to Chiang Mai is about 70 minutes."
     ],
     sections: [
       {
         id: 'choose',
-        title: 'Choose a length',
+        title: 'Pick a route',
         bullets: [
           '**One week:** Bangkok plus Chiang Mai, or Bangkok plus one beach.',
           '**Ten days to two weeks:** the north, then the islands.',
