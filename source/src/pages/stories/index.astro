@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { pageHref } from '../../lib/site';
+import { DIRECTORY_LINKS } from '../../lib/directory-links';
 import { allStories, displayDate, isoDate, storiesIndexPage, storyPath } from '../../lib/stories';
 
 const page = storiesIndexPage();
@@ -39,5 +40,17 @@ const stories = await allStories();
         ))
       }
     </ul>
+    <section class="place-section" id="directories">
+      <h2>Directories</h2>
+      <ul>
+        {
+          DIRECTORY_LINKS.map((link) => (
+            <li>
+              <a href={link.href}>{link.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
   </article>
 </Base>
