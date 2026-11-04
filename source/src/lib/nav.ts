@@ -203,6 +203,7 @@ export const NAV_SLOTS: NavSlot[] = [
         href: '/plan/money-atms-and-promptpay',
         links: [
           { href: '/plan/money-atms-and-promptpay', name: 'Money and ATMs' },
+          { href: '/plan/budget-and-long-stay', name: 'Budget and long stay' },
           { href: '/plan/esim-and-sim-cards', name: 'eSIM and SIMs' },
         ],
       },

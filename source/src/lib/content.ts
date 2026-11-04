@@ -630,6 +630,11 @@ const rawPages: Page[] = [
         "photo": "/photos/bangkok.jpg"
       },
       {
+        "title": "Budget and long stay",
+        "href": "/plan/budget-and-long-stay",
+        "photo": "/photos/budget-and-long-stay.jpg"
+      },
+      {
         "title": "Domestic flights",
         "href": "/plan/domestic-flights-and-baggage",
         "photo": "/photos/bts.jpg"
@@ -2697,6 +2702,179 @@ const rawPages: Page[] = [
         "q": "Grab vs Bolt in Thailand?",
         "a": "Both work in Bangkok, Chiang Mai, Phuket, and most tourist towns. Open both apps and take the lower quote. Bolt is often a little cheaper. Grab has more airport pins and motorcycle options. Neither replaces the BTS at 8:30."
       }
+    ],
+  },
+  {
+    path: "/plan/budget-and-long-stay",
+    modified: "2026-11-04",
+    title: "Thailand trip budget and long-stay costs",
+    description: "Thailand trip costs for 2026: backpacker, midrange, and comfort daily bands, plus rent, visa fees, a SIM, and food for a one to three month city stay.",
+    lede: "A Thailand trip fits about 1,500 to 2,500 THB a day for a backpacker in Bangkok or Chiang Mai, 3,500 to 6,500 THB for midrange, and 8,000 THB up for comfort. A one to three month stay is rent, a visa fee, a SIM, and food, not a hotel night times 30.",
+    schema: "Article",
+    crumbs: [
+      { name: "Plan", href: "/plan" },
+      { name: "Budget and long stay", href: "/plan/budget-and-long-stay" },
+    ],
+    facts: [
+      { label: "Backpacker", value: "1,500 to 2,500 THB a day in Bangkok or Chiang Mai" },
+      { label: "Midrange", value: "3,500 to 6,500 THB a day, room shared by two" },
+      { label: "Long stay", value: "Rent, visa, SIM, and food, not 30 hotel nights" },
+      { label: "Extension", value: "1,900 THB to apply; the officer decides" },
+    ],
+    photo: "/photos/budget-and-long-stay.jpg",
+    paragraphs: [
+      "Use the city bands below for one person in Bangkok or Chiang Mai, outside Songkran and the December to February hotel spike. They cover the bed, meals, and local rides. They leave out the flight in, a boat day, and alcohol. Islands cost more. Read [when to go](/plan/when-to-go) before you lock a coast.",
+      "A week is the daily band times seven, plus one spike. A backpacker week is often 11,000 to 18,000 THB. A midrange week is often 25,000 to 45,000 THB per person when two people share the room. Comfort starts around 56,000 THB per person before a resort extra. Grand Palace is 500 THB. Wat Pho is 300 THB. Bangkok to Chiang Mai is often 1,200 to 4,500 THB if you change cities.",
+    ],
+    sections: [
+      {
+        id: "daily",
+        title: "Daily bands",
+        paragraphs: [
+          "Midrange and comfort assume two people split the room. A solo midrange traveler pays the whole room, so add the other half. A 3,000 THB room is 3,000 THB if you do not share it.",
+        ],
+        table: {
+          headers: ["Style", "Per person, per day", "Bed", "Food and rides"],
+          rows: [
+            [
+              "Backpacker",
+              "1,500 to 2,500 THB",
+              "Dorm about 400 to 900 THB, or a basic private if you split it",
+              "Street plates often 60 to 150 THB. BTS from 17 THB.",
+            ],
+            [
+              "Midrange",
+              "3,500 to 6,500 THB",
+              "Hotel room about 2,000 to 4,500 THB, split by two",
+              "Street food plus one sit-down meal. Grab when it rains.",
+            ],
+            [
+              "Comfort",
+              "8,000 to 15,000 THB",
+              "Hotel often 6,000 THB and up for the room",
+              "Restaurant meals. An airport car on the landing night.",
+            ],
+          ],
+        },
+        bullets: [
+          "**BTS:** a ride starts at 17 THB. A long Sukhumvit trip is several times that. Extension stations add to the core fare. Pay the number on the gate.",
+          "**Grab and Bolt:** plan a short Bangkok ride at 80 to 180 THB, and a late Phuket west-coast ride at 300 to 700 THB. The quote in the app is the fare. Steps sit on [Grab and BTS](/plan/grab-and-bts).",
+          "**Cash:** a foreign Visa ATM fee is often 250 THB and a Mastercard fee is often 350 THB at the big banks, on top of your own bank. Take one large withdrawal. The screen is the fee. Details are on [money, ATMs, and PromptPay](/plan/money-atms-and-promptpay).",
+          "**SIM:** the tourist ladder is often 499 THB for 8 days, 699 for 15, 1,199 for 30, and 1,599 for 60. AIS is the safer single choice off the city grid. See [eSIM and SIM cards](/plan/esim-and-sim-cards).",
+          "**Airport Rail Link:** Suvarnabhumi to town is 15 to 45 THB in daylight. Book a car if you land after 22:00 with bags.",
+        ],
+      },
+      {
+        id: "what-moves",
+        title: "What moves the bill",
+        bullets: [
+          "**Islands:** a Phuket or Samui night is not a Bangkok dorm. Boats and park fees sit on top. Use [the first week](/itineraries/first-week-7-days) or [14 days](/itineraries/best-14-days), and pick one coast.",
+          "**Peak weeks:** December to February, and Songkran in mid-April, lift hotel rates. Check [when to go](/plan/when-to-go) and [Songkran](/plan/songkran-and-public-holidays) before you treat the band as a quote.",
+          "**A second city:** the useful north flight is often 1,200 to 4,500 THB. That is a spike, not part of the daily food line. The route is [Bangkok to Chiang Mai](/get-there/bangkok-to-chiang-mai).",
+          "**Longer backpacker routes:** [10 days in the north](/itineraries/10-days-backpacker-north) and [21 days around Thailand](/itineraries/21-days-backpacker-thailand) show where the nights go. Multiply the daily band, then add the flights.",
+        ],
+      },
+      {
+        id: "long-stay",
+        title: "One to three months",
+        paragraphs: [
+          "Price a month as rent, utilities, food, a SIM, local rides, and the visa line. Do not multiply a hotel night by 30. A one-month let often misses the six-month or twelve-month rate. Ask the deposit and the minimum term before you compare two ads.",
+          "These are asking rents, not signed leases. Chiang Mai figures come from a 2026 cross-check of condo listings: a typical 30 square metre studio near 9,500 THB a month, and a 45 square metre one-bed near 14,200 THB. Bangkok outer Sukhumvit one-beds near On Nut were listing around 12,000 to 16,000 THB in late 2026. Sukhumvit core, from Nana through Thong Lo, is often 15,000 to 28,000 THB for a small one-bed.",
+        ],
+        table: {
+          headers: ["Line", "Lean month", "Notes"],
+          rows: [
+            [
+              "Chiang Mai rent",
+              "9,000 to 16,000 THB",
+              "Studio or small one-bed. Negotiate the ask.",
+            ],
+            [
+              "Bangkok rent, outer BTS",
+              "12,000 to 18,000 THB",
+              "On Nut and similar. Core Sukhumvit is often 15,000 to 28,000 THB.",
+            ],
+            [
+              "Deposit",
+              "Often 1 to 2 months",
+              "Cash up front. It should come back. It is not a monthly cost.",
+            ],
+            [
+              "Power and water",
+              "1,500 to 4,000 THB",
+              "Condo buildings often rebilled power above the state rate. All-day air-con is the top.",
+            ],
+            [
+              "Food",
+              "9,000 to 15,000 THB",
+              "About 300 to 500 THB a day if you mix street food and a kitchen.",
+            ],
+            [
+              "SIM",
+              "1,199 to 1,599 THB",
+              "30-day and 60-day tourist packs. A travel eSIM may have no Thai number.",
+            ],
+            [
+              "Local rides",
+              "1,500 to 3,000 THB",
+              "Two BTS rides on most days, plus Grab for the gaps.",
+            ],
+          ],
+        },
+        bullets: [
+          "**Chiang Mai, one person:** about 22,000 to 35,000 THB a month before the visa fee and the flight.",
+          "**Bangkok on an outer BTS line:** about 30,000 to 45,000 THB a month on the same basis.",
+          "**Sukhumvit core, air-con, and restaurants:** 45,000 THB and up. Sleep choices are on [where to stay in Bangkok](/bangkok/where-to-stay) and [where to stay in Chiang Mai](/chiang-mai/where-to-stay).",
+          "**Three months:** multiply the monthly burn by three. Keep the deposit on top for month one. A Samui or Phuket month does not use the Bangkok condo band.",
+          "**Search the month, not night one only:** lock a real monthly rate on Trip.com or with the building. A hotel week is a different product.",
+        ],
+      },
+      {
+        id: "visa-line",
+        title: "Visa line for a longer stay",
+        paragraphs: [
+          "Rules below are for a US, UK, or most EU passport on a tourist trip. The officer at the counter still decides entry. Read [visas and TDAC](/plan/visas-and-tdac) and the official sites before you fly. This is not a work permit.",
+        ],
+        bullets: [
+          "**30 days visa-free:** from 15 September 2026 the tourist exemption is 30 days for the listed passports. TDAC is free at tdac.immigration.go.th. Proof of funds can be checked at 20,000 THB per person or 40,000 THB per family.",
+          "**One extension:** Immigration lists 1,900 THB per TM.7 application to stay longer. The fee is not refunded if the officer says no. The London Thai Embassy describes an extension of up to 30 days. A 30-day stamp plus one extension is about 60 days, not 90. Some nationalities get a shorter extension.",
+          "**60 days before you fly:** a single-entry tourist e-visa is 40 USD on the Washington embassy page (updated 27 August 2026) and the Chicago consulate note (17 September 2026). The stay is up to 60 days. One 1,900 THB extension can take that toward 90 days. Apply only at thaievisa.go.th.",
+          "**If you leave and come back:** the Immigration fee page lists a single re-entry permit at 1,000 THB and a multiple re-entry at 3,800 THB. Ask the office. Do not guess from a forum.",
+          "**DTV, if a half year is the real plan:** the Ministry of Foreign Affairs published a 10,000 THB visa fee, 180 days per entry, and a five-year multiple-entry visa, with financial evidence of at least 500,000 THB. Embassies invoice in local currency. Helsinki lists 350 EUR (page updated 3 September 2026). It is not permission to work for a Thai employer.",
+          "**Past 90 days:** Immigration expects an address report. Do not treat a tourist stamp as a lease, and do not overstay the date in the passport.",
+        ],
+      },
+    ],
+    portraits: [
+      { title: "Money and ATMs", href: "/plan/money-atms-and-promptpay", photo: "/photos/yaowarat.jpg" },
+      { title: "Visas and TDAC", href: "/plan/visas-and-tdac", photo: "/photos/plan.jpg" },
+      { title: "When to go", href: "/plan/when-to-go", photo: "/photos/phuket.jpg" },
+      { title: "eSIM and SIM cards", href: "/plan/esim-and-sim-cards", photo: "/photos/bts.jpg" },
+      { title: "First week", href: "/itineraries/first-week-7-days", photo: "/photos/sukhumvit.jpg" },
+      { title: "Chiang Mai stays", href: "/chiang-mai/where-to-stay", photo: "/photos/chiang-mai.jpg" },
+    ],
+    affiliates: [
+      stay("Bangkok night rates", "Trip.com", "Check a real room against the daily band before you treat 2,000 THB as a promise.", stayLink("bangkok"), "/photos/riverside.jpg"),
+      stay("Chiang Mai month base", "Trip.com", "Compare a Nimman or Old City stay with the condo band if the month is the plan.", stayLink("chiang-mai"), "/photos/doi-suthep.jpg"),
+      stay("Island room spike", "Trip.com", "Phuket nights sit above the Bangkok dorm band. Price the coast you actually fly.", stayLink("phuket"), "/photos/kata-and-karon.jpg"),
+    ],
+    faqs: [
+      {
+        q: "How much money do you need per day in Thailand?",
+        a: "In Bangkok or Chiang Mai, outside peak holiday weeks, plan 1,500 to 2,500 THB for a backpacker, 3,500 to 6,500 THB for midrange when two people share the room, and 8,000 THB and up for comfort. Flights, boats, and December hotel spikes sit outside those bands.",
+      },
+      {
+        q: "How much is one month in Thailand?",
+        a: "A lean Chiang Mai month is about 22,000 to 35,000 THB before the visa fee. Bangkok on an outer BTS line is about 30,000 to 45,000 THB. Sukhumvit core with air-con and restaurants is 45,000 THB and up. Add the deposit, which should come back.",
+      },
+      {
+        q: "Is Chiang Mai cheaper than Bangkok for a long stay?",
+        a: "Rent usually is. A small Chiang Mai condo often asks under a Sukhumvit one-bed. You trade the BTS for Grab or a scooter, and March and April haze is a real reason to leave. Food is close in price if you eat on the street.",
+      },
+      {
+        q: "Can you stay 90 days on the visa-free stamp?",
+        a: "No. From 15 September 2026 the exemption is 30 days. One extension application is 1,900 THB and, if granted, is up to 30 more days. For about 90 days, get the 60-day tourist e-visa before you fly, then ask Immigration about the 1,900 THB extension.",
+      },
     ],
   },
   {

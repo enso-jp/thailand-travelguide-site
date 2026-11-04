@@ -270,6 +270,7 @@ function planHubCards(): Portrait[] {
     card('Monsoon and burn season', '/plan/monsoon-and-burn-season', '/photos/khao-lak.jpg'),
     card('eSIM and SIM cards', '/plan/esim-and-sim-cards', '/photos/bts.jpg'),
     card('Money and PromptPay', '/plan/money-atms-and-promptpay', '/photos/bangkok.jpg'),
+    card('Budget and long stay', '/plan/budget-and-long-stay', '/photos/budget-and-long-stay.jpg'),
     card('Domestic flights', '/plan/domestic-flights-and-baggage', '/photos/get-there.jpg'),
     card('Trains and ferries', '/plan/trains-and-ferries', '/photos/itineraries.jpg'),
     card('Grab and BTS', '/plan/grab-and-bts', '/photos/privacy.jpg'),

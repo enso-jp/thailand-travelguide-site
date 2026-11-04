@@ -128,6 +128,7 @@ const REQUIRED_ROUTES = [
   '/kanchanaburi/erawan-and-sai-yok',
   '/chiang-mai/doi-inthanon',
   '/koh-samui/ang-thong-marine-park',
+  '/plan/budget-and-long-stay',
   '/plan/when-to-go',
   '/plan/visas-and-tdac',
   '/plan/trains-and-ferries',

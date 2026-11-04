@@ -134,6 +134,7 @@ const TITLE_CORE: Record<string, string> = {
   '/phuket/kata-and-karon': 'Kata and Karon, Phuket: Swim Bays and Surf',
   '/phuket/rawai-and-nai-harn': 'Rawai and Nai Harn, Phuket: Far-South Peninsula',
   '/plan': 'Plan a Thailand Trip: Visas, Season, and Transit',
+  '/plan/budget-and-long-stay': 'Thailand Trip Budget and Long-Stay Cost Guide',
   '/plan/domestic-flights-and-baggage': 'Thailand Domestic Flights and Cabin Bag Limits',
   '/plan/esim-and-sim-cards': 'Thailand eSIM and SIM Cards: AIS vs True-dtac',
   '/plan/grab-and-bts': 'Grab vs Bolt Thailand and Bangkok BTS Guide',
