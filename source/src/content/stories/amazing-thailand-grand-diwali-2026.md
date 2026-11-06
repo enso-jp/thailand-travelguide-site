@@ -1,6 +1,6 @@
 ---
 title: "Amazing Thailand Grand Diwali 2026: seven free celebrations"
-seoTitle: "Grand Diwali Festival 2026 Thailand dates"
+seoTitle: "Grand Diwali Festival 2026 Thailand dates guide"
 description: "TAT supports seven free Diwali celebrations in Bangkok, Pattaya and Phuket from 3 to 29 November 2026. Diwali Day is 8 November, with ICONSIAM fireworks."
 date: 2026-11-05
 category: Festival
