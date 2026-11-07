@@ -1,5 +1,5 @@
 ---
-import { SISTER_CROSS_BORDER_ROUTES, allowsBkkDadFlight, allowsVietnamFlights, thaiDomesticFlightsForPath, trimFlights } from '../lib/sister-network';
+import { SISTER_CROSS_BORDER_ROUTES, showsSisterCards, allowsBkkDadFlight, allowsVietnamFlights, thaiDomesticFlightsForPath, trimFlights } from '../lib/sister-network';
 interface Props {
   path: string;
   exclude?: string[];
@@ -14,8 +14,19 @@ const clean = path.replace(/\/$/, '');
 const showVnFlight = (f: { fromCode: string; toCode: string }) =>
   !skip.has(`${f.fromCode}-${f.toCode}`) && (f.fromCode !== 'CNX' || clean === '' || clean.includes('chiang-mai'));
 import FlightCta from './FlightCta.astro';
+const cards = showsSisterCards(path);
 ---
 
+{!cards && domestic.length > 0 && (
+  <section class="place-section sister-routes" aria-label="Flights on Trip.com">
+    <div class="sister-flights">
+      {domestic.map((fl) => (
+        <FlightCta href={fl.href} route={fl.route} fromCode={fl.fromCode} toCode={fl.toCode} duration={fl.duration} />
+      ))}
+    </div>
+  </section>
+)}
+{cards && (
 <section class="place-section home-section sister-routes" id="vietnam-routes" aria-label="Combine Thailand and Vietnam routes">
   <div class="sister-head">
     <span class="sister-badge">
@@ -62,3 +73,4 @@ import FlightCta from './FlightCta.astro';
     </div>
   )}
 </section>
+)}
