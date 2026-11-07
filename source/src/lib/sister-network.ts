@@ -56,8 +56,8 @@ export const SISTER_CROSS_BORDER_ROUTES = [
     summary:
       'Pair 4 days in Bangkok with District 1 rooftop bars, Thao Dien dining, and a short hop to Phu Quoc Island on the same Gulf of Thailand weather window.',
     links: [
-      { label: 'Ho Chi Minh City guide', href: `${VN}/ho-chi-minh-city` },
-      { label: 'Phu Quoc Island guide', href: `${VN}/phu-quoc` },
+      { label: 'Ho Chi Minh City guide', href: `${VN}/ho-chi-minh-city/` },
+      { label: 'Phu Quoc Island guide', href: `${VN}/phu-quoc/` },
     ],
     flight: flightCta(
       crossBorderFlightUrl('bangkok', 'ho-chi-minh-city', 'bkk', 'sgn', 'CrossBorder_BKK_SGN'),
@@ -73,9 +73,9 @@ export const SISTER_CROSS_BORDER_ROUTES = [
     summary:
       'Combine Bangkok or Phuket with 36 streets in Hanoi Old Quarter, an overnight limestone-karst cruise on Ha Long Bay, and rowboat caves in Ninh Binh.',
     links: [
-      { label: 'Hanoi Old Quarter guide', href: `${VN}/hanoi` },
-      { label: 'Ha Long Bay guide', href: `${VN}/ha-long` },
-      { label: 'Ninh Binh guide', href: `${VN}/ninh-binh` },
+      { label: 'Hanoi Old Quarter guide', href: `${VN}/hanoi/` },
+      { label: 'Ha Long Bay guide', href: `${VN}/ha-long/` },
+      { label: 'Ninh Binh guide', href: `${VN}/ninh-binh/` },
     ],
     flight: flightCta(
       crossBorderFlightUrl('bangkok', 'hanoi', 'bkk', 'han', 'CrossBorder_BKK_HAN'),
@@ -91,9 +91,9 @@ export const SISTER_CROSS_BORDER_ROUTES = [
     summary:
       'Fly nonstop from Bangkok to Central Vietnam for My Khe Beach resorts in Da Nang, lantern-lit tailor lanes in Hoi An Ancient Town, and the imperial citadel in Hue.',
     links: [
-      { label: 'Da Nang beach guide', href: `${VN}/da-nang` },
-      { label: 'Hoi An Ancient Town', href: `${VN}/hoi-an` },
-      { label: 'Hue imperial guide', href: `${VN}/hue` },
+      { label: 'Da Nang beach guide', href: `${VN}/da-nang/` },
+      { label: 'Hoi An Ancient Town', href: `${VN}/hoi-an/` },
+      { label: 'Hue imperial guide', href: `${VN}/hue/` },
     ],
     flight: flightCta(
       crossBorderFlightUrl('bangkok', 'da-nang', 'bkk', 'dad', 'CrossBorder_BKK_DAD'),
@@ -109,9 +109,9 @@ export const SISTER_CROSS_BORDER_ROUTES = [
     summary:
       'Link Lanna temples and mountain coffee in Chiang Mai with Northern Vietnam rice terraces in Sapa and the UNESCO merchant houses of Hoi An.',
     links: [
-      { label: 'Hoi An Ancient Town', href: `${VN}/hoi-an` },
-      { label: 'Sapa highlands guide', href: `${VN}/sapa` },
-      { label: 'Hanoi guide', href: `${VN}/hanoi` },
+      { label: 'Hoi An Ancient Town', href: `${VN}/hoi-an/` },
+      { label: 'Sapa highlands guide', href: `${VN}/sapa/` },
+      { label: 'Hanoi guide', href: `${VN}/hanoi/` },
     ],
     flight: flightCta(
       crossBorderFlightUrl('chiang-mai', 'hanoi', 'cnx', 'han', 'CrossBorder_CNX_HAN'),
@@ -131,12 +131,12 @@ export function sisterSectionForPath(path: string): SisterSection | null {
     return {
       heading: 'Compare Across Southeast Asia: Bangkok vs. Vietnam',
       lead: 'Planning a two-country Southeast Asia route? Compare Bangkok with Vietnam’s two flagship capitals, both under two hours nonstop from Suvarnabhumi (BKK) or Don Mueang (DMK).',
-      sisterUrl: `${VN}/ho-chi-minh-city`,
+      sisterUrl: `${VN}/ho-chi-minh-city/`,
       cards: [
         {
           kicker: 'Vietnam Southern Metropolis · About 1h 35m flight',
           title: 'Ho Chi Minh City (Saigon)',
-          href: `${VN}/ho-chi-minh-city`,
+          href: `${VN}/ho-chi-minh-city/`,
           summary:
             'Matches Bangkok’s rooftop cocktail energy, late-night street dining, and French-Indochinese boulevard cafés across District 1 and Thao Dien.',
           cta: 'Explore Ho Chi Minh City on Vietnam Guide',
@@ -144,7 +144,7 @@ export function sisterSectionForPath(path: string): SisterSection | null {
         {
           kicker: 'Vietnam Northern Capital · About 1h 50m flight',
           title: 'Hanoi & the Old Quarter',
-          href: `${VN}/hanoi`,
+          href: `${VN}/hanoi/`,
           summary:
             'Pairs well with Rattanakosin and Talat Noi: lakeside pagodas, sidewalk bia hoi corners, egg coffee shophouses, and easy hops to Ha Long Bay.',
           cta: 'Explore Hanoi on Vietnam Guide',
@@ -152,7 +152,7 @@ export function sisterSectionForPath(path: string): SisterSection | null {
         {
           kicker: 'Vietnam Coastal City · About 1h 40m flight',
           title: 'Da Nang & Hoi An',
-          href: `${VN}/da-nang`,
+          href: `${VN}/da-nang/`,
           summary:
             'Skip a domestic connection and fly straight from Bangkok to My Khe Beach and lantern-lit Hoi An Ancient Town.',
           cta: 'Explore Da Nang on Vietnam Guide',
@@ -188,12 +188,12 @@ export function sisterSectionForPath(path: string): SisterSection | null {
     return {
       heading: 'Compare Across Southeast Asia: Northern Thailand vs. Vietnam',
       lead: 'If you love Chiang Mai’s walled Old City, mountain valleys, and artisan markets, compare Vietnam’s northern highlands and heritage towns.',
-      sisterUrl: `${VN}/hanoi`,
+      sisterUrl: `${VN}/hanoi/`,
       cards: [
         {
           kicker: 'Northern Cultural Capital',
           title: 'Hanoi',
-          href: `${VN}/hanoi`,
+          href: `${VN}/hanoi/`,
           summary:
             'Vietnam’s northern hub for centuries-old guild streets, temple courtyards, and specialty robusta coffee culture.',
           cta: 'Read the Hanoi guide',
@@ -201,7 +201,7 @@ export function sisterSectionForPath(path: string): SisterSection | null {
         {
           kicker: 'UNESCO Lantern Town',
           title: 'Hoi An Ancient Town',
-          href: `${VN}/hoi-an`,
+          href: `${VN}/hoi-an/`,
           summary:
             'Shares Chiang Mai’s walkable historic core, custom tailors, cooking schools, and relaxed bicycle-friendly pace.',
           cta: 'Read the Hoi An guide',
@@ -209,7 +209,7 @@ export function sisterSectionForPath(path: string): SisterSection | null {
         {
           kicker: 'Highland Terraces & Trekking',
           title: 'Sapa & the Northern Mountains',
-          href: `${VN}/sapa`,
+          href: `${VN}/sapa/`,
           summary:
             'Vietnam’s answer to Pai and Mae Hong Son: dramatic terraced valleys, cool mountain mist, and hill-tribe ridge trails.',
           cta: 'Read the Sapa guide',
@@ -247,12 +247,12 @@ export function sisterSectionForPath(path: string): SisterSection | null {
     return {
       heading: 'Compare Across Southeast Asia: Thailand Islands vs. Vietnam Coast',
       lead: 'Weighing a Thai island week against Vietnam’s coast, or combining both? Compare water clarity, dry-season months, and five-star beachfront value.',
-      sisterUrl: `${VN}/phu-quoc`,
+      sisterUrl: `${VN}/phu-quoc/`,
       cards: [
         {
           kicker: 'Gulf of Thailand Sister Island',
           title: 'Phu Quoc Island',
-          href: `${VN}/phu-quoc`,
+          href: `${VN}/phu-quoc/`,
           summary:
             'Shares the exact November to April calm-water window as Phuket and Koh Kood, with sunset beach clubs and luxury pool villas.',
           cta: 'Explore Phu Quoc on Vietnam Guide',
@@ -260,7 +260,7 @@ export function sisterSectionForPath(path: string): SisterSection | null {
         {
           kicker: 'Central Coast Beach & Heritage',
           title: 'Da Nang & My Khe Beach',
-          href: `${VN}/da-nang`,
+          href: `${VN}/da-nang/`,
           summary:
             'Best February to August (matching Koh Samui): broad sandy beaches, Son Tra Peninsula resorts, and 35 minutes to Hoi An.',
           cta: 'Explore Da Nang on Vietnam Guide',
@@ -268,7 +268,7 @@ export function sisterSectionForPath(path: string): SisterSection | null {
         {
           kicker: 'Remote Archipelago & Diving',
           title: 'Con Dao & Nha Trang Bays',
-          href: `${VN}/con-dao`,
+          href: `${VN}/con-dao/`,
           summary:
             'For Koh Tao and Koh Lanta fans seeking protected coral reefs, quiet coves, and hideaway luxury at Six Senses Con Dao.',
           cta: 'Explore Con Dao on Vietnam Guide',
@@ -296,12 +296,12 @@ export function sisterSectionForPath(path: string): SisterSection | null {
     return {
       heading: 'Compare Across Southeast Asia: Royal Capitals & Heritage',
       lead: 'If temple ruins, royal citadels, and river history anchor your itinerary, compare Vietnam’s UNESCO imperial and merchant capitals.',
-      sisterUrl: `${VN}/hue`,
+      sisterUrl: `${VN}/hue/`,
       cards: [
         {
           kicker: 'Imperial Citadel & Royal Tombs',
           title: 'Hue',
-          href: `${VN}/hue`,
+          href: `${VN}/hue/`,
           summary:
             'Vietnam’s former Nguyen Dynasty capital along the Perfume River, filled with walled palaces, garden tombs, and royal court cuisine.',
           cta: 'Explore Hue on Vietnam Guide',
@@ -309,7 +309,7 @@ export function sisterSectionForPath(path: string): SisterSection | null {
         {
           kicker: 'Historic River Port & Champa Ruins',
           title: 'Hoi An & My Son Sanctuary',
-          href: `${VN}/hoi-an`,
+          href: `${VN}/hoi-an/`,
           summary:
             'Pair preserved 17th-century merchant shophouses on the Thu Bon River with the forested brick temple towers of My Son.',
           cta: 'Explore Hoi An on Vietnam Guide',
@@ -323,12 +323,12 @@ export function sisterSectionForPath(path: string): SisterSection | null {
     return {
       heading: 'Compare Across Southeast Asia: Limestone Karsts & Nature',
       lead: 'Love Khao Sok’s flooded limestone towers and Phi Phi’s sheer cliffs? Vietnam’s northern karst landscapes are their geological twin.',
-      sisterUrl: `${VN}/ha-long`,
+      sisterUrl: `${VN}/ha-long/`,
       cards: [
         {
           kicker: 'UNESCO Marine Karst Bay',
           title: 'Ha Long Bay & Lan Ha Bay',
-          href: `${VN}/ha-long`,
+          href: `${VN}/ha-long/`,
           summary:
             'Overnight wooden junk and boutique steel-ship cruises winding past nearly 2,000 emerald-water limestone islands.',
           cta: 'Explore Ha Long Bay on Vietnam Guide',
@@ -336,7 +336,7 @@ export function sisterSectionForPath(path: string): SisterSection | null {
         {
           kicker: 'Inland Karst Rivers & Caves',
           title: 'Ninh Binh (Trang An & Tam Coc)',
-          href: `${VN}/ninh-binh`,
+          href: `${VN}/ninh-binh/`,
           summary:
             'Often called Ha Long Bay on land: sampan rowboats gliding through flooded cave tunnels beneath vertical karst peaks.',
           cta: 'Explore Ninh Binh on Vietnam Guide',
@@ -354,12 +354,12 @@ export function sisterSectionForPath(path: string): SisterSection | null {
     return {
       heading: 'Compare Across Southeast Asia: Easy Coastal Escapes',
       lead: 'Looking for a high-energy beach city or a quick coastal drive from the capital? Compare Vietnam’s southern and south-central resort towns.',
-      sisterUrl: `${VN}/nha-trang`,
+      sisterUrl: `${VN}/nha-trang/`,
       cards: [
         {
           kicker: 'Bayfront High-Rise Beach City',
           title: 'Nha Trang',
-          href: `${VN}/nha-trang`,
+          href: `${VN}/nha-trang/`,
           summary:
             'Vietnam’s closest match to Pattaya: a sweeping crescent bay, island-hopping speedboats, seafood promenades, and Cam Ranh resorts.',
           cta: 'Explore Nha Trang on Vietnam Guide',
@@ -367,7 +367,7 @@ export function sisterSectionForPath(path: string): SisterSection | null {
         {
           kicker: 'Saigon Weekend Coast',
           title: 'Vung Tau & Mui Ne',
-          href: `${VN}/mui-ne`,
+          href: `${VN}/mui-ne/`,
           summary:
             'Like Hua Hin from Bangkok, Mui Ne and Vung Tau deliver breezy beachfront resorts, kitesurfing dunes, and fresh harbour seafood.',
           cta: 'Explore Mui Ne on Vietnam Guide',
@@ -381,12 +381,12 @@ export function sisterSectionForPath(path: string): SisterSection | null {
     return {
       heading: 'Compare Across Southeast Asia: Thailand vs. Vietnam Nightlife',
       lead: 'Continuing your trip to Vietnam? Compare Bangkok’s sky bars and Phuket’s beach clubs with Saigon’s District 1 rooftops and Hanoi’s craft beer lanes.',
-      sisterUrl: `${VN}/interests/nightlife`,
+      sisterUrl: `${VN}/interests/nightlife/`,
       cards: [
         {
           kicker: 'Vietnam Nightlife Hub',
           title: 'Vietnam Nightlife Guide',
-          href: `${VN}/interests/nightlife`,
+          href: `${VN}/interests/nightlife/`,
           summary:
             'From Ho Chi Minh City rooftop lounges and hidden speakeasies to Ta Hien beer corner in Hanoi and beach bars in Da Nang.',
           cta: 'Read Vietnam Nightlife Guide',
@@ -394,7 +394,7 @@ export function sisterSectionForPath(path: string): SisterSection | null {
         {
           kicker: 'Rooftops & Cocktail Bars',
           title: 'Ho Chi Minh City After Dark',
-          href: `${VN}/ho-chi-minh-city`,
+          href: `${VN}/ho-chi-minh-city/`,
           summary:
             'District 1 and Thao Dien rival Thonglor and Charoenkrung for Asia’s 50 Best cocktail bars, vinyl lounges, and late dining.',
           cta: 'Explore Saigon on Vietnam Guide',
@@ -402,7 +402,7 @@ export function sisterSectionForPath(path: string): SisterSection | null {
         {
           kicker: 'Bia Hoi & Old Quarter Lanes',
           title: 'Hanoi Nightlife & Street Corners',
-          href: `${VN}/hanoi`,
+          href: `${VN}/hanoi/`,
           summary:
             'Low-stool draft beer corners, live jazz clubs near the Opera House, and late-night pho stalls around Hoan Kiem Lake.',
           cta: 'Explore Hanoi on Vietnam Guide',
@@ -416,12 +416,12 @@ export function sisterSectionForPath(path: string): SisterSection | null {
     return {
       heading: 'Compare Across Southeast Asia: Luxury Resort Living in Vietnam',
       lead: 'Benchmarking Amanpuri, Four Seasons Koh Samui, or Capella Bangkok against Vietnam’s flagship five-star resorts? Compare private-bay villas across the region.',
-      sisterUrl: `${VN}/interests/resort-living`,
+      sisterUrl: `${VN}/interests/resort-living/`,
       cards: [
         {
           kicker: 'Vietnam Flagship Resorts',
           title: 'Vietnam Luxury Resort Living Hub',
-          href: `${VN}/interests/resort-living`,
+          href: `${VN}/interests/resort-living/`,
           summary:
             'Curated breakdown of Vietnam’s top pool-villa resorts across Amanoi, Six Senses Ninh Van Bay, InterContinental Danang, and Regent Phu Quoc.',
           cta: 'Explore Vietnam Resort Living',
@@ -429,7 +429,7 @@ export function sisterSectionForPath(path: string): SisterSection | null {
         {
           kicker: 'Private Peninsula Villas',
           title: 'Nha Trang & Da Nang Luxury Stays',
-          href: `${VN}/resort-living/nha-trang`,
+          href: `${VN}/resort-living/nha-trang/`,
           summary:
             'Dramatic granite-boulder bays at Ninh Van Bay and monkey-inhabited rainforest coves on Da Nang’s Son Tra Peninsula.',
           cta: 'Compare Nha Trang luxury resorts',
@@ -437,7 +437,7 @@ export function sisterSectionForPath(path: string): SisterSection | null {
         {
           kicker: 'Island Hideaways',
           title: 'Phu Quoc & Con Dao Flagship Resorts',
-          href: `${VN}/resort-living/phu-quoc`,
+          href: `${VN}/resort-living/phu-quoc/`,
           summary:
             'All-pool-villa beachfront compounds on Phu Quoc and eco-luxury conservation retreats in the Con Dao archipelago.',
           cta: 'Compare Phu Quoc luxury resorts',
@@ -451,12 +451,12 @@ export function sisterSectionForPath(path: string): SisterSection | null {
     return {
       heading: 'Compare Across Southeast Asia: Thai Food vs. Vietnamese Food',
       lead: 'Eating your way across Southeast Asia? Pair Thailand’s wok-fired street stalls and regional curries with Vietnam’s herb-bright broths, banh mi, and specialty coffee.',
-      sisterUrl: `${VN}/food`,
+      sisterUrl: `${VN}/food/`,
       cards: [
         {
           kicker: 'Sister Culinary Guide',
           title: 'Vietnamese Food Guide & Dish Directory',
-          href: `${VN}/food`,
+          href: `${VN}/food/`,
           summary:
             'Regional dish breakdowns, street-stall addresses, and ordering rules for pho, bun cha, banh mi, cao lau, and egg coffee.',
           cta: 'Explore Vietnamese Food Guide',
@@ -464,7 +464,7 @@ export function sisterSectionForPath(path: string): SisterSection | null {
         {
           kicker: 'Northern Broths & Coffee',
           title: 'Hanoi Street Food Guide',
-          href: `${VN}/food/hanoi`,
+          href: `${VN}/food/hanoi/`,
           summary:
             'Charcoal-grilled bun cha, beef pho at dawn, crispy crab spring rolls, and Old Quarter café culture.',
           cta: 'Read Hanoi Food Guide',
@@ -472,7 +472,7 @@ export function sisterSectionForPath(path: string): SisterSection | null {
         {
           kicker: 'Southern Markets & Seafood',
           title: 'Ho Chi Minh City & Da Nang Food Guides',
-          href: `${VN}/food/ho-chi-minh-city`,
+          href: `${VN}/food/ho-chi-minh-city/`,
           summary:
             'Late-night shellfish alleys, broken rice plates (com tam), crispy banh xeo crepes, and Central Vietnamese noodle bowls.',
           cta: 'Read Saigon Food Guide',
@@ -489,12 +489,12 @@ export function sisterSectionForPath(path: string): SisterSection | null {
     return {
       heading: 'Compare Across Southeast Asia: Vietnam Beaches & Islands',
       lead: 'Matching monsoon seasons across the Gulf and South China Sea? Compare Vietnam’s best beach and island-hopping bases.',
-      sisterUrl: `${VN}/interests/beaches`,
+      sisterUrl: `${VN}/interests/beaches/`,
       cards: [
         {
           kicker: 'Mainland & Bay Beaches',
           title: 'Vietnam Beaches Guide',
-          href: `${VN}/interests/beaches`,
+          href: `${VN}/interests/beaches/`,
           summary:
             'When to pick Da Nang, An Bang (Hoi An), Nha Trang, Quy Nhon, or Mui Ne by month and swell.',
           cta: 'Explore Vietnam Beaches',
@@ -502,7 +502,7 @@ export function sisterSectionForPath(path: string): SisterSection | null {
         {
           kicker: 'Offshore Archipelagos',
           title: 'Vietnam Islands Guide',
-          href: `${VN}/interests/islands`,
+          href: `${VN}/interests/islands/`,
           summary:
             'Compare Phu Quoc, Con Dao, Cat Ba, and Cham Islands for reef visibility, ferries, and dry-season months.',
           cta: 'Explore Vietnam Islands',
@@ -516,12 +516,12 @@ export function sisterSectionForPath(path: string): SisterSection | null {
     return {
       heading: 'Compare Across Southeast Asia: Vietnam Pagodas & Old Towns',
       lead: 'Contrast Thailand’s Theravada golden chedis with Vietnam’s Mahayana pagodas, imperial citadels, and merchant port towns.',
-      sisterUrl: `${VN}/interests/pagodas`,
+      sisterUrl: `${VN}/interests/pagodas/`,
       cards: [
         {
           kicker: 'Sacred Architecture',
           title: 'Vietnam Pagodas & Temples',
-          href: `${VN}/interests/pagodas`,
+          href: `${VN}/interests/pagodas/`,
           summary:
             'From Hanoi’s One Pillar Pagoda and Perfume Pagoda to Hue’s Thien Mu Pagoda and Da Nang’s Linh Ung cliff sanctuary.',
           cta: 'Explore Vietnam Pagodas',
@@ -529,7 +529,7 @@ export function sisterSectionForPath(path: string): SisterSection | null {
         {
           kicker: 'Living Heritage Streets',
           title: 'Vietnam Historic Old Towns',
-          href: `${VN}/interests/old-towns`,
+          href: `${VN}/interests/old-towns/`,
           summary:
             'Walk Hoi An Ancient Town, Hanoi’s 36 guild streets, and Hue’s walled Imperial City.',
           cta: 'Explore Vietnam Old Towns',
@@ -543,12 +543,12 @@ export function sisterSectionForPath(path: string): SisterSection | null {
     return {
       heading: 'Compare Across Southeast Asia: Vietnam with Kids',
       lead: 'Planning a family school-holiday route across Thailand and Vietnam? See how Vietnam compares for stroller access, calm beaches, and family resorts.',
-      sisterUrl: `${VN}/interests/family`,
+      sisterUrl: `${VN}/interests/family/`,
       cards: [
         {
           kicker: 'Family Planning Guide',
           title: 'Vietnam Family Travel with Kids',
-          href: `${VN}/interests/family`,
+          href: `${VN}/interests/family/`,
           summary:
             'Best family bases in Da Nang, Hoi An, Phu Quoc, and Hanoi, plus sleeper-train tips and kid-friendly boat trips.',
           cta: 'Read Vietnam Family Guide',
@@ -556,7 +556,7 @@ export function sisterSectionForPath(path: string): SisterSection | null {
         {
           kicker: 'Beachfront Villas',
           title: 'Da Nang & Phu Quoc Family Resorts',
-          href: `${VN}/resort-living/da-nang`,
+          href: `${VN}/resort-living/da-nang/`,
           summary:
             'Flat sandy beaches, kids clubs, and two-bedroom pool villas under two hours by air from Bangkok.',
           cta: 'Compare Da Nang family resorts',
@@ -570,12 +570,12 @@ export function sisterSectionForPath(path: string): SisterSection | null {
     return {
       heading: 'Compare Across Southeast Asia: Vietnam Markets & Tailors',
       lead: 'Love Chatuchak, Sampeng Lane, and Chiang Mai’s Sunday Walking Street? Compare Vietnam’s night markets, silk villages, and custom tailors.',
-      sisterUrl: `${VN}/interests/markets`,
+      sisterUrl: `${VN}/interests/markets/`,
       cards: [
         {
           kicker: 'Bazaars & Night Markets',
           title: 'Vietnam Markets & Shopping Guide',
-          href: `${VN}/interests/markets`,
+          href: `${VN}/interests/markets/`,
           summary:
             'Ben Thanh Market in Saigon, Dong Xuan Market in Hanoi, Hoi An cloth tailors, and highland ethnic markets.',
           cta: 'Explore Vietnam Markets',
@@ -583,7 +583,7 @@ export function sisterSectionForPath(path: string): SisterSection | null {
         {
           kicker: 'Custom Tailoring Capital',
           title: 'Hoi An Ancient Town',
-          href: `${VN}/hoi-an`,
+          href: `${VN}/hoi-an/`,
           summary:
             '24-hour custom linen suits, leather goods, and lantern workshops along the Thu Bon River.',
           cta: 'Explore Hoi An on Vietnam Guide',
@@ -597,12 +597,12 @@ export function sisterSectionForPath(path: string): SisterSection | null {
     return {
       heading: 'Compare Across Southeast Asia: Explore Vietnam by Interest',
       lead: 'Building a multi-country Southeast Asia itinerary? Browse our sister publication Vietnam Guide by travel style.',
-      sisterUrl: `${VN}/interests`,
+      sisterUrl: `${VN}/interests/`,
       cards: [
         {
           kicker: 'All Travel Styles',
           title: 'Vietnam Interests Hub',
-          href: `${VN}/interests`,
+          href: `${VN}/interests/`,
           summary:
             'Compare Vietnam beaches, islands, caves, mountain passes, pagodas, and coffee culture side by side.',
           cta: 'Browse Vietnam Interests',
@@ -610,7 +610,7 @@ export function sisterSectionForPath(path: string): SisterSection | null {
         {
           kicker: 'Five-Star Stays',
           title: 'Vietnam Luxury Resort Living',
-          href: `${VN}/interests/resort-living`,
+          href: `${VN}/interests/resort-living/`,
           summary:
             'Private-bay pool villas and heritage hotels across Phu Quoc, Nha Trang, Da Nang, and Con Dao.',
           cta: 'Browse Vietnam Resorts',
@@ -618,7 +618,7 @@ export function sisterSectionForPath(path: string): SisterSection | null {
         {
           kicker: 'After Dark',
           title: 'Vietnam Nightlife & Rooftops',
-          href: `${VN}/interests/nightlife`,
+          href: `${VN}/interests/nightlife/`,
           summary:
             'Saigon sky bars, Hanoi bia hoi corners, and coastal beach clubs.',
           cta: 'Browse Vietnam Nightlife',
@@ -633,6 +633,18 @@ export function sisterSectionForPath(path: string): SisterSection | null {
 // Placement rule for the Bangkok to Da Nang flight CTA: only the Bangkok hub,
 // the getting-there pages, and itineraries that combine Thailand and Vietnam.
 const TH_VN_ITINERARY = /^\/itineraries\/[^/]*(vietnam|hanoi|ho-chi-minh|da-nang|hoi-an|saigon)/;
+/**
+ * Vietnam comparison cards render on hub pages (home and one-segment paths such as /bangkok or /thai-food)
+ * and on Thailand-and-Vietnam itineraries. Deeper pages keep only their flight cards, so the same
+ * cross-site block does not repeat on every dish, district, and itinerary page.
+ */
+export function showsSisterCards(path: string): boolean {
+  const clean = path.replace(/\/$/, '') || '/';
+  if (clean === '/') return true;
+  if (clean.split('/').length === 2) return true;
+  return TH_VN_ITINERARY.test(clean);
+}
+
 export function allowsBkkDadFlight(path: string): boolean {
   const clean = path.replace(/\/$/, '') || '/';
   if (clean === '/bangkok') return true;

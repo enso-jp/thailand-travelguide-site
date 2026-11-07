@@ -1,5 +1,5 @@
 ---
-import { sisterSectionForPath, allowsBkkDadFlight, allowsVietnamFlights, thaiDomesticFlightsForPath, trimFlights } from '../lib/sister-network';
+import { sisterSectionForPath, showsSisterCards, allowsBkkDadFlight, allowsVietnamFlights, thaiDomesticFlightsForPath, trimFlights } from '../lib/sister-network';
 import FlightCta from './FlightCta.astro';
 
 interface Props {
@@ -18,10 +18,22 @@ const section = rawSection && {
       ? rawSection.flights.filter((fl) => fl.toCode !== 'DAD' || allowsBkkDadFlight(path)).slice(0, max)
       : trimFlights(thaiDomesticFlightsForPath(path), exclude, max),
 };
+const cards = showsSisterCards(path);
 ---
 
 {
-  section && (
+  section && !cards && section.flights.length > 0 && (
+    <section class="place-section sister-network" aria-label="Flights on Trip.com">
+      <div class="sister-flights">
+        {section.flights.map((fl) => (
+          <FlightCta href={fl.href} route={fl.route} fromCode={fl.fromCode} toCode={fl.toCode} duration={fl.duration} />
+        ))}
+      </div>
+    </section>
+  )
+}
+{
+  section && cards && (
     <section class="place-section sister-network" id="compare-vietnam" aria-label="Compare with Vietnam TravelGuide">
       <div class="sister-head">
         <span class="sister-badge">

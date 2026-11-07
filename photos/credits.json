@@ -1,4 +1,9 @@
 {
+  "budget-and-long-stay": {
+    "author": "Chainwit.",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:SuperRich_currency_exchange_in_Dusit_Central_Park_(2026).jpg"
+  },
   "ari": {
     "author": "Suikotei",
     "license": "CC BY-SA 4.0",
@@ -2908,5 +2913,15 @@
     "author": "ต้นจัง",
     "license": "CC BY 4.0",
     "source": "https://commons.wikimedia.org/wiki/File:Thai_Royal_Barges_Procession_Rehearsal_and_Grand_Palace_Photo_2024.jpg"
+  },
+  "story-vijit-chao-phraya": {
+    "author": "Preecha.MJ",
+    "license": "CC BY-SA 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Wat_arun_at_night_in_Bangkok,_Thailand.jpg"
+  },
+  "story-amazing-thailand-grand-diwali": {
+    "author": "Supanut Arunoprayote",
+    "license": "CC BY 4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Iconsiam_at_Night_(II).jpg"
   }
 }
