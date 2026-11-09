@@ -49,7 +49,7 @@ const trail = trailCrumbs(page);
         <div class="chips">
           {page.chips.map((chip) => {
             const href = chipHref(chip, page.parentPill, page.path);
-            return href && routePath(href) !== page.path ? <a class="pill" href={pageHref(href)}>{chip}</a> : <span class="chip peak">{chip}</span>;
+            return <>{href && routePath(href) !== page.path ? <a class="pill" href={pageHref(href)}>{chip}</a> : <span class="chip peak">{chip}</span>}{' '}</>;
           })}
           <a class="pill" href={pageHref('/thai-food')}>Thai food hub</a>
         </div>

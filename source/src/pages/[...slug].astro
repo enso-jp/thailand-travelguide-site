@@ -2,6 +2,7 @@
 import Base from '../layouts/Base.astro';
 import PageSwitch from '../components/PageSwitch.astro';
 import { allPages, getPage } from '../lib/content';
+import { isHeldFromIndex } from '../lib/noindex-paths';
 
 export function getStaticPaths() {
   return allPages()
@@ -17,6 +18,6 @@ const page = getPage(path);
 if (!page) throw new Error(`Missing page ${path}`);
 ---
 
-<Base page={page} robots={path === '/search' ? 'noindex, follow' : undefined}>
+<Base page={page} robots={path === '/search' || isHeldFromIndex(path) ? 'noindex, follow' : undefined}>
   <PageSwitch page={page} />
 </Base>

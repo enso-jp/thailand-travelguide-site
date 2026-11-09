@@ -50,7 +50,7 @@ const items = raw.filter((item) => (seen.has(item.href) ? false : (seen.add(item
                 )
               }
               <span class="aff-copy">
-                <strong>{item.title}</strong>
+                <strong>{item.title}</strong>{' '}
                 <em>{item.kicker}</em>
                 <p>{item.body}</p>
                 <span class="aff-btn">{item.cta}</span>

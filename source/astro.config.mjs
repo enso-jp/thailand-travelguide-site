@@ -5,6 +5,15 @@ import sitemap from '@astrojs/sitemap';
 
 const SITE = 'https://thailand-travelguide.com';
 
+/** Pages held out of the index (noindex, follow) stay out of the sitemap too. */
+const HELD_FROM_INDEX = new Set(
+  readFileSync(join(process.cwd(), 'src/data/noindex-paths.txt'), 'utf8')
+    .split(/\r?\n/)
+    .map((line) => line.trim())
+    .filter((line) => line && !line.startsWith('#'))
+    .map((line) => `${SITE}${line.replace(/\/*$/, '/')}`),
+);
+
 /** Publication or update date from story frontmatter. Google uses lastmod only when it is real. */
 function storyLastmodByUrl() {
   const dir = join(process.cwd(), 'src/content/stories');
@@ -87,7 +96,11 @@ export default defineConfig({
   trailingSlash: 'always',
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/search') && !page.includes('/404') && !page.includes('/embed/'),
+      filter: (page) =>
+        !page.includes('/search') &&
+        !page.includes('/404') &&
+        !page.includes('/embed/') &&
+        !HELD_FROM_INDEX.has(page.endsWith('/') ? page : `${page}/`),
       serialize(item) {
         const url = new URL(item.url);
         if (!/\.[a-z0-9]{2,8}$/i.test(url.pathname) && !url.pathname.endsWith('/')) {
