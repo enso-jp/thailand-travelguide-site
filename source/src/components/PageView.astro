@@ -127,12 +127,16 @@ const tipsPlaced = Boolean(tipSectionId);
         <div class="chips">
           {page.chips.map((chip) => {
             const href = chipHref(chip, page.parentPill, page.path);
-            return href && routePath(href) !== page.path ? (
-              <a class="chip parent-pill" href={pageHref(href)}>
-                {chip}
-              </a>
-            ) : (
-              <span class="chip peak">{chip}</span>
+            return (
+              <>
+                {href && routePath(href) !== page.path ? (
+                  <a class="chip parent-pill" href={pageHref(href)}>
+                    {chip}
+                  </a>
+                ) : (
+                  <span class="chip peak">{chip}</span>
+                )}{' '}
+              </>
             );
           })}
         </div>

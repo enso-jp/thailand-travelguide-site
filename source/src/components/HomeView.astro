@@ -42,7 +42,7 @@ function dots(n: number): string {
       {
         home.facts.map((fact) => (
           <a href={pageHref(fact.href)}>
-            <span>{fact.label}</span>
+            <span>{fact.label}</span>{' '}
             <strong>{fact.value}</strong>
           </a>
         ))
