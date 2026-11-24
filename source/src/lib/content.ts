@@ -467,7 +467,7 @@ const rawPages: Page[] = [
       }
     ],
     paragraphs: [
-      "Routes are grouped by region, then by length: Bangkok and central, the north, the Andaman, the Gulf, the east, and trips that cross more than one region. Each plan gives day-by-day stops, travel times between them, and where to sleep.",
+      "Routes are grouped by region, then by length: Bangkok and central, the north, the Andaman, the Gulf, the east, and trips that cross more than one region. Each plan gives day-by-day stops, travel times between them, and where to sleep. A first city stay with the scam notes is the [Bangkok 3 to 4 day plan](/itineraries/bangkok-3-4-day-plan).",
       "Fly the long legs: Bangkok to Chiang Mai is about 70 minutes."
     ],
     sections: [
@@ -1120,7 +1120,7 @@ const rawPages: Page[] = [
     geo: { lat: 13.756, lon: 100.502, containedIn: "Central Thailand" },
     paragraphs: [
       "Bangkok is the capital you land in: Grand Palace and river wats by day, BTS hotel strips at night. Give it two or three nights. Eat in Thonglor or Chinatown. Nightlife lives on its own pages.",
-      "From BKK, the [Airport Rail Link, Grab, and BTS tap](/plan/grab-and-bts) is the cheap, predictable move. Book a Trip.com airport car if you land late with luggage. The usual next hops are [Bangkok to Chiang Mai](/get-there/bangkok-to-chiang-mai), [Bangkok to Phuket](/get-there/bangkok-to-phuket), or [Bangkok to Koh Samui](/get-there/bangkok-to-koh-samui). Use the [7-day](/itineraries/first-week-7-days) or [14-day itinerary](/itineraries/best-14-days) once you pick a fork."
+      "From BKK, the [Airport Rail Link, Grab, and BTS tap](/plan/grab-and-bts) is the cheap, predictable move. Book a Trip.com airport car if you land late with luggage. The usual next hops are [Bangkok to Chiang Mai](/get-there/bangkok-to-chiang-mai), [Bangkok to Phuket](/get-there/bangkok-to-phuket), or [Bangkok to Koh Samui](/get-there/bangkok-to-koh-samui). Use the [7-day](/itineraries/first-week-7-days) or [14-day itinerary](/itineraries/best-14-days) once you pick a fork. For three or four nights in the city, use the [Bangkok 3 to 4 day plan](/itineraries/bangkok-3-4-day-plan)."
     ],
     sections: [
       {

@@ -165,6 +165,7 @@ export const NAV_SLOTS: NavSlot[] = [
         href: '/itineraries/3-days-bangkok-stopover',
         links: [
           { href: '/itineraries/3-days-bangkok-stopover', name: '3 days Bangkok' },
+          { href: '/itineraries/bangkok-3-4-day-plan', name: '3 to 4 day plan' },
           { href: '/itineraries/5-days-bangkok-ayutthaya-kanchanaburi', name: 'Ayutthaya and Kwai' },
           { href: '/itineraries/5-days-chiang-mai-and-chiang-rai', name: 'Chiang Mai and Rai' },
         ],

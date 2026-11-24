@@ -74,6 +74,7 @@ const LENGTH_GROUPS: Array<{ id: string; label: string; max: number }> = [
 ];
 
 const SUITS: Record<string, string> = {
+  '/itineraries/bangkok-3-4-day-plan': 'Fits a first Bangkok stay of three nights, with a fourth morning if the flight is late.',
   '/itineraries/3-days-bangkok-food-and-rooftops': 'Fits a 72-hour stopover that wants street food and one rooftop.',
   '/itineraries/3-days-bangkok-riverside-stopover': 'Fits a long-haul stopover that wants a river hotel and boats.',
   '/itineraries/4-days-bangkok-and-ayutthaya': 'Fits first-timers who want ruins without the River Kwai.',

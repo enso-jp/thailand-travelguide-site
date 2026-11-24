@@ -69,6 +69,12 @@ const NORTH_POOL = [
 const PHOTO_POOL = Object.keys(credits).map((key) => `/photos/${key}.jpg`);
 
 const DAY_PHOTO_FIX: Record<string, Record<number, string>> = {
+  '/itineraries/bangkok-3-4-day-plan': {
+    1: '/photos/bkk34-arl.jpg',
+    2: '/photos/bkk34-palace-gate.jpg',
+    3: '/photos/bkk34-express-boat.jpg',
+    4: '/photos/bkk34-phaya-thai.jpg',
+  },
   '/itineraries/10-days-bangkok-khao-sok-krabi': {
     5: '/photos/cheow-lan.jpg',
     7: '/photos/railay.jpg',

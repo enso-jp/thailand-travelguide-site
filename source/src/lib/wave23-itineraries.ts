@@ -8,6 +8,7 @@ import { WAVE23_G } from './wave23-g';
 import type { Page } from './content';
 
 export const WAVE23_TITLE_CORE: Record<string, string> = {
+  '/itineraries/bangkok-3-4-day-plan': 'Bangkok 3 to 4 Day Plan: Temples and Scam Tips',
   '/itineraries/3-days-bangkok-food-and-rooftops': '3 Days in Bangkok: Food Markets and One Rooftop',
   '/itineraries/4-days-bangkok-and-ayutthaya': '4 Days Bangkok and Ayutthaya: Train and Ruins',
   '/itineraries/3-days-bangkok-riverside-stopover': '3 Days in Bangkok: Chao Phraya Riverside Plan',

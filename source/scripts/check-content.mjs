@@ -85,6 +85,7 @@ const REQUIRED_ROUTES = [
   '/itineraries/2-weeks-thailand-honeymoon',
   '/itineraries/3-weeks-grand-thailand',
   '/itineraries/3-days-bangkok-food-and-rooftops',
+  '/itineraries/bangkok-3-4-day-plan',
   '/itineraries/4-days-bangkok-and-ayutthaya',
   '/itineraries/3-days-bangkok-riverside-stopover',
   '/itineraries/8-days-bangkok-and-chiang-mai',

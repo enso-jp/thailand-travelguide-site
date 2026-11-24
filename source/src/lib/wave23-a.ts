@@ -12,6 +12,84 @@ import type { Page } from './content';
 
 export const WAVE23_A: Page[] = [
   wave23Page({
+    path: '/itineraries/bangkok-3-4-day-plan',
+    title: 'Bangkok 3 to 4 day plan with scam tips',
+    crumb: 'Bangkok 3 to 4 day plan',
+    description:
+      'A 3 to 4 day Bangkok plan uses the Airport Rail Link, then the Grand Palace, Wat Pho, and Wat Arun, and names the tuk-tuk, gem, and meter scams.',
+    lede:
+      'Suvarnabhumi to Phaya Thai on the Airport Rail Link is 45 THB and about 30 minutes, then a separate BTS ticket. The Grand Palace morning is 08:30 at Mani Noppharat Gate, and a tuk-tuk that says the palace is closed is the scam.',
+    facts: [
+      ['Rail in', 'ARL 45 THB to Phaya Thai, about 30 minutes'],
+      ['Palace', '500 THB, 08:30 to 15:30, Mani Noppharat Gate'],
+      ['Next wats', 'Wat Pho 300 THB; Wat Arun 200 THB'],
+      ['Taxis', 'Meter from 35 THB, or the next cab'],
+    ],
+    chips: ['3 or 4 days', 'Palace at 08:30', 'Scam notes'],
+    photo: '/photos/bkk34-sanam-luang.jpg',
+    paragraphs: [
+      'This is a three-night Bangkok stay, plus a fourth morning when the flight is late. It is a different page from the [72-hour stopover](/itineraries/3-days-bangkok-stopover), the [food and rooftops](/itineraries/3-days-bangkok-food-and-rooftops) loop, and the [riverside stopover](/itineraries/3-days-bangkok-riverside-stopover).',
+      'Sleep at [Siam](/bangkok/siam-silom) or Asok so the BTS and the MRT do the trips. Dress, gates, and the scams are below. Hotels sit on [where to stay](/bangkok/where-to-stay). Rail steps sit on [getting around](/bangkok/getting-around).',
+    ],
+    days: [
+      [
+        'Rail in from Suvarnabhumi',
+        'The Airport Rail Link station is on level B and runs about 05:30 to midnight. Phaya Thai is 45 THB and about 30 minutes. A contactless card or a token works. Then the BTS, 17 to 62 THB, to the hotel. Use a booked car for heavy bags. Leave any driver who will not start the meter.',
+        '/photos/bkk34-arl.jpg',
+      ],
+      [
+        'Grand Palace, Wat Pho, Wat Arun',
+        'Cover shoulders and legs. No shorts, sleeveless tops, torn pants, or tight pants. Enter at Mani Noppharat Gate on Na Phra Lan Road. The foreign ticket is 500 THB and includes Wat Phra Kaew plus the Queen Sirikit Museum of Textiles. Open 08:30 to 15:30. The Dusit Maha Prasat throne hall is not on the ordinary visitor route. Walk south to Wat Pho, 300 THB, open 08:00 to 19:30. The Tha Tien crossing is a separate cash ferry. Wat Arun is 200 THB, with grounds open 08:00 to 18:00.',
+        '/photos/bkk34-palace-gate.jpg',
+      ],
+      [
+        'Blue Line and one boat',
+        'MRT Blue Line fares are 17 to 44 THB. Ride it for a free hour in Lumphini, or a neighbourhood you already chose. The orange-flag Chao Phraya Express Boat is a flat 18 THB on weekday runs from 23 November 2026. Weekend flags can differ, so read the pier board. Do not follow a stranger to a gem shop or a tailor.',
+        '/photos/bkk34-express-boat.jpg',
+      ],
+      [
+        'Fourth morning or the airport',
+        'Use this morning only if the flight is at night. Go back on the Airport Rail Link and keep the airline airport time. Three days already hold the temples. Ayutthaya is the [train day](/itineraries/4-days-bangkok-and-ayutthaya), not an add-on here.',
+        '/photos/bkk34-phaya-thai.jpg',
+      ],
+    ],
+    sid: 'scam-notes',
+    stitle: 'Scams to skip on this plan',
+    sp: 'A tuk-tuk, a gem shop, or a taxi that names its own price will cost the morning. Walk to the gate that is actually selling tickets.',
+    headers: ['Pitch', 'What is true', 'What to do'],
+    rows: [
+      ['Palace is closed today', 'Open daily 08:30 to 15:30. A ceremony can close an inner court. Tickets on sale means it is open.', 'Walk to Mani Noppharat Gate. Do not board the tuk-tuk.'],
+      ['Free ride to a gem shop', 'The shop is the point of the ride. A suit or a stone discount is the same pitch.', 'Leave. Call Tourist Police on 1155.'],
+      ['Taxi will not use the meter', 'Bangkok taxis start at 35 THB for the first kilometre. A flat price is not the meter.', 'Take the next cab or Grab. Note the plate and call 1584.'],
+      ['Airport hall car', 'The Airport Rail Link is 45 THB to Phaya Thai. A prebooked car is the luggage option.', 'Ignore the offer in the arrivals hall.'],
+    ],
+    portraits: [
+      { title: 'Grand Palace', href: '/attractions/grand-palace-and-wat-phra-kaew', photo: '/photos/bkk34-wat-phra-kaew.jpg' },
+      { title: 'Wat Pho', href: '/attractions/wat-pho', photo: '/photos/bkk34-wat-pho.jpg' },
+      { title: 'Wat Arun', href: '/attractions/wat-arun', photo: '/photos/bkk34-wat-arun.jpg' },
+      { title: 'Getting around', href: '/bangkok/getting-around', photo: '/photos/bkk34-mrt.jpg' },
+    ],
+    affiliates: [
+      stay('Siam or Asok nights', 'BTS and MRT', 'Three nights beside a station, so the airport train and the palace morning stay simple.', stayAreaLink('siam'), '/photos/bkk34-siam.jpg'),
+      hop('Airport car', 'Trip.com', 'Book BKK to the hotel when bags make the Airport Rail Link a bad idea.', transferLink('BKK'), '/photos/bkk34-taxi.jpg', 'flights', 'Search transfers'),
+      klook('Grand Palace tickets', 'Tickets', 'A timed 08:30 entry if you want the booth time fixed before you fly.', klookTickets('Grand Palace Bangkok'), '/photos/bkk34-bts.jpg'),
+    ],
+    faqs: [
+      {
+        q: 'Is three days enough in Bangkok?',
+        a: 'Yes for the rail arrival, the palace morning, and one free afternoon. Keep a fourth morning only when the flight is late. Do not add Ayutthaya on that morning.',
+      },
+      {
+        q: 'What if a tuk-tuk says the Grand Palace is closed?',
+        a: 'Walk to Mani Noppharat Gate. The palace is open daily from 08:30 to 15:30, and a ceremony can close an inner court without closing the ticket booth. If tickets are on sale, go in. Skip the ride and any gem shop.',
+      },
+      {
+        q: 'Should you take a metered taxi or Grab?',
+        a: 'A Bangkok taxi starts at 35 THB and must use the meter. If the driver refuses, take the next cab or Grab. Note the plate and call the Department of Land Transport on 1584.',
+      },
+    ],
+  }),
+  wave23Page({
     path: '/itineraries/3-days-bangkok-food-and-rooftops',
     title: '3 days in Bangkok: food and rooftops itinerary',
     crumb: '3 days Bangkok food and rooftops',
