@@ -133,7 +133,7 @@ export const wave21Pages: Page[] = [
     photo: '/photos/phi-phi.jpg',
     geo: { lat: 7.7407, lon: 98.7784, containedIn: 'Andaman Coast' },
     paragraphs: [
-      'Phi Phi is two maps. Phi Phi Don holds the village, the viewpoints, and Long Beach. Phi Phi Le holds Maya Bay, Pileh, and Viking Cave. The 400 THB park fee is often extra on a Klook boat, so read the inclusions line. November to April is the useful window. May to October is refund fights.',
+      'Phi Phi is two maps. Phi Phi Don holds the village, the viewpoints, and Long Beach. Phi Phi Le holds Maya Bay, Pileh, and Viking Cave. The 400 THB park fee is often extra on a Klook boat, so read the inclusions line. November to April is the useful window. May to October is refund fights. The month table is [Krabi and Phi Phi weather](/plan/krabi-and-koh-phi-phi-weather).',
       'Sleep on Don only if you want a second morning. A same-day boat from Phuket or Krabi covers Maya for most first trips. Do not book two companies for the same water. Longtails from Tonsai to Long Beach are about 100 THB a person.',
     ],
     sections: [

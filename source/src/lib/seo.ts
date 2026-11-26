@@ -145,6 +145,7 @@ const TITLE_CORE: Record<string, string> = {
   '/plan/trains-and-ferries': 'Thailand Trains and Ferries: Sleepers and Boats',
   '/plan/visas-and-tdac': 'Thailand Visa and TDAC 2026: 30-Day Visa-Free',
   '/plan/when-to-go': 'When to Visit Thailand: Andaman vs Gulf Season',
+  '/plan/krabi-and-koh-phi-phi-weather': 'Krabi and Phi Phi Weather by Month',
   '/privacy': 'Privacy Policy, Analytics, and Affiliate Notes',
   '/resort-living/137-pillars-house': '137 Pillars House Chiang Mai: Wat Gate Teak',
   '/resort-living/amanpuri': 'Amanpuri Phuket: Private Cove Pavilion Resort',

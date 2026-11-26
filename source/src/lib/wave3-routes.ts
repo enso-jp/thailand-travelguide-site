@@ -1265,6 +1265,117 @@ export const wave3Pages: Page[] = [
     ],
   },
   {
+    path: '/plan/krabi-and-koh-phi-phi-weather',
+    title: 'Krabi and Koh Phi Phi weather by month',
+    description:
+      'Krabi and Koh Phi Phi weather by month: Krabi town rain, the Andaman monsoon, and which Phi Phi, Maya Bay, Hong, and 4 Islands boats cancel.',
+    lede: 'Krabi and Koh Phi Phi are known for an Andaman dry window from November to April if you want a boat that runs. February is the driest month at the Krabi town station, and October is the wettest.',
+    schema: 'Article',
+    crumbs: [
+      { name: 'Plan', href: '/plan' },
+      { name: 'Weather by month', href: '/plan/krabi-and-koh-phi-phi-weather' },
+    ],
+    facts: [
+      { label: 'Driest month', value: 'February, 35.9 mm at Krabi town' },
+      { label: 'Wettest month', value: 'October, 292.9 mm at Krabi town' },
+      { label: 'Monsoon', value: 'Southwest, about mid-May to mid-October' },
+      { label: 'Maya Bay 2026', value: 'Closed 1 Aug to 30 Sep' },
+    ],
+    chips: ['Krabi gauge', 'Nov to Apr window', 'Boats cancel May to Oct'],
+    photo: '/photos/zz-wx-phi-phi-view.jpg',
+    paragraphs: [
+      'The rain table is the Thai Meteorological Department station at Krabi town, index 48563, for 1994 to 2020. Koh Phi Phi has no station in that book. TAT places the islands 42 km from Muang District, so the gauge is a rain guide, not a wave forecast.',
+      'The southwest monsoon covers Thailand from about mid-May to mid-October, and the dates shift by year. In 2026 the rainy season began on 15 May. The northeast monsoon follows from about mid-October to mid-February. Sleep in [Ao Nang](/krabi/ao-nang) or [Railay](/krabi/railay), and take [Phi Phi and Maya Bay](/attractions/phi-phi-islands-and-maya-bay) only on a day the pier is running. The Phuket hop is [Phuket to Krabi and Phi Phi](/get-there/phuket-to-krabi-phi-phi).',
+    ],
+    sections: [
+      {
+        id: 'months',
+        title: 'Month by month',
+        paragraphs: [
+          'A rain day here is 0.1 mm or more, so a short shower counts. Mean maximum is the average daily high, in C. Prevailing wind at this town station is northeast from November to February, east in March, northeast in April, southwest in May, and west from June to October. That is not the open-sea chop that cancels a longtail.',
+        ],
+        table: {
+          headers: ['Month', 'Mean max C', 'Rain mm', 'Rain days', 'Boat note'],
+          rows: [
+            ['January', '32.6', '96.8', '7.7', 'Boats usually run. New Year rooms go first.'],
+            ['February', '34.1', '35.9', '4.3', 'Driest month on this gauge.'],
+            ['March', '34.7', '108.4', '8.3', 'Hot. Still before the monsoon.'],
+            ['April', '34.3', '142.2', '12.7', 'Hot. TAT calls February to April the driest Phi Phi months.'],
+            ['May', '33.0', '210.1', '17.5', 'Wind turns southwest. Boats start to cancel.'],
+            ['June', '31.9', '224.8', '17.5', 'West wind. Treat island days as optional.'],
+            ['July', '31.6', '221.5', '17.6', 'Same sea. Ao Nang is the road backup.'],
+            ['August', '31.5', '273.0', '18.2', 'Maya Bay closed in 2026. Swell risk stays.'],
+            ['September', '31.3', '286.2', '19.2', 'Maya Bay closed through 30 September 2026.'],
+            ['October', '31.4', '292.9', '20.6', 'Wettest month. Maya reopened 1 October 2026.'],
+            ['November', '31.4', '198.6', '17.5', 'TAT high season starts. The gauge is still wet.'],
+            ['December', '31.5', '90.3', '11.1', 'Book Christmas and New Year ahead.'],
+          ],
+        },
+      },
+      {
+        id: 'boats',
+        title: 'Boats that cancel',
+        paragraphs: [
+          'Phi Phi, Maya Bay, Hong Islands, and the 4 Islands trip all use the Andaman. They cancel when the sea is rough, most often from May to October. A calm morning can still run. Do not prepay a boat you cannot move.',
+        ],
+        bullets: [
+          '**Phi Phi:** A speedboat from Klong Jilad is about 45 to 60 minutes. The park fee is 400 THB and is often extra. [Koh Phi Phi](/koh-phi-phi) has no airport.',
+          '**Maya Bay:** Same sea, plus a park closure. In 2026 Maya Bay, Loh Samah, and Lo Ko were closed 1 August to 30 September. The bay reopened on 1 October 2026. Swimming stays banned, and boats use the Loh Samah side when the bay is open. The next closure is a new notice. Rules sit on [Maya Bay](/koh-phi-phi/maya-bay).',
+          '**Hong Islands:** Krabi\'s Ko Hong, the lagoon near Railay. It is not Hong Island in Phang Nga Bay. The longtail cancels with the same swell. See [Krabi day trips](/krabi/day-trips).',
+          '**4 Islands:** The usual Ao Nang longtail stops at Koh Poda, Chicken Island (Ko Kai), Ko Tup, and Phra Nang. There is no August park closure like Maya Bay. The sea is what stops it.',
+          '**Railay:** The Ao Nang longtail is short, and it still stops when the beach is unsafe. [Railay](/krabi/railay) has no road.',
+        ],
+      },
+      {
+        id: 'best',
+        title: 'Best months for',
+        bullets: [
+          '**Boats:** February, then December and January. March still works if you can take a mean maximum of 34.7 C.',
+          '**A first trip:** December to February. TAT names November to April for Phi Phi, and November is still wet on the gauge.',
+          '**Maya Bay open, with a better sea:** December to March. October is open and it is also the wettest month.',
+          '**Lower room rates:** TAT says the low season discounts rooms, and Christmas and New Year should be booked ahead. The trade, about May to October, is a cancelled boat.',
+          '**A rain day on land:** Sleep in Ao Nang. [Tiger Cave](/krabi/day-trips) does not need a sea. If the whole week is wet, use [when to go](/plan/when-to-go) and the [monsoon notes](/plan/monsoon-and-burn-season).',
+        ],
+      },
+    ],
+    portraits: [
+      { title: 'Ao Nang', href: '/krabi/ao-nang', photo: '/photos/zz-wx-ao-nang-boats.jpg' },
+      { title: 'Railay', href: '/krabi/railay', photo: '/photos/zz-wx-railay-east.jpg' },
+      { title: 'Phi Phi and Maya Bay', href: '/attractions/phi-phi-islands-and-maya-bay', photo: '/photos/zz-wx-phi-phi-le.jpg' },
+      { title: 'Phuket to Krabi', href: '/get-there/phuket-to-krabi-phi-phi', photo: '/photos/zz-wx-hong.jpg' },
+    ],
+    affiliates: [
+      stay(
+        'Ao Nang or Railay',
+        'Dry months',
+        'Lock the room before you lock a boat. Ao Nang keeps a road when the longtail stops.',
+        stayAreaLink('ao-nang'),
+        '/photos/zz-wx-poda.jpg',
+      ),
+      klook(
+        'Phi Phi and Hong boats',
+        'Island days',
+        'Read the cancel line and whether the Maya Bay park fee is included.',
+        klookIslandHopping('Phi Phi Maya Bay'),
+        '/photos/zz-wx-tonsai.jpg',
+      ),
+    ],
+    faqs: [
+      {
+        q: 'What is the best month for Krabi and Koh Phi Phi?',
+        a: 'February is the driest month at the Krabi town station: 35.9 mm and 4.3 rain days in the 1994 to 2020 record. December and January are the next boat months. TAT still calls November to April the useful window for Koh Phi Phi.',
+      },
+      {
+        q: 'Will Phi Phi, Maya Bay, Hong Islands, or the 4 Islands cancel in the monsoon?',
+        a: 'Yes when the Andaman is rough, most often from May to October. In 2026 Maya Bay, Loh Samah, and Lo Ko were also closed from 1 August to 30 September. Swimming at Maya Bay stays banned. A single calm day can still run. Do not prepay a boat you cannot move.',
+      },
+      {
+        q: 'Is November a dry month in Krabi?',
+        a: 'Not on the Krabi town gauge. November averages 198.6 mm and 17.5 rain days. TAT treats November as the start of the Andaman high season, and the town wind turns northeast. Book Christmas and New Year ahead. Treat the sea as improved, not dry.',
+      },
+    ],
+  },
+  {
     path: '/plan/monsoon-and-burn-season',
     title: 'Monsoon and burn season',
     description:

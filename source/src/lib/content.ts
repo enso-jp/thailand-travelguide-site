@@ -2403,7 +2403,7 @@ const rawPages: Page[] = [
     ],
     photo: "/photos/phuket.jpg",
     paragraphs: [
-      "Thailand has two beach calendars, not one winter. Bangkok is hot most of the year and wettest in September and October. You still go. Walk in the morning and sit in air-con at 14:00. A 2026 BTS tap is 17 to 62 THB either month.",
+      "Thailand has two beach calendars, not one winter. Bangkok is hot most of the year and wettest in September and October. You still go. Walk in the morning and sit in air-con at 14:00. A 2026 BTS tap is 17 to 62 THB either month. The Krabi and Koh Phi Phi month table is [weather by month](/plan/krabi-and-koh-phi-phi-weather).",
       "Chiang Mai has a cool season (November to February), a hot season (March to May, smoke risk), and a rainy season that is still usable.",
       "Songkran in mid-April is a water festival, not a sightseeing week in the Old City. Book it on purpose or avoid the Old City lanes that week."
     ],

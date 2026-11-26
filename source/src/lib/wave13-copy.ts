@@ -87,7 +87,7 @@ export const wave13Copy: Record<string, Partial<Page>> = {
   },
   '/krabi': {
     paragraphs: [
-      'Krabi is known for limestone cliffs and the Railay pocket, not a long resort strip. Stay in Ao Nang if you want cars and dinner. Stay on Railay if you accept a longtail and being stuck on a storm day. Fly into KBV, or transfer from HKT in about 2 to 3 hours by car.',
+      'Krabi is known for limestone cliffs and the Railay pocket, not a long resort strip. Stay in Ao Nang if you want cars and dinner. Stay on Railay if you accept a longtail and being stuck on a storm day. Fly into KBV, or transfer from HKT in about 2 to 3 hours by car. Month by month rain and boat cancels are on [Krabi and Phi Phi weather](/plan/krabi-and-koh-phi-phi-weather).',
       'Railay has no road. A shared longtail from Ao Nang is about 10 to 15 minutes and 100 to 200 THB a person in 2026. Private boats cost more. Phra Nang sits in the same cliff pocket. [Rayavadee](/resort-living/rayavadee) is the grove resort with no road in.',
       'Phi Phi is a day trip or a night if you want the village after the boats leave. Maya Bay park fee is 400 THB on top of the tour. Four Islands and Hong are the other morning products. Cancel if the Andaman is up. The Gulf is the flip. See [Phuket to Krabi](/get-there/phuket-to-krabi-phi-phi) and [Krabi to Koh Lanta](/get-there/krabi-to-koh-lanta).',
       'Ao Nang is logistics: cars, 7-Elevens, and the pier. It is not the pretty picture. Eat there. Sleep there if you want an exit that is not a boat. KBV to Ao Nang is 30 to 45 minutes and often 600 to 1,000 THB by private car in 2026.',
