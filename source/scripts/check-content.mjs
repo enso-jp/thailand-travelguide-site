@@ -137,6 +137,7 @@ const REQUIRED_ROUTES = [
   '/plan/esim-and-sim-cards',
   '/plan/money-atms-and-promptpay',
   '/plan/monsoon-and-burn-season',
+  '/plan/krabi-and-koh-phi-phi-weather',
   '/plan/domestic-flights-and-baggage',
   '/plan/scooters-and-road-rules',
   '/plan/songkran-and-public-holidays',
