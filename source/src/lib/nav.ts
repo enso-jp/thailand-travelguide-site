@@ -197,6 +197,7 @@ export const NAV_SLOTS: NavSlot[] = [
           { href: '/plan/when-to-go', name: 'When to go' },
           { href: '/plan/visas-and-tdac', name: 'Visas and TDAC' },
           { href: '/plan/monsoon-and-burn-season', name: 'Monsoon and haze' },
+          { href: '/plan/thailand-vs-vietnam', name: 'Thailand vs Vietnam' },
         ],
       },
       {

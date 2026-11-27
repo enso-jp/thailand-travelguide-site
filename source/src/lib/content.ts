@@ -648,6 +648,11 @@ const rawPages: Page[] = [
         "title": "Grab and BTS",
         "href": "/plan/grab-and-bts",
         "photo": "/photos/bts.jpg"
+      },
+      {
+        "title": "Thailand vs Vietnam",
+        "href": "/plan/thailand-vs-vietnam",
+        "photo": "/photos/tvv-ha-long.jpg"
       }
     ],
     faqs: [

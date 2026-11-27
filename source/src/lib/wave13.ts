@@ -276,6 +276,7 @@ function planHubCards(): Portrait[] {
     card('Grab and BTS', '/plan/grab-and-bts', '/photos/privacy.jpg'),
     card('Scooters and road rules', '/plan/scooters-and-road-rules', '/photos/koh-samui.jpg'),
     card('Songkran and holidays', '/plan/songkran-and-public-holidays', '/photos/chiang-mai.jpg'),
+    card('Thailand vs Vietnam', '/plan/thailand-vs-vietnam', '/photos/tvv-ha-long.jpg'),
   ];
 }
 

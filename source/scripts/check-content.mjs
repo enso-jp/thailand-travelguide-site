@@ -138,6 +138,7 @@ const REQUIRED_ROUTES = [
   '/plan/money-atms-and-promptpay',
   '/plan/monsoon-and-burn-season',
   '/plan/krabi-and-koh-phi-phi-weather',
+  '/plan/thailand-vs-vietnam',
   '/plan/domestic-flights-and-baggage',
   '/plan/scooters-and-road-rules',
   '/plan/songkran-and-public-holidays',

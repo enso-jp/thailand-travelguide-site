@@ -1698,4 +1698,195 @@ export const wave3Pages: Page[] = [
       },
     ],
   },
+  {
+    path: '/plan/thailand-vs-vietnam',
+    title: 'Thailand vs Vietnam: which country for a first trip',
+    description:
+      'Compare Thailand and Vietnam for a first Southeast Asia trip in 2026: daily costs, visas, weather, trains, and how to split two weeks.',
+    lede: 'Pick Thailand when the trip is one beach coast plus a city you can ride on the BTS. Pick Vietnam when you want Hanoi or Ho Chi Minh food, a long train, and a lower city food bill.',
+    schema: 'Article',
+    crumbs: [
+      { name: 'Plan', href: '/plan' },
+      { name: 'Thailand vs Vietnam', href: '/plan/thailand-vs-vietnam' },
+    ],
+    facts: [
+      { label: 'Verdict', value: 'Thailand for one beach coast. Vietnam for food and the long coast.' },
+      { label: 'Thailand day', value: '1,500 to 2,500 THB budget in Bangkok or Chiang Mai' },
+      { label: 'Vietnam day', value: 'Worked city floor about 333,556 VND, not a quote' },
+      { label: 'Entry', value: 'Thailand 30 days plus TDAC. Vietnam e-visa up to 90 days.' },
+    ],
+    chips: ['30-day TDAC', '90-day e-visa', 'Two beach calendars'],
+    photo: '/photos/tvv-ha-long.jpg',
+    paragraphs: [
+      'Use this page to pick one country, or to split a longer trip. A first week should not try to hold Phuket and Hanoi. The Thailand city bands below are the same planning ranges as [budget and long stay](/plan/budget-and-long-stay). The Vietnam lines are a worked floor from one Hanoi hostel homepage plus Numbeo meal and bus prices, not a national average.',
+    ],
+    sections: [
+      {
+        id: 'verdict',
+        title: 'Quick verdict',
+        lead: true,
+        table: {
+          headers: ['', 'Thailand', 'Vietnam'],
+          rows: [
+            ['Best fit', 'One beach coast and a BTS city', 'Street food, a long train, Hanoi or Ho Chi Minh'],
+            ['Budget day', '1,500 to 2,500 THB (about 44 to 74 USD)', '333,556 VND worked floor (about 13 USD)'],
+            ['Mid day, room shared', '3,500 to 6,500 THB (about 103 to 191 USD)', '759,640 VND worked floor (about 30 USD)'],
+            ['Comfort day', '8,000 to 15,000 THB (about 235 to 441 USD)', 'Price the hotel. No national band here.'],
+            ['Entry', '30 days visa-free for listed passports, plus TDAC', 'e-visa up to 90 days, or 45 days for 12 passports'],
+            ['Beach window', 'Andaman Nov to Apr. Gulf Jan to Sep.', 'North and south Nov to Apr. Central coast Feb to Aug.'],
+          ],
+        },
+      },
+      {
+        id: 'who',
+        title: 'Who each country suits',
+        bullets: [
+          '**Thailand:** a first beach week, a family that wants one resort bay, or anyone who wants Grab plus the BTS and a 30-day stamp instead of a visa application. Sleep in Bangkok or Chiang Mai, then one coast. Read [when to go](/plan/when-to-go) before you name the coast.',
+          '**Vietnam:** a first trip built around food and cities, a north-to-south ride, or a longer stay on the e-visa. Hanoi, Ho Chi Minh City, Hoi An, and the central coast are the usual spine. City notes sit on [Hanoi](https://vietnam-travelguide.com/hanoi/), [Ho Chi Minh City](https://vietnam-travelguide.com/ho-chi-minh-city/), and [Hoi An](https://vietnam-travelguide.com/hoi-an/).',
+          '**Not both in seven days:** the flight between them eats a day. Use the split section only when you have two weeks.',
+        ],
+      },
+      {
+        id: 'costs',
+        title: 'What a day costs in 2026',
+        paragraphs: [
+          'Thailand figures are one person in Bangkok or Chiang Mai, outside Songkran and the December to February hotel spike. They cover the bed, meals, and local rides. They leave out the flight in, a boat day, and alcohol. USD uses the Bank of Thailand reference rate of 34.014 THB per USD on 26 November 2026.',
+          'Vietnam figures are a floor, not a typical day. Nexy Hostel in the Hanoi Old Quarter listed dorms from 6 USD and private rooms from 30 USD on its homepage on 27 November 2026. At the State Bank of Vietnam central rate of 25,676 VND per USD on 26 November 2026 (Vietnam News Agency), that is 154,056 VND and 770,280 VND. Numbeo Hanoi, last update 26 November 2026, lists an inexpensive restaurant meal at 52,500 VND, a mid-range meal for two at 600,000 VND, and a one-way local ticket at 11,000 VND.',
+        ],
+        bullets: [
+          '**Thailand budget:** 1,500 to 2,500 THB, about 44 to 74 USD. A dorm is often 400 to 900 THB inside that band.',
+          '**Thailand mid:** 3,500 to 6,500 THB, about 103 to 191 USD, when two people share the room. A solo traveler pays the whole room.',
+          '**Thailand comfort:** 8,000 to 15,000 THB, about 235 to 441 USD. Islands sit above the city band.',
+          '**Vietnam budget floor:** 154,056 + three meals at 52,500 + two rides at 11,000 = 333,556 VND, about 13 USD. Many dorms cost more than the "from" rate, and December to February rooms rise.',
+          '**Vietnam mid floor, room shared by two:** half of 770,280 is 385,140. Add 300,000 for one share of the mid-range meal, 52,500 for a second meal, and 22,000 for two rides. That is 759,640 VND, about 30 USD.',
+          '**Vietnam comfort:** search the hotel for your dates. This page does not print a national comfort band. Tet and the November to February peak are not the floor above.',
+        ],
+      },
+      {
+        id: 'visas',
+        title: 'Visas and entry',
+        paragraphs: [
+          'Rules below are for a tourist trip on a US, UK, or most EU passport. The officer still decides entry. Read [visas and TDAC](/plan/visas-and-tdac) and the government sites before you fly. Checked against those pages on 27 November 2026.',
+        ],
+        bullets: [
+          '**Thailand:** from 15 September 2026 the 60-day exemption is over. The Government PRD notice of 4 September 2026 sets a 30-day visa exemption for tourism for 60 countries and territories. The Washington Thai Embassy page, updated 24 November 2026, includes US passports. File the free TDAC at tdac.immigration.go.th within 3 days before arrival. It is not a visa. The same embassy page asks for 20,000 THB per person or 40,000 THB per family. The London embassy also limits visa-exempt land entries to twice per calendar year.',
+          '**Vietnam e-visa:** the Immigration Department portal says an e-visa is valid for a maximum of 90 days, single or multiple entry. Apply on evisa.gov.vn or thithucdientu.gov.vn. The fee is not refunded if the application is refused. Enter and exit through a gate on the e-visa list. This page does not print a fee, because the portal page checked on 27 November 2026 states that a fee is charged and does not print the amount.',
+          '**Vietnam 45 days without a visa:** Resolution 44/NQ-CP of 7 March 2025 grants 45 days from the entry date, for any passport type and purpose, to Germany, France, Italy, Spain, the United Kingdom, Russia, Japan, South Korea, Denmark, Sweden, Norway, and Finland. It runs from 15 March 2025 through 14 March 2028. The US is not on that list, so a US passport uses the e-visa for a mainland trip.',
+        ],
+      },
+      {
+        id: 'weather',
+        title: 'Weather and best months',
+        paragraphs: [
+          'Thailand is two beach calendars. The Andaman (Phuket, Krabi, Phi Phi) is easier from November to April. The Gulf (Samui, Phangan, Tao) is easier from January to September. Month-by-month Krabi rain is on [Krabi and Phi Phi weather](/plan/krabi-and-koh-phi-phi-weather). The coast choice is on [when to go](/plan/when-to-go).',
+          'Vietnam numbers are 1991 to 2020 normals on the WMO World Weather Information Service, supplied by the Viet Nam Meteorological and Hydrological Administration, read on 27 November 2026. A storm can beat the monthly average. The Vietnam season page is [when to go](https://vietnam-travelguide.com/plan/when-to-go/).',
+        ],
+        table: {
+          headers: ['Gauge', 'Drier stretch', 'Harder stretch', 'A number from the record'],
+          rows: [
+            ['Hanoi', 'November to April', 'May to September', 'February 19 mm. August 335 mm. January high 20 C.'],
+            ['Da Nang (Hoi An coast)', 'February to August', 'September to December', 'February 22 mm. October 658 mm.'],
+            ['Ho Chi Minh City', 'December to April', 'May to November', 'February 8 mm. September 273 mm.'],
+          ],
+        },
+        bullets: [
+          '**Thailand beaches:** December to February if you want Bangkok and the Andaman. July if you want Samui and can take Bangkok heat.',
+          '**Vietnam north:** November to April for Hanoi, Ninh Binh, and Ha Long. Pack a layer in January.',
+          '**Vietnam centre:** book Da Nang and Hoi An for February to August. Do not put a beach week on that coast in October.',
+          '**Vietnam south:** December to April for Ho Chi Minh City. The UK FCDO puts the tropical storm season at May to November.',
+        ],
+      },
+      {
+        id: 'choice',
+        title: 'Beaches, culture, and food',
+        bullets: [
+          '**Beaches:** Thailand is the easier first beach trip. Pick one sea and stay there. Vietnam beaches are real, and they are a different product from the city trip: [Da Nang](https://vietnam-travelguide.com/da-nang/), [Nha Trang](https://vietnam-travelguide.com/nha-trang/), and [Phu Quoc](https://vietnam-travelguide.com/phu-quoc/).',
+          '**Culture:** Thailand is temple mornings. The Grand Palace gate, and the tuk-tuk that says it is closed, are on the [Grand Palace page](/attractions/grand-palace-and-wat-phra-kaew). Vietnam is old streets and river towns: [Hanoi](https://vietnam-travelguide.com/hanoi/), [Hoi An](https://vietnam-travelguide.com/hoi-an/), [Hue](https://vietnam-travelguide.com/hue/), [Ninh Binh](https://vietnam-travelguide.com/ninh-binh/), and [Ha Long](https://vietnam-travelguide.com/ha-long/).',
+          '**Food:** a Thai street plate in the city band is often 60 to 150 THB. A Hanoi inexpensive restaurant meal on the Numbeo update of 26 November 2026 is 52,500 VND. Start with [Thai food](/thai-food) or the [Vietnamese food guide](https://vietnam-travelguide.com/food/).',
+        ],
+      },
+      {
+        id: 'around',
+        title: 'Getting around',
+        paragraphs: [
+          'Book the long leg before you book the boat. Thailand trains and ferries are on [trains and ferries](/plan/trains-and-ferries). Bag rules are on [domestic flights](/plan/domestic-flights-and-baggage). Bangkok taps and Grab are on [Grab and BTS](/plan/grab-and-bts).',
+        ],
+        table: {
+          headers: ['Leg', 'Thailand', 'Vietnam'],
+          rows: [
+            ['City', 'BTS, MRT, Grab, or Bolt. A 2026 BTS tap starts at 17 THB.', 'City bus or Grab. Match the car to the app.'],
+            ['North overnight', 'SRT 9 and 10, about 12 hours. A lower berth is often 800 to 1,400 THB.', 'Not the same ride. Hanoi to the centre is a shorter train or a sleeper bus.'],
+            ['Long north-south', 'Fly. The southbound train is not the first-trip move.', 'SE1 leaves Hanoi at 21:45 and reaches Saigon at 06:30 two mornings later (32 hours 45 minutes). SE2 leaves Saigon at 20:35 and reaches Hanoi at 05:42 two mornings later. Times from the Vietnam Railways timetable read on 27 November 2026. Fares change by train and date. Check dsvn.vn.'],
+            ['Beach hop', 'Morning ferry. Andaman boats cancel in the southwest monsoon.', 'Fly Da Nang or Phu Quoc, or a sleeper bus whose voucher names the depot.'],
+          ],
+        },
+      },
+      {
+        id: 'safety',
+        title: 'Safety and common scams',
+        bullets: [
+          '**Thailand taxis:** use a meter or Grab, and match the plate to the app. A tuk-tuk that says the Grand Palace is closed is a shop ride. Walk to the gate. Tourist Police are on 1155.',
+          '**Passports and jet skis:** the UK FCDO says not to hand your passport over as a guarantee for a motorcycle or jet-ski rental. Photograph the machine before you start.',
+          '**Drinks:** in both countries, do not leave a drink or take one from a stranger. Pre-book the ride back.',
+          '**Vietnam airport rides:** the UK FCDO says to be wary of free bus transfers to hotels unless you booked them, and to book the whole Grab or Xanh SM trip in the app.',
+          '**Places a first beach trip skips:** the UK FCDO page, still current on 27 November 2026, advises against all but essential travel to Pattani, Yala, Narathiwat, four southern districts of Songkhla, and areas within 20 km of the Cambodia land border.',
+        ],
+      },
+      {
+        id: 'both',
+        title: 'Do both',
+        paragraphs: [
+          'Fourteen days can hold two Thai cities and one city in Vietnam. Use [14 days Thailand and Vietnam](/itineraries/14-days-thailand-vietnam-first-timer). Sixteen days can hold one Thai coast and a Vietnam coast. Use [16 days on the coasts](/itineraries/16-days-thailand-vietnam-coasts). Keep Phuket and Samui off the same Thai half.',
+          'Open the Vietnam city you will actually sleep in: [Hanoi](https://vietnam-travelguide.com/hanoi/), [Ho Chi Minh City](https://vietnam-travelguide.com/ho-chi-minh-city/), [Da Nang](https://vietnam-travelguide.com/da-nang/), or [Hoi An](https://vietnam-travelguide.com/hoi-an/). File TDAC and the Vietnam e-visa or exemption before you buy the hop you cannot move.',
+        ],
+      },
+    ],
+    portraits: [
+      { title: 'When to go', href: '/plan/when-to-go', photo: '/photos/tvv-my-khe.jpg' },
+      { title: 'Krabi and Phi Phi weather', href: '/plan/krabi-and-koh-phi-phi-weather', photo: '/photos/tvv-railay.jpg' },
+      { title: '14 days, both countries', href: '/itineraries/14-days-thailand-vietnam-first-timer', photo: '/photos/tvv-hoi-an-night.jpg' },
+      { title: 'Visas and TDAC', href: '/plan/visas-and-tdac', photo: '/photos/tvv-palace.jpg' },
+    ],
+    affiliates: [
+      stay(
+        'Bangkok first nights',
+        'Trip.com',
+        'Use this if Thailand is the landing. Name a BTS neighbourhood before you file TDAC.',
+        stayLink('bangkok'),
+        '/photos/tvv-chao-phraya.jpg',
+      ),
+      flights(
+        'Bangkok to Hanoi',
+        'Trip.com',
+        'The hop if Vietnam is the country, or the second half of a two-week split.',
+        flightLink('BKK', 'HAN'),
+        '/photos/tvv-bkk-plane.jpg',
+      ),
+      klook(
+        'Phi Phi boat',
+        'Klook',
+        'Only if the Andaman week is the beach. Read the cancel line before you pay.',
+        klookIslandHopping('Phi Phi Maya Bay'),
+        '/photos/tvv-longtail.jpg',
+      ),
+    ],
+    faqs: [
+      {
+        q: 'Is Thailand or Vietnam cheaper in 2026?',
+        a: 'A worked Hanoi floor of a dorm listed from 6 USD, three inexpensive meals, and two local rides is 333,556 VND, about 13 USD, on 27 November 2026 rates. The Thailand city budget band is 1,500 to 2,500 THB, about 44 to 74 USD, and it already includes a bed. The Vietnam number is a floor from one hostel homepage, not a promise that the country costs a third as much.',
+      },
+      {
+        q: 'Do you need a visa for Thailand and for Vietnam?',
+        a: 'For a US, UK, or most EU passport, Thailand is 30 days visa-free for tourism from 15 September 2026, plus a free TDAC. Vietnam issues an e-visa for up to 90 days. Twelve countries, including the UK, get 45 days visa-free through 14 March 2028. A US passport is not on that list.',
+      },
+      {
+        q: 'Which country has the better beaches?',
+        a: 'Thailand, if the trip is a beach. The Andaman is easier from November to April and the Gulf from January to September. Vietnam beaches at Da Nang, Nha Trang, and Phu Quoc are a separate trip from the Hanoi food week. The central coast is the wet one from September to December.',
+      },
+      {
+        q: 'Can you visit Thailand and Vietnam in one trip?',
+        a: 'Yes in 14 or 16 days, not in a first week. Use the 14-day city route or the 16-day coast route, keep one Thai coast, and file both entry forms before you fly.',
+      },
+    ],
+  },
 ];
